@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task_identify_inactive_devices.html 
+keywords: inactive, device, 
+summary: 通过确定非活动设备，您可以选择将其删除或将其分配给活动角色。 
+---
+= 确定非活动设备
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+确定您拥有的资产以及使用这些资产的人员对于 " 合理调整规模 " 和释放未使用的基础架构至关重要。您可以轻松地重新分配或停用未充分利用的资源，并避免不必要的购买。
+
+按照以下步骤确定非活动资产。
+
+.步骤
+* 导航到*浏览->+New Metric Query*。
+* 从下拉列表中选择_Storage_。
+* 单击齿轮并添加_isActive_as列。
++
+显示“检查”的行处于活动状态。"X"表示非活动设备。
+
+

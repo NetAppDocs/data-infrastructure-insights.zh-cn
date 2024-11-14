@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: task_cloud_insights_onboarding_1.html 
+summary: 注册获取数据基础架构洞察力并创建您的环境。 
+keywords: onboarding, new user 
+---
+= 数据基础架构洞察力入门
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在开始使用数据基础架构洞察之前、您必须在* NetApp BlueXP *门户上注册。如果您已经拥有NetApp BlueXP  登录名、则只需几个快速步骤即可开始免费试用Data Infrastructure Insight。
+
+
+toc::[]
+
+
+== 正在创建NetApp BlueXP帐户
+
+要开始使用NetApp的云服务、请访问、link:https://cloud.netapp.com["* NetApp BlueXP*"^]然后单击*开始使用*。
+
+* 如果尚未注册、请选择*注册*
+* 输入有效的业务电子邮件地址并选择密码。
+* 输入您的公司名称和全名。
+* 接受条款和条件并选择*继续*。
+* BlueXP将指导您完成入门。
+
+
+
+
+=== 如果我已经有NetApp BlueXP登录帐户、该怎么办？
+
+拥有NetApp BlueXP  帐户后，只需在门户页面上选择*登录*即可link:https://cloud.netapp.com["* NetApp BlueXP*"^]。
+
+输入您的电子邮件地址和密码。然后，您将转到 NetApp 的云产品页面。
+
+选择Data Infrastructure Insight。
+
+image:BlueXP_CloudInsights.png["在BlueXP  上免费试用Data Infrastructure Insight"]
+
+
+
+== 开始免费试用Data Infrastructure Insight
+
+如果这是您首次登录到Data Infrastructure Insight、请在Data Infrastructure Insight产品下单击*开始免费试用*。Data Infrastructure Insight将引导您完成创建公司环境的过程、包括选择希望您的环境驻留的区域。
+
+image:trial_region_selector.png["选择要托管Data Infrastructure Insight环境的区域"]
+
+环境创建完成后、您可以使用BlueXP  凭据登录并开始免费试用30天的Data Infrastructure Insight。在此试用期间、您可以了解Data Infrastructure Insight必须提供的功能。
+
+在免费试用期间、您可以link:concept_subscribing_to_cloud_insights.html["开始订阅"]随时访问Data Infrastructure Insight。订阅后、您可以根据当前订阅情况使用Data Infrastructure Insight功能。
+
+
+
+== 登录并继续
+
+创建环境后，您可以随时登录NetApp BlueXP  门户并单击*转到数据基础架构洞察力*。您将直接转到Data Infrastructure Insight环境。
+
+您还可以打开浏览器、直接访问Data Infrastructure Insight环境URL、例如：
+
+ \https://<environment-prefix>.c01.cloudinsights.netapp.com/
+每个用户的邀请函电子邮件中也会包含此 URL ，以便于访问和添加书签。如果用户尚未登录到BlueXP、系统将提示他们登录。
+
+
+NOTE: 新用户仍必须先注册BlueXP访问权限、然后才能访问其环境URL。
+
+首次登录到新环境时，系统将引导您完成到的设置link:task_getting_started_with_cloud_insights.html["* 开始收集数据 *"]。
+
+
+
+== 注销
+
+要从Data Infrastructure Insight中注销、请单击您的*用户名*并选择*注销*。您将返回到BlueXP登录屏幕。
+
+
+NOTE: 注销数据基础架构洞察力会使您从BlueXP  中注销。您还将从使用BlueXP登录的其他NetApp云服务中注销。
+
+
+
+=== 非活动超时
+
+默认情况下、如果6小时(360分钟)内没有活动、BlueXP会将用户注销。无论活动如何、用户都将在七天后注销。

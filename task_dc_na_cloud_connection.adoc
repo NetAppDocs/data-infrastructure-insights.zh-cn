@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: task_dc_na_cloud_connection.html 
+summary: 为 ONTAP 9.9+ 数据收集器配置 NetApp 云连接 
+keywords: data collector, NetApp, Cloud agent, ONTAP 
+---
+= 适用于 ONTAP 9.9+ 的 NetApp 云连接数据收集器
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+此数据收集器可创建云连接，以支持从 ONTAP 9.9+ CVO ， AFF 和 FAS 系统收集数据。
+
+
+NOTE: 自2023年4月4日起、此数据收集器不再可安装在Data Infrastructure Insight中、并且将从2023年7月的所有Data Infrastructure Insight安装中删除。有关过渡到基于AU的数据收集的信息，请参见link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/How_to_transition_from_NetApp_Cloud_Connection_to_AU_based_data_collector["知识库"^]。

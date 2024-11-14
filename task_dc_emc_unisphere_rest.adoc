@@ -1,0 +1,102 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_unisphere_rest.html 
+keywords: data collector, Unisphere, EMC 
+summary: 配置Dell EMC Unisphere REST数据收集器。 
+---
+= 配置Dell EMC Unisphere REST数据收集器
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+此数据收集器从适用于PowerMax / Vmax 3管理系统的Dell EMC Unisphere采集清单和性能数据。
+
+请注意、在Unisphere 10.0之前、Dell/EMC不会引入每个卷的统计信息—此数据收集器支持9.2.0+、但无法收集卷统计信息、因为它们不存在。
+
+一个Unisphere for Vmax/PowerMax实例可能正在管理一个或多个Symmetrix Vmax 3或更高版本的存储阵列-此收集器将默认尝试发现该Unisphere实例的"本地"所有存储阵列。如果Unisphere实例看到"远程"阵列(即通过SRDF复制连接的阵列)、则会忽略这些阵列、要发现这些阵列、您应在Data Infrastructure Insight中创建一个额外的Unisphere收集器、该收集器指向该站点中将其视为本地的任何一个实例。
+
+在配置方面、数据收集器需要Unisphere服务器的IP地址/FQDN、与端口8443的TCP连接以及用户名和密码。
+
+
+
+== 要求
+
+* Unisphere服务器的IP地址/完全限定域名
+* 用户名和密码
+* 端口8443。
+
+
+
+
+== 配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| Unisphere服务器的IP地址 | Unisphere服务器的IP地址或完全限定域名 
+
+
+| Unisphere端口 | 默认值为8443 
+
+
+| 用户名 | Unisphere服务器的用户名 
+
+
+| 密码 | 用于Unisphere服务器的密码 
+|===
+
+
+== 高级配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| 清单轮询间隔（分钟） | 默认值为40分钟。 
+
+
+| 性能轮询间隔（秒） | 性能轮询之间的时间间隔。 
+
+
+| 选择 " 排除 " 或 " 包括 " 以指定列表 | 指定是包含还是排除 VM 
+
+
+| 清单筛选器设备列表 | 要筛选的VM列表(如果值中使用了逗号、则以逗号分隔或以分号分隔) 
+
+
+| Unisphere性能轮询间隔(秒) | 默认值为300秒 
+|===
+
+
+== 故障排除
+
+如果此数据收集器出现问题，请尝试执行以下操作：
+
+
+
+=== 清单
+
+[cols="2*"]
+|===
+| 问题： | 请尝试以下操作： 
+
+
+| 错误：用户身份验证失败。 | 确保此设备的凭据正确无误。 
+
+
+| Inventory Recent status：unreached data unreached -Array reported 0 volume | 通常表示授权(而非身份验证)问题描述。请确保您的凭据正确无误、并且用户名有权列出所有卷并查看其属性。 
+|===
+有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

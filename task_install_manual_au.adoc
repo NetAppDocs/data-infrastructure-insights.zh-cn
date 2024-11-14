@@ -1,0 +1,227 @@
+---
+sidebar: sidebar 
+permalink: task_install_manual_au.html 
+keywords: Acquisition Unit, AU, install, configure, Linux, add, remove, uninstall, delete, deleting, move, moving, manual, AU, Patch 
+summary: 您可以为Data Infrastructure Insight配置手动更新AU软件、以便更好地控制环境中安装的软件。 
+---
+= 手动安装采集单元软件
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+默认情况下、Data Infrastructure Insight会在部署更新时自动更新采集单元(AU)软件。但是、在安全受控环境中、可能无法或不需要自动更新。在这种情况下、可以为Data Infrastructure Insight配置手动更新AU软件、以便更好地控制环境中安装的软件。
+
+要手动下载和安装AU软件、请执行以下步骤。Data Infrastructure Insight提供了一个有用的Swagger文档页面、您可以使用该页面执行其中许多步骤、也可以使用自己的API脚本/命令。转至Admin > API Access、然后单击"API Documentation"(API文档)链接。
+
+Linux和Windows的过程类似。
+
+
+
+== 在Linux上执行新的AU安装：
+
+. 在Data Infrastructure Insight中、创建API令牌。
++
+.. 导航到*Admin > API Access*并选择*+API Access Token。
++
+... 设置易于问题描述识别的*Name*和*Name*
+... 类型：选择*采集单元*和*数据收集*
+... 权限：*读/写*
+... 选择所需的*Expiry*和*Auto-Renew*值
+
+
+.. 单击 * 保存 * 。
+.. 复制生成的API访问令牌。必须先执行此步骤、然后才能关闭窗口。
+
+
+
+
+image:Manual_AU_Create_API_Token.png["创建API令牌"]
+
+. 在Swagger (Admin > API Access > API Documentation)中、使用令牌对Data Infrastructure Insight API进行授权
++
+.. 单击Swagger屏幕右上角的_Authorize__
+.. 将上面复制的令牌粘贴到Customer APIKey字段中
+.. 单击*Authorize*
+.. 关闭窗口
+
+
+
+
+image:Manual_AU_Authorization.png["授权API令牌"]
+
+. 使用以下API下载AU安装程序：//au/Installers/｛sp台｝/later_或//au/Installers/｛sp平台｝/｛version｝_ API：
++
+.. 平台：*Linux*
+.. 版本：*<version>*(最新或指定)
+
+
+
+
+image:Manual_AU_API_Retrieve_latest.png["用于检索最新AU版本的API"]
+
+
+NOTE: 如果您不下载最新版本、请与NetApp确认要指定下载的AU版本。
+
+. 单击*下载文件*。如果在AU系统以外的系统上执行这些步骤、请将下载的文件复制到AU系统。
+. 或者、也可以在AU系统上运行生成的curl命令：
++
+ curl -X GET "<tenant>/rest/v1/au/installers/linux/<AU version>" -H "accept: application/octet-stream" -H "X-CloudInsights-ApiKey: <token>"
+. 此时、安装程序文件应位于AU系统上。
+
+
+
+IMPORTANT: 接下来的步骤需要使用临时令牌。请勿使用上面创建的API访问令牌。
+
+. 在Data Infrastructure Insight API Swagger中、使用_/au/oneTime令牌_ API创建一次性令牌。
++
+.. 复制生成的一次性令牌。
+
+
+
+
+image:Manual_AU_one_time_token.png["创建一次性API令牌"] image:Manual_AU_one_time_token_response.png["对一次性API令牌示例的响应"]
+
+. 在要安装AU的计算机上、导航到包含已下载安装程序文件的文件夹。以下命令要求用户具有root权限。
++
+.. 解压缩安装程序文件
+.. 将目录更改为生成的安装程序文件夹
+.. 执行以下操作、将一次性令牌和安装程序版本导出到环境变量：
++
+ export TOKEN=<One-Time Token>
+.. 运行以下命令，使用自定义用户和组安装CI：
++
+ ./cloudinsights-install.sh <custom user> <custom group>
++
+注意：如果您不想使用自定义用户和组、则可以使用默认的"cisys"用户和组。在这种情况下、请运行上述安装命令、但不要指定用户和组。
+
+
+
+
+
+此时、AU软件将安装在系统上、并可由自定义用户和组访问。但是、您无法添加数据收集器。要手动执行此操作、请阅读以下说明。如果您只想安装修补程序、请参见<<downloading-a-patch,修补程序>>以下部分。
+
+
+
+== 手动安装数据收集器
+
+使用/Collector /修补程序/datesourceswar/latest API下载最新的datesources.war：
+
+image:API_Manual_Download_datasources.png["用于检索最新datesources.war的API"]
+
+注意：如果您不下载最新版本、请与NetApp确认要指定下载的版本。
+
+单击下载文件。如果在AU系统以外的系统上执行这些步骤，请将下载的databources.war zip包复制到AU系统。
+
+确保datacources.war zip包已复制到以下目录：/var/lib/NetApp/云云 景点/acq/download
+
+导航到NetApp datacources.war的/var/lib/dava/cldinsights /acq/download目录、并在此验证zip文件：
+
+. 要执行后续步骤、您必须切换到自定义用户(或注销root用户并使用登录用户)。
++
+ su <custom user>
++
+注意：如果您使用的是默认的"cisys"用户和组、则无需执行此步骤。
+
++
+注意：自定义用户可以是您在AU安装期间向cloudinsights-install.sh提供的自定义组的任何成员用户、也可以与您在AU安装期间提供的自定义用户相同或不同。
+
+. 执行以下操作：
++
+....
+chmod 770 /var/lib/netapp/cloudinsights/acq/download/datasources-war-<version>.zip
+ls -al /var/lib/netapp/cloudinsights/acq/download
+…
+drwxrwx--- 2 test-user2 test-group-1  4096 Feb 16 10:10 datasources-war-<version>.zip
+…
+....
++
+注意：如果使用"cisys"用户和组、则这些用户和组将显示在上面的输出中。
+
++
+注意：如果您计划使用不同的自定义用户进行安装、请确保将所有者和组的组权限设置为读写(chmod 660…)
+
+. 重新启动AU。在Data Infrastructure Insight中、导航到Observability > Collectors、然后选择Acquisition Units选项卡。从AU右侧的“三个点”菜单中选择“重新启动”。
+
+
+
+
+== 正在下载修补程序
+
+使用/Collector /修补程序/file/｛version｝API下载修补程序：
+
+image:API_Manual_Download_patch.png["用于检索修补程序的API"]
+
+注意：请与NetApp确认要指定下载的版本。
+
+单击下载文件。如果在AU系统以外的系统上执行这些步骤、请将下载的修补程序zip包复制到AU系统。
+
+请确保将修补程序zip包复制到以下目录：/var/lib/NetApp/ldinsights /acq/download
+
+导航到修补程序的/var/lib/NetApp/ldinsights /acq/download目录、并在此验证.zip文件：
+
+. 要执行后续步骤、您必须切换到自定义用户(或注销root用户并使用登录用户)。
++
+ su <custom user>
++
+注意：如果您使用的是默认的"cisys"用户和组、则无需执行此步骤。
+
++
+注意：自定义用户可以是您在AU安装期间向cloudinsights-install.sh提供的自定义组的任何成员用户、也可以与您在AU安装期间提供的自定义用户相同或不同。
+
+. 执行以下操作：
++
+....
+chmod 770 /var/lib/netapp/cloudinsights/acq/download/<patch_file_name>.zip
+ls -al /var/lib/netapp/cloudinsights/acq/download
+…
+drwxrwx--- 2 test-user2 test-group-1  4096 Feb 16 10:10 <patch_file_name>.zip
+…
+....
++
+注意：如果使用"cisys"用户和组、则这些用户和组将显示在上面的输出中。
+
++
+注意：如果您计划使用不同的自定义用户进行安装、请确保将所有者和组的组权限设置为读写(chmod 660…)
+
+. 重新启动AU。在Data Infrastructure Insight中、导航到Observability > Collectors、然后选择Acquisition Units选项卡。从AU右侧的“三个点”菜单中选择“重新启动”。
+
+
+
+
+== 外部密钥已在进行中
+
+如果您提供了UNIX shell脚本、则采集单元可以执行该脚本、以便从密钥管理系统中检索*专用密钥*和*公共密钥*。
+
+要检索密钥、Data Infrastructure Insight将执行该脚本、并传递以下两个参数：_key id_和_key type_。_Key id_可用于标识密钥管理系统中的密钥。_Key type_"公共"或"私有"。如果密钥类型为"public"、则脚本必须返回公共密钥。如果密钥类型为"prival"、则必须返回专用密钥。
+
+要将密钥发送回采集单元、脚本必须将密钥打印到标准输出。该脚本必须打印_only标准输出的关键字；不能在标准输出中打印任何其他文本。将请求的密钥打印到标准输出后、脚本必须退出并显示退出代码0；任何其他返回代码均视为错误。
+
+必须使用SecurityAdmin工具向采集单元注册该脚本、该工具将与采集单元一起执行该脚本。该脚本必须对root用户和"cisys"用户具有_read_和_execute_权限。如果在注册后修改了shell脚本、则必须将修改后的shell脚本重新注册到采集单元中。
+
+|===
+
+
+| 输入参数：密钥ID | 用于在客户密钥管理系统中标识密钥的密钥标识符。 
+
+
+| 输入参数：密钥类型 | 公共或私有。 
+
+
+| 输出 | 必须将请求的密钥打印到标准输出中。目前支持2048位RSA密钥。密钥必须采用以下格式进行编码和打印-私钥格式- PEM、DER编码的PKCS8 PrivateKeyInfo RFC 5958公钥格式- PEM、DER编码的X.509 Subject PublicKeyInfo RFC 5280 
+
+
+| 退出代码 | 退出代码为零表示成功。所有其他退出值均视为失败。 
+
+
+| 脚本权限 | 脚本必须对root用户和"cisys"用户具有读取和执行权限。 
+
+
+| 日志 | 记录脚本执行。日志位于：/var/log/acidsights NetApp /sociityadmin/securityadmin.log /var/log/acidsights NetApp /acQ/acq.log 
+|===

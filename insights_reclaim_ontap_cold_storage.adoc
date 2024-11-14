@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: insights_reclaim_ontap_cold_storage.html 
+keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload 
+summary: 通过洞察，您可以了解资源如何影响环境中的其他资源。 
+---
+= 洞察：回收ONTAP 冷存储
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+回收ONTAP 冷存储Insight可提供有关ONTAP 系统上卷的冷容量、潜在成本/电耗节省和建议操作项的数据。
+
+要查看这些洞察、请导航到*信息板>洞察力*、然后查看_RecaLate ONTAP Cold Storage_ Insight。请注意、只有在Data Infrastructure Insight检测到冷存储时、此Insight才会列出受影响的存储、否则您将看到"全部清除"消息。
+
+请注意、系统不会显示30天以内的冷数据。
+
+image:Cold_Data_Insight_List.png["Insight列表显示了3个包含冷数据的存储"]
+
+Insight问题描述 可快速指示检测到的"冷"数据量以及数据所在的存储。该表还提供了包含冷数据的工作负载计数。
+
+从列表中选择Insight将打开一个页面、其中显示了更多详细信息、包括将数据移动到云或关闭未经过磁盘的周期的建议、以及实施这些建议可能节省的估计成本和电耗。该页面甚至提供了一个方便的链接link:https://bluexp.netapp.com/cloud-tiering-service-tco["NetApp的TCO计算器"]、您可以尝试使用这些数字。
+
+image:Cold_Data_Power_Info.png["冷数据电源信息"]
+
+
+
+=== 建议
+
+在Insight页面上、展开*建议*以浏览以下选项：
+
+* 将未使用的工作负载(zombian)移至成本较低的存储层(HDD)
++
+利用zombie标志、冷存储和天数、查找最冷和最大的数据量、并将工作负载移至成本较低的存储层(例如使用硬盘存储的存储池)。如果工作负载在30天或更长时间内未收到任何重大IO请求、则会被视为"灵俑"。
+
+* 删除未使用的工作负载
++
+确认哪些工作负载未在使用中、并考虑将其归档或从存储系统中删除。
+
+* 请考虑NetApp的Fabric Pool解决方案
++
+NetApplink:https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html#features["Fabric Pool解决方案"]可自动将冷数据分层到低成本云存储、从而提高性能层的效率并提供远程数据保护。
+
+
+
+
+
+=== 可视化和探索
+
+图形和表提供了其他趋势信息、并可用于深入了解各个工作负载。
+
+image:Cold_Data_Storage_Trend.png["冷数据摘要图"] image:Cold_Data_Workload_Table.png["冷数据工作负载表"]

@@ -1,0 +1,157 @@
+---
+sidebar: sidebar 
+permalink: task_dc_na_amazon_fsx.html 
+keywords: 'data collector, stout, fsx, fsx-netapp, Amazon, AWS, cluster, volume, share, LUN"' 
+summary: 适用于 NetApp ONTAP 数据收集器的 Amazon FSX 
+---
+= 适用于 NetApp ONTAP 数据收集器的 Amazon FSX
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+此数据收集器从适用于 NetApp ONTAP 的 Amazon FSX 采集清单和性能数据。此数据收集器将在整个Data Infrastructure Insight服务区域逐步提供。如果您在Data Infrastructure Insight环境中看不到此收集器的图标、请联系您的销售人员。
+
+
+NOTE: 此数据基础架构洞察力收集器需要一个具有_Filesemics-Scoped_角色的ONTAP用户。link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/roles-and-users.html["角色和规则"]有关可用选项、请查看AWS文档。目前、AWS仅支持文件系统范围的一种用户角色、即_fsxadmin_。这是Data Infrastructure Insight收集器要使用的适当角色。此外、还应为用户分配以下三个应用程序：HTTP、ontapi、ssh。
+
+
+
+== 术语
+
+数据基础架构洞察从FSX-Data NetApp数据收集器采集清单和性能数据。对于所采集的每种资产类型，都会显示该资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+
+[cols="2*"]
+|===
+| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+
+
+| 集群 | 存储 
+
+
+| LUN | 卷 
+
+
+| 卷 | 内部卷 
+|===
+
+
+== FSX-NetApp 术语
+
+以下术语适用于您在 FSx-NetApp 存储资产登录页面上可能找到的对象或引用。其中许多术语也适用于其他数据收集器。
+
+
+
+=== 存储
+
+* 型号—此集群中唯一的离散型号名称的逗号分隔列表。
+* 供应商— AWS
+* Serial Number —阵列序列号。
+* IP —通常是数据源中配置的 IP 或主机名。
+* 原始容量—分配给FSX文件系统的所有SSD存储的基数为2的总和。
+* 延迟—表示主机在读取和写入工作负载方面所遇到的情况。理想情况下、Data Infrastructure Insight会直接获取这种价值、但事实往往并非如此。Data Infrastructure Insight通常会根据各个内部卷的统计信息执行IOPS加权计算、而不是使用阵列来提供此功能。
+* 吞吐量—从内部卷聚合。管理—可能包含设备管理界面的超链接。由Data Infrastructure Insight数据源以编程方式在清单报告中创建。
+
+
+
+
+=== 存储池
+
+* 存储—此池所在的存储阵列。必填。
+* type —从枚举的可能性列表中获取的描述性值。最常见的是 " 聚合 " 或 "RAID 组 " 。
+* 容量—此处的值为逻辑已用容量，可用容量和逻辑总容量以及这些容量中使用的百分比。
+* IOPS—此存储池上分配的所有卷的IOPS之和。
+* 吞吐量—在此存储池上分配的所有卷的总吞吐量。
+
+
+
+
+== 要求
+
+配置和使用此数据收集器的要求如下：
+
+* 您必须有权访问具有"fsxadmin"角色的帐户、并为其分配三个应用程序—ssh、ontapi、http
+* 帐户详细信息包括用户名和密码。
+* 端口要求：443
+
+
+
+
+== 配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| NetApp 管理 IP | NetApp 集群的 IP 地址或完全限定域名 
+
+
+| 用户名 | NetApp 集群的用户名 
+
+
+| 密码 | NetApp 集群的密码 
+|===
+
+
+== 高级指标
+
+此数据收集器从适用于NetApp ONTAP 存储的FSX收集以下高级指标：
+
+* fpolicy
+* nfsv3
+* NFSv3：节点
+* nfsv4
+* nfsv4_1
+* NFSv4_1：节点
+* NFSv4：节点
+* policy_group
+* qtree
+* volume
+* workload_volume
+
+
+请注意、FSx命令行界面和API命令会检索Data Infrastructure Insight ZAPI不收集的某些容量值、因此Data Infrastructure Insight中的某些容量值(例如存储池的容量值)可能与FSx本身不同。
+
+
+
+== 故障排除
+
+如果此数据收集器出现问题，请尝试执行以下操作：
+
+
+
+=== 清单
+
+[cols="2*"]
+|===
+| 问题： | 请尝试以下操作： 
+
+
+| 接收 401 HTTP 响应或 13003 ZAPI 错误代码， ZAPI 返回 " 权限不足 " 或 " 未授权使用此命令 " | 检查用户名和密码以及用户权限。 
+
+
+| ZAPI 返回 "cluster role is not cluster_mgmt LIF" | AU 需要与集群管理 IP 进行通信。检查 IP 并根据需要更改为其他 IP 
+
+
+| 重试后， ZAPI 命令失败 | AU 与集群通信出现问题。检查网络，端口号和 IP 地址。用户还应尝试从 AU 计算机的命令行运行命令。 
+
+
+| AU 无法通过 HTTP 连接到 ZAPI | 检查 ZAPI 端口是否接受纯文本。如果 AU 尝试向 SSL 套接字发送纯文本，则通信将失败。 
+
+
+| 通信失败，并出现 SSLException | AU 正在尝试向存储器上的纯文本端口发送 SSL 。检查 ZAPI 端口是接受 SSL 还是使用其他端口。 
+
+
+| 其他连接错误： ZAPI 响应的错误代码为 13001 ， " 数据库未打开 " ZAPI 错误代码为 60 ，响应包含 "API 未按时完成 " ZAPI 响应包含 "initialize_session （） ReturnD NULL environment " ZAPI 错误代码为 14007 ，响应包含 "Node is not healthy" | 检查网络，端口号和 IP 地址。用户还应尝试从 AU 计算机的命令行运行命令。 
+|===
+有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

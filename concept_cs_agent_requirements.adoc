@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: concept_cs_agent_requirements.html 
+summary: 用作代理的服务器或 VM 必须满足最低要求 
+keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cloud Secure 
+---
+= 工作负载安全代理要求
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+您必须link:task_cs_add_agent.html["安装代理"]从数据收集器获取信息。在安装 Agent 之前，您应确保环境满足操作系统， CPU ，内存和磁盘空间要求。
+
+[cols="36,60"]
+|===
+| 组件 | Linux 要求 
+
+
+| 操作系统 | 运行以下许可证版本之一的计算机：* CentOS 8 Stream (64位)、CentOS 9 Stream、SELinux * SUSE Leap 15.3到15.5 (64位)* Oracle Linux 8.6 - 8.8、9.1到9.4 (64位)* Red Hat Enterprise Linux 8.6到8.8、9.1到9.4 (64位)、SELinux * Rockit 9.2 - Debian (64位)、SELinux Enterprise Server 9.1-9.4 (64位)和其他64位Linux * Linux * Linux * 9.4 (20.04)的计算机应运行此Linux * Linux、Linux * Linux 9、64位和Linux 9、64位Linux 9、10 LTS软件。建议使用专用服务器。 
+
+
+| 命令 | 安装需要"unzip "。此外、安装、运行脚本和卸载都需要使用"sudo su–"命令。 
+
+
+| CPU | 4 个 CPU 核 
+
+
+| 内存 | 16 GB RAM 
+
+
+| 可用磁盘空间 | 应按以下方式分配磁盘空间：/opt/Filessystem NetApp 36 GB (创建文件系统后至少35 GB的可用空间)注：建议再分配一点磁盘空间、以便创建文件系统。确保文件系统中至少有35 GB的可用空间。如果/opt是NAS存储中的已挂载文件夹、请确保本地用户有权访问此文件夹。如果本地用户无权访问此文件夹、则代理或数据收集器可能无法安装。有关详细信息、请参阅一节。link:task_cs_add_agent.html#troubleshooting-agent-errors["故障排除"] 
+
+
+| 网络 | 100 Mbps到1 Gbps以太网连接、静态IP地址、与所有设备的IP连接以及与工作负载安全实例(80或443)的所需端口。 
+|===
+请注意：Workload Security代理可以与Data Infrastructure Insight采集单元和/或代理安装在同一台计算机上。但是，最佳做法是在不同的计算机上安装这些软件。如果这些磁盘安装在同一台计算机上，请按如下所示分配磁盘空间：
+
+|===
+
+
+| 可用磁盘空间 | 对于 Linux ，应按以下方式分配磁盘空间： /opt/netapp 25-30 GB /var/log/netapp 25 GB 
+|===
+
+
+== 其他建议
+
+* 强烈建议使用 * 网络时间协议（ NTP ） * 或 * 简单网络时间协议（ SNTP ） * 来同步 ONTAP 系统和代理计算机上的时间。
+
+
+
+
+== 云网络访问规则
+
+对于*基于美国*的工作负载安全环境：
+
+[cols="5*"]
+|===
+| 协议 | 端口 | 源 | 目标 | 说明 
+
+
+| TCP | 443 | 工作负载安全代理 | <site_name>.cs01.cloudinsights.netapp.com <site_name>.c01.cloudinsights.netapp.com <site_name>.c02.cloudinsights.netapp.com | 访问数据基础架构洞察力 
+
+
+| TCP | 443 | 工作负载安全代理 | gateway.c01.cloudinsights.netapp.com agentlogin.cs01.cloudinsights.netapp.com. | 访问身份验证服务 
+|===
+对于*基于欧洲*的工作负载安全环境：
+
+[cols="5*"]
+|===
+| 协议 | 端口 | 源 | 目标 | 说明 
+
+
+| TCP | 443 | 工作负载安全代理 | <site_name>.cs01-eu-1.cloudinsights.netapp.com <site_name>.c01-eu-1.cloudinsights.netapp.com <site_name>.c02-eu-1.cloudinsights.netapp.com | 访问数据基础架构洞察力 
+
+
+| TCP | 443 | 工作负载安全代理 | gateway.c01.cloudinsights.netapp.com agentlogin.cs01-eu-1.cloudinsights.netapp.com | 访问身份验证服务 
+|===
+对于基于*亚太地区*的工作负载安全环境：
+
+[cols="5*"]
+|===
+| 协议 | 端口 | 源 | 目标 | 说明 
+
+
+| TCP | 443 | 工作负载安全代理 | <site_name>.cs01-ap-1.cloudinsights.netapp.com <site_name>.c01-ap-1.cloudinsights.netapp.com <site_name>.c02-ap-1.cloudinsights.netapp.com | 访问数据基础架构洞察力 
+
+
+| TCP | 443 | 工作负载安全代理 | gateway.c01.cloudinsights.netapp.com agentlogin.cs01-ap-1.cloudinsights.netapp.com | 访问身份验证服务 
+|===
+
+
+== 网络内规则
+
+[cols="5*"]
+|===
+| 协议 | 端口 | 源 | 目标 | 说明 
+
+
+| TCP | 389 （ LDAP ） 636 （ LDAPS / START-TLS ） | 工作负载安全代理 | LDAP 服务器 URL | 连接到 LDAP 
+
+
+| TCP | 443 | 工作负载安全代理 | 集群或SVM管理IP地址(取决于SVM收集器配置) | 与 ONTAP 的 API 通信 
+
+
+| TCP | 35000 - 55000 | SVM 数据 LIF IP 地址 | 工作负载安全代理 | 从ONTAP到工作负载安全代理的Fpolicy事件通信。必须向工作负载安全代理打开这些端口、ONTAP才能向其发送事件、包括工作负载安全代理本身(如果存在)上的任何防火墙。请注意、您无需预留*所有*这些端口、但为此预留的端口必须在此范围内。建议首先预留~100个端口、必要时增加。 
+
+
+| TCP | 7 | 工作负载安全代理 | SVM 数据 LIF IP 地址 | 从代理到SVM数据Lifs的回显 
+
+
+| SSH | 22 | 工作负载安全代理 | 集群管理 | CIFS/SMB用户阻止所需。 
+|===
+
+
+== 系统规模估算
+
+有关规模估算的信息、请参见link:concept_cs_event_rate_checker.html["事件速率检查器"]相关文档。

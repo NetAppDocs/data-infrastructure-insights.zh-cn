@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: reporting_overview.html 
+summary: 利用Data Infrastructure Insight对数据进行预定义和自定义报告。 
+keywords: reporting, cognos, data warehouse, dwh 
+---
+= Data Infrastructure Insight报告概述
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Data Infrastructure Insight报告是一款业务智能工具、可用于查看预定义报告或创建自定义报告。
+
+
+NOTE: 数据基础架构洞察中提供了报告功能link:concept_subscribing_to_cloud_insights.html["高级版"]。
+
+借助Data Infrastructure Insight报告、您可以执行以下任务：
+
+* 运行预定义报告
+* 创建自定义报告
+* 自定义报告的格式和交付方法
+* 计划自动运行报告
+* 通过电子邮件发送报告
+* 使用颜色表示数据的阈值
+
+
+数据基础架构洞察报告可以为成本分摊、消耗分析和预测等领域生成自定义报告、并有助于回答以下问题：
+
+* 我拥有哪些清单？
+* 我的清单在哪里？
+* 谁在使用我们的资产？
+* 业务单位所分配存储的成本分摊是多少？
+* 需要获取更多存储容量之前需要多长时间？
+* 业务单位是否遵循正确的存储层？
+* 存储分配在一个月，一个季度或一年中有何变化？
+
+
+
+
+== 访问Data Infrastructure Insight报告
+
+您可以单击菜单中的*报告*链接访问Data Infrastructure Insight报告。
+
+此时将转到报告界面。Data Infrastructure Insight使用IBM Cognos Analytics作为其报告引擎。
+
+
+
+== 什么是ETL？
+
+使用报告时，您将听到术语 " 数据仓库 " 和 "ETL" 。ETL 表示 " 提取，转换和加载 " 。ETL流程会检索在Data Infrastructure Insight中收集的数据、并将数据转换为用于报告的格式。" 数据仓库 " 是指可用于报告的已收集数据。
+
+ETL 流程包括以下各个流程：
+
+* *提取*：从Data Infrastructure洞察中获取数据。
+* *转换*：将业务逻辑规则或函数应用于从Data Infrastructure Insight提取的数据。
+* * 加载 * ：将转换后的数据保存到数据仓库中，以用于报告。
+

@@ -1,0 +1,141 @@
+---
+sidebar: sidebar 
+permalink: concept_kubernetes_network_monitoring_and_map.html 
+keywords: service map, workloads, 
+summary: 显示Kubernetes工作负载的依赖关系和流、并突出显示网络和性能问题 
+---
+= Kubnetes网络性能监控和映射
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Kubernetes网络性能监控和映射功能通过映射服务(也称为工作负载)之间的依赖关系来简化故障排除、并提供对网络性能等待时间和异常的实时可见性、以便在性能问题影响用户之前发现这些问题。此功能可通过分析和审核Kubnetes流量来帮助企业降低整体成本。
+
+主要功能：•工作负载图显示了Kubernetes工作负载的依赖关系和流、并重点显示了网络和性能问题。•监控Kubnetes Pod、工作负载和节点之间的网络流量；确定流量来源和延迟问题。•通过分析传入、传出、跨区域和跨区域网络流量来降低整体成本。
+
+image:workload-map-animated.gif["工作负载映射示例"]
+
+
+
+== 前提条件
+
+在使用Kubbernetes网络性能监控和映射之前、必须事先配置link:task_config_telegraf_agent_k8s.html["NetApp Kubernetes监控操作员"]以启用此选项。在操作员部署期间、选中"Network Performance and Map"(网络性能和映射)复选框以启用。您也可以通过导航到Kubbernetes登录页面并选择"修改部署"来启用此选项。
+
+image:ServiceMap_NKMO_Deployment_Options.png["在新购运动状态期间选择映射选项"]
+
+
+
+== 监控器
+
+Workload Map可使用link:task_create_monitor.html["监控器"]来派生信息。Data Infrastructure Insight提供了许多默认的Kubbernetes监控器(请注意、默认情况下、这些监控器可能为_Pauses_。您可以_Resume_(即启用)所需的监控器)、也可以为Kubornetes对象创建自定义监控器、工作负载映射也将使用这些监控器。
+
+您可以为以下任何对象类型创建Data Infrastructure Insight指标警报。确保数据按默认对象类型分组。
+
+* Kubernetes.Workload
+* Kubernetes.daemonset
+* kubernetes.deployment
+* Kubernetes.cronJob
+* Kubernetes.job
+* Kubernetes.replicaset
+* Kubernetes.statefulset
+* Kubernetes.Pod
+* kubernetes.network_traffic_l4
+
+
+
+
+== 地图
+
+该映射显示了服务/工作负载及其相互关系。箭头显示交通方向。将鼠标悬停在某个工作负载上可显示该工作负载的摘要信息、如以下示例所示：
+
+image:ServiceMap_Simple_Example.png["工作负载映射工作负载示例"]
+
+圆圈内的图标表示不同的服务类型。请注意，只有在底层对象具有时，图标才可见<<workload-labels,labels>>。
+
+image:ServiceMap_Icons.png["服务图标说明"]
+
+每个圆圈的大小表示节点大小。请注意、这些大小是相对的、您的浏览器缩放级别或屏幕大小可能会影响实际的圆圈大小。同样、交通线路样式也可让您一目了然地查看连接大小；粗实线表示高流量、浅虚线表示低流量。
+
+圆圈内的数字表示服务当前正在处理的外部连接数。
+
+image:ServiceMap_Node_and_Connection_Legend.png["显示相对圆(节点)和连接大小的图例"]
+
+
+
+== 工作负载详细信息和警报
+
+以颜色显示的圆圈表示工作负载的警告或严重级别警报。将鼠标悬停在圆圈上可查看问题描述 摘要、或者单击圆圈可打开包含更多详细信息的滑出面板。
+
+image:Workload_Map_Slideout_with_Alert.png["工作负载详细信息和警报"]
+
+
+
+== 查找和筛选
+
+与其他Data Infrastructure Insight功能一样、您可以轻松设置筛选器、以关注所需的特定对象或工作负载属性。
+
+image:Workload_Map_Filtering.png["工作负载映射筛选"]
+
+同样、在_find_字段中键入字符串将突出显示匹配的工作负载。
+
+image:Workload_Map_Find_Highlighting.png["在\"查找\"框中键入将突出显示工作负载"]
+
+
+
+== 工作负载标签
+
+如果希望映射标识显示的工作负载类型(即圆圈图标)、则需要使用工作负载标签。标签派生如下：
+
+* 以通用术语运行的服务/应用程序的名称
+* 如果源为POD：
++
+** 标签源自POD的工作负载标签
+** 工作负载上的预期标签：app.Kubernetes.io/component
+** 标签名称引用： https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/[]
+** 建议标签：
++
+*** 前端
+*** 后端
+*** 数据库
+*** 缓存
+*** 队列
+*** Kafka
+
+
+
+
+* 如果源位于Kubnetes集群外部：
++
+** Data Infrastructure Insight将尝试解析DNS解析名称以提取服务类型。
++
+例如、如果DNS解析名称为_s3.eu-north-1.amazonaws.com、则解析后的名称将获取_S3_作为服务类型。
+
+
+
+
+
+
+
+== 深入剖析
+
+右键单击工作负载可提供更多选项供您进一步了解。例如、您可以从此处放大查看该工作负载的连接。
+
+image:Workload_Map_Zoom_Into_Connections.png["工作负载映射右键单击缩放以显示工作负载的连接"]
+
+或者、您也可以打开详细信息分出面板、直接查看_Summary _、_Network_或_Pod & Storage_选项卡。
+
+image:Workload_Map_Detail_Network_Slideout.png["详细信息\"卸载网络\"选项卡示例"]
+
+最后、选择_Go to Asset Page_将打开工作负载的详细资产登录页面。
+
+image:Workload_Map_Asset_Page.png["工作负载资产页面"]

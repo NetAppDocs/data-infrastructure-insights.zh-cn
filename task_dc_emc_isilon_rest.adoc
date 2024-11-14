@@ -1,0 +1,175 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_isilon_rest.html 
+keywords: data collector, isilon, EMC, DELL, PowerScale 
+summary: 配置Dell EMC Isilon / PowerScale REST数据收集器。 
+---
+= Dell EMC Isilon / PowerScale REST数据收集器
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Data Infrastructure Insight使用Dell EMC Isila/PowerScale REST数据收集器从Dell EMC Isilong或PowerScale存储获取清单和性能数据。此收集器支持运行OneFS 8.0.0及更高版本的阵列。
+
+
+
+== 术语
+
+Data Infrastructure Insight从该数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+
+[cols="2*"]
+|===
+| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+
+
+| 驱动器 | 磁盘 
+
+
+| 集群 | 存储 
+
+
+| 节点 | 存储节点 
+
+
+| OneFS文件系统 | 内部卷 
+
+
+| OneFS文件系统 | 存储池 
+
+
+| qtree | qtree 
+|===
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+
+
+
+== 要求
+
+要配置此数据收集器，您需要以下信息：
+
+* 用户帐户和密码。此帐户不需要为admin/root、但您必须为您的服务帐户授予大量只读权限-请参见下表
+* Dell EMC Isilon / PowerScale集群的IP地址/完全限定域名
+* 对端口8080的HTTPS访问
+* 运行OneFS 8.0.0或更高版本的Isila/PowerScale集群
+
+
+[cols="3*"]
+|===
+| 权限名称 | 说明 | R (读取)或RW (读写) 
+
+
+| ISI_PRIV_LOGIN_PAPI | 平台API | R 
+
+
+| ISI_PRIV_SYS_TIME | 时间 | R 
+
+
+| ISI_PRIV_AUTH | 身份验证 | R 
+
+
+| ISI_PRIV_role | 权限 | R 
+
+
+| ISI_PRIV_devices | 设备 | R 
+
+
+| ISI_PRIV_event | 事件 | R 
+
+
+| ISI_PRIV_HDFS | HDFS | R 
+
+
+| ISI_PRIV_NDMP | NDMP | R 
+
+
+| ISI_PRIV_NETWORK | 网络 | R 
+
+
+| ISI_PRIV_NFS | NFS | R 
+
+
+| ISI_PRIV_PAPI_CONFIG | 配置平台API | R 
+
+
+| ISI_PRIV_QUota | 配额 | R 
+
+
+| ISI_PRIV_SMARTPOLS | 智能池 | R 
+
+
+| ISI_PRIV_SMB | SMB | R 
+
+
+| ISI_PRIV_statistics | 统计信息 | R 
+
+
+| ISI_PRIV_SWIFT | Swift | R 
+
+
+| ISI_PRIV_job_engine | 作业引擎 | R 
+|===
+
+
+== 配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| Isilon IP地址 | Isilon存储的IP地址或完全限定域名 
+
+
+| 用户名 | Isilon的用户名 
+
+
+| 密码 | Isilon使用的密码 
+|===
+
+
+== 高级配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| HTTPS端口 | 默认值为8080。 
+
+
+| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认值为20。 
+
+
+| 性能轮询间隔（秒） | 性能轮询之间的时间间隔。默认值为300。 
+|===
+
+
+== 故障排除
+
+如果此数据收集器出现问题，请尝试执行以下操作：
+
+
+
+=== 清单
+
+[cols="2*"]
+|===
+| 问题： | 请尝试以下操作： 
+
+
+| 登录凭据无效，并显示错误消息 " 未启用基于角色的管理命令需要 root 用户访问 " | * 验证用户是否有权在设备上运行以下命令： > ISI 版本 osrelease > ISI 状态 -q > ISI 状态 -n > ISI 设备 -d %s > ISI 许可证 * 验证向导中使用的凭据是否与设备凭据匹配 
+
+
+| "Internal Error" ，并显示错误消息 "Command <your command> run failed with permission ： < 您的当前权限 > 。sudo command run permission 问题描述 | 验证用户是否具有在设备上运行以下命令的 sudo 权限 
+|===
+有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

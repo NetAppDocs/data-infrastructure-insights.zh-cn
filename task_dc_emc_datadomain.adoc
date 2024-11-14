@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_datadomain.html 
+keywords: data collector, Data Domain, EMC, DELL 
+summary: 配置 Dell EMC Data Domain 数据收集器。 
+---
+= Dell EMC Data Domain 数据收集器
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+此数据收集器从 Dell EMC Data Domain 重复数据删除存储系统收集清单和性能信息。要配置此数据收集器，必须遵循特定的配置说明和使用建议。
+
+
+
+== 术语
+
+Data Infrastructure Insight从Data Domain数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+
+[cols="2*"]
+|===
+| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+
+
+| 磁盘 | 磁盘 
+
+
+| 数组 | 存储 
+
+
+| FC端口 | 端口 
+
+
+| 文件系统 | 内部卷 
+
+
+| 配额 | 配额 
+
+
+| NFS 和 CIFS 共享 | 文件共享 
+|===
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+
+
+
+== 要求
+
+要配置此数据收集器，您需要以下信息：
+
+* Data Domain 设备的 IP 地址
+* Data Domain 存储的只读用户名和密码
+* SSH 端口 22
+
+
+
+
+== 配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| IP 地址 | Data Domain 存储阵列的 IP 地址或完全限定域名 
+
+
+| 用户名 | Data Domain 存储阵列的用户名 
+
+
+| 密码 | Data Domain 存储阵列的密码 
+|===
+
+
+== 高级配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认值为20。 
+
+
+| SSH端口 | SSH 服务端口 
+|===
+
+
+== 故障排除
+
+有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

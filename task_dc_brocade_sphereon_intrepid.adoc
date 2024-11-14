@@ -1,0 +1,95 @@
+---
+sidebar: sidebar 
+permalink: task_dc_brocade_sphereon_intrepid.html 
+keywords: data collector, Brocade, Sphereon Intrepid, 
+summary: 配置 Brocade Sphereon/Intrepid 交换机数据收集器 
+---
+= 配置 Brocade Sphereon/Intrepid 交换机数据收集器
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+数据基础架构洞察使用Brocade站点交换机/Inttrepid交换机(SNMP)数据收集器发现Brocade站点交换机或Inttrepid交换机的清单。
+
+
+
+== 要求
+
+要配置此数据收集器，必须满足以下要求：
+
+* 必须与网络结构中的所有交换机建立IP连接。如果选中发现网络结构中的所有交换机复选框、则Data Infrastructure Insight将标识网络结构中的所有交换机；但是、它需要通过与这些附加交换机的IP连接来发现它们。
+* 如果使用 SNMP V1 或 SNMP V2 ，则为只读社区字符串。
+* 通过 HTTP 访问交换机以获取分区信息。
+* 通过对交换机运行 snmpwalk 实用程序进行访问验证（请参见 _<install_path>\bin\_ ）。
+
+
+
+
+== 配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| Sphereon 交换机 | 交换机的 IP 地址或完全限定域名 
+
+
+| SNMP 版本 | SNMP 版本 
+
+
+| SNMP 社区字符串 | 用于访问交换机的 SNMP 只读社区字符串 
+
+
+| SNMP用户名 | 交换机的 SMI-S 用户名（仅限 SNMP v3 ） 
+
+
+| SNMP密码 | 交换机的 SMI-S 密码（仅限 SNMP v3 ） 
+|===
+
+
+== 高级配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认值为 15 分钟。 
+
+
+| SNMP 身份验证协议 | SNMP 身份验证协议（仅限 SNMP v3 ） 
+
+
+| SNMP 隐私密码 | SNMP 隐私密码（仅限 SNMP v3 ） 
+
+
+| SNMP 重试次数 | SNMP重试尝试次数 
+
+
+| 网络结构名称 | 数据收集器要报告的网络结构名称。留空以将网络结构名称报告为 WWN 。 
+
+
+| 启用陷阱 | 选择此选项可在从设备收到 SNMP 陷阱时启用采集。如果选择启用陷阱，则还必须激活 SNMP 。 
+
+
+| 陷阱之间的最短时间（秒） | 陷阱触发的两次采集尝试之间的最短时间。默认值为10秒。 
+
+
+| 性能轮询间隔（秒） | 性能轮询之间的时间间隔。默认值为300秒。 
+|===
+
+
+== 故障排除
+
+有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

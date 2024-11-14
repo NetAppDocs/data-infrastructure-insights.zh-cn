@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_ecs.html 
+keywords: data collector, ecs, EMC 
+summary: 配置 ECS 数据收集器。 
+---
+= 配置 EMC ECS 数据收集器
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+此数据收集器从 EMC ECS 存储系统采集清单和性能数据。在配置方面、数据收集器需要ECS集群的IP地址或主机名以及用户名和密码。
+
+
+NOTE: Dell EMC ECS按不同的原始TB到受管单元速率进行计量。每40 TB未格式化的ECS容量被计作1link:concept_subscribing_to_cloud_insights.html#pricing["受管单元（ MU ）"]。
+
+
+
+== 术语
+
+Data Infrastructure Insight从ECS数据收集器采集以下清单信息。对于所采集的每种资产类型，均显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+
+[cols="2*"]
+|===
+| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+
+
+| 集群 | 存储 
+
+
+| 租户 | 存储池 
+
+
+| 存储分段 | 内部卷 
+
+
+| 磁盘 | 磁盘 
+|===
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+
+
+
+== 要求
+
+* ECS集群的IP地址或主机名
+* ECS系统的用户名和密码
+* 端口4443 (HTTPS)。需要与ECS系统上的TCP端口4443建立出站连接。
+
+
+
+
+== 配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| ECS 主机 | ECS 系统的 IP 地址或完全限定域名 
+
+
+| ECS 主机端口 | 用于与 ECS 主机通信的端口 
+
+
+| ECS用户ID | ECS的用户ID 
+
+
+| 密码 | 用于 ECS 的密码 
+|===
+
+
+== 高级配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| 清单轮询间隔（分钟） | 默认值为360分钟。 
+|===
+
+
+== 故障排除
+
+如果此数据收集器出现问题，请尝试执行以下操作：
+
+
+
+==== 清单
+
+[cols="2*"]
+|===
+| 问题： | 请尝试以下操作： 
+
+
+| 错误：用户身份验证失败。 | 确保此设备的凭据正确无误。 
+|===
+
+
+==== 性能
+
+[cols="2*"]
+|===
+| 问题： | 请尝试以下操作： 
+
+
+| 错误：未收集足够的数据。 | •检查日志文件中的收集时间戳并相应地修改轮询间隔•等待较长时间 
+
+
+| 错误：性能轮询间隔过长。 | 检查日志文件 $ ｛ logfile ｝ 中的收集时间戳，并相应地修改轮询间隔 
+|===
+有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

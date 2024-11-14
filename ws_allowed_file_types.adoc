@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: ws_allowed_file_types.html 
+keywords: workload security, cloud secure, include list, allowed, file types, ransomware 
+summary: 将文件扩展名添加到允许的文件类型列表以减少警报。 
+---
+= 允许的文件类型策略
+:allow-uri-read: 
+
+
+[role="lead"]
+如果检测到已知文件扩展名的勒索软件攻击、并且在"警报"屏幕上生成警报、则可以将该文件扩展名添加到_允许的文件类型_列表中、以防止发出不必要的警报。
+
+导航到*工作负载安全性>策略*并转到_允许的文件类型策略_选项卡。
+
+image:WS_Allowed_File_Type_Policies.png["允许的文件类型策略"]
+
+添加到_ALLOWD FILE Types_列表后、不会为该允许的文件类型生成任何勒索软件攻击警报。请注意、_Allowed File Types_策略仅适用于勒索软件检测。
+
+例如、如果名为_test.txt的文件重命名为_test.txt．abc_、并且工作负载安全性由于扩展名_.abc_而检测到勒索软件攻击、则可以将_.abc_扩展名添加到_ALLOWED FILE Types_列表中。添加到列表后、将不再对扩展名为_.abc_的文件生成勒索软件攻击。
+
+允许的文件类型可以是完全匹配(例如".abc")或表达式(例如".*type"、".type*"或"*type*")。不支持类型为".A*c"、".p*f"的表达式。

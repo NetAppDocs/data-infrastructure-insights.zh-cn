@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: reporting_user_roles.html 
+summary: 您可以使用Data Infrastructure Insight报告执行哪些操作取决于您的用户角色。 
+keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles 
+---
+= Data Infrastructure Insight报告用户角色
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果您的Data Infrastructure Insight Premium Edition包含报告功能、则您环境中的每个Data Infrastructure Insight用户还可以通过单点登录(Single Sign-On、SSO)登录到报告应用程序(即Cognos)。只需单击菜单中的 * 报告 * 链接，您就会自动登录到报告。
+
+您在Data Infrastructure Insight中的用户角色决定了您的报告用户角色：
+
+|===
+
+
+| 数据基础架构洞察力角色 | 报告角色 | 报告权限 
+
+
+| 来宾 | 使用者 | 可以查看，计划和运行报告并设置个人首选项，例如语言和时区的首选项。使用者不能创建报告或执行管理任务。 
+
+
+| 用户 | 作者 | 可以执行所有使用者功能以及创建和管理报告和信息板。 
+
+
+| 管理员 | 管理员 | 可以执行所有作者功能以及所有管理任务，例如配置报告以及关闭和重新启动报告任务。 
+|===
+下表显示了每个报告角色可用的功能。
+
+|===
+
+
+| 功能 | 使用者 | 作者 | 管理员 
+
+
+| 在 " 团队内容 " 选项卡中查看报告 | 是 | 是 | 是 
+
+
+| 运行报告 | 是 | 是 | 是 
+
+
+| 计划报告 | 是 | 是 | 是 
+
+
+| 上传外部文件 | 否 | 是 | 是 
+
+
+| 创建作业 | 否 | 是 | 是 
+
+
+| 创建案例 | 否 | 是 | 是 
+
+
+| 创建报告 | 否 | 是 | 是 
+
+
+| 创建软件包和数据模块 | 否 | 是 | 是 
+
+
+| 执行管理任务 | 否 | 否 | 是 
+
+
+| 添加/编辑HTML项目 | 否 | 否 | 是 
+
+
+| 使用HTML项目运行报告 | 是 | 是 | 是 
+
+
+| 添加/编辑自定义SQL | 否 | 否 | 是 
+
+
+| 使用自定义SQL运行报告 | 是 | 是 | 是 
+|===
+
+
+== 设置报告（ Cognos ）电子邮件首选项
+
+
+NOTE: 如果您在Data Infrastructure Insight报告(即Cognos应用程序)中更改了用户电子邮件首选项、则这些首选项对于当前会话为active_only。注销 Cognos 并重新登录将重置您的电子邮件首选项。
+
+
+
+=== 我应采取哪些步骤来准备现有环境以启用 SSO ？
+
+要确保您的报告得以保留，请使用以下步骤将所有报告从 _My Content_ 迁移到 _Team Content_ 。在您的环境中启用 SSO 之前，您必须先执行此操作：
+
+. 导航到*菜单>内容*
+
+
+image:Reporting_Menu.png["Cognos左上角菜单"]
+
+. 在*_Team Content_*中创建新文件夹
++
+.. 如果已创建多个用户，请为每个用户创建一个单独的文件夹，以避免覆盖名称重复的报告
+
+
+. 导航到 _My Content_
+. 选择要保留的所有报告。
+. 在菜单右上角，选择 " 复制或移动 "
+. 导航到 _Team Content_ 中新创建的文件夹
+. 使用 " 复制到 " 或 " 移动到 " 按钮将报告粘贴到新创建的文件夹中
+. 为Cognos启用SSO后、使用用于创建帐户的电子邮件地址登录到Data Infrastructure Insight。
+. 导航到 Cognos 中的 _Team Content_ 文件夹，然后将先前保存的报告复制或移动回 _My Content_ 。
+

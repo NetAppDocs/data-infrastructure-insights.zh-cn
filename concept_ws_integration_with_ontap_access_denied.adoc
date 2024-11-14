@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: concept_ws_integration_with_ontap_access_denied.html 
+summary: '工作负载安全性可与ONTAP集成、以接收"拒绝访问"事件、并提供额外的分析和自动响应层。' 
+keywords: ransomware, ARP, Protection, Security, access 
+---
+= 与ONTAP集成访问被拒绝
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+ONTAP访问被拒绝功能会在NAS环境(NFS和SMB)中使用工作负载分析来主动检测文件操作失败(即尝试执行其无权限操作的用户)并发出警告。这些失败的文件操作通知(尤其是在出现与安全相关的故障时)将进一步有助于在早期阶段阻止内部攻击。
+
+数据基础架构洞察工作负载安全性可与ONTAP集成、以接收"拒绝访问"事件、并提供额外的分析和自动响应层。
+
+前提条件
+
+* 最低ONTAP版本：9.13.0。
+* 工作负载安全管理员必须在添加新收集器或编辑现有收集器时启用"访问被拒绝"功能、方法是选中"高级配置"下的_Monitor Access Denied Events_复选框。
+
+
+image:WS_Access_Denied_Enable_in_Collector.png["在ONTAP收集器高级配置中启用拒绝访问"]
+
+
+
+== 需要用户权限
+
+如果使用集群管理凭据添加Data Collector、则无需新权限。
+
+如果使用自定义用户(例如、-CsUser_)添加收集器并授予该用户权限、请按照以下步骤为工作负载安全性授予向ONTAP注册"拒绝访问"事件所需的权限。
+
+对于具有_cluster-_凭据的CsUser、从ONTAP命令行执行以下命令。请注意、_csrestrolle_是自定义角色、而-CsUser_是ONTAP自定义用户。
+
+[listing]
+----
+ security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <cluster_name>
+ security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole
+----
+对于凭据为_svm_的CsUser、从ONTAP命令行执行以下命令：
+
+[listing]
+----
+ security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <svm_name>
+ security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole -vserver <svm_name>
+----
+阅读有关配置其他的更多信息link:task_add_collector_svm.html["ONTAP权限"]。
+
+
+
+== 拒绝访问事件
+
+从ONTAP系统获取事件后、Workload Security Foreness页面将显示Access Denied Events。除了显示的信息之外、您还可以通过将_Desired Activity_列从齿轮图标添加到表中来查看特定操作缺少的用户权限。
+
+image:WS_Access_Denied_Example_Event_1.png["拒绝访问事件示例"]

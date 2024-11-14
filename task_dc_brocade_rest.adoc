@@ -1,0 +1,144 @@
+---
+sidebar: sidebar 
+permalink: task_dc_brocade_rest.html 
+keywords: data collector, Brocade, FC switch, FOS, Rest 
+summary: 正在配置Brocade FOS REST数据收集器。 
+---
+= Brocade FOS REST数据收集器
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+数据基础架构洞察使用Brocade FOS REST收集器发现运行FabricOS (FOS)固件8.2及更高版本的Brocade交换机设备的清单和性能。
+
+请注意：FOS的默认"用户"级别不足以让Data Infrastructure Insight查看设备的所有逻辑方面-我们需要一个启用了"机箱角色"的用户帐户、以及对交换机上配置的所有虚拟网络结构的权限。
+
+以下示例说明了如何在与FOS设备的SSH会话中为Data Infrastructure Insight的使用情况创建"最低权限"用户帐户：
+
+userconfig --add netappcIUser -r user -l 1-128 -c user -p localety!
+
+这将创建密码为"!"的用户"NetApp CIUser"。此用户在所有128个可能的虚拟网络结构(-l)中具有"用户"角色(-r)。此外、此用户还具有所需的"机箱"角色(-c)、并分配了用户级别访问权限。
+
+默认情况下、此收集器将尝试发现交换机所属所有网络结构中的所有FOS设备。
+
+
+
+== 术语
+
+数据基础架构洞察从Brocade FOS REST数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+
+[cols="2*"]
+|===
+| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+
+
+| 交换机 | 交换机 
+
+
+| 端口 | 端口 
+
+
+| 虚拟网络结构，物理网络结构 | 网络结构 
+
+
+| 分区 | 分区 
+
+
+| 逻辑交换机 | 逻辑交换机 
+
+
+| LSAN 区域 | IVR 区域 
+|===
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+
+
+
+== 要求
+
+* 必须与网络结构中的所有交换机建立TCP连接。此数据收集器类型将为网络结构中的每个设备无缝尝试HTTP和HTTPS。如果选中_Discover all switches in the Fabric _复选框、Data Infrastructure Insight将标识网络结构中的所有交换机；但是、它需要通过与这些附加交换机的TCP连接来发现它们。
+* 网络结构中的所有交换机需要全局使用同一个帐户。您可以使用设备的Web界面确认访问。
+
+
+
+
+== 配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| 交换机IP | FOS交换机的IP地址或完全限定域名 
+
+
+| 用户名 | 交换机的用户名 
+
+
+| 密码 | 交换机的密码 
+|===
+
+
+== 高级配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| 排除的设备 | 要从轮询中排除的设备IPv4地址的逗号分隔列表。 
+
+
+| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认值为60。 
+
+
+| 发现网络结构中的所有交换机 | 选择此选项可发现网络结构中的所有交换机。 
+
+
+| 选择优先使用HBA还是分区别名 | 选择是支持HBA还是分区别名。 
+
+
+| 连接类型 | HTTP或HTTPS。 
+
+
+| 请注意，此设置仅更改CI首先尝试按设备使用的协议-如果默认失败，CI将自动尝试相反协议 | 覆盖 TCP 端口 
+
+
+| 如果未使用默认端口、请指定一个端口。 | 性能轮询间隔（秒） 
+|===
+
+
+== 故障排除
+
+如果此数据收集器出现问题，请尝试执行以下操作：
+
+
+
+=== 清单
+
+[cols="2*"]
+|===
+| 问题： | 请尝试以下操作： 
+
+
+| 测试功能警告我协议不可访问 | 给定的Brocade FOS 8.1+设备只想通过HTTP或HTTPS进行通信-如果交换机安装了数字证书、则在尝试使用未加密HTTP与HTTPS进行通信时、交换机将引发HTTP错误。此测试功能会尝试与HTTP和HTTPS进行通信-如果此测试告诉您一个协议通过、您可以安全地保存此收集器、而不必担心另一个协议失败-此收集器会在收集期间尝试使用这两个协议、并且只有在这两个协议都不起作用时才会失败。 
+
+
+| 错误："Data Infrastructure Insight received Invalid Chassis Role" | 检查是否已为此数据源中配置的用户授予机箱角色权限。 
+
+
+| 错误： " 机箱 IP 地址不匹配 " | 更改数据源配置以使用机箱 IP 地址。 
+
+
+| 清单失败、并显示403已禁止 | 这可能只是凭据错误、也可能表明您尝试使用的角色功能不足-请记住、"用户"级别的用户没有所需的"机箱角色"权限、或者无法查看对非默认虚拟结构的访问权限。 
+|===
+有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

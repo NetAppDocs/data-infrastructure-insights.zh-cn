@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_unisphere.html 
+keywords: data collector, Unisphere, EMC 
+summary: 配置Dell EMC Unisphere REST数据收集器。 
+---
+= 配置Dell EMC Unisphere REST数据收集器
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+此页面为存根。有关最新的Unisphere文档，请参阅link:task_dc_emc_unisphere_rest.html["*本页*"]。

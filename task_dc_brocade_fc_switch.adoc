@@ -1,0 +1,173 @@
+---
+sidebar: sidebar 
+permalink: task_dc_brocade_fc_switch.html 
+keywords: data collector, Brocade, FC switch, 
+summary: 配置 Brocade FC 交换机数据收集器。 
+---
+= Brocade FC 交换机数据收集器
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+数据基础架构洞察使用Brocade FC交换机(SSH)数据源发现运行Factored Operating System (FOS)固件4.2及更高版本的Brocade或更名交换机设备的清单。支持 FC 交换机和访问网关模式下的设备。
+
+
+
+== 术语
+
+数据基础架构洞察从Brocade FC交换机数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+
+[cols="2*"]
+|===
+| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+
+
+| 交换机 | 交换机 
+
+
+| 端口 | 端口 
+
+
+| 虚拟网络结构，物理网络结构 | 网络结构 
+
+
+| 分区 | 分区 
+
+
+| 逻辑交换机 | 逻辑交换机 
+
+
+| 虚拟卷 | 卷 
+
+
+| LSAN 区域 | IVR 区域 
+|===
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+
+
+
+== 要求
+
+* 数据基础架构洞察力采集单元(AU)将启动与Brocade交换机上TCP端口22的连接、以收集清单数据。AU 还将启动与 UDP 端口 161 的连接，以收集性能数据。
+* 必须与网络结构中的所有交换机建立IP连接。如果选中发现网络结构中的所有交换机复选框、则Data Infrastructure Insight将标识网络结构中的所有交换机；但是、它需要通过与这些附加交换机的IP连接来发现它们。
+* 网络结构中的所有交换机需要全局使用同一个帐户。您可以使用 PuTTY （开源终端模拟器）确认访问。
+* 端口 161 和 162 必须对网络结构中的所有交换机开放，才能进行 SNMP 性能轮询。
+* SNMP 只读社区字符串
+
+
+
+
+== 配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| 交换机IP | EFC服务器的IP地址或完全限定域名 
+
+
+| 用户名 | 交换机的用户名 
+
+
+| 密码 | 交换机的密码 
+
+
+| SNMP | SNMP 版本 
+
+
+| SNMP 社区字符串 | 用于访问交换机的 SNMP 只读社区字符串 
+
+
+| SNMP用户名 | SNMP用户名 
+
+
+| SNMP密码 | SNMP密码 
+|===
+
+
+== 高级配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| 网络结构名称 | 数据收集器要报告的网络结构名称。留空以将网络结构名称报告为 WWN 。 
+
+
+| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认值为15。 
+
+
+| 排除的设备 | 要从轮询中排除的设备 ID 的逗号分隔列表 
+
+
+| 管理域处于活动状态 | 选择是否使用管理域 
+
+
+| 检索 MPR 数据 | 选择可从多协议路由器获取路由数据。 
+
+
+| 启用陷阱 | 选择此选项可在从设备收到 SNMP 陷阱时启用采集。如果选择启用陷阱，则还必须激活 SNMP 。 
+
+
+| 陷阱之间的最短时间（秒） | 陷阱触发的两次采集尝试之间的最短时间。默认值为10。 
+
+
+| 发现网络结构中的所有交换机 | 选择以发现网络结构中的所有交换机 
+
+
+| 选择优先使用HBA还是分区别名 | 选择是支持 HBA 别名还是分区别名 
+
+
+| 性能轮询间隔（秒） | 性能轮询之间的时间间隔。默认值为300。 
+
+
+| SNMP 身份验证协议 | SNMP 身份验证协议（仅限 SNMP v3 ） 
+
+
+| SNMP 隐私密码 | SNMP 隐私密码（仅限 SNMP v3 ） 
+
+
+| SNMP 重试 | SNMP重试尝试次数 
+|===
+
+
+== 故障排除
+
+如果此数据收集器出现问题，请尝试执行以下操作：
+
+
+
+=== 清单
+
+[cols="2*"]
+|===
+| 问题： | 请尝试以下操作： 
+
+
+| Brocade 数据源的清单采集失败，并显示错误： <date> <time> error com.onaro.sanscreen.acquisition.framework.datasource.BaseDataSource] Error 2 out of 2 ： <datasource name>[Internal error] - Unable to generate the model for device <IP> 。检测提示时出错（ [Device name <name> ：无法生成设备 <IP> 的型号。检测提示时出错） | 如果 Brocade 交换机返回提示所需的时间过长，超过默认的 5 秒超时时间，则可能会导致出现问题描述 。在Data Infrastructure Insight中的数据收集器高级配置设置中、尝试将_SSH横幅等待超时(秒)_增加到更高的值。 
+
+
+| 错误："Data Infrastructure Insight received Invalid Chassis Role" | 检查是否已为此数据源中配置的用户授予机箱角色权限。 
+
+
+| 错误： " 机箱 IP 地址不匹配 " | 更改数据源配置以使用机箱 IP 地址。 
+
+
+| 收到一条消息，指出有多个节点已登录到访问网关端口 | 检查 NPV 设备是否正常运行，以及所有已连接的 WWN 是否均为预期值。请勿直接获取 NPV 设备。而是采集核心网络结构交换机将收集 NPV 设备数据。 
+
+
+| 性能收集失败、并显示"SNMP请求发送期间超时"。 | 根据查询变量和交换机配置、某些查询可能会超过默认超时时间。link:https://kb.netapp.com/Cloud/BlueXP/Cloud_Insights/Cloud_Insight_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["了解更多信息"](英文) 
+|===
+有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

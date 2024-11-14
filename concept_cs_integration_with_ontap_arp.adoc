@@ -1,0 +1,95 @@
+---
+sidebar: sidebar 
+permalink: concept_cs_integration_with_ontap_arp.html 
+summary: 工作负载安全性与ONTAP 自主勒索软件保护相集成、可提高勒索软件检测能力。 
+keywords: ransomware, ARP, Protection, Security 
+---
+= 与ONTAP 自主勒索软件保护相集成
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+ONTAP 自主勒索软件保护(ARP)功能可利用NAS (NFS和SMB)环境中的工作负载分析功能主动检测并警告可能指示勒索软件攻击的异常文件活动。
+
+有关ARP的其他详细信息和许可证要求，请参见link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["此处"]。
+
+工作负载安全性可与ONTAP 集成以接收ARP事件、并提供额外的分析和自动响应层。
+
+工作负载安全性从ONTAP 接收ARP事件并执行以下操作：
+
+. 将卷加密事件与用户活动关联起来、以确定导致损坏的人员。
+. 实施自动响应策略(如果已定义)
+. 提供取证功能：
++
+** 允许客户执行数据泄露调查。
+** 确定哪些文件受到影响、有助于加快恢复速度并执行数据违规调查。
+
+
+
+
+
+
+== 前提条件
+
+. 最低ONTAP版本：9.11.1
+. 已启用ARP的卷。有关启用ARP的详细信息，请参见link:https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html["此处"]。必须通过OnCommand 系统管理器启用ARP。工作负载安全性无法启用ARP。
+. 应通过集群IP添加工作负载安全收集器。
+. 要使此功能正常运行、需要集群级别的凭据。换言之、添加SVM时必须使用集群级别的凭据。
+
+
+
+
+== 需要用户权限
+
+如果您使用的是集群管理凭据、则不需要任何新权限。
+
+如果您使用的自定义用户(例如_CSUser_)具有为该用户授予的权限、请按照以下步骤为工作负载安全性授予权限、以便从ONTAP 收集与ARP相关的信息。
+
+对于具有集群凭据的_CSUser_、请从ONTAP 命令行执行以下操作：
+
+....
+security login rest-role create -role arwrole -api /api/storage/volumes -access readonly -vserver <cluster_name>
+security login rest-role create -api /api/security/anti-ransomware -access readonly  -role arwrole -vserver <cluster_name>
+security login create -user-or-group-name csuser -application http -authmethod password -role arwrole
+....
+阅读有关配置其他的更多信息link:task_add_collector_svm.html["ONTAP权限"]。
+
+
+
+== 警报示例
+
+下面显示了因ARP事件生成的警报示例：
+
+image:CS_Ransomware_Example_1.png["勒索软件警报顶部部分"] image:CS_Ransomware_Example_2.png["勒索软件警报顶部部分"] image:CS_Ransomware_Example_3.png["勒索软件警报顶部部分"]
+
+高度可信的横幅表示此攻击已显示勒索软件行为以及文件加密活动。加密文件图形指示ARP解决方案 检测到卷加密活动的时间戳。
+
+
+
+== 限制
+
+如果SVM不受工作负载安全性监控、但ONTAP 生成了ARP事件、则工作负载安全性仍会接收和显示这些事件。但是、不会捕获或显示与警报相关的取证信息以及用户映射。
+
+
+
+== 故障排除
+
+下表介绍了已知问题及其解决方法。
+
+[cols="2*"]
+|===
+| 问题： | 解决方法： 
+
+
+| 检测到攻击后24小时收到电子邮件警报。在用户界面中、Data Infrastructure Insight Workload Security收到电子邮件前24小时会显示警报。 | 当ONTAP向Data Infrastructure洞察工作负载安全性(即工作负载安全性)发送_检测到的Ransuture _事件时、将发送电子邮件。事件包含一系列攻击及其时间戳。工作负载安全UI会显示第一个受攻击文件的警报时间戳。当对一定数量的文件进行编码时、ONTAP会向Data Infrastructure Insight发送"_检测到的Ransuture _事件"。因此、在UI中显示警报的时间与发送电子邮件的时间可能会有所不同。 
+|===

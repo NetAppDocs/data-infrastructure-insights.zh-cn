@@ -1,0 +1,205 @@
+---
+sidebar: sidebar 
+permalink: cs_restrict_user_access.html 
+keywords: alert, snapshot,  attack 
+summary: 借助工作负载安全性、您可以在发生可疑破坏时限制用户访问 
+---
+= 正在阻止用户访问
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media
+
+
+[role="lead"]
+检测到攻击后、工作负载安全性可以通过阻止用户访问文件系统来阻止攻击。可以使用自动响应策略自动阻止访问、也可以从警报或用户详细信息页面手动阻止访问。
+
+在阻止用户访问时、您应定义一个阻止时间段。选定时间段结束后，系统将自动还原用户访问权限。SMB和NFS协议均支持访问阻止。
+
+SMB会直接阻止用户访问、NFS会阻止导致攻击的主机的IP地址。这些计算机IP地址将被阻止访问工作负载安全性监控的任何Storage Virtual Machine (SVM)。
+
+例如、假设工作负载安全性管理10个SVM、并且为其中4个SVM配置了自动响应策略。如果攻击源自四个SVM中的一个、则用户的访问将在所有10个SVM中被阻止。仍会在源 SVM 上创建 Snapshot 。
+
+如果有四个SVM、其中一个SVM配置为SMB、一个配置为NFS、其余两个SVM配置为NFS和SMB、则如果攻击源自四个SVM中的任何一个、则所有SVM都将被阻止。
+
+
+
+== 阻止用户访问的前提条件
+
+要使此功能正常运行、需要集群级别的凭据。
+
+如果您使用的是集群管理凭据、则不需要任何新权限。
+
+如果您使用的自定义用户(例如_CSUser_)具有为该用户授予的权限、请按照以下步骤为工作负载安全性授予权限以阻止用户。
+
+对于具有集群凭据的 CSUser ，请从 ONTAP 命令行执行以下操作：
+
+....
+security login role create -role csrole -cmddirname "vserver export-policy rule" -access all
+security login role create -role csrole -cmddirname set -access all
+security login role create -role csrole -cmddirname "vserver cifs session" -access all
+security login role create -role csrole -cmddirname "vserver services access-check authentication translate" -access all
+security login role create -role csrole -cmddirname "vserver name-mapping" -access all
+....
+请务必同时查看页面的权限部分link:task_add_collector_svm.html["配置 ONTAP SVM 数据收集器"]。
+
+
+
+== 如何启用此功能？
+
+* 在工作负载安全性中，导航到*工作负载安全性>策略>自动响应策略*。选择*+攻击策略*。
+* 选择(选中)_Block User File Access_。
+
+
+
+
+== 如何设置自动用户访问阻止？
+
+* 创建新的攻击策略或编辑现有攻击策略。
+* 选择应监控攻击策略的 SVM 。
+* 单击"阻止用户文件访问"复选框。选择此选项后，此功能将启用。
+* 在"时间段"下、选择应用阻止的截止时间。
+* 要测试自动阻止用户，您可以通过模拟攻击link:concept_cs_attack_simulator.html["模拟脚本"]。
+
+
+
+
+== 如何知道系统中是否存在被阻止的用户？
+
+* 在警报列表页面中、如果任何用户被阻止、则屏幕顶部将显示一个横幅。
+* 单击此横幅将转到"用户"页面、在此可以看到被阻止的用户列表。
+* 在"用户"页面中、有一列名为"用户/IP访问"。在该列中、将显示用户阻止的当前状态。
+
+
+
+
+== 手动限制和管理用户访问
+
+* 您可以转到警报详细信息或用户详细信息屏幕、然后从这些屏幕手动阻止或还原用户。
+
+
+
+
+== 用户访问限制历史记录
+
+在警报详细信息和用户详细信息页面的用户面板中、您可以查看对用户访问限制历史记录的审核：时间、操作(阻止、取消阻止)、持续时间、采取的操作、 NFS的手动/自动IP以及受影响的IP。
+
+
+
+== 如何禁用此功能？
+
+您可以随时禁用此功能。如果系统中存在受限用户，则必须先还原其访问权限。
+
+* 在工作负载安全性中，导航到*工作负载安全性>策略>自动响应策略*。选择*+攻击策略*。
+* 取消选择(取消选中)_Block User File Access_。
+
+
+此功能将在所有页面中隐藏。
+
+
+
+== 手动还原NFS的IP
+
+如果您的工作负载安全试用版已过期或代理/收集器已关闭、请按照以下步骤手动从ONTAP 还原任何IP。
+
+. 列出 SVM 上的所有导出策略。
++
+....
+contrail-qa-fas8020::> export-policy rule show -vserver <svm name>
+             Policy          Rule    Access   Client                RO
+Vserver      Name            Index   Protocol Match                 Rule
+------------ --------------- ------  -------- --------------------- ---------
+svm0        default         1       nfs3,    cloudsecure_rule,     never
+                                    nfs4,    10.11.12.13
+                                    cifs
+svm1        default         4       cifs,    0.0.0.0/0             any
+                                    nfs
+svm2        test            1       nfs3,    cloudsecure_rule,     never
+                                    nfs4,    10.11.12.13
+                                    cifs
+svm3        test            3       cifs,    0.0.0.0/0             any
+                                    nfs,
+                                    flexcache
+4 entries were displayed.
+....
+. 通过指定相应的RuleIndex、删除SVM上所有策略中的规则、这些策略将"cloudsure_rule"设置为客户端匹配。工作负载安全规则通常为1。
++
+ contrail-qa-fas8020::*> export-policy rule delete -vserver <svm name> -policyname * -ruleindex 1
+. 确保已删除工作负载安全规则(确认的可选步骤)。
++
+....
+contrail-qa-fas8020::*> export-policy rule show -vserver <svm name>
+             Policy          Rule    Access   Client                RO
+Vserver      Name            Index   Protocol Match                 Rule
+------------ --------------- ------  -------- --------------------- ---------
+svm0         default         4       cifs,    0.0.0.0/0             any
+                                    nfs
+svm2         test            3       cifs,    0.0.0.0/0             any
+                                    nfs,
+                                    flexcache
+2 entries were displayed.
+....
+
+
+
+
+== 手动还原SMB用户
+
+如果您的工作负载安全试用版已过期或代理/收集器已关闭、请按照以下步骤手动从ONTAP 还原任何用户。
+
+您可以从"用户"列表页面获取"工作负载安全性"中阻止的用户列表。
+
+. 使用cluster _admin_凭据登录到ONTAP 集群(要解除对用户的阻止)。(对于Amazon FSX、使用FSX凭据登录)。
+. 运行以下命令以列出所有SVM中受SMB工作负载安全性阻止的所有用户：
++
+ vserver name-mapping show -direction win-unix -replacement " "
++
+....
+Vserver:   <vservername>
+Direction: win-unix
+Position Hostname         IP Address/Mask
+-------- ---------------- ----------------
+1       -                 -                   Pattern: CSLAB\\US040
+                                         Replacement:
+2       -                 -                   Pattern: CSLAB\\US030
+                                         Replacement:
+2 entries were displayed.
+....
+
+
+在上述输出中、域CSL阻止了2个用户(US030、US040)。
+
+. 从上述输出中确定位置后、运行以下命令以解除对用户的阻止：
++
+ vserver name-mapping delete -direction win-unix -position <position>
+. 运行命令以确认用户未被阻止：
++
+ vserver name-mapping show -direction win-unix -replacement " "
+
+
+对于先前已阻止的用户、不应显示任何条目。
+
+
+
+== 故障排除
+
+|===
+| 问题 | 请尝试此操作 
+
+
+| 尽管存在攻击，但某些用户并未受到限制。 | 1.确保SVM的Data Collector和代理处于_running"状态。如果停止了Data Collector和代理、则工作负载安全性将无法发送命令。2.这是因为用户可能已使用新IP从计算机访问存储、而该新IP以前从未使用过。限制通过用户访问存储的主机的 IP 地址进行。在 UI （ "Alert Details" （警报详细信息） >"Access Limtion History" （此用户的访问限制历史记录） >"Affected IPs" （受影响的 IP ））中检查受限 IP 地址列表。如果用户要从 IP 与受限 IP 不同的主机访问存储，则用户仍可通过非受限 IP 访问存储。如果用户尝试从 IP 受限的主机访问，则无法访问存储。 
+
+
+| 手动单击限制访问会显示 " 此用户的 IP 地址已受限制 " 。 | 要限制的 IP 已被其他用户限制。 
+
+
+| 无法修改策略。原因：未获得该命令的授权。 | 检查是否使用CsUser、是否已按上述方式为用户授予权限。 
+
+
+| NFS的用户(IP地址)阻止正常工作、但对于SMB/CIFS、我看到错误消息："SID到DomainName转换失败。原因超时：未建立套接字" | 如果_CSUser_无权执行ssh、则可能会发生这种情况。(确保在集群级别连接、然后确保用户可以执行ssh)。_CSUser_角色需要这些权限。 https://docs.netapp.com/us-en/cloudinsights/cs_restrict_user_access.html#prerequisites-for-user-access-blocking[]对于具有集群凭据的-CsUser_、请在ONTAP命令行中执行以下操作：security login Role create -Role csRole -cmddirname "vserver Export-policy re嬖"-access all security login Role create -Role csRole -cmddirname set -access all security login Role create -Role csRole -cmddirname "vserver cifs sSession"-access all security login Role create -service -storage name "cifs access to security reate" ONTAP 
+
+
+| I'm Getting the Error Message _sid Translate failed。__ reason：255：Error：command failed：not authorized for that commandError："access-check" is not a recognized command_、when a user should have been blocked. | 如果-CsUser_没有正确的权限、则可能会发生这种情况。有关详细信息、请参见 link:cs_restrict_user_access.html#prerequisites-for-user-access-blocking["阻止用户访问的前提条件"] 。应用权限后、建议重新启动ONTAP数据收集器和用户目录数据收集器。下面列出了所需的权限命令。--- security login Role create -Role csRole -cmddirname "vserver Export-policy re嬖"-access all security login Role create -Role csRole -cmddirname set -access all security login Role create -Role csRole -cmddirname "vserver cIFS" session -access all security login Role create -Role csRole -cmddirname "vserver services access-check authentication Translate"-access all security login Role create -Role csRole -cmddirname "vserver name-ming"-access all -- 
+|===

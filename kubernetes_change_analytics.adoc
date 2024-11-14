@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: kubernetes_change_analytics.html 
+keywords: changes, management, analysis 
+summary: 跟踪Kubbernetes更改比以往任何时候都更容易。 
+---
+= Kubnetes变更分析
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Kubnetes变更分析为您提供了一个一体化视图、用于查看K8s环境的最新变更。警报和部署状态触手可及。借助变更分析、您可以跟踪每个部署和配置变更、并将其与K8s服务、基础架构和集群的运行状况和性能相关联。
+
+变更分析有何帮助？
+
+* 在多租户Kubnetes环境中、可能会由于配置不当的更改而发生中断。变更分析通过提供一个窗格来查看和关联工作负载的运行状况和配置更改、从而有助于实现这一点。这可能有助于对动态Kubbernetes环境进行故障排除。
+
+
+要查看Kubernetes变更分析、请导航到* Kubernetes >变更分析*。
+
+image:ChangeAnalytitcs_Main_Screen.png["Kubbernetes Change Analytics主屏幕、其中显示警告和严重警报、成功和失败的部署以及触发警报的前3个工作负载"](英文)
+
+此页面会根据当前选定的Data Infrastructure Insight时间范围自动刷新。较小的时间范围意味着屏幕刷新频率更高。
+
+
+
+== 筛选
+
+与Data Infrastructure Insight的所有功能一样、筛选更改列表也非常直观：在页面顶部、输入或选择Kubernetes集群、命名空间或工作负载的值、或者通过选择｛+｝按钮添加您自己的筛选器。
+
+筛选到特定集群、命名空间和工作负载(以及您设置的任何其他筛选器)时、系统将显示该集群上该命名空间中该工作负载的部署和警报时间表。通过单击并拖动图形来进一步放大、以关注更具体的时间范围。
+
+image:ChangeAnalytitcs_Filtered_Timeline.png["工作负载时间线示例"]
+
+
+
+== 快速状态
+
+筛选区域下方有许多高级别的指示器。左侧是警报数量(警告和严重)。此数字包括_Active_警报 和_已 解决_警报。要仅查看_Active_alerts、请为"Status"设置筛选器、然后选择"Active"。
+
+image:ChangeAnalytitcs_Alerts.png["更改分析警报"]
+
+此处还会显示部署状态。同样、默认值是显示_started_、_complete_和_failed部署的计数。要仅查看_failed部署、请为"Status"设置筛选器、然后选择"Filed"。
+
+image:ChangeAnalytitcs_Deploys.png["变更分析员工"]
+
+下一个是警报最多的前3个工作负载。每个工作负载旁边的红色数字表示与该工作负载相关的警报数量。单击工作负载链接可浏览基础架构(Kubernetes Explorer)、依赖关系(工作负载映射)或日志分析(事件日志)。
+
+image:ChangeAnalytitcs_ExploreWorkloadAlerts.png["更改分析工作负载探索选项"]
+
+
+
+== 详细信息面板
+
+在列表中选择一项更改将打开一个面板、以更详细地描述更改。例如、选择失败的部署将显示部署摘要、开始和结束时间、持续时间以及部署的触发位置、并提供用于浏览这些资源的链接。此外、它还会显示失败原因、任何相关更改以及任何关联事件。
+
+image:ChangeAnalytitcs_DeployDetailPanel.png["部署故障详细信息面板"]
+
+同样、选择警报可提供有关警报的详细信息、包括触发警报的监控器以及显示警报可视时间线的图表。

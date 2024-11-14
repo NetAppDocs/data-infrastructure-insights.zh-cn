@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_elasticsearch.html 
+keywords: telegraf, installation, install, ElasticSearch 
+summary: Elasticsearch 数据收集器配置 
+---
+= Elasticsearch Data Collector
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Data Infrastructure Insight可使用此数据收集器从ElricSearch中收集指标。
+
+. 从*Observability > Collectors*中，单击*+Data Collector*。选择ElASCHARSEearch。
++
+选择安装了 Telegraf 代理的操作系统或平台。
+
+. 如果尚未安装用于收集的代理，或者要为其他操作系统或平台安装代理，请单击_Show Instructions _展开说明。link:task_config_telegraf_agent.html["代理安装"]
+. 选择要用于此数据收集器的代理访问密钥。您可以通过单击 * + 代理访问密钥 * 按钮来添加新的代理访问密钥。最佳实践：仅当您要按操作系统 / 平台对数据收集器进行分组时，才使用其他代理访问密钥。
+. 按照配置步骤配置数据收集器。这些说明因用于收集数据的操作系统或平台的类型而异。
+
+
+image:ElasticsearchDCConfigLinux.png["Elasticsearch 配置"]
+
+
+
+== 设置
+
+有关信息，请参见link:https://www.elastic.co/guide/index.html["Elasticsearch 文档"]。
+
+
+
+== 对象和计数器
+
+将收集以下对象及其计数器：
+
+[cols="<.<,<.<,<.<"]
+|===
+| 对象： | 标识符： | 属性： 
+
+
+| Elasticsearch 集群 | 命名空间集群 | 节点 IP 节点名称集群状态 
+
+
+| Elasticsearch 节点 | 命名空间集群 ES 节点 ID ES 节点 IP ES 节点 | 分区 ID 
+|===
+
+
+== 故障排除
+
+有关其他信息、请参见link:concept_requesting_support.html["支持"]页面。

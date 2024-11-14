@@ -1,0 +1,169 @@
+---
+sidebar: sidebar 
+permalink: task_cs_add_agent.html 
+keywords: agent, Workload Security, installation, Cloud Secure 
+summary: 正在添加工作负载安全代理 
+---
+= 安装工作负载安全代理
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+工作负载安全性(以前称为Cloud Secure)使用一个或多个代理收集用户活动数据。代理连接到环境中的设备并收集发送到工作负载安全SaaS层进行分析的数据。请参见link:concept_cs_agent_requirements.html["代理要求"]以配置代理VM。
+
+
+
+== 开始之前
+
+* 安装，运行脚本和卸载需要 sudo 权限。
+* 安装代理时、会在计算机上创建一个本地用户_cssys_和一个本地组_cssys_。如果权限设置不允许创建本地用户、而需要Active Directory、则必须在Active Directory服务器中创建用户名为_cssys_的用户。
+* 您可以阅读有关Data Infrastructure Insight安全性的link:security_overview.html["此处"]信息。
+
+
+
+
+== 安装代理的步骤
+
+. 以管理员或帐户所有者身份登录到工作负载安全环境。
+. 选择*Collectors > Agents>+Agent*
++
+系统将显示 "Add an Agent" 页面：
+
++
+image::Add-agent-1.png[正在添加工作负载安全代理]
+
+. 验证代理服务器是否满足最低系统要求。
+. 要验证代理服务器是否正在运行受支持的 Linux 版本，请单击 _versions supported （ i ） _ 。
+. 如果您的网络使用代理服务器，请按照代理部分中的说明设置代理服务器详细信息。
++
+image:CloudSecureAgentWithProxy_Instructions.png["代理安装与代理注意事项"]
+
+. 单击复制到剪贴板图标以复制安装命令。
+. 在终端窗口中运行安装命令。
+. 安装成功完成后，系统将显示以下消息：
++
+image::new-agent-detect.png[成功安装代理的消息]
+
+
+
+.完成后
+. 您需要配置link:task_config_user_dir_connect.html["用户目录收集器"]。
+. 您需要配置一个或多个数据收集器。
+
+
+
+
+== 网络配置
+
+在本地系统上运行以下命令、以打开将由工作负载安全性使用的端口。如果对端口范围存在安全问题，可以使用较小的端口范围，例如 _35000 ： 35100_ 。每个 SVM 使用两个端口。
+
+.步骤
+. `sudo firewall-cmd --permanent --zone=public --add-port=35000-55000/tcp`
+. `sudo firewall-cmd --reload`
+
+
+根据您的平台执行以下步骤：
+
+* CentOS 7.x / RHEL 7.x * ：
+
+. `sudo iptables-save | grep 35000`
+
+
+示例输出：
+
+ -A IN_public_allow -p tcp -m tcp --dport 35000:55000 -m conntrack -ctstate NEW,UNTRACKED -j ACCEPT
+* CentOS 8.x / RHEL 8.x * ：
+
+. `sudo firewall-cmd --zone=public --list-ports | grep 35000`(适用于CentOS 8)
+
+
+示例输出：
+
+ 35000-55000/tcp
+
+
+== "固定"当前版本的Agent
+
+默认情况下、Data Infrastructure Insight Workload Security会自动更新代理。某些客户可能希望暂停自动更新、这将使工程师保持其当前版本、直到出现以下情况之一：
+
+* 客户恢复自动Agent更新。
+* 30天过去了。请注意、这30天从最近一次Agent更新的那一天开始、而不是从Agent暂停的那一天开始。
+
+
+在上述每种情况下、代理都会在下次工作负载安全性刷新时进行更新。
+
+要暂停或恢复自动代理更新、请使用_云 安全_config.agents_ API：
+
+image:ws_pin_agent_apis.png["用于固定和取消固定代理的云安全代理API"]
+
+请注意、暂停或恢复操作可能需要长达五分钟才能生效。
+
+您可以在*Agents*选项卡的*Workload Security > Collectors*页面上查看当前的Agent版本。
+
+image:ws_agent_version.png["代理表中显示的WS代理版本"]
+
+
+
+== 对代理错误进行故障排除
+
+下表介绍了已知问题及其解决方法。
+
+[cols="2*"]
+|===
+| 问题： | 解决方法： 
+
+
+| 代理安装无法创建 /opt/netapp/cloudsecurity/agent/logs/agent.log 文件夹，并且 install.log 文件不提供任何相关信息。 | 在启动代理期间发生此错误。此错误不会记录在日志文件中，因为它会在日志程序初始化之前发生。此错误将重定向到标准输出、并可通过 `journalctl -u cloudsecure-agent.service`命令显示在服务日志中。此命令可用于进一步解决此问题。EST 
+
+
+| 代理安装失败，并显示 ‘不支持此 Linux 版本。正在退出安装。 | 如果您尝试在不受支持的系统上安装代理、则会出现此错误。请参阅。 link:concept_cs_agent_requirements.html["代理要求"] 
+
+
+| 代理安装失败，并显示错误： "-bash ： unzip ： command not found" | 安装 unzip ，然后再次运行安装命令。如果计算机上安装了 Yum ，请尝试 " yum install unzip " 以安装解压缩软件。然后，从代理安装 UI 中重新复制此命令并将其粘贴到命令行界面中以重新执行安装。 
+
+
+| 代理已安装并正在运行。但是，代理已突然停止。 | 通过 SSH 连接到代理计算机。通过检查代理服务的状态 `sudo systemctl status cloudsecure-agent.service`。1.检查日志是否显示消息“Failed to start Workload Security daemon service”(无法启动工作负载安全守护进程服务)。2.检查代理计算机中是否存在cssys用户。使用 root 权限逐个执行以下命令，并检查 cssys 用户和组是否存在。
+`sudo id cssys`
+`sudo groups cssys`3.如果不存在，则集中式监控策略可能已删除 cssys 用户。4.执行以下命令、手动创建cssys用户和组。
+`sudo useradd cssys`
+`sudo groupadd cssys`5.执行以下命令、然后重新启动代理服务：
+`sudo systemctl restart cloudsecure-agent.service`6.如果仍未运行，请检查其他故障排除选项。 
+
+
+| 无法向代理添加 50 个以上的数据收集器。 | 一个代理只能添加 50 个数据收集器。这可以是所有收集器类型的组合，例如 Active Directory ， SVM 和其他收集器。 
+
+
+| UI 显示 Agent 处于 not_connected 状态。 | 重新启动代理的步骤。1.通过 SSH 连接到代理计算机。2.执行以下命令、然后重新启动代理服务：
+`sudo systemctl restart cloudsecure-agent.service`3.通过检查代理服务的状态 `sudo systemctl status cloudsecure-agent.service`。4.座席应进入已连接状态。 
+
+
+| 代理 VM 位于 Zscaler 代理之后，代理安装失败。由于Zscaler代理的SSL检查、工作负载安全证书会在Zscaler CA签名时显示出来、因此代理不会信任通信。 | 在 Zscaler 代理中禁用 * 。 .cloudinsights.netapp.com URL 的 SSL 检查。如果Zscaleer执行SSL检查并替换证书、则工作负载安全性将不起作用。 
+
+
+| 安装代理时，安装将在解压缩后挂起。 | "chmod 755 -rf " 命令失败。如果代理安装命令由非 root sudo 用户运行，而该用户的文件位于工作目录中，属于另一个用户，并且无法更改这些文件的权限，则此命令将失败。由于 chmod 命令失败，其余安装不会执行。1.创建一个名为"云 安全"的新目录。2.转到该目录。3.复制并粘贴完整的"令牌=………./candsSecure代理安装.sh"安装命令、然后按Enter键。4.安装应该能够继续。 
+
+
+| 如果工程师仍无法连接到 SaaS ，请向 NetApp 支持部门创建案例。提供用于创建案例的Data Infrastructure Insight序列号、并按照说明将日志附加到案例中。 | 将日志附加到案例： 1.使用root权限执行以下脚本、并共享输出文件(volumece-agent-ssys.zip)。a. NetApp cloudsecure-agent-symptom-collector.sh 2.使用root权限逐个执行以下命令并共享输出。a. id cssys b. groups cssys c. cat /etc/os-Release 
+
+
+| cloudsecure-agent-symptom-collector.sh脚本失败、并显示以下错误。根@计算机tmp]#/opt/netapp/cloudsecurity/agent/bin/cloudsecure-agent-symptom-collector.sh收集服务日志收集应用程序日志收集代理配置获取服务状态快照获取代理目录结构快照………………… 。………………… 。/opt/netapp/cloudsecurity/agent/bin/cloudsure-agent-smp-collector.sh：行52：zip：command not found error：failed to create /tmp/cloudsecure-agent-symptoms.zip | 未安装zip工具。运行命令"yum install zip "来安装zip工具。然后再次运行cloudsecure-agent-symptom-collector.sh。 
+
+
+| 代理安装失败、并显示useradd：无法创建目录/home/cssys | 如果由于缺少权限而无法在/home下创建用户的登录目录、则可能会发生此错误。临时解决策 将使用以下命令创建cssys用户并手动添加其登录目录：_sudo useradd user_name -m -d home_DIR_-m：如果用户的主目录不存在、请创建该用户的主目录。-d：使用home_DIR作为用户登录目录的值创建新用户。例如、_sudo useradd cssys -m -d /cssys_会添加一个用户_cssys_并在root下创建其登录目录。 
+
+
+| 安装后代理未运行。_systemctl status cloudsecure-agent.service_ cloudsecure-agent.service:显示以下内容：[root ~ demo@]# systemctl status cloudsecure-agent.service agent.service cloudsecure-agent.service–Workload Security Agent Daemon Service loaded：loaded (/usr/lib/systemd/system/cloudsecure-agent.service; enabled；vendor preset：disabled) Active：activating (auto-restart)(reside-code)(rescue 2021-08：12：26；2s ago Process：25889/excenter=126/system、deport=12：deed NetApp、depresent状态：d=126/d=12：d=126/d=126/12。Aug 03 21：12：26 demo systemd[1]：cloudsecure-agent.service失败。 | 此操作可能会失败、因为_cssys_用户可能没有安装权限。如果/opt/netapp是NFS挂载、而_cssys_用户无权访问此文件夹、则安装将失败。_cssys_是工作负载安全安装程序创建的本地用户、该用户可能无权访问挂载的共享。要检查此问题、您可以尝试使用_cssys_用户访问/opt/netapp/cloudsecurity/agent/bin/cloudsure-agent。如果返回"permission denies"、则安装权限不存在。安装在计算机本地的目录上、而不是挂载的文件夹。 
+
+
+| 代理最初是通过代理服务器连接的、代理是在安装期间设置的。现在、代理服务器已更改。如何更改代理的代理配置？ | 您可以编辑agent.properties以添加代理详细信息。请按照以下步骤操作：1.更改为包含属性文件的文件夹：cd /opt/netapp/cloudsecurity/conf 2。使用您喜爱的文本编辑器、打开_agent.properties_文件进行编辑。3.添加或修改以下行：agent_proxy_host=scspa1950329001.vm.vm.proxy.com NetApp agent_port=80 agent_proxy_user=pxuser agent_proxy_password=pass1234 4.保存文件。5.重新启动代理：sudo systemc联系 重新启动cloudsecure-agent.service 
+|===

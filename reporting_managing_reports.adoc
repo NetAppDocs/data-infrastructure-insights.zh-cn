@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: reporting_managing_reports.html 
+summary: 自定义报告输出和交付，将报告复制到剪贴板，打开报告（ XML ）。 
+keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying 
+---
+= 管理报告
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+您可以自定义报告的输出格式和传送，设置报告属性或计划以及通过电子邮件发送报告。
+
+
+NOTE: 数据基础架构洞察中提供了报告功能link:concept_subscribing_to_cloud_insights.html["高级版"]。
+
+
+IMPORTANT: 在更改报告权限或安全性之前、您必须将"我的内容"报告复制到"团队内容"文件夹、以确保报告已保存。
+
+
+
+== 自定义报告的输出格式和交付
+
+您可以自定义报告的格式和交付方法。
+
+. 在Data Infrastructure Insight报告门户中、转到*菜单>内容>我的内容/团队内容*。将鼠标悬停在要自定义的报告上、然后打开"三点"菜单。
+
+
+image:Reporting_Output_and_Delivery.png["报告输出和交付"]
+
+. 单击 * 属性 > 计划 *
+
+
+. 您可以设置以下选项：
++
+** *计划*要运行报告的时间。
+** 选择*选项*作为报告格式和交付(保存、打印、电子邮件)以及报告语言。
+
+
+. 单击*Save*(保存*)以使用所做的选择生成报告。
+
+
+
+
+== 将报告复制到剪贴板
+
+使用此过程将报告复制到剪贴板。
+
+. 选择要从中复制的报告(*菜单>内容>我的内容或团队内容*)
+. 从报告的下拉菜单中选择_Edit report_
++
+image:Reporting_Edit_Report.png["编辑报告"]
+
+. 在屏幕右上角、打开"属性"旁边的"三个点"菜单。
+. 选择*将报告复制到剪贴板*。
++
+image:Reporting_Copy_To_Clipboard.png["将报告复制到剪贴板"]
+
+
+
+
+
+== 从剪贴板打开报告
+
+您可以打开先前复制到剪贴板的报告规范。
+
+关于此任务首先创建新报告或打开要替换为复制的报告的现有报告。以下步骤适用于新报告。
+
+. 选择*菜单>+New > Report*并创建一个空白报告。
+. 在屏幕右上角、打开"属性"旁边的"三个点"菜单。
+. 选择*从剪贴板打开报告*。
+
+
+image:Reporting_Open_From_Clipboard.png["从剪贴板打开报告"]
+
+. 将复制的代码粘贴到窗口中，然后选择*OK*。
+. 选择软盘图标以保存报告。
+. 选择报告的保存位置(_My Content_、_Team Content_或创建新文件夹)。
+. 为新报告指定一个有意义的名称，然后选择*Save*。
+
+
+
+
+== 编辑现有报告
+
+请注意、在默认位置编辑文件会面临在下次刷新报告目录时覆盖这些报告的风险。建议使用新名称保存已编辑的报告、或者将其存储在非默认位置。
+
+
+
+== 故障排除
+
+您可以在此处找到有关报告问题故障排除的建议。
+
+|===
+
+
+| * 问题： * | * 请尝试此操作： * 
+
+
+| 在计划通过电子邮件发送报告时，已登录用户的名称会预先填充到电子邮件的 " 收件人 " 字段中。但是，此名称的形式为 "firstname lastname" （名字，空格，姓氏）。由于此地址不是有效的电子邮件地址，因此在运行计划的报告时，此电子邮件将无法发送。 | 在计划通过电子邮件发送报告时，请清除预先填充的名称，然后在 " 收件人 " 字段中输入格式正确的有效电子邮件地址。 
+|===

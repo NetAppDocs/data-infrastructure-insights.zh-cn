@@ -1,0 +1,317 @@
+---
+sidebar: sidebar 
+permalink: API_Overview.html 
+keywords: API, customer API, premium, JSON, Swagger, Access Token, token, rotate, expired 
+summary: 通过Data Infrastructure Insight API、可以与监控和报告系统等其他应用程序集成。 
+---
+= Data Infrastructure Insight API
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+通过数据基础架构洞察API、NetApp客户和独立软件供应商(ISV)可以将数据基础架构洞察与其他应用程序(例如CMDB或其他服务单系统)集成在一起。
+
+您的数据基础架构洞察力link:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html#permission-levels["功能集角色"]将决定您可以访问哪些API。用户和来宾角色的权限比管理员角色更少。例如，如果您在 " 监控和优化 " 中具有管理员角色，而在 " 报告 " 中具有用户角色，则您可以管理除数据仓库之外的所有 API 类型。
+
+
+
+== API 访问的要求
+
+* API 访问令牌模型用于授予访问权限。
+* API令牌管理由具有管理员角色的Data Infrastructure Insight用户执行。
+
+
+
+
+== API 文档（ Swagger ）
+
+登录到Data Infrastructure Insight并导航到*Admin > API Acccess*可以找到最新的API信息。单击 * API Documentation" 链接。
+
+image:API_Swagger_Types.png["API类型"]
+
+API 文档基于 Swagger ，其中提供了 API 的简短问题描述和使用情况信息，您可以在环境中试用这些文档。根据您的用户角色和/或Data Infrastructure Insight版本、您可以使用的API类型可能会有所不同。
+
+image:API_Swagger_Example.png["API Swagger 示例"]
+
+
+
+== API 访问令牌
+
+在使用Data Infrastructure Insight API之前、您必须创建一个或多个*API访问令牌*。访问令牌用于指定的 API 类型，并且可以授予读取和 / 或写入权限。您还可以为每个访问令牌设置到期时间。指定类型下的所有 API 对访问令牌有效。每个令牌都不包含用户名或密码。
+
+创建访问令牌：
+
+* 单击 * 管理 > API 访问 *
+* 单击 * + API 访问令牌 *
++
+** 输入令牌名称
+** 选择 API 类型
+** 指定为此 API 访问授予的权限
+** 指定令牌到期日期
+
+
+
+
+
+NOTE: 您的令牌只能在创建过程中复制到剪贴板并进行保存。令牌创建后无法检索，因此强烈建议复制令牌并将其保存在安全位置。系统将提示您单击 * 复制 API 访问令牌 * 按钮，然后才能关闭令牌创建屏幕。
+
+您可以禁用，启用和撤消令牌。可以启用已禁用的令牌。
+
+令牌从客户角度授予对 API 的通用访问权限；在其自己的租户范围内管理对 API 的访问权限。客户管理员可以授予和撤销这些令牌、而无需Data Infrastructure Insight后端人员的直接参与。
+
+在用户成功进行身份验证并授权访问后，应用程序会收到访问令牌，然后在调用目标 API 时将访问令牌作为凭据传递。传递的令牌将通知 API 令牌的持有人已获得访问 API 的授权并执行授权期间授予的范围指定的特定操作。
+
+传递访问令牌的 HTTP 标头为 * 。 X-CloudInsights ApiKey ： * 。
+
+例如，使用以下命令检索存储资产：
+
+ curl https://<tenant_host_name>/rest/v1/assets/storages -H 'X-CloudInsights-ApiKey:<API_Access_Token>'
+其中， _<API_Access_Token>_ 是您在创建 API 访问期间保存的令牌。
+
+有关特定于要使用的API的示例、请参见Swagger页面。
+
+
+
+== API类型
+
+Data Infrastructure Insight API基于类别、当前包含以下类型：
+
+* Assets type 包含 asset ， query 和 search API 。
++
+** 资产：枚举顶级对象并检索特定对象或对象层次结构。
+** 查询：检索和管理Data Infrastructure Insight查询。
+** 导入：导入标注或应用程序并将其分配给对象
+** 搜索：在不知道对象的唯一 ID 或全名的情况下找到特定对象。
+
+
+* 数据收集类型用于检索和管理数据收集器。
+* 数据载入类型用于检索和管理载入数据和自定义指标，例如从 Telegraf 代理检索和管理
+* 日志载入用于检索和管理日志数据
+
+
+其他类型和 / 或 API 可能会随着时间的推移而变为可用。您可以在中找到最新的API信息link:#api-documentation-swagger["API Swagger 文档"]。
+
+请注意、用户有权访问的API类型还取决于link:concept_user_roles.html["用户角色"]他们在每个Data Infrastructure Insight功能集中拥有的(监控、工作负载安全性、报告)。
+
+
+
+== 清单遍历
+
+本节介绍如何遍历Data Infrastructure Insight对象的层次结构。
+
+
+
+=== 顶级对象
+
+单个对象在请求中通过唯一URL (在JSON中称为"self")进行标识、并且需要了解对象类型和内部ID。对于某些顶级对象(主机、存储等)、REST API可提供对完整集合的访问权限。
+
+API URL 的常规格式为：
+
+ https://<tenant>/rest/v1/<type>/<object>
+例如，要从名为 _mysite.c01.cloudinsights.netapp.com_ 的租户检索所有存储，请求 URL 为：
+
+ https://mysite.c01.cloudinsights.netapp.com/rest/v1/assets/storages
+
+
+=== 子对象和相关对象
+
+存储等顶级对象可用于遍历到其他子对象和相关对象。例如，要检索特定存储的所有磁盘，请将存储的 "self-" URL 与 "/disks" 连接起来，例如：
+
+ https://<tenant>/rest/v1/assets/storages/4537/disks
+
+
+== 展开
+
+许多 API 命令都支持 * 扩展 * 参数，该参数可提供有关相关对象的一个或多个 URL 的更多详细信息。
+
+一个常见的扩展参数是 _expands_。响应包含对象的所有可用特定扩展的列表。
+
+例如，当您请求以下内容时：
+
+ https://<tenant>/rest/v1/assets/storages/2782?expand=_expands
+API 将返回对象的所有可用扩展，如下所示：
+
+image:expands.gif["展开示例"]
+
+每个扩展都包含数据， URL 或这两者。expand 参数支持多个嵌套属性，例如：
+
+ https://<tenant>/rest/v1/assets/storages/2782?expand=performance,storageResources.storage
+通过 Expand ，您可以在一个响应中引入大量相关数据。NetApp 建议您一次不要请求太多信息；这可能会导致发生原因性能下降。
+
+要阻止这种情况，无法扩展对顶级收集的请求。例如，您不能同时请求所有存储对象的扩展数据。客户端需要检索对象列表，然后选择要扩展的特定对象。
+
+
+
+== 性能数据
+
+性能数据会作为单独的示例收集到多个设备中。Data Infrastructure Insight会每小时汇总和汇总一次性能示例(默认值)。
+
+通过 API ，可以访问样本和汇总数据。对于包含性能数据的对象，性能摘要可通过 _expand=performal_ 的形式提供。性能历史记录时间序列可通过嵌套的 _expand=performer.history_ 来查看。
+
+性能数据对象示例包括：
+
+* 存储性能
+* StoragePoolPerformance
+* 端口性能
+* 磁盘性能
+
+
+性能指标具有问题描述 和类型，并包含一组性能摘要。例如，延迟，流量和速率。
+
+性能摘要包含一个问题描述，单元，样本开始时间，样本结束时间以及一组汇总值（当前值，最小值，最大值，平均值等），这些值是从一个时间范围（ 1 小时， 24 小时， 3 天等）内的单个性能计数器计算得出的。
+
+image:API_Performance.png["API 性能示例"]
+
+生成的性能数据词典具有以下关键字：
+
+* "self-" 是对象的唯一 URL
+* " 历史记录 " 是时间戳对和计数器值映射的列表
+* 其他每个词典密钥（ "diskThroughput " 等）都是性能指标的名称。
+
+
+每个性能数据对象类型都有一组唯一的性能指标。例如，虚拟机性能对象支持使用 "diskThroughput " 作为性能指标。每个受支持的性能指标都属于指标词典中提供的特定 " 性能类别 " 。Data Infrastructure Insight支持本文档后面列出的多种性能指标类型。每个性能指标词典还将包含一个可供用户读取的此性能指标问题描述字段问题描述以及一组性能摘要计数器条目。
+
+性能摘要计数器是性能计数器的汇总。它会显示计数器的典型聚合值，例如最小值，最大值和平均值，以及最新观察到的值，汇总数据的时间范围，计数器的单位类型以及数据的阈值。只有阈值是可选的；其余属性是必需的。
+
+以下类型的计数器可提供性能摘要：
+
+* Read —读取操作摘要
+* 写入—写入操作摘要
+* 总计—所有操作的摘要。它可能高于简单的读写总和；它可能包括其他操作。
+* Total Max —所有操作的摘要。这是指定时间范围内的最大总值。
+
+
+
+
+== 对象性能指标
+
+API 可以返回环境中对象的详细指标，例如：
+
+* 存储性能指标，例如 IOPS （每秒输入 / 输出请求数），延迟或吞吐量。
+
+
+* 交换机性能指标，例如流量利用率， BB 信用零数据或端口错误。
+
+
+有关每种对象类型的指标信息、请参见link:#api-documentation-swagger["API Swagger 文档"]。
+
+
+
+== 性能历史记录数据
+
+历史数据以时间戳和计数器映射对列表的形式显示在性能数据中。
+
+历史计数器根据性能指标对象名称命名。例如，虚拟机性能对象支持 "diskThroughput " ，因此历史记录映射将包含名为 "diskThroughput ： read" ， "diskThroughput ： write" 和 "diskThroughput ： total" 的键。
+
+
+NOTE: 时间戳采用 UNIX 时间格式。
+
+以下是磁盘的性能数据 JSON 示例：
+
+image:DiskPerformanceExample.png["磁盘性能 JSON"]
+
+
+
+== 具有容量属性的对象
+
+具有容量属性的对象使用基本数据类型和 CapacityItem 来表示。
+
+
+
+=== CapacityItem
+
+CapacityItem 是一个逻辑容量单位。它的父对象定义了单位，并具有 " 值 " 和 " 高阈值 " 。此外，它还支持一个可选的细分图，用于说明容量值的构建方式。例如，一个 100 TB StoragePool 的总容量将是一个值为 100 的 CapacityItem 。细分情况可能会显示为 " 数据 " 分配了 60 TB ，为 " 快照 " 分配了 40 TB 。
+
+注:: " 高阈值 " 表示系统为相应指标定义的阈值，客户端可以使用这些阈值针对超出可接受配置范围的值生成警报或直观提示。
+
+
+下面显示了具有多个容量计数器的 StoragePools 的容量：
+
+image:StoragePoolCapacity.png["存储池容量示例"]
+
+
+
+== 使用搜索查找对象
+
+搜索 API 是系统的一个简单入口点。API 的唯一输入参数是自由格式的字符串，生成的 JSON 包含分类结果列表。类型与清单不同，例如存储，主机，数据存储库等。每种类型都将包含一个与搜索条件匹配的对象列表。
+
+Data Infrastructure Insight是一款可扩展(广泛开放)的解决方案、可与第三方业务流程、业务管理、变更控制和服务单系统以及自定义CMDB集成相集成。
+
+Cloud Insight 的 RESTful API 是一个主要的集成点，支持简单有效地移动数据，并允许用户无缝访问其数据。
+
+
+
+== 禁用或撤消 API 令牌
+
+要临时禁用 API 令牌，请在 API 令牌列表页面上单击此 API 的 " 三点 " 菜单，然后选择 _Disable_ 。您可以随时使用同一菜单并选择 _Enable_ 来重新启用令牌。
+
+要永久删除 API 令牌，请从菜单中选择 " 撤消 " 。您不能重新启用已撤销的令牌；您必须创建新令牌。
+
+image:API_Disable_Token.png["禁用或撤消 API 令牌"]
+
+
+
+== 正在轮换已过期的 API 访问令牌
+
+API 访问令牌具有到期日期。当 API 访问令牌过期时，用户需要生成一个新令牌（类型为 _Data ingestion_ 且具有读 / 写权限），并重新配置 Telegraf 以使用新生成的令牌，而不是过期的令牌。以下步骤详细说明了如何执行此操作。
+
+
+
+==== Kubernetes
+
+请注意，这些命令使用的是默认命名空间 "netapp-monitoring" 。如果您已设置自己的命名空间，请在这些命令和所有后续命令和文件中替换该命名空间。
+
+注意：如果您安装了最新的NetApp Kubernetes监控操作员并使用可续订的API访问令牌、则过期的令牌将自动替换为新的/刷新的API访问令牌。无需执行下面列出的手动步骤。
+
+* 编辑NetApp Kubernetes监控操作员。
++
+ kubectl -n netapp-monitoring edit agent agent-monitoring-netapp
+* 修改_spec.output-sink.api-key_值、将旧API令牌替换为新API令牌。
++
+....
+spec:
+…
+  output-sink:
+  - api-key:<NEW_API_TOKEN>
+....
+
+
+
+
+==== RHEL/CentOS 和 Debian /Ubuntu
+
+* 编辑 Telegraf 配置文件，并将旧 API 令牌的所有实例替换为新 API 令牌。
++
+ sudo sed -i.bkup ‘s/<OLD_API_TOKEN>/<NEW_API_TOKEN>/g’ /etc/telegraf/telegraf.d/*.conf
+* 重新启动 Telegraf 。
++
+ sudo systemctl restart telegraf
+
+
+
+
+==== Windows
+
+* 对于 _C ： \Program Files\telecraf\telecraf.d_ 中的每个 Telegraf 配置文件，请将旧 API 令牌的所有实例替换为新 API 令牌。
++
+....
+cp <plugin>.conf <plugin>.conf.bkup
+(Get-Content <plugin>.conf).Replace(‘<OLD_API_TOKEN>’, ‘<NEW_API_TOKEN>’) | Set-Content <plugin>.conf
+....
+* 重新启动 Telegraf 。
++
+....
+Stop-Service telegraf
+Start-Service telegraf
+....
+

@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: task_dc_na_db_host.html 
+keywords: data collector, generic db 
+summary: 通用数据库主机解复器收集器 
+---
+= NetApp通用数据库主机解析程序
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+此数据收集器用于采集清单
+
+
+
+== 术语
+
+Data Infrastructure Insight从该收集器采集清单。
+
+
+
+== 配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| 数据库服务器IP地址 | 数据库服务器的IP地址 
+
+
+| DB服务器端口 | 默认值为3306 
+
+
+| 合格的驱动程序类名称 | 驱动程序的类名。 
+
+
+| JDBC驱动程序URL | 驱动程序的URL 
+
+
+| SQL查询 | 用于从表中返回数据的查询 
+|===
+
+
+== 高级配置
+
+[cols="2*"]
+|===
+| 字段 | 说明 
+
+
+| 清单轮询间隔(分钟) | 默认值为60分钟 
+
+
+| 启用SSL连接 | 选择此项可启用通过SSL的连接 
+
+
+| 报告WWN别名 | 选择此选项可报告WWN别名 
+|===
+有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

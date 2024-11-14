@@ -1,0 +1,191 @@
+---
+sidebar: sidebar 
+permalink: concept_ontap_essentials.html 
+summary: ONTAP 基础知识是一组信息板和工作流、用于详细概述您的环境。 
+keywords: dashboard, widget, ontap, overview, insight 
+---
+= ONTAP 基础知识
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+ONTAP 基础知识是一组信息板和工作流、用于详细概述ONTAP 清单和工作负载。在ONTAP 基础知识中使用时、您可能会看到以下术语：
+
+* 基础架构/清单：为用户数据提供存储/网络服务的对象
+* 工作负载：为用户提供读/写数据接口的对象。
+* 数据保护：可使用NetApp数据保护技术进行保护的对象
+
+
+有关与ONTAP相关的其他术语和定义、请参见link:task_dc_na_cdot.html["ONTAP 数据收集器"]文档。
+
+ONTAP 基础知识要求至少一个运行正常的ONTAP 数据收集器、其中包含过去七天内收集的数据。
+
+
+
+== 概述
+
+要开始探索、请从数据基础架构洞察力主菜单中选择* ONTAP Essentials *。
+
+image:OE_Overview.png["ONTAP 基础知识概述信息板"]
+
+*概述*信息板可显示有用的信息、例如环境中的集群数量及其整体容量和性能百分比。您还将看到有关存储容量或性能容量用尽之前的预计天数的预测数据。此外、如果基础架构中的任何控制器的CPU运行速度超过65%、在发生故障转移时可能会使集群面临风险、则ONTAP Essentials会将这些控制器显示为"热"控制器。
+
+信息性图形可帮助您了解一段时间内的性能以及容量使用情况的细分。这些图形或数据点中的每一个都可以用作探索或调查的起点。
+
+注意："Days to Full"数字为"0"(零)表示预计达到全满的天数超过90天。换言之、您的系统很快就不会面临空间用尽的风险。
+
+
+
+== 数据保护
+
+"*数据保护*"页面显示受*Snapshot副本*或*SnapMirror策略*保护的卷的状态。
+
+在_Local Protection Overview_部分中、图表提供了受Snapshot副本保护的卷的以下信息：
+
+* 受Snapshot副本保护以及未受保护的卷的数量。
+* 正在使用或超出Snapshot副本预留空间的卷数量。
+* 特定Snapshot副本计数范围内的卷数量(即、少于10个副本、10到200个副本等)。
+
+
+在_Remote Protection Overview_部分中、图表提供了与受SnapMirror策略保护的卷相关的信息：
+
+* 运行状况良好和运行状况不正常的SnapMirror关系的数量。
+* 根据滞后状态、发生恢复点目标(RPO)滞后的SnapMirror关系数量。
+* 受SnapMirror卷保护类型(例如卷SnapMirror、SVMDR关系、FlexGroup SnapMirror关系、SnapMirror业务连续性(SMBC)一致性组关系以及未受保护的卷)保护的关系数量。
+* 受异步镜像、异步存储、异步镜像存储、StrictSync和Sync等SnapMirror关系类型保护的关系数量。
+
+
+image:DataProtectionDashboard_OverviewWidgets_.png["显示\"本地\"和\"远程\"概述的\"数据保护信息板\"小工具"]
+
+页面底部的_Clusters _网格提供了与以下内容相关的详细信息：
+
+* 卷不受Snapshot保护。
+* 卷违反Snapshot预留空间。
+* 不受SnapMirror策略保护的卷以及存在滞后的SnapMirror关系。
+* SnapMirror关系运行状况不正常。
+
+
+image:DataProtectionDashboard_ClusterList.png["数据保护集群列表"]
+
+
+
+== 安全性
+
+通过"安全信息板"、您可以即时查看当前安全状况、并显示硬件和软件卷加密、反勒索软件状态和集群身份验证方法的图表。安全标准是根据中定义的建议进行评估的link:https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf["*NetApp ONTAP 9*安全加强指南"]。
+
+选择任何加密或反勒索软件计数、深入了解您的环境。
+
+image:OE_SecurityDashboard.png["ONTAP Essentials安全信息板"]
+
+ONTAP Essentials安全信息板可监控您的环境以确定集群合规性状态。请参阅link:https://docs.netapp.com/us-en/active-iq-unified-manager/health-checker/reference_cluster_compliance_categories.html["集群合规性类别"]以了解更多信息。ONTAP Essentials使用以下监控器来确定合规性：
+
+|===
+| 监控器名称 | 属性名称(显示在"Cluster Details"[集群详细信息]中) | 属性兼容值 
+
+
+| 已禁用FIPS模式 | FIPS模式 | 已启用 
+
+
+| SSH的集群不安全密码 | 安全SSH设置 | 是 
+
+
+| 已启用Telnet协议 | Telnet | 已禁用 
+
+
+| 已启用远程Shell | 远程 Shell | 已禁用 
+
+
+| 已启用默认本地管理员用户 | 默认管理员用户 | 已禁用 
+
+
+| MD5哈希密码 | MD5正在使用中 | 否 
+
+
+| 集群对等通信未加密 | 集群对等 | 已加密/无对等关系 
+
+
+| 已禁用AutoSupport HTTPS传输 | 使用HTTPS的AutoSupport | 是 
+
+
+| 未配置任何NTP服务器 | 网络时间协议 | 已配置 
+
+
+| NTP服务器计数不足 | 网络时间协议 | 已配置 
+
+
+| 已禁用集群登录横幅 | 登录横幅 | 已启用 
+
+
+| 日志转发未加密 | 日志转发已加密 | 是 
+|===
+请注意、如果禁用了上述监控器、则集群详细信息会将相应安全合规属性的值显示为‘Not checked’(未检查)。
+
+image:OE_Cluster_Compliance_Example.png["集群合规性状态"]
+
+对于SVM、"安全"信息板将查看以下监控器：
+
+|===
+| 监控器名称 | 属性名称(显示在Storage VM设置中) | 属性兼容值 
+
+
+| Storage VM的SSH不安全密码 | 安全SSH设置 | 是 
+
+
+| 已禁用Storage VM登录横幅 | 登录横幅 | 已启用 
+
+
+| 已禁用Storage VM审核日志 | 审核日志 | 已启用 
+|===
+在集群列表中、为每个集群选择_View Details_以打开一个"卸载"面板、其中显示了_Cluster、Storage VM、_或_Anti-Ransicor_的当前设置。
+
+集群详细信息包括连接状态、证书信息等：image:OE_Cluster_Slideout.png["集群详细信息的\"卸载\"面板"]
+
+Storage VM详细信息显示审核和SSH信息：image:OE_Storage_Slideout.png["存储选项卡"]
+
+反网络软件详细信息显示Storage VM是否受ONTAP的反网络软件保护或数据基础架构洞察工作负载安全性的保护。请注意、ONTAP ARP列显示ONTAP 系统上配置的ONTAP板载防反网络防御保护的当前状态。可以通过在该列中选择"保护"来启用Data Infrastructure Insight工作负载安全性。image:OE_Anti-Ransomware_Slideout.png["Anti-Rans要 程序选项卡"]
+
+
+
+== 警报
+
+您可以在此查看环境中的活动警报、并快速深入了解潜在问题。选择_resolved_选项卡可查看已解决的警报。
+
+image:OE_Alerts.png["ONTAP 基础知识警报列表"]
+
+
+
+== 基础架构
+
+ONTAP 基础知识*基础架构*页面可通过对所有基本ONTAP 对象进行预构建(但可进一步自定义)查询来提供集群运行状况和性能的视图。选择要浏览的对象类型(集群、存储池等)、然后选择是查看运行状况信息还是性能信息。设置筛选器以深入了解各个系统。
+
+image:ONTAP_Essentials_Health_Performance.png["存储池的基础架构选择"]
+
+显示集群运行状况的基础架构页面：image:ONTAP_Essentials_Infrastructure_A.png["要探索的基础架构对象"]
+
+
+
+== 网络连接
+
+通过ONTAP 基础知识网络、您可以查看FC、NVMe FC、以太网和iSCSI基础架构。在这些页面上、您可以浏览集群及其节点中的端口等内容。
+
+image:ONTAP_Essentials_Alerts_Menu.png["ONTAP 基础知识网络连接菜单"] image:ONTAP_Essentials_Alerts_Page.png["ONTAP 基础知识网络FC页面、显示集群节点中的端口"]
+
+
+
+== 工作负载
+
+查看和浏览环境中LUN/卷、NFS或SMB共享或qtree上的工作负载。
+
+image:ONTAP_Essentials_Workloads_Menu.png["工作负载菜单"]
+
+image:ONTAP_Essentials_Workloads_Page.png["工作负载列表页面"]

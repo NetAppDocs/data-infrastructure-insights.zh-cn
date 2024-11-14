@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_kubernetes.html 
+keywords: telegraf 
+summary: 适用于Kubbernetes的数据收集器 
+---
+= Data Collector：KubeNet
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Data Infrastructure Insight使用此数据收集器收集Kubbernetes Pod、节点和容器指标。
+
+
+
+== 安装
+
+有关Kubnetes安装说明、请参见link:task_config_telegraf_agent_k8s.html["Kubbernetes监控操作员"]页面。
+
+
+
+== 关于Kube-state-metrics
+
+Kuber-netes Monitoring Operator会自动安装Kube-state-metrics；无需用户交互。
+
+
+
+=== Kube-state-metrics计数器
+
+NetApp Kuber-netes监控操作员会提取下面列出的Kube-state-metrics计数器。有关每个计数器的更多详细信息，请访问： https://github.com/kubernetes/kube-state-metrics/tree/main/docs#exposed-metrics[]。
+
+. DemonSet 指标
+. 部署指标
+. 命名空间指标
+. 节点指标
+. 永久性卷指标
+. 永久性卷请求指标
+. POD 指标
+. ReplicaSet 指标
+. 服务指标
+. StatusSet 指标
+
