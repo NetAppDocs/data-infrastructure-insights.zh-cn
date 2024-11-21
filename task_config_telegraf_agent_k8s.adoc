@@ -440,7 +440,7 @@ netapp-CI-tentlaf-ds_、_netapp-CI-fluent-bit-ds_和_netapp-CI-net-oboder-L4-DS_
 | 我没有看到为集群中的Kubnetes CronJobs收集任何指标。 | 验证您的Kubbernetes版本(即 `kubectl version`)。如果是v1.20.x或更低版本、则这是预期的限制。随Kubernetes Monitoring Operator部署的Kube-state-metrics版本仅支持v1.cronjob.对于Kubernetes 1.2.x及更低版本、cronJob资源位于v1beta.cronJob。因此、Kube-state-metrics找不到cronJob资源。 
 
 
-| 安装操作员后、该特拉夫DS Pod进入CrashLoopBackOff、并且POD日志指示"su：authentication failure"(su：身份验证失败)。 | 编辑_AgentConfiguration_中的"特拉夫"部分、并将_dockerMetricCollectionEnabled"设置为false。有关详细信息，请参阅操作员的link:telegraf_agent_k8s_config_options.html["配置选项"]。注意：如果您使用的是Data Infrastructure Insight Federal Edition、则对_su_的使用有限制的用户将无法收集Docker指标、因为访问Docker套接字需要以root用户身份运行该特拉夫容器或使用_su_将该特拉夫用户添加到Docker组。默认情况下、Docker指标收集和_su_的使用处于启用状态；要同时禁用这两者、请删除_AgentConfiguration_文件中的_tenderaf.Docker条目：... spec：... tenderaf：...           -名称：Docker       run-mode：       - DemonSet      替换       项：-关键字：Docker _UNIS_sdoc_s占 位符        值：UNIX：///run/Docker。sk...... 
+| 安装操作员后、该特拉夫DS Pod进入CrashLoopBackOff、并且POD日志指示"su：authentication failure"(su：身份验证失败)。 | 编辑_AgentConfiguration_中的"特拉夫"部分、并将_dockerMetricCollectionEnabled"设置为false。有关详细信息，请参阅操作员的link:telegraf_agent_k8s_config_options.html["配置选项"]。.规范：..           -名称：Docker       run-mode：       - DemonSet      替换       项：-关键字：Docker _UNIS_sdoc_s占 位符        值：UNIX：///run/Docker。sk...... 
 
 
 | 我在Telegraf日志中看到重复出现以下错误消息：E! [agent]写入至Outputs.http：POST "\https：//lace/rest/v1/lace/ingest/影响xdb"时出错：超过上下文截止时间(<tenant_url>。 等待标头时超时) | 编辑_AgentConfiguration_中的"特拉夫"部分、并将_outputTimeout_增加到10秒。有关详细信息，请参阅操作员的link:telegraf_agent_k8s_config_options.html["配置选项"]。 

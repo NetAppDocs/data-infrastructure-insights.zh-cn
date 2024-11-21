@@ -639,9 +639,6 @@ image:Single-ValueWidgets.png["包含和不包含格式的单值小工具"]
 
 与单值和量表小工具一样、您可以在表小工具中设置条件格式、以便使用颜色和/或特殊图标突出显示数据。
 
-
-NOTE: Data Infrastructure Insight Federal Edition目前不提供条件格式。
-
 通过条件格式、您可以在表小工具中设置和突出显示警告级别和严重级别阈值、从而可以即时查看异常值和异常数据点。
 
 image:ConditionalFormattingExample.png["条件格式示例"]

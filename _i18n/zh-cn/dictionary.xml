@@ -193,12 +193,9 @@
   <block id="e0dc2ed956b3711e722d965954939344" category="list-text">在此采集单元上总共部署 75 个或更多数据收集器？</block>
   <block id="159904c45b61bfdda4989e18bf9891e8" category="paragraph">对于上述每个 " 是 " 问题解答，建议向 AU 添加 8 GB 内存和 50 GB 磁盘空间。因此，例如，如果您对这两者都回答 " 是 " ，则应部署一个具有 150 GB 或以上磁盘空间的 24 GB 内存系统。在 Linux 上，要添加到日志位置的磁盘空间。</block>
   <block id="11bb1da5c9cf0248245ce5b24119d183" category="paragraph">有关其他规模估算问题，请联系 NetApp 支持部门。</block>
-  <block id="da9f9625eb860a1ad92687973f4b6f55" category="section-title">联邦版的其他要求</block>
-  <block id="cde8307fb591a6c3934539dcb5919f06" category="list-text">对于Data Infrastructure Insight Federal Edition集群中的采集单元安装、底层操作系统必须具有良好的熵源。在Linux系统上、通常通过安装_rng-tools_或使用硬件随机数生成(RNG)来完成此操作。客户有责任确保采集单元机器满足此要求。</block>
   <block id="96cb7682ad0362f3aff6ef6f90dd2520" category="summary">数据基础架构洞察从NetApp Active IQ收集风险数据</block>
   <block id="b5fe3a41d32647f20f3b5ec96045d6d6" category="doc">Active IQ</block>
   <block id="df0ddcb04f0e5278d49d2c87dfa7f7fc" category="paragraph">NetApp<block ref="5d418eb60d51fa035e4b287bd4191a07" category="inline-link-macro-rx"></block>为NetApp客户的硬件/软件系统提供一系列可视化、分析和其他支持相关服务。Active IQ 报告的数据可以增强系统问题的故障排除能力，还可以深入了解与您的设备相关的优化和预测性分析。</block>
-  <block id="ace71aa31322ae1c7e3740649676adf8" category="admonition">ActiveIQ在Data Infrastructure Insight Federal Edition中不可用。</block>
   <block id="97ba27a6c978c304ea9138ee01781875" category="paragraph">数据基础架构洞察会收集由Active IQ监控和报告的任何NetApp集群模式Data ONTAP存储系统的*风险*。Data Infrastructure Insight会在从这些设备收集数据的过程中自动收集为存储系统报告的风险。您必须将相应的数据收集器添加到数据基础架构洞察力中、以收集Active IQ风险信息。</block>
   <block id="bfdb97c5bb51966044d87207708e9888" category="paragraph">数据基础架构洞察不会显示Active IQ未监控和报告的ONTAP系统的风险数据。</block>
   <block id="a98980e7429cd68c3207593853e627fe" category="paragraph">报告的风险显示在_storage_和_storage nnode _资产登录页面上的"风险"表中。此表显示了风险详细信息，风险类别和风险的潜在影响，还提供了一个指向 Active IQ 页面的链接，其中汇总了存储节点的所有风险（需要登录 NetApp 支持帐户）。</block>
@@ -1104,7 +1101,6 @@
   <block id="7cf514f5919cb28bfec05b4c4f4c46c6" category="paragraph">单击单值小工具或量表小工具中的链接将显示与此小工具中的第一个查询对应的查询页面。</block>
   <block id="643c94a9b7fa8044a23bb9cbc6ebffbe" category="section-title">正在格式化表小工具</block>
   <block id="9e2381c8e7ac28deb699317b34df149b" category="paragraph">与单值和量表小工具一样、您可以在表小工具中设置条件格式、以便使用颜色和/或特殊图标突出显示数据。</block>
-  <block id="5fd3ff776b149305fbc059482c2bb581" category="admonition">Data Infrastructure Insight Federal Edition目前不提供条件格式。</block>
   <block id="84679b44186157278902037b722c7359" category="paragraph">通过条件格式、您可以在表小工具中设置和突出显示警告级别和严重级别阈值、从而可以即时查看异常值和异常数据点。</block>
   <block id="af857689eee998410c8a208e06da82aa" category="inline-image-macro">条件格式示例</block>
   <block id="07ee1acb2c120e65f59c1e4f6f6c04e9" category="paragraph"><block ref="07ee1acb2c120e65f59c1e4f6f6c04e9" category="inline-image-macro-rx" type="image"></block></block>
@@ -3716,7 +3712,6 @@
   <block id="58e92099c75821827b7a665f2931deb2" category="paragraph"><block ref="58e92099c75821827b7a665f2931deb2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b451cdd4206327fd0afecbb2df7b2bec" category="doc">关于存储工作负载安全性</block>
   <block id="d91922a1bdba61ab374e14011d46cddf" category="paragraph">数据基础架构洞察力存储工作负载安全性(原Cloud Secure)可利用可指导行动的内部威胁情报来保护您的数据。它可以集中查看和控制混合云环境中的所有企业数据访问，以确保实现安全性和合规性目标。</block>
-  <block id="f685e8c506c41657d74fe2fe7ec4ca60" category="admonition">Data Infrastructure Insight Federal Edition不提供工作负载安全性功能。</block>
   <block id="1729a56cfc89021478498fe0c89a843a" category="section-title">可见性</block>
   <block id="72afd90b781c569f0442e6e45c9f3193" category="paragraph">集中查看和控制用户对存储在内部或云中的关键企业数据的访问。</block>
   <block id="6bb784bfbef2792b99ae322d0ce648b6" category="paragraph">更换无法及时准确地查看数据访问和控制情况的工具和手动流程。工作负载安全性在云和内部存储系统上都是唯一的、可为您提供有关恶意用户行为的实时警报。</block>
@@ -6842,7 +6837,6 @@
   <block id="02230bab9788e4843408e124331bb1ca" category="cell">我没有看到为集群中的Kubnetes CronJobs收集任何指标。</block>
   <block id="b3b6bea000b13acbfcb412bad49ee494" category="cell">验证您的Kubbernetes版本(即<block ref="4fc58818ca77fb3a60cbd34a7f7d5071" prefix=" " category="inline-code"></block>)。如果是v1.20.x或更低版本、则这是预期的限制。随Kubernetes Monitoring Operator部署的Kube-state-metrics版本仅支持v1.cronjob.对于Kubernetes 1.2.x及更低版本、cronJob资源位于v1beta.cronJob。因此、Kube-state-metrics找不到cronJob资源。</block>
   <block id="45698e13b1c2f7241751839133834506" category="cell">安装操作员后、该特拉夫DS Pod进入CrashLoopBackOff、并且POD日志指示"su：authentication failure"(su：身份验证失败)。</block>
-  <block id="f8c008ebe75bf3ef5a707b1a1565926f" category="cell">编辑_AgentConfiguration_中的"特拉夫"部分、并将_dockerMetricCollectionEnabled"设置为false。有关详细信息，请参阅操作员的<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>。注意：如果您使用的是Data Infrastructure Insight Federal Edition、则对_su_的使用有限制的用户将无法收集Docker指标、因为访问Docker套接字需要以root用户身份运行该特拉夫容器或使用_su_将该特拉夫用户添加到Docker组。默认情况下、Docker指标收集和_su_的使用处于启用状态；要同时禁用这两者、请删除_AgentConfiguration_文件中的_tenderaf.Docker条目：... spec：... tenderaf：...           -名称：Docker       run-mode：       - DemonSet      替换       项：-关键字：Docker _UNIS_sdoc_s占 位符        值：UNIX：///run/Docker。sk......</block>
   <block id="802997bcb8e9581226b3000b8b611b1c" category="cell">我在Telegraf日志中看到重复出现以下错误消息：E! [agent]写入至Outputs.http：POST "\https：//lace/rest/v1/lace/ingest/影响xdb"时出错：超过上下文截止时间(&lt;tenant_url&gt;。 等待标头时超时)</block>
   <block id="5a581223d2fea6c45a7ac1278334f8c1" category="cell">编辑_AgentConfiguration_中的"特拉夫"部分、并将_outputTimeout_增加到10秒。有关详细信息，请参阅操作员的<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>。</block>
   <block id="4f05106cca363b0f3c492314ab777534" category="cell">我缺少一些事件日志的_volvedobject_数据。</block>
@@ -11824,4 +11818,5 @@
   <block id="399bd1ee587245ecac6f39beaa99886f" category="sidebar">PostgreSQL</block>
   <block id="14590850b4107a6f92feb1af739b82eb" category="sidebar">Puppet</block>
   <block id="15ec8934d96530d4c5f4a3b0f701f745" category="sidebar">RethinkDB</block>
+  <block id="e77701e8957afb414a45ca434ef7f000" category="cell">编辑_AgentConfiguration_中的"特拉夫"部分、并将_dockerMetricCollectionEnabled"设置为false。有关详细信息，请参阅操作员的<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>。.规范：..           -名称：Docker       run-mode：       - DemonSet      替换       项：-关键字：Docker _UNIS_sdoc_s占 位符        值：UNIX：///run/Docker。sk......</block>
 </blocks>

@@ -21,9 +21,6 @@ summary: 数据基础架构洞察从NetApp Active IQ收集风险数据
 [role="lead"]
 NetApplink:https://www.netapp.com/us/products/data-infrastructure-management/active-iq.aspx["Active IQ"]为NetApp客户的硬件/软件系统提供一系列可视化、分析和其他支持相关服务。Active IQ 报告的数据可以增强系统问题的故障排除能力，还可以深入了解与您的设备相关的优化和预测性分析。
 
-
-NOTE: ActiveIQ在Data Infrastructure Insight Federal Edition中不可用。
-
 数据基础架构洞察会收集由Active IQ监控和报告的任何NetApp集群模式Data ONTAP存储系统的*风险*。Data Infrastructure Insight会在从这些设备收集数据的过程中自动收集为存储系统报告的风险。您必须将相应的数据收集器添加到数据基础架构洞察力中、以收集Active IQ风险信息。
 
 数据基础架构洞察不会显示Active IQ未监控和报告的ONTAP系统的风险数据。

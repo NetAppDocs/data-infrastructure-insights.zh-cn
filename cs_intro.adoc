@@ -22,9 +22,6 @@ summary: 概述
 数据基础架构洞察力存储工作负载安全性(原Cloud Secure)可利用可指导行动的内部威胁情报来保护您的数据。它可以集中查看和控制混合云环境中的所有企业数据访问，以确保实现安全性和合规性目标。
 
 
-NOTE: Data Infrastructure Insight Federal Edition不提供工作负载安全性功能。
-
-
 
 == 可见性
 

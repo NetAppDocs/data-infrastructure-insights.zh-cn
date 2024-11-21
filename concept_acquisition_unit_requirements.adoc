@@ -73,10 +73,3 @@ keywords: AU, acquisition unit, requirements, sizing
 对于上述每个 " 是 " 问题解答，建议向 AU 添加 8 GB 内存和 50 GB 磁盘空间。因此，例如，如果您对这两者都回答 " 是 " ，则应部署一个具有 150 GB 或以上磁盘空间的 24 GB 内存系统。在 Linux 上，要添加到日志位置的磁盘空间。
 
 有关其他规模估算问题，请联系 NetApp 支持部门。
-
-
-
-== 联邦版的其他要求
-
-* 对于Data Infrastructure Insight Federal Edition集群中的采集单元安装、底层操作系统必须具有良好的熵源。在Linux系统上、通常通过安装_rng-tools_或使用硬件随机数生成(RNG)来完成此操作。客户有责任确保采集单元机器满足此要求。
-
