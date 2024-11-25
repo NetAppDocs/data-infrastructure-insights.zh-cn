@@ -39,7 +39,7 @@ summary: 通过Data Infrastructure Insight API、可以与监控和报告系统�
 
 image:API_Swagger_Types.png["API类型"]
 
-API 文档基于 Swagger ，其中提供了 API 的简短问题描述和使用情况信息，您可以在环境中试用这些文档。根据您的用户角色和/或Data Infrastructure Insight版本、您可以使用的API类型可能会有所不同。
+API文档基于Swagger、可提供API的简要说明和使用情况信息、并允许您在租户中试用。根据您的用户角色和/或Data Infrastructure Insight版本、您可以使用的API类型可能会有所不同。
 
 image:API_Swagger_Example.png["API Swagger 示例"]
 
@@ -195,11 +195,9 @@ image:API_Performance.png["API 性能示例"]
 
 == 对象性能指标
 
-API 可以返回环境中对象的详细指标，例如：
+API可以返回租户上的对象的详细指标、例如：
 
 * 存储性能指标，例如 IOPS （每秒输入 / 输出请求数），延迟或吞吐量。
-
-
 * 交换机性能指标，例如流量利用率， BB 信用零数据或端口错误。
 
 

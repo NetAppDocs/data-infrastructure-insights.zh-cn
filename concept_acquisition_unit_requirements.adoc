@@ -19,7 +19,7 @@ keywords: AU, acquisition unit, requirements, sizing
 
 
 [role="lead"]
-您必须安装采集单元（ AU ），才能从基础架构数据收集器（存储， VM ，端口， EC2 等）中获取信息。在安装采集单元之前，您应确保环境满足操作系统， CPU ，内存和磁盘空间要求。
+您必须安装采集单元（ AU ），才能从基础架构数据收集器（存储， VM ，端口， EC2 等）中获取信息。在安装采集单元之前、您应确保租户满足操作系统、CPU、内存和磁盘空间要求。
 
 
 
@@ -43,7 +43,7 @@ keywords: AU, acquisition unit, requirements, sizing
 | 可用磁盘空间 | 50 GB (建议使用100 GB)对于Linux、应按以下方式分配磁盘空间：/opt/Linux NetApp 10 GB (大型环境为20 GB)/var/log/linux NetApp 40 GB (大型环境为80 GB)/tmp安装期间至少有1 GB可用空间 | 50 GB 
 
 
-| 网络 | 需要使用100 Mbps/1 Gbps以太网连接、静态IP地址以及端口80或443 (出站)连接从采集单元连接到*。Cloud：com或您的数据基础架构洞察力环境(即\https：//Data <environment_id>：C01.Cloud NetApp NetApp：com)。有关采集单元和每个Data Collector之间的要求，请参阅的说明link:data_collector_list.html["数据收集器"]。如果您的组织需要使用代理访问Internet、您可能需要了解组织的代理行为并寻求某些例外情况、以便Data Infrastructure Insight能够正常工作。例如、您的组织是否默认阻止访问、并且例外情况下仅允许访问特定网站/域？如果是这样，您需要将以下域添加到例外列表中：*.ldinsights．Proxs.com有关详细信息，请阅读关于NetApplink:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["此处(Linux)"]或link:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["此处(Windows)"]。 | 相同 
+| 网络 | 需要使用100 Mbps/1 Gbps以太网连接、静态IP地址以及端口80或443 (出站)连接从采集单元连接到*。Cloud：com或您的数据基础架构NetApp租户(即：\https：<tenant_id>：C01.Cloud NetApp：com)。有关采集单元和每个Data Collector之间的要求，请参阅的说明link:data_collector_list.html["数据收集器"]。如果您的组织需要使用代理访问Internet、您可能需要了解组织的代理行为并寻求某些例外情况、以便Data Infrastructure Insight能够正常工作。例如、您的组织是否默认阻止访问、并且例外情况下仅允许访问特定网站/域？如果是这样，您需要将以下域添加到例外列表中：*.ldinsights．Proxs.com有关详细信息，请阅读关于NetApplink:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["此处(Linux)"]或link:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["此处(Windows)"]。 | 相同 
 
 
 | 权限 | 对采集单元服务器具有 sudo 权限。必须使用 exec 功能挂载 /tmp 。 | 对采集单元服务器具有管理员权限 

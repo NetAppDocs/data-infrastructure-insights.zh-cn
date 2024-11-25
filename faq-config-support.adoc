@@ -64,7 +64,7 @@ VMware 等虚拟机管理程序可提供有关 ESXi 主机及其虚拟机（ VM 
 
 == Data Infrastructure Insight是否支持光纤通道交换机？
 
-是的、除了从存储资产中收集数据之外、数据基础架构洞察还可以从您环境中的Cisco、Brocade和QLogic交换机采集清单和性能数据。
+是的、除了从存储资产中收集数据之外、数据基础架构洞察还可以从租户上的Cisco、Brocade和QLogic交换机采集清单和性能数据。
 
 
 

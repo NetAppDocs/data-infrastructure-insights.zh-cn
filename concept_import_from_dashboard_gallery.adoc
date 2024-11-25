@@ -19,7 +19,7 @@ keywords: dashboard, gallery, import
 
 
 [role="lead"]
-Data Infrastructure Insight提供了许多建议的信息板、用于提供对数据的业务洞察力。每个信息板都包含一些小工具，这些小工具旨在帮助问题解答您解决与环境中当前收集的数据相关的特定问题或特定问题。
+Data Infrastructure Insight提供了许多建议的信息板、用于提供对数据的业务洞察力。每个信息板都包含一些小工具、旨在帮助您回答特定问题或解决与当前在租户上收集的数据相关的特定问题。
 
 要从库导入信息板，请执行以下操作：
 

@@ -21,7 +21,7 @@ summary: 介绍了 Kubernetes 登录页面
 [role="lead"]
 Data Infrastructure Insight Kubernetes Explorer是一款功能强大的工具、可用于显示Kubernetes集群的整体运行状况和使用情况、并可用于轻松深入研究调查领域。
 
-单击*信息板> Kubernetes Explorer*将打开Kubernetes集群列表页面。此概述页面包含您环境中的Kubernetes集群表。
+单击*信息板> Kubernetes Explorer*将打开Kubernetes集群列表页面。此概述页面包含租户上的Kubbernetes集群表。
 
 image:Kubernetes_List_Page_new.png["Kubernetes列表页面"]
 
@@ -29,7 +29,7 @@ image:Kubernetes_List_Page_new.png["Kubernetes列表页面"]
 
 === 集群列表
 
-集群列表显示环境中每个集群的以下信息：
+集群列表显示租户上每个集群的以下信息：
 
 * 集群*名称*。单击集群名称将打开该集群的。link:kubernetes_cluster_detail.html["* 详细信息页面 *"]
 * *饱和*百分比。整体饱和是CPU、内存或存储饱和的最高值。

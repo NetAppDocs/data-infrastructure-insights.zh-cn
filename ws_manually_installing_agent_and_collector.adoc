@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: ws_manually_installing_agent_and_collector.html 
 keywords: install, configure, agent, collector, workload, security, cloud secure 
-summary: 您可以手动安装或更新Workload Security代理、以便更好地控制环境中安装的软件。 
+summary: 您可以手动安装或更新工作负载安全代理、以便更好地控制租户上安装的软件。 
 ---
 = 手动安装工作负载安全代理和收集器
 :hardbreaks:
@@ -16,7 +16,7 @@ summary: 您可以手动安装或更新Workload Security代理、以便更好地
 
 
 [role="lead"]
-默认情况下、当新版本的工作负载安全代理或收集器可用时、系统会发送升级前通知、并自动更新环境中的代理和收集器。但是、在受控安全环境中、可能不需要自动升级。在这种情况下、可以为手动安装/升级代理和收集器配置工作负载安全性、从而更好地控制系统上安装的软件。
+默认情况下、当新版本的工作负载安全代理或收集器可用时、系统会发送升级前通知、并自动更新租户上的代理和收集器。但是、在受控安全环境中、可能不需要自动升级。在这种情况下、可以为手动安装/升级代理和收集器配置工作负载安全性、从而更好地控制系统上安装的软件。
 
 
 

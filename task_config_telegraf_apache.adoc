@@ -19,7 +19,7 @@ summary: Apache 数据收集器配置
 
 
 [role="lead"]
-通过此数据收集器，可以从环境中的 Apache 服务器收集数据。
+此数据收集器允许从租户上的Apache服务器收集数据。
 
 .前提条件
 * 您必须已设置 Apache HTTP 服务器并正确运行

@@ -19,7 +19,7 @@ summary: 正在添加工作负载安全代理
 
 
 [role="lead"]
-工作负载安全性(以前称为Cloud Secure)使用一个或多个代理收集用户活动数据。代理连接到环境中的设备并收集发送到工作负载安全SaaS层进行分析的数据。请参见link:concept_cs_agent_requirements.html["代理要求"]以配置代理VM。
+工作负载安全性(以前称为Cloud Secure)使用一个或多个代理收集用户活动数据。代理会连接到租户上的设备、并收集发送到工作负载安全SaaS层进行分析的数据。请参见link:concept_cs_agent_requirements.html["代理要求"]以配置代理VM。
 
 
 

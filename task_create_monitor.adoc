@@ -36,7 +36,7 @@ Data Infrastructure Insight还根据您的环境提供了许多link:task_system_
 
 == 安全最佳实践
 
-Data Infrastructure Insight警报旨在突出显示您环境中的数据点和趋势、Data Infrastructure Insight允许您输入任何有效的电子邮件地址作为警报收件人。如果您在安全环境中工作、请特别注意谁在接收通知或以其他方式有权访问警报。
+Data Infrastructure Insight警报旨在突出显示租户上的数据点和趋势、Data Infrastructure Insight允许您输入任何有效的电子邮件地址作为警报收件人。如果您在安全环境中工作、请特别注意谁在接收通知或以其他方式有权访问警报。
 
 
 
@@ -232,7 +232,7 @@ image:Monitors_Alert_Description.png["警报更正操作和问题描述"]
 
 == 监控组
 
-通过分组，您可以查看和管理相关监控器。例如，您可以为环境中的存储配置一个专用监控组，也可以为特定收件人列表配置相关监控器。
+通过分组，您可以查看和管理相关监控器。例如、您可以为租户上的存储设置一个专用监控组、或者为特定收件人列表设置相关监控器。
 
 image:Monitors_GroupList.png["监控分组"]
 
@@ -297,7 +297,7 @@ image:Monitors_PauseGroup.png["暂停组"]
 
 == 系统定义的监控器
 
-Data Infrastructure Insight包括许多系统定义的指标和日志监控器。可用的系统监控器取决于您环境中的数据收集器。因此、Data Infrastructure Insight中的监控器可能会随着数据收集器的添加或其配置的更改而发生变化。
+Data Infrastructure Insight包括许多系统定义的指标和日志监控器。可用的系统监控器取决于租户上的数据收集器。因此、Data Infrastructure Insight中的监控器可能会随着数据收集器的添加或其配置的更改而发生变化。
 
 查看link:task_system_monitors.html["系统定义的监控器"]页面、了解Data Infrastructure Insight附带的显示器的说明。
 

@@ -16,7 +16,7 @@ keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles
 
 
 [role="lead"]
-如果您的Data Infrastructure Insight Premium Edition包含报告功能、则您环境中的每个Data Infrastructure Insight用户还可以通过单点登录(Single Sign-On、SSO)登录到报告应用程序(即Cognos)。只需单击菜单中的 * 报告 * 链接，您就会自动登录到报告。
+如果您的Data Infrastructure Insight Premium Edition包含报告功能、则租户上的每个Data Infrastructure Insight用户还可以通过单点登录(Single Sign-On、SSO)登录到报告应用程序(即Cognos)。只需单击菜单中的 * 报告 * 链接，您就会自动登录到报告。
 
 您在Data Infrastructure Insight中的用户角色决定了您的报告用户角色：
 
@@ -91,7 +91,7 @@ NOTE: 如果您在Data Infrastructure Insight报告(即Cognos应用程序)中更
 
 === 我应采取哪些步骤来准备现有环境以启用 SSO ？
 
-要确保您的报告得以保留，请使用以下步骤将所有报告从 _My Content_ 迁移到 _Team Content_ 。在您的环境中启用 SSO 之前，您必须先执行此操作：
+要确保您的报告得以保留，请使用以下步骤将所有报告从 _My Content_ 迁移到 _Team Content_ 。在租户上启用SSO之前、必须执行此操作：
 
 . 导航到*菜单>内容*
 

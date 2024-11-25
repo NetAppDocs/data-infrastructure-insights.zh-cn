@@ -19,7 +19,7 @@ summary: 洞察力可以帮助您预测Kubernetes空间何时可能会全满。
 
 
 [role="lead"]
-环境中的空间不足永远不是一种好情况。Data Infrastructure Insight可帮助您预测Kubbernetes永久性卷变满之前的时间。
+租户上的空间不足永远不是一种好情况。Data Infrastructure Insight可帮助您预测Kubbernetes永久性卷变满之前的时间。
 
 通过运行空间不足的_Kubernetes命名空间_ Insight、您可以查看Kubernetes命名空间上可能会用尽空间的工作负载、并估算每个永久性卷达到全满前的剩余天数。
 

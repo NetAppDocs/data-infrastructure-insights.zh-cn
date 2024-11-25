@@ -29,7 +29,7 @@ Data Infrastructure Insight可以区分具有本地存储的存储阵列或虚�
 
 image:StorageVirtualization_TableWidgetSettings.png["用于显示存储虚拟化的T型 的基本查询"]
 
-生成的表小工具将显示您环境中的_Standard"、"Backend"和"_Virtual_"存储。
+生成的表小工具将显示租户上的_Standard"、"Backend"和"_Virtual_"存储。
 
 image:StorageVirtualization_TableWidgetShowingVirtualizedTypes.png["显示虚拟化类型的表"]
 
@@ -45,7 +45,7 @@ image:StorageVirtualization_StorageSummary.png["显示虚拟和备份存储信�
 
 === 现有登录页面和信息板
 
-请注意、如果您的环境中当前已有自定义登录页面或信息板、则默认情况下、这些页面或信息板不会自动显示所有虚拟化信息。但是、您可以还原为默认值_任何自定义信息板或登录页面(您必须重新实施自定义设置)、也可以修改相关小工具以包含所需的虚拟化属性或指标。
+请注意、如果租户上当前已有自定义登录页面或信息板、则默认情况下、这些页面或信息板不会自动显示所有虚拟化信息。但是、您可以还原为默认值_任何自定义信息板或登录页面(您必须重新实施自定义设置)、也可以修改相关小工具以包含所需的虚拟化属性或指标。
 
 可在自定义信息板或登录页面屏幕的右上角使用_RERT to Default_。
 

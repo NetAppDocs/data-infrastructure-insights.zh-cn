@@ -27,7 +27,7 @@ Data Infrastructure Insight使用此数据收集器从Docker收集指标。
 
 . 从*Observability > Collectors*中，单击*+Data Collector*。选择Docker。
 +
-如果尚未配置用于收集的Agent、系统将提示您在环境中执行link:task_config_telegraf_agent.html["安装代理"]。
+如果尚未配置用于收集的Agent、系统将提示您在租户上配置link:task_config_telegraf_agent.html["安装代理"]。
 
 +
 如果已配置代理，请选择相应的操作系统或平台，然后单击 * 继续 * 。

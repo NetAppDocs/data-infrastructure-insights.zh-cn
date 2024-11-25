@@ -182,7 +182,7 @@ NetApp Kubernetes监控操作员会安装自己的Kube-state-metrics、以避免
 
 === 配置代理支持
 
-您可以在环境中的两个位置使用代理来安装Kubnetes Monitoring Operator。这些代理系统可以是相同的、也可以是单独的：
+您可以在两个位置使用租户上的代理来安装Kubnetes Monitoring Operator。这些代理系统可以是相同的、也可以是单独的：
 
 * 在执行安装代码段(使用"cURL ")期间需要代理、以便将执行此代码段的系统连接到Data Infrastructure Insight环境
 * 目标Kubnetes集群与Data Infrastructure Insight环境通信所需的代理

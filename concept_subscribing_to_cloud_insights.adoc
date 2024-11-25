@@ -135,7 +135,7 @@ Data Infrastructure Insight可观察性可通过以下两种方式之一进行�
 
 ==== 容量量
 
-Data Infrastructure Insight可观察性根据您环境中的存储层来测量使用情况。您的存储可能属于以下一个或多个类别：
+Data Infrastructure Insight可观察性根据租户上的存储层来测量使用情况。您的存储可能属于以下一个或多个类别：
 
 * 主原始
 * 对象原始

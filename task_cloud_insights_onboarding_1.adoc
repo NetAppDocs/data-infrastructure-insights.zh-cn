@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task_cloud_insights_onboarding_1.html 
-summary: 注册获取数据基础架构洞察力并创建您的环境。 
+summary: 注册Data Infrastructure Insight并创建租户。 
 keywords: onboarding, new user 
 ---
 = 数据基础架构洞察力入门
@@ -49,11 +49,11 @@ image:BlueXP_CloudInsights.png["在BlueXP  上免费试用Data Infrastructure I
 
 == 开始免费试用Data Infrastructure Insight
 
-如果这是您首次登录到Data Infrastructure Insight、请在Data Infrastructure Insight产品下单击*开始免费试用*。Data Infrastructure Insight将引导您完成创建公司环境的过程、包括选择希望您的环境驻留的区域。
+如果这是您首次登录到Data Infrastructure Insight、请在Data Infrastructure Insight产品下单击*开始免费试用*。Data Infrastructure Insight将引导您完成创建公司租户的过程、包括选择租户所在的区域。
 
-image:trial_region_selector.png["选择要托管Data Infrastructure Insight环境的区域"]
+image:trial_region_selector.png["选择要托管Data Infrastructure Insight租户的区域"]
 
-环境创建完成后、您可以使用BlueXP  凭据登录并开始免费试用30天的Data Infrastructure Insight。在此试用期间、您可以了解Data Infrastructure Insight必须提供的功能。
+租户创建完成后、您可以使用BlueXP  凭据登录并开始免费试用30天的Data Infrastructure Insight。在此试用期间、您可以了解Data Infrastructure Insight必须提供的功能。
 
 在免费试用期间、您可以link:concept_subscribing_to_cloud_insights.html["开始订阅"]随时访问Data Infrastructure Insight。订阅后、您可以根据当前订阅情况使用Data Infrastructure Insight功能。
 
@@ -61,17 +61,17 @@ image:trial_region_selector.png["选择要托管Data Infrastructure Insight环�
 
 == 登录并继续
 
-创建环境后，您可以随时登录NetApp BlueXP  门户并单击*转到数据基础架构洞察力*。您将直接转到Data Infrastructure Insight环境。
+创建租户后、您可以随时登录到NetApp BlueXP  门户并单击*转至数据基础架构洞察力*。您将直接转到Data Infrastructure Insight租户。
 
-您还可以打开浏览器、直接访问Data Infrastructure Insight环境URL、例如：
+您也可以直接打开浏览器访问Data Infrastructure Insight租户URL、例如：
 
- \https://<environment-prefix>.c01.cloudinsights.netapp.com/
+ \https://<tenant-prefix>.c01.cloudinsights.netapp.com/
 每个用户的邀请函电子邮件中也会包含此 URL ，以便于访问和添加书签。如果用户尚未登录到BlueXP、系统将提示他们登录。
 
 
-NOTE: 新用户仍必须先注册BlueXP访问权限、然后才能访问其环境URL。
+NOTE: 新用户仍必须先注册BlueXP  访问权限、然后才能访问其租户URL。
 
-首次登录到新环境时，系统将引导您完成到的设置link:task_getting_started_with_cloud_insights.html["* 开始收集数据 *"]。
+首次登录到新租户时，系统将引导您完成到的设置link:task_getting_started_with_cloud_insights.html["* 开始收集数据 *"]。
 
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: insights_shared_resources_under_stress.html 
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload 
-summary: 通过洞察，您可以了解资源如何影响环境中的其他资源。 
+summary: 通过洞察力、您可以了解资源如何影响租户上的其他资源。 
 ---
 = 洞察力：共享资源面临压力
 :toc: macro
@@ -19,7 +19,7 @@ summary: 通过洞察，您可以了解资源如何影响环境中的其他资�
 
 
 [role="lead"]
-高影响工作负载会降低共享资源中其他工作负载的性能。这会使共享资源承受压力。Data Infrastructure Insight提供的工具可帮助您调查资源饱和和对环境的影响。
+高影响工作负载会降低共享资源中其他工作负载的性能。这会使共享资源承受压力。Data Infrastructure Insight提供的工具可帮助您调查资源饱和及其对租户的影响。
 
 
 
@@ -63,7 +63,7 @@ image:ResourceInsightDemanding.png["要求苛刻的工作负载图表"] image:Re
 
 == 如何解决饱和问题？
 
-您可以采取多种步骤来减少或消除环境中饱和的可能性。展开页面上的 * + 显示建议 * 链接即可显示这些内容。您可以尝试以下几项操作。
+您可以采取多个步骤来降低或消除租户的饱和几率。展开页面上的 * + 显示建议 * 链接即可显示这些内容。您可以尝试以下几项操作。
 
 * 移动高 IOPS 使用者
 +

@@ -31,7 +31,7 @@ summary: 通过洞察、您可以了解资源使用情况和趋势。
 
 === 共享资源面临压力
 
-高影响工作负载会降低共享资源中其他工作负载的性能。这会使共享资源承受压力。Data Infrastructure Insight提供的工具可帮助您调查资源饱和和对环境的影响。link:insights_shared_resources_under_stress.html["了解更多信息"]
+高影响工作负载会降低共享资源中其他工作负载的性能。这会使共享资源承受压力。Data Infrastructure Insight提供的工具可帮助您调查资源饱和及其对租户的影响。link:insights_shared_resources_under_stress.html["了解更多信息"]
 
 
 
