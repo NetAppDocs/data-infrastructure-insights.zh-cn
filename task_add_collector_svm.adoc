@@ -149,6 +149,28 @@ security login create -user-or-group-name csuser -application http -authmethod p
 ....
 
 
+=== Protobuf模式
+
+如果在收集器的_Advanced Configuration_设置中启用了FPolicy引擎选项、则"Workload Security"将在protobuf模式下配置FPolicy引擎。ONTAP 9.15及更高版本支持原始缓冲区模式。
+
+有关此功能的详细信息，请参见link:https://docs.netapp.com/us-en/ontap/nas-audit/steps-setup-fpolicy-config-concept.html["ONTAP 文档"]。
+
+protobuf需要特定权限(其中部分或全部可能已存在)：
+
+集群模式：
+
+....
+security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <cluster_name>
+security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole
+....
+Vserver模式：
+
+....
+security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <svm_name>
+security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole -vserver <svm_name>
+....
+
+
 === ONTAP自动防网络软件保护和ONTAP访问权限被拒绝
 
 如果您使用的是集群管理凭据、则不需要任何新权限。

@@ -11819,4 +11819,8 @@
   <block id="0967b055354d8d340dcc9aacf450c7f9" category="cell">当永久性卷超过预定义的性能预期时，可以使用永久性卷上的 IOPS 阈值向管理员发出警报。激活此监控器将生成适用于永久性卷的典型 IOPS 配置文件的警报。此监控器将覆盖租户上的所有永久性卷。可以根据监控目标调整警告阈值和严重阈值，方法是复制此监控器并设置适合您的工作负载的阈值。</block>
   <block id="3ee2ba16702e3b406dd125b347f5f30b" category="summary">您可以手动安装或更新工作负载安全代理、以便更好地控制租户上安装的软件。</block>
   <block id="17a311772e6362d1e9dd73c324273dcc" category="paragraph">默认情况下、当新版本的工作负载安全代理或收集器可用时、系统会发送升级前通知、并自动更新租户上的代理和收集器。但是、在受控安全环境中、可能不需要自动升级。在这种情况下、可以为手动安装/升级代理和收集器配置工作负载安全性、从而更好地控制系统上安装的软件。</block>
+  <block id="6a6cf662ae6f91c127da69e22956cc12" category="section-title">Protobuf模式</block>
+  <block id="e60c852a7a4c8de70f56c1772db9c0f5" category="paragraph">如果在收集器的_Advanced Configuration_设置中启用了FPolicy引擎选项、则"Workload Security"将在protobuf模式下配置FPolicy引擎。ONTAP 9.15及更高版本支持原始缓冲区模式。</block>
+  <block id="502f573701c400ca3de6252b1c8e6e9e" category="paragraph">有关此功能的详细信息，请参见<block ref="5c3d3ed23ecd4e0a61ac3e8d31f3a637" category="inline-link-macro-rx"></block>。</block>
+  <block id="e28cace0b0e193aac1db472078caa8fb" category="paragraph">protobuf需要特定权限(其中部分或全部可能已存在)：</block>
 </blocks>
