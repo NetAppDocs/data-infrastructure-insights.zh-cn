@@ -6665,9 +6665,6 @@
   <block id="4a8935a67aadaec6ba4fbfd58e9329b9" category="inline-image-macro">修改Kubbernetes Collector列表页面上的部署菜单</block>
   <block id="7a9e68f513e02f6f4993d88781b49637" category="paragraph"><block ref="7a9e68f513e02f6f4993d88781b49637" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e1ab0e7895c9df2539e36203b84c90d1" category="paragraph">此屏幕将显示每个组件的当前状态、并允许您根据需要为该收集器禁用或启用组件。</block>
-  <block id="9cef0071e460e946beaa92e847eee7a2" category="inline-image-macro">Mody部署选项、700</block>
-  <block id="680dda670e97a05d2baca651224019c6" category="paragraph"><block ref="680dda670e97a05d2baca651224019c6" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="edcc6d64ff09289fd7b549c0265f3ea6" category="section-title">升级</block>
   <block id="8b54cfbc7f4622be8f18ef9e6b323931" category="section-title">升级到最新的Kubnetes Monitoring Operator</block>
   <block id="59f9e8b92a6bc55e991031f0b5fea324" category="paragraph">确定现有Operator是否存在AgentConfiguration (如果您的命名空间不是默认的_NetApp-monitoring _、请替换相应的命名空间)：</block>
   <block id="bb5c0afa0b80550de02b1ac19c1226b4" category="paragraph">如果存在AgentConfiguration：</block>
@@ -11823,4 +11820,6 @@
   <block id="2e9d4d6615af62102584a57c2c8ddacd" category="list-text">根据提示复制并输入存储库密码</block>
   <block id="2cea2fa4f716d1fa2efbffe877eb702c" category="list-text">存储图像签名公共密钥(示例中为dII-image-signing.pub)</block>
   <block id="55d6bfb079ee69230d07a9a9c1c17b66" category="list-text">使用联合签名验证图像。请参见以下联合签名用法示例</block>
+  <block id="f0eddc4fb4218ed4ec07da7604fbc1c8" category="inline-image-macro">修改部署选项、宽度=700</block>
+  <block id="593e78308f625f4551ee5b44b6d582e5" category="paragraph"><block ref="593e78308f625f4551ee5b44b6d582e5" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

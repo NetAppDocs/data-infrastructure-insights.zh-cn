@@ -19,8 +19,6 @@ summary: Kubbernetes Monitoring Operator收集Kubbernetes数据、以供Data Inf
 Data Infrastructure Insight为Kubernetes集合提供了* Kubernetes Monitoring Operator*。导航到*Kubernetes >收集器>+Kubernetes Collector*以部署新操作员。
 
 
-toc::[]
-
 
 == 在安装Kubnetes Monitoring Operator之前
 
@@ -65,15 +63,11 @@ image:KubernetesModifyDeploymentMenu.png["修改Kubbernetes Collector列表页�
 
 此屏幕将显示每个组件的当前状态、并允许您根据需要为该收集器禁用或启用组件。
 
-image:KubernetesModifyDeploymentScreen.png["Mody部署选项、700"]
+image:KubernetesModifyDeploymentScreen.png["修改部署选项、宽度=700"]
 
 
 
-== 升级
-
-
-
-=== 升级到最新的Kubnetes Monitoring Operator
+== 升级到最新的Kubnetes Monitoring Operator
 
 确定现有Operator是否存在AgentConfiguration (如果您的命名空间不是默认的_NetApp-monitoring _、请替换相应的命名空间)：
 
