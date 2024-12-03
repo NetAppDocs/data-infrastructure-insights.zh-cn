@@ -6721,15 +6721,6 @@
   <block id="bd0f62d92c7b0e5d6e74b4447418c58b" category="paragraph">要删除Kubernetes Monitoring Operator在集群范围内查看机密的权限、请在安装之前从_operator-setup.yaml文件中删除以下资源：</block>
   <block id="1790cdbccc4ddd4389eb90d73e043f4b" category="paragraph">如果是升级、请同时从集群中删除资源：</block>
   <block id="a66e68a20b3b94a700f3a3b9baa06764" category="paragraph">如果启用了"变更分析"、请修改_AgentConfiguration_或_operator-config.yaml_以取消注释change-management部分、并在change-management部分下包括_kindsToIgnoreFamWatch："secnes"_。记下此行中单引号和双引号的存在和位置。</block>
-  <block id="342761835c95d3618833ced82b6260ac" category="section-title">验证 Kubernetes 校验和</block>
-  <block id="db313a156e59a943eb317e556df6b532" category="paragraph">Data Infrastructure Insight代理安装程序会执行完整性检查、但某些用户可能希望在安装或应用下载的项目之前执行自己的验证。要执行仅下载操作（与默认的下载和安装操作相反），这些用户可以编辑从 UI 获取的代理安装命令并删除尾随的 "install" 选项。</block>
-  <block id="8ff498fedef16be83cafa8d00c04dd6d" category="list-text">从命令中删除后缀"-install"。</block>
-  <block id="facc439433117841a75e83541c8f2373" category="paragraph">仅下载命令会将所有必需项目从Data Infrastructure Insight下载到工作目录。这些项目包括但不限于：</block>
-  <block id="700459827d4941a6a127bc7de7938d5d" category="list-text">签名校验和文件（ SHA256.signed ）</block>
-  <block id="e1f4fa985535cfb2dd4b3f50c918b7eb" category="list-text">用于签名验证的 PEM 文件（ netapp_cert.pem ）</block>
-  <block id="7c9f5399bb10652ab7e06778c4de02e1" category="paragraph">可以通过确认 PEM 文件的指纹为以下内容来验证 PEM 文件：</block>
-  <block id="7a2babd4fa48c9b0c07e4b865ff53efa" category="paragraph">更具体地说，</block>
-  <block id="76dfc651463ab4e67ce2140b8aadb473" category="paragraph">可以使用 PEM 文件验证签名校验和文件：</block>
   <block id="ae233b4bee0ed9f611ffe211f5804e00" category="section-title">容差和污物</block>
   <block id="6aae913b976c156306d8a5cbbbc06ad5" category="inline-link-macro">在_AgentConfiguration_中</block>
   <block id="d6f0c62217650cf8ede1bd5e1e862b5a" category="paragraph">netapp-CI-tentlaf-ds_、_netapp-CI-fluent-bit-ds_和_netapp-CI-net-oboder-L4-DS_ DemonSets必须在集群中的每个节点上计划一个POD、以便正确收集所有节点上的数据。操作器已配置为允许某些众所周知的*污染*。如果您在节点上配置了任何自定义污染，从而阻止Pod在每个节点上运行，则可以为这些污染创建*toleration*<block ref="dc90f93af5ccf5020646213d9b7d2c3d" category="inline-link-macro-rx"></block>。如果已将自定义污染应用于集群中的所有节点、则还必须向操作员部署添加必要的容错值、以便可以计划和执行操作员POD。</block>
@@ -11823,4 +11814,13 @@
   <block id="e60c852a7a4c8de70f56c1772db9c0f5" category="paragraph">如果在收集器的_Advanced Configuration_设置中启用了FPolicy引擎选项、则"Workload Security"将在protobuf模式下配置FPolicy引擎。ONTAP 9.15及更高版本支持原始缓冲区模式。</block>
   <block id="502f573701c400ca3de6252b1c8e6e9e" category="paragraph">有关此功能的详细信息，请参见<block ref="5c3d3ed23ecd4e0a61ac3e8d31f3a637" category="inline-link-macro-rx"></block>。</block>
   <block id="e28cace0b0e193aac1db472078caa8fb" category="paragraph">protobuf需要特定权限(其中部分或全部可能已存在)：</block>
+  <block id="435f137980b3b041bbc191c90260bf28" category="section-title">验证Kubnetes监控操作员图像签名</block>
+  <block id="d9348d075dc7b3c91cff99d56dfc327b" category="inline-link-macro">Kubernetes 文档</block>
+  <block id="d4f8460ff8f7a6b9a2f0fa99bf9124dd" category="paragraph">操作员的映像及其部署的所有相关映像均由NetApp签名。您可以在安装之前使用联合签名工具手动验证映像、也可以配置Kubornetes接入控制器。有关详细信息，请参见<block ref="1aa503106da392b948a493e0ecf5782d" category="inline-link-macro-rx"></block>。</block>
+  <block id="c26df34b044a0a427be188b6e37d45c2" category="paragraph">用于验证图像签名的公共密钥可在"Monitoring Operator"安装磁贴中的_可 选：将操作员图像上传到您的私有存储库&gt;图像签名公共密钥_下找到</block>
+  <block id="0bc181a97045ca85d89be70b124298b4" category="paragraph">要手动验证映像签名、请执行以下步骤：</block>
+  <block id="b08a05b2c1b7cc9bf90ee55d748a813c" category="list-text">复制并运行映像提取片段</block>
+  <block id="2e9d4d6615af62102584a57c2c8ddacd" category="list-text">根据提示复制并输入存储库密码</block>
+  <block id="2cea2fa4f716d1fa2efbffe877eb702c" category="list-text">存储图像签名公共密钥(示例中为dII-image-signing.pub)</block>
+  <block id="55d6bfb079ee69230d07a9a9c1c17b66" category="list-text">使用联合签名验证图像。请参见以下联合签名用法示例</block>
 </blocks>

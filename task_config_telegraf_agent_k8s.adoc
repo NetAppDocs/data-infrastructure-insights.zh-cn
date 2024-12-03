@@ -294,6 +294,16 @@ OpenShift可以实施更高的安全级别、从而可能阻止对某些Kubernet
 
 
 
+=== 容差和污物
+
+netapp-CI-tentlaf-ds_、_netapp-CI-fluent-bit-ds_和_netapp-CI-net-oboder-L4-DS_ DemonSets必须在集群中的每个节点上计划一个POD、以便正确收集所有节点上的数据。操作器已配置为允许某些众所周知的*污染*。如果您在节点上配置了任何自定义污染，从而阻止Pod在每个节点上运行，则可以为这些污染创建*toleration*link:telegraf_agent_k8s_config_options.html["在_AgentConfiguration_中"]。如果已将自定义污染应用于集群中的所有节点、则还必须向操作员部署添加必要的容错值、以便可以计划和执行操作员POD。
+
+了解有关Kubbernetes的更多信息link:https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/["损害和公差"]。
+
+返回到link:task_config_telegraf_agent_k8s.html["NetApp Kubernetes监控操作员安装*页面"]
+
+
+
 == 关于安全的注意事项
 
 要删除Kubernetes Monitoring Operator在集群范围内查看机密的权限、请在安装之前从_operator-setup.yaml文件中删除以下资源：
@@ -323,61 +333,29 @@ OpenShift可以实施更高的安全级别、从而可能阻止对某些Kubernet
 ....
 
 
-== 验证 Kubernetes 校验和
+== 验证Kubnetes监控操作员图像签名
 
-Data Infrastructure Insight代理安装程序会执行完整性检查、但某些用户可能希望在安装或应用下载的项目之前执行自己的验证。要执行仅下载操作（与默认的下载和安装操作相反），这些用户可以编辑从 UI 获取的代理安装命令并删除尾随的 "install" 选项。
+操作员的映像及其部署的所有相关映像均由NetApp签名。您可以在安装之前使用联合签名工具手动验证映像、也可以配置Kubornetes接入控制器。有关详细信息，请参见link:https://kubernetes.io/docs/tasks/administer-cluster/verify-signed-artifacts/#verifying-image-signatures["Kubernetes 文档"]。
 
-请按照以下步骤操作：
+用于验证图像签名的公共密钥可在"Monitoring Operator"安装磁贴中的_可 选：将操作员图像上传到您的私有存储库>图像签名公共密钥_下找到
 
-. 按照说明复制 Agent 安装程序代码片段。
-. 请将代码片段粘贴到文本编辑器中，而不是将其粘贴到命令窗口中。
-. 从命令中删除后缀"-install"。
-. 从文本编辑器复制整个命令。
-. 现在，将其粘贴到命令窗口（在工作目录中）并运行。
-+
-** Download and install （下载并安装）（默认）：
-+
- installerName=cloudinsights-rhel_centos.sh … && sudo -E -H ./$installerName --download –-install
-** 仅下载：
-+
- installerName=cloudinsights-rhel_centos.sh … && sudo -E -H ./$installerName --download
+要手动验证映像签名、请执行以下步骤：
+
+. 复制并运行映像提取片段
+. 根据提示复制并输入存储库密码
+. 存储图像签名公共密钥(示例中为dII-image-signing.pub)
+. 使用联合签名验证图像。请参见以下联合签名用法示例
 
 
-
-
-仅下载命令会将所有必需项目从Data Infrastructure Insight下载到工作目录。这些项目包括但不限于：
-
-* 安装脚本
-* 环境文件
-* YAML文件
-* 签名校验和文件（ SHA256.signed ）
-* 用于签名验证的 PEM 文件（ netapp_cert.pem ）
-
-
-安装脚本，环境文件和 YAML 文件可以通过目视检查进行验证。
-
-可以通过确认 PEM 文件的指纹为以下内容来验证 PEM 文件：
-
- 1A918038E8E127BB5C87A202DF173B97A05B4996
-更具体地说，
-
- openssl x509 -fingerprint -sha1 -noout -inform pem -in netapp_cert.pem
-可以使用 PEM 文件验证签名校验和文件：
-
- openssl smime -verify -in sha256.signed -CAfile netapp_cert.pem -purpose any
-在对所有项目进行满意的验证后，可以通过运行以下命令启动代理安装：
-
- sudo -E -H ./<installation_script_name> --install
-
-
-=== 容差和污物
-
-netapp-CI-tentlaf-ds_、_netapp-CI-fluent-bit-ds_和_netapp-CI-net-oboder-L4-DS_ DemonSets必须在集群中的每个节点上计划一个POD、以便正确收集所有节点上的数据。操作器已配置为允许某些众所周知的*污染*。如果您在节点上配置了任何自定义污染，从而阻止Pod在每个节点上运行，则可以为这些污染创建*toleration*link:telegraf_agent_k8s_config_options.html["在_AgentConfiguration_中"]。如果已将自定义污染应用于集群中的所有节点、则还必须向操作员部署添加必要的容错值、以便可以计划和执行操作员POD。
-
-了解有关Kubbernetes的更多信息link:https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/["损害和公差"]。
-
-返回到link:task_config_telegraf_agent_k8s.html["NetApp Kubernetes监控操作员安装*页面"]
-
+[listing]
+----
+$ cosign verify --key dii-image-signing.pub --insecure-ignore-sct --insecure-ignore-tlog <repository>/<image>:<tag>
+Verification for <repository>/<image>:<tag> --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - The signatures were verified against the specified public key
+[{"critical":{"identity":{"docker-reference":"<repository>/<image>"},"image":{"docker-manifest-digest":"sha256:<hash>"},"type":"cosign container image signature"},"optional":null}]
+----
 
 
 == 故障排除
