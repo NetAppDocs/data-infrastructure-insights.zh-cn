@@ -250,6 +250,9 @@ Data Infrastructure Insight支持的数据收集器的字母顺序列表：
 | link:task_dc_na_ontap_rest.html["NetApp ONTAP REST收集器"] | 基础架构 
 
 
+| link:task_dc_na_ontap_all_san_array.html["NetApp ONTAP纯SAN阵列(ASA)收集器"] | 基础架构 
+
+
 | link:task_dc_na_cdot.html["NetApp ONTAP Select"] | 基础架构 
 
 
@@ -305,6 +308,9 @@ Data Infrastructure Insight支持的数据收集器的字母顺序列表：
 
 
 | link:task_config_telegraf_agent.html#ubuntu-and-debian["Ubuntu和Debian"] | 服务 
+
+
+| link:task_dc_vast_datastore.html["庞大的数据存储库"] | 基础架构 
 
 
 | link:task_dc_vmware.html["VMware vSphere"] | 基础架构 

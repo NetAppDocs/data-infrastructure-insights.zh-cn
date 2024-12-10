@@ -11822,4 +11822,40 @@
   <block id="55d6bfb079ee69230d07a9a9c1c17b66" category="list-text">使用联合签名验证图像。请参见以下联合签名用法示例</block>
   <block id="f0eddc4fb4218ed4ec07da7604fbc1c8" category="inline-image-macro">修改部署选项、宽度=700</block>
   <block id="593e78308f625f4551ee5b44b6d582e5" category="paragraph"><block ref="593e78308f625f4551ee5b44b6d582e5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ee063f6b962df93a461d2ffc011f30c6" category="inline-link-macro">NetApp ONTAP纯SAN阵列(ASA)收集器</block>
+  <block id="9e21612beb462f7bd1f813292fecce9e" category="cell"><block ref="9e21612beb462f7bd1f813292fecce9e" category="inline-link-macro-rx"></block></block>
+  <block id="b9b8d4cf4d94212bab3d8ce132b74a37" category="inline-link-macro">庞大的数据存储库</block>
+  <block id="9b445526869ff95a6549cc8c81c4131b" category="cell"><block ref="9b445526869ff95a6549cc8c81c4131b" category="inline-link-macro-rx"></block></block>
+  <block id="53c9e67c854dc8f210a1632d7ec33799" category="summary">ONTAP全SAN阵列数据收集器</block>
+  <block id="a6415bd2448b7919eed8f0af42d67ee9" category="doc">NetApp ONTAP纯SAN阵列(ASA)数据收集器</block>
+  <block id="b405c90a99544fe264526a99edd2f41c" category="paragraph">此数据收集器使用REST API调用从运行ONTAP 9.16.0及更高版本的存储系统采集清单、EMS日志和性能数据。</block>
+  <block id="87df89e1b5a76047447b71a01aec2982" category="list-text">ONTAP 9.16.0或更高版本。</block>
+  <block id="7032ac73bd8241edcec890cdcfabcfa3" category="summary">配置庞大的数据数据存储库存储数据收集器。</block>
+  <block id="ffc9339c36ed95025058c23ec2753b24" category="doc">庞大的数据存储库数据收集器</block>
+  <block id="db6d41642fd36481ced7748f3f81bc64" category="paragraph">Data Infrastructure Insight使用庞大的数据存储库数据收集器来收集清单和性能数据。</block>
+  <block id="1d6af794b2599c1407a83029a09d1ecf" category="cell">承运商</block>
+  <block id="457f8d4c765467475ea256add7a3fdc6" category="cell">磁盘(磁盘架部分位于位置字段中)</block>
+  <block id="5b90b71cdc32ad1ac3a7c9235afb9c2f" category="cell">CNode</block>
+  <block id="c514ac300b6b6e64d5d0b5cc21c5406a" category="cell">StorageNode (类型= cnode)</block>
+  <block id="abcef8b528b45f6e48e135521400cf7f" category="cell">dNode</block>
+  <block id="da316cef9dacf85ad51ef2feaf010065" category="cell">StorageNode (类型= dnode)</block>
+  <block id="15a01110f16efe243b3f75f198287ea2" category="cell">NVRAM</block>
+  <block id="2d4aef30a49a581a6ed89ce840054235" category="cell">磁盘</block>
+  <block id="c8e6306840fb73fee1dbc570f9991451" category="cell">受保护路径</block>
+  <block id="41ad9be6d4308d2a5b19ec77094e428e" category="cell">内部卷同步</block>
+  <block id="4ea922c8a9600ba45c7d092b9fac3071" category="cell">QoS策略</block>
+  <block id="8d83e8b6efd5f54fe3b580a2f28b2f16" category="cell">内部卷(QoS限制)</block>
+  <block id="fb0d8a1c841cd92afd4cb16ddedaeed5" category="cell">配额</block>
+  <block id="80307ff54caa7cf20882ee314544c98d" category="cell">SSD</block>
+  <block id="ab46b0da4c689d676afbc74038c40f71" category="cell">租户</block>
+  <block id="c86f4cd8354a2b53d0d427eea434f0bc" category="cell">查看策略</block>
+  <block id="a1c6152b473e54093548a39b0a49cf60" category="cell">文件存储(用于权限)</block>
+  <block id="ed4832a84ee072b00a6740f657183598" category="cell">视图</block>
+  <block id="e2ab08588eb609321db99af452ec8dbd" category="list-text">庞大的数据存储库系统IP地址或完全限定域名</block>
+  <block id="9658c9c5c5e1ce7340ab09e1dcacf227" category="list-text">用户名/密码、用于访问庞大的系统</block>
+  <block id="7abb31f5998b15d8c5e15f3bff14bab8" category="list-text">端口要求：HTTPS 443</block>
+  <block id="32ff8302603799728a4e2397623f2b3a" category="cell">庞大的数据存储库存储IP/主机名</block>
+  <block id="a59ed6c78eadc966927de4b65adc1801" category="cell">存储系统的IP地址或FQDN</block>
+  <block id="9f329f951728d9fd2dc3c86d970b2e7f" category="cell">庞大存储用户名</block>
+  <block id="50f8e432f3a17936f4fd1dee864d7ff1" category="cell">庞大的存储密码</block>
 </blocks>
