@@ -20,7 +20,43 @@ NetApp 不断改进和完善其产品和服务。下面是Data Infrastructure In
 
 
 
+== 2024年12月
+
+
+
+=== SAN分析器简介：增强了对块工作负载的可见性
+
+SAN在处理重要工作负载方面发挥着至关重要的作用、但其复杂性可能会导致严重中断和客户中断。借助DII的*SAN Analyzer *，SAN管理变得更简单、更高效。这款功能强大的工具提供端到端可见性、可将虚拟机/主机到网络的依赖关系映射到LUN和存储。通过提供交互式拓扑图、SAN分析器可帮助您确定问题、了解变化并增强对数据流的理解。借助SAN Analyzer简化复杂IT环境中的SAN管理、并提高对块工作负载的可见性。
+
+image:san_analyzer_example_with_panel.png["存储系统的SAN分析器拓扑图"]
+
+
+
+=== 通过智能主机停用和VM回收优化VM成本
+
+Data Infrastructure Insight可通过分析环境的历史行为并制定短期和长期预测来帮助您管理基础架构和许可成本、并为主机停用和回收已关闭电源的VM和闲置VM生成详细建议。这些建议有助于确保性能稳定性、释放未使用的容量并减少内存和CPU分配。
+
+image:vm_optimization_summary.png["VM Optimization Summary (VM优化摘要)屏幕"]
+
+
+
+=== 通过时间图表和表小工具支持发现日志洞察力
+
+现在、您可以利用时间图表(条形图、折线图、面积图)来识别日志数据中的趋势和模式、例如重复出现的错误或活动高峰、从而对系统随时间的变化行为提供有价值的洞察。此外、通过表、您现在可以直接在信息板中包含日志消息、从而更全面地查看日志详细信息。
+
+image:log_insights_dashboard_example.png["在信息板上记录见解"]
+
+
+
 == 2024年11月
+
+
+
+=== 新的工作负载安全警报API
+
+使用新的工作负载安全性检索取证警报详细信息link:concept_cs_api.html["*云安全取证.alerts API"]。
+
+image:ws_forensics_alerts_api.png["工作负载安全Fors不同 的警报API"]
 
 
 
