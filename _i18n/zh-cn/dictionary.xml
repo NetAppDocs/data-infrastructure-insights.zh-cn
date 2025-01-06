@@ -11884,4 +11884,8 @@
   <block id="17411e5191f440928552bd359518e697" category="cell">Works；返回与AutoDir1和AutoFile03242022匹配的一级目录和二级目录的所有活动(区分大小写)</block>
   <block id="a874dae9695be1c2a6ef02373776f7b7" category="cell">搜索字符串中的星号(\*)将搜索所有内容。但是，诸如_*&lt;searchTerm&gt;_或_*&lt;searchTerm&gt;*_之类的前导通配符字符串会导致查询速度较慢。要获得更好的性能，请改用前缀字符串，格式为_&lt;searchTerm&gt;*_(换言之，请附加星号(*)_after_搜索词)。示例：使用字符串_testvolume*_，而不是_*testvolume_或_*test*volume_。使用目录搜索以递归方式查看给定文件夹下的所有活动(分层搜索)。例如、"/path1/path2/path3/"将以递归方式在/path1/path2/path3下列出所有活动。或者、使用所有活动选项卡下的"Add to Filter"(添加到筛选器)选项。</block>
   <block id="980f8b6539b7c131f66cdde66f81a98f" category="cell">目录路径筛选器(以/结尾的路径字符串)建议目录深度最多为4个、以获得更快的结果。例如、如果目录路径为/AAA/BBB/CCC/DDD、请尝试搜索"/AAA/BBB/CCC/DDD/"以更快地加载数据。</block>
+  <block id="26ae3eeb85fe056d40f1b756635ebb59" category="section-title">通过"鉴定分组"主动管理风险</block>
+  <block id="144b03f9a57dbd781b29163e6412a6a3" category="paragraph">介绍我们旨在增强您的安全性和资源管理能力的最新功能！借助高级取证分组依据功能和分层多组依据支持、您现在可以轻松识别哪些用户访问了特定文件夹、确定最活跃的用户和共享、并通过跟踪活动客户端IP地址主动管理风险。通过确定访问量最多的文件和文件夹来优化存储和带宽使用、并通过识别实际用户来增强对系统访问的控制。</block>
+  <block id="15b5571e4da70619b1e8530a8df35661" category="inline-image-macro">显示分组依据的取证示例屏幕</block>
+  <block id="d932f771e537d16693bed2e69269a746" category="paragraph"><block ref="d932f771e537d16693bed2e69269a746" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
