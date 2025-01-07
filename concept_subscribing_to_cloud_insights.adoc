@@ -25,7 +25,7 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 
 在注册过程中、您可以选择托管Data Infrastructure Insight环境的全球区域。有关详细信息，请阅读有关Data Infrastructure洞察的link:security_information_and_region.html["信息和区域"]信息。
 
-有关Data Infrastructure Insight基础版和高级版中可用功能的完整比较、请参见link:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing["Data Infrastructure Insight定价"]页面。
+有关Data Infrastructure Insight基础版和高级版中可用功能的完整比较、请参见link:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing["Data Infrastructure Insight版本"]页面。
 
 
 WARNING: 删除非活动Data Infrastructure Insight Basic Edition环境并回收其资源。如果连续 30 天没有用户活动，或者连续 7 天未载入数据，则环境将被视为非活动环境。Data Infrastructure Insight将发送通知并提供四天的宽限期、然后才能删除环境。

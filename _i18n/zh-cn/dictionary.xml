@@ -1951,8 +1951,6 @@
   <block id="f2b5d43aba260933c552d69977b7274d" category="list-text">*订阅*数据基础架构洞察、通过<block ref="ae0970f4d06315494d31beaa05a7be05" category="inline-link-macro-rx"></block>直接或持续无中断地访问数据<block ref="e91d3f98f4b43abdea3c839a7777954c" category="inline-link-macro-rx"></block>。</block>
   <block id="7bc1d8b07dfc0e98950abc0c7f3979a5" category="inline-link-macro">信息和区域</block>
   <block id="6c36c3c54c4f691f7ed13a16d49bbde7" category="paragraph">在注册过程中、您可以选择托管Data Infrastructure Insight环境的全球区域。有关详细信息，请阅读有关Data Infrastructure洞察的<block ref="286a302a1ee50fd59eb368d3d9779037" category="inline-link-macro-rx"></block>信息。</block>
-  <block id="b56a9b49aabd38d375de7e8e4f8b5622" category="inline-link-macro">Data Infrastructure Insight定价</block>
-  <block id="cee7deeaab7259c2e4c56b35d6bb0c93" category="paragraph">有关Data Infrastructure Insight基础版和高级版中可用功能的完整比较、请参见<block ref="c893050db2e06595e0b03cb2a1aae724" category="inline-link-macro-rx"></block>页面。</block>
   <block id="ef66b5abbe1e0b79e23deb05dd2d11a9" category="admonition">删除非活动Data Infrastructure Insight Basic Edition环境并回收其资源。如果连续 30 天没有用户活动，或者连续 7 天未载入数据，则环境将被视为非活动环境。Data Infrastructure Insight将发送通知并提供四天的宽限期、然后才能删除环境。</block>
   <block id="d618d9be50e37adf260935938e49af96" category="inline-image-macro">挂锁</block>
   <block id="12ddfc86083937d7a126f2fd8615aa6b" category="inline-xref">模块评估</block>
@@ -11888,4 +11886,6 @@
   <block id="144b03f9a57dbd781b29163e6412a6a3" category="paragraph">介绍我们旨在增强您的安全性和资源管理能力的最新功能！借助高级取证分组依据功能和分层多组依据支持、您现在可以轻松识别哪些用户访问了特定文件夹、确定最活跃的用户和共享、并通过跟踪活动客户端IP地址主动管理风险。通过确定访问量最多的文件和文件夹来优化存储和带宽使用、并通过识别实际用户来增强对系统访问的控制。</block>
   <block id="15b5571e4da70619b1e8530a8df35661" category="inline-image-macro">显示分组依据的取证示例屏幕</block>
   <block id="d932f771e537d16693bed2e69269a746" category="paragraph"><block ref="d932f771e537d16693bed2e69269a746" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ee0b2f1c8ad7945cf603e8d752a5e7b5" category="inline-link-macro">Data Infrastructure Insight版本</block>
+  <block id="bbf9080a1bf1fb2f62558ce683d64be0" category="paragraph">有关Data Infrastructure Insight基础版和高级版中可用功能的完整比较、请参见<block ref="49bb501f6c401ae5b06c3dbe5fc987bd" category="inline-link-macro-rx"></block>页面。</block>
 </blocks>
