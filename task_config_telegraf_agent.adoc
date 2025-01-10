@@ -29,7 +29,7 @@ Data Infrastructure Insight的当前Telegraf版本为*1.24.0*。
 NOTE: 为了准确地进行审核和报告数据，强烈建议使用 * 网络时间协议（ NTP ） * 或 * 简单网络时间协议（ SNTP ） * 同步 Agent 计算机上的时间。
 
 
-NOTE: 如果要在安装Agent之前验证安装文件，请参见下面的中的一节<<验证校验和>>。
+NOTE: 如果要在安装Agent之前验证安装文件，请参见下面的中的一节<<Verifying Checksums>>。
 
 
 
@@ -364,15 +364,15 @@ systemctl stop telegraf (If your operating system is using systemd)
 
 
 
-== 验证校验和
+== 验证电报包校验和
 
-Data Infrastructure Insight代理安装程序会执行完整性检查、但某些用户可能希望在安装或应用下载的项目之前执行自己的验证。为此、可以下载安装程序并为下载的软件包生成校验和、然后将校验和与安装说明中显示的值进行比较。
+Data Infrastructure Insight代理安装程序会执行完整性检查、但某些用户可能希望在安装下载的Telegraf二进制文件之前执行自己的验证。为此、可以下载安装程序并为下载的软件包生成校验和、然后将校验和与安装说明中显示的值进行比较。
 
 
 
 === 下载安装程序包而不安装
 
-要执行仅下载操作(与默认的下载和安装操作相反)、用户可以编辑从UI获取的代理安装命令并删除尾随的"install"选项。
+要执行仅下载操作(与默认的下载和安装相反)、用户可以编辑从用户界面获取的代理安装命令并删除"install"选项。
 
 请按照以下步骤操作：
 
@@ -387,35 +387,36 @@ Data Infrastructure Insight代理安装程序会执行完整性检查、但某�
 
 * Download and install （下载并安装）（默认）：
 +
- installerName=cloudinsights-kubernetes.sh … && sudo -E -H ./$installerName --download –-install
+ installerName=cloudinsights-ubuntu_debian.sh … && ./$installerName --download --verify && sudo -E -H ./$installerName --install
 * 仅下载：
 +
- installerName=cloudinsights-kubernetes.sh … && sudo -E -H ./$installerName --download
+ installerName=cloudinsights-ubuntu_debian.sh … && ./$installerName --download --verify
 
 
 Windows
 
 * Download and install （下载并安装）（默认）：
 +
- !$($installerName=".\cloudinsights-windows.ps1") … -and $(&$installerName -download -install)
+ !$($installerName=".\cloudinsights-windows.ps1") … -and $(if(((Get-FileHash $installerName).Hash).ToLower() -eq "INSTALLER_CHECKSUM ") { &$installerName -download -verify -install } else { Write-Host "Install script checksum does not match"})"
 * 仅下载：
 +
- !$($installerName=".\cloudinsights-windows.ps1") … -and $(&$installerName -download)
+ !$($installerName=".\cloudinsights-windows.ps1") … -and $(if(((Get-FileHash $installerName).Hash).ToLower() -eq "INSTALLER_CHECKSUM ") { &$installerName -download -verify } else { Write-Host "Install script checksum does not match"})"
 
 
 仅下载命令会将所有必需项目从Data Infrastructure Insight下载到工作目录。这些项目包括但不限于：
 
 * 安装脚本
 * 环境文件
-* YAML文件
-* 校验和文件(以SHA256.signed/SHA256.ps1结尾)
+* 一个电报二进制文件
+* Telegraf二进制文件的签名
+* 用于验证二进制签名的公共证书
 
 
-安装脚本，环境文件和 YAML 文件可以通过目视检查进行验证。
+从DII下载和复制的安装代码段会自动对安装脚本进行校验和、并通过安装脚本验证二进制文件的签名。
 
 
 
-=== 生成校验和值
+=== 验证校验和值
 
 要生成校验和值、请对相应平台执行以下命令：
 
@@ -425,20 +426,6 @@ Windows
 * Windows
 +
  Get-FileHash telegraf.zip -Algorithm SHA256 | Format-List
-
-
-
-
-=== 验证校验和
-
-从校验和文件中提取预期的校验和
-
-* 非 Windows ：
-+
- openssl smime -verify -in telegraf*.sha256.signed -CAfile netapp_cert.pem -purpose any -nosigs -noverify
-* Windows
-+
- (Get-Content telegraf.zip.sha256.ps1 -First 1).toUpper()
 
 
 
