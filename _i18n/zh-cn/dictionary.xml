@@ -4034,9 +4034,7 @@
   <block id="1fec62ac6ef0096301dec6c9552701f7" category="cell">递归查找给定目录下的所有文件和文件夹</block>
   <block id="e16b5b7f26f54214445cbe38d72c2828" category="cell">快速</block>
   <block id="f6a092f816e6eb604694d6a921395ccb" category="cell">目录搜索最多可达4个目录。</block>
-  <block id="840207e609d7b9a7b687b3b2712e903d" category="cell">递归查找给定路径正则表达式下的所有文件和文件夹(test*可以表示文件或目录，也可以同时表示这两者)</block>
   <block id="e7b02c274fe199317927b2a2d54e280e" category="cell">速度较慢</block>
-  <block id="4b88bc6659fa6ffa1353db049ea38556" category="cell">目录+文件正则表达式搜索比目录搜索慢。</block>
   <block id="1bd0462f5987c1382af61035c6ea62ff" category="cell">超过4个目录搜索速度较慢。</block>
   <block id="2127f473d96f54c997a492a6ca024c5b" category="cell">任何其他非基于路径的筛选器。建议将用户和实体类型筛选器放在引号中、例如User="Adminator"实体Type="txt</block>
   <block id="9b9935ad5969c28de13381a2e512b47c" category="paragraph">注意：</block>
@@ -4071,7 +4069,6 @@
   <block id="e0c965c954b5a9fdc33c5b0516799f7d" category="cell">返回不以"AutoRansomUser4_03162022 "开头的所有内容</block>
   <block id="eae639a70006feff484a39363c977e24" category="cell">域</block>
   <block id="3c16a1572c295ef2bbd770516679c559" category="cell">返回目标字段为空的结果</block>
-  <block id="012f3ec70fcf8eccc1fce56e4a0b94b6" category="section-title">路径/原始路径搜索</block>
   <block id="64048c881c93933680d02730e9d9ce63" category="paragraph">使用和不使用/的搜索结果将有所不同</block>
   <block id="53ca5edb3205aa3468395e1789114a60" category="cell">不起作用</block>
   <block id="1d7531d059e4088a0878ea4eb94d32b6" category="cell">"/AutoDir1/AutoFile03242022"</block>
@@ -11587,7 +11584,6 @@
   <block id="8b323f07a8614b39412ac6f03ce45d0e" category="sidebar">工作负载安全性用户管理</block>
   <block id="abc492c54ab99cf963d50d67acb42565" category="sidebar">Event Rate Checker (代理规模估算指南)</block>
   <block id="a8df87f53c1b831dfc886e69dec19144" category="sidebar">活动取证—所有活动</block>
-  <block id="e5ac43b15443b9248d0df9b88a442cf9" category="sidebar">活动取证—实体</block>
   <block id="f9aae5fda8d810a29f12d1e61b4ab25f" category="sidebar">用户</block>
   <block id="9b5911ec569b49f0ae81ecb2c9067806" category="sidebar">ONTAP 自主勒索软件保护集成</block>
   <block id="1c31d515d2e78422350a8dfc6a331a38" category="sidebar">ONTAP访问被拒绝集成</block>
@@ -11835,7 +11831,6 @@
   <block id="ce0a4ef9bdcf713141ba5af92b5449a2" category="list-text">分组依据下拉列表提供了按用户、路径、实体类型等对活动进行分组的选项</block>
   <block id="2f67a7ee2834facb4c2289f3f9f8a7b0" category="list-text">表上方将提供一个通用路径按钮、单击此按钮后、我们可以看到包含实体路径详细信息的滑出面板。</block>
   <block id="2b9b3cac1b8e073b6533f3389ac6ad5f" category="list-text">通过作为滑出面板的链接访问实体的*用户*<block ref="62cf04ad66abc0c5964885d5ae0624ca" category="inline-link-macro-rx"></block>。</block>
-  <block id="06bc22bdba9ef782b6246496ad8db1bd" category="list-text">Path*为_实体_路径。</block>
   <block id="2c20ae8e4eac25c0be12e73a9aea15f8" category="list-text">一级文件夹(根)*是实体路径的根目录(小写)。</block>
   <block id="d56292c623739eef9a2dbb8219169c5c" category="list-text">二级文件夹*是实体路径的二级目录(小写)。</block>
   <block id="21a75329f45abb51a3f768e3caaf47c5" category="list-text">第三级文件夹*是实体路径的第三级目录(小写)。</block>
@@ -11849,7 +11844,6 @@
   <block id="80662c9452da0395efcb752fc6efd791" category="list-text">活动计数显示为超链接；选择此选项将添加选定的分组作为筛选器。活动表将根据该筛选器进行更新。</block>
   <block id="f5048103eec701282d4bd47edb30c0dd" category="list-text">请注意、如果更改筛选器、更改时间范围或刷新屏幕、则在不重新设置筛选器的情况下、将无法返回到筛选后的结果。</block>
   <block id="a7b9ef6a74f521c07a42dfe2b3ba5984" category="list-text">可以从滑出面板添加过滤器。该值将添加到 Top _Filter by" 列表中的相应筛选器中。</block>
-  <block id="a6c33488a3d8762852d55cced3c5bf96" category="list-text">*实体的路径*-目录路径筛选器(以/结尾的路径字符串)建议目录深度最多为4个，以便更快地获得结果。例如、_"/HOME/userX/nosted1/nosted2/"_。有关详细信息、请参见下表。</block>
   <block id="abc9548bbf938c1b00d7d7943eea69c6" category="list-text">一级文件夹(根)—作为过滤器的实体路径的根目录。例如、如果实体路径为/HOME/userX/nosted1/nosted2/、则可以使用home或"home "。</block>
   <block id="ef05d086fd7703f59da830094683f26b" category="list-text">2nd Level Folder (二级文件夹)-实体路径过滤器的二级目录。例如、如果实体路径为/HOME/userX/nosted1/nosted2/、则可以使用userX或"userX"。</block>
   <block id="d09c77be27888e5715284768b4b56a37" category="list-text">第三级文件夹—实体路径筛选器的第三级目录。</block>
@@ -11873,10 +11867,6 @@
   <block id="17411e5191f440928552bd359518e697" category="cell">Works；返回与AutoDir1和AutoFile03242022匹配的一级目录和二级目录的所有活动(区分大小写)</block>
   <block id="a874dae9695be1c2a6ef02373776f7b7" category="cell">搜索字符串中的星号(\*)将搜索所有内容。但是，诸如_*&lt;searchTerm&gt;_或_*&lt;searchTerm&gt;*_之类的前导通配符字符串会导致查询速度较慢。要获得更好的性能，请改用前缀字符串，格式为_&lt;searchTerm&gt;*_(换言之，请附加星号(*)_after_搜索词)。示例：使用字符串_testvolume*_，而不是_*testvolume_或_*test*volume_。使用目录搜索以递归方式查看给定文件夹下的所有活动(分层搜索)。例如、"/path1/path2/path3/"将以递归方式在/path1/path2/path3下列出所有活动。或者、使用所有活动选项卡下的"Add to Filter"(添加到筛选器)选项。</block>
   <block id="980f8b6539b7c131f66cdde66f81a98f" category="cell">目录路径筛选器(以/结尾的路径字符串)建议目录深度最多为4个、以获得更快的结果。例如、如果目录路径为/AAA/BBB/CCC/DDD、请尝试搜索"/AAA/BBB/CCC/DDD/"以更快地加载数据。</block>
-  <block id="26ae3eeb85fe056d40f1b756635ebb59" category="section-title">通过"鉴定分组"主动管理风险</block>
-  <block id="144b03f9a57dbd781b29163e6412a6a3" category="paragraph">介绍我们旨在增强您的安全性和资源管理能力的最新功能！借助高级取证分组依据功能和分层多组依据支持、您现在可以轻松识别哪些用户访问了特定文件夹、确定最活跃的用户和共享、并通过跟踪活动客户端IP地址主动管理风险。通过确定访问量最多的文件和文件夹来优化存储和带宽使用、并通过识别实际用户来增强对系统访问的控制。</block>
-  <block id="15b5571e4da70619b1e8530a8df35661" category="inline-image-macro">显示分组依据的取证示例屏幕</block>
-  <block id="d932f771e537d16693bed2e69269a746" category="paragraph"><block ref="d932f771e537d16693bed2e69269a746" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ee0b2f1c8ad7945cf603e8d752a5e7b5" category="inline-link-macro">Data Infrastructure Insight版本</block>
   <block id="bbf9080a1bf1fb2f62558ce683d64be0" category="paragraph">有关Data Infrastructure Insight基础版和高级版中可用功能的完整比较、请参见<block ref="49bb501f6c401ae5b06c3dbe5fc987bd" category="inline-link-macro-rx"></block>页面。</block>
   <block id="3bbdd1e5a1fbf0d58680e594b8806722" category="section-title">验证电报包校验和</block>
@@ -11887,4 +11877,18 @@
   <block id="b7e85347cdffb5889c57e4b1ad785a2e" category="list-text">用于验证二进制签名的公共证书</block>
   <block id="bfc63dcde995168de645c7c0b1b67357" category="paragraph">从DII下载和复制的安装代码段会自动对安装脚本进行校验和、并通过安装脚本验证二进制文件的签名。</block>
   <block id="26f2872f4049fcba9927c1b41d6502d3" category="section-title">验证校验和值</block>
+  <block id="9dd6e3f1271bf8cdcd9a0becace5f06f" category="section-title">2025年1月</block>
+  <block id="d482be2df573f6eb04e440a4a05482a1" category="section-title">使用ForFis我们 的分组功能主动管理风险</block>
+  <block id="2e6b3809f9d5218f35a0a7a320263e07" category="paragraph">介绍我们旨在增强您的安全性和资源管理能力的最新功能！借助高级按组功能和分层多按组支持、您现在可以轻松识别访问特定文件夹的用户、确定最活跃的用户和共享、并通过跟踪活动客户端IP地址主动管理风险。通过确定访问量最多的文件和文件夹来优化存储和带宽使用、并通过识别用户来增强对系统访问的控制。</block>
+  <block id="7c86c6e5a05df9478bfb181de6b56a05" category="inline-image-macro">取证活动跟踪示例屏幕</block>
+  <block id="e14be859c412d77ea3be17beace7319c" category="paragraph"><block ref="e14be859c412d77ea3be17beace7319c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b6e54264047927b79be771cbfd2b5201" category="section-title">信息板访问控制</block>
+  <block id="84229233ad61c44b8e53075992f6c8a5" category="paragraph">现在、您可以通过Data Infrastructure Insight更好地控制对所创建信息板的访问。您可以选择谁可以修改图形。您可以控制潜在敏感信息的暴露程度。是否仍在使用尚未准备好进行一般可见性的信息板？您可以将其保密、直到准备好进行共享为止。</block>
+  <block id="f916d734e48a8724b0f8c434b43a06a7" category="inline-image-macro">信息板共享选项</block>
+  <block id="e2d1989486babbb3dc0993863f9f4ef8" category="paragraph"><block ref="e2d1989486babbb3dc0993863f9f4ef8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c278bdd917e4f32f7d8a13861d3c1a43" category="list-text">Path*为_实体_路径。此路径应为精确的实体路径(例如、"_/HOME/userX/nosted1/nosted2/abc.txt _)或递归搜索路径的目录部分(例如、"_/HOME/userX/nosted1/nosted2/_")。注意：此处不允许使用正则表达式路径模式(例如_userX_)。或者、也可以为路径筛选指定如下所述的单个路径文件夹级筛选器。</block>
+  <block id="09cde459dc94ebcdb7fb39e8a2b6e65f" category="list-text">实体的*路径*-这应该是精确的实体路径(例如、"_/HOME/userX/nesed1/nesed2/abc.txt _")或递归搜索路径的目录部分(例如、"_/HOME/userX/nesed1/nesed2/_")。注意：此处不允许使用正则表达式路径模式(例如*userX*)。目录路径筛选器(以/结尾的路径字符串)建议使用最深4个目录、以更快地获得结果。例如、"_/HOME/userX/nosted1/nosted2/_"。有关详细信息、请参见下表。</block>
+  <block id="39dfb1596c6a6cd5efc77677cffa9f47" category="cell">路径值与/HOME/userX/nESTed1/test匹配的完全匹配</block>
+  <block id="67796eee76b434ba7f714f24fce77a4c" category="cell">与目录搜索相比、精确搜索的速度较慢。</block>
+  <block id="ee884ab6f8aeb5114dc04fcb169533de" category="section-title">路径搜索</block>
 </blocks>

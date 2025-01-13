@@ -245,8 +245,6 @@ sidebar:
       entries:
       - title: 活动取证—所有活动
         url: "/forensic_activity_history.html"
-      - title: 活动取证—实体
-        url: "/forensic_entity_detail.html"
       - title: 用户
         url: "/forensic_user_overview.html"
     - title: 自动响应策略
