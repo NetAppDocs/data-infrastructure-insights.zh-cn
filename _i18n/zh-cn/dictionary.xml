@@ -10128,11 +10128,9 @@
   <block id="14af2cecff51d4bd977845145cc871e8" category="list-text">*已删除*：已删除且不再可用的数据收集器。</block>
   <block id="b92e6e167ffd0f1968a046d49559d1cd" category="list-text">采集单元：专用于托管数据收集器的计算机、通常为虚拟机。此计算机通常与受监控项目位于同一数据中心/VPC中。</block>
   <block id="c5b4625b23c5673b268b9b686102faa0" category="list-text">数据源：用于与硬件或软件堆栈通信的模块。它由一个配置和在AU计算机上运行的代码组成、用于与设备进行通信。</block>
-  <block id="14f8a78e828f1a5ed0a16f4eb166171e" category="summary">通过确定非活动设备，您可以选择将其删除或将其分配给活动角色。</block>
   <block id="ee5c6c936b3e5e6b3191a941d5161f88" category="doc">确定非活动设备</block>
   <block id="dedb4128ca8f8589aeee2da1198fdc45" category="paragraph">确定您拥有的资产以及使用这些资产的人员对于 " 合理调整规模 " 和释放未使用的基础架构至关重要。您可以轻松地重新分配或停用未充分利用的资源，并避免不必要的购买。</block>
   <block id="89335488274d94cea3defd958dbbabbe" category="paragraph">按照以下步骤确定非活动资产。</block>
-  <block id="62a2ac40719f6cb31d5e1ad43d9d8a19" category="list-text">导航到*浏览-&gt;+New Metric Query*。</block>
   <block id="9ec73c52f582999e7cc8d920ca844c81" category="list-text">从下拉列表中选择_Storage_。</block>
   <block id="4c6af067d4990a4c05731f55b8095467" category="list-text">单击齿轮并添加_isActive_as列。</block>
   <block id="49eec5d17a233960170b22a7e35d15a7" category="paragraph">显示“检查”的行处于活动状态。"X"表示非活动设备。</block>
@@ -11891,4 +11889,26 @@
   <block id="39dfb1596c6a6cd5efc77677cffa9f47" category="cell">路径值与/HOME/userX/nESTed1/test匹配的完全匹配</block>
   <block id="67796eee76b434ba7f714f24fce77a4c" category="cell">与目录搜索相比、精确搜索的速度较慢。</block>
   <block id="ee884ab6f8aeb5114dc04fcb169533de" category="section-title">路径搜索</block>
+  <block id="2cc37e7dae91aa6d162030f273b8b089" category="section-title">创建和使用API访问令牌</block>
+  <block id="f7e5cf33ae8a7c09bd73c6eb95b3e017" category="paragraph">要创建用于Telegraf数据采集的API访问令牌、请执行以下操作之一：</block>
+  <block id="8ddcacd36bfaa54f9de9d8d1c6d98ca9" category="section-title">通过Data Collector安装页面创建</block>
+  <block id="394d78dd95d6065caac482adbe22a898" category="list-text">导航到要使用的平台(Windows、Linux)的Data Collector安装页面。</block>
+  <block id="7db0aa7259305c6d7d0e72d5ca0ebe3e" category="list-text">使用+ API访问令牌按钮创建令牌。</block>
+  <block id="eaaf6f42e491bead6370a5960ab7260c" category="list-text">输入名称、然后单击保存。</block>
+  <block id="0972f446b6a6a91283e10881d0cd5cf0" category="list-text">此时、应在下拉列表中选择令牌名称、并在安装收集器时使用该名称。</block>
+  <block id="4cb3c725652f3200a0496010ad323294" category="section-title">手动创建API访问令牌</block>
+  <block id="cc7ffe0790f9f9e2c594de1ca95da934" category="list-text">导航到"Admin"&gt;"API Access"。</block>
+  <block id="f567a7e9fa5b6ea07dfbcb1f10ba898f" category="list-text">单击+ API Access令牌。</block>
+  <block id="da2b1a111c6e52a8a048f3f7d02e27f5" category="list-text">输入名称和说明(可选)。</block>
+  <block id="2a5f374bd17838390e94539cf1c9edc6" category="list-text">在"What type of APIs" will this令牌be used to call？"(此令牌将用于调用哪种类型的API？)下、仅选择"Data ingestation"(数据摄取)、然后取消选择"Acquisition Unit"(采集单元)。</block>
+  <block id="bde31c4af787b8aa67aa8f46d9927e06" category="list-text">在"Permissions (权限)"下选择"Read/Write (读/写)</block>
+  <block id="47513702e119e549693050eff5813577" category="list-text">取消选择"Automatically rotate令牌for Kubbernetes"。</block>
+  <block id="e1fda48afafafca9c77b96f3325e10f1" category="paragraph">要使用新创建的API访问令牌、请从安装程序页面上的"选择现有API访问令牌或创建新令牌"下拉列表中进行选择。请注意、只能使用具有以下属性的令牌：</block>
+  <block id="9533e239d3608e18a0887fa1e16eeb68" category="list-text">API类型：仅限"数据输入"</block>
+  <block id="80ca9e629a03eaeba4e8aee7e74f24d0" category="list-text">权限：读/写</block>
+  <block id="4b6539abc7c077e53508d1262f8b50a0" category="list-text">Kubnetes自动旋转：关闭</block>
+  <block id="dc404ee30c75f557f651d109560394f2" category="summary">通过标识非活动设备、您可以选择删除这些设备或将其分配给活动角色。</block>
+  <block id="ca351e1a429ee72dbdb2061c22743ef6" category="list-text">导航到*可观察性&gt;浏览-&gt;+New Metric Query*。</block>
+  <block id="5e7f24385025eba3461014d3d964455b" category="paragraph">要去除不活动的设备，只需选择要去除的设备，然后在*散装 操作*下拉列表中选择_Delete In-In外 形设备_。</block>
+  <block id="72a442c57900f55848aa4acb856a507d" category="sidebar">标识非活动设备</block>
 </blocks>

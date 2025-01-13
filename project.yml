@@ -87,6 +87,8 @@ sidebar:
         url: "/task_query_copy_table_values.html"
       - title: 正在查询日志
         url: "/concept_log_explorer.html"
+      - title: 标识非活动设备
+        url: "/task_identify_inactive_devices.html"
     - title: 洞察力
       entries:
       - title: 概述

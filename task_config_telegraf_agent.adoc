@@ -442,6 +442,41 @@ Windows
  .\cloudinsights-windows.ps1 -install
 
 
+== 创建和使用API访问令牌
+
+要创建用于Telegraf数据采集的API访问令牌、请执行以下操作之一：
+
+
+
+=== 通过Data Collector安装页面创建
+
+. 导航到要使用的平台(Windows、Linux)的Data Collector安装页面。
+. 使用+ API访问令牌按钮创建令牌。
+. 输入名称、然后单击保存。
+. 此时、应在下拉列表中选择令牌名称、并在安装收集器时使用该名称。
+
+
+
+
+=== 手动创建API访问令牌
+
+. 导航到"Admin">"API Access"。
+. 单击+ API Access令牌。
+. 输入名称和说明(可选)。
+. 在"What type of APIs" will this令牌be used to call？"(此令牌将用于调用哪种类型的API？)下、仅选择"Data ingestation"(数据摄取)、然后取消选择"Acquisition Unit"(采集单元)。
+. 在"Permissions (权限)"下选择"Read/Write (读/写)
+. 取消选择"Automatically rotate令牌for Kubbernetes"。
+
+
+要使用新创建的API访问令牌、请从安装程序页面上的"选择现有API访问令牌或创建新令牌"下拉列表中进行选择。请注意、只能使用具有以下属性的令牌：
+
+* API类型：仅限"数据输入"
+* 权限：读/写
+* Kubnetes自动旋转：关闭
+
+
+
+
 == 故障排除
 
 在设置代理时遇到问题时要尝试的一些操作：

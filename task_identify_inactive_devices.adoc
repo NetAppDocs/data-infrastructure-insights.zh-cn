@@ -1,21 +1,18 @@
 ---
 sidebar: sidebar 
 permalink: task_identify_inactive_devices.html 
-keywords: inactive, device, 
-summary: 通过确定非活动设备，您可以选择将其删除或将其分配给活动角色。 
+keywords: inactive, device, remove, removing, identify, identifying 
+summary: 通过标识非活动设备、您可以选择删除这些设备或将其分配给活动角色。 
 ---
 = 确定非活动设备
-:toc: macro
 :hardbreaks:
 :toclevels: 1
 :allow-uri-read: 
-:toc: 
 :toclevels: 1
 :nofooter: 
 :icons: font
 :linkattrs: 
 :imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -24,10 +21,12 @@ summary: 通过确定非活动设备，您可以选择将其删除或将其分�
 按照以下步骤确定非活动资产。
 
 .步骤
-* 导航到*浏览->+New Metric Query*。
+* 导航到*可观察性>浏览->+New Metric Query*。
 * 从下拉列表中选择_Storage_。
 * 单击齿轮并添加_isActive_as列。
 +
 显示“检查”的行处于活动状态。"X"表示非活动设备。
 
 
+
+要去除不活动的设备，只需选择要去除的设备，然后在*散装 操作*下拉列表中选择_Delete In-In外 形设备_。
