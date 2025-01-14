@@ -484,5 +484,8 @@ fluent-bit:
  fs.inotify.max_user_instances=<something larger than current setting>
  fs.inotify.max_user_watches=<something larger than current setting>
 ----
+
+
+| 该报电DS Pod报告错误、因为Kubbernetes输入插件由于无法验证TLS证书而无法发出HTTP请求。例如：E！[Inputs.Kubernetes]插件中的错误：发出获取TLS的"https://<kubelet_IP>:10250/stats/summary":[]HTTP请求时出错"https://<kubelet_IP>:10250/stats/summary":[]：无法验证证书：X509：无法验证<kubelet_IP>证书、因为它不包含任何IP SAN | 如果kubelet正在使用自签名证书、和/或指定证书不在certificates _Subject备用名称_列表中包含<kubelet_IP>、则会出现此问题。要解决此问题，用户可以修改link:telegraf_agent_k8s_config_options.html["代理配置"]，并将_TREALF：inureK8sSkipVerify_设置为_TRUE_。此操作将配置该电图输入插件以跳过验证。或者，用户也可以为配置kubeletlink:https://kubernetes.io/docs/reference/config-api/kubelet-config.v1beta1/["serverTLSboot表带"]，这将从'certificates.k8s.io' API触发证书请求。 
 |===
 有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

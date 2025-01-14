@@ -112,7 +112,10 @@ link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Ku
 |  | skipProcessorsAfterRegators | 请参见 link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf配置文档"] 
 
 
-|  | 未受保护 | 请参见此link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376["已知电报问题描述"]。设置_UNprotECed_将指示Kubelnetes Monitoring Operator使用标志运行Telegraf `--unprotected`。 
+|  | 未受保护 | 请参阅此link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376["已知电报问题描述"]。设置_UNprotECed_将指示Kubelnetes Monitoring Operator使用标志运行Telegraf `--unprotected`。 
+
+
+|  | insecureK8sSkipVerify | 如果由于缺少IP SAN而无法验证证书、请尝试启用验证跳过 
 
 
 | Kube-state-metrics |  | 可自定义操作员的KUbe状态指标安装的配置选项 
