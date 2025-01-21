@@ -115,9 +115,6 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 | TCP | 35000 - 55000 | SVM 数据 LIF IP 地址 | 工作负载安全代理 | 从ONTAP到工作负载安全代理的Fpolicy事件通信。必须向工作负载安全代理打开这些端口、ONTAP才能向其发送事件、包括工作负载安全代理本身(如果存在)上的任何防火墙。请注意、您无需预留*所有*这些端口、但为此预留的端口必须在此范围内。建议首先预留~100个端口、必要时增加。 
 
 
-| TCP | 7 | 工作负载安全代理 | SVM 数据 LIF IP 地址 | 从代理到SVM数据Lifs的回显 
-
-
 | SSH | 22 | 工作负载安全代理 | 集群管理 | CIFS/SMB用户阻止所需。 
 |===
 
