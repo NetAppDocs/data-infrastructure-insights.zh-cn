@@ -19,7 +19,14 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 开始使用Data Infrastructure Insight只需三个简单步骤即可：
 
 * 在上注册一个帐户link:https://bluexp.netapp.com//["* NetApp BlueXP*"]、即可访问NetApp的所有云产品。
-* 注册参加link:https://cloud.netapp.com/cloud-insights["* 免费试用 *"]Data Infrastructure Insight的、了解可用功能。
+* 注册免费试用Data Infrastructure Insight、了解可用功能。注册免费试用版：
++
+** 转至 https://netapp.com[]
+** 选择页面顶部的*如何购买*。
+** 选择*申请试用*。如果您尚未注册BlueXP 、请输入您的详细信息并注册。否则、请登录。
+** 安排会议或等待代表就试用事宜与您联系。
+
+
 * *订阅*数据基础架构洞察、通过link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["NetApp 销售人员"]直接或持续无中断地访问数据link:https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe["AWS 市场"]。
 
 

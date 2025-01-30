@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: san_anayzer_overview.html 
+summary: SAN Analyzer可为租户上的资产提供拓扑 
+keywords: topology, analyze, analysis, map 
+---
+= SAN分析器概述
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+SAN在处理重要工作负载方面发挥着至关重要的作用、但其复杂性可能会导致严重中断和客户中断。借助DII的*SAN Analyzer *，SAN管理变得更简单、更高效。这款功能强大的工具提供端到端可见性、可将虚拟机/主机到网络的依赖关系映射到LUN和存储。
+
+通过提供交互式拓扑图、SAN分析器可帮助您确定问题、了解变化并增强对数据流的理解。借助SAN Analyzer简化复杂IT环境中的SAN管理、并提高对块工作负载的可见性。
+
+image:san_analyzer_example_with_panel.png["存储系统的SAN分析器拓扑图"]
+
+
+
+== 探索资产之间的联系

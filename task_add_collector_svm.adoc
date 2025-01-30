@@ -278,11 +278,12 @@ Testcluster-1::*> net int service-policy create -policy only_data_fpolicy -allow
 
 == 播放-暂停Data Collector
 
-现在、2个新操作显示在收集器的"CAE"菜单上(暂停和恢复)。
-
 如果Data Collector处于_running"状态、则可以暂停收集。打开收集器的"三点"菜单、然后选择暂停。暂停收集器时、不会从ONTAP收集任何数据、也不会从收集器向ONTAP发送任何数据。这意味着、不会有Fpolicy事件从ONTAP流向数据收集器、也不会从数据收集器流向数据基础架构洞察。
 
 请注意、如果在收集器暂停时在ONTAP上创建了任何新卷等、则"工作负载安全性"不会收集数据、这些卷等也不会反映在信息板或表中。
+
+
+NOTE: 如果某个收集器的用户受限、则无法暂停此收集器。暂停收集器之前、请恢复用户访问权限。
 
 请记住以下几点：
 

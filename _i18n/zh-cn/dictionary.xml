@@ -1942,8 +1942,6 @@
   <block id="f887dd4c6ffb2d6fd67813bccd44e611" category="paragraph">开始使用Data Infrastructure Insight只需三个简单步骤即可：</block>
   <block id="21a763771df4e64b083a2b050ce81f09" category="inline-link-macro">* NetApp BlueXP*</block>
   <block id="6341e61d6dc641d29b3f2e7300137ea9" category="list-text">在上注册一个帐户<block ref="e0b3e45a049f223d3b91d005d1e31db5" category="inline-link-macro-rx"></block>、即可访问NetApp的所有云产品。</block>
-  <block id="3f6b1218c41eefc30536db7e39f979df" category="inline-link-macro">* 免费试用 *</block>
-  <block id="58a9488c98ac9fb8c65fad02e5e29a2b" category="list-text">注册参加<block ref="82b0fa617f1dfb2e34805f2626cf97a5" category="inline-link-macro-rx"></block>Data Infrastructure Insight的、了解可用功能。</block>
   <block id="2ef085adce795622c057ad2ea6c13059" category="inline-link-macro">NetApp 销售人员</block>
   <block id="cab27dc53edb571cac663ce2e16450dc" category="inline-link-macro">AWS 市场</block>
   <block id="f2b5d43aba260933c552d69977b7274d" category="list-text">*订阅*数据基础架构洞察、通过<block ref="ae0970f4d06315494d31beaa05a7be05" category="inline-link-macro-rx"></block>直接或持续无中断地访问数据<block ref="e91d3f98f4b43abdea3c839a7777954c" category="inline-link-macro-rx"></block>。</block>
@@ -6286,7 +6284,6 @@
   <block id="4cb8e0d8b1d299b402fd5ddce7d39cd5" category="paragraph">如果将服务策略与ONTAP * 9.9.1或更高版本*结合使用、则要连接到数据源收集器、需要使用_data-fpolicy-client_服务以及数据服务_data-nfs_和/或_data-CIFS_。</block>
   <block id="ee22588534e4e3b699a85e968f56f4a7" category="paragraph">在9.1.1之前的ONTAP 版本中、不需要设置_data-fpolicy-client_。</block>
   <block id="27f986eca60850ba6afaf4deb6c8be29" category="section-title">播放-暂停Data Collector</block>
-  <block id="fc0a37407f79a45598558116e07830ba" category="paragraph">现在、2个新操作显示在收集器的"CAE"菜单上(暂停和恢复)。</block>
   <block id="37387a4cc8252dafbc2c17f057568ef6" category="paragraph">如果Data Collector处于_running"状态、则可以暂停收集。打开收集器的"三点"菜单、然后选择暂停。暂停收集器时、不会从ONTAP收集任何数据、也不会从收集器向ONTAP发送任何数据。这意味着、不会有Fpolicy事件从ONTAP流向数据收集器、也不会从数据收集器流向数据基础架构洞察。</block>
   <block id="12a77ef251456c14c7516a531e07f62b" category="paragraph">请注意、如果在收集器暂停时在ONTAP上创建了任何新卷等、则"工作负载安全性"不会收集数据、这些卷等也不会反映在信息板或表中。</block>
   <block id="ac08b45e1e6b3f3cb0a5ffc7cb738447" category="list-text">根据已暂停收集器上配置的设置、不会执行Snapshot清除。</block>
@@ -11915,4 +11912,15 @@
   <block id="3a6957a9f0cd14c98be3bfcbf85db668" category="paragraph"><block ref="3a6957a9f0cd14c98be3bfcbf85db668" category="inline-link-macro-rx"></block></block>
   <block id="9e43104f0687bd3a308759c5411641d7" category="paragraph"><block ref="9e43104f0687bd3a308759c5411641d7" category="inline-link-macro-rx"></block></block>
   <block id="348fd8f652c33b1be14b9b2f000cff0d" category="cell">这很可能是由于 ONTAP 端存在网络问题描述。请按照以下步骤操作： 1.确保 SVM 数据 LIF 或管理 LIF 上没有防火墙阻止与 SVM 的连接。2.通过集群管理IP添加SVM时、请确保SVM的数据LIP和管理LIP可从此代理VM执行ping。如果出现问题，请检查网关，网络掩码和 LIF 路由。您也可以尝试使用集群管理 IP 通过 ssh 登录到集群，并对代理 IP 执行 ping 操作。确保代理 IP 可执行 pingable ： _network ping -vserver &lt;vserver name&gt; -destination &lt;Agent IP&gt; -lif &lt;Lif name&gt; -show-detail_ 如果不可执行 ping、 请确保 ONTAP 中的网络设置正确，以便代理计算机可执行 pingable 。3.如果您尝试通过集群IP进行连接、但该连接不起作用、请尝试直接通过SVM IP进行连接。有关通过 SVM IP 进行连接的步骤，请参见上文。4.通过SVM IP和vsadmin凭据添加收集器时、请检查SVM LIF是否已启用数据加管理角色。在这种情况下，对 SVM LIF 执行 ping 操作将有效，但对 SVM LIF 执行 SSH 将不起作用。如果是，请创建一个仅 SVM 管理 LIF ，并尝试通过此仅 SVM 管理 LIF 进行连接。5.如果仍然无法正常工作、请创建一个新的SVM LIF、然后尝试通过该LIF进行连接。确保子网掩码设置正确。6.高级调试：a)在ONTAP中启动数据包跟踪。b)尝试从CloudSecure UI将数据收集器连接到SVM。c)等待错误出现。停止ONTAP中的数据包跟踪。d)从ONTAP中打开数据包跟踪。该命令可从以下位置获得：_\https：//：//：&lt;clustername&gt;、SPI/SNI/ets/log/packet_traces/_ e)确保ONTAP与代理框之间存在一个。f)如果没有来自ONTAP的&lt;cluster_mgmt_ip&gt;、则表示ONTAP中的防火墙存在问题。g)打开ONTAP中的防火墙、以便ONTAP能够连接代理框。7.如果它仍然不工作、请咨询网络团队、以确保没有外部防火墙阻止从ONTAP到Agent Box的连接。9.如果上述方法均无法解决问题、请向创建案例以<block ref="d0162286c59c67bf86d01f060ee7cd04" category="inline-link-macro-rx"></block>获得进一步帮助。</block>
+  <block id="2b8272217b69f1c5b5ad5968f0bc0945" category="list-text">注册免费试用Data Infrastructure Insight、了解可用功能。注册免费试用版：</block>
+  <block id="6d2404e5699069be70636f65562fe693" category="list-text">转至<block ref="66922be03d9fc23a3ec9641b7884c8f2" category="inline-link-rx"></block></block>
+  <block id="e78fd759357c2a61f07ddc6a902f9270" category="list-text">选择页面顶部的*如何购买*。</block>
+  <block id="7070fd1d7b5d144bd3131c3c2b7ee1ca" category="list-text">选择*申请试用*。如果您尚未注册BlueXP 、请输入您的详细信息并注册。否则、请登录。</block>
+  <block id="e461fd437885ee63b7f00e77ade6b3cb" category="list-text">安排会议或等待代表就试用事宜与您联系。</block>
+  <block id="44d2017272b4664ce749afa3c1fc2785" category="summary">SAN Analyzer可为租户上的资产提供拓扑</block>
+  <block id="916cfef6f81652d81c744e0537c656b2" category="doc">SAN分析器概述</block>
+  <block id="a720fce5b3da4c111f19c80487c269cf" category="paragraph">SAN在处理重要工作负载方面发挥着至关重要的作用、但其复杂性可能会导致严重中断和客户中断。借助DII的*SAN Analyzer *，SAN管理变得更简单、更高效。这款功能强大的工具提供端到端可见性、可将虚拟机/主机到网络的依赖关系映射到LUN和存储。</block>
+  <block id="b03a68ce04fd31de1bf167d4c6537d2f" category="paragraph">通过提供交互式拓扑图、SAN分析器可帮助您确定问题、了解变化并增强对数据流的理解。借助SAN Analyzer简化复杂IT环境中的SAN管理、并提高对块工作负载的可见性。</block>
+  <block id="9c6601cca8cd67405c34e4897bb272f1" category="section-title">探索资产之间的联系</block>
+  <block id="14fe64769d4df689f51e13f60c5ec439" category="admonition">如果某个收集器的用户受限、则无法暂停此收集器。暂停收集器之前、请恢复用户访问权限。</block>
 </blocks>
