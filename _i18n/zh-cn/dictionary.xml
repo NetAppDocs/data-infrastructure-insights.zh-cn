@@ -11923,4 +11923,8 @@
   <block id="b03a68ce04fd31de1bf167d4c6537d2f" category="paragraph">通过提供交互式拓扑图、SAN分析器可帮助您确定问题、了解变化并增强对数据流的理解。借助SAN Analyzer简化复杂IT环境中的SAN管理、并提高对块工作负载的可见性。</block>
   <block id="9c6601cca8cd67405c34e4897bb272f1" category="section-title">探索资产之间的联系</block>
   <block id="14fe64769d4df689f51e13f60c5ec439" category="admonition">如果某个收集器的用户受限、则无法暂停此收集器。暂停收集器之前、请恢复用户访问权限。</block>
+  <block id="81c776ec15386302abf1c34d317e3393" category="paragraph">选择*Observability &gt; Analyze &gt; SAN Analyzer*以查看SAN Analyzer。设置应用程序、主机、网络结构和/或存储的筛选器。此时将显示对象的地图、其中显示了连接的对象。将鼠标悬停在某个对象上可查看这些连接的流量指标。</block>
+  <block id="fde6f74861c217b576ec5d769f2467c3" category="paragraph"><block ref="fde6f74861c217b576ec5d769f2467c3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3cfbb427bd17b95ae08e5597561217ef" category="paragraph">单击某个对象或组将打开一个分出面板、其中提供了有关该对象及其连接的其他详细信息。此分片包括显示摘要、端口详细信息和区域信息(如果可用)的选项卡。</block>
+  <block id="7512260392fef04bf211fab22007addd" category="paragraph"><block ref="7512260392fef04bf211fab22007addd" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

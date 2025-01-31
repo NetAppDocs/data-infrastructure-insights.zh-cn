@@ -25,3 +25,11 @@ image:san_analyzer_example_with_panel.png["存储系统的SAN分析器拓扑图"
 
 
 == 探索资产之间的联系
+
+选择*Observability > Analyze > SAN Analyzer*以查看SAN Analyzer。设置应用程序、主机、网络结构和/或存储的筛选器。此时将显示对象的地图、其中显示了连接的对象。将鼠标悬停在某个对象上可查看这些连接的流量指标。
+
+image:san_analyzer_traffic_metrics.png[""]
+
+单击某个对象或组将打开一个分出面板、其中提供了有关该对象及其连接的其他详细信息。此分片包括显示摘要、端口详细信息和区域信息(如果可用)的选项卡。
+
+image:san_analyzer_slideout_example.png[""]
