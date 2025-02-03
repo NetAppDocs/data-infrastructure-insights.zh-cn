@@ -11927,4 +11927,16 @@
   <block id="fde6f74861c217b576ec5d769f2467c3" category="paragraph"><block ref="fde6f74861c217b576ec5d769f2467c3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3cfbb427bd17b95ae08e5597561217ef" category="paragraph">单击某个对象或组将打开一个分出面板、其中提供了有关该对象及其连接的其他详细信息。此分片包括显示摘要、端口详细信息和区域信息(如果可用)的选项卡。</block>
   <block id="7512260392fef04bf211fab22007addd" category="paragraph"><block ref="7512260392fef04bf211fab22007addd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="18082cdb9388e2686e081dd6012e47b8" category="summary">您可以确定创建的信息板是公共信息板还是私有信息板。</block>
+  <block id="cc5c681651d638257ae03658c963c7c6" category="doc">信息板访问管理</block>
+  <block id="571ad98bb1054a211a5d3fa3a3240265" category="paragraph">现在、您可以通过Data Infrastructure Insight更好地控制对所创建信息板的访问。您可以选择谁可以修改图形。您可以控制潜在敏感信息的暴露程度。通过将信息板保持私密、您可以最终确定可视化效果、直到它们可供组织中的其他人使用为止。</block>
+  <block id="505e6238dfdc62d1b4bbdf930fa887b8" category="inline-image-macro">信息板共享选项、宽度=300</block>
+  <block id="43b5d7a5affce9056fb3d7ec4b82fe17" category="paragraph"><block ref="43b5d7a5affce9056fb3d7ec4b82fe17" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="547a803d844f9925f62c57d49f10caf6" category="paragraph">默认情况下、在创建新信息板时、只有创建者才能看到该信息板。任何其他用户都无法查看或修改此信息板。</block>
+  <block id="78d12ef818f574226b0780765511e2d5" category="paragraph">完成信息板后、您可以选择允许组织中的其他人查看该信息板。要共享信息板、请在信息板列表中、从右侧菜单中选择_Share_。</block>
+  <block id="8e561a2090f27ed80a24e59dff11dcce" category="inline-image-macro">从菜单访问信息板共享</block>
+  <block id="5fc6afe4cfc7bc7e58ad6e7119812663" category="paragraph"><block ref="5fc6afe4cfc7bc7e58ad6e7119812663" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="16442b20a2319083af65dedb2d7e942e" category="paragraph">您可以选择将信息板共享给任何人、也可以选择具有编辑或只读权限的用户。</block>
+  <block id="1dcba5cd7d6049883623c0653a2031f6" category="inline-image-macro">用于共享具有编辑或读取权限的信息板的下拉列表</block>
+  <block id="ac0466f21ebde71eed9f3673b4c7da1b" category="paragraph"><block ref="ac0466f21ebde71eed9f3673b4c7da1b" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: dashboard_access_management.html 
+summary: 您可以确定创建的信息板是公共信息板还是私有信息板。 
+keywords: dashboard, public, shared, private 
+---
+= 信息板访问管理
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:toclevels: 1
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+现在、您可以通过Data Infrastructure Insight更好地控制对所创建信息板的访问。您可以选择谁可以修改图形。您可以控制潜在敏感信息的暴露程度。通过将信息板保持私密、您可以最终确定可视化效果、直到它们可供组织中的其他人使用为止。
+
+image:Dashboard_Sharing_Options.png["信息板共享选项、宽度=300"]
+
+默认情况下、在创建新信息板时、只有创建者才能看到该信息板。任何其他用户都无法查看或修改此信息板。
+
+完成信息板后、您可以选择允许组织中的其他人查看该信息板。要共享信息板、请在信息板列表中、从右侧菜单中选择_Share_。
+
+image:dashboard_access_share_menu.png["从菜单访问信息板共享"]
+
+您可以选择将信息板共享给任何人、也可以选择具有编辑或只读权限的用户。
+
+image:dashboard_access_share_drop-down.png["用于共享具有编辑或读取权限的信息板的下拉列表"]
