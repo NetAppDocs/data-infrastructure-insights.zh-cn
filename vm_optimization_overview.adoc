@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: cvm_optimization_overview.html 
+summary: VM优化 
+keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand 
+---
+= VM优化
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:toclevels: 1
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Data Infrastructure Insight可通过分析环境的历史行为并制定短期和长期预测来帮助您管理基础架构和许可成本、并为主机停用和回收已关闭电源的VM和闲置VM生成详细建议。这些建议有助于确保性能稳定性、释放未使用的容量并减少内存和CPU分配。
+
+image:vm_optimization_summary.png["VM Optimization Summary (VM优化摘要)屏幕"]
+
+首先、导航到"Observability (可观察性)">"Analyze (分析)">"VM Optimization (VM优化)"。此时将显示按核心数和存储节省量细分的潜在节省量摘要。您可以将筛选器设置为按数据中心、虚拟中心IP或集群进行关注、也可以设置自己的筛选器以进一步缩小关注范围。
+
+image:vm_optimization_overview.png["VM优化概述"]
+
+Hypervisor"停用"选项卡会根据您选择的优化策略显示您可能节省的成本。每种策略都使用不同的阈值来确定潜在的节省量。
+
+在列表中选择一个集群、以打开一个包含集群的CPU和内存利用率详细信息的分出面板。
+
+image:vm_optimization_hypervisor_decommissioning_tab.png["虚拟机管理程序优化选项卡"]
+
+"VM Recandation (VM回收)"选项卡提供了闲置或关闭时间超过30天、60天或90天的VM的详细信息、以及可能节省的容量、内存和vCPU。从列表中选择一个VM将打开该VM的详细信息页面。
+
+image:vm_optimization_reclamation_tab.png["VM回收选项卡"]

@@ -11939,4 +11939,15 @@
   <block id="16442b20a2319083af65dedb2d7e942e" category="paragraph">您可以选择将信息板共享给任何人、也可以选择具有编辑或只读权限的用户。</block>
   <block id="1dcba5cd7d6049883623c0653a2031f6" category="inline-image-macro">用于共享具有编辑或读取权限的信息板的下拉列表</block>
   <block id="ac0466f21ebde71eed9f3673b4c7da1b" category="paragraph"><block ref="ac0466f21ebde71eed9f3673b4c7da1b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="98465e4573c2849304e85edaeef13370" category="summary">VM优化</block>
+  <block id="761ab7bf046ac25fda0da8f1af542322" category="paragraph">首先、导航到"Observability (可观察性)"&gt;"Analyze (分析)"&gt;"VM Optimization (VM优化)"。此时将显示按核心数和存储节省量细分的潜在节省量摘要。您可以将筛选器设置为按数据中心、虚拟中心IP或集群进行关注、也可以设置自己的筛选器以进一步缩小关注范围。</block>
+  <block id="045386d087f10e1f0ae1e3bf75624afe" category="inline-image-macro">VM优化概述</block>
+  <block id="7110454d98ba958eec64260bbc5dec80" category="paragraph"><block ref="7110454d98ba958eec64260bbc5dec80" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="03f6f40a2cf552119978ffce0238086f" category="paragraph">Hypervisor"停用"选项卡会根据您选择的优化策略显示您可能节省的成本。每种策略都使用不同的阈值来确定潜在的节省量。</block>
+  <block id="6e3975fe060cfaed5d52ef53dce4935b" category="paragraph">在列表中选择一个集群、以打开一个包含集群的CPU和内存利用率详细信息的分出面板。</block>
+  <block id="f76142da98b557ade1c2d52abf0a207b" category="inline-image-macro">虚拟机管理程序优化选项卡</block>
+  <block id="bfea8ae8feffd62a3b499ac0dc5015ac" category="paragraph"><block ref="bfea8ae8feffd62a3b499ac0dc5015ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0dc236d363c2d7f668f1ee1391ffab69" category="paragraph">"VM Recandation (VM回收)"选项卡提供了闲置或关闭时间超过30天、60天或90天的VM的详细信息、以及可能节省的容量、内存和vCPU。从列表中选择一个VM将打开该VM的详细信息页面。</block>
+  <block id="5edbd52aee44c2dfb6c01abc4128600a" category="inline-image-macro">VM回收选项卡</block>
+  <block id="e2e66b001cd3f2f1481c4b23049ca899" category="paragraph"><block ref="e2e66b001cd3f2f1481c4b23049ca899" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
