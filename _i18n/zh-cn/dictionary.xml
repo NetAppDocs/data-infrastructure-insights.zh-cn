@@ -3977,7 +3977,6 @@
   <block id="58ecb418298e803c7a0ae49007466440" category="paragraph">所有活动页面可帮助您了解对工作负载安全环境中的实体执行的操作。</block>
   <block id="33a203d3623a54e6d264ebf5af5db210" category="section-title">检查所有活动数据</block>
   <block id="dde100b78d6d436ad1c738fca1b98fc6" category="paragraph">您可以通过在图形中拖动一个方框来缩放图形。此时将加载整个页面以显示缩放的时间范围。放大后，将显示一个按钮，用户可以通过该按钮进行缩小。</block>
-  <block id="be2a0bbd0e52bd10107615bcddc56fba" category="paragraph">_* 所有活动 * _ 表显示了以下信息。请注意，默认情况下并不会显示所有这些列。您可以通过单击"齿轮"图标来选择要显示的列。</block>
   <block id="10b85952c1ec4b6508b7012df066ef83" category="list-text">访问实体的 * 时间 * ，包括上次访问的年份，月份，日期和时间。</block>
   <block id="38d1b0982212e47a2dd73e4c40793793" category="inline-link-macro">用户信息</block>
   <block id="6bf51f11b7d2354b7c099ad162d81b7a" category="list-text">用户执行的 * 活动 * 。支持的类型包括：</block>
@@ -3988,11 +3987,9 @@
   <block id="dc1663562fc43061ff1040783cb4e9d2" category="list-text">* 创建 * - 创建文件或文件夹。</block>
   <block id="6bcfc6d0ddd3e857bf7ff9d50a1aad07" category="list-text">* 删除 * - 删除文件或文件夹。如果删除某个文件夹，则会为该文件夹和子文件夹中的所有文件获取 _delete_ 事件。</block>
   <block id="865fb9ac996b45282ae7a37ddf907748" category="list-text">* 读取 * - 文件已读取。</block>
-  <block id="63342c59c5eab274a4129fdce2de1067" category="list-text">* 读取元数据 * - 仅在启用文件夹监控选项时才显示。将在 Windows 上打开文件夹或在 Linux 中的文件夹内运行 "ls" 时生成。</block>
   <block id="3ee2cb44fd1180239223a95847150e56" category="list-text">* 重命名 * - 重命名文件或文件夹。</block>
   <block id="ccf535ac132e169591e0c8835e83f80f" category="list-text">* 写入 * - 将数据写入文件。</block>
   <block id="bc2e1628223bbd57334a725f0401d199" category="list-text">* 写入元数据 * - 写入文件元数据，例如，权限已更改。</block>
-  <block id="d05ab97003568ddbd1e124e280eff44d" category="list-text">* 其他更改 * —上述未提及的任何其他事件。所有未映射的事件都会映射到 " 其他更改 " 活动类型。适用于文件和文件夹。</block>
   <block id="d97c308acbc0f0d3e5a290abc82e12a0" category="inline-link-macro">实体详细信息数据</block>
   <block id="5d7a5f24f08d7baa937ba58212dc4cb3" category="list-text">用于提取事件的 * 协议 * 。</block>
   <block id="760b2221e00b39c02b810e7c86cb4944" category="list-text">重命名原始文件时用于重命名事件的 * 原始路径 * 。默认情况下，此列在表中不可见。使用列选择器将此列添加到表中。</block>
@@ -4000,28 +3997,22 @@
   <block id="119f264c2e26701f999cacca54ff6a5a" category="section-title">筛选取证活动历史记录数据</block>
   <block id="e2dc5b88c4f53d2a648a9f81fdc77ecb" category="paragraph">您可以使用两种方法筛选数据。</block>
   <block id="b44d27d7b6b6912f12597adc1f9fa486" category="list-text">通过在 _Filter by" 字段中键入来筛选数据：</block>
-  <block id="94d39d472f5515f9137731ff36ee8221" category="paragraph">通过单击 * ‘+]* 按钮从顶部的 Filter by ' 小工具中选择相应的筛选器：</block>
   <block id="9aca188b05e6e40de4b37c9a1ae88452" category="inline-image-macro">实体文件器，宽度 = 500</block>
   <block id="7b4254d6ca4c36d3c1912bda6433d382" category="paragraph"><block ref="7b4254d6ca4c36d3c1912bda6433d382" category="inline-image-macro-rx" type="image"></block></block>
   <block id="37fccc39126a22f07b06f0552cde9c16" category="paragraph">输入搜索文本</block>
   <block id="e35ab2c794348db93821f8e7eafc7960" category="paragraph">按 Enter 或单击筛选器框外侧以应用筛选器。</block>
   <block id="bf0bfb79a81a231f0f04666c3569da3f" category="paragraph">您可以按以下字段筛选取证活动数据：</block>
   <block id="85e0179872301e1053d45f643b6899c5" category="list-text">* 活动 * 类型。</block>
-  <block id="1dc677ce29033ce9855fe2699237c9a1" category="list-text">访问实体的 * 源 IP* 。您必须使用双引号提供有效的源 IP 地址，例如 "10.1.1.1." 。诸如 "10.1.* " ， "10.1.* 。 * " 等不完整的 IP 将不起作用。</block>
   <block id="993bee13d79883a291c5bf94757d27d8" category="list-text">提取协议专用活动的 * 协议 * 。</block>
-  <block id="c3d430182436845185c1ac182ba51c05" category="list-text">执行活动的用户的 * 用户名 * 。您需要提供确切的用户名以进行筛选。使用部分用户名或部分用户名预先设置或后缀为‘ * ' 的搜索将不起作用。</block>
   <block id="15ac0cdbe87a38b3f0c5588fd122123c" category="list-text">* 降噪 * 用于筛选用户在过去 2 小时内创建的文件。它还用于筛选用户访问的临时文件（例如 .tmp 文件）。</block>
   <block id="3a6aae5bc174d27a503441e1d24d0c68" category="list-text">执行活动的用户的*域*。您需要提供*精确域*才能进行筛选。不能搜索部分域、或者以通配符('*')前缀或后缀的部分域。可以指定_None_以搜索缺少的域。</block>
   <block id="5e5226f8443d6c79a977ffd6e71a8d9d" category="paragraph">以下字段受特殊筛选规则的约束：</block>
-  <block id="28894211649d8f9f99c54dc12f77784e" category="list-text">*实体类型*，使用实体(文件)扩展名-最好在引号内指定确切的实体类型。例如_"TXT"_。</block>
   <block id="0d97b222b080d69a549c4eb4a4bfe399" category="list-text">*用户*执行活动-最好在引号中指定确切的用户。例如、"Administrator (管理员)"_。</block>
   <block id="793b0425edef55b10657fd6cc2a5ab5a" category="list-text">实体所在的 * 设备 * （ SVM ）</block>
   <block id="6bbd4f26d0615caf6a29b9c2d238dad2" category="list-text">实体所在的 * 卷 *</block>
   <block id="6edcb8abb66cf4a0700d1ea8dac389e5" category="list-text">重命名原始文件时用于重命名事件的 * 原始路径 * 。</block>
   <block id="ac27cb91c44714292702bc3eb4cf63af" category="paragraph">筛选时，上述字段受以下限制：</block>
   <block id="9f5698d8ff9580fb0292b0180a70711f" category="list-text">确切值应在引号内：示例： "searchText"</block>
-  <block id="ae908dd27651e4f543cd1488054f03ce" category="list-text">通配符字符串不能包含任何引号：例如： searchText ， \* searchText* 将筛选包含 ‘searchtext ' 的任何字符串。</block>
-  <block id="6de2a99ab7d1b49c0d30165b7f923bde" category="list-text">带有前缀的字符串示例： searchText* 将搜索以 ‘searchtext ' 开头的任何字符串。</block>
   <block id="98979e670bd293d9570a2b24562e08a2" category="section-title">活动法证筛选器示例：</block>
   <block id="0930b50f995b3a6af46dc5f205e5c2be" category="cell">用户应用的筛选器表达式</block>
   <block id="13876d45cb0b459833e4aebb72877939" category="cell">预期结果</block>
@@ -4043,8 +4034,6 @@
   <block id="5addbd908b76e38709a3256b2eba74c5" category="list-text">*等待导出完成*：处理时间从几分钟到几小时不等。您可能需要刷新取证页面几次。导出作业完成后、将启用"下载上次导出CSV文件"按钮。</block>
   <block id="fb56822932e96a02d5b71841b0bb86a7" category="list-text">*下载*：单击"下载上次创建的导出文件"按钮以.zip格式获取导出的数据。此数据将可供下载、直到用户启动另一个异步导出或3天后(以先发生者为准)为止。此按钮将保持启用状态、直到启动另一个异步导出为止。</block>
   <block id="8ab0a5a1cd44cd0d41ee8657d513b901" category="list-text">*限制*：</block>
-  <block id="60ace3612e0acf6a0941aadafd7b24ab" category="list-text">异步下载的数量目前限制为每个用户1次、每个租户3次。</block>
-  <block id="db0adf696c53371ef4510888d244f184" category="list-text">导出的数据限制为最多100万条记录。</block>
   <block id="f61af81d2b9edda67ad225742bd8e959" category="paragraph">用于通过API提取取证数据的示例脚本位于NetApp代理上的_/opt/API/云 安全/agent/extr导 出脚本/_。有关该脚本的详细信息、请参见此位置的自述文件。</block>
   <block id="db7f539a64befdbef8a36c1e95be3922" category="section-title">为所有活动选择列</block>
   <block id="2c196fb6f976fd067f518fa5198011f3" category="paragraph">默认情况下， _all activity_ 表会显示 SELECT 列。要添加，删除或更改列，请单击表右侧的齿轮图标，然后从可用列列表中进行选择。</block>
@@ -4055,18 +4044,15 @@
   <block id="19d8a8363cc18927f8f792b40e752c60" category="section-title">取证页面中的筛选器适用性</block>
   <block id="5ac805f98623b1f23909793e4ff3a262" category="cell">适用于这些筛选器</block>
   <block id="b1b275726951e4adc620b69d947baf49" category="cell">不适用于这些筛选器</block>
-  <block id="0a3087cfc2ea9ac71095f821d14ee027" category="cell">Auto*03172022如果搜索文本包含连字符或下划线、请在方括号中提供表达式。例如、(SVM*)用于搜索SVM-123</block>
   <block id="3518217f55c95e834c4ea7984f8aa0cd" category="cell">AutoSabotageUser1_03172022？</block>
   <block id="a28771ee6ad9a7771a86f5d6ceeed78e" category="cell">返回AutoSabotageUser1_03172022A、AutoSabotageUser1_03172022B、AutoSabotageUser1_031720225等</block>
   <block id="3adefd54fc738f8196af6304ed8929ac" category="cell">AutoSabotageUser1_03172022或AutoRansomUser4_03162022</block>
   <block id="0a01700b4705c6c47c24699ad7d4a4cb" category="cell">返回任意AutoSabotageUser1_03172022或AutoRansomUser4_03162022</block>
   <block id="0ca071eb91357e8d4685daee24bd3360" category="cell">非AutoRansomUser4_03162022</block>
   <block id="e0ac20adce6ffee48c7151b070aa5737" category="cell">设备</block>
-  <block id="e0c965c954b5a9fdc33c5b0516799f7d" category="cell">返回不以"AutoRansomUser4_03162022 "开头的所有内容</block>
   <block id="eae639a70006feff484a39363c977e24" category="cell">域</block>
   <block id="3c16a1572c295ef2bbd770516679c559" category="cell">返回目标字段为空的结果</block>
   <block id="64048c881c93933680d02730e9d9ce63" category="paragraph">使用和不使用/的搜索结果将有所不同</block>
-  <block id="53ca5edb3205aa3468395e1789114a60" category="cell">不起作用</block>
   <block id="1d7531d059e4088a0878ea4eb94d32b6" category="cell">"/AutoDir1/AutoFile03242022"</block>
   <block id="888f8ecf6256a9875ff5de4f10099453" category="cell">/AutoDir1/AutoFile03242022或/AutoDir1/AutoFile03242022</block>
   <block id="d87dd477d16107bb862f99dedbcacce4" category="cell">非/AutoDir1/AutoFile03242022</block>
@@ -4079,7 +4065,6 @@
   <block id="189e8f8cb6dcbc5db679c602980ce869" category="list-text">如果SVM-1受工作负载安全性监控、并且该SVM的root用户在IP地址为10.197.12.40的客户端上挂载共享、则取证活动页面中显示的用户名为_root@10.197.12.40_。</block>
   <block id="9a7b0be436e968c987b9d5f84ae815c4" category="list-text">如果将同一个SVM-1挂载到IP地址为10.197.12.41的另一个客户端、则取证活动页面中显示的用户名为_root@10.197.12.41_。</block>
   <block id="8ef0cd5e57c1bad7b905d070f6b527a2" category="paragraph">*•这样做是为了按IP地址隔离NFS root用户活动。以前、所有活动都被视为仅由_root_用户完成、不区分IP。</block>
-  <block id="92232e830756517d2e51d25331f14f25" category="cell">在 "All actives" 表的 ‘User ' 列下，用户名显示为： "ldap ： HQ.COMPANYNAME.COM:S-1-5-21-3577637-1906459482-1437260136-1831817” 或 "ldap ： default ： 80038003"</block>
   <block id="0c4a0e9a569be65e94908f9222457694" category="inline-link-macro">用户目录收集器故障排除</block>
   <block id="fa754fd7176d2dbf75086e702bb8e0ba" category="cell">可能的原因可能是： 1.尚未配置任何用户目录收集器。要添加一个，请转到*工作负载安全性&gt;收集器&gt;用户目录收集器*，然后单击*+用户目录收集器*。选择 _Active Directory_ 或 _LDAP Directory Server_ 。2.已配置用户目录收集器，但它已停止或处于错误状态。请进入*收集器&gt;用户目录收集器*并检查状态。有关故障排除提示、请参阅<block ref="700dae282c67631ab7fef060d50fba0f" category="inline-link-macro-rx"></block>文档的一节。正确配置后，此名称将在 24 小时内自动解析。如果仍无法解决此问题，请检查您是否添加了正确的用户数据收集器。确保用户确实属于添加的 Active Directory/LDAP 目录服务器。</block>
   <block id="65524feb61d50c77bb7ba2638a763f8e" category="cell">UI 中未显示某些 NFS 事件。</block>
@@ -11833,29 +11818,17 @@
   <block id="80662c9452da0395efcb752fc6efd791" category="list-text">活动计数显示为超链接；选择此选项将添加选定的分组作为筛选器。活动表将根据该筛选器进行更新。</block>
   <block id="f5048103eec701282d4bd47edb30c0dd" category="list-text">请注意、如果更改筛选器、更改时间范围或刷新屏幕、则在不重新设置筛选器的情况下、将无法返回到筛选后的结果。</block>
   <block id="a7b9ef6a74f521c07a42dfe2b3ba5984" category="list-text">可以从滑出面板添加过滤器。该值将添加到 Top _Filter by" 列表中的相应筛选器中。</block>
-  <block id="abc9548bbf938c1b00d7d7943eea69c6" category="list-text">一级文件夹(根)—作为过滤器的实体路径的根目录。例如、如果实体路径为/HOME/userX/nosted1/nosted2/、则可以使用home或"home "。</block>
-  <block id="ef05d086fd7703f59da830094683f26b" category="list-text">2nd Level Folder (二级文件夹)-实体路径过滤器的二级目录。例如、如果实体路径为/HOME/userX/nosted1/nosted2/、则可以使用userX或"userX"。</block>
   <block id="d09c77be27888e5715284768b4b56a37" category="list-text">第三级文件夹—实体路径筛选器的第三级目录。</block>
-  <block id="af2e930a257c8313695f9a6d5e9c587c" category="list-text">例如、如果实体路径为/HOME/userX/nosted1/nosted2/、则可以使用nosted1或"nosted1"。</block>
-  <block id="73563b05b63d5f6abf9aac631e04c7b1" category="list-text">4th Level Folder (第四级文件夹)-目录实体路径过滤器的第四级目录。例如、如果实体路径为/HOME/userX/nosted1/nosted2/、则可以使用nosted2或"nosted2"。</block>
   <block id="4f1f0488f8878a68e5eb50610b690092" category="cell">路径="/HOME/userX/ned1/ned2/"</block>
   <block id="bd12893dcbe3201853dc72f0c6467347" category="cell">路径="/HOME/userX/ned1/"</block>
-  <block id="1d0c26b23985cb45609efc05c13c3294" category="cell">路径="/HOME/userX/nESTed1/test"</block>
   <block id="735bdb9fe63d4b5dcefb1fab563b1783" category="cell">路径="/HOME/userX/ned1/ned2/ned3/"</block>
   <block id="fa9485df6d085377bf71d0ebb0343af0" category="list-text">同样、当选定时间范围超过3天时、活动历史记录图中显示的计数指标也会四舍五入为30分钟。</block>
   <block id="20b023807d41f295e71a0807936532d8" category="paragraph">您可以按_time、User、Source IP、Activity、_、_实体 类型_、一级文件夹(根)、二级文件夹、三级文件夹和四级文件夹对活动历史记录数据进行排序。默认情况下，此表按降序 _time_ 顺序排序，这意味着将首先显示最新数据。已对 _Device_ 和 _Protocol_ 字段禁用排序。</block>
-  <block id="3ba465c35d8b2ac685818d0b9a9ba4f7" category="cell">用户、实体类型、设备、卷、原始路径、1stLevel文件夹、2ndLevel文件夹、3rdLevel文件夹、4thLevel文件夹</block>
-  <block id="6273bbd8f9632e4d401abdeec82c9a39" category="cell">返回以"Auto"开头、以"03172022"结尾的所有资源</block>
-  <block id="3917b61839732c75ca8202af25ad4257" category="cell">用户、实体类型、设备、卷、1stLevel文件夹、2ndLevel文件夹、3rdLevel文件夹、4thLevel文件夹</block>
-  <block id="18575a59bc1468900953267afdfc5c81" category="cell">用户、域、实体类型、原始路径</block>
-  <block id="7c76f178211d14484e376bc483bd1077" category="cell">用户、域、实体类型、原始路径、1stLevel文件夹、2ndLevel文件夹、3rdLevel文件夹、4thLevel文件夹</block>
   <block id="44144cdf07fe03ca4c4d71ecf2ee830c" category="cell">仅精确搜索有效；返回路径精确为/AutoDir1/AutoFile03242022的所有活动(区分大小写)</block>
   <block id="f7bf447e3a19a294d681133f069ea62c" category="cell">"/AutoDir1/"</block>
   <block id="8431be8aa2f333f025452fc93c584143" category="cell">Works；返回与AutoDir1匹配的一级目录的所有活动(区分大小写)</block>
   <block id="dac09bc6942369c2d0f8d36f26d2e201" category="cell">"/AutoDir1/AutoFile03242022/"</block>
   <block id="17411e5191f440928552bd359518e697" category="cell">Works；返回与AutoDir1和AutoFile03242022匹配的一级目录和二级目录的所有活动(区分大小写)</block>
-  <block id="a874dae9695be1c2a6ef02373776f7b7" category="cell">搜索字符串中的星号(\*)将搜索所有内容。但是，诸如_*&lt;searchTerm&gt;_或_*&lt;searchTerm&gt;*_之类的前导通配符字符串会导致查询速度较慢。要获得更好的性能，请改用前缀字符串，格式为_&lt;searchTerm&gt;*_(换言之，请附加星号(*)_after_搜索词)。示例：使用字符串_testvolume*_，而不是_*testvolume_或_*test*volume_。使用目录搜索以递归方式查看给定文件夹下的所有活动(分层搜索)。例如、"/path1/path2/path3/"将以递归方式在/path1/path2/path3下列出所有活动。或者、使用所有活动选项卡下的"Add to Filter"(添加到筛选器)选项。</block>
-  <block id="980f8b6539b7c131f66cdde66f81a98f" category="cell">目录路径筛选器(以/结尾的路径字符串)建议目录深度最多为4个、以获得更快的结果。例如、如果目录路径为/AAA/BBB/CCC/DDD、请尝试搜索"/AAA/BBB/CCC/DDD/"以更快地加载数据。</block>
   <block id="ee0b2f1c8ad7945cf603e8d752a5e7b5" category="inline-link-macro">Data Infrastructure Insight版本</block>
   <block id="bbf9080a1bf1fb2f62558ce683d64be0" category="paragraph">有关Data Infrastructure Insight基础版和高级版中可用功能的完整比较、请参见<block ref="49bb501f6c401ae5b06c3dbe5fc987bd" category="inline-link-macro-rx"></block>页面。</block>
   <block id="3bbdd1e5a1fbf0d58680e594b8806722" category="section-title">验证电报包校验和</block>
@@ -11875,8 +11848,6 @@
   <block id="84229233ad61c44b8e53075992f6c8a5" category="paragraph">现在、您可以通过Data Infrastructure Insight更好地控制对所创建信息板的访问。您可以选择谁可以修改图形。您可以控制潜在敏感信息的暴露程度。是否仍在使用尚未准备好进行一般可见性的信息板？您可以将其保密、直到准备好进行共享为止。</block>
   <block id="f916d734e48a8724b0f8c434b43a06a7" category="inline-image-macro">信息板共享选项</block>
   <block id="e2d1989486babbb3dc0993863f9f4ef8" category="paragraph"><block ref="e2d1989486babbb3dc0993863f9f4ef8" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c278bdd917e4f32f7d8a13861d3c1a43" category="list-text">Path*为_实体_路径。此路径应为精确的实体路径(例如、"_/HOME/userX/nosted1/nosted2/abc.txt _)或递归搜索路径的目录部分(例如、"_/HOME/userX/nosted1/nosted2/_")。注意：此处不允许使用正则表达式路径模式(例如_userX_)。或者、也可以为路径筛选指定如下所述的单个路径文件夹级筛选器。</block>
-  <block id="09cde459dc94ebcdb7fb39e8a2b6e65f" category="list-text">实体的*路径*-这应该是精确的实体路径(例如、"_/HOME/userX/nesed1/nesed2/abc.txt _")或递归搜索路径的目录部分(例如、"_/HOME/userX/nesed1/nesed2/_")。注意：此处不允许使用正则表达式路径模式(例如*userX*)。目录路径筛选器(以/结尾的路径字符串)建议使用最深4个目录、以更快地获得结果。例如、"_/HOME/userX/nosted1/nosted2/_"。有关详细信息、请参见下表。</block>
   <block id="39dfb1596c6a6cd5efc77677cffa9f47" category="cell">路径值与/HOME/userX/nESTed1/test匹配的完全匹配</block>
   <block id="67796eee76b434ba7f714f24fce77a4c" category="cell">与目录搜索相比、精确搜索的速度较慢。</block>
   <block id="ee884ab6f8aeb5114dc04fcb169533de" category="section-title">路径搜索</block>
@@ -11950,4 +11921,57 @@
   <block id="0dc236d363c2d7f668f1ee1391ffab69" category="paragraph">"VM Recandation (VM回收)"选项卡提供了闲置或关闭时间超过30天、60天或90天的VM的详细信息、以及可能节省的容量、内存和vCPU。从列表中选择一个VM将打开该VM的详细信息页面。</block>
   <block id="5edbd52aee44c2dfb6c01abc4128600a" category="inline-image-macro">VM回收选项卡</block>
   <block id="e2e66b001cd3f2f1481c4b23049ca899" category="paragraph"><block ref="e2e66b001cd3f2f1481c4b23049ca899" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7c0e2b6958fb0cb284c1950d13dd92b7" category="paragraph">“所有活动”表显示以下信息。请注意，默认情况下并不会显示所有这些列。您可以通过单击"齿轮"图标来选择要显示的列。</block>
+  <block id="44263fc9b1d7463adb10ca9afc45060e" category="list-text">* 读取元数据 * - 仅在启用文件夹监控选项时才显示。将在Windows上打开文件夹或在Linux中的文件夹内运行"ls"时生成。</block>
+  <block id="296d30798995d9503c7e56e6937dc7e1" category="list-text">* 其他更改 * —上述未提及的任何其他事件。所有未映射的事件都会映射到"其他变更"活动类型。适用于文件和文件夹。</block>
+  <block id="18b2404a514ba0df8811a1ef18ce21c8" category="list-text">Path*为_实体_路径。此路径应为精确的实体路径(例如、"_/HOME/userX/nosted1/nosted2/abc.txt _)或递归搜索路径的目录部分(例如、"_/HOME/userX/nosted1/nosted2/_")。注意：此处不允许使用正则表达式路径模式(例如\*n嵌 套*)。或者、也可以为路径筛选指定如下所述的单个路径文件夹级筛选器。</block>
+  <block id="ff7a8d750ff46de2529a38c020e55d07" category="list-text">实体名称*是实体路径的最后一部分；对于文件形式的实体类型，则是文件名。</block>
+  <block id="4ec2ab8548d402ce5e2a202a8ea0a5dc" category="list-text">请注意、如果选择实体名称作为筛选器、则"分组依据"下拉列表将被禁用；此外、如果用户已在"分组依据"屏幕上、则"实体名称作为筛选器"将被禁用。</block>
+  <block id="34c71ee0e2f7ee568a6fba85dbe3f12c" category="paragraph">单击*[+]*按钮，从“筛选依据”小工具顶部选择适当的筛选器：</block>
+  <block id="593a62c8da056fafb6ac6651ffc0bf77" category="list-text">执行活动的用户的 * 用户名 * 。您需要提供确切的用户名以进行筛选。不能使用部分用户名或部分用户名前缀或后缀为"*"进行搜索。</block>
+  <block id="9db7dc70a2e0452d843a040725d27f0c" category="list-text">*实体类型*，使用实体(文件)扩展名-最好在引号内指定确切的实体类型。例如、_"TXT"_。</block>
+  <block id="f1354a51722f5f69bac39634de675af5" category="list-text">实体的*路径*-这应该是精确的实体路径(例如、"_/HOME/userX/nesed1/nesed2/abc.txt _)或递归搜索路径的目录部分(例如、"_/HOME/userX/nesed1/nesed2/_")。注意：此处不允许使用正则表达式路径模式(例如\*n嵌 套*)。目录路径筛选器(以/结尾的路径字符串)建议使用最深4个目录、以更快地获得结果。例如、"_/HOME/userX/nosted1/nosted2/_"。有关详细信息、请参见下表。</block>
+  <block id="6911c153f3664c18429e8ec40b2a767b" category="list-text">一级文件夹(根)—作为过滤器的实体路径的根目录。例如、如果实体路径为/HOME/userX/nosted1/nosted2/、则可以使用home或"HOME"。</block>
+  <block id="23e3dfc154773a88f3b9923c80ec7481" category="list-text">2nd Level Folder (二级文件夹)-实体路径过滤器的二级目录。例如、如果实体路径为/HOME/userX/nosted1/nosted2/、则可以使用userX或"userX"。</block>
+  <block id="857d0e5023171871c119ae87aeee53bc" category="list-text">例如、如果实体路径为/HOME/userX/nosted1/nosted2/、则可以使用nosted1或"nosted1"。</block>
+  <block id="3781ad6dba415c69a08c1285b1b7d3df" category="list-text">4th Level Folder (第四级文件夹)-目录实体路径过滤器的第四级目录。例如、如果实体路径为/HOME/userX/nosted1/nosted2/、则可以使用nosted2或"nosted2"。</block>
+  <block id="84fe991275e24aba0f251415516a1e6c" category="list-text">访问实体的 * 源 IP* 。</block>
+  <block id="902172441eece016fa20a235ed73347b" category="list-text">您可以使用通配符*和?。例如：10.0.0.*、10.0?.0.10、10.10*</block>
+  <block id="86ef89dbeec61182083cf6530ee135bc" category="list-text">如果需要完全匹配、则必须使用双引号提供有效的源IP地址、例如"10.1.1.1"。带有双引号的不完整IP (如"10.1.1"、"10.1.*"等)将不起作用。</block>
+  <block id="905b0c69ef1c6841cf8c0b1791011328" category="list-text">实体名称*—作为过滤器的实体路径的文件名。例如、如果实体路径为/HOME/userX/nESTed1/testfile.txt、则实体名称为testfile.txt。请注意、建议在引号中指定确切的文件名；请尽量避免使用通配符搜索。例如、"testfile.txt "。此外、请注意、建议使用此实体名称筛选器来缩短时间范围(最长3天)。</block>
+  <block id="7534d146e70223d1303533e0a14fe154" category="list-text">通配符字符串不能包含引号：例如：searText、\*searText*将筛选包含'searchtext'的任何字符串。</block>
+  <block id="b37486cde222fa7d4db54c7f9079af41" category="list-text">带有前缀的字符串，例如：searText*，将搜索以'searchtext'开头的任何字符串。</block>
+  <block id="c1b9a95df28615d752861a653c912165" category="paragraph">请注意、所有筛选字段均为区分大小写的搜索。例如：如果应用的筛选器为"实体类型"、其值为"searchtext"、则将返回结果、其中实体类型为"searchtext"、"searchText"、"SeARCHTEXt"</block>
+  <block id="96e29af4c73b1b900742b35d78410d0d" category="cell">路径="/HOME/userX/nESTed1/test"</block>
+  <block id="8e14529189c6a9e30ee446b642210f06" category="cell">实体名称="test.log"</block>
+  <block id="d291397dc1bcc71a7246b56b5ad13661" category="cell">完全匹配、其中文件名为test.log</block>
+  <block id="aff71f671afca7db5dcb5abeb1e94258" category="cell">因为它完全匹配</block>
+  <block id="fbff2043925d9da26087de5d55841c19" category="cell">实体名称=*。test.log</block>
+  <block id="b3b4c0809900611c37d77a422fd3b157" category="cell">以test.log结尾的文件名</block>
+  <block id="efa5397985b8609a5dbeb430a4bcadd3" category="cell">慢</block>
+  <block id="b17c9447397dcc3e6e0040513674b0eb" category="cell">由于通配符、速度可能会很慢。</block>
+  <block id="c24b132e995cb587464672369f22193b" category="cell">实体名称= test*.log</block>
+  <block id="b31f3dcbb2229f44061bd4d79f2d4c1d" category="cell">文件名以test开头、以.log结尾</block>
+  <block id="8ef87bc62946324375ce0406cffecb74" category="cell">实体名称= test.lo</block>
+  <block id="18f0f6a0abceaaff775f56b818d4f9c5" category="cell">以test.lo开头的文件名例如：它将与test.log、test.log.1、test.log1匹配</block>
+  <block id="b832139a74c071bbfe5bd133e3c47185" category="cell">由于末尾是通配符、因此速度可能会很慢。</block>
+  <block id="f9648e2415808590c79ee96c5f4d0e66" category="cell">实体名称= test</block>
+  <block id="c71da0649fb7712d7e74ce581db70fb3" category="cell">以test开头的文件名</block>
+  <block id="53ad658aa3b68ee6f8ac34262f27efc5" category="cell">速度最慢</block>
+  <block id="c4583cc10f343a12230f1e643aa9907a" category="cell">由于末尾是通配符、并且使用的是更通用的值、因此速度可能会最慢。</block>
+  <block id="88a78f0edb8b7d91fe9b9c8fb2e4bc6b" category="list-text">对于每个活动和活动分析表、异步下载数量目前限制为每个用户1次、每个租户3次。</block>
+  <block id="e4435ba88bd58079d0501884e2cdce27" category="list-text">对于Activities Table、导出的数据限制为最多100万条记录；而对于Group by、限制为50万条记录。</block>
+  <block id="19f35db392e49cb7f3cff5327114daf2" category="cell">Auto*03172022如果搜索文本包含连字符或下划线、请在方括号中提供表达式。例如、(SVM*)用于搜索SVM-123</block>
+  <block id="8745a33435e7e88bd4e44ad19ea05b34" category="cell">用户、实体类型、设备、卷、原始路径、1stLevel文件夹、2ndLevel文件夹、3rdLevel文件夹、4thLevel文件夹、实体名称、源IP</block>
+  <block id="470d04a7c99630dbe5d3f0c2b95291fd" category="cell">返回以"Auto"开头并以"03172022"结尾的所有资源</block>
+  <block id="8f04371c9eb330d35f4fd429b3a6b70b" category="cell">用户、实体类型、设备、卷、1stLevel文件夹、2ndLevel文件夹、3rdLevel文件夹、4thLevel文件夹、实体名称、源IP</block>
+  <block id="b12f964a7d4b88d6b12b49acaa4e8da5" category="cell">用户、域、实体类型、原始路径、实体名称、源IP</block>
+  <block id="46b8cf2bc3a5a3834c08eec497d3eaaa" category="cell">用户、域、实体类型、原始路径、1stLevel文件夹、2ndLevel文件夹、3rdLevel文件夹、4thLevel文件夹、实体名称、源IP</block>
+  <block id="71fdd823af8d6c227f786362616494a5" category="cell">返回不以"AutoRansomUser4_03162022"开头的所有内容</block>
+  <block id="aaa6685e24d0d36fa7036ff4fe31a74e" category="cell">不管用</block>
+  <block id="f43bb0cf54d8d5e402232117f3654e92" category="cell">在"所有活动"表中的"用户"列下、用户名显示为："LDAP：HQ.COMPANYNAME.COM:S-1-5-21-3577637-1906459482-1437260136-1831817"或"LDAP：default：80038003"</block>
+  <block id="5ee73cc203856368d4c788cc5e4c2b86" category="cell">搜索字符串中的星号(\*)将搜索所有内容。但是，诸如_*&lt;searchTerm&gt;_或_*&lt;searchTerm&gt;*_之类的前导通配符字符串会导致查询速度较慢。要获得更好的性能，请改用前缀字符串，格式为_&lt;searchTerm&gt;*_(换言之，请附加星号(*)_after_搜索词)。示例：使用字符串_testvolume*_，而不是_*testvolume_或_*test*volume_。使用目录搜索以递归方式查看给定文件夹下的所有活动(分层搜索)。例如、"/path1/path2/path3/"将以递归方式在/path1/path2/path3下列出所有活动。或者、使用所有活动选项卡下的"Add to Filter"(添加到筛选器)选项。</block>
+  <block id="43bfa97b37a997b631be2c5c6423c5fc" category="cell">目录路径筛选器(以/结尾的路径字符串)建议目录深度最多为4个、以获得更快的结果。例如、如果目录路径为/AAA/BBB/CCC/DDD、请尝试搜索"/AAA/BBB/CCC/DDD/"以更快地加载数据。</block>
+  <block id="76b6bb11709d612b89ea4e85c1289694" category="cell">取证UI加载数据速度较慢、在使用实体名称筛选器时遇到故障。</block>
+  <block id="9047530966d5f017f54aa4479b25a938" category="cell">请尝试使用较小的时间范围并使用双引号进行精确值搜索。例如、如果实体路径为"/HOME/userX/nesed1/nesed2/nesed3/testfile.txt "、则尝试使用"testfile.txt "作为实体名称筛选器。</block>
 </blocks>
