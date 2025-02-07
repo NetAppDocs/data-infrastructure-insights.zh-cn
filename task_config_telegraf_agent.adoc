@@ -29,7 +29,7 @@ Data Infrastructure Insight的当前Telegraf版本为*1.24.0*。
 NOTE: 为了准确地进行审核和报告数据，强烈建议使用 * 网络时间协议（ NTP ） * 或 * 简单网络时间协议（ SNTP ） * 同步 Agent 计算机上的时间。
 
 
-NOTE: 如果要在安装Agent之前验证安装文件，请参见下面的中的一节<<Verifying Checksums>>。
+NOTE: 如果要在安装Agent之前验证安装文件，请参见下面的中的一节<<验证电报包校验和>>。
 
 
 

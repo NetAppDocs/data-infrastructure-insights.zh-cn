@@ -6445,7 +6445,6 @@
   <block id="da7e75e5407636a24c1c7cce20e7d225" category="paragraph">Data Infrastructure Insight的当前Telegraf版本为*1.24.0*。</block>
   <block id="2041337c363c1ecaeb2a1aa9c8999494" category="paragraph">有关在Kubbernetes上安装的信息、请参见<block ref="f0d3e43e41da35ba651820db811551cd" category="inline-link-macro-rx"></block>页面。</block>
   <block id="ae2f2b5e87a12f1cd650f0e46b92e4ec" category="admonition">为了准确地进行审核和报告数据，强烈建议使用 * 网络时间协议（ NTP ） * 或 * 简单网络时间协议（ SNTP ） * 同步 Agent 计算机上的时间。</block>
-  <block id="f97f94f0ff0c35a96686e2fd00940ac8" category="admonition">如果要在安装Agent之前验证安装文件，请参见下面的中的一节<block ref="1d9f3d6343939e76574c60762a7f2fae" category="inline-xref-macro-rx"></block>。</block>
   <block id="137bac1c26ca6d0b61bc783c9a2fcbbd" category="section-title">安装代理</block>
   <block id="a4c0f3c4bd8931418c028fb88c45e72f" category="paragraph">如果您要安装服务数据收集器，但尚未配置代理，则系统会提示您先为相应的操作系统安装代理。本主题介绍如何在以下操作系统上安装 Telegraf 代理：</block>
   <block id="8d6f7baf6fd8e47d9316fcc507ab0f85" category="list-text"><block ref="85415f26af88eac138de6f713927df0c" category="inline-xref-macro-rx"></block></block>
@@ -11974,4 +11973,5 @@
   <block id="43bfa97b37a997b631be2c5c6423c5fc" category="cell">目录路径筛选器(以/结尾的路径字符串)建议目录深度最多为4个、以获得更快的结果。例如、如果目录路径为/AAA/BBB/CCC/DDD、请尝试搜索"/AAA/BBB/CCC/DDD/"以更快地加载数据。</block>
   <block id="76b6bb11709d612b89ea4e85c1289694" category="cell">取证UI加载数据速度较慢、在使用实体名称筛选器时遇到故障。</block>
   <block id="9047530966d5f017f54aa4479b25a938" category="cell">请尝试使用较小的时间范围并使用双引号进行精确值搜索。例如、如果实体路径为"/HOME/userX/nesed1/nesed2/nesed3/testfile.txt "、则尝试使用"testfile.txt "作为实体名称筛选器。</block>
+  <block id="af8cb62c8a34ba6726d4859a2c8c7e95" category="admonition">如果要在安装Agent之前验证安装文件，请参见下面的中的一节<block ref="bf4e2f55c3503e0739d2135298b462c7" category="inline-xref-macro-rx"></block>。</block>
 </blocks>
