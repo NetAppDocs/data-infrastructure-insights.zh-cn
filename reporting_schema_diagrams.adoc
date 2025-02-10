@@ -7,7 +7,6 @@ summary: 报告架构图
 = Data Infrastructure Insight报告架构图
 :hardbreaks:
 :allow-uri-read: 
-:toclevekls: 2
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -15,7 +14,7 @@ summary: 报告架构图
 
 
 [role="lead"]
-本文档提供了报告数据库的架构图。您也可以下载包含的文件link:ci_reporting_database_schema.pdf["模式表"]。
+本文档提供了报告数据库的架构图。
 
 
 NOTE: 数据基础架构洞察中提供了报告功能link:concept_subscribing_to_cloud_insights.html["高级版"]。
@@ -36,13 +35,13 @@ image:annotations.png["标注"]
 
 === 应用程序
 
-image:apps_annot.png["应用程序"]
+image:apps_annot.jpg["应用程序"]
 
 
 
 === Kubnetes指标
 
-image:k8s_schema.jpg["Kubernetes"]
+image:k8s.jpg["Kubernetes"]
 
 
 
@@ -78,43 +77,43 @@ image:k8s_workload_metrics_fact.jpg["Kubnetes工作负载指标数据"]
 
 === NAS
 
-image:nas.png["NAS"]
+image:nas.jpg["NAS"]
 
 
 
 === 路径和违规
 
-image:logical.png["路径和违规"]
+image:logical.jpg["路径和违规"]
 
 
 
 === 端口连接
 
-image:connectivity.png["端口连接"]
+image:connectivity.jpg["端口连接"]
 
 
 
 === SAN 网络结构
 
-image:fabric.png["SAN网络结构"]
+image:fabric.jpg["SAN网络结构"]
 
 
 
 === 存储
 
-image:storage.png["存储"]
+image:storage.jpg["存储"]
 
 
 
 === 存储节点
 
-image:storage_node.png["存储节点"]
+image:storage_node.jpg["存储节点"]
 
 
 
 === 虚拟机
 
-image:vm.png["虚拟机"]
+image:vm.jpg["虚拟机"]
 
 '''
 
@@ -127,25 +126,25 @@ image:vm.png["虚拟机"]
 
 === 成本分摊
 
-image:Chargeback_Fact.png["成本分摊"]
+image:Chargeback_Fact.jpg["成本分摊"]
 
 
 
 === 磁盘组容量
 
-image:Disk_Group_Capacity.png["磁盘组容量"]
+image:Disk_Group_Capacity.jpg["磁盘组容量"]
 
 
 
 === 文件系统利用率
 
-image:fs_util.png["文件系统利用率"]
+image:fs_util.jpg["文件系统利用率"]
 
 
 
 === 内部卷容量
 
-image:Internal_Volume_Capacity_Fact.png["内部卷容量"]
+image:Internal_Volume_Capacity_Fact.jpg["内部卷容量"]
 
 
 
@@ -163,19 +162,19 @@ image:ports.png["端口容量"]
 
 === qtree 容量
 
-image:Qtree_Capacity_Fact.png["qtree 容量"]
+image:Qtree_Capacity_Fact.jpg["qtree 容量"]
 
 
 
 === 存储容量效率
 
-image:efficiency.png["存储容量效率"]
+image:efficiency.jpg["存储容量效率"]
 
 
 
 === 存储和存储池容量
 
-image:Storage_and_Storage_Pool_Capacity_Fact.png["存储和存储池容量"]
+image:Storage_and_Storage_Pool_Capacity_Fact.jpg["存储和存储池容量"]
 
 
 
@@ -187,13 +186,13 @@ image:Storage_Node_Capacity_Fact.jpg["存储节点容量"]
 
 === VM 容量
 
-image:VM_Capacity_Fact.png["VM 容量"]
+image:VM_Capacity_Fact.jpg["VM 容量"]
 
 
 
 === 卷容量
 
-image:Volume_Capacity.png["卷容量"]
+image:Volume_Capacity.jpg["卷容量"]
 
 '''
 
@@ -210,21 +209,39 @@ image:application_performance_fact.jpg["应用程序卷每小时性能"]
 
 
 
+=== 集群交换机性能
+
+image:cluster_switch_performance_fact.jpg["集群交换机性能"]
+
+
+
 === 磁盘每日性能
 
-image:disk_daily_performance_fact.png["磁盘每日性能"]
+image:disk_daily_performance_fact.jpg["磁盘每日性能"]
 
 
 
 === 磁盘每小时性能
 
-image:disk_hourly_performance_fact.png["磁盘每小时性能"]
+image:disk_hourly_performance_fact.jpg["磁盘每小时性能"]
 
 
 
 === 主机每小时性能
 
 image:host_performance_fact.jpg["主机每小时性能"]
+
+
+
+=== 主机VM每日性能
+
+image:host_vm_daily_performance_fact.jpg["主机VM每日性能"]
+
+
+
+=== 主机VM每小时性能
+
+image:host_vm_hourly_performance_fact.jpg["主机VM每小时性能"]
 
 
 
@@ -242,7 +259,13 @@ image:internal_volume_daily_performance_fact.jpg["内部卷每日性能"]
 
 === qtree 每日性能
 
-image:QtreeDailyPerformanceFact.png["qtree 每日性能"]
+image:QtreeDailyPerformanceFact.jpg["qtree 每日性能"]
+
+
+
+=== qtree每小时性能
+
+image:QtreeHourlyPerformanceFact.jpg["qtree每小时性能"]
 
 
 
@@ -260,25 +283,25 @@ image:storage_node_hourly_performance_fact.jpg["存储节点每小时性能"]
 
 === 主机的交换机每小时性能
 
-image:switch_performance_for_host_hourly_fact.png["主机的交换机每小时性能"]
+image:switch_performance_for_host_hourly_fact.jpg["主机的交换机每小时性能"]
 
 
 
 === 端口的交换机每小时性能
 
-image:switch_performance_for_port_hourly_fact.png["端口的交换机每小时性能"]
+image:switch_performance_for_port_hourly_fact.jpg["端口的交换机每小时性能"]
 
 
 
 === 存储的交换机每小时性能
 
-image:switch_performance_for_storage_hourly_fact.png["存储的交换机每小时性能"]
+image:switch_performance_for_storage_hourly_fact.jpg["存储的交换机每小时性能"]
 
 
 
 === 磁带的交换机每小时性能
 
-image:switch_performance_for_tape_hourly_fact.png["磁带的交换机每小时性能"]
+image:switch_performance_for_tape_hourly_fact.jpg["磁带的交换机每小时性能"]
 
 
 
@@ -296,7 +319,7 @@ image:vm_daily_performance_fact.png["主机的虚拟机每日性能"]
 
 === 主机的虚拟机每小时性能
 
-image:vm_hourly_performance_fact.png["主机的虚拟机每小时性能"]
+image:vmware_host_performance_fact.jpg["VM每小时主机性能"]
 
 
 
@@ -314,13 +337,13 @@ image:vm_hourly_performance_fact.png["主机的虚拟机每小时性能"]
 
 === VMDK 每日性能
 
-image:vmdk_daily_performance_fact.png["VMDK 每日性能"]
+image:vmdk_daily_performance_fact.jpg["VMDK 每日性能"]
 
 
 
 === VMDK 每小时性能
 
-image:vmdk_hourly_performance_fact.png["VMDK 每小时性能"]
+image:vmdk_hourly_performance_fact.jpg["VMDK 每小时性能"]
 
 
 
