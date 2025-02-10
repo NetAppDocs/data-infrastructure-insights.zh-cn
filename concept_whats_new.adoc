@@ -20,27 +20,6 @@ NetApp 不断改进和完善其产品和服务。下面是Data Infrastructure In
 
 
 
-== 2025年2月
-
-
-
-=== DII API使用情况跟踪：增强安全性和效率
-
-通过增强的REST API使用情况跟踪、增强安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。管理员用户可以访问这些信息、通过这些信息、您可以快速检测异常活动模式、识别潜在威胁、并通过消除不必要的请求来优化性能。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。
-
-要查看API用法，请导航到*Observability > Admin > API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性或报告API。
-
-image:api_usage_analytics_screenshot.png["API使用情况分析示例"]
-
-
-
-=== 用于限制用户的工作负载安全API
-
-添加了一个新的API、用于管理工作负载安全性中的用户限制。通过API、您可以阻止或解除阻止用户、或者更改其受限访问的持续时间。有关_cldSECURE操作.block_ API的信息、请参见"Admin">"API Access">"API Documentation"页面。
-
-'''
-
-
 == 2025年1月
 
 
