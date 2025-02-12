@@ -20,6 +20,31 @@ NetApp 不断改进和完善其产品和服务。下面是Data Infrastructure In
 
 
 
+=== 适用于最新一代ASA系统的ONTAP基础知识
+
+ONTAP基础版现在可为最新一代设备提供即装即用的易管理性link:task_dc_na_ontap_all_san_array.html["ASA"]。其中包括适用于在ONTAP上运行的工作负载的VM到LUN拓扑的SAN分析器、现在还可在NetApp支持中作为数据基础架构洞察基础版的一部分提供。
+
+image:ontap_essentials_asa_views.png["ONTAP要点下拉列表、其中显示了ASA与统一的不同之处"]
+
+
+
+=== DII API使用情况跟踪：增强安全性和效率
+
+借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。
+
+要查看API用法，请导航到*Observability > Admin > API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性或报告API。
+
+image:api_usage_analytics_screenshot.png["API使用情况分析示例"]
+
+
+
+=== 用于限制用户的工作负载安全API
+
+添加了一个新的API、用于管理工作负载安全性中的用户限制。通过API、您可以阻止或解除阻止用户、或者更改其受限访问的持续时间。有关_cldSECURE操作.block_ API的信息、请参见"Admin">"API Access">"API Documentation"页面。
+
+'''
+
+
 == 2025年1月
 
 
