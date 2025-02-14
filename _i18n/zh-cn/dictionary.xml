@@ -11864,7 +11864,6 @@
   <block id="14fe64769d4df689f51e13f60c5ec439" category="admonition">如果某个收集器的用户受限、则无法暂停此收集器。暂停收集器之前、请恢复用户访问权限。</block>
   <block id="81c776ec15386302abf1c34d317e3393" category="paragraph">选择*Observability &gt; Analyze &gt; SAN Analyzer*以查看SAN Analyzer。设置应用程序、主机、网络结构和/或存储的筛选器。此时将显示对象的地图、其中显示了连接的对象。将鼠标悬停在某个对象上可查看这些连接的流量指标。</block>
   <block id="fde6f74861c217b576ec5d769f2467c3" category="paragraph"><block ref="fde6f74861c217b576ec5d769f2467c3" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3cfbb427bd17b95ae08e5597561217ef" category="paragraph">单击某个对象或组将打开一个分出面板、其中提供了有关该对象及其连接的其他详细信息。此分片包括显示摘要、端口详细信息和区域信息(如果可用)的选项卡。</block>
   <block id="7512260392fef04bf211fab22007addd" category="paragraph"><block ref="7512260392fef04bf211fab22007addd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="18082cdb9388e2686e081dd6012e47b8" category="summary">您可以确定创建的信息板是公共信息板还是私有信息板。</block>
   <block id="cc5c681651d638257ae03658c963c7c6" category="doc">信息板访问管理</block>
@@ -11997,4 +11996,10 @@
   <block id="d7f696b40402f5f6c5dc60d881af09a0" category="paragraph"><block ref="d7f696b40402f5f6c5dc60d881af09a0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="811a069713a14c7b8c3b0333afcedfff" category="section-title">用于限制用户的工作负载安全API</block>
   <block id="4c68ec61ca843531d828d448eb135006" category="paragraph">添加了一个新的API、用于管理工作负载安全性中的用户限制。通过API、您可以阻止或解除阻止用户、或者更改其受限访问的持续时间。有关_cldSECURE操作.block_ API的信息、请参见"Admin"&gt;"API Access"&gt;"API Documentation"页面。</block>
+  <block id="49467730a5826d8dc222a2fe6fe8f9ad" category="admonition">大多数SAN分析器筛选器(包括您可能添加的筛选器)都是上下文相关的；在其中一个筛选器中选择对象时、其他筛选器下拉列表中提供的选项将根据选定的一个或多个对象进行刷新。唯一的例外是应用程序、端口和交换机；这些筛选器不是上下文筛选器。</block>
+  <block id="6ce5d5cf78dd02f70416bdf28a2785a2" category="paragraph">单击某个对象或组将打开一个分出面板、其中提供了有关该对象及其连接的其他详细信息。"分出"面板将显示一个摘要、其中提供了有关选定对象的详细信息(例如、IP、虚拟机管理程序、已连接网络结构等、具体取决于对象类型)、并通过图表显示对象的指标(例如延迟或IOPS)以及相关更改和警报。如果需要、您也可以选择显示图表中前相关对象的指标。</block>
+  <block id="0e83da7d6fe40d6888d88d1a5caca1e4" category="paragraph">除了摘要选项卡之外、如果所选对象适用、则"分出"面板还会显示端口详细信息或区域信息等选项卡。</block>
+  <block id="6b240be76b07166c90df4dd3d8870b5f" category="paragraph">如果您的环境包含iSCSI设备、则将鼠标悬停在_iSCSI_对象上方可突出显示与这些相关iSCSI设备相关的连接。</block>
+  <block id="f922b3837a16ba3a595d03fafff3c0c6" category="inline-image-macro">iSCSI流量已突出显示</block>
+  <block id="30a8ce61ff74633c5fba361b87bb964a" category="paragraph"><block ref="30a8ce61ff74633c5fba361b87bb964a" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
