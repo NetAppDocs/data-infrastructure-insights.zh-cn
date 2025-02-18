@@ -12002,4 +12002,11 @@
   <block id="6b240be76b07166c90df4dd3d8870b5f" category="paragraph">如果您的环境包含iSCSI设备、则将鼠标悬停在_iSCSI_对象上方可突出显示与这些相关iSCSI设备相关的连接。</block>
   <block id="f922b3837a16ba3a595d03fafff3c0c6" category="inline-image-macro">iSCSI流量已突出显示</block>
   <block id="30a8ce61ff74633c5fba361b87bb964a" category="paragraph"><block ref="30a8ce61ff74633c5fba361b87bb964a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="581ba4a57638d5498f99aafb2b6402c9" category="section-title">DII按钮升级</block>
+  <block id="433d081988851966788ba677d938d07d" category="paragraph">您可以通过DII Kubnetes收集器页面升级Kubnetes Monitoring Operator。单击要升级的集群旁边的菜单、然后选择_Upgrade_。操作员将验证映像签名、为当前安装创建快照并执行升级。在几分钟内、您将看到操作员状态进度、直到Upgrade in Progress to latest。如果遇到错误、您可以选择错误状态以了解更多详细信息、并参阅下面的按钮升级故障排除表。</block>
+  <block id="03875270ab1c6cff042b492ee14233c4" category="section-title">使用私有存储库进行按钮式升级</block>
+  <block id="e54a7171ef187b31ad82e9367e9488f8" category="paragraph">如果您的操作员已配置为使用专用存储库、请确保运行操作员所需的所有映像及其签名均可在您的存储库中使用。如果在升级过程中遇到缺少映像的错误、只需将其添加到存储库中、然后重试升级即可。要将图像签名上传到您的存储库、请按如下所示使用联合签名工具、确保为3可选：将操作员图像上传到您的私有存储库&gt;图像提取片段中指定的所有图像上传签名</block>
+  <block id="3e70b4412d3a3b92cd10a9e1453fc282" category="section-title">正在回滚到先前运行的版本</block>
+  <block id="4d8704d77f12b96a935cdf09de6c94be" category="paragraph">如果您使用按钮升级功能进行了升级、并且在升级后七天内遇到与当前操作员版本相关的任何问题、则可以使用升级过程中创建的快照降级到先前运行的版本。单击要回滚的集群旁边的菜单、然后选择_Rollback_。</block>
+  <block id="95168a3a05a80c7b596b36a7ec8218c4" category="section-title">手动升级</block>
 </blocks>

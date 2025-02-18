@@ -69,6 +69,34 @@ image:KubernetesModifyDeploymentScreen.png["修改部署选项、宽度=700"]
 
 == 升级到最新的Kubnetes Monitoring Operator
 
+
+
+=== DII按钮升级
+
+您可以通过DII Kubnetes收集器页面升级Kubnetes Monitoring Operator。单击要升级的集群旁边的菜单、然后选择_Upgrade_。操作员将验证映像签名、为当前安装创建快照并执行升级。在几分钟内、您将看到操作员状态进度、直到Upgrade in Progress to latest。如果遇到错误、您可以选择错误状态以了解更多详细信息、并参阅下面的按钮升级故障排除表。
+
+
+
+==== 使用私有存储库进行按钮式升级
+
+如果您的操作员已配置为使用专用存储库、请确保运行操作员所需的所有映像及其签名均可在您的存储库中使用。如果在升级过程中遇到缺少映像的错误、只需将其添加到存储库中、然后重试升级即可。要将图像签名上传到您的存储库、请按如下所示使用联合签名工具、确保为3可选：将操作员图像上传到您的私有存储库>图像提取片段中指定的所有图像上传签名
+
+[listing]
+----
+cosign copy example.com/src:v1 example.com/dest:v1
+#Example
+cosign copy <DII container registry>/netapp-monitoring:<image version> <private repository>/netapp-monitoring:<image version>
+----
+
+
+==== 正在回滚到先前运行的版本
+
+如果您使用按钮升级功能进行了升级、并且在升级后七天内遇到与当前操作员版本相关的任何问题、则可以使用升级过程中创建的快照降级到先前运行的版本。单击要回滚的集群旁边的菜单、然后选择_Rollback_。
+
+
+
+=== 手动升级
+
 确定现有Operator是否存在AgentConfiguration (如果您的命名空间不是默认的_NetApp-monitoring _、请替换相应的命名空间)：
 
  kubectl -n netapp-monitoring get agentconfiguration netapp-monitoring-configuration
