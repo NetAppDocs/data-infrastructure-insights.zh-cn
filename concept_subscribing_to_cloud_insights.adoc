@@ -70,17 +70,6 @@ AWS Marketplace免费试用不能延长。试用期间、您可以随时访问*�
 
 
 
-== 如果我的订阅已过期、该怎么办？
-
-如果您订阅了Data Infrastructure Insight、但该订阅已过期、您将有五天的宽限期来续订您的订阅。在此宽限期内、所有Data Infrastructure Insight功能都将保持活动状态。
-
-宽限期过后、Data Infrastructure Insight功能将暂停、直到您续订为止。要续订，请参见*Admin >订阅*页面，或联系NetApp销售人员。
-
-
-NOTE: 在宽限期结束之前收集的Data Infrastructure Insight数据将在宽限期过后的30天内保持不变。如果您在此时间内续订了订阅、则在宽限期过后、您可以使用之前的所有数据。
-
-
-
 == 如果我的*订阅*已过期该怎么办？
 
 如果您订阅了Data Infrastructure Insight、但该订阅已过期、您将有五天的宽限期来续订您的订阅。在此宽限期内、所有Data Infrastructure Insight功能都将保持活动状态。

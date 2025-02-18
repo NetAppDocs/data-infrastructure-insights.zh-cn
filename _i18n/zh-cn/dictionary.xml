@@ -1964,10 +1964,8 @@
   <block id="c66bd552dea63071ad19e124c869ab2e" category="paragraph">AWS Marketplace免费试用不能延长。试用期间、您可以随时访问*管理-&gt;订阅*页面、降级到Data Infrastructure Insight基础版订阅或更改为付费Data Infrastructure Insight订阅。</block>
   <block id="03742c91392961db83c5540550a3500a" category="section-title">如果我的试用已过期，该怎么办？</block>
   <block id="55b44e6cb866667b35e33325e5f2b246" category="paragraph">如果您的免费试用版已过期、但尚未订阅Data Infrastructure Insight、则在订阅之前、您的功能将受到限制。数据采集可能会停止、几周后、根据我们的数据保留政策、您的数据将被删除。</block>
-  <block id="b3aa21e2b7855df7d2d86e0bcb7a55d9" category="section-title">如果我的订阅已过期、该怎么办？</block>
   <block id="35b65825e5ac5124cb47e8b94e7e203a" category="paragraph">如果您订阅了Data Infrastructure Insight、但该订阅已过期、您将有五天的宽限期来续订您的订阅。在此宽限期内、所有Data Infrastructure Insight功能都将保持活动状态。</block>
   <block id="60e8665be02d68c6c89f05f0f7865a28" category="paragraph">宽限期过后、Data Infrastructure Insight功能将暂停、直到您续订为止。要续订，请参见*Admin &gt;订阅*页面，或联系NetApp销售人员。</block>
-  <block id="4d1fc9b1363bc3a01af741ec16cbe749" category="admonition">在宽限期结束之前收集的Data Infrastructure Insight数据将在宽限期过后的30天内保持不变。如果您在此时间内续订了订阅、则在宽限期过后、您可以使用之前的所有数据。</block>
   <block id="267ff18a74a9df19266142dc71925a29" category="section-title">如果我的*订阅*已过期该怎么办？</block>
   <block id="5ee83dda0a980eba56098446eee3b5e4" category="admonition">您的Data Infrastructure Insight数据在宽限期过后30天内保持不变。如果您在此时间内续订了订阅、则在宽限期过后、您可以使用之前的所有数据。</block>
   <block id="76064df620f99261dce25de296d7e769" category="paragraph">您还可以利用*模块评估*。例如、如果您已订阅基础架构可观察性、但要向环境中添加Kubennetes、则从安装NetApp Kubennetes监控操作员开始、您将自动输入30天的Kubennetes可观察性评估。仅在评估期结束时、您的Kubbernetes Observability受管单元使用量才会向您收费。</block>
@@ -5720,8 +5718,6 @@
   <block id="27daabf1c454d33595dbe589aefcd6e0" category="list-text">在左侧导航窗格中，选择*内容&gt;团队内容*。</block>
   <block id="4049f6107bd22bd909a404599ebeacd6" category="list-text">选择*报告*以访问预定义报告。</block>
   <block id="ee3a0672263c3995fe8e38b6cfe439c4" category="inline-image-macro">报告菜单</block>
-  <block id="81a9f8ce382fd16358d56245a66220a4" category="inline-image-macro">显示突出显示的报告的团队内容</block>
-  <block id="48bcae107d50992efecf85a6c4736dba" category="paragraph"><block ref="042d6428eca469dceeec3a1b4202ab56" category="inline-image-macro-rx" type="image"></block> <block ref="9aede4345f2bc9132f2c99c71d833e20" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a75b8fc33414d692d111110189a35f09" category="section-title">使用预定义报告解决问题解答常见问题</block>
   <block id="e89ec6ed2e5ec193067c2a247878a526" category="paragraph">以下预定义报告可在 * 团队内容 &gt; 报告 * 中找到。</block>
   <block id="1c3be015eacffb807e30cff683e0ab59" category="section-title">应用程序服务级别容量和性能</block>
@@ -12009,4 +12005,6 @@
   <block id="3e70b4412d3a3b92cd10a9e1453fc282" category="section-title">正在回滚到先前运行的版本</block>
   <block id="4d8704d77f12b96a935cdf09de6c94be" category="paragraph">如果您使用按钮升级功能进行了升级、并且在升级后七天内遇到与当前操作员版本相关的任何问题、则可以使用升级过程中创建的快照降级到先前运行的版本。单击要回滚的集群旁边的菜单、然后选择_Rollback_。</block>
   <block id="95168a3a05a80c7b596b36a7ec8218c4" category="section-title">手动升级</block>
+  <block id="92e9b9412f142b06bb1d5b741604efd6" category="inline-image-macro">显示突出显示的报告的团队内容、宽度=800</block>
+  <block id="d7daabce37094cca59c57db4ac298a14" category="paragraph"><block ref="042d6428eca469dceeec3a1b4202ab56" category="inline-image-macro-rx" type="image"></block> <block ref="5880297252ec23e342670c23021aaf20" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

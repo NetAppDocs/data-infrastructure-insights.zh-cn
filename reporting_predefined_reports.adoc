@@ -40,7 +40,7 @@ NOTE: 数据基础架构洞察中提供了报告功能link:concept_subscribing_t
 . 选择*报告*以访问预定义报告。
 
 
-image:Reporting_Menu.png["报告菜单"] image:Reporting_Team_Content.png["显示突出显示的报告的团队内容"]
+image:Reporting_Menu.png["报告菜单"] image:Reporting_Team_Content.png["显示突出显示的报告的团队内容、宽度=800"]
 
 
 
