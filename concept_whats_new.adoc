@@ -20,6 +20,10 @@ NetApp 不断改进和完善其产品和服务。下面是Data Infrastructure In
 
 
 
+== 2025年2月
+
+
+
 === 适用于最新一代ASA系统的ONTAP基础知识
 
 ONTAP基础版现在可为最新一代设备提供即装即用的易管理性link:task_dc_na_ontap_all_san_array.html["ASA"]。其中包括适用于在ONTAP上运行的工作负载的VM到LUN拓扑的SAN分析器、现在还可在NetApp支持中作为数据基础架构洞察基础版的一部分提供。
