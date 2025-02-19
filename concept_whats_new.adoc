@@ -36,7 +36,7 @@ image:ontap_essentials_asa_views.png["ONTAP要点下拉列表、其中显示了A
 
 借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。
 
-要查看API用法，请导航到*Observability > Admin > API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性或报告API。
+要查看API用法，请导航到*Observability > Admin > API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。
 
 image:api_usage_analytics_screenshot.png["API使用情况分析示例"]
 
