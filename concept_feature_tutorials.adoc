@@ -21,7 +21,7 @@ keywords: onboarding, getting started, video, tutorial, resolution, dashboard, q
 [role="lead"]
 Data Infrastructure Insight加载了许多有用的功能、使您能够快速轻松地查找数据、解决问题并深入了解企业环境。通过功能强大的查询轻松查找数据，在信息板中直观显示数据，并针对您设置的数据阈值发送电子邮件警报。
 
-Data Infrastructure Insight提供了大量视频教程、可帮助您了解这些功能并更好地实施业务洞察力策略。有权访问Data Infrastructure Insight租户的每个用户都可以利用这些教程。
+Data Infrastructure Insight提供了大量视频教程、可帮助您了解这些功能并更好地实施业务洞察力策略。
 
 
 

@@ -11627,7 +11627,6 @@
   <block id="a5692a71664d8513828d30dad7c829ca" category="list-text">租户的命名方案多久更改一次？</block>
   <block id="71ff3a9d48edc0f7244689324f167d1b" category="paragraph">通常、您会使用类似于以下内容的工作流来标识租户上的设备。标识是一个迭代过程，可能需要执行多个规划和细化规则步骤。</block>
   <block id="6923128dfebc9b724f26745512b0b891" category="admonition">如果租户上有未标识的设备(也称为未知或通用设备)、然后配置一个数据源、用于在轮询时标识这些设备、则这些设备将不再显示或计为通用设备。</block>
-  <block id="3283326b105a290a6a4699e952c4bb7a" category="paragraph">Data Infrastructure Insight提供了大量视频教程、可帮助您了解这些功能并更好地实施业务洞察力策略。有权访问Data Infrastructure Insight租户的每个用户都可以利用这些教程。</block>
   <block id="555fd4883eff42c3c7a47a8af5c0d4c2" category="summary">通过洞察力、您可以了解资源如何影响租户上的其他资源。</block>
   <block id="e59c6b6bc918194e22abd3fa59a5ca7d" category="paragraph">高影响工作负载会降低共享资源中其他工作负载的性能。Data Infrastructure Insight提供的工具可帮助您调查资源饱和及其对租户的影响。</block>
   <block id="509083e073a2e0f15ee1570b73d69d00" category="paragraph">您可以采取多个步骤来降低或消除租户的饱和几率。您可以尝试以下几项操作。</block>
@@ -12014,4 +12013,5 @@
   <block id="bcaea0fa3a691efcd767e69c0bf6c611" category="paragraph">为确保收件人收到Data Infrastructure Insight发出的通知、请将以下电子邮件地址添加到任何"允许"列表中：</block>
   <block id="920ab4b11a04d50637a16a5c9699b3ba" category="list-text">accounts@service.cloudinsights.netapp.com</block>
   <block id="b68146f7d3be586c34e5b6d021541f50" category="list-text">DoNotReply@cloudinsights.netapp.com</block>
+  <block id="b496ede8f397a48079afe818e67e759f" category="paragraph">Data Infrastructure Insight提供了大量视频教程、可帮助您了解这些功能并更好地实施业务洞察力策略。</block>
 </blocks>
