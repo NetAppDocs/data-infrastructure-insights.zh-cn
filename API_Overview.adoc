@@ -273,7 +273,7 @@ API 访问令牌具有到期日期。当 API 访问令牌过期时，用户需�
 
 * 编辑NetApp Kubernetes监控操作员。
 +
- kubectl -n netapp-monitoring edit agent agent-monitoring-netapp
+ kubectl -n netapp-monitoring edit agent netapp-ci-agent-monitoring-netapp
 * 修改_spec.output-sink.api-key_值、将旧API令牌替换为新API令牌。
 +
 ....

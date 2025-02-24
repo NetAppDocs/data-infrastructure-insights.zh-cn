@@ -1437,11 +1437,7 @@
   <block id="bf3f7ef872246f009e37d0a4c0951049" category="paragraph">* 格式： * US-BV-\1.</block>
   <block id="08b3c5691f5c3cb584dc1a3ec5321962" category="summary">Data Infrastructure Insight提供了一些教程、用于向您展示如何执行许多任务。</block>
   <block id="5b425cd08035f29c3dad5d45f1d2ea6e" category="doc">功能教程</block>
-  <block id="c11546e49fdd67698723459cc158d58e" category="paragraph">Data Infrastructure Insight加载了许多有用的功能、使您能够快速轻松地查找数据、解决问题并深入了解企业环境。通过功能强大的查询轻松查找数据，在信息板中直观显示数据，并针对您设置的数据阈值发送电子邮件警报。</block>
-  <block id="0b79795d3efc95b9976c7c5b933afce2" category="section-title">简介</block>
-  <block id="1a2d0d51ce048c550f58a12da3a8a0b7" category="paragraph">观看简短教程、了解Data Infrastructure Insight的工作原理。</block>
   <block id="7dc1d63676b307452b778906ec63a727" category="section-title">检查清单和视频教程</block>
-  <block id="bb32edd6cfeb5b70b9425ab7efaffc7d" category="paragraph">Data Infrastructure Insight站点上显示的*启动检查清单*包含几个有用任务和概念的列表。在检查清单中选择一项后、您将转到该概念对应的Data Infrastructure Insight页面。例如，单击_Create a Dashboard _项可打开Data Infrastructure Insight *Dbards*页面。</block>
   <block id="06bc4be9452f8162d26f7cb4b4d2e0b2" category="inline-image-macro">教程检查清单进度</block>
   <block id="8d72a33fb7e1e81326ed633058c4c3c6" category="paragraph"><block ref="8d72a33fb7e1e81326ed633058c4c3c6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="76139ab832813477c275f09a383293c0" category="paragraph">页面顶部是一个视频教程链接，用于显示如何创建信息板。您可以根据需要多次查看此视频，直到单击 _got it ！不要再显示此内容 _ 链接。每次转到 " 信息板 " 页面时，都会显示此视频，直到您将其取消为止。</block>
@@ -1450,10 +1446,6 @@
   <block id="0aac9dc0b59278dac24dcb96f42f6674" category="paragraph">至少观看一次视频后，检查清单中的 _Create a Dashboard_ 项将被选中，表示您已完成此教程。然后，您可以继续学习下一个教程。</block>
   <block id="02bf91ef19eb660db8593e97292dde1c" category="admonition">您可以按自己喜欢的顺序查看教程，也可以根据需要多次查看，直到被取消为止。</block>
   <block id="2d7a0a906729c332280875fa9c1ea09c" category="section-title">取消检查清单</block>
-  <block id="9fd687d950079f0d903acce7d665006e" category="paragraph">启动检查清单将显示在您的站点上，直到您单击检查清单底部的 _Do don't Show this ages_ 链接为止。即使取消检查清单、在您从消息标题栏中取消显示每个教程之前、每个相应的Data Infrastructure Insight页面上仍会显示这些教程。</block>
-  <block id="ec7cecc5c967770303bd0879fae9fa97" category="section-title">查看教程</block>
-  <block id="dd0d7945a3c6cc8c8a340c913a130d8d" category="section-title">正在查询数据</block>
-  <block id="730fe644f1d87eaec727a65945705b30" category="section-title">解析设备</block>
   <block id="e8cdc72b15f2eb76eb1815f526758f2e" category="doc">洞察力：高耗工作负载</block>
   <block id="e182a8a3f2adf774fb1c959df71b8600" category="section-title">术语</block>
   <block id="7f595b1ef82026007f2533413106e7d8" category="paragraph">在讨论工作负载或资源影响时，以下定义非常有用。</block>
@@ -12013,5 +12005,7 @@
   <block id="bcaea0fa3a691efcd767e69c0bf6c611" category="paragraph">为确保收件人收到Data Infrastructure Insight发出的通知、请将以下电子邮件地址添加到任何"允许"列表中：</block>
   <block id="920ab4b11a04d50637a16a5c9699b3ba" category="list-text">accounts@service.cloudinsights.netapp.com</block>
   <block id="b68146f7d3be586c34e5b6d021541f50" category="list-text">DoNotReply@cloudinsights.netapp.com</block>
-  <block id="b496ede8f397a48079afe818e67e759f" category="paragraph">Data Infrastructure Insight提供了大量视频教程、可帮助您了解这些功能并更好地实施业务洞察力策略。</block>
+  <block id="f96c0cb8e557b8c2286592a385c5fd6e" category="paragraph">Data Infrastructure Insight加载了许多有用的功能、可帮助您快速轻松地解决问题、并深入了解您的企业环境。通过功能强大的查询轻松查找数据，在信息板中直观显示数据，并针对您设置的数据阈值发送电子邮件警报。</block>
+  <block id="9a3ddb6d99b9ffb5f7473690abc9fb52" category="paragraph">Data Infrastructure Insight租户上显示的*启动检查清单*包含几个有用的任务和概念的列表。在检查清单中选择一项后、您将转到该概念对应的Data Infrastructure Insight页面。例如，单击_Create a Dashboard _项可打开Data Infrastructure Insight *Dbards*页面。</block>
+  <block id="363b2b401698741ed946f685265f5dc1" category="paragraph">启动检查清单会一直显示、直到您单击检查清单底部的_不再显示此项_链接。即使取消检查清单、在您从消息标题栏中取消显示每个教程之前、每个相应的Data Infrastructure Insight页面上仍会显示这些教程。</block>
 </blocks>
