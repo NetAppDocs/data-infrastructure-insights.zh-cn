@@ -10,7 +10,7 @@ summary: '工作负载安全性会在用户活动异常或潜在攻击时创建�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media
+:imagesdir: ./media/
 
 
 [role="lead"]

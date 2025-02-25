@@ -21,7 +21,7 @@ keywords: coming soon, preview,
 [role="lead"]
 Data Infrastructure Insight以_Preview_的方式突出显示新特性和功能。预览功能可在有限的环境中使用、也可在有限的容量下使用。
 
-如果您有兴趣预览其中一项或多项功能、请联系link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["NetApp 销售团队"]以了解详细信息。
+如果您有兴趣预览其中一项或多项功能、请联系link:https://bluexp.netapp.com/contact-cds["NetApp 销售团队"]以了解详细信息。
 
 |===
 

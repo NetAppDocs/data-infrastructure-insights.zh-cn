@@ -48,13 +48,13 @@ image:Notifications_email_list.png["电子邮件通知"]
 | 试用版或订阅已更新 | 在页面上查看订阅详细信息link:concept_subscribing_to_cloud_insights.html["订阅"] 
 
 
-| 订阅将在 90 天后过期订阅将在 30 天后过期 | 如果启用了"自动续订"、则无需执行任何操作联系link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["NetApp 销售"]以续订订阅 
+| 订阅将在 90 天后过期订阅将在 30 天后过期 | 如果启用了"自动续订"、则无需执行任何操作。请联系NetApp销售人员续订订阅 
 
 
-| 试用将在 2 天后结束 | 从页面续订试用版link:concept_subscribing_to_cloud_insights.html["订阅"]。您可以续订一次试用。联系link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["NetApp 销售"]以购买订阅 
+| 试用将在 2 天后结束 | 从页面续订试用版link:concept_subscribing_to_cloud_insights.html["订阅"]。您可以续订一次试用。要购买订阅、请联系NetApp销售人员 
 
 
-| 试用或订阅已过期帐户将在 48 小时内停止收集数据帐户将在 48 小时后删除 | 联系link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["NetApp 销售"]以购买订阅 
+| 试用或订阅已过期帐户将在 48 小时内停止收集数据帐户将在 48 小时后删除 | 要购买订阅、请联系NetApp销售人员 
 |===
 [NOTE]
 ====

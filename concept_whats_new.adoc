@@ -568,7 +568,7 @@ image:StorageNodeSupportData.png["存储节点支持信息"]
 
 === 将VMware标记映射到Cloud Insights标注
 
-link:task_dc_vmware.html#mapping-vmware-tags-to-cloud-insights-annotations["VMware"]通过数据收集器、您可以使用在VMware上配置的同名标记填充Cloud Insights文本标注。
+link:task_dc_vmware.html["VMware"]通过数据收集器、您可以使用在VMware上配置的同名标记填充Cloud Insights文本标注。
 
 
 
@@ -1387,7 +1387,7 @@ image:ChangeLogEntries.png["此图显示了更改日志条目示例"]
 
 === 预览功能
 
-Cloud Insights 会定期重点介绍许多令人兴奋的新预览功能。如果您有兴趣预览其中一项或多项功能、请联系link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["NetApp 销售团队"]以了解详细信息。
+Cloud Insights 会定期重点介绍许多令人兴奋的新预览功能。如果您有兴趣预览其中一项或多项功能、请联系link:https://bluexp.netapp.com/contact-cds["NetApp 销售团队"]以了解详细信息。
 
 |===
 
@@ -1452,7 +1452,7 @@ image:ChatIcon.png["聊天\"图标、在微笑上方显示蓝色NetApp \"N"]
 
 === 预览功能
 
-Cloud Insights 会定期重点介绍许多令人兴奋的新预览功能。如果您有兴趣预览其中一项或多项功能、请联系link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["NetApp 销售团队"]以了解详细信息。
+Cloud Insights 会定期重点介绍许多令人兴奋的新预览功能。如果您有兴趣预览其中一项或多项功能、请联系link:https://bluexp.netapp.com/contact-cds["NetApp 销售团队"]以了解详细信息。
 
 |===
 
@@ -1511,7 +1511,7 @@ Cloud Insights 可以在创建或删除 Pod ，子集和副本集以及创建新
 
 === 预览功能
 
-Cloud Insights 会定期重点介绍许多令人兴奋的新预览功能。如果您有兴趣预览其中一项或多项功能、请联系link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["NetApp 销售团队"]以了解详细信息。
+Cloud Insights 会定期重点介绍许多令人兴奋的新预览功能。如果您有兴趣预览其中一项或多项功能、请联系link:https://bluexp.netapp.com/contact-cds["NetApp 销售团队"]以了解详细信息。
 
 |===
 
@@ -2386,7 +2386,7 @@ Cloud Secure 不再依赖 Docker 。安装 Cloud Secure 代理不再需要 Docke
 NOTE: Cloud Insights 报告适用于 500 个或更多 MTU 的环境。
 
 
-IMPORTANT: 如果您是当前的Premium Edition客户，并且希望保留您的报告，请阅读本link:reporting_user_roles.html#important-note-for-existing-customers["现有客户的重要注意事项"]。
+IMPORTANT: 如果您是当前的Premium Edition客户，并且希望保留您的报告，请阅读本link:reporting_user_roles.html["现有客户的重要注意事项"]。
 
 
 
@@ -2992,7 +2992,7 @@ link:task_config_telegraf_kubernetes.html["Kubernetes Data Collector"]现在、�
 
 === Cloud Insights 版本
 
-Cloud Insights 提供不同版本，可满足您的预算和业务需求。拥有有效 NetApp 支持帐户的现有 NetApp 客户可以使用免费 * 基本版 * 享受 7 天的数据保留和对 NetApp 数据收集器的访问，或者通过 * 标准版 * 更多地保留数据，访问所有受支持的数据收集器，获得专家技术支持等。有关可用功能的详细信息、请参见NetApplink:https://cloud.netapp.com/cloud-insights["Cloud Insights"]站点。
+Cloud Insights 提供不同版本，可满足您的预算和业务需求。拥有有效 NetApp 支持帐户的现有 NetApp 客户可以使用免费 * 基本版 * 享受 7 天的数据保留和对 NetApp 数据收集器的访问，或者通过 * 标准版 * 更多地保留数据，访问所有受支持的数据收集器，获得专家技术支持等。有关可用功能的详细信息、请参见NetApplink:https://www.netapp.com/cloud-services/cloud-insights/["Cloud Insights"]站点。
 
 
 

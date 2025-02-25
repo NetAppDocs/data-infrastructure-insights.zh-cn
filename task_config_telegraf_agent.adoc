@@ -21,8 +21,6 @@ summary: Data Infrastructure Insight支持Telegraf作为其收集集成数据的
 [role="lead"]
 Data Infrastructure Insight使用link:https://docs.influxdata.com/telegraf["Telegraf"]作为其代理来收集集成数据。Telegraf 是一种插件驱动的服务器代理，可用于收集和报告指标，事件和日志。输入插件用于通过直接访问系统 /OS ，调用第三方 API 或侦听已配置的流（例如 Kafka ， statsD 等）。输出插件用于将收集的指标、事件和日志从代理发送到Data Infrastructure Insight。
 
-Data Infrastructure Insight的当前Telegraf版本为*1.24.0*。
-
 有关在Kubbernetes上安装的信息、请参见link:task_config_telegraf_agent_k8s.html["NetApp Kubernetes监控操作员"]页面。
 
 

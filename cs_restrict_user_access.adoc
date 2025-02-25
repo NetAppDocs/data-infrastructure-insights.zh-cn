@@ -10,7 +10,7 @@ summary: 借助工作负载安全性、您可以在发生可疑破坏时限制�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media
+:imagesdir: ./media/
 
 
 [role="lead"]

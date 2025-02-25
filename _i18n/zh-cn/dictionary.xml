@@ -1644,12 +1644,8 @@
   <block id="787ad0b7a17de4ad6b1711bbf8d79fcb" category="inline-link-macro">订阅</block>
   <block id="e3f7fb4cb907310317d00ec805d579f0" category="cell">在页面上查看订阅详细信息<block ref="1270e27ca8ec5d3dff21c492e4b5c786" category="inline-link-macro-rx"></block></block>
   <block id="1670271ef2e024b3bd83b4667cfad9f1" category="cell">订阅将在 90 天后过期订阅将在 30 天后过期</block>
-  <block id="9f1787a10e1ab4246b75150fda98b7f6" category="inline-link-macro">NetApp 销售</block>
-  <block id="56e2a36f9711ac801f182c46e593a905" category="cell">如果启用了"自动续订"、则无需执行任何操作联系<block ref="24745b642cc0706e7f0bffb600ab0d70" category="inline-link-macro-rx"></block>以续订订阅</block>
   <block id="a8e16db6b3540132d03fdb273b982975" category="cell">试用将在 2 天后结束</block>
-  <block id="ca668270291dd570712b6adc1ce8923f" category="cell">从页面续订试用版<block ref="1270e27ca8ec5d3dff21c492e4b5c786" category="inline-link-macro-rx"></block>。您可以续订一次试用。联系<block ref="24745b642cc0706e7f0bffb600ab0d70" category="inline-link-macro-rx"></block>以购买订阅</block>
   <block id="1e520752d3100399ac52c71e449da882" category="cell">试用或订阅已过期帐户将在 48 小时内停止收集数据帐户将在 48 小时后删除</block>
-  <block id="e89ae227607d5f04ef37a542e59758d5" category="cell">联系<block ref="24745b642cc0706e7f0bffb600ab0d70" category="inline-link-macro-rx"></block>以购买订阅</block>
   <block id="8e93b1e0d1805d8655a5ef72cc4c1f73" category="section-title">警报的全局收件人列表</block>
   <block id="f80a3af59189fad5d417cb3684841b2f" category="paragraph">警报的电子邮件通知将发送到警报的每个操作的警报收件人列表。您可以选择向全局收件人列表发送警报通知。</block>
   <block id="df43b72d848c482dd610f8178005dbe4" category="paragraph">要配置全局警报收件人，请在 * 全局监控通知收件人 * 部分中选择所需的收件人。</block>
@@ -1776,7 +1772,6 @@
   <block id="b865b0f0f94674aa0d7878e2253f2c1b" category="doc">预览功能和特性</block>
   <block id="8a0d14c15291ab894b50ee0f241e5564" category="paragraph">Data Infrastructure Insight以_Preview_的方式突出显示新特性和功能。预览功能可在有限的环境中使用、也可在有限的容量下使用。</block>
   <block id="2240ee7d4e56b8ba7ac49b14311cdeed" category="inline-link-macro">NetApp 销售团队</block>
-  <block id="1faeb81be1b403bf2b660e33e3c7e5f7" category="paragraph">如果您有兴趣预览其中一项或多项功能、请联系<block ref="16ff11ed878ec2cb7f479192bb9f1a7d" category="inline-link-macro-rx"></block>以了解详细信息。</block>
   <block id="5fa0ef8fc40e60003288942e2da3e300" category="cell">* 功能 *</block>
   <block id="d972e288b86634fdb9a758828b4d511a" category="cell">回收ONTAP 冷存储</block>
   <block id="e1f1a8af4cedab3466112b828b25b73f" category="cell">提供有关ONTAP 卷工作负载的冷容量以及其他相关指标的可视化信息。</block>
@@ -1857,7 +1852,6 @@
   <block id="1ce9a43d63998783a781596de13b0965" category="list-text"><block ref="fa5b9c38e8e5b8e1f4e408b08ce16532" category="inline-link-macro-rx"></block></block>
   <block id="2911a8a094a0fc515bf83ad1a0cf9eba" category="list-text">*Chat*-您将与NetApp支持人员联系以获得帮助(仅限工作日)。任何Data Infrastructure Insight屏幕右上角的*帮助&gt;实时聊天*菜单选项均提供聊天功能。</block>
   <block id="ac2ae10a8c7bd50e80c93d5e57fc84da" category="inline-link-macro">* 联系销售人员 *</block>
-  <block id="5c0e6c90408c98d6eca3e09416c4ee77" category="paragraph">您也可以单击链接申请销售支持<block ref="57d2406fdd9ad62e0bb0722bd44749df" category="inline-link-macro-rx"></block>。</block>
   <block id="30a12dfd5908adfdb9f06395cb4b5c34" category="paragraph">您的Data Infrastructure Insight序列号可从服务的*帮助&gt;支持*菜单中查看。如果您在访问此服务时遇到问题、并且之前已向NetApp注册了序列号、则还可以从NetApp支持站点查看您的数据基础架构洞察序列号列表、如下所示：</block>
   <block id="290bf19e1ed3fabfc80a0ac6d77f6466" category="list-text">登录到 mysupport.netapp.com</block>
   <block id="77cb462f113aa28274c4c9d4a0bd4124" category="list-text">从"Products"&gt;"My Products"菜单选项卡中、使用产品系列"SaaS Data Infrastructure洞察力"找到所有已注册的序列号：</block>
@@ -1936,7 +1930,6 @@
   <block id="6341e61d6dc641d29b3f2e7300137ea9" category="list-text">在上注册一个帐户<block ref="e0b3e45a049f223d3b91d005d1e31db5" category="inline-link-macro-rx"></block>、即可访问NetApp的所有云产品。</block>
   <block id="2ef085adce795622c057ad2ea6c13059" category="inline-link-macro">NetApp 销售人员</block>
   <block id="cab27dc53edb571cac663ce2e16450dc" category="inline-link-macro">AWS 市场</block>
-  <block id="f2b5d43aba260933c552d69977b7274d" category="list-text">*订阅*数据基础架构洞察、通过<block ref="ae0970f4d06315494d31beaa05a7be05" category="inline-link-macro-rx"></block>直接或持续无中断地访问数据<block ref="e91d3f98f4b43abdea3c839a7777954c" category="inline-link-macro-rx"></block>。</block>
   <block id="7bc1d8b07dfc0e98950abc0c7f3979a5" category="inline-link-macro">信息和区域</block>
   <block id="6c36c3c54c4f691f7ed13a16d49bbde7" category="paragraph">在注册过程中、您可以选择托管Data Infrastructure Insight环境的全球区域。有关详细信息，请阅读有关Data Infrastructure洞察的<block ref="286a302a1ee50fd59eb368d3d9779037" category="inline-link-macro-rx"></block>信息。</block>
   <block id="ef66b5abbe1e0b79e23deb05dd2d11a9" category="admonition">删除非活动Data Infrastructure Insight Basic Edition环境并回收其资源。如果连续 30 天没有用户活动，或者连续 7 天未载入数据，则环境将被视为非活动环境。Data Infrastructure Insight将发送通知并提供四天的宽限期、然后才能删除环境。</block>
@@ -2002,7 +1995,6 @@
   <block id="99d34ca2583ae7363bd4e07f9b2d98cc" category="inline-xref">自行订阅</block>
   <block id="ab5e9545afec38b9d4cc8cb1f64b1a59" category="paragraph">如果您的托管单元数小于1、000、则可以通过NetApp销售部门或AWS Marketplace进行订阅<block ref="5ef09ccc45a6e1ddce52b5a69393ce8f" category="inline-xref-macro-rx"></block>。</block>
   <block id="61951f38f686ce7c31ccc7f65173062c" category="section-title">通过 NetApp Sales Direct 订阅</block>
-  <block id="e3b70cffc25d522a4137f9cafd0f3c50" category="paragraph">如果您的预期受管单元数为1、000或更大、请单击<block ref="57d2406fdd9ad62e0bb0722bd44749df" category="inline-link-macro-rx"></block>按钮通过NetApp销售团队进行订阅。</block>
   <block id="0313fe3f07d732172e3b8700c1cea6f1" category="paragraph">您必须将数据基础架构洞察*序列号*提供给NetApp销售代表、才能将您的付费订阅应用于您的数据基础架构洞察环境。此序列号唯一标识了您的Data Infrastructure Insight试用环境、可在*管理&gt;订阅*页面上找到。</block>
   <block id="ba16017252787d62326108ae062b54b0" category="section-title">通过 AWS Marketplace 自行订阅</block>
   <block id="75df7bd83cb6391af3c2bb23c74cb72d" category="admonition">您必须是帐户所有者或管理员、才能将AWS Marketplace订阅应用于现有Data Infrastructure Insight试用帐户。此外，您还必须拥有 Amazon Web Services （ AWS ）帐户。</block>
@@ -2428,7 +2420,6 @@
   <block id="135a3d8d94bbc8eb1cd03dbd8fa28277" category="paragraph"><block ref="135a3d8d94bbc8eb1cd03dbd8fa28277" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ad437072c1980f7cddeaf25e082880bb" category="section-title">将VMware标记映射到Cloud Insights标注</block>
   <block id="7f8b37715b940736bc29a71b2f98126d" category="inline-link-macro">VMware</block>
-  <block id="b67ffcdf52573a01af5e6400d8043174" category="paragraph"><block ref="eb8043f75c4f74e4780785affa0e63c3" category="inline-link-macro-rx"></block>通过数据收集器、您可以使用在VMware上配置的同名标记填充Cloud Insights文本标注。</block>
   <block id="02892541231ed9b9797890da851659d1" category="section-title">适用于FOS 9.1.1c及更高版本固件的Brocade CLI收集器可靠性增强功能</block>
   <block id="f451a3db1d946e0e6f7a6faff75241f4" category="paragraph">在某些运行9.1.1c固件的Brocade光纤通道交换机上、某些命令行界面命令的输出可能会在"moded"登录横幅文本前添加、或者警告用户更改默认密码。Brocade CLI收集器已得到增强、可忽略这两种类型的无关文本。</block>
   <block id="08cc9fe40f6d675ceb9852acf6cb4d2d" category="paragraph">在此增强功能之前、使用此收集器类型只能发现不存在虚拟结构的FOS 9.1.1c交换机。</block>
@@ -2775,7 +2766,6 @@
   <block id="9a3185d3dd699a74f8c315584250a80c" category="inline-link-macro">代理安装</block>
   <block id="c41fe2272c9ff38bed21d6e67f9945cc" category="paragraph">用于载入电报集成数据的代理已更新到版本*。1.22.3*、并提高了性能和安全性。要更新的用户可以参考文档中相应的升级部分<block ref="7eca75c9707898b05c3a8b3fe84d7968" category="inline-link-macro-rx"></block>。先前版本的代理将继续运行，无需用户操作。</block>
   <block id="ecf4e9e3c38358de05561be5ed03f5d0" category="section-title">预览功能</block>
-  <block id="876a3f6e99a6a623eff957c61ab96f8a" category="paragraph">Cloud Insights 会定期重点介绍许多令人兴奋的新预览功能。如果您有兴趣预览其中一项或多项功能、请联系<block ref="16ff11ed878ec2cb7f479192bb9f1a7d" category="inline-link-macro-rx"></block>以了解详细信息。</block>
   <block id="2ad48475868a5acf715f48e45c20d2d1" category="cell">Cloud Secure —在受到攻击时阻止用户访问</block>
   <block id="4e28671aa760c1ba504510846bdf520c" category="cell">可以在检测到攻击时阻止用户访问、从而增强对业务关键型数据的保护。可以使用自动响应策略自动阻止访问、也可以通过警报或用户详细信息页面手动阻止访问。<block ref="e8dc9c29c76388404a63bbf729dac2fd" category="inline-link-macro-rx"></block></block>
   <block id="b56a5394775a9f077c12cb3e770d913c" category="section-title">2022年5月</block>
@@ -3209,7 +3199,6 @@
   <block id="2a6de53195a3acc5f7d30058cb96c7b0" category="cell">可以执行所有作者功能以及所有管理任务，例如配置报告以及关闭和重新启动报告任务。</block>
   <block id="6ba491c2b785c6d3b29438ccaae4be23" category="admonition">Cloud Insights 报告适用于 500 个或更多 MTU 的环境。</block>
   <block id="9e1a95c1bf70be97bddc1d6d3b0fd7bf" category="inline-link-macro">现有客户的重要注意事项</block>
-  <block id="bbe0f3f4b15751e0fe172352be87e28a" category="admonition">如果您是当前的Premium Edition客户，并且希望保留您的报告，请阅读本<block ref="def308f247292b766d2c9907f94474d4" category="inline-link-macro-rx"></block>。</block>
   <block id="788f4763779031fd7bb3241cdf39ad5b" category="section-title">用于数据载入的新 API 类别</block>
   <block id="facfa3abb0f333223d77bb5c23d49f72" category="paragraph">Cloud Insights 增加了一个 * 数据载入 * API 类别，可让您更好地控制自定义数据和代理。有关此 API 类别和其他 API 类别的详细文档，请导航到 * 管理员 &gt; API 访问 * 并单击 _API 文档 _ 链接，在 Cloud Insights 中找到。您还可以在注释字段中为 AU 附加注释，该注释显示在 AU 详细信息页面以及 AU 列表页面上。</block>
   <block id="ea6b0fa25e3cb324da39980f6290f837" category="section-title">2020年8月</block>
@@ -3466,7 +3455,6 @@
   <block id="e289ad98e91a5c5e09b44d6006fba214" category="section-title">2019年6月</block>
   <block id="b5288703cf95cb2a528be0fe38299786" category="section-title">Cloud Insights 版本</block>
   <block id="b4f83b03956523a39e8bbbd0895f0f29" category="inline-link-macro">Cloud Insights</block>
-  <block id="39627bb9ad7910603c9a7a558b721eed" category="paragraph">Cloud Insights 提供不同版本，可满足您的预算和业务需求。拥有有效 NetApp 支持帐户的现有 NetApp 客户可以使用免费 * 基本版 * 享受 7 天的数据保留和对 NetApp 数据收集器的访问，或者通过 * 标准版 * 更多地保留数据，访问所有受支持的数据收集器，获得专家技术支持等。有关可用功能的详细信息、请参见NetApp<block ref="90b37a6f19d0c9cebf9cb98c49d719f7" category="inline-link-macro-rx"></block>站点。</block>
   <block id="076961e5ebe9ba19944f1e07d39a3734" category="section-title">新的基础架构数据收集器： NetApp HCI</block>
   <block id="ee295f6adf0fba3513382450efd2d056" category="inline-link-macro">NetApp HCI 虚拟中心</block>
   <block id="40d7c8ab2c54cab8d61c485a80cdd6c0" category="list-text"><block ref="d2237560e4b0257aaba680703e5b6009" category="inline-link-macro-rx"></block>已添加为基础架构数据收集器。HCI 虚拟中心数据收集器收集 NetApp HCI 主机信息，并要求对虚拟中心内的所有对象具有只读权限。</block>
@@ -6399,7 +6387,6 @@
   <block id="2ddc4416c197500bc7619829b98c8b77" category="doc">配置代理以收集数据(Windows/Linux)</block>
   <block id="bdb9a31f361d8d3be1c6915647e92d4d" category="inline-link-macro">Telegraf</block>
   <block id="5f021f72cc2bb955c838ed30118dbef0" category="paragraph">Data Infrastructure Insight使用<block ref="eed175bcf32f20f81ea47b9c982c2797" category="inline-link-macro-rx"></block>作为其代理来收集集成数据。Telegraf 是一种插件驱动的服务器代理，可用于收集和报告指标，事件和日志。输入插件用于通过直接访问系统 /OS ，调用第三方 API 或侦听已配置的流（例如 Kafka ， statsD 等）。输出插件用于将收集的指标、事件和日志从代理发送到Data Infrastructure Insight。</block>
-  <block id="da7e75e5407636a24c1c7cce20e7d225" category="paragraph">Data Infrastructure Insight的当前Telegraf版本为*1.24.0*。</block>
   <block id="2041337c363c1ecaeb2a1aa9c8999494" category="paragraph">有关在Kubbernetes上安装的信息、请参见<block ref="f0d3e43e41da35ba651820db811551cd" category="inline-link-macro-rx"></block>页面。</block>
   <block id="ae2f2b5e87a12f1cd650f0e46b92e4ec" category="admonition">为了准确地进行审核和报告数据，强烈建议使用 * 网络时间协议（ NTP ） * 或 * 简单网络时间协议（ SNTP ） * 同步 Agent 计算机上的时间。</block>
   <block id="137bac1c26ca6d0b61bc783c9a2fcbbd" category="section-title">安装代理</block>
@@ -11850,8 +11837,6 @@
   <block id="9c6601cca8cd67405c34e4897bb272f1" category="section-title">探索资产之间的联系</block>
   <block id="14fe64769d4df689f51e13f60c5ec439" category="admonition">如果某个收集器的用户受限、则无法暂停此收集器。暂停收集器之前、请恢复用户访问权限。</block>
   <block id="81c776ec15386302abf1c34d317e3393" category="paragraph">选择*Observability &gt; Analyze &gt; SAN Analyzer*以查看SAN Analyzer。设置应用程序、主机、网络结构和/或存储的筛选器。此时将显示对象的地图、其中显示了连接的对象。将鼠标悬停在某个对象上可查看这些连接的流量指标。</block>
-  <block id="fde6f74861c217b576ec5d769f2467c3" category="paragraph"><block ref="fde6f74861c217b576ec5d769f2467c3" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7512260392fef04bf211fab22007addd" category="paragraph"><block ref="7512260392fef04bf211fab22007addd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="18082cdb9388e2686e081dd6012e47b8" category="summary">您可以确定创建的信息板是公共信息板还是私有信息板。</block>
   <block id="cc5c681651d638257ae03658c963c7c6" category="doc">信息板访问管理</block>
   <block id="571ad98bb1054a211a5d3fa3a3240265" category="paragraph">现在、您可以通过Data Infrastructure Insight更好地控制对所创建信息板的访问。您可以选择谁可以修改图形。您可以控制潜在敏感信息的暴露程度。通过将信息板保持私密、您可以最终确定可视化效果、直到它们可供组织中的其他人使用为止。</block>
@@ -12008,4 +11993,20 @@
   <block id="f96c0cb8e557b8c2286592a385c5fd6e" category="paragraph">Data Infrastructure Insight加载了许多有用的功能、可帮助您快速轻松地解决问题、并深入了解您的企业环境。通过功能强大的查询轻松查找数据，在信息板中直观显示数据，并针对您设置的数据阈值发送电子邮件警报。</block>
   <block id="9a3ddb6d99b9ffb5f7473690abc9fb52" category="paragraph">Data Infrastructure Insight租户上显示的*启动检查清单*包含几个有用的任务和概念的列表。在检查清单中选择一项后、您将转到该概念对应的Data Infrastructure Insight页面。例如，单击_Create a Dashboard _项可打开Data Infrastructure Insight *Dbards*页面。</block>
   <block id="363b2b401698741ed946f685265f5dc1" category="paragraph">启动检查清单会一直显示、直到您单击检查清单底部的_不再显示此项_链接。即使取消检查清单、在您从消息标题栏中取消显示每个教程之前、每个相应的Data Infrastructure Insight页面上仍会显示这些教程。</block>
+  <block id="fcef7a70b7e9119c20e30e9ab1556015" category="paragraph">了解公司环境中使用的应用程序有助于跟踪资产使用情况和成本。</block>
+  <block id="0e7f6af549f009474555d1625059e6d7" category="cell">如果启用了"自动续订"、则无需执行任何操作。请联系NetApp销售人员续订订阅</block>
+  <block id="2e9dbda35cab3bb298214da257ad124f" category="cell">从页面续订试用版<block ref="1270e27ca8ec5d3dff21c492e4b5c786" category="inline-link-macro-rx"></block>。您可以续订一次试用。要购买订阅、请联系NetApp销售人员</block>
+  <block id="a25c3f0a67375ee45e02e2a95818cfb5" category="cell">要购买订阅、请联系NetApp销售人员</block>
+  <block id="670521a1846ad94b7cc140e2678df21c" category="paragraph">如果您有兴趣预览其中一项或多项功能、请联系<block ref="02af545fedbe237243dabe2f44648f4d" category="inline-link-macro-rx"></block>以了解详细信息。</block>
+  <block id="16630d72023cbbf23b8ab69cac2b3ff7" category="paragraph">您也可以单击链接申请销售支持<block ref="6193a07b36740b6aedc4527702e204e2" category="inline-link-macro-rx"></block>。</block>
+  <block id="3fcd9845b26dde701c891681edc7b769" category="list-text">*订阅*数据基础架构洞察、通过<block ref="326364f658f4dbd53be7e9aa308d8ef9" category="inline-link-macro-rx"></block>直接或持续无中断地访问数据<block ref="e91d3f98f4b43abdea3c839a7777954c" category="inline-link-macro-rx"></block>。</block>
+  <block id="5d42f131ad60489240ed184620da0559" category="paragraph">如果您的预期受管单元数为1、000或更大、请单击<block ref="6193a07b36740b6aedc4527702e204e2" category="inline-link-macro-rx"></block>按钮通过NetApp销售团队进行订阅。</block>
+  <block id="a42decca1d15ec644d4c66c06689344e" category="paragraph"><block ref="a4e343c69e2eae514016d98dfce8b36b" category="inline-link-macro-rx"></block>通过数据收集器、您可以使用在VMware上配置的同名标记填充Cloud Insights文本标注。</block>
+  <block id="0d0549b05d1645d38baa1a6cedaa7190" category="paragraph">Cloud Insights 会定期重点介绍许多令人兴奋的新预览功能。如果您有兴趣预览其中一项或多项功能、请联系<block ref="02af545fedbe237243dabe2f44648f4d" category="inline-link-macro-rx"></block>以了解详细信息。</block>
+  <block id="6230fc6d3836bf964eb587a1b21b5c48" category="admonition">如果您是当前的Premium Edition客户，并且希望保留您的报告，请阅读本<block ref="85f8206314043d7dd91d050def6a5cd1" category="inline-link-macro-rx"></block>。</block>
+  <block id="76a42951dc5d3e54f25d85112bcaa111" category="paragraph">Cloud Insights 提供不同版本，可满足您的预算和业务需求。拥有有效 NetApp 支持帐户的现有 NetApp 客户可以使用免费 * 基本版 * 享受 7 天的数据保留和对 NetApp 数据收集器的访问，或者通过 * 标准版 * 更多地保留数据，访问所有受支持的数据收集器，获得专家技术支持等。有关可用功能的详细信息、请参见NetApp<block ref="67d94682b6b1dd7a9ae6ec194255c574" category="inline-link-macro-rx"></block>站点。</block>
+  <block id="238195bd1c59d39a21a833f68ecd7a0c" category="inline-image-macro">SAN分析器流量指标示例</block>
+  <block id="5620b4a9c0487779fe08be37f85948ac" category="paragraph"><block ref="5620b4a9c0487779fe08be37f85948ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="905f3e264909d9cdcfa3de883e22e115" category="inline-image-macro">SAN分析器分出面板</block>
+  <block id="16e072902d4155747f40acc51a5aa5a3" category="paragraph"><block ref="16e072902d4155747f40acc51a5aa5a3" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

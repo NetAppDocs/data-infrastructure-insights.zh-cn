@@ -5,13 +5,16 @@ keywords: applications, asset, cost
 summary: 了解公司环境中使用的应用程序有助于您跟踪资产使用情况和成本。 
 ---
 = 按应用程序跟踪资产使用情况
+:hardbreaks:
 :allow-uri-read: 
-:firstname: [.lead]
-:author: [.lead]
-:authorinitials: [
-:authors: [.lead]
-:revdate: Understanding the applications used in your company's environment helps you to keep track of asset usage and cost.
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
+
+[role="lead"]
+了解公司环境中使用的应用程序有助于跟踪资产使用情况和成本。
 
 在跟踪与租户上运行的应用程序关联的数据之前、您必须先定义这些应用程序并将其与相应资产关联。您可以将应用程序与以下资产相关联：主机，虚拟机，卷，内部卷， qtree ， 共享和虚拟机管理程序。
 
