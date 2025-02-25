@@ -1830,8 +1830,6 @@
   <block id="3b2314bf0168715cc6642c0246916477" category="paragraph">许多NetApp产品都将数据基础架构洞察力基础版作为软件包的一部分提供。如果您要升级到高级版、请联系您的销售代表。</block>
   <block id="0ead5de583924ac8d48848b85f68e778" category="section-title">自助服务支持：</block>
   <block id="6c0afebc7e7822e3ca22734d7b5d42c0" category="paragraph">这些支持选项在试用模式下提供，并且全天候免费提供：</block>
-  <block id="e3072490c4d1e9d415ba1bcef5c7bdb1" category="list-text">*。https://kb NetApp．com/Special:Search?query=Cloud和INSESSENTS[知识库]*</block>
-  <block id="3926b94c4a8e59d9d045fe99d237163b" category="paragraph">+单击本节中的链接将转到NetApp知识库、您可以在其中搜索相关文章、操作说明等。</block>
   <block id="5b6cf869265c13af8566f192b4ab3d2a" category="inline-link-macro">文档</block>
   <block id="7cef246d709d34533b9dea3e15d3f5a2" category="list-text">*<block ref="2ecfa39652ed0f06ca436cc3b19d2bbb" category="inline-link-macro-rx"></block></block>
   <block id="15d10c3fd39c9846221b3ea9c93b55e0" category="paragraph">单击文档链接可转到此文档中心。</block>
@@ -2624,7 +2622,6 @@
   <block id="eefa6cd78e40f4194cf842026e05a215" category="section-title">适用于ONTAP 9.9+的云连接已弃用</block>
   <block id="2589e2b6868c0dfc4223608ad37b1ecf" category="paragraph">适用于ONTAP 9.9+的云连接数据收集器已弃用。从2023年4月4日开始、您环境中的Cloud Connection数据收集器将不再收集数据、而是在轮询时显示错误。在后续更新中、Cloud Connection数据收集器将从Cloud Insights 中彻底删除。</block>
   <block id="f5395c9793af8a11b406ca7c1ac70da9" category="inline-link-macro">了解更多信息</block>
-  <block id="8ae386dae67728714e42ae37acbde665" category="paragraph">在2023年4月4日之前、必须为当前由Cloud Connection收集的任何ONTAP 系统配置一个新的NetApp ONTAP 数据管理软件数据收集器。<block ref="61bbaeff08609910a4a5c1401ada9f16" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="abb14d21829ba186172f6e1d0b64b55b" category="section-title">2023年1月</block>
   <block id="636b18f0d68407e346d028a8211fb724" category="section-title">新的日志监控器</block>
   <block id="497c0ee717343a5ba95064eaf970a772" category="inline-link-macro">其他系统监控器</block>
@@ -7275,7 +7272,6 @@
   <block id="3fde2c923d9dcbf8f73ec0e80dc74d75" category="paragraph">最简单的方法是、在代理/防火墙中指定通配符配置、以便与Data Infrastructure Insight进行通信、例如：</block>
   <block id="7011d12128c7027c0a5ef0db2c274300" category="admonition">通配符通常使用星号（ * ），但代理 / 防火墙配置可能使用不同的格式。请查阅代理文档，以确保环境中的通配符规范正确无误。</block>
   <block id="347129195bfdcce2fcf0d362a84ed033" category="inline-link-macro">知识库</block>
-  <block id="6ad0fb78b8821fe632ae6653b56991b5" category="paragraph">有关代理配置的详细信息，请参见NetApp<block ref="9ee959d13eb0fcadf2047adb8fe84539" category="inline-link-macro-rx"></block>。</block>
   <block id="042f2a856726ac957ea57dbbe84766ca" category="section-title">查看代理 URL</block>
   <block id="ab7992748e11f14996bdc2646a49e293" category="paragraph">您可以通过以下方式查看代理端点 URL ：在入职期间选择数据收集器时单击 * 代理设置 * 链接，或者单击 * 帮助 &gt; 支持 * 页面上 _ 代理设置 _ 下的链接。此时将显示如下表。</block>
   <block id="2d606071517d0747fae04dd73f7f6408" category="inline-image-macro">代理端点表</block>
@@ -8057,7 +8053,6 @@
   <block id="e73a974e5f64b7f2d040fb59fd2aafcd" category="cell">更改数据源配置以使用机箱 IP 地址。</block>
   <block id="04eb81d16943e8c8a6314aaac38a4f4b" category="cell">收到一条消息，指出有多个节点已登录到访问网关端口</block>
   <block id="17f6f686e23fbca9f92a7a9926136c2d" category="cell">性能收集失败、并显示"SNMP请求发送期间超时"。</block>
-  <block id="212277044ae3f4c8673a76ebbe182cbd" category="cell">根据查询变量和交换机配置、某些查询可能会超过默认超时时间。<block ref="0374e985eaa396deda9975ede578752d" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="e04ebf98a9012bb6a191a7804699c68b" category="summary">正在配置Brocade FOS REST数据收集器。</block>
   <block id="706579d23b1ddf6c6ff6115a0f9271b4" category="doc">Brocade FOS REST数据收集器</block>
   <block id="eff72425072b480bbbaf5cf932ce0c52" category="paragraph">数据基础架构洞察使用Brocade FOS REST收集器发现运行FabricOS (FOS)固件8.2及更高版本的Brocade交换机设备的清单和性能。</block>
@@ -9353,8 +9348,6 @@
   <block id="a9d11491cdc145dca25e537c123d978b" category="summary">为 ONTAP 9.9+ 数据收集器配置 NetApp 云连接</block>
   <block id="34727dd01aaa3e0d53fd68d429bbff53" category="doc">适用于 ONTAP 9.9+ 的 NetApp 云连接数据收集器</block>
   <block id="0803ffc49bb5d009027ad578d29858b8" category="paragraph">此数据收集器可创建云连接，以支持从 ONTAP 9.9+ CVO ， AFF 和 FAS 系统收集数据。</block>
-  <block id="35799672184c185a5b76dc14b0e32aa7" category="inline-link-macro">知识库</block>
-  <block id="0de86890c2f317ce1ead6727d6bff886" category="admonition">自2023年4月4日起、此数据收集器不再可安装在Data Infrastructure Insight中、并且将从2023年7月的所有Data Infrastructure Insight安装中删除。有关过渡到基于AU的数据收集的信息，请参见<block ref="334c0315e59c6351d5f9bac4d495b3ee" category="inline-link-macro-rx"></block>。</block>
   <block id="aa660f33d4c20ae2b92aa73acb4c5828" category="summary">为 AWS 数据收集器配置 NetApp Cloud Volumes Services</block>
   <block id="6d719c7976115879cdcafb7922e7e5fd" category="doc">适用于 AWS 数据收集器的 NetApp Cloud Volumes Services</block>
   <block id="85930060216df642a21fd8c262d1cc6c" category="paragraph">此数据收集器支持从适用于 AWS 的 NetApp Cloud Volumes Services 配置中收集清单。</block>
@@ -9366,7 +9359,6 @@
   <block id="9447267c06cce84dba179c481872fb16" category="cell">Cloud Volumes 密钥</block>
   <block id="36d35d8bdb33f254c1406a404bc7c125" category="cell">我收到类似于此错误的错误："无法执行请求：连接到&lt;AWS区域端点&gt;：8080 [&lt;AWS区域端点&gt;/AWS区域端点IP&gt;]失败：连接超时：获取\https://&lt;AWS区域端点FQDN&gt;：8080/v1/Storage/IPRanges HTTP/1.1 "</block>
   <block id="ef756d1229bc6f51e983884d984a03f3" category="inline-link-macro">NetApp知识库文章</block>
-  <block id="babd9d09d01450e3fe3a53819529d6f5" category="cell"><block ref="588cebdad26ee4a9a3bb08c290310eb7" category="inline-link-macro-rx"></block>Data Infrastructure Insight用于与采集单元进行通信的不会在Data Infrastructure Insight与Data Collector本身之间进行通信。您可以尝试以下几项操作：确保采集单元能够解析FQDN并访问所需的端口。在错误消息中确认不需要代理即可访问指定端点。可以使用curl测试采集单元与端点之间的通信。确保您*不*使用代理进行此测试。示例：root@acemisionunit# Curl -s -H accept：application/json -H "Conteme-type：application/json"-H api-key：&lt;api key used in the data Collector credifrs -H secret-key：&lt;secret-key used in the data Collector crediftes&gt;-X get \https://&lt;AWS Regional Endpoint：8080/v1/storage/IPRanges请参见此<block ref="776b569bb4fd625ede408f144a17e02c" category="inline-link-macro-rx"></block>。</block>
   <block id="47407ceeb441f7c5d1eac8ca6060c4b7" category="summary">配置 NetApp Cloud Volumes ONTAP 数据收集器</block>
   <block id="a7544b3f9e0cc7c642c8b55af45cc192" category="doc">NetApp Cloud Volumes ONTAP 数据收集器</block>
   <block id="2285e08ef18a1a3f2e02b335409147d7" category="paragraph">此数据收集器支持从 Cloud Volumes ONTAP 配置收集清单。</block>
@@ -10842,7 +10834,6 @@
   <block id="05b4ddcb7946bd7615ac3f1458e51d47" category="cell">重新输入计划时间、注意不要输入完整的"AM"或"PM"字符；只需键入"A"表示"AM"或"P"表示"PM"即可。如果未显示多余字符、则计划时间将正确设置。</block>
   <block id="ddcf50c29294d4414f3f7c1bbc892cb5" category="section-title">资源</block>
   <block id="55d00560611b7ac6ad1fbc07da675be3" category="inline-link-macro">NetApp 知识库</block>
-  <block id="b4bfb3ce4e8b9e9d62106cb32011d02d" category="paragraph">有关其他故障排除提示、请参见<block ref="15447e468ec3e05469147de69518b15c" category="inline-link-macro-rx"></block>(需要支持登录)。</block>
   <block id="5b54c3b04831265b1d859da4050ad35f" category="paragraph">有关其他支持信息、请参见Data Infrastructure Insight<block ref="d34993add17c6dd464dba2ccd7f99cbb" category="inline-link-macro-rx"></block>页面。</block>
   <block id="90c8925e0cc3bad3ddb84b5af67af65a" category="paragraph">如果您拥有有效的Data Infrastructure Insight订阅、则可以使用以下支持选项：</block>
   <block id="0af89698bf5d1150026d4fcbbcf784a6" category="inline-link-macro">支持服务单</block>
@@ -10855,7 +10846,6 @@
   <block id="7ef7f61ee5433c00d6e2bd93b6a72b5f" category="cell">采集单元*选项卡中的*Observability &gt; Collectors*页面上的AU状态显示“证书已过期”或“证书已撤销”。</block>
   <block id="a56fa9c38676d6ae98991340b46ca3ad" category="cell">单击 AU 右侧的菜单，然后选择 * 还原连接 * 。按照说明还原采集单元： 1.停止采集单元（ Acquisition Unit ， AU ）服务。您可以单击 _Copy Stop Command_ 按钮将命令快速复制到剪贴板，然后将此命令粘贴到采集单元计算机上的命令提示符中。2.在AU上的/var/lib/uidsights NetApp /acq/conf_文件夹中创建一个名为"令牌"的文件。3.单击_Copy令牌_按钮、然后将此令牌粘贴到您创建的文件中。4.重新启动 AU 服务。单击 _Copy Restart Command_ 按钮，然后将命令粘贴到 AU 上的命令提示符中。</block>
   <block id="ba5ed4798f807b143761ea5211f06ea2" category="cell">启动采集单元服务器服务时权限被拒绝</block>
-  <block id="abb32e1da1ad856744ba53e096ef4ba3" category="cell">当AU安装在SELinux上时、应将SE设置为_permisent_模式。不支持_Enforcerent_模式。将SELinux设置为许可模式后、重新启动AU服务。<block ref="a82c78a8c8abe174de58c3bb493cbdd3" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="f8c1f64e9a97f83b0f209268bdd07bcb" category="cell">未满足服务器要求</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link-macro">要求</block>
   <block id="1b30be776a2009c2060ad54316282f2f" category="cell">确保采集单元服务器或VM满足要求<block ref="e5b1973153b9956f66244f44dc226837" category="inline-link-macro-rx"></block></block>
@@ -12009,4 +11999,13 @@
   <block id="5620b4a9c0487779fe08be37f85948ac" category="paragraph"><block ref="5620b4a9c0487779fe08be37f85948ac" category="inline-image-macro-rx" type="image"></block></block>
   <block id="905f3e264909d9cdcfa3de883e22e115" category="inline-image-macro">SAN分析器分出面板</block>
   <block id="16e072902d4155747f40acc51a5aa5a3" category="paragraph"><block ref="16e072902d4155747f40acc51a5aa5a3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1eaf65163d0a898b5a6a94771ef2cf69" category="list-text">* https://kb.netapp.com/Cloud/BlueXP/DII[KnowledgeBase]*</block>
+  <block id="0e8f78366da6895d9cdeb4b8ed117539" category="paragraph">单击本节中的链接可转到 NetApp 知识库，您可以在其中搜索相关文章，操作说明等。</block>
+  <block id="bf404f6bed29d85c3f6e00ca198b64e2" category="paragraph">在2023年4月4日之前、必须为当前由Cloud Connection收集的任何ONTAP 系统配置一个新的NetApp ONTAP 数据管理软件数据收集器。</block>
+  <block id="bf82f4272c116f4033743ef9a8d2db15" category="paragraph">有关代理配置的详细信息，请参见NetApp<block ref="b348c1aae834cf0cd466b9787dfa5acf" category="inline-link-macro-rx"></block>。</block>
+  <block id="a7cf74afe22d08d0531dde90555aadbd" category="cell">根据查询变量和交换机配置、某些查询可能会超过默认超时时间。<block ref="fd40aed016519dab72e69cf2e3342cb9" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="fb915b764f3baecfa629ff22686e14ee" category="admonition">自2023年4月4日起、此数据收集器不再可安装在Data Infrastructure Insight中、并且将从2023年7月的所有Data Infrastructure Insight安装中删除。</block>
+  <block id="1f1f9d998591f96c2653327f9004b1a9" category="cell"><block ref="588cebdad26ee4a9a3bb08c290310eb7" category="inline-link-macro-rx"></block>Data Infrastructure Insight用于与采集单元进行通信的不会在Data Infrastructure Insight与Data Collector本身之间进行通信。您可以尝试以下几项操作：确保采集单元能够解析FQDN并访问所需的端口。在错误消息中确认不需要代理即可访问指定端点。可以使用curl测试采集单元与端点之间的通信。确保您*不*使用代理进行此测试。示例：root@acemisionunit# Curl -s -H accept：application/json -H "Conteme-type：application/json"-H api-key：&lt;api key used in the data Collector credifrs -H secret-key：&lt;secret-key used in the data Collector crediftes&gt;-X get \https://&lt;AWS Regional Endpoint：8080/v1/storage/IPRanges请参见此<block ref="ee10e7e073fdf55fff4a0c77a9c435fc" category="inline-link-macro-rx"></block>。</block>
+  <block id="1ec51096f7cea66fb872ea91910e89b9" category="paragraph">有关其他故障排除提示、请参见<block ref="6fe211aef2305839bd4b415ac3b03770" category="inline-link-macro-rx"></block>(需要支持登录)。</block>
+  <block id="9e6e19182965cf2820f2a5f8cce84e8b" category="cell">当AU安装在SELinux上时、应将SE设置为_permisent_模式。不支持_Enforcerent_模式。将SELinux设置为许可模式后、重新启动AU服务。<block ref="2aa71c1262c825b4349ce4125965fabb" category="inline-link-macro-rx"></block>(英文)</block>
 </blocks>

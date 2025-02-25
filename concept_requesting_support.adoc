@@ -87,10 +87,9 @@ NetApp通过多种方式为数据基础架构洞察力提供支持。全天候�
 
 这些支持选项在试用模式下提供，并且全天候免费提供：
 
-* *。https://kb NetApp．com/Special:Search?query=Cloud和INSESSENTS[知识库]*
-
-
-+单击本节中的链接将转到NetApp知识库、您可以在其中搜索相关文章、操作说明等。
+* * https://kb.netapp.com/Cloud/BlueXP/DII[KnowledgeBase]*
++
+单击本节中的链接可转到 NetApp 知识库，您可以在其中搜索相关文章，操作说明等。
 
 * *link:https://docs.netapp.com/us-en/cloudinsights/["文档"]
 +

@@ -1037,7 +1037,7 @@ API系统已从“订阅”页面移至“*管理> API访问*”页面。
 
 适用于ONTAP 9.9+的云连接数据收集器已弃用。从2023年4月4日开始、您环境中的Cloud Connection数据收集器将不再收集数据、而是在轮询时显示错误。在后续更新中、Cloud Connection数据收集器将从Cloud Insights 中彻底删除。
 
-在2023年4月4日之前、必须为当前由Cloud Connection收集的任何ONTAP 系统配置一个新的NetApp ONTAP 数据管理软件数据收集器。link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/How_to_transition_from_NetApp_Cloud_Connection_to_AU_based_data_collector["了解更多信息"](英文)
+在2023年4月4日之前、必须为当前由Cloud Connection收集的任何ONTAP 系统配置一个新的NetApp ONTAP 数据管理软件数据收集器。
 
 '''
 

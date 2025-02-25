@@ -70,7 +70,7 @@ keywords: troubleshooting, problems, browser, login, log in, accessing, access t
 
 == 资源
 
-有关其他故障排除提示、请参见link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights["NetApp 知识库"](需要支持登录)。
+有关其他故障排除提示、请参见link:https://kb.netapp.com/Cloud/BlueXP/DII["NetApp 知识库"](需要支持登录)。
 
 有关其他支持信息、请参见Data Infrastructure Insightlink:concept_requesting_support.html["支持"]页面。
 

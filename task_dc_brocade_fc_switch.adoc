@@ -168,6 +168,6 @@ summary: 配置 Brocade FC 交换机数据收集器。
 | 收到一条消息，指出有多个节点已登录到访问网关端口 | 检查 NPV 设备是否正常运行，以及所有已连接的 WWN 是否均为预期值。请勿直接获取 NPV 设备。而是采集核心网络结构交换机将收集 NPV 设备数据。 
 
 
-| 性能收集失败、并显示"SNMP请求发送期间超时"。 | 根据查询变量和交换机配置、某些查询可能会超过默认超时时间。link:https://kb.netapp.com/Cloud/BlueXP/Cloud_Insights/Cloud_Insight_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["了解更多信息"](英文) 
+| 性能收集失败、并显示"SNMP请求发送期间超时"。 | 根据查询变量和交换机配置、某些查询可能会超过默认超时时间。link:https://kb.netapp.com/Cloud/BlueXP/DII/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["了解更多信息"](英文) 
 |===
 有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
