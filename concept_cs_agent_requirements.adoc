@@ -26,7 +26,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 | 组件 | Linux 要求 
 
 
-| 操作系统 | 运行以下许可证版本之一的计算机：* CentOS 8 Stream (64位)、CentOS 9 Stream、SELinux * SUSE Leap 15.3到15.5 (64位)* Oracle Linux 8.6 - 8.8、9.1到9.4 (64位)* Red Hat Enterprise Linux 8.6到8.8、9.1到9.4 (64位)、SELinux * Rockit 9.2 - Debian (64位)、SELinux Enterprise Server 9.1-9.4 (64位)和其他64位Linux * Linux * Linux * 9.4 (20.04)的计算机应运行此Linux * Linux、Linux * Linux 9、64位和Linux 9、64位Linux 9、10 LTS软件。建议使用专用服务器。 
+| 操作系统 | 运行以下许可版本之一的计算机：* CentOS 9 Stream (64位)* SuSE Leap 15.3到15.5 (64位)* Oracle Linux 8.10 (64位)、9.1到9.4 (64位)、SELinux * Red Hat Enterprise Linux 8.10 (64位)、9.1到9.5 (64位)、SELinux * Rockit Debian 9.4 - 9.4 (64位)、SELinux * 9.4 Linux 8.04 Linux、SELinux * 9.4 (64位)和其他应用程序应运行此计算机。建议使用专用服务器。 
 
 
 | 命令 | 安装需要"unzip "。此外、安装、运行脚本和卸载都需要使用"sudo su–"命令。 
