@@ -1942,7 +1942,6 @@
   <block id="de41af8028b5287cc6d65bb0e73cae11" category="section-title">通过AWS Marketplace试用</block>
   <block id="bc8745f374e91204332a0cd070e3c20c" category="inline-xref">受管单元</block>
   <block id="a1aea5576cb96c98e98a9642fc30f4b0" category="paragraph">您也可以通过AWS Marketplace注册免费试用。AWS Marketplace免费试用版允许您访问Data Infrastructure Insight、试用期为33天、最多支持499个<block ref="74100db5c6c154a5b13e17b29feeccc3" category="inline-xref-macro-rx"></block>(MU)。</block>
-  <block id="54cf8a50b1cedbeedf2404d21702105e" category="paragraph">注意：如果配置的MTU超过499个、则会进入"已违反"状态。当您的试用处于"已违反"状态时、您将无法访问某些Data Infrastructure Insight功能、直到违规得以解决、方法是减少配置的MU数或订阅Data Infrastructure Insight。</block>
   <block id="c66bd552dea63071ad19e124c869ab2e" category="paragraph">AWS Marketplace免费试用不能延长。试用期间、您可以随时访问*管理-&gt;订阅*页面、降级到Data Infrastructure Insight基础版订阅或更改为付费Data Infrastructure Insight订阅。</block>
   <block id="03742c91392961db83c5540550a3500a" category="section-title">如果我的试用已过期，该怎么办？</block>
   <block id="55b44e6cb866667b35e33325e5f2b246" category="paragraph">如果您的免费试用版已过期、但尚未订阅Data Infrastructure Insight、则在订阅之前、您的功能将受到限制。数据采集可能会停止、几周后、根据我们的数据保留政策、您的数据将被删除。</block>
@@ -1973,7 +1972,6 @@
   <block id="c3a44b5ae4d0db1da47414cf32828287" category="list-text">对象原始</block>
   <block id="49a22ea7d938494c1ed0f89b1259e69d" category="list-text">云已用</block>
   <block id="9530a67a23d320926f20ff19d1667b8c" category="paragraph">每个层以不同的速率计量、并将整数加起来计算、以提供有效授权。计算有效使用量的公式如下：</block>
-  <block id="f00305fde34ce30d58eb994d36b91d7f" category="admonition">受管单元的总和可能与摘要部分中的数据收集器计数略有不同。这是因为受管单元计数将向上取整为最接近的受管单元。数据收集器列表中这些数字的总和可能略高于状态部分中的总受管单元数。摘要部分反映了您的订阅的实际受管单元数。为便于实现此目的、DII会根据_subscribed _数量计算一个*有效授权*编号；然后、它会根据_DIsc发现_存储计算同一个编号、并且只有在发现的有效容量大于有效授权时才会声明违反。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅的有效授权范围内、DII就允许这样做。</block>
   <block id="f2dddeb36ea97f1d320b0c83ef58c28c" category="paragraph">数据基础架构洞察每个*托管单元*的基础架构可观察性和Kubernetes可观察性计量使用量。受管单元的使用量是根据基础架构环境中管理的 * 主机或虚拟机 * 数量和 * 未格式化容量 * 计算得出的。</block>
   <block id="0b8e651376aa14f43ba4123bb6c8d139" category="list-text">1 个受管单元 = 2 个主机（任何虚拟机或物理机）</block>
   <block id="dc3f15e1a26ca80a17b59bb6db783b8a" category="list-text">1 个受管单元 = 4 TiB 的未格式化物理或虚拟磁盘容量</block>
@@ -12037,4 +12035,5 @@
   <block id="1c21a303d962b5c2aaa6a1cf83f62414" category="list-text">VMware vCenter 8.0.3内部版本24262322</block>
   <block id="5136d67ed194c95ea9a2710028034652" category="list-text">VMware vCenter 8.0.3内部版本24305161</block>
   <block id="24820d2348a2986c54e81b6bc96fb06f" category="list-text">VMware vCenter 8.0.3内部版本24322831</block>
+  <block id="c0e4c1840494e97bdd3774c6b4983211" category="admonition">受管单元的总和可能与摘要部分中的数据收集器计数略有不同。这是因为受管单元计数将向上取整为最接近的受管单元。数据收集器列表中这些数字的总和可能略高于状态部分中的总受管单元数。摘要部分反映了您的订阅的实际受管单元数。为了便于实现此目的，DII将根据_subscribed数量计算一个*有效授权*数量；然后根据_DISEIVED_ storage计算该相同数量。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅的有效授权范围内、DII就允许这样做。</block>
 </blocks>

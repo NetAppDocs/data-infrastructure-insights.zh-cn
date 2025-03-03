@@ -58,8 +58,6 @@ NOTE: 如果您需要更多时间来评估Data Infrastructure Insight、并且�
 
 您也可以通过AWS Marketplace注册免费试用。AWS Marketplace免费试用版允许您访问Data Infrastructure Insight、试用期为33天、最多支持499个<<observability-metering,受管单元>>(MU)。
 
-注意：如果配置的MTU超过499个、则会进入"已违反"状态。当您的试用处于"已违反"状态时、您将无法访问某些Data Infrastructure Insight功能、直到违规得以解决、方法是减少配置的MU数或订阅Data Infrastructure Insight。
-
 AWS Marketplace免费试用不能延长。试用期间、您可以随时访问*管理->订阅*页面、降级到Data Infrastructure Insight基础版订阅或更改为付费Data Infrastructure Insight订阅。
 
 
@@ -142,7 +140,7 @@ Data Infrastructure Insight可观察性根据租户上的存储层来测量使�
 
  Effective usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
 
-NOTE: 受管单元的总和可能与摘要部分中的数据收集器计数略有不同。这是因为受管单元计数将向上取整为最接近的受管单元。数据收集器列表中这些数字的总和可能略高于状态部分中的总受管单元数。摘要部分反映了您的订阅的实际受管单元数。为便于实现此目的、DII会根据_subscribed _数量计算一个*有效授权*编号；然后、它会根据_DIsc发现_存储计算同一个编号、并且只有在发现的有效容量大于有效授权时才会声明违反。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅的有效授权范围内、DII就允许这样做。
+NOTE: 受管单元的总和可能与摘要部分中的数据收集器计数略有不同。这是因为受管单元计数将向上取整为最接近的受管单元。数据收集器列表中这些数字的总和可能略高于状态部分中的总受管单元数。摘要部分反映了您的订阅的实际受管单元数。为了便于实现此目的，DII将根据_subscribed数量计算一个*有效授权*数量；然后根据_DISEIVED_ storage计算该相同数量。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅的有效授权范围内、DII就允许这样做。
 
 
 
