@@ -1978,8 +1978,6 @@
   <block id="1c5c258274f71ebb61b16a0e0935d305" category="list-text">1个受管单元=选定二级存储的40 TiB未格式化容量：AWS S3、CoHesity SmartFiles、Dell EMC Data Domain、Dell EMC ECS、Hitachi内容平台、IBM Cleversafe、NetApp StorageGRID、 Rubeck。</block>
   <block id="1552a022e1b90a3bc06148ff722ce4a0" category="list-text">1个受管单元= 4个库贝特斯vCPU。</block>
   <block id="959487d08cec8dfae823bcdea09da795" category="list-text">1个受管单元K8s调整= 2个节点或主机也受基础架构监控。</block>
-  <block id="6cede1cfde12fc6d88ad1d8b6636a977" category="inline-xref">。</block>
-  <block id="d8be2988f45df4b59f1cfe2e32869556" category="paragraph">如果您的环境包含或预期包含 1 ， 000 个或更多受管单元，则您有资格获得 * 批量定价 * ，系统将提示您联系 NetApp 销售部门进行订阅。有关详细信息、请参见<block ref="e38bca6fb8f053d6cea5cce9993ed45c" category="inline-xref-macro-rx"></block>。</block>
   <block id="f057d707b9d5c17f0fad56f8204f6bff" category="section-title">工作负载安全措施</block>
   <block id="c3ef097c271469a3ca9718d35396087c" category="paragraph">集群使用与可观察性衡量相同的方法来衡量工作负载安全性。</block>
   <block id="3943920606f23b23925f15408e26cae2" category="paragraph">您可以在*工作负载安全性*选项卡的*管理&gt;订阅*页面中查看工作负载安全性使用情况。</block>
@@ -11829,7 +11827,6 @@
   <block id="670521a1846ad94b7cc140e2678df21c" category="paragraph">如果您有兴趣预览其中一项或多项功能、请联系<block ref="02af545fedbe237243dabe2f44648f4d" category="inline-link-macro-rx"></block>以了解详细信息。</block>
   <block id="16630d72023cbbf23b8ab69cac2b3ff7" category="paragraph">您也可以单击链接申请销售支持<block ref="6193a07b36740b6aedc4527702e204e2" category="inline-link-macro-rx"></block>。</block>
   <block id="3fcd9845b26dde701c891681edc7b769" category="list-text">*订阅*数据基础架构洞察、通过<block ref="326364f658f4dbd53be7e9aa308d8ef9" category="inline-link-macro-rx"></block>直接或持续无中断地访问数据<block ref="e91d3f98f4b43abdea3c839a7777954c" category="inline-link-macro-rx"></block>。</block>
-  <block id="5d42f131ad60489240ed184620da0559" category="paragraph">如果您的预期受管单元数为1、000或更大、请单击<block ref="6193a07b36740b6aedc4527702e204e2" category="inline-link-macro-rx"></block>按钮通过NetApp销售团队进行订阅。</block>
   <block id="a42decca1d15ec644d4c66c06689344e" category="paragraph"><block ref="a4e343c69e2eae514016d98dfce8b36b" category="inline-link-macro-rx"></block>通过数据收集器、您可以使用在VMware上配置的同名标记填充Cloud Insights文本标注。</block>
   <block id="0d0549b05d1645d38baa1a6cedaa7190" category="paragraph">Cloud Insights 会定期重点介绍许多令人兴奋的新预览功能。如果您有兴趣预览其中一项或多项功能、请联系<block ref="02af545fedbe237243dabe2f44648f4d" category="inline-link-macro-rx"></block>以了解详细信息。</block>
   <block id="6230fc6d3836bf964eb587a1b21b5c48" category="admonition">如果您是当前的Premium Edition客户，并且希望保留您的报告，请阅读本<block ref="85f8206314043d7dd91d050def6a5cd1" category="inline-link-macro-rx"></block>。</block>
@@ -12036,4 +12033,5 @@
   <block id="5136d67ed194c95ea9a2710028034652" category="list-text">VMware vCenter 8.0.3内部版本24305161</block>
   <block id="24820d2348a2986c54e81b6bc96fb06f" category="list-text">VMware vCenter 8.0.3内部版本24322831</block>
   <block id="c0e4c1840494e97bdd3774c6b4983211" category="admonition">受管单元的总和可能与摘要部分中的数据收集器计数略有不同。这是因为受管单元计数将向上取整为最接近的受管单元。数据收集器列表中这些数字的总和可能略高于状态部分中的总受管单元数。摘要部分反映了您的订阅的实际受管单元数。为了便于实现此目的，DII将根据_subscribed数量计算一个*有效授权*数量；然后根据_DISEIVED_ storage计算该相同数量。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅的有效授权范围内、DII就允许这样做。</block>
+  <block id="ce70e0ca30a003d9df6c2c5bf545464a" category="paragraph">如果您的预期受管单元数为1、000或更大、请单击<block ref="a9a75603ab8aac3033fb50ea01ab50c4" category="inline-link-macro-rx"></block>按钮通过NetApp销售团队进行订阅。</block>
 </blocks>

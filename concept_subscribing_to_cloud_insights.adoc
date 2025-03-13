@@ -158,8 +158,6 @@ NOTE: 受管单元的总和可能与摘要部分中的数据收集器计数略�
 
 
 
-如果您的环境包含或预期包含 1 ， 000 个或更多受管单元，则您有资格获得 * 批量定价 * ，系统将提示您联系 NetApp 销售部门进行订阅。有关详细信息、请参见<<how-do-i-subscribe,。>>。
-
 
 
 === 工作负载安全措施
@@ -183,7 +181,7 @@ NOTE: 现有Workload Security订阅会调整其MU使用量、以便节点使用�
 
 === 通过 NetApp Sales Direct 订阅
 
-如果您的预期受管单元数为1、000或更大、请单击link:https://bluexp.netapp.com/contact-cds["* 联系销售人员 *"]按钮通过NetApp销售团队进行订阅。
+如果您的预期受管单元数为1、000或更大、请单击link:https://www.netapp.com/forms/cloud-insights-contact-us["* 联系销售人员 *"]按钮通过NetApp销售团队进行订阅。
 
 您必须将数据基础架构洞察*序列号*提供给NetApp销售代表、才能将您的付费订阅应用于您的数据基础架构洞察环境。此序列号唯一标识了您的Data Infrastructure Insight试用环境、可在*管理>订阅*页面上找到。
 
