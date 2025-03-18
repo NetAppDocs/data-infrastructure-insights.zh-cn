@@ -158,8 +158,6 @@
   <block id="129f8880167531920bb3396830948e86" category="cell">Linux 要求</block>
   <block id="033d64e0352a24070b4d6ba6e37207af" category="cell">Windows 要求</block>
   <block id="696c660ff8d9323e55146a6dbd4e4088" category="cell">操作系统</block>
-  <block id="0b9ef6f03f11262f4246aad76e7320f2" category="cell">运行以下许可证版本之一的计算机：* CentOS (64位)：7.2到7.9、8.1到8.4、Stream 8、Stream 9 * AlmaLinux 9.3和9.4 * Debian (64位)：9和10 * SUSE Leap 7.9到15.5 * Oracle Enterprise Linux (64位)：7.5到7.9、8.1到8.8 * Red Hat Enterprise Linux (64位)：9和10 *建议使用专用服务器。如果您运行的是SELinux、建议在采集单元系统上执行以下命令：sudo semanage fcontext-a -t usr_t "/op/SELinux/kidsights NetApp (/.*)？" sudo reatorecon -R NetApp</block>
-  <block id="bc551a8dcf48d42b6ea5cf411242afd9" category="cell">运行以下许可版本之一的计算机： * Microsoft Windows 10 64位* Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows 11此计算机不应运行任何其他应用程序级别的软件。建议使用专用服务器。</block>
   <block id="2b55387dd066c5bac646ac61543d152d" category="cell">CPU</block>
   <block id="36b415ace97b614344903d1d039cc60d" category="cell">2 个 CPU 核</block>
   <block id="c90a13d8ec8fe53c6bb33fe10af6f2fe" category="cell">相同</block>
@@ -12034,4 +12032,6 @@
   <block id="24820d2348a2986c54e81b6bc96fb06f" category="list-text">VMware vCenter 8.0.3内部版本24322831</block>
   <block id="c0e4c1840494e97bdd3774c6b4983211" category="admonition">受管单元的总和可能与摘要部分中的数据收集器计数略有不同。这是因为受管单元计数将向上取整为最接近的受管单元。数据收集器列表中这些数字的总和可能略高于状态部分中的总受管单元数。摘要部分反映了您的订阅的实际受管单元数。为了便于实现此目的，DII将根据_subscribed数量计算一个*有效授权*数量；然后根据_DISEIVED_ storage计算该相同数量。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅的有效授权范围内、DII就允许这样做。</block>
   <block id="ce70e0ca30a003d9df6c2c5bf545464a" category="paragraph">如果您的预期受管单元数为1、000或更大、请单击<block ref="a9a75603ab8aac3033fb50ea01ab50c4" category="inline-link-macro-rx"></block>按钮通过NetApp销售团队进行订阅。</block>
+  <block id="dde5131249fb4fdf0bb4b08bbcba4943" category="cell">运行以下许可证版本之一的计算机：* AlmaLinux 9.3至9.5 * CentOS (64位)：7.2至7.9、8.1至8.4、Stream 8、Stream 9 * Debian (64位)：9至11 * SUSE Leap 7.9至15.6 * Oracle Enterprise Linux (64位)：7.5至7.9、8.1至8.10、9.3至9.5 * Red Hat (64位)：9至9.5 * Red Hat *、8.1至8.04 *、8.1 Linux *、8.1、Linux * 8.1至8.04 *、Linux *、Linux * 8.1、Linux * 8.1、Linux * 8.1、Linux * 8.1至8.15、Linux *、Linux * 8.1、Linux * 8.1、Linux * 8.1、Linux *建议使用专用服务器。如果您运行的是SELinux、建议在采集单元系统上执行以下命令：sudo semanage fcontext-a -t usr_t "/op/SELinux/kidsights NetApp (/.*)？" sudo reatorecon -R NetApp</block>
+  <block id="31192200d4ffdcb773965b28dbfbe0fd" category="cell">运行以下许可版本之一的计算机：* Microsoft Windows 10 64位* Microsoft Windows 11 * Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025此计算机不应运行任何其他应用程序级别的软件。建议使用专用服务器。</block>
 </blocks>
