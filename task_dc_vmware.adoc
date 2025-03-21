@@ -138,7 +138,7 @@ Data Infrastructure Insight从VMware vSphere数据收集器采集以下清单信
 
 == 将VMware标记映射到Data Infrastructure Insight标注
 
-通过VMware数据收集器、您可以使用在VMware上配置的标记来填充Data Infrastructure Insight标注。标注的名称必须与VMware标记完全相同。Data Infrastructure Insight将始终填充同名文本类型的标注、并"尽力"填充其他类型(数字、布尔值等)的标注。如果您的标注类型不同，而数据收集器无法填充，则可能需要删除此标注并将其重新创建为文本类型。
+通过VMware数据收集器、您可以使用在VMware上配置的标记来填充Data Infrastructure Insight标注。DII标注名称必须与VMware *类别*名称相同；然后、该标记将作为与类别同名的DII标注的标注值应用。Data Infrastructure Insight将始终填充同名文本类型的标注、并"尽力"填充其他类型(数字、布尔值等)的标注。如果您的标注类型不同，而数据收集器无法填充，则可能需要删除此标注并将其重新创建为文本类型。
 
 请注意、VMware标记可能区分大小写、而Data Infrastructure Insight标记不区分大小写。因此、如果您在Data Infrastructure Insight中创建名为"owner"的标注、并在VMware中创建名为"owner"、"owner"和"owner"的标记、则所有这些"owner"变体都会映射到Cloud Insight的"owner"标注。
 
