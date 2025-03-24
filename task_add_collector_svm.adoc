@@ -78,6 +78,39 @@ summary: 添加工作负载安全性数据收集器
 
 
 
+== Test Connectivity for Data Collectors
+
+The test connectivity feature (introduced March 2025) aims to help end users identify the specific causes of failures when setting up data collectors in Data Infrastructure Insights (DII) Workload Security. This allows the users to self-correct issues related to network communication or missing roles.
+
+This feature will help users determine if all network-related checks are in place before setting up a data collector. Additionally, it will inform users about the features they can access based on the ONTAP version, roles, and permissions assigned to them in ONTAP.
+
+
+NOTE: Test connectivity is not supported for User Directory collectors
+
+
+
+=== Prerequisites for Connection Testing
+
+* Cluster level credentials are needed for this feature to work in full.
+* Feature access check is not supported in SVM mode.
+* 如果您使用的是集群管理凭据、则不需要任何新权限。
+* If you are using a custom user (e.g., _csuser_), provide the mandatory permissions and feature specific permissions for the features you want to use.
+
+
+image:ws_test_connection_button.png["workload security test connection button"]
+
+Be sure to review the <<a-note-about-permissions,权限>> section below as well.
+
+
+
+=== Test the Connection
+
+The user can go to the add/edit collector page, enter the cluster level details (in Cluster Mode) or SVM level details (in SVM Mode), and click on the *Test Connection* button. Workload Security will then process the request and display an appropriate success or failure message.
+
+image:ws_test_connection_success_example.png["Workload Security 'Test Connection' success message"]
+
+
+
 == 阻止用户访问的前提条件
 
 请注意以下事项link:cs_restrict_user_access.html["用户访问阻止"]：
