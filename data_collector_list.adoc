@@ -12,7 +12,7 @@ keywords: data collector, vendor, infrastructure, integration, service
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ./media/The alerting page redesign will also be ready by the of the month. Need to add it to what’s new as wellopens
 
 
 [role="lead"]
@@ -272,9 +272,6 @@ Data Infrastructure Insight支持的数据收集器的字母顺序列表：
 
 
 | link:task_dc_nutanix.html["Nutanix NX 系列"] | 基础架构 
-
-
-| link:task_dc_openstack.html["OpenStack"] | 基础架构 
 
 
 | link:task_config_telegraf_openzfs.html["OpenZFS"] | 服务 
