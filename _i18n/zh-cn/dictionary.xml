@@ -3891,8 +3891,6 @@
   <block id="d4df4178129288e74d306d474f41121d" category="cell"><block ref="d4df4178129288e74d306d474f41121d" category="inline-link-macro-rx"></block></block>
   <block id="c7a56e9ede426bcb6ef8adebfa167f5b" category="inline-link-macro">Nutanix NX 系列</block>
   <block id="9935d13e4384b8045cffd7789defe14c" category="cell"><block ref="9935d13e4384b8045cffd7789defe14c" category="inline-link-macro-rx"></block></block>
-  <block id="f2cf54cfab756c7cdb0f16c0ed5cda12" category="inline-link-macro">OpenStack</block>
-  <block id="d2c9f580641c4ac421cd1184c444c1e6" category="cell"><block ref="d2c9f580641c4ac421cd1184c444c1e6" category="inline-link-macro-rx"></block></block>
   <block id="a1b8b82e2c6dab4ba2762641402e6184" category="inline-link-macro">OpenZFS</block>
   <block id="f5a800ee25a815f4c8c0d66efcf7438d" category="cell"><block ref="f5a800ee25a815f4c8c0d66efcf7438d" category="inline-link-macro-rx"></block></block>
   <block id="a2c92312bc8a9e692141bc61305782f3" category="inline-link-macro">Oracle ZFS 存储设备</block>
@@ -9415,51 +9413,6 @@
   <block id="5b02fb8f86f33e62862c6886dbbe655e" category="list-text">只读用户名和密码，除非使用 volume_groups ，否则在这种情况下，需要管理员用户名和密码</block>
   <block id="bf61ff29d8ff867a7727b034a7efa26f" category="list-text">端口要求： HTTPS 443</block>
   <block id="b8b0b769d3e3395123e9c6b52b36b840" category="cell">用于连接到 Nutanix 阵列的 TCP 端口。默认值为9440。</block>
-  <block id="6e831c008aae70e3aac84aff192fcea2" category="summary">OpenStack 数据收集器。</block>
-  <block id="2f186f5eedfe86b735c206f6be34f9a7" category="doc">OpenStack 数据收集器</block>
-  <block id="1affaa3c0d19c2e084afa700debb8740" category="paragraph">OpenStack （ REST API/KVM ）数据收集器可采集所有 OpenStack 实例的清单数据，也可采集虚拟机性能数据。</block>
-  <block id="ee627d472fc6df1e0c1367deb7ee0063" category="list-text">OpenStack 控制器的 IP 地址</block>
-  <block id="280f91bd66acb7cf04ec960fca75f64a" category="list-text">OpenStack 管理员角色凭据和对 Linux KVM 虚拟机管理程序的 sudo 访问权限。如果您不使用管理员帐户或管理员等效权限，则需要使用试用和错误来确定数据收集器用户 ID 要放宽的默认策略。</block>
-  <block id="c0ea429a2fadacc206fdc8f17cfa492c" category="list-text">必须安装并配置OpenStack软件包模块、才能收集性能数据。要配置诺瓦图、可以编辑每个虚拟机管理程序的nova.conf文件、然后在每个虚拟机管理程序上重新启动Nova计算服务。对于不同版本的 OpenStack ，选项名称会发生变化：</block>
-  <block id="8beeeec38dbc6258291f2e47130835d8" category="list-text">Icehouse</block>
-  <block id="291b02b25fbb9789119d2383e9f08e29" category="list-text">6 月</block>
-  <block id="3afe87a2a8c61f8023e56883b9baccb8" category="list-text">千克</block>
-  <block id="84e1da9e55480128662cfdfe79cb8923" category="list-text">自由</block>
-  <block id="89042bafc0f1c8153060574c3895f44b" category="list-text">Mitaka</block>
-  <block id="1c8b97c83b0726216cd5dbc88a64b0ed" category="list-text">Newton</block>
-  <block id="baba8cba1a3c4596919404471ad4d0d8" category="list-text">Ocata</block>
-  <block id="43ec0ba7025c8d3dfc798f09c6fb36d2" category="list-text">对于 CPU 统计信息，需要在计算节点上的 /etc/nva/nva.conf 中打开 "compute_monitors=ComputeDriverCPUMonitor" 。</block>
-  <block id="30d248ff55e04656a0bc13e82c28ca89" category="list-text">端口要求</block>
-  <block id="4931562219172e126d11a20bd2ee6af3" category="list-text">对于 http 为 5000 ，对于 https 为 13000 ，对于 Keystone 服务为 13000</block>
-  <block id="5829ef3d89411d46f0a05f6867ff2efd" category="list-text">22 表示 KVM SSH</block>
-  <block id="a58963a7c2c9eafce2ab09ca28270ee0" category="list-text">8774 用于 Nova 计算服务</block>
-  <block id="745b1ee1989bc6dd0ac838e4dcb448e5" category="list-text">8776 用于 Cinder 块服务</block>
-  <block id="dfe1b74026ff6682b451240881e76be4" category="list-text">8777、用于"保证 性能"服务</block>
-  <block id="ca3d2d05f916b41d8f53f506ace2e80e" category="list-text">9292 for Glance Image Service * 注意 * 端口绑定到特定服务，该服务可以在较大环境中的控制器或其他主机上运行。</block>
-  <block id="9be07620e581c90b777b5fef1296cc28" category="cell">OpenStack 控制器 IP 地址</block>
-  <block id="c5e968faf75175530ec61fb1846cfdce" category="cell">OpenStack 控制器的 IP 地址或完全限定域名</block>
-  <block id="60f987e0e1dafdb918779f7224cd3aaf" category="cell">OpenStack 管理员</block>
-  <block id="963b85b5fea0fb25d7f739d70b488f08" category="cell">OpenStack 管理员的用户名</block>
-  <block id="702c22fcd705ed77553d755f22f3966a" category="cell">OpenStack 密码</block>
-  <block id="79db7b7c9e06d7a21d6a84e5efacf631" category="cell">OpenStack 管理员使用的密码</block>
-  <block id="97564e1a26ba1c694feebd9a3f2d9f38" category="cell">OpenStack 管理员租户</block>
-  <block id="5d24fef3e48bfdbcdc47e96414966a56" category="cell">OpenStack 管理员租户名称</block>
-  <block id="80fd569cda415ce2714eede8209d7eb3" category="cell">KVM sudo 用户</block>
-  <block id="7014ddc89480575c89e23a7982c7c0ac" category="cell">KVM sudo 用户名</block>
-  <block id="aab8d1693141a32bece39aa945271b85" category="cell">选择 " 密码 " 或 "OpenSSH 密钥文件 " 以指定凭据类型</block>
-  <block id="31deddc69cd96113632a3ab17e5cd93e" category="cell">用于通过 SSH 连接到设备的凭据类型</block>
-  <block id="b6593f79d3306be8166f8e92e7cb4a65" category="cell">清单专用密钥的完整路径</block>
-  <block id="dba54b8be33cd375b2f9f38a66dd55b4" category="cell">KVM sudo 密码</block>
-  <block id="dfe35b8b294b35971918582bb405c7a8" category="cell">通过 SSH 启用虚拟机管理程序清单发现</block>
-  <block id="8bc6def4f9968da03c00d5a791ff25b3" category="cell">选中此复选框可通过 SSH 启用虚拟机管理程序清单发现</block>
-  <block id="724bdc3d08a628510ac4b35391f971e9" category="cell">OpenStack 管理 URL 端口</block>
-  <block id="93dc129787d356e23553d69cfe40511e" category="cell">使用 HTTPS</block>
-  <block id="1e435f995c73427ccb198051f1f58881" category="cell">选中以使用安全 HTTP</block>
-  <block id="6b9dc11d780e38196cc7f712ba7d8f5c" category="cell">用于 SSH 的端口</block>
-  <block id="19f99c5f7ed3601984d9068bcacd7fa8" category="cell">SSH 进程重试</block>
-  <block id="b65a95e1edb457db54d2696cdde74458" category="cell">两次清单轮询的间隔。默认值为20分钟。</block>
-  <block id="ebe11f389d67e77cfd3d461ac635ac57" category="cell">" 配置错误 " 以及以 " 策略不允许 " 或 " 您未获得授权 " 开头的错误消息</block>
-  <block id="98a8b66b2a474494c50e1594ce9331b1" category="cell">* 检查 IP 地址 * 检查用户名和密码</block>
   <block id="298831ffa37c3339463b0927313f5324" category="summary">配置 Oracle ZFS 数据收集器。</block>
   <block id="12aa4229d08c65b7528cfd8184ed0f2b" category="doc">Oracle ZFS Storage Appliance 数据收集器</block>
   <block id="19a548e7f1d623a2cebfcbb03e92f222" category="paragraph">Data Infrastructure Insight使用Oracle ZFS存储设备数据收集器收集清单和性能数据。</block>
@@ -11383,7 +11336,6 @@
   <block id="8f4063b3e2653e9f3c560f79c771819b" category="sidebar">E系列REST</block>
   <block id="c106fc8dee70ab4a9453d7ed9a891bd7" category="sidebar">NetApp HCI 管理服务器</block>
   <block id="bb88c75c573c51be16c7d85804e7a9fe" category="sidebar">Nutanix</block>
-  <block id="7ff6cc997b141399bcdf2c338fb4031c" category="sidebar">OpenStack</block>
   <block id="30162ed78b6c10f731411f2fc440c24f" category="sidebar">Oracle</block>
   <block id="d30973809f2e4238b7eb2bac9241674c" category="sidebar">Pure</block>
   <block id="1d9fc183665bd1e195391190be506894" category="sidebar">Red Hat</block>
@@ -11646,7 +11598,6 @@
   <block id="2f461803a8b3a27284482a32459a1078" category="cell">请参阅此<block ref="0dcd3ea27696029fecb8ccd7e247f633" category="inline-link-macro-rx"></block>。设置_UNprotECed_将指示Kubelnetes Monitoring Operator使用标志运行Telegraf<block ref="3a41393afb053a415e6dc30cf704d899" prefix=" " category="inline-code"></block>。</block>
   <block id="0860569a69c3584507ee09f4be585418" category="cell">insecureK8sSkipVerify</block>
   <block id="3008cd3125cccc003fa13335717e556e" category="cell">如果由于缺少IP SAN而无法验证证书、请尝试启用验证跳过</block>
-  <block id="3a6957a9f0cd14c98be3bfcbf85db668" category="paragraph"><block ref="3a6957a9f0cd14c98be3bfcbf85db668" category="inline-link-macro-rx"></block></block>
   <block id="9e43104f0687bd3a308759c5411641d7" category="paragraph"><block ref="9e43104f0687bd3a308759c5411641d7" category="inline-link-macro-rx"></block></block>
   <block id="348fd8f652c33b1be14b9b2f000cff0d" category="cell">这很可能是由于 ONTAP 端存在网络问题描述。请按照以下步骤操作： 1.确保 SVM 数据 LIF 或管理 LIF 上没有防火墙阻止与 SVM 的连接。2.通过集群管理IP添加SVM时、请确保SVM的数据LIP和管理LIP可从此代理VM执行ping。如果出现问题，请检查网关，网络掩码和 LIF 路由。您也可以尝试使用集群管理 IP 通过 ssh 登录到集群，并对代理 IP 执行 ping 操作。确保代理 IP 可执行 pingable ： _network ping -vserver &lt;vserver name&gt; -destination &lt;Agent IP&gt; -lif &lt;Lif name&gt; -show-detail_ 如果不可执行 ping、 请确保 ONTAP 中的网络设置正确，以便代理计算机可执行 pingable 。3.如果您尝试通过集群IP进行连接、但该连接不起作用、请尝试直接通过SVM IP进行连接。有关通过 SVM IP 进行连接的步骤，请参见上文。4.通过SVM IP和vsadmin凭据添加收集器时、请检查SVM LIF是否已启用数据加管理角色。在这种情况下，对 SVM LIF 执行 ping 操作将有效，但对 SVM LIF 执行 SSH 将不起作用。如果是，请创建一个仅 SVM 管理 LIF ，并尝试通过此仅 SVM 管理 LIF 进行连接。5.如果仍然无法正常工作、请创建一个新的SVM LIF、然后尝试通过该LIF进行连接。确保子网掩码设置正确。6.高级调试：a)在ONTAP中启动数据包跟踪。b)尝试从CloudSecure UI将数据收集器连接到SVM。c)等待错误出现。停止ONTAP中的数据包跟踪。d)从ONTAP中打开数据包跟踪。该命令可从以下位置获得：_\https：//：//：&lt;clustername&gt;、SPI/SNI/ets/log/packet_traces/_ e)确保ONTAP与代理框之间存在一个。f)如果没有来自ONTAP的&lt;cluster_mgmt_ip&gt;、则表示ONTAP中的防火墙存在问题。g)打开ONTAP中的防火墙、以便ONTAP能够连接代理框。7.如果它仍然不工作、请咨询网络团队、以确保没有外部防火墙阻止从ONTAP到Agent Box的连接。9.如果上述方法均无法解决问题、请向创建案例以<block ref="d0162286c59c67bf86d01f060ee7cd04" category="inline-link-macro-rx"></block>获得进一步帮助。</block>
   <block id="2b8272217b69f1c5b5ad5968f0bc0945" category="list-text">注册免费试用Data Infrastructure Insight、了解可用功能。注册免费试用版：</block>
@@ -11786,7 +11737,6 @@
   <block id="8af8d6d7603eec1cb34086e9cf6e2055" category="inline-image-macro">ONTAP要点下拉列表、其中显示了ASA与统一的不同之处</block>
   <block id="5fe97e7e7c561aa4a8199e55d380aadb" category="paragraph"><block ref="5fe97e7e7c561aa4a8199e55d380aadb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bd255743216cfae20f87e84a9cd8e7e1" category="section-title">DII API使用情况跟踪：增强安全性和效率</block>
-  <block id="0be262a01ffd53cb1827d924de37e376" category="paragraph">借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。</block>
   <block id="320be4cb0a9128705d37286f8afff816" category="inline-image-macro">API使用情况分析示例</block>
   <block id="d7f696b40402f5f6c5dc60d881af09a0" category="paragraph"><block ref="d7f696b40402f5f6c5dc60d881af09a0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="811a069713a14c7b8c3b0333afcedfff" category="section-title">用于限制用户的工作负载安全API</block>
@@ -11810,7 +11760,6 @@
   <block id="8429b607073457ee8f7513c9b33f2b47" category="inline-link-macro">ONTAP REST</block>
   <block id="9813cb21933d9e535322d83efc9b8d25" category="paragraph">对于所有上一代ASA系统、请使用<block ref="75bdda54644cc13465ab7acc10710396" category="inline-link-macro-rx"></block>收集器。</block>
   <block id="6cc5c9e930ea3d3b8bff4367c60ceea4" category="section-title">2025年2月</block>
-  <block id="8261d0e1521d30da1b36761d508cb245" category="paragraph">要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。</block>
   <block id="bcaea0fa3a691efcd767e69c0bf6c611" category="paragraph">为确保收件人收到Data Infrastructure Insight发出的通知、请将以下电子邮件地址添加到任何"允许"列表中：</block>
   <block id="920ab4b11a04d50637a16a5c9699b3ba" category="list-text">accounts@service.cloudinsights.netapp.com</block>
   <block id="b68146f7d3be586c34e5b6d021541f50" category="list-text">DoNotReply@cloudinsights.netapp.com</block>
@@ -12049,4 +11998,7 @@
   <block id="bc23aa0997542e15a65a21a96991960a" category="paragraph">The user can go to the add/edit collector page, enter the cluster level details (in Cluster Mode) or SVM level details (in SVM Mode), and click on the *Test Connection* button. Workload Security will then process the request and display an appropriate success or failure message.</block>
   <block id="e8f41baace36619af4a7292787a17936" category="inline-image-macro">Workload Security 'Test Connection' success message</block>
   <block id="e6ea93198fd78cbc89b93053e0d0b573" category="paragraph"><block ref="e6ea93198fd78cbc89b93053e0d0b573" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ca873110efddef67beadcfe5f8a4ca84" category="paragraph">借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。</block>
+  <block id="24f17d3ee72bb2738ceb12180ec2fa71" category="paragraph">要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。</block>
+  <block id="c033c9dce9a48cc67d3409bab6aab6ba" category="paragraph"><block ref="c033c9dce9a48cc67d3409bab6aab6ba" category="inline-link-macro-rx"></block></block>
 </blocks>

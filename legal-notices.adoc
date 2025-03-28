@@ -47,6 +47,6 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 
 通知文件提供有关 NetApp 软件中使用的第三方版权和许可证的信息。
 
-link:media/Data_Infrastructure_InsightsOn-prem_ComponentsNOTICE-1.pdf["数据基础架构洞察(原Cloud Insights)通知"]
+link:media/Data_Infrastructure_Insights-On-prem-Components-ReleaseNotice1.pdf["数据基础架构洞察(原Cloud Insights)通知"]
 
 link:media/Data_Infrastructure_Insights_Workload_SecurityOn-prem_ComponentsNOTICE-1.pdf["工作负载安全注意事项(原Cloud Secure)"]
