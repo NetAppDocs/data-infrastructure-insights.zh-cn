@@ -5465,7 +5465,6 @@
   <block id="b91bb54d5249b7797f071b75dfcc2669" category="cell">1 天（或直到下一 ETL ）</block>
   <block id="96cfad9bf45103ee0ef58fa25c0cfa6b" category="summary">自定义报告输出和交付，将报告复制到剪贴板，打开报告（ XML ）。</block>
   <block id="e1039935b082dfd38ef43eb7fef4b452" category="doc">管理报告</block>
-  <block id="ce2ce538c48e429c8dc98553649f3bbd" category="paragraph">您可以自定义报告的输出格式和传送，设置报告属性或计划以及通过电子邮件发送报告。</block>
   <block id="11ad95cf52a6f6d0f02121ba7f3398ce" category="admonition">在更改报告权限或安全性之前、您必须将"我的内容"报告复制到"团队内容"文件夹、以确保报告已保存。</block>
   <block id="b4c2efa32144f8c7f6fa5513ac1c7e55" category="section-title">自定义报告的输出格式和交付</block>
   <block id="8bee38bef7beb0158135e68890b6cc17" category="paragraph">您可以自定义报告的格式和交付方法。</block>
@@ -11998,7 +11997,37 @@
   <block id="bc23aa0997542e15a65a21a96991960a" category="paragraph">The user can go to the add/edit collector page, enter the cluster level details (in Cluster Mode) or SVM level details (in SVM Mode), and click on the *Test Connection* button. Workload Security will then process the request and display an appropriate success or failure message.</block>
   <block id="e8f41baace36619af4a7292787a17936" category="inline-image-macro">Workload Security 'Test Connection' success message</block>
   <block id="e6ea93198fd78cbc89b93053e0d0b573" category="paragraph"><block ref="e6ea93198fd78cbc89b93053e0d0b573" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ca873110efddef67beadcfe5f8a4ca84" category="paragraph">借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。</block>
-  <block id="24f17d3ee72bb2738ceb12180ec2fa71" category="paragraph">要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。</block>
   <block id="c033c9dce9a48cc67d3409bab6aab6ba" category="paragraph"><block ref="c033c9dce9a48cc67d3409bab6aab6ba" category="inline-link-macro-rx"></block></block>
+  <block id="88c55c9f00e518db40a6c680728b787f" category="section-title">2025年3月</block>
+  <block id="27e5c5c33051ef47e145b432e9e357db" category="section-title">增强的上下文导航功能、可实现高效的基础架构管理</block>
+  <block id="ca3a08b4a664d3460c1afb17ce14a0ca" category="paragraph">利用数据基础架构洞察力实现卓越运营、从而节省时间。现在、我们将添加上下文菜单链接、使您可以直接从任何对象跳至资产登录页面、以获得设备性能洞察、SAN Analyzer用于网络拓扑可视化、日志用于运营感知、变更分析器用于配置管理。</block>
+  <block id="45e1277af0993d1c08727056083474c9" category="paragraph">通过跨多个视图即时访问关键数据、您可以更快地更清楚地了解对象关系。这种简化的工作流可加快决策和问题解决速度、最终节省时间并增强整体分析功能。</block>
+  <block id="d27d64bffed25c10a892bc8f660ba7f7" category="inline-image-macro">上下文菜单示例、宽度= 500</block>
+  <block id="6dd26781bf3123977fae6dbb9f75427c" category="paragraph"><block ref="6dd26781bf3123977fae6dbb9f75427c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="27fca6aa6301d8c72a523105d0dfaa1a" category="section-title">保留已删除资产的历史记录</block>
+  <block id="586eb9e16a0ec8ad28e277e9d196f2dd" category="paragraph">我们增强的Infra Change功能现在可保留已删除资产的历史记录、例如qtrees和卷已移动且不再可用。</block>
+  <block id="a79d807cd6c977273077bb3d4a51e1b2" category="paragraph">在故障排除难题中缺少某些内容？再也不来了！您将看到所有内容、包括标记有删除符号的已删除对象、即使删除了资产、也能提供完整的上下文、确保您不会错过端到端路径中以往更改或警报中的关键要素。</block>
+  <block id="d8da5ac928748682c768408271223f18" category="paragraph">结果如何？解决问题的速度更快、基础架构决策更有信心、即使相关资产已不复存在也是如此。</block>
+  <block id="a0b5ff2e6cd6a9740be797a7a6b34997" category="inline-image-macro">基础架构更改中已删除的资产显示为删除线、宽度为300</block>
+  <block id="f3c74d92e889a4bd4cbd4388efc65fdb" category="paragraph"><block ref="f3c74d92e889a4bd4cbd4388efc65fdb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f09332c5a7acdbdfd43f130781181079" category="section-title">Kubnetes操作员按钮升级</block>
+  <block id="d72c7a2edae9e6c8ab8d1527df9217ff" category="paragraph">是否要确保您拥有最新的Kubbernetes Operator？通过DII Kubnetes收集器集群菜单按需升级操作员。只需从菜单中选择升级、操作员就可以验证映像签名、捕获当前安装的快照并执行升级。</block>
+  <block id="abdd6f2e7e9f2361861772c2c29f98fb" category="paragraph">按钮式升级是一项可选功能、可以按集群管理其激活。</block>
+  <block id="b0fc14520e77d6941197ef450ea7eaae" category="inline-image-macro">按钮式操作员从集群菜单升级、宽度= 600</block>
+  <block id="e3f059356a2fbfebca83fcdf9910b3d2" category="paragraph"><block ref="e3f059356a2fbfebca83fcdf9910b3d2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4ed46393b3a0412ddf1eae5c48a6d652" category="section-title">测试存储工作负载安全性数据收集器的连接</block>
+  <block id="fe66903c02341817b7eae46d6cef7796" category="paragraph">测试连接功能旨在帮助最终用户确定在Data Infrastructure Insight (DII) Workload Security中设置数据收集器时出现故障的具体原因。这样、用户就可以自行更正与网络通信或缺少角色相关的问题。</block>
+  <block id="701f9e4af7f2f002d1df02722e85bb9c" category="paragraph"><block ref="28ccd88a9589dac6de50156682ee8b05" category="inline-image-macro-rx" type="image"></block> <block ref="e6ea93198fd78cbc89b93053e0d0b573" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f8af8f12dc05f5482c3f4fd82b8cdae2" category="paragraph">除了以下操作系统之外、Data Infrastructure Insight采集单元现在还支持这些操作系统<block ref="e27610920cf83f6a88b088882e8c727e" category="inline-link-macro-rx"></block>：</block>
+  <block id="fcf95cfc7074058539f2dddb1953e304" category="list-text">AlmaLinux 9.5</block>
+  <block id="a4d1a1b0fcd0ad5c982e632c20fe46c7" category="list-text">Debian (64位) 11.</block>
+  <block id="d2eddc9906197e8402324c9aa4cd553c" category="list-text">《第15.6款</block>
+  <block id="d3720f74b5a7e492d19484a99dc4099a" category="list-text">Oracle Enterprise Linux (64位) 8.9、8.10、9.5</block>
+  <block id="62cdf3cf4f8add1aca2819c46ff9a420" category="list-text">Red Hat (64位) 8.9、8.10、9.5</block>
+  <block id="4e80b0ab552791c676018d06a8ab1a7c" category="list-text">落基9.5</block>
+  <block id="ef436eeff254793f46443f71b4c3e50d" category="list-text">SUSE Linux Enterprise Server 15 SP6</block>
+  <block id="7ce4625168ff8cf506188a346ab739ac" category="list-text">Ubuntu Server 24.04 LTS</block>
+  <block id="0be262a01ffd53cb1827d924de37e376" category="paragraph">借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。</block>
+  <block id="8261d0e1521d30da1b36761d508cb245" category="paragraph">要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。</block>
+  <block id="2613b3928d7ae4e00e8610b858e67528" category="paragraph">您可以自定义报告的输出格式和交付、设置报告属性或计划以及通过电子邮件发送报告。</block>
 </blocks>

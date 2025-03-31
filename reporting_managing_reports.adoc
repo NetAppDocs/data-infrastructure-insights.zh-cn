@@ -19,7 +19,7 @@ keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying
 
 
 [role="lead"]
-您可以自定义报告的输出格式和传送，设置报告属性或计划以及通过电子邮件发送报告。
+您可以自定义报告的输出格式和交付、设置报告属性或计划以及通过电子邮件发送报告。
 
 
 NOTE: 数据基础架构洞察中提供了报告功能link:concept_subscribing_to_cloud_insights.html["高级版"]。
@@ -39,8 +39,6 @@ IMPORTANT: 在更改报告权限或安全性之前、您必须将"我的内容"�
 image:Reporting_Output_and_Delivery.png["报告输出和交付"]
 
 . 单击 * 属性 > 计划 *
-
-
 . 您可以设置以下选项：
 +
 ** *计划*要运行报告的时间。
