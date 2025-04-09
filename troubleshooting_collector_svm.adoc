@@ -78,5 +78,8 @@ image:CS_Data_Collector_Error.png["工作负载安全收集器错误更多详细
 
 
 | 选择SVM模式后、Data Collector出现错误。 | 在SVM模式下连接时、如果使用集群管理IP而不是SVM管理IP进行连接、则连接将出错。确保使用正确的SVM IP。 
+
+
+| 启用"拒绝访问"功能后、数据收集器会显示一条错误消息："Connector is in error state.服务名称： audit 。失败原因：无法在SVM test_SVM上配置fpolicy。原因：用户未获得授权。" | 用户可能缺少"拒绝访问"功能所需的REST权限。请按照上的说明link:concept_ws_integration_with_ontap_access_denied.html["此页面"]设置权限。设置权限后、重新启动收集器。 
 |===
 如果您仍遇到问题，请访问 * 帮助 > 支持 * 页面中提到的支持链接。
