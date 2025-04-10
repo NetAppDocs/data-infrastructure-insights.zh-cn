@@ -22049,28 +22049,6 @@ keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, H
 * Netapp9.15.1RC2版：2024年6月24日(星期一) 04：49：55 (UTC)
 * NetappRelease 9.16.1：2018年1月19：31：15 (UTC)、2025年
 * Netapp9.16.1P1版：2025年2月14日(星期五) 03：53：50 (UTC)
-* NetApp 9.16.1RC1版：2024年11月4日星期一10：39：46 (UTC)
-* Netapp9.16.1X26版：2024年12月09日(星期一) 10：27：42 (UTC)
-* NetApp 9.16.1X29版：Sun Jan 12 11：18：25 UTC 2025
-* NetApp 9.17.1X7版：2月14日(星期五) 11：21：52 (UTC 2025)
-* NetappRelease Clawhamer__9.14.1：5月18日星期六09：23：49 UTC 2024
-* NetappRelease Cloudstream __ 9.16.1：星期一11月04 05：51：46 UTC 2024
-* NetappRelease Cloudstream __ 9.16.1：3月13日(周四) 20：55：54 (UTC 2025)
-* NetappRelease电子网鱼_9.71.星期一3月3日05：57：49 UTC 2025
-* NetappRelease电子网鱼_9.14.1：Sun Mar 09 05：56：14 UTC 2025
-* NetappRelease电子网鱼_9.71.星期日3月16日04：54：53 UTC 2025
-* NetappRelease电子网鱼_9.14.1：UTC时间：2025年1月28日11：48：14
-* NetappRelease电子网鱼_9.71.星期二3月18日04：59：54 UTC 2025
-* NetappRelease电子网鱼_9.71.星期三：2025年3月12日04：42：03 (UTC)
-* NetappRelease Mightyssirrel__9.15.1:星期五5月24日05:03:10 UTC 2024
-* NetappRelease Mightyssirrel__9.15.1:星期六1月18日11:39:42 UTC 2025
-* NetappRelease热带周速__9.18.0：2月21日(星期五)，下午4:02:58 (世界标准时间)，2025年
-* NetappRelease热带周速__9.18.0：2025年2月17日(周一) 08：18：14 (UTC)
-* NetappRelease热带重量__ 9.18.0：2月20日(周四) 08：11：55 (UTC) 2025
-* NetappRelease技术支持_9.18.0：2025年2月27日(周四) 04：15：40 (UTC)
-* NetappRelease热带重量__ 9.18.0：2月18日(星期二) 2025年14：00：54 (UTC)
-* NetappRelease技术支持_9.18.0：2025年2月26日(星期三) 08：19：21 (UTC)
-* NetappRelease热带周速__9.18.0：2025年世界标准时间1月29日星期三08:34:06
 
 
 |===

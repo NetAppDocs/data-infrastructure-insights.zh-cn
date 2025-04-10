@@ -235,6 +235,8 @@ sidebar:
         url: "/task_config_user_dir_connect_ldap.html"
       - title: 配置 ONTAP SVM 数据收集器
         url: "/task_add_collector_svm.html"
+      - title: SVM收集器故障排除
+        url: "/troubleshooting_collector_svm.html"
       - title: 配置 Cloud ONTAP 数据收集器
         url: "/task_config_cs_incloud.html"
       - title: 工作负载安全性用户管理
