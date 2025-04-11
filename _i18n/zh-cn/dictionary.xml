@@ -1969,7 +1969,6 @@
   <block id="6e52566e82d306ca143ec27c3c65784e" category="list-text">主原始</block>
   <block id="c3a44b5ae4d0db1da47414cf32828287" category="list-text">对象原始</block>
   <block id="49a22ea7d938494c1ed0f89b1259e69d" category="list-text">云已用</block>
-  <block id="9530a67a23d320926f20ff19d1667b8c" category="paragraph">每个层以不同的速率计量、并将整数加起来计算、以提供有效授权。计算有效使用量的公式如下：</block>
   <block id="f2dddeb36ea97f1d320b0c83ef58c28c" category="paragraph">数据基础架构洞察每个*托管单元*的基础架构可观察性和Kubernetes可观察性计量使用量。受管单元的使用量是根据基础架构环境中管理的 * 主机或虚拟机 * 数量和 * 未格式化容量 * 计算得出的。</block>
   <block id="0b8e651376aa14f43ba4123bb6c8d139" category="list-text">1 个受管单元 = 2 个主机（任何虚拟机或物理机）</block>
   <block id="dc3f15e1a26ca80a17b59bb6db783b8a" category="list-text">1 个受管单元 = 4 TiB 的未格式化物理或虚拟磁盘容量</block>
@@ -11907,7 +11906,6 @@
   <block id="1c21a303d962b5c2aaa6a1cf83f62414" category="list-text">VMware vCenter 8.0.3内部版本24262322</block>
   <block id="5136d67ed194c95ea9a2710028034652" category="list-text">VMware vCenter 8.0.3内部版本24305161</block>
   <block id="24820d2348a2986c54e81b6bc96fb06f" category="list-text">VMware vCenter 8.0.3内部版本24322831</block>
-  <block id="c0e4c1840494e97bdd3774c6b4983211" category="admonition">受管单元的总和可能与摘要部分中的数据收集器计数略有不同。这是因为受管单元计数将向上取整为最接近的受管单元。数据收集器列表中这些数字的总和可能略高于状态部分中的总受管单元数。摘要部分反映了您的订阅的实际受管单元数。为了便于实现此目的，DII将根据_subscribed数量计算一个*有效授权*数量；然后根据_DISEIVED_ storage计算该相同数量。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅的有效授权范围内、DII就允许这样做。</block>
   <block id="ce70e0ca30a003d9df6c2c5bf545464a" category="paragraph">如果您的预期受管单元数为1、000或更大、请单击<block ref="a9a75603ab8aac3033fb50ea01ab50c4" category="inline-link-macro-rx"></block>按钮通过NetApp销售团队进行订阅。</block>
   <block id="dde5131249fb4fdf0bb4b08bbcba4943" category="cell">运行以下许可证版本之一的计算机：* AlmaLinux 9.3至9.5 * CentOS (64位)：7.2至7.9、8.1至8.4、Stream 8、Stream 9 * Debian (64位)：9至11 * SUSE Leap 7.9至15.6 * Oracle Enterprise Linux (64位)：7.5至7.9、8.1至8.10、9.3至9.5 * Red Hat (64位)：9至9.5 * Red Hat *、8.1至8.04 *、8.1 Linux *、8.1、Linux * 8.1至8.04 *、Linux *、Linux * 8.1、Linux * 8.1、Linux * 8.1、Linux * 8.1至8.15、Linux *、Linux * 8.1、Linux * 8.1、Linux * 8.1、Linux *建议使用专用服务器。如果您运行的是SELinux、建议在采集单元系统上执行以下命令：sudo semanage fcontext-a -t usr_t "/op/SELinux/kidsights NetApp (/.*)？" sudo reatorecon -R NetApp</block>
   <block id="31192200d4ffdcb773965b28dbfbe0fd" category="cell">运行以下许可版本之一的计算机：* Microsoft Windows 10 64位* Microsoft Windows 11 * Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025此计算机不应运行任何其他应用程序级别的软件。建议使用专用服务器。</block>
@@ -12334,4 +12332,6 @@
   <block id="7c275595b37d9736259910a2cee23932" category="paragraph">删除fpolicy配置的步骤：</block>
   <block id="f2e1c8f11a6d114e56889c093ddb4738" category="list-text">在数据收集器页面上，滚动到出现错误的数据收集器右侧，然后单击 3 点菜单。选择 _Edit_ 。再次输入数据收集器的密码。按 _Save_ 按钮保存数据收集器。Data Collector 将重新启动，并应解决此错误。</block>
   <block id="96f9921aa76d3057450b4f8f037c88c6" category="list-text">Agent计算机可能没有足够的CPU或RAM余量、这就是DSC出现故障的原因。请检查添加到计算机中代理的数据收集器的数量。如果超过20、请增加Agent计算机的CPU和RAM容量。增加CPU和RAM后、DSCS将自动进入Initializing状态、然后自动进入Running状态。查看上的规模估算指南<block ref="830ad31fe88c5bf31dcfcc5f15ccdf0e" category="inline-link-macro-rx"></block>。</block>
+  <block id="3f30aeae69979f1a726fa86b1951eb1a" category="paragraph">每个层按不同的速率计量，并将整数一起计算，以提供加权授权。计算加权使用量的公式如下：</block>
+  <block id="277010ce624a057cfbdaed781a611725" category="paragraph">为便于实现此目的、DII会根据_subscribed _数量计算单个*加权授权*编号；然后、它会根据_DIsc发现_存储计算同一个编号、并且只有发现的容量大于加权授权时才会声明违反。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅加权授权范围内、DII就允许这样做。</block>
 </blocks>

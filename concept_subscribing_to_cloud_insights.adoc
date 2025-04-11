@@ -6,13 +6,7 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 ---
 = 订阅Data Infrastructure Insight
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]
@@ -136,11 +130,10 @@ Data Infrastructure Insight可观察性根据租户上的存储层来测量使�
 * 云已用
 
 
-每个层以不同的速率计量、并将整数加起来计算、以提供有效授权。计算有效使用量的公式如下：
+每个层按不同的速率计量，并将整数一起计算，以提供加权授权。计算加权使用量的公式如下：
 
- Effective usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
-
-NOTE: 受管单元的总和可能与摘要部分中的数据收集器计数略有不同。这是因为受管单元计数将向上取整为最接近的受管单元。数据收集器列表中这些数字的总和可能略高于状态部分中的总受管单元数。摘要部分反映了您的订阅的实际受管单元数。为了便于实现此目的，DII将根据_subscribed数量计算一个*有效授权*数量；然后根据_DISEIVED_ storage计算该相同数量。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅的有效授权范围内、DII就允许这样做。
+ Weighted usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
+为便于实现此目的、DII会根据_subscribed _数量计算单个*加权授权*编号；然后、它会根据_DIsc发现_存储计算同一个编号、并且只有发现的容量大于加权授权时才会声明违反。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅加权授权范围内、DII就允许这样做。
 
 
 
