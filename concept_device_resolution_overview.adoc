@@ -6,13 +6,7 @@ summary: 自动设备解析有助于准确跟踪租户的性能和清单。
 ---
 = 自动设备解析概述
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

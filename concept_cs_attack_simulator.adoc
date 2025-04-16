@@ -5,17 +5,8 @@ keywords: ransomware, simulation, simulator, restrict, attack
 summary: 您可以使用脚本模拟勒索软件攻击、以测试或演示工作负载安全性 
 ---
 = 工作负载安全性：模拟攻击
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -6,13 +6,7 @@ summary: 通过 Kubernetes 节点详细信息页面，您可以深入了解后�
 ---
 = Kubernetes Node 详细信息页面
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

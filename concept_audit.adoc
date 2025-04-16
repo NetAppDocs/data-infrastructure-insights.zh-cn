@@ -5,17 +5,8 @@ keywords: audit, users, activities
 summary: 通过Audit可以查看Data Infrastructure Insight系统中的系统和用户活动。 
 ---
 = 审核
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

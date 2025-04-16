@@ -5,17 +5,8 @@ keywords: insight, greedy, degraded, bully, victim, impacted, impacting, impactf
 summary: 通过洞察力、您可以了解资源如何影响租户上的其他资源。 
 ---
 = 洞察力：高耗工作负载
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

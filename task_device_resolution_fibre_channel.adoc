@@ -5,17 +5,8 @@ keywords: Automatic, AR, AHR, Host, automatic device resolution, FC, Identify
 summary:  
 ---
 = 光纤通道设备解析
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

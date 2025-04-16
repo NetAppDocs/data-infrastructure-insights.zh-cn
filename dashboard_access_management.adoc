@@ -5,17 +5,9 @@ summary: 您可以确定创建的信息板是公共信息板还是私有信息�
 keywords: dashboard, public, shared, private 
 ---
 = 信息板访问管理
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
 :nofooter: 
-:toclevels: 1
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

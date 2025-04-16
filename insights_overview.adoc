@@ -5,17 +5,8 @@ keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, res
 summary: 通过洞察、您可以了解资源使用情况和趋势。 
 ---
 = 洞察力
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

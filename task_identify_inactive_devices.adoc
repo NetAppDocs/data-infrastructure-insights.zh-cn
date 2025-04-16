@@ -6,13 +6,7 @@ summary: 通过标识非活动设备、您可以选择删除这些设备或将�
 ---
 = 确定非活动设备
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ keywords: data collector, ONTAP, NetApp, SVM, cloud ontap, firewall
 summary: 添加工作负载安全性数据收集器 
 ---
 = 配置 ONTAP SVM 数据收集器
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -57,17 +48,17 @@ summary: 添加工作负载安全性数据收集器
 
 * 执行以下命令，确保为 SVM 设置了正确的应用程序：
 +
- clustershell::> security login show -vserver <vservername> -user-or-group-name <username>
+ clustershell:> security login show -vserver <vservername> -user-or-group-name <username>
 
 
 示例输出：image:cs_svm_sample_output.png["SVM 命令输出示例"]
 
-* 确保此SVM已配置CIFS服务器：tistershell：：> `vserver cifs show`
+* 确保此SVM已配置CIFS服务器：tistershell：> `vserver cifs show`
 +
 系统将返回 Vserver 名称， CIFS 服务器名称和其他字段。
 
-* 为 SVM vsadmin 用户设置密码。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：：> `security login password -username vsadmin -vserver svmname`
-* 解锁 SVM vsadmin 用户以进行外部访问。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：：> `security login unlock -username vsadmin -vserver svmname`
+* 为 SVM vsadmin 用户设置密码。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：> `security login password -username vsadmin -vserver svmname`
+* 解锁 SVM vsadmin 用户以进行外部访问。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：> `security login unlock -username vsadmin -vserver svmname`
 * 确保数据 LIF 的防火墙策略设置为 ‘mGMT ' （而不是 ‘data ' ）。如果使用专用管理lif添加SVM、请跳过此步骤 `network interface modify -lif <SVM_data_LIF_name> -firewall-policy mgmt`
 * 启用防火墙后，必须定义一个异常，以允许使用 Data ONTAP 数据收集器的端口传输 TCP 流量。
 +
@@ -301,7 +292,7 @@ security login create -user-or-group-name csuser -application http -authmethod p
 示例：
 
 ....
-Testcluster-1::*> net int service-policy create -policy only_data_fpolicy -allowed-addresses 0.0.0.0/0 -vserver aniket_svm
+Testcluster-1:*> net int service-policy create -policy only_data_fpolicy -allowed-addresses 0.0.0.0/0 -vserver aniket_svm
 -services data-cifs,data-nfs,data,-core,data-fpolicy-client
 (network interface service-policy create)
 ....

@@ -5,17 +5,8 @@ summary: 预览功能的可用容量有限、并且突出显示功能尚未准�
 keywords: coming soon, preview, 
 ---
 = 预览功能和特性
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

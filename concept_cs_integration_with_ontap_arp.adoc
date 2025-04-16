@@ -5,17 +5,8 @@ summary: 工作负载安全性与ONTAP 自主勒索软件保护相集成、可�
 keywords: ransomware, ARP, Protection, Security 
 ---
 = 与ONTAP 自主勒索软件保护相集成
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

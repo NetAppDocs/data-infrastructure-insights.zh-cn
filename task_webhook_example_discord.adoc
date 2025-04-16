@@ -5,17 +5,8 @@ keywords: webhook, notification, Discord, integration
 summary: 创建一个网络挂钩，以便在性能或清单阈值出现不和时发出警报 
 ---
 = 不和的 webhook 示例
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

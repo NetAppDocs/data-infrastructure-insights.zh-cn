@@ -6,13 +6,7 @@ summary: 您可以手动安装或更新工作负载安全代理、以便更好�
 ---
 = 手动安装工作负载安全代理和收集器
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

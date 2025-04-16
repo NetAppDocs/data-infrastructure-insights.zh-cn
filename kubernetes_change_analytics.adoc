@@ -5,17 +5,8 @@ keywords: changes, management, analysis
 summary: 跟踪Kubbernetes更改比以往任何时候都更容易。 
 ---
 = Kubnetes变更分析
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

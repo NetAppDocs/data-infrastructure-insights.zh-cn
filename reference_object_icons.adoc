@@ -5,7 +5,12 @@ summary: Data Infrastructure Insight对象图标参考。
 keywords: icons, assets, objects, reference, map 
 ---
 = 对象图标参考
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

@@ -6,17 +6,12 @@ keywords: support, knowledgebase, documentation, community, chat, videos, help, 
 ---
 = 请求支持
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
+[role="lead"]
+目录：[]
 
-toc::[]
 您可以通过单击*帮助>支持*来访问Data Infrastructure Insight中的支持选项。您可以使用的支持选项取决于您的Data Infrastructure Insight版。
 
 image:SupportPageWithLearningCenter.png["支持页面"]

@@ -6,13 +6,8 @@ summary: Kubbernetes Monitoring Operator收集Kubbernetes数据、以供Data Inf
 ---
 = Kubnetes Monitoring Operator安装和配置
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
 :nofooter: 
-:toclevels: 2
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

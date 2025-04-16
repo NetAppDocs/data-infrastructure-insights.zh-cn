@@ -5,17 +5,8 @@ keywords: Acquisition Unit, AU, install, configure, Linux, add, remove, uninstal
 summary: 采集单元在Windows和Linux上安装、卸载、配置代理支持等。 
 ---
 = 配置采集单元
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -120,7 +111,8 @@ image:ProxyEndpoints_NewTable.png["代理端点表"]
 
 
 
-image::NewWindowsAUInstall.png[Windows AU 安装]
+[role="thumb"]
+image:NewWindowsAUInstall.png["Windows AU 安装"]
 
 . 验证托管采集单元的服务器或虚拟机是否满足建议的系统要求。
 . 验证服务器是否正在运行受支持的 Windows 版本。单击 _OS Versions supported （ i ） _ 以查看支持的版本列表。

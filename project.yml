@@ -267,6 +267,8 @@ sidebar:
       url: "/cs_notifications_email.html"
     - title: 工作负载安全API
       url: "/concept_cs_api.html"
+    - title: SVM收集器故障排除
+      url: "/troubleshooting_collector_svm.html"
   - title: 故障排除
     entries:
     - title: 常规故障排除

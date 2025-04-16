@@ -5,17 +5,8 @@ keywords: telegraf, agent, telegraf agent
 summary: Data Infrastructure Insight支持Telegraf作为其收集集成数据的代理、并可在Windows或Linux上进行配置。 
 ---
 = 配置代理以收集数据(Windows/Linux)
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -93,7 +84,7 @@ NOTE: 以下步骤概述了设置 _http_proxy/https_proxy_environment 变量所�
 
 对于驻留在代理后面的系统，请执行以下操作以设置 _https_proxy_ 和 / 或 _http_proxy_ 环境变量 * 先前 * 以安装 Telegraf 代理：
 
- [System.Environment]::SetEnvironmentVariable(“https_proxy”, “<proxy_server>:<proxy_port>”, [System.EnvironmentVariableTarget]::Machine)
+ [System.Environment]:SetEnvironmentVariable(“https_proxy”, “<proxy_server>:<proxy_port>”, [System.EnvironmentVariableTarget]:Machine)
 
 
 ==== 安装代理

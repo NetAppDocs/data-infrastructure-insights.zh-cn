@@ -5,17 +5,8 @@ summary: 您可以创建标注规则以自动将标注应用于多个资产。
 keywords: annotate, annotation, rules 
 ---
 = 正在创建标注规则
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

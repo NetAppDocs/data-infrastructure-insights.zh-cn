@@ -5,17 +5,8 @@ summary: 如何将查询结果导出到 .csv 文件
 keywords: query, queries, export, csv 
 ---
 = 将查询结果导出到 .CSV 文件
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

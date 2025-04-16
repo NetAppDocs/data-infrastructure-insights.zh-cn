@@ -5,17 +5,8 @@ keywords: service map, workloads,
 summary: 显示Kubernetes工作负载的依赖关系和流、并突出显示网络和性能问题 
 ---
 = Kubnetes网络性能监控和映射
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

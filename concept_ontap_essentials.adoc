@@ -5,17 +5,8 @@ summary: ONTAP 基础知识是一组信息板和工作流、用于详细概述�
 keywords: dashboard, widget, ontap, overview, insight 
 ---
 = ONTAP 基础知识
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

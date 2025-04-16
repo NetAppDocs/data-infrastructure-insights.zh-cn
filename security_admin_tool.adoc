@@ -5,17 +5,8 @@ summary: Data Infrastructure Insight在整个发布生命周期遵循安全最�
 keywords: security, risk, protection 
 ---
 = securityadmin工具
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

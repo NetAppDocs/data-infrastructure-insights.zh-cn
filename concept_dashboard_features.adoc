@@ -5,24 +5,16 @@ summary: 信息板功能和概念。
 keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand 
 ---
 = 信息板功能
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
 :nofooter: 
-:toclevels: 1
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
 通过信息板和小工具，可以非常灵活地显示数据。以下是一些概念，可帮助您从自定义信息板中获得最大收益。
 
+目录：[]
 
-toc::[]
 
 
 == 小工具命名
@@ -66,13 +58,17 @@ image:WidgetNamingExample-C.png["小工具命名示例"]
 
 数据基础架构洞察为小工具中的某些指标(具体而言、称为"自定义"或集成指标的指标、例如Kubernetes、ONTAP高级数据、电报插件等)提供了不同的*转换*选项、允许您以多种方式显示数据。向小工具添加可转换指标时，系统会显示一个下拉列表，其中提供了以下转换选项：
 
-无:: 数据显示为 " 是 " ，不会进行任何操作。
-速率:: 当前值除以自上次观察以来的时间范围。
-累积:: 先前值与当前值之和的累积值。
-增量:: 上一个观察值与当前值之间的差值。
-增量速率:: 增量值除以自上次观察以来的时间范围。
-累积速率:: 累积值除以自上次观察以来的时间范围。
+无：数据按原样显示、不进行任何操作。
 
+速率：当前值除以自上次观察以来的时间范围。
+
+累计：以前值与当前值之和的累计。
+
+Delta：上一个观察值与当前值之间的差值。
+
+增量速率：增量值除以自上次观察以来的时间范围。
+
+累计速率：累计值除以自上次观察以来的时间范围。
 
 请注意，转换指标不会更改底层数据本身，而只是更改数据的显示方式。
 
@@ -401,7 +397,7 @@ IOPS 线显示在图表上，其比例显示在左侧。
 
 
 
-image::SecondaryAxisExplained.png[二级轴示例]
+image:SecondaryAxisExplained.png["二级轴示例"]
 
 
 

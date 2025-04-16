@@ -5,17 +5,8 @@ summary: 用作采集单元的服务器或VM必须满足最低要求。
 keywords: AU, acquisition unit, requirements, sizing 
 ---
 = 采集单元要求
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

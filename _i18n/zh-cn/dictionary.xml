@@ -102,7 +102,6 @@
   <block id="eeb633b07360786b4ed111224e472b5a" category="section-title">CapacityItem</block>
   <block id="17261729b0a6791788f14c944a555443" category="paragraph">CapacityItem 是一个逻辑容量单位。它的父对象定义了单位，并具有 " 值 " 和 " 高阈值 " 。此外，它还支持一个可选的细分图，用于说明容量值的构建方式。例如，一个 100 TB StoragePool 的总容量将是一个值为 100 的 CapacityItem 。细分情况可能会显示为 " 数据 " 分配了 60 TB ，为 " 快照 " 分配了 40 TB 。</block>
   <block id="3b0649c72650c313a357338dcdfb64ec" category="list-text">注</block>
-  <block id="116187c467970a363a1be1eec9777926" category="list-text">" 高阈值 " 表示系统为相应指标定义的阈值，客户端可以使用这些阈值针对超出可接受配置范围的值生成警报或直观提示。</block>
   <block id="01499e599eb4fdc4c936da877a465d53" category="paragraph">下面显示了具有多个容量计数器的 StoragePools 的容量：</block>
   <block id="85aa7a55c03d4a7d205562096674066a" category="inline-image-macro">存储池容量示例</block>
   <block id="6f0ac10b550f7a116f9d902d16213da3" category="paragraph"><block ref="6f0ac10b550f7a116f9d902d16213da3" category="inline-image-macro-rx" type="image"></block></block>
@@ -828,17 +827,6 @@
   <block id="59a039b9bdde97f886d094af635410bd" category="section-title">转变指标</block>
   <block id="f7c36dece720648d179dbf6c974f9288" category="paragraph">数据基础架构洞察为小工具中的某些指标(具体而言、称为"自定义"或集成指标的指标、例如Kubernetes、ONTAP高级数据、电报插件等)提供了不同的*转换*选项、允许您以多种方式显示数据。向小工具添加可转换指标时，系统会显示一个下拉列表，其中提供了以下转换选项：</block>
   <block id="6adf97f83acf6453d4a6a4b1070f3754" category="list-text">无</block>
-  <block id="8dff9b3275d903bce911a227cbed3634" category="list-text">数据显示为 " 是 " ，不会进行任何操作。</block>
-  <block id="dcb66ff6e4a2517ade22183779939c9d" category="list-text">速率</block>
-  <block id="9b3e9f4a548e4f107c31fe2a21eed22a" category="list-text">当前值除以自上次观察以来的时间范围。</block>
-  <block id="eb2527806a7e1ef48009eaaa785368fe" category="list-text">累积</block>
-  <block id="81be1e144a5ed592ed4813fe9a14b16d" category="list-text">先前值与当前值之和的累积值。</block>
-  <block id="db1f4ab5845def61a83d5df13e0c2397" category="list-text">增量</block>
-  <block id="a1933dae1248a2768b141e98f357f4e1" category="list-text">上一个观察值与当前值之间的差值。</block>
-  <block id="182287f79b18308934050eed051fa06e" category="list-text">增量速率</block>
-  <block id="c4b4b6e9c3267be39ae1c34d6560414a" category="list-text">增量值除以自上次观察以来的时间范围。</block>
-  <block id="bef0e8af1d9f29c6ecb74d3390d4f227" category="list-text">累积速率</block>
-  <block id="71d65ae1cbf6688be0226ae6c7ce8a47" category="list-text">累积值除以自上次观察以来的时间范围。</block>
   <block id="7ade6c64e9a88c6a4e7b10ff7debb111" category="paragraph">请注意，转换指标不会更改底层数据本身，而只是更改数据的显示方式。</block>
   <block id="9c03aeff3f0df812a2cff2cd25e5e8b0" category="section-title">信息板小工具查询和筛选器</block>
   <block id="cf43137803fb51915f84cbc5c3068d34" category="section-title">查询</block>
@@ -4378,8 +4366,6 @@
   <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">隐私政策</block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
-  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">开放源代码</block>
-  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知文件提供有关 NetApp 软件中使用的第三方版权和许可证的信息。</block>
   <block id="c7f50a9f133f1f71a9f91fe12f7c7f7e" category="inline-link-macro">数据基础架构洞察(原Cloud Insights)通知</block>
   <block id="4d8cd5134c1193f4d301c7e6bcaa38a7" category="inline-link-macro">工作负载安全注意事项(原Cloud Secure)</block>
   <block id="af943d1d81f743ab6e7c9bcbe3a8c6e9" category="summary">NKMOO集群角色的YAML文件示例</block>
@@ -5972,11 +5958,7 @@
   <block id="af53996a121bcf0b43c612a8465b5398" category="list-text">执行以下命令，确保为 SVM 设置了正确的应用程序：</block>
   <block id="cce32d87b6a1e3cf5567d9c84f96be3f" category="inline-image-macro">SVM 命令输出示例</block>
   <block id="d056d5eb1e184e9c1ac10b7b898406c4" category="paragraph">示例输出：<block ref="c5dea5ffbc3dcabd33992848de2142cc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7f94746ef413dd6cce888dc8191c7d02" category="list-text">确保此SVM已配置CIFS服务器：tistershell：：&gt;<block ref="fafd8ff6ac4a59e73c5d4e3b47d545ee" prefix=" " category="inline-code"></block></block>
   <block id="4b39c6cbbc0b2ff309b19953839ed0f3" category="paragraph">系统将返回 Vserver 名称， CIFS 服务器名称和其他字段。</block>
-  <block id="b059c5a49d6022043ff796404b82c462" category="list-text">为 SVM vsadmin 用户设置密码。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：：&gt;<block ref="73b77b9c99e693ec16bc3e4960672465" prefix=" " category="inline-code"></block></block>
-  <block id="7236e4bb54415ccc8948a0979ed96585" category="list-text">解锁 SVM vsadmin 用户以进行外部访问。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：：&gt;<block ref="db25ee40fb860a97415dab9c598caaf9" prefix=" " category="inline-code"></block></block>
-  <block id="2358ac25c31ef63c5d2ed813dbf64816" category="list-text">确保数据 LIF 的防火墙策略设置为 ‘mGMT ' （而不是 ‘data ' ）。如果使用专用管理lif添加SVM、请跳过此步骤<block ref="0197c7c6728dc0e945da717147320f69" prefix=" " category="inline-code"></block></block>
   <block id="2d3cc76ffef3ba66813c26ecf4f96b0f" category="list-text">启用防火墙后，必须定义一个异常，以允许使用 Data ONTAP 数据收集器的端口传输 TCP 流量。</block>
   <block id="1b44ec95d8bb09c8257712da31dde413" category="inline-link-macro">代理要求</block>
   <block id="d47350de0cb738713602fc081af217e9" category="paragraph">有关配置信息、请参见。<block ref="66b24601b32ea1e28a736b303c9dda16" category="inline-link-macro-rx"></block>此适用场景内部部署代理和代理安装在云中。</block>
@@ -9573,15 +9555,6 @@
   <block id="49dac8e94cf3a894a33bf2ff0051828c" category="list-text">输入标注的 * 名称 * 和 * 问题描述 * 。</block>
   <block id="5ed946a370c3e5d22bb43ca0f39ca56b" category="paragraph">您最多可以在这些字段中输入 255 个字符。</block>
   <block id="405058419342051b3c11561ed45101a9" category="list-text">单击 * 类型 * ，然后选择以下选项之一，以表示此标注中允许的数据类型：</block>
-  <block id="853674fd87670915f5e62faf7ba4201b" category="list-text">创建一个包含yes和no选项的下拉列表。例如、"direct assed"标注为布尔值。</block>
-  <block id="30351833b3f477dc86ff2081ead61845" category="list-text">此操作将创建一个包含日期的字段。例如，如果标注将是日期，请选择此项。</block>
-  <block id="368748c929322a3f212441c747f2b16d" category="list-text">创建以下任一项：</block>
-  <block id="909b59bf6aecf275b91dbb2cf2ec5521" category="list-text">固定下拉列表</block>
-  <block id="ef957d205d8a4826f9552e63f41f17fe" category="paragraph">当其他用户在设备上分配此标注类型时，他们无法向列表中添加更多值。</block>
-  <block id="1658a49ef0d858de0e9ee69c3a5e10b4" category="list-text">下拉灵活列表</block>
-  <block id="6c97cf7a205eed7477c9cb071a14d09e" category="paragraph">如果在创建此列表时选择 Add new values on the fly 选项，则当其他人在设备上分配此标注类型时，他们可以向列表中添加更多值。</block>
-  <block id="790087407b1b2f72741fa0eec24f9cf7" category="list-text">创建一个字段，分配标注的用户可以在此字段中输入数字。例如，如果标注类型为 " 楼层 " ，则用户可以选择 " 数字 " 值类型并输入楼层编号。</block>
-  <block id="d5a5fcc5b0ad62b2be2608a1437cc15c" category="list-text">创建一个允许自由格式文本的字段。例如，您可以输入 " 语言 " 作为标注类型，选择 " 文本 " 作为值类型，然后输入语言作为值。</block>
   <block id="a619e1879772f3d8b997e57449a4917d" category="admonition">设置类型并保存更改后，您将无法更改标注的类型。如果需要更改类型，则必须删除标注并创建一个新标注。</block>
   <block id="7cc5d080d4ace8620cb66ec8af48642c" category="list-text">如果选择 List 作为标注类型，请执行以下操作：</block>
   <block id="72d27766c4fd84aa2a683895eae75df9" category="list-text">如果您希望在资产页面上为标注添加更多值，请选择 * 即时添加新值 * ，这样可以创建灵活列表。</block>
@@ -10977,7 +10950,6 @@
   <block id="cd340fe1a6cf5e3a42e4f1d2eae63efb" category="paragraph">工作负载安全性使用数据收集器从设备收集文件和用户访问数据。您可以在此处找到有关对此收集器问题进行故障排除的提示。</block>
   <block id="e937b51440ae649590205a6bdfe87f95" category="inline-link-macro">配置SVM收集器</block>
   <block id="7dd7d734df8f68ee69beae1fdbd5a09e" category="paragraph">有关配置此收集器的说明、请参见<block ref="22f03f06815cacacef516ef1743c2ffa" category="inline-link-macro-rx"></block>页面。</block>
-  <block id="4b3fbac9b531aa2660d41834f330998e" category="paragraph">如果出现错误，请单击 _Status_ 列中的 _More detail_ 以了解有关该错误的详细信息。</block>
   <block id="9308a4a251c0b6f099fc32506e41c24d" category="inline-image-macro">工作负载安全收集器错误更多详细信息链接</block>
   <block id="6a6fcf99d83d56b2429dfa3ef83b50a0" category="paragraph"><block ref="6a6fcf99d83d56b2429dfa3ef83b50a0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d7a4e713cb63e4db8a2b51e171793fb0" category="cell">Data Collector 会运行一段时间，并在随机时间后停止，失败并显示： " 错误消息：连接器处于错误状态。服务名称： audit 。失败原因：外部 fpolicy 服务器过载。 "</block>
@@ -11955,8 +11927,6 @@
   <block id="4e80b0ab552791c676018d06a8ab1a7c" category="list-text">落基9.5</block>
   <block id="ef436eeff254793f46443f71b4c3e50d" category="list-text">SUSE Linux Enterprise Server 15 SP6</block>
   <block id="7ce4625168ff8cf506188a346ab739ac" category="list-text">Ubuntu Server 24.04 LTS</block>
-  <block id="0be262a01ffd53cb1827d924de37e376" category="paragraph">借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。</block>
-  <block id="8261d0e1521d30da1b36761d508cb245" category="paragraph">要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。</block>
   <block id="2613b3928d7ae4e00e8610b858e67528" category="paragraph">您可以自定义报告的输出格式和交付、设置报告属性或计划以及通过电子邮件发送报告。</block>
   <block id="7676d746a6b2036f8764b1e1250213d3" category="cell">3.1.1 (MU1 3.2.2 4.5.15 4.5.24 9.5.15 (MU3 3.1.3 4.5.18 4.5.7 9.5.8)(MU1 (MU2 3.2.1)(MU2 3.3.1 (MU3)(MU4 3.2.2 (MU6 4.5.21 3.3.1)(MU1 3.3.2 (MU2 3.2.1 (MU3 4.4.1) MU5 3.3.1 (MU1 4.3.1)版本类型：标准支持3.1.2版本类型：扩展支持9.6.1版本类型：扩展支持4.6.1版本类型：扩展支持3.3.1版本：扩展支持3.3.1版本类型：扩展支持3.2.1版本发行类型：扩展支持3.1.3版本</block>
   <block id="d9c3a16f0d6e7e82d6b68abd0ed8778b" category="paragraph">此数据收集器支持的型号和版本：API版本：</block>
@@ -12334,4 +12304,47 @@
   <block id="96f9921aa76d3057450b4f8f037c88c6" category="list-text">Agent计算机可能没有足够的CPU或RAM余量、这就是DSC出现故障的原因。请检查添加到计算机中代理的数据收集器的数量。如果超过20、请增加Agent计算机的CPU和RAM容量。增加CPU和RAM后、DSCS将自动进入Initializing状态、然后自动进入Running状态。查看上的规模估算指南<block ref="830ad31fe88c5bf31dcfcc5f15ccdf0e" category="inline-link-macro-rx"></block>。</block>
   <block id="3f30aeae69979f1a726fa86b1951eb1a" category="paragraph">每个层按不同的速率计量，并将整数一起计算，以提供加权授权。计算加权使用量的公式如下：</block>
   <block id="277010ce624a057cfbdaed781a611725" category="paragraph">为便于实现此目的、DII会根据_subscribed _数量计算单个*加权授权*编号；然后、它会根据_DIsc发现_存储计算同一个编号、并且只有发现的容量大于加权授权时才会声明违反。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅加权授权范围内、DII就允许这样做。</block>
+  <block id="8d178fa49ef817f44dcc4258ca07b1dd" category="paragraph">注意："highThreshold"表示系统为相应指标定义的阈值、客户端可以使用它对超出可接受配置范围的值生成警报或视觉提示。</block>
+  <block id="923fc210f74163c8b2f7b1b3b93f66d9" category="paragraph">目录：[]</block>
+  <block id="cb7c09827bd69ac10d5ced00302bbe0a" category="paragraph">无：数据按原样显示、不进行任何操作。</block>
+  <block id="04e0a16e5e5751fe89d90dc8e7c4836d" category="paragraph">速率：当前值除以自上次观察以来的时间范围。</block>
+  <block id="57f025c43ccbd17175f551d2537502f6" category="paragraph">累计：以前值与当前值之和的累计。</block>
+  <block id="ee7e4da7ed0e53334d90ad8a9e7b2ac7" category="paragraph">Delta：上一个观察值与当前值之间的差值。</block>
+  <block id="f92ec8daf31bca80a75188fc51e7c9d7" category="paragraph">增量速率：增量值除以自上次观察以来的时间范围。</block>
+  <block id="f3a6e5fadd6dd5c92532731c5e678fed" category="paragraph">累计速率：累计值除以自上次观察以来的时间范围。</block>
+  <block id="b22cba5f40e7b73c3ff809f5520ed4bf" category="paragraph"><block ref="b22cba5f40e7b73c3ff809f5520ed4bf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="42ce83dc3f5ef22d986311b267a5ac20" category="section-title">2025年4月</block>
+  <block id="fbc87552732cc2b26b43d6276a074ffc" category="section-title">ML支持的异常功能在在线小程序中提供支持、可主动解决问题</block>
+  <block id="9f7cd8199d6124c4f4553f2c176b1d5c" category="paragraph">要使用折线图或样条曲线图小工具解决性能问题、您现在可以在实际指标旁边显示预期行为边界、从而区分正常和异常指标趋势。</block>
+  <block id="eebf90e82914469f2dfc221f4faf2065" category="paragraph">DII机器学习与季度数据分析功能根据历史模式建立智能阈值。当指标偏离预期范围时、系统会将其突出显示为异常、以便快速识别问题、缩短平均解决时间、并在问题影响运营之前予以解决。</block>
+  <block id="44ca9974803bd41bb1826d9cf436c703" category="inline-image-macro">显示峰值高于(宽度=400)的预期边界</block>
+  <block id="093b02dc890c25bbe57cc9883b6f37e5" category="paragraph"><block ref="093b02dc890c25bbe57cc9883b6f37e5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6c8b67e91957195849c42aaf1ad22042" category="section-title">利用VSAN存储支持优化VMware成本</block>
+  <block id="7ae6cf4414540fa7a14236e09f4bc284" category="paragraph">现在、我们的VM优化功能支持使用VSAN存储的VMware环境。除了CPU和内存使用量之外、此分析现在还会考虑使用本地VSAN存储作为回收建议、从而帮助您进一步降低许可成本。</block>
+  <block id="ec05f91c2c2b63f117125c8a95ae7d4f" category="inline-image-macro">VSAN的VM优化示例</block>
+  <block id="65aab751aa4e4fdccdbfd146653962a1" category="paragraph"><block ref="65aab751aa4e4fdccdbfd146653962a1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dd926bc8baa503ad7ada93a04edffe21" category="section-title">警报详细信息触手可及</block>
+  <block id="baf64fe15bce38c00a414f9f4ac29283" category="paragraph">借助全新的分出面板、调查警报比以往任何时候都更轻松。选择一个警报以查看该警报的详细信息、并在调查问题时在警报之间轻松切换、而不会失去位置。</block>
+  <block id="e9acb24b6ccfd9ff0141dc2683fb1fc6" category="inline-image-macro">警报分出、导航更轻松</block>
+  <block id="3ae807e49abe8a58660ef733493cbacc" category="paragraph"><block ref="3ae807e49abe8a58660ef733493cbacc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="19cefc1a05e82b0e19584462dea5a563" category="section-title">工作负载安全性ForFESIDESY步 导出</block>
+  <block id="a39507b873640f4e60c12fb375005a04" category="paragraph">导出取证数据可能需要几秒钟到几小时不等、具体取决于要导出的数据量。Workload Security会异步导出这些数据、以便您可以在编译.CSV时继续工作。</block>
+  <block id="6c17946dd20446540805b53e2f7cd731" category="section-title">分组到规则中的Data Collector通知</block>
+  <block id="c3bd9ae81ad0672e842d282715d758e1" category="paragraph">如果您已在数据收集器上配置通知、则从4月15日开始、这些通知将在通知规则中进行处理、并为收件人相同的收集器配置一条规则。具有不同收件人的收集器将具有单独的规则。现有收集器通知将迁移到通知规则。</block>
+  <block id="ca873110efddef67beadcfe5f8a4ca84" category="paragraph">借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。</block>
+  <block id="24f17d3ee72bb2738ceb12180ec2fa71" category="paragraph">要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。</block>
+  <block id="1178bc1f7bc2e2481537fe9d595549fd" category="paragraph">包括：https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-source-notice-intro.adoc[]</block>
+  <block id="4bffd602151b14e55ad1f19de262d0c1" category="list-text">确保此SVM已配置CIFS服务器：tistershell：&gt;<block ref="fafd8ff6ac4a59e73c5d4e3b47d545ee" prefix=" " category="inline-code"></block></block>
+  <block id="52ea452f7c0975b526b909c63394b7e8" category="list-text">为 SVM vsadmin 用户设置密码。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：&gt;<block ref="73b77b9c99e693ec16bc3e4960672465" prefix=" " category="inline-code"></block></block>
+  <block id="9b7edcaaf6b4a85dc972c92c9191eb04" category="list-text">解锁 SVM vsadmin 用户以进行外部访问。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：&gt;<block ref="db25ee40fb860a97415dab9c598caaf9" prefix=" " category="inline-code"></block></block>
+  <block id="368c3bb96cbd7737c094fe94dfdedf94" category="list-text">确保数据 LIF 的防火墙策略设置为 ‘mGMT ' （而不是 ‘data ' ）。如果使用专用管理lif添加SVM、请跳过此步骤<block ref="0197c7c6728dc0e945da717147320f69" prefix=" " category="inline-code"></block></block>
+  <block id="c71b503670f2867f513635832d1599c3" category="paragraph"><block ref="c71b503670f2867f513635832d1599c3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d2b98171b3e920dab4bb3e92ccf4e89a" category="paragraph"><block ref="d2b98171b3e920dab4bb3e92ccf4e89a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="feacd3cef81abfcdbf59bda9ba5b97fd" category="paragraph"><block ref="feacd3cef81abfcdbf59bda9ba5b97fd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="24b75506ade423135a0ebfd6a8ab8fa4" category="paragraph">布尔值：创建一个下拉列表、其中包含yes和no选项。例如、"direct assed"标注为布尔值。日期：这将创建一个保存日期的字段。例如，如果标注将是日期，请选择此项。list：创建以下任一项：*固定的下拉列表</block>
+  <block id="3eb86d134a8e7d548d1298e1aa9a12d5" category="paragraph">+当其他人在设备上分配此标注类型时、无法向列表中添加更多值。*一个灵活的下拉列表</block>
+  <block id="d8f872f26b52cf9aec4a137dbe0a8c26" category="paragraph">+如果在创建此列表时选择Add new values" on the fly"选项、则当其他人在设备上分配此标注类型时、他们可以向列表中添加更多值。</block>
+  <block id="d41b70ca456515e9579f88a5bc4b81f5" category="paragraph">Number：创建一个字段、分配标注的用户可以在该字段中输入数字。例如，如果标注类型为 " 楼层 " ，则用户可以选择 " 数字 " 值类型并输入楼层编号。</block>
+  <block id="9dc3b5c01c2c832a96e1c6c19e498029" category="paragraph">Text：创建允许自由格式文本的字段。例如，您可以输入 " 语言 " 作为标注类型，选择 " 文本 " 作为值类型，然后输入语言作为值。</block>
+  <block id="bf446d389b04278c2780f587bb4b6e54" category="paragraph">如果出现错误、您可以单击已安装数据收集器页面的_Status_列中的_more详细信息_以了解有关此错误的详细信息。</block>
 </blocks>

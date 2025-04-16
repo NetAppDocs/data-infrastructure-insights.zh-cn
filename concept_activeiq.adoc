@@ -5,17 +5,9 @@ keywords: Active IQ, risks, svm, AIQ, risk
 summary: 数据基础架构洞察从NetApp Active IQ收集风险数据 
 ---
 = Active IQ
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
 :nofooter: 
-:toclevels: 1
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

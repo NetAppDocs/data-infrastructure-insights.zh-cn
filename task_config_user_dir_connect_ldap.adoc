@@ -5,17 +5,8 @@ keywords: collector, configure, LDAP, Active Directory, cloud secure
 summary: 配置工作负载安全性LDAP用户目录收集器 
 ---
 = 配置 LDAP 目录服务器收集器
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

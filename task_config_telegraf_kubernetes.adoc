@@ -6,13 +6,7 @@ summary: 适用于Kubbernetes的数据收集器
 ---
 = Data Collector：KubeNet
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ summary: 您可以使用 Storage Manager 信息板对存储服务进行日常管
 keywords: reporting, cognos, data warehouse, dwh, smd, storage manager dashboard 
 ---
 = Storage Manager 信息板
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

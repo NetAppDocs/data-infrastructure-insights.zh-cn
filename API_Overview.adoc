@@ -5,17 +5,8 @@ keywords: API, customer API, premium, JSON, Swagger, Access Token, token, rotate
 summary: 通过Data Infrastructure Insight API、可以与监控和报告系统等其他应用程序集成。 
 ---
 = Data Infrastructure Insight API
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -230,8 +221,7 @@ image:DiskPerformanceExample.png["磁盘性能 JSON"]
 
 CapacityItem 是一个逻辑容量单位。它的父对象定义了单位，并具有 " 值 " 和 " 高阈值 " 。此外，它还支持一个可选的细分图，用于说明容量值的构建方式。例如，一个 100 TB StoragePool 的总容量将是一个值为 100 的 CapacityItem 。细分情况可能会显示为 " 数据 " 分配了 60 TB ，为 " 快照 " 分配了 40 TB 。
 
-注:: " 高阈值 " 表示系统为相应指标定义的阈值，客户端可以使用这些阈值针对超出可接受配置范围的值生成警报或直观提示。
-
+注意："highThreshold"表示系统为相应指标定义的阈值、客户端可以使用它对超出可接受配置范围的值生成警报或视觉提示。
 
 下面显示了具有多个容量计数器的 StoragePools 的容量：
 

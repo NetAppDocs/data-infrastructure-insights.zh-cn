@@ -5,17 +5,8 @@ keywords: annotations, business entity
 summary: 业务实体标注可用于监控和报告业务层次结构中的资产 
 ---
 = 业务实体标注
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

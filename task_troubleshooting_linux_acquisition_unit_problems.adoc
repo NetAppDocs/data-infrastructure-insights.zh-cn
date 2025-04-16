@@ -5,17 +5,8 @@ summary: 有关采集单元问题的故障排除提示。
 keywords: AU, acquisition unit, trioubleshooting 
 ---
 = 排除 Linux 上的采集单元问题
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ summary: Data Infrastructure Insight中的资产页面相关警报部分概述�
 keywords: asset, landing page, violations, Alerts, 
 ---
 = 资产页面相关警报部分
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

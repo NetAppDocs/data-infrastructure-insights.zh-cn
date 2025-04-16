@@ -5,17 +5,8 @@ keywords: monitors, alerts, log, metric
 summary: 创建监控器，以便针对性能或清单阈值以及指标或日志条件发出警报。 
 ---
 = 系统监控器
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -24,8 +15,8 @@ Data Infrastructure Insight包括许多系统定义的指标和日志监控器�
 
 NOTE: 默认情况下、许多系统监控器处于_Paused.状态。您可以通过为系统监视器选择_Resume_选项来启用该监视器。确保在数据收集器中启用了_Advanced Counter Data Collection _和_Enable ONTAP EMS log Collection _。这些选项可在ONTAP数据收集器的_Advanced Configuration_下找到：image:Enable_Log_Monitor_Collection.png["为 ONTAP 启用高级计数器和 EMS 日志收集"]
 
+目录：[]
 
-toc::[]
 
 
 == 监控器说明

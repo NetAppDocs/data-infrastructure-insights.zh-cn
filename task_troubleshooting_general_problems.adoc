@@ -6,13 +6,7 @@ keywords: troubleshooting, problems, browser, login, log in, accessing, access t
 ---
 = 排除一般数据基础架构洞察力问题
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

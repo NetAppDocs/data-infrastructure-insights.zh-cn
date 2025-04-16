@@ -5,17 +5,8 @@ keywords: logs, monitors, alerts, EMS,
 summary: 日志资源管理器是一个功能强大的工具，可用于通过不同的系统日志调查问题。 
 ---
 = 日志资源管理器
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

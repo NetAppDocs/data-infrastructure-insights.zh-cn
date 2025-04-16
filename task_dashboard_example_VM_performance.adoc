@@ -5,17 +5,8 @@ summary: 突出显示虚拟机性能的信息板示例。
 keywords: dashboard, widget, custom, example, virtual machine, vm, performance 
 ---
 = 信息板示例：虚拟机性能
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

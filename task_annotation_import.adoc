@@ -6,13 +6,7 @@ summary: 您可以使用Data Infrastructure Insight API导入标注和应用程�
 ---
 = 导入标注
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

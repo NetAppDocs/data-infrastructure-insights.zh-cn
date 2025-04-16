@@ -6,13 +6,7 @@ summary: 您可以为Data Infrastructure Insight配置手动更新AU软件、以
 ---
 = 手动安装采集单元软件
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

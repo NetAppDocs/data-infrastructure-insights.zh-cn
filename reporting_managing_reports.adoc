@@ -5,17 +5,8 @@ summary: 自定义报告输出和交付，将报告复制到剪贴板，打开�
 keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying 
 ---
 = 管理报告
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

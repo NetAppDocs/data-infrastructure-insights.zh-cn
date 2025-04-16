@@ -5,17 +5,8 @@ summary: 在查询高 I/O 密度时，您希望排除根卷。
 keywords: NetApp, root volume, high I/O, 
 ---
 = 确保 IO 密度报告仅描述内部数据卷
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ summary: 通过查询，您可以快速轻松地识别感兴趣的资产和指�
 keywords: query, queries 
 ---
 = 创建查询
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

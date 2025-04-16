@@ -5,17 +5,8 @@ keywords: insight, pv, persistent volume, backend
 summary: 洞察力可以帮助您预测Kubernetes空间何时可能会全满。 
 ---
 = 洞察力：Kubernetes命名空间即将用尽
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

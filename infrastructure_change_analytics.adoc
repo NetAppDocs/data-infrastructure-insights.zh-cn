@@ -6,13 +6,7 @@ summary: Cloud Insights可跟踪基础架构变更、以便于分析和故障排
 ---
 = 基础架构变更分析
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

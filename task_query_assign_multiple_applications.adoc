@@ -5,17 +5,8 @@ summary: 使用查询为对象分配多个应用程序或标注，或者从对�
 keywords: query, queries, application, annotation, multiple 
 ---
 = 为资产分配多个应用程序或从资产中删除多个应用程序
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

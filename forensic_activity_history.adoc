@@ -5,15 +5,12 @@ keywords: Forensic, activity history, activity data, history
 summary: 取证活动历史记录数据 
 ---
 = 取证—所有活动
-:toc: macro
 :hardbreaks:
 :allow-uri-read: 
-:toc: 
 :nofooter: 
 :icons: font
 :linkattrs: 
 :imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

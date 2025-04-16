@@ -5,17 +5,8 @@ summary: 数据基础架构洞察数据保留以用于报告
 keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying, retention 
 ---
 = 如何保留历史数据以进行报告
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

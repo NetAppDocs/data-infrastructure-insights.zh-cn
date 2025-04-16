@@ -5,17 +5,8 @@ keywords: data collector, scaleIO, PowerFlex EMC, DELL
 summary: 配置Dell EMC ScaleIO/PowerFlex数据收集器。 
 ---
 = Dell EMC ScaleIO/PowerFlex数据收集器
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -6,13 +6,7 @@ summary: 工作负载安全性用户帐户通过Data Infrastructure Insight用�
 ---
 = 用户管理
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

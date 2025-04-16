@@ -5,17 +5,8 @@ summary: 为工作负载安全警报通知添加电子邮件地址。
 keywords: email, notifications, alerts, warnings, attacks 
 ---
 = 为警报，警告和代理 / 数据源收集器运行状况配置电子邮件通知
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

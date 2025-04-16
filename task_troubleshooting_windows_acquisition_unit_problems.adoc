@@ -5,17 +5,8 @@ summary: 有关 Windows 上采集单元问题的故障排除提示。
 keywords: AU, acquisition unit, trioubleshooting 
 ---
 = 对 Windows 上的采集单元问题进行故障排除
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

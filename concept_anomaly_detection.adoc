@@ -5,17 +5,9 @@ keywords: Anomalies, anomaly, patterns, monitor, alert
 summary: 监控指标是否存在异常 
 ---
 = 异常检测监控器
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
 :nofooter: 
-:toclevels: 1
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

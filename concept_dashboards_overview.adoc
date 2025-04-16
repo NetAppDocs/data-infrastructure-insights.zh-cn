@@ -6,13 +6,7 @@ keywords: dashboard, widget, custom, view, data
 ---
 = 信息板概述
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]
@@ -21,8 +15,8 @@ Data Infrastructure Insight允许您使用各种小工具创建自定义信息�
 
 IMPORTANT: 这些部分中的示例仅供说明之用，并不涵盖所有可能的情形。本文中的概念和步骤可用于创建您自己的信息板，以突出显示特定于您的特定需求的数据。
 
+目录：[]
 
-toc::[]
 
 
 == 创建信息板

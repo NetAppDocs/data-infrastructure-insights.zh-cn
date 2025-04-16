@@ -6,10 +6,11 @@ summary: 对工作负载安全性数据收集器进行故障排除
 ---
 = 对ONTAP SVM数据收集器进行故障排除
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
+:firstname: :nofooter:yml
+:author: :nofooter:yml
+:authorinitials: :
+:authors: :nofooter:yml
 :icons: font
 :linkattrs: 
 :imagesdir: ./media/
@@ -20,11 +21,11 @@ summary: 对工作负载安全性数据收集器进行故障排除
 
 有关配置此收集器的说明、请参见link:task_add_collector_svm.html["配置SVM收集器"]页面。
 
-下表介绍了已知问题及其解决方法。
-
-如果出现错误，请单击 _Status_ 列中的 _More detail_ 以了解有关该错误的详细信息。
+如果出现错误、您可以单击已安装数据收集器页面的_Status_列中的_more详细信息_以了解有关此错误的详细信息。
 
 image:CS_Data_Collector_Error.png["工作负载安全收集器错误更多详细信息链接"]
+
+下表介绍了已知问题及其解决方法。
 
 [cols="2*"]
 |===

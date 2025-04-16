@@ -5,17 +5,12 @@ keywords: Forensic, user activity, user activity data,
 summary: 取证用户活动数据 
 ---
 = 取证用户活动数据
-:toc: macro
 :hardbreaks:
-:toclevels: 
 :allow-uri-read: 
-:toc: 
-:toclevels: 
 :nofooter: 
 :icons: font
 :linkattrs: 
 :imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

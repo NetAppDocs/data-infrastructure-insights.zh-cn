@@ -6,13 +6,7 @@ summary: 创建监控器，以便针对性能或清单阈值发出警报
 ---
 = 使用 Webhooks 发送通知
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]
