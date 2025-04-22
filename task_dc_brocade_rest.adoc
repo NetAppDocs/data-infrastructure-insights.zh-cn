@@ -22,6 +22,8 @@ userconfig --add netappcIUser -r user -l 1-128 -c user -p localety!
 
 默认情况下、此收集器将尝试发现交换机所属所有网络结构中的所有FOS设备。
 
+请注意：FOS的默认只读用户"user"没有对所有虚拟结构的查看权限、也没有"机箱角色"权限。这意味着、使用Data Infrastructure Insight中的"用户"获得成功的可能性较低、因为它需要了解FOS设备的物理和逻辑配置。
+
 
 
 == 术语
