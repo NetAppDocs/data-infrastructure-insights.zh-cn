@@ -11663,7 +11663,6 @@
   <block id="e4d6c49d3ae18aca7ed82f5ef2ab8266" category="paragraph"><block ref="e4d6c49d3ae18aca7ed82f5ef2ab8266" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1158d69294406edc67b8de2b5ed02647" category="paragraph">要开始使用NetApp的云服务、请访问、<block ref="40ad5c1f57b9131d3640bb640a07e49e" category="inline-link-macro-rx"></block>然后单击*开始使用*。</block>
   <block id="90aa9e4cd4632612b7635f2c366a8948" category="paragraph">拥有NetApp BlueXP  帐户后，只需在门户页面上选择*登录*即可<block ref="40ad5c1f57b9131d3640bb640a07e49e" category="inline-link-macro-rx"></block>。</block>
-  <block id="e6652e28190651190702622512d6199d" category="section-title">适用于最新一代ASA系统的ONTAP基础知识</block>
   <block id="b7b46ce5d1a547db89c0bc615ff272a5" category="inline-link-macro">ASA</block>
   <block id="e4d6d8fa32272beabde4921e66b643d2" category="paragraph">ONTAP基础版现在可为最新一代设备提供即装即用的易管理性<block ref="a86d3d554a7f4851edc0f19a9e8accf3" category="inline-link-macro-rx"></block>。其中包括适用于在ONTAP上运行的工作负载的VM到LUN拓扑的SAN分析器、现在还可在NetApp支持中作为数据基础架构洞察基础版的一部分提供。</block>
   <block id="8af8d6d7603eec1cb34086e9cf6e2055" category="inline-image-macro">ONTAP要点下拉列表、其中显示了ASA与统一的不同之处</block>
@@ -12288,8 +12287,6 @@
   <block id="fbc87552732cc2b26b43d6276a074ffc" category="section-title">ML支持的异常功能在在线小程序中提供支持、可主动解决问题</block>
   <block id="9f7cd8199d6124c4f4553f2c176b1d5c" category="paragraph">要使用折线图或样条曲线图小工具解决性能问题、您现在可以在实际指标旁边显示预期行为边界、从而区分正常和异常指标趋势。</block>
   <block id="eebf90e82914469f2dfc221f4faf2065" category="paragraph">DII机器学习与季度数据分析功能根据历史模式建立智能阈值。当指标偏离预期范围时、系统会将其突出显示为异常、以便快速识别问题、缩短平均解决时间、并在问题影响运营之前予以解决。</block>
-  <block id="44ca9974803bd41bb1826d9cf436c703" category="inline-image-macro">显示峰值高于(宽度=400)的预期边界</block>
-  <block id="093b02dc890c25bbe57cc9883b6f37e5" category="paragraph"><block ref="093b02dc890c25bbe57cc9883b6f37e5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6c8b67e91957195849c42aaf1ad22042" category="section-title">利用VSAN存储支持优化VMware成本</block>
   <block id="7ae6cf4414540fa7a14236e09f4bc284" category="paragraph">现在、我们的VM优化功能支持使用VSAN存储的VMware环境。除了CPU和内存使用量之外、此分析现在还会考虑使用本地VSAN存储作为回收建议、从而帮助您进一步降低许可成本。</block>
   <block id="ec05f91c2c2b63f117125c8a95ae7d4f" category="inline-image-macro">VSAN的VM优化示例</block>
@@ -12302,8 +12299,6 @@
   <block id="a39507b873640f4e60c12fb375005a04" category="paragraph">导出取证数据可能需要几秒钟到几小时不等、具体取决于要导出的数据量。Workload Security会异步导出这些数据、以便您可以在编译.CSV时继续工作。</block>
   <block id="6c17946dd20446540805b53e2f7cd731" category="section-title">分组到规则中的Data Collector通知</block>
   <block id="c3bd9ae81ad0672e842d282715d758e1" category="paragraph">如果您已在数据收集器上配置通知、则从4月15日开始、这些通知将在通知规则中进行处理、并为收件人相同的收集器配置一条规则。具有不同收件人的收集器将具有单独的规则。现有收集器通知将迁移到通知规则。</block>
-  <block id="ca873110efddef67beadcfe5f8a4ca84" category="paragraph">借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。</block>
-  <block id="24f17d3ee72bb2738ceb12180ec2fa71" category="paragraph">要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。</block>
   <block id="1178bc1f7bc2e2481537fe9d595549fd" category="paragraph">包括：https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-source-notice-intro.adoc[]</block>
   <block id="4bffd602151b14e55ad1f19de262d0c1" category="list-text">确保此SVM已配置CIFS服务器：tistershell：&gt;<block ref="fafd8ff6ac4a59e73c5d4e3b47d545ee" prefix=" " category="inline-code"></block></block>
   <block id="52ea452f7c0975b526b909c63394b7e8" category="list-text">为 SVM vsadmin 用户设置密码。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：&gt;<block ref="73b77b9c99e693ec16bc3e4960672465" prefix=" " category="inline-code"></block></block>
@@ -12363,4 +12358,6 @@
   <block id="f0c8a72ba609d5ea03569e2dfec9ccf9" category="paragraph">请注意：FOS的默认只读用户"user"没有对所有虚拟结构的查看权限、也没有"机箱角色"权限。这意味着、使用Data Infrastructure Insight中的"用户"获得成功的可能性较低、因为它需要了解FOS设备的物理和逻辑配置。</block>
   <block id="6ae3f27888576a5c4fe83bc692a46ff9" category="paragraph">"请求失败、状态为404 \https://.....:215/api/access/v1"</block>
   <block id="c7ce8523ab71d2ab79f0a54681bde5c6" category="paragraph">ZFS数组可能太旧，无法支持REST API。AK 2013.1.3.0是第一个支持REST API的ZFS操作系统版本、并非所有ZFS设备都可以升级到该版本。</block>
+  <block id="0be262a01ffd53cb1827d924de37e376" category="paragraph">借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。</block>
+  <block id="8261d0e1521d30da1b36761d508cb245" category="paragraph">要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。</block>
 </blocks>

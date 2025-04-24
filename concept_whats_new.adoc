@@ -57,49 +57,6 @@ image:alert_slideout_example.png["警报分出、导航更轻松"]
 '''
 
 
-== 2025年4月
-
-
-
-=== ML支持的异常功能在在线小程序中提供支持、可主动解决问题
-
-要使用折线图或样条曲线图小工具解决性能问题、您现在可以在实际指标旁边显示预期行为边界、从而区分正常和异常指标趋势。
-
-DII机器学习与季度数据分析功能根据历史模式建立智能阈值。当指标偏离预期范围时、系统会将其突出显示为异常、以便快速识别问题、缩短平均解决时间、并在问题影响运营之前予以解决。
-
-image:expected_bounds_example_showing_spike.png["显示峰值高于(宽度=400)的预期边界"]
-
-
-
-=== 利用VSAN存储支持优化VMware成本
-
-现在、我们的VM优化功能支持使用VSAN存储的VMware环境。除了CPU和内存使用量之外、此分析现在还会考虑使用本地VSAN存储作为回收建议、从而帮助您进一步降低许可成本。
-
-image:vm_optimization_with_vsan.png["VSAN的VM优化示例"]
-
-
-
-=== 警报详细信息触手可及
-
-借助全新的分出面板、调查警报比以往任何时候都更轻松。选择一个警报以查看该警报的详细信息、并在调查问题时在警报之间轻松切换、而不会失去位置。
-
-image:alert_slideout_example.png["警报分出、导航更轻松"]
-
-
-
-=== 工作负载安全性ForFESIDESY步 导出
-
-导出取证数据可能需要几秒钟到几小时不等、具体取决于要导出的数据量。Workload Security会异步导出这些数据、以便您可以在编译.CSV时继续工作。
-
-
-
-=== 分组到规则中的Data Collector通知
-
-如果您已在数据收集器上配置通知、则从4月15日开始、这些通知将在通知规则中进行处理、并为收件人相同的收集器配置一条规则。具有不同收件人的收集器将具有单独的规则。现有收集器通知将迁移到通知规则。
-
-'''
-
-
 == 2025年3月
 
 
@@ -144,14 +101,6 @@ image:ws_test_connection_button.png["workload security test connection button"] 
 
 
 
-=== 测试存储工作负载安全性数据收集器的连接
-
-测试连接功能旨在帮助最终用户确定在Data Infrastructure Insight (DII) Workload Security中设置数据收集器时出现故障的具体原因。这样、用户就可以自行更正与网络通信或缺少角色相关的问题。
-
-image:ws_test_connection_button.png["workload security test connection button"] image:ws_test_connection_success_example.png["Workload Security 'Test Connection' success message"]
-
-
-
 === 操作系统支持
 
 除了以下操作系统之外、Data Infrastructure Insight采集单元现在还支持这些操作系统link:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["已支持"]：
@@ -171,18 +120,6 @@ image:ws_test_connection_button.png["workload security test connection button"] 
 
 == 2025年2月
 
-
-
-=== 适用于最新一代ASA系统的ONTAP基础知识
-
-ONTAP基础版现在可为最新一代设备提供即装即用的易管理性link:task_dc_na_ontap_all_san_array.html["ASA"]。其中包括适用于在ONTAP上运行的工作负载的VM到LUN拓扑的SAN分析器、现在还可在NetApp支持中作为数据基础架构洞察基础版的一部分提供。
-
-image:ontap_essentials_asa_views.png["ONTAP要点下拉列表、其中显示了ASA与统一的不同之处"]
-
-
-
-=== 适用于最新一代ASA系统的ONTAP基础知识
-
 ONTAP基础版现在可为最新一代设备提供即装即用的易管理性link:task_dc_na_ontap_all_san_array.html["ASA"]。其中包括适用于在ONTAP上运行的工作负载的VM到LUN拓扑的SAN分析器、现在还可在NetApp支持中作为数据基础架构洞察基础版的一部分提供。
 
 image:ontap_essentials_asa_views.png["ONTAP要点下拉列表、其中显示了ASA与统一的不同之处"]
@@ -191,15 +128,11 @@ image:ontap_essentials_asa_views.png["ONTAP要点下拉列表、其中显示了A
 
 === DII API使用情况跟踪：增强安全性和效率
 
-借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。
+借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。
 
-要查看API用法，请导航到*Observability > Admin > API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。要查看API用法，请导航到*Observability > Admin > API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。
+要查看API用法，请导航到*Observability > Admin > API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。
 
 image:api_usage_analytics_screenshot.png["API使用情况分析示例"]
-
-
-
-=== 用于限制用户的工作负载安全API
 
 
 
