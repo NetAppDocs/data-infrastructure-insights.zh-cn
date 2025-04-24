@@ -1206,10 +1206,7 @@
   <block id="0c934902725716ff33a000cef8df7331" category="section-title">信息板控件</block>
   <block id="d1a06af586beabfef382d9a9a1b7cbe4" category="paragraph">信息板屏幕包含多个控件：</block>
   <block id="e1cee0b7833b8d6d0c9830c0c359d32a" category="list-text">* 时间选择器 * ：允许您查看从过去 15 分钟到过去 30 天的时间段内的信息板数据，或者自定义时间范围最长为 31 天。您可以选择在各个小工具中覆盖此全局时间范围。</block>
-  <block id="3f5ac045dae0be24b305231f2e8120a3" category="list-text">* 编辑 * 按钮：选择此选项将启用编辑模式，从而可以对信息板进行更改。默认情况下，新信息板将在编辑模式下打开。</block>
   <block id="d8de249d2c603118f28d5a4a162472de" category="list-text">* 保存 * 按钮：用于保存或删除信息板。</block>
-  <block id="2d9c0480416024820f428b9656ea2e60" category="paragraph">您可以通过在单击 * 保存 * 之前键入新名称来重命名当前信息板。</block>
-  <block id="4c91165c490e5fa72e8f2d18eb8d690c" category="list-text">* 添加小工具 * 按钮，可用于向信息板添加任意数量的表，图表或其他小工具。</block>
   <block id="9b07dfa776e7e85e1de7a9e7a5c3bb2b" category="paragraph">可以调整小工具的大小并将其重新定位到信息板中的不同位置，以便根据您的当前需求提供最佳的数据视图。</block>
   <block id="e861414ecdd46ceedcfd68cb18af35a1" category="section-title">小工具类型</block>
   <block id="241e81a1429afe00dffbd10c52eb5d1a" category="paragraph">您可以从以下小工具类型中进行选择：</block>
@@ -12229,7 +12226,6 @@
   <block id="b2e0ae5db392da4135a0d6d4c1790759" category="list-text">确保 SVM 数据 LIF 或管理 LIF 上没有防火墙阻止与 SVM 的连接。</block>
   <block id="1750d9cfda79066e3c52899aa692608a" category="list-text">通过集群管理IP添加SVM时、请确保SVM的数据LIP和管理LIP可从此代理VM执行ping。如果出现问题，请检查网关，网络掩码和 LIF 路由。</block>
   <block id="391d354d5b5d9326eec673c4983e3e05" category="paragraph">您也可以尝试使用集群管理 IP 通过 ssh 登录到集群，并对代理 IP 执行 ping 操作。确保代理IP可执行pingable：</block>
-  <block id="e7ba86f45d7d15de38f2537adf2afd68" category="paragraph">_network ping -vserver &lt;vserver name&gt;-Destination &lt;Agent IP&gt;-lf &lt;Lif Name&gt;-show-DEBIL_</block>
   <block id="ed6479f97f72e2c84fce83c6e84134fa" category="paragraph">如果无法执行pingable，请确保ONTAP中的网络设置正确，以便Agent计算机可以执行pingable。</block>
   <block id="83d96b0695c5db59120643aeaf92968a" category="list-text">如果您尝试通过集群IP进行连接、但该连接不起作用、请尝试直接通过SVM IP进行连接。有关通过 SVM IP 进行连接的步骤，请参见上文。</block>
   <block id="e91b7ee623b377e0be2de8ac35124ec3" category="list-text">通过SVM IP和vsadmin凭据添加收集器时、请检查SVM LIF是否已启用数据加管理角色。在这种情况下，对 SVM LIF 执行 ping 操作将有效，但对 SVM LIF 执行 SSH 将不起作用。如果是，请创建一个仅 SVM 管理 LIF ，并尝试通过此仅 SVM 管理 LIF 进行连接。</block>
@@ -12257,7 +12253,6 @@
   <block id="cf2a826b3dbe4d26f14753b4a312c007" category="list-text">如果在两个不同的工作负载安全环境(租户)中添加了同一个SVM、则最后一个SVM始终会成功。第二个收集器将使用自己的 IP 地址配置 fpolicy ，并启动第一个收集器。因此，第一个收集器将停止接收事件，其 " 审核 " 服务将进入错误状态。要防止这种情况发生，请在一个环境中配置每个 SVM 。</block>
   <block id="5db652447c417b7edd8a6faf30683ee0" category="list-text">如果服务策略配置不正确、也可能发生此错误。对于ONTAP 9.8或更高版本、要连接到数据源收集器、需要提供data-fpolicy-client服务以及数据服务data-nfs和/或data-cifs。此外、data-fpolicy-client服务必须与受监控SVM的数据LIF关联。</block>
   <block id="9fbb9e6888c2aef7254ccac7160ec144" category="list-text">检查ONTAP收集器是否处于"正在运行"状态。如果是，请通过打开某些文件确保在 CIFS 客户端 VM 上生成某些 CIFS 事件。</block>
-  <block id="30eacabf37bbb4653e7ca981b2801051" category="list-text">如果未发现任何活动、请登录到SVM并输入以下命令。_&lt;svm&gt; event log show -source fpolicy_ 请确保没有与 fpolicy 相关的错误。</block>
   <block id="a936f63883c022699e3a5ae08232ef26" category="list-text">如果未发现任何活动、请登录到SVM。输入以下命令：</block>
   <block id="c838f9e60ab91d3bf9f4ae53696f31dc" category="paragraph">检查是否已设置以"云 安全_"前缀命名的fpolicy策略、并且状态是否为"on"。如果未设置，则代理很可能无法在 SVM 中执行这些命令。请确保已遵循页面开头所述的所有前提条件。</block>
   <block id="2b7249a3eb66724971d86b79578b4015" category="list-text">代理很可能过载、无法连接到数据源收集器。</block>
@@ -12339,7 +12334,6 @@
   <block id="e45fdd2145016f7fcc29b179b255183e" category="paragraph">*问题：* SVM Data Collector处于错误状态、并且错误消息为"Agent failed to connect to the Collector (代理无法连接到收集器)"*请尝试此操作：*</block>
   <block id="8a1416995d314617de12ed7aa4bd2467" category="paragraph">*问题：* SVM数据收集器显示错误消息"fpolicy.server.connectError:节点无法与FPolicy服务器建立连接"12.195.15.146(原因："选择超时")"*尝试此操作：*已在SVM/集群中启用防火墙。因此， fpolicy 引擎无法连接到 fpolicy 服务器。ONTAP中可用于获取详细信息的命令行界面包括：</block>
   <block id="0b0c14625851c63aa1977699a0bb729f" category="paragraph">*问题：*错误消息：“连接器处于错误状态。服务名称： audit 。失败原因：在 SVM 上未找到有效的数据接口（角色：数据，数据协议： NFS 或 CIFS 或两者，状态：已启动）。 "*请尝试以下操作：*确保有一个操作接口(角色为数据、数据协议为CIFS或NFS)。</block>
-  <block id="b36fd6f11853dfd44a57310a6054c451" category="paragraph">*问题:*数据收集器进入错误状态,一段时间后进入运行状态,然后再次返回错误。此周期将重复。*请尝试此操作：**这通常发生在以下情形中：</block>
   <block id="5e34f5db201b138420b061f08cbe11af" category="paragraph">*问题：*连接器处于错误状态。服务名称： audit 。失败原因：无法配置（ SVM svmname 上的策略。原因：为"fpolicy.policy.scope修改"中的"shares-to include"元素指定的值无效："fedified"*尝试此操作：**共享名称必须不带任何引号。编辑 ONTAP SVM DSC 配置以更正共享名称。</block>
   <block id="af601d5fafb52a70ba0c4c8d49f7d8ad" category="paragraph">_include 和 exclude shares_ 不适用于长列表的共享名称。如果要包含或排除大量共享，请改用按卷筛选。</block>
   <block id="e89b27e0a4f2f1144fe6db2c891631a7" category="paragraph">*问题：*集群中存在未使用的现有fpolicies.在安装工作负载安全性之前、应如何处理这些问题？*请尝试以下操作：*建议删除所有现有的未使用的fpolicy设置，即使这些设置处于断开状态也是如此。工作负载安全性将创建前缀为"cloudsure_"的fpolicy。可以删除所有其他未使用的 fpolicy 配置。</block>
@@ -12350,7 +12344,6 @@
   <block id="c5e48108c2128269b181c77142f6e2c0" category="list-text">请等待、直到工作负载安全性中的数据收集器显示错误。</block>
   <block id="bc71f49bfafa6a1dbe64216acd61b88e" category="list-text">由于未在SVM上配置CIFS服务器、因此Workload Security将显示左侧所示的此错误。</block>
   <block id="10b2e2acac1b3fff1d033229848652e2" category="list-text">编辑 ONTAP SVM 数据收集器并取消选中 CIFS 作为允许的协议。保存数据收集器。它将在仅启用 NFS 协议的情况下开始运行。</block>
-  <block id="c6ac5b768bf8fa1cdc43218fe66da4f4" category="paragraph">*问题：*数据收集器显示错误消息："错误：无法在2次重试中确定收集器的运行状况、请尝试重新启动收集器(错误代码：AGENT008)"。*尝试thi:*</block>
   <block id="8c5a140b8e26d5573c3346f7da21fdd0" category="paragraph">*问题：*选择SVM模式后、Data Collector出现错误。*Try this：*在SVM模式下连接时、如果使用集群管理IP而不是SVM管理IP进行连接、则连接将出错。确保使用正确的SVM IP。</block>
   <block id="55be0ee113a903248473234512ad1ba6" category="paragraph">*问题:*启用“拒绝访问”功能时，数据收集器显示错误消息：“连接器处于错误状态。服务名称： audit 。失败原因：无法在SVM test_SVM上配置fpolicy。原因：用户未获得授权。"*请尝试以下操作：*用户可能缺少"拒绝访问"功能所需的REST权限。请按照上的说明<block ref="acf32226210d6c3eeee22de70798517f" category="inline-link-macro-rx"></block>设置权限。</block>
   <block id="c9d2ff4bbf3f4496b0b55e66133b6e56" category="paragraph">设置权限后、重新启动收集器。</block>
@@ -12360,4 +12353,30 @@
   <block id="c7ce8523ab71d2ab79f0a54681bde5c6" category="paragraph">ZFS数组可能太旧，无法支持REST API。AK 2013.1.3.0是第一个支持REST API的ZFS操作系统版本、并非所有ZFS设备都可以升级到该版本。</block>
   <block id="0be262a01ffd53cb1827d924de37e376" category="paragraph">借助面向管理员用户的增强型REST API使用情况跟踪功能、增强您的安全防护并简化资源管理。通过API使用情况跟踪、您可以查看正在使用的API令牌、IP地址及其生成的流量。通过将令牌与特定的IP地址和使用级别关联起来、您可以深入了解系统访问和使用趋势、从而获得所需的控制权、以维护安全、高效的环境并保持运营平稳运行。</block>
   <block id="8261d0e1521d30da1b36761d508cb245" category="paragraph">要查看API用法，请导航到*Observability &gt; Admin &gt; API Access*，然后选择_View API Usage_。请注意、此API仅适用于DII可观察性API；不适用于工作负载安全性。</block>
+  <block id="d4e6618283d16f29ba2c9d35766c45a1" category="paragraph">您可以通过单击保存菜单中的*重命名*来重命名当前信息板。</block>
+  <block id="e29fd9e1d666ef26240aa2b0ed0fc1eb" category="list-text">*+添加小工具*按钮、用于向信息板添加任意数量的表、图表或其他小工具。</block>
+  <block id="62f5739cc82c405ea8357b692b14edbe" category="list-text">*+添加变量*按钮，用于使用变量主动过滤信息板数据。</block>
+  <block id="76eae0a751a898b7502d367e62b8fd6d" category="list-text">*时间条形图*：显示一段时间内的日志或指标数据。</block>
+  <block id="671839ef7e8bf30120d054f860c84021" category="inline-image-macro">显示日志数据的时间条形图示例、宽度=200</block>
+  <block id="7fec05b71ec732e9bd7bdcbdbd94e7f8" category="paragraph"><block ref="7fec05b71ec732e9bd7bdcbdbd94e7f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8b4b69c36bee3b088919c3e43a80f18c" category="section-title">迁移收集器</block>
+  <block id="d801c228c66c7fa487f2a8b7e96d562d" category="paragraph">您可以轻松地将工作负载安全收集器从一个代理迁移到另一个代理、从而在代理之间实现高效的收集器负载平衡。</block>
+  <block id="e360b039f3620c4847b5b84d78e80480" category="list-text">源业务代表必须处于_connECTED状态。</block>
+  <block id="6ac92a202fa1f4747631bdcddfe6dd36" category="list-text">要迁移的收集器必须处于_running"状态。</block>
+  <block id="fc9d3df613063ee57906c461320744e2" category="paragraph">注意：</block>
+  <block id="c4da4d3440b598c8edf40d69f984f009" category="list-text">数据和用户目录收集器均支持迁移。</block>
+  <block id="47e78491de9a67f5836acba0100229fe" category="list-text">手动管理的租户不支持迁移收集器。</block>
+  <block id="8d7cc88bc7151c6f89c782e846c2e794" category="section-title">迁移收集器</block>
+  <block id="754f58ec9179e0d0a95d7cfbd792e670" category="paragraph">要迁移收集器、请执行以下步骤：</block>
+  <block id="213d23bd03074c84906851a840c802f5" category="list-text">转到"编辑收集器"页面。</block>
+  <block id="df217418f3f92028ed4fc80e60e917a6" category="list-text">从业务代表下拉列表中选择目标业务代表。</block>
+  <block id="20085de2d7ac8fc18785d6450ab167e3" category="list-text">单击"保存收集器"按钮。</block>
+  <block id="d86dd741c6543921b9b4bc3d1da7d642" category="paragraph">Workload Security将处理此请求。成功迁移后、用户将重定向到收集器列表页面。如果失败、编辑页面上将显示相应的消息。</block>
+  <block id="bff6d170f0b8edf07af035d6c7a0785f" category="paragraph">注意：在将收集器成功迁移到目标代理后、先前在"编辑收集器"页面上所做的任何配置更改将保持应用。</block>
+  <block id="92f3bb936d162eca89372102e441a55c" category="inline-image-macro">通过选择其他代理来迁移收集器</block>
+  <block id="db4125d1ded8b7b828eabf0eeb986b37" category="paragraph"><block ref="db4125d1ded8b7b828eabf0eeb986b37" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="84f0533755d1a33e5cc67c5d1108baa6" category="list-text">如果未发现任何活动、请登录到SVM并输入以下命令。</block>
+  <block id="839fd302fc2dc5dee66803e94e9f95dc" category="paragraph">请确保没有与fpolicy相关的错误。</block>
+  <block id="6e393b37e77fb2093e24fb776c6faf55" category="paragraph">*问题:*数据收集器进入错误状态,一段时间后进入运行状态,然后再次返回错误。此周期将重复。*请尝试以下操作：*这通常发生在以下情形中：</block>
+  <block id="8202c6a36256606217ad100be587d707" category="paragraph">*问题：*数据收集器显示错误消息："错误：无法在2次重试中确定收集器的运行状况、请尝试重新启动收集器(错误代码：AGENT008)"。* 请尝试此操作： *</block>
 </blocks>

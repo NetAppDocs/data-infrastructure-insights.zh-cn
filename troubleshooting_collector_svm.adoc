@@ -52,8 +52,7 @@ sysctl -p
 您也可以尝试使用集群管理 IP 通过 ssh 登录到集群，并对代理 IP 执行 ping 操作。确保代理IP可执行pingable：
 
 +
-_network ping -vserver <vserver name>-Destination <Agent IP>-lf <Lif Name>-show-DEBIL_
-
+ network ping -vserver <vserver name> -destination <Agent IP> -lif <Lif Name> -show-detail
 +
 如果无法执行pingable，请确保ONTAP中的网络设置正确，以便Agent计算机可以执行pingable。
 
@@ -67,7 +66,7 @@ _network ping -vserver <vserver name>-Destination <Agent IP>-lf <Lif Name>-show-
 .. 请等待、直到出现错误。停止 ONTAP 中的数据包跟踪。
 .. 从ONTAP打开数据包跟踪。可从该位置获取
 +
- \https://<cluster_mgmt_ip>/spi/<clustername>/etc/log/packet_traces/
+ https://<cluster_mgmt_ip>/spi/<clustername>/etc/log/packet_traces/
 .. 确保有一个从ONTAP到Agent框的SNT。
 .. 如果没有来自ONTAP的任何Synology认证系统、则表示ONTAP中的防火墙存在问题。
 .. 打开ONTAP中的防火墙、以便ONTAP能够连接代理盒。
@@ -92,7 +91,7 @@ _network ping -vserver <vserver name>-Destination <Agent IP>-lf <Lif Name>-show-
 . 很可能是防火墙阻止了代理计算机中的必要端口。验证是否已为代理计算机打开端口范围 35000-55000/TCP ，以便从 SVM 进行连接。此外，请确保 ONTAP 端未启用防火墙，从而无法与代理计算机进行通信。
 . 在代理框中键入以下命令、并确保端口范围已打开。
 +
- sudo iptables-save \| grep 3500*
+ sudo iptables-save | grep 3500*
 +
 示例输出应如下所示：
 
@@ -109,7 +108,7 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 
 . 通过SSH连接到要监控的SVM/集群。从SVM数据Lf对Agent框执行Ping操作(支持CIFS和NFS协议)、并确保Ping操作正常：
 +
- _network ping -vserver <vserver name> -destination <Agent IP> -lif <Lif Name> -show-detail_
+ network ping -vserver <vserver name> -destination <Agent IP> -lif <Lif Name> -show-detail
 +
 如果无法执行pingable，请确保ONTAP中的网络设置正确，以便Agent计算机可以执行pingable。
 
@@ -126,7 +125,12 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 *问题:*活动页面中未显示任何事件。* 请尝试此操作： *
 
 . 检查ONTAP收集器是否处于"正在运行"状态。如果是，请通过打开某些文件确保在 CIFS 客户端 VM 上生成某些 CIFS 事件。
-. 如果未发现任何活动、请登录到SVM并输入以下命令。_<svm> event log show -source fpolicy_ 请确保没有与 fpolicy 相关的错误。
+. 如果未发现任何活动、请登录到SVM并输入以下命令。
++
+ <SVM>event log show -source fpolicy
++
+请确保没有与fpolicy相关的错误。
+
 . 如果未发现任何活动、请登录到SVM。输入以下命令：
 +
  <SVM>fpolicy show
@@ -161,7 +165,7 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 
 ****
 ****
-*问题:*数据收集器进入错误状态,一段时间后进入运行状态,然后再次返回错误。此周期将重复。*请尝试此操作：**这通常发生在以下情形中：
+*问题:*数据收集器进入错误状态,一段时间后进入运行状态,然后再次返回错误。此周期将重复。*请尝试以下操作：*这通常发生在以下情形中：
 
 . 添加了多个数据收集器。
 . 显示此类行为的数据收集器将向这些数据收集器添加1个SVM。表示将 2 个或更多数据收集器连接到 1 个 SVM 。
@@ -206,7 +210,7 @@ fpolicy policy external-engine delete -vserver <svmname> -engine-name <engine_na
 
 ****
 ****
-*问题：*数据收集器显示错误消息："错误：无法在2次重试中确定收集器的运行状况、请尝试重新启动收集器(错误代码：AGENT008)"。*尝试thi:*
+*问题：*数据收集器显示错误消息："错误：无法在2次重试中确定收集器的运行状况、请尝试重新启动收集器(错误代码：AGENT008)"。* 请尝试此操作： *
 
 . 在数据收集器页面上，滚动到出现错误的数据收集器右侧，然后单击 3 点菜单。选择 _Edit_ 。再次输入数据收集器的密码。按 _Save_ 按钮保存数据收集器。Data Collector 将重新启动，并应解决此错误。
 . Agent计算机可能没有足够的CPU或RAM余量、这就是DSC出现故障的原因。请检查添加到计算机中代理的数据收集器的数量。如果超过20、请增加Agent计算机的CPU和RAM容量。增加CPU和RAM后、DSCS将自动进入Initializing状态、然后自动进入Running状态。查看上的规模估算指南link:concept_cs_event_rate_checker.html["此页面"]。
