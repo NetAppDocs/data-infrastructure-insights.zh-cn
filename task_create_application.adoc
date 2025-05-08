@@ -12,9 +12,6 @@ keywords: application, create application,
 [role="lead"]
 要跟踪与租户上运行的特定应用程序关联的数据、您可以在Data Infrastructure Insight中定义应用程序。
 
-.开始之前
-如果要将应用程序与业务实体关联，必须在定义该应用程序之前创建业务实体。
-
 .关于此任务
 借助Data Infrastructure Insight、您可以跟踪与应用程序关联的资产中的数据、例如使用情况或成本报告。
 

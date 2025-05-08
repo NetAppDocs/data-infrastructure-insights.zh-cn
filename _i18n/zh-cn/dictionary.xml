@@ -6361,7 +6361,6 @@
   <block id="12deeaac5f633c54b730f8c247dbf7e0" category="paragraph">可以使用以下命令卸载较新版本的监控操作员：</block>
   <block id="aee5f180cc531b30ec6cf8dcf509d9b8" category="paragraph">如果监控操作员部署在自己的专用命名空间中、请删除此命名空间：</block>
   <block id="97e76f0c81cc1c26b3d8ffe0d972c5af" category="paragraph">如果第一个命令返回"未找到资源"、请按照以下说明卸载旧版本的监控操作员。</block>
-  <block id="0b14d0fbc4256c7ec7c3bb39b2c28854" category="paragraph">按顺序执行以下每个命令。根据您当前的安装情况、其中某些命令可能会返回‘object not found '消息。可以安全地忽略这些消息。</block>
   <block id="82a8cca794947463478c2f08445a8ff4" category="paragraph">如果以前创建了安全上下文约束：</block>
   <block id="a945216a5c61e628c867b8948c797454" category="section-title">关于Kube-state-metrics</block>
   <block id="951a50d1b55837ddb5ff4cb5af4ebc8a" category="paragraph">NetApp Kubernetes监控操作员会安装自己的Kube-state-metrics、以避免与任何其他实例发生冲突。</block>
@@ -7238,7 +7237,6 @@
   <block id="9931bdf1120e743a2d938e061f7df898" category="paragraph">此时将显示一条确认消息，提示您是否要删除此规则。</block>
   <block id="b101d3b5c8c4309f4cffa3adfd387b6b" category="list-text">单击 * 确定 * 。</block>
   <block id="e42dae64f8e80d611352315992a2460d" category="doc">创建应用程序</block>
-  <block id="598c4639acaf0f3c5a419f9cf865ef56" category="paragraph">如果要将应用程序与业务实体关联，必须在定义该应用程序之前创建业务实体。</block>
   <block id="ba52eab802a385ced7d6e9782614bf0b" category="paragraph">借助Data Infrastructure Insight、您可以跟踪与应用程序关联的资产中的数据、例如使用情况或成本报告。</block>
   <block id="91ee28fc3faa982ecdc71598fe7ce8b9" category="list-text">在Data Infrastructure Insight菜单中、单击*可观察性&gt;丰富&gt;应用程序*。选择</block>
   <block id="8358341ae527ee11b5b1dc8e8f22edea" category="paragraph">此时将显示添加应用程序对话框。</block>
@@ -12379,4 +12377,5 @@
   <block id="839fd302fc2dc5dee66803e94e9f95dc" category="paragraph">请确保没有与fpolicy相关的错误。</block>
   <block id="6e393b37e77fb2093e24fb776c6faf55" category="paragraph">*问题:*数据收集器进入错误状态,一段时间后进入运行状态,然后再次返回错误。此周期将重复。*请尝试以下操作：*这通常发生在以下情形中：</block>
   <block id="8202c6a36256606217ad100be587d707" category="paragraph">*问题：*数据收集器显示错误消息："错误：无法在2次重试中确定收集器的运行状况、请尝试重新启动收集器(错误代码：AGENT008)"。* 请尝试此操作： *</block>
+  <block id="c073fe7a74166cd5d73ec57ce2d1f76e" category="paragraph">按顺序执行以下每个命令。根据您当前的安装、其中某些命令可能会返回"object not found (未找到对象)"消息。可以安全地忽略这些消息。</block>
 </blocks>
