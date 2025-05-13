@@ -1962,8 +1962,6 @@
   <block id="f057d707b9d5c17f0fad56f8204f6bff" category="section-title">工作负载安全措施</block>
   <block id="c3ef097c271469a3ca9718d35396087c" category="paragraph">集群使用与可观察性衡量相同的方法来衡量工作负载安全性。</block>
   <block id="3943920606f23b23925f15408e26cae2" category="paragraph">您可以在*工作负载安全性*选项卡的*管理&gt;订阅*页面中查看工作负载安全性使用情况。</block>
-  <block id="36e75837cd661882faf4ce93d35cafea" category="inline-image-macro">"管理&amp;gt；订阅&amp;gt；工作负载安全性选项卡、显示高端、中端和入门级节点数"</block>
-  <block id="78770d4128ce656a56bd8e8ecd580a0e" category="paragraph"><block ref="9d3e296bb7e7c4cf7ec09d1ec6e96740" category="inline-image-macro-rx" type="image"></block></block>
   <block id="daba1c6ff8590913bcb10d43d3bfcf13" category="admonition">现有Workload Security订阅会调整其MU使用量、以便节点使用量不会占用受管单元。Data Infrastructure Insight会对使用量进行计量、以确保符合许可使用量。</block>
   <block id="c015ba02347af3d8c00ede570637622a" category="section-title">如何订阅？</block>
   <block id="99d34ca2583ae7363bd4e07f9b2d98cc" category="inline-xref">自行订阅</block>
@@ -12378,4 +12376,6 @@
   <block id="6e393b37e77fb2093e24fb776c6faf55" category="paragraph">*问题:*数据收集器进入错误状态,一段时间后进入运行状态,然后再次返回错误。此周期将重复。*请尝试以下操作：*这通常发生在以下情形中：</block>
   <block id="8202c6a36256606217ad100be587d707" category="paragraph">*问题：*数据收集器显示错误消息："错误：无法在2次重试中确定收集器的运行状况、请尝试重新启动收集器(错误代码：AGENT008)"。* 请尝试此操作： *</block>
   <block id="c073fe7a74166cd5d73ec57ce2d1f76e" category="paragraph">按顺序执行以下每个命令。根据您当前的安装、其中某些命令可能会返回"object not found (未找到对象)"消息。可以安全地忽略这些消息。</block>
+  <block id="d873c97dd6dca1c7bd30ed50b82bee0f" category="inline-image-macro">管理&amp;gt；订阅&amp;gt；工作负载安全性选项卡、显示高端、中端和入门级节点数</block>
+  <block id="a2efde4371837d491f7f2d093cb687a2" category="paragraph"><block ref="6239b49ee0db956af965dd1ce0c92bfa" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
