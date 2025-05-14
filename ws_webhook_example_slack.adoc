@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: ws_webhook_example_slack.html 
+keywords: webhook, notification, Slack, integration, 
+summary: '为Slack"创建工作负载安全性webhook以提醒安全性' 
+---
+= 可宽延的工作负载安全性Webhook示例
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+网络挂机允许用户使用自定义的网络挂机通道向各种应用程序发送警报通知。此页面提供了一个为 Slack 设置 webhooks 的示例。
+
+本页面提及第三方说明、这些说明可能会更改。有关最新信息、请参见Slack"文档。
+
+
+
+==== 可宽延的示例
+
+* 转到 https://api.slack.com/apps[]并创建新应用程序为其指定一个有意义的名称、然后选择一个Workspace。
+
+
+image:ws_create_slack_app.png["创建一个Sl延 时应用程序、宽度为400"]
+
+* 转至Incoming Webhook、单击_Activate Incoming Webhooks_、选择_Add New Webhook_、然后选择要发布的频道。
+* 复制 Webhook URL 。创建工作负载Security webhook时将提供此URL。
+
+
+
+
+==== 创建工作负载安全SlackWebhook
+
+. 导航到Admin > Notification、然后选择_Workload Security Webhook选项卡。选择_+ Webhook_以创建新的webhook。
+. 为webhook指定一个有意义的名称。
+. 在_Template Type_下拉列表中、选择_Slack_。
+. 粘贴从上面复制的URL。
+
+
+image:ws_webhook_slack_example.png["工作负载安全性的webhook可宽延时间示例、宽度=400"]
+
+
+
+==== 通过webhook发送通知
+
+* 要通过webhook通知事件、请导航到_Workload Security > Policiies_。单击"_+Attack Policie"或"_+Warning Policie"。
+* 输入有意义的策略名称。
+* 选择所需的攻击类型、策略应附加到的设备以及所需操作。
+* 在_Webhook通知_下拉列表中、选择所需的webhook。保存策略。
+
+
+注意：也可以通过编辑现有策略将webhook附加到这些策略。
+
+image:ws_add_attack_policy.png["添加攻击策略对话框，宽度=400"]

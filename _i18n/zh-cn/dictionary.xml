@@ -184,25 +184,11 @@
   <block id="e0dc2ed956b3711e722d965954939344" category="list-text">在此采集单元上总共部署 75 个或更多数据收集器？</block>
   <block id="159904c45b61bfdda4989e18bf9891e8" category="paragraph">对于上述每个 " 是 " 问题解答，建议向 AU 添加 8 GB 内存和 50 GB 磁盘空间。因此，例如，如果您对这两者都回答 " 是 " ，则应部署一个具有 150 GB 或以上磁盘空间的 24 GB 内存系统。在 Linux 上，要添加到日志位置的磁盘空间。</block>
   <block id="11bb1da5c9cf0248245ce5b24119d183" category="paragraph">有关其他规模估算问题，请联系 NetApp 支持部门。</block>
-  <block id="96cb7682ad0362f3aff6ef6f90dd2520" category="summary">数据基础架构洞察从NetApp Active IQ收集风险数据</block>
   <block id="b5fe3a41d32647f20f3b5ec96045d6d6" category="doc">Active IQ</block>
-  <block id="df0ddcb04f0e5278d49d2c87dfa7f7fc" category="paragraph">NetApp<block ref="5d418eb60d51fa035e4b287bd4191a07" category="inline-link-macro-rx"></block>为NetApp客户的硬件/软件系统提供一系列可视化、分析和其他支持相关服务。Active IQ 报告的数据可以增强系统问题的故障排除能力，还可以深入了解与您的设备相关的优化和预测性分析。</block>
-  <block id="97ba27a6c978c304ea9138ee01781875" category="paragraph">数据基础架构洞察会收集由Active IQ监控和报告的任何NetApp集群模式Data ONTAP存储系统的*风险*。Data Infrastructure Insight会在从这些设备收集数据的过程中自动收集为存储系统报告的风险。您必须将相应的数据收集器添加到数据基础架构洞察力中、以收集Active IQ风险信息。</block>
-  <block id="bfdb97c5bb51966044d87207708e9888" category="paragraph">数据基础架构洞察不会显示Active IQ未监控和报告的ONTAP系统的风险数据。</block>
-  <block id="a98980e7429cd68c3207593853e627fe" category="paragraph">报告的风险显示在_storage_和_storage nnode _资产登录页面上的"风险"表中。此表显示了风险详细信息，风险类别和风险的潜在影响，还提供了一个指向 Active IQ 页面的链接，其中汇总了存储节点的所有风险（需要登录 NetApp 支持帐户）。</block>
-  <block id="44def9cfd3c785a71c36d95e24981147" category="inline-image-macro">Active IQ 风险表</block>
-  <block id="253139fff686e1ef9f39ced79055cc70" category="paragraph"><block ref="253139fff686e1ef9f39ced79055cc70" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="8887b934719a6de0be9e0e43f0ab23d0" category="paragraph">登录页面的 " 摘要 " 小工具还会显示报告的风险计数，并提供指向相应 Active IQ 页面的链接。在 _storage_ 登录页面上，计数是所有底层存储节点的风险之和。</block>
   <block id="96caf84605c76fdc8e4cec8734853381" category="inline-image-macro">存储页面摘要</block>
   <block id="1be3faf6a174e90a1b900868f94e4600" category="paragraph"><block ref="1be3faf6a174e90a1b900868f94e4600" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4a45597eae979dc62d93cd1d748058bd" category="section-title">打开 Active IQ 页面</block>
-  <block id="487f4fcccb6a34d5590990b8e54ace74" category="paragraph">单击指向 Active IQ 页面的链接时，如果您当前未登录到 Active IQ 帐户，则必须执行以下步骤才能查看存储节点的 Active IQ 页面。</block>
-  <block id="ae19f5b6992b8d45f55c8e5baa5492c8" category="list-text">在"数据基础架构洞察力摘要"小工具或"风险"表中、单击Active IQ链接。</block>
-  <block id="cd2403e73e741b8001cced6aa04fa472" category="list-text">登录到您的 NetApp 支持帐户。您将直接转到 Active IQ 中的存储节点页面。</block>
   <block id="62fcdd34f555d8c4a7cdda3b94732063" category="section-title">正在查询风险</block>
-  <block id="32a5da80264ae98c83852181734d819d" category="paragraph">在Data Infrastructure Insight中、您可以将*监控.COUNT*列添加到存储或存储节点查询中。如果返回的结果包括Active IQ监控的存储系统、则monitor.count列将显示存储系统或节点的风险数。</block>
   <block id="0ba8adc53c16a6ffe145978e834b02f8" category="section-title">信息板</block>
-  <block id="88773c59e894d8416f71b9658d5a03fc" category="paragraph">您可以构建小工具（例如饼图，表小工具，条形，列，散点图， 和单值小工具），以可视化 Active IQ 监控的 NetApp 集群模式 Data ONTAP 系统中存储和存储节点的对象风险。可以在这些小工具中选择 " 对象风险 " 作为列或指标，其中存储或存储节点是关注对象。</block>
   <block id="e0ca94f4a4b2b9a6b7968e11a7757d03" category="inline-image-macro">小工具中的对象风险</block>
   <block id="4a7b46f5ae3d121fb437f8755e468f60" category="paragraph"><block ref="4a7b46f5ae3d121fb437f8755e468f60" category="inline-image-macro-rx" type="image"></block></block>
   <block id="be2f9224b979c292cb15fb8ca6626094" category="summary">监控指标是否存在异常</block>
@@ -12378,4 +12364,64 @@
   <block id="c073fe7a74166cd5d73ec57ce2d1f76e" category="paragraph">按顺序执行以下每个命令。根据您当前的安装、其中某些命令可能会返回"object not found (未找到对象)"消息。可以安全地忽略这些消息。</block>
   <block id="d873c97dd6dca1c7bd30ed50b82bee0f" category="inline-image-macro">管理&amp;gt；订阅&amp;gt；工作负载安全性选项卡、显示高端、中端和入门级节点数</block>
   <block id="a2efde4371837d491f7f2d093cb687a2" category="paragraph"><block ref="6239b49ee0db956af965dd1ce0c92bfa" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="67cdd97ee57ecbb8d5397980e2f337b2" category="summary">数据基础架构洞察从NetApp Active IQ数字顾问(也称为数字顾问)收集风险数据</block>
+  <block id="dab2edf9eaac3950e92c281ce358af01" category="doc">Active IQ Digital Advisor</block>
+  <block id="c68ffc18976c6478ceba645cdcfe3ad4" category="paragraph">NetApp <block ref="cbe8da543274ee624cafab4e3c376bb9" category="inline-link-macro-rx"></block>(也称为数字顾问)为NetApp客户的硬件/软件系统提供一系列可视化、分析和其他支持相关服务。Digital Advisor报告的数据不仅可以增强系统故障排除能力、还可以深入了解与设备相关的优化和预测性分析。</block>
+  <block id="bb4ab99c035d10d75227562a13f30fbd" category="paragraph">数据基础架构洞察会收集由数字顾问监控和报告的任何NetApp集群模式Data ONTAP存储系统的*风险*。Data Infrastructure Insight会在从这些设备收集数据的过程中自动收集为存储系统报告的风险。您必须将相应的数据收集器添加到Data Infrastructure Insight、以收集Digital Advisor风险信息。</block>
+  <block id="5b3f4c933f6bb8b2000bc2d18617bf70" category="paragraph">数据基础架构洞察不会显示ONTAP系统中未由Digital Advisor监控和报告的风险数据。</block>
+  <block id="512f021ba1976438e7134e934898c5bd" category="paragraph">报告的风险显示在_storage_和_storage nnode _资产登录页面上的"风险"表中。此表显示了风险详细信息、风险类别和风险的潜在影响、还提供了一个链接、可访问汇总存储节点所有风险的数字顾问页面(需要NetApp支持帐户登录)。</block>
+  <block id="29a84751efa30791c464febff54612dd" category="inline-image-macro">数字顾问风险表</block>
+  <block id="b10eb84d2e981f75c16c48813937b3b7" category="paragraph"><block ref="b10eb84d2e981f75c16c48813937b3b7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1a6627262063d4ee7cc3abb758c1fcf6" category="paragraph">登录页面的"摘要"小工具中还会显示报告的风险计数、并提供指向相应Digital Advisor页面的链接。在 _storage_ 登录页面上，计数是所有底层存储节点的风险之和。</block>
+  <block id="0a341d745c345ab59da1ff09230bf0f5" category="section-title">打开Digital Advisor页面</block>
+  <block id="d6749e879d62d77cbfe2a4f30aa6f3ca" category="paragraph">单击Digital Advisor页面链接时、如果您当前未登录到您的Digital Advisor帐户、则必须执行以下步骤才能查看存储节点的Digital Advisor页面。</block>
+  <block id="61c06e5830878d055d855182425d292e" category="list-text">在"Data Infrastructure Insight摘要"小工具或"风险"表中、单击"Digital Advisor "链接。</block>
+  <block id="5570e484e2050414e7ae0efcb7989c8c" category="list-text">登录到您的 NetApp 支持帐户。此时将直接转到Digital Advisor中的存储节点页面。</block>
+  <block id="21c1dac7b79e4e1279824cc10d71d738" category="paragraph">在Data Infrastructure Insight中、您可以将*监控.COUNT*列添加到存储或存储节点查询中。如果返回的结果包括受Digital Advisor监控的存储系统、则monitoring.count列将显示存储系统或节点的风险数。</block>
+  <block id="bd27458945df244cb55045b52a24310c" category="paragraph">您可以构建小工具(例如饼图、表小工具、条形图、列、散点图和单值小工具)、以便可视化显示由Digital Advisor监控的NetApp集群模式Data ONTAP系统中存储和存储节点的对象风险。可以在这些小工具中选择 " 对象风险 " 作为列或指标，其中存储或存储节点是关注对象。</block>
+  <block id="88ebaf1e13c1e098d9a4a73a9242d56d" category="summary">为PagerDty创建工作负载安全性webhook以提醒安全性</block>
+  <block id="a423930cfe0734579ae74f4cb828cdc6" category="doc">PagerDty的工作负载安全性Webhook示例</block>
+  <block id="d50bb41906d2f733d067c591f51e4963" category="admonition">本页面提及第三方说明、这些说明可能会更改。有关最新信息、请参见<block ref="4cf6cb20b95cded724b319964a5ce815" category="inline-link-macro-rx"></block>。</block>
+  <block id="40a77f4bbfd0ca63ed510e92b9833d67" category="list-text">在PagerDuty中，导航至*服务&gt;服务目录*，然后单击*+New Service*按钮。</block>
+  <block id="7d26cc043fbfb2e53a18d31fea52c7e8" category="list-text">输入_Name_并选择_Use our API directly _。选择_Add Service_。</block>
+  <block id="d4eb5fdef857fa235821f3033fa67762" category="list-text">选择_Integrations_选项卡以查看*集成密钥*。在下面创建Data Infrastructure Insight webhook时、您需要此密钥。</block>
+  <block id="a3e8d0a78049eabf2c286c14c55b54f2" category="inline-image-macro">页面任务意外事件列表示例、宽度=700</block>
+  <block id="5d7dc3b4dea14491b2bd2a77d44d3906" category="paragraph"><block ref="5d7dc3b4dea14491b2bd2a77d44d3906" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="742b9235199c630d771bdfddb2c88611" category="section-title">创建工作负载安全页面Dty Webhook：</block>
+  <block id="ac3971f28a80367895637f2a7baff2b9" category="list-text">导航到Admin &gt; Notification、然后选择_Workload Security Webhook选项卡。选择'+ Webhook'以创建新的webhook。</block>
+  <block id="1d87d3a9dea9aa3897a6eae95a91d36a" category="list-text">为webhook指定一个有意义的名称。</block>
+  <block id="2f1454968ee4b9454d180e309715be49" category="list-text">在_Template Type_下拉列表中、选择_PagerDty ticker_。</block>
+  <block id="3fbd0a1ea55bc616095344f3e328a58e" category="list-text">创建名为_routingKey_的自定义参数密钥，并将该值设置为上面创建的PagerDuty _Integration Key_。</block>
+  <block id="69976b733a7e722341855c38d322daf8" category="inline-image-macro">设置路由键，宽度=300</block>
+  <block id="59429acf87914c20fdad5f135b01c652" category="paragraph"><block ref="59429acf87914c20fdad5f135b01c652" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a5d9118ea338b5d8a10b75a82d2b1af4" category="inline-image-macro">工作负载安全性页面工作负载webhook示例、宽度=400</block>
+  <block id="3d72322f92053aca22220d16d1e96147" category="paragraph"><block ref="3d72322f92053aca22220d16d1e96147" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="30eb5b55a445f5f9ecc59318a74aca4d" category="list-text">要通过webhook通知事件、请导航到_Workload Security &gt; Policiies_。选择_+Attack Policie__或_+Warning Policie_.</block>
+  <block id="4637fc3950065ad14b9030eccdbb419f" category="list-text">输入有意义的策略名称。</block>
+  <block id="a5cb6f5849887e301a555c444584e1c2" category="list-text">选择所需的攻击类型、策略应附加到的设备以及所需的操作。</block>
+  <block id="267bb94f071c1cc48b24df7711f00add" category="list-text">在_Webhook通知_下拉列表中、选择所需的PagerDty webhook。保存策略。</block>
+  <block id="d3982edf8ee2e9d64dff417d32932263" category="paragraph">注意：也可以通过编辑现有策略将webhook附加到这些策略。</block>
+  <block id="ed8719c17bf4a6b47a6788c4a3556656" category="inline-image-macro">添加显示webhook的攻击策略对话框，宽度=400</block>
+  <block id="ebc41e374ce79e003d0fdbca5ff78a65" category="paragraph"><block ref="ebc41e374ce79e003d0fdbca5ff78a65" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="95833a73b3e45da13788f4fcafa6cccb" category="summary">为Slack"创建工作负载安全性webhook以提醒安全性</block>
+  <block id="4c41f7a846a2313609fc27e816292120" category="doc">可宽延的工作负载安全性Webhook示例</block>
+  <block id="2a07da088af04bdad7b7af04058988d0" category="paragraph">本页面提及第三方说明、这些说明可能会更改。有关最新信息、请参见Slack"文档。</block>
+  <block id="5862c65b8f7019053c2c8608553da8b0" category="section-title">可宽延的示例</block>
+  <block id="3a3bfcc3b5ed3df4a3c05a7b1bf64859" category="list-text">转到<block ref="895c0cedff8a42203a3dd912da834bde" category="inline-link-rx"></block>并创建新应用程序为其指定一个有意义的名称、然后选择一个Workspace。</block>
+  <block id="22c69d9725266703049e6aa276638f1c" category="inline-image-macro">创建一个Sl延 时应用程序、宽度为400</block>
+  <block id="247e1031c7df77d7e892f04e3d981f15" category="paragraph"><block ref="247e1031c7df77d7e892f04e3d981f15" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cfd6657a0c61826500cdfc6129ca5675" category="list-text">转至Incoming Webhook、单击_Activate Incoming Webhooks_、选择_Add New Webhook_、然后选择要发布的频道。</block>
+  <block id="6156beaa30eb28272c612e8f6354b961" category="list-text">复制 Webhook URL 。创建工作负载Security webhook时将提供此URL。</block>
+  <block id="6b7df77372799e1a695a1ded8374a011" category="section-title">创建工作负载安全SlackWebhook</block>
+  <block id="722b5451130fff18e8af3cc06455619f" category="list-text">导航到Admin &gt; Notification、然后选择_Workload Security Webhook选项卡。选择_+ Webhook_以创建新的webhook。</block>
+  <block id="c6474368b7cd8a2778b616cf4905ae3d" category="list-text">在_Template Type_下拉列表中、选择_Slack_。</block>
+  <block id="fc2a3346b6fec59f8cff07a6f8aade93" category="list-text">粘贴从上面复制的URL。</block>
+  <block id="a03c7cdbfcc4b139a6c388264157965d" category="inline-image-macro">工作负载安全性的webhook可宽延时间示例、宽度=400</block>
+  <block id="6e4b68c24aaef9b8e2d3cb4e2669fabc" category="paragraph"><block ref="6e4b68c24aaef9b8e2d3cb4e2669fabc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2f5eb341673ba105f1383f2b750ad3b0" category="section-title">通过webhook发送通知</block>
+  <block id="2d7c71390213ca5b29909f9995d38c22" category="list-text">要通过webhook通知事件、请导航到_Workload Security &gt; Policiies_。单击"_+Attack Policie"或"_+Warning Policie"。</block>
+  <block id="5c91d93f01617de1c11eee11259b389d" category="list-text">选择所需的攻击类型、策略应附加到的设备以及所需操作。</block>
+  <block id="91229a6bb91ad336076b839006d6f3d8" category="list-text">在_Webhook通知_下拉列表中、选择所需的webhook。保存策略。</block>
+  <block id="ed3289eb0a2d31b7eb1d54764da04491" category="inline-image-macro">添加攻击策略对话框，宽度=400</block>
+  <block id="f91815c8aac9f13a54e97684dfd7a4bf" category="paragraph"><block ref="f91815c8aac9f13a54e97684dfd7a4bf" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
