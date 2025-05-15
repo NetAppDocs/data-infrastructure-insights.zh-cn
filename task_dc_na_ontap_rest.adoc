@@ -49,9 +49,7 @@ security login rest-role create -role {role name} -api /api -access readonly
 security login rest-role create -role {role name} -api /api/cluster/agents -access all
 vserver services web access create -name spi -role {role name} -vserver {vserver name as retrieved above}
 ....
-
-
-. 使用以下命令创建只读用户。执行 create 命令后，系统将提示您输入此用户的密码。
+. 使用以下命令创建只读用户。执行 create 命令后，系统将提示您输入此用户的密码。请注意、在以下命令中、我们将角色设置显示为_CI_readonly _。如果您在上述步骤3中创建了一个名称不同的角色、请改用此自定义角色名称。
 
 
  security login create -user-or-group-name {username} -application http -authentication-method password -role {role name}

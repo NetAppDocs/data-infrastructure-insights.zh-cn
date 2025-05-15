@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: ws_notifications_using_webhooks.html 
+keywords: alert, webhook, notification 
+summary: 为工作负载安全警报通知创建webhook。 
+---
+= 使用webhook的工作负载安全通知
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Webhook允许用户使用自定义的webhook通道向各种应用程序发送严重或警告警报通知。
+
+许多商业应用程序都支持将webhook作为标准输入接口、例如Slack, PagerDty, Teams,和Discord。通过支持可自定义的通用webhook通道、Workload Security可以支持其中许多交付通道。有关配置webhook的信息、请参见相应应用程序的网站。例如，Sl延 时提供link:https://api.slack.com/messaging/webhooks["本指南非常有用"]。
+
+您可以创建多个webhook频道、每个频道针对不同的用途、不同的应用程序、不同的收件人等
+
+webhook通道实例由以下元素组成
+
+|===
+| 名称 | 说明 
+
+
+| URL | webhook目标URL、包括http：//或https：//前缀以及URL参数 
+
+
+| 方法 | 获取/发布-默认为发布 
+
+
+| 自定义标题 | 在此处指定任何自定义标题 
+
+
+| 消息正文 | 请将邮件正文放在此处 
+
+
+| 默认警报参数 | 列出了 webhook 的默认参数 
+
+
+| 自定义参数和机密 | 自定义参数和密钥允许您添加唯一参数和密码等安全元素 
+|===
+
+
+== 创建webhook
+
+要创建工作负载安全性Webhook、请转到Admin > Notification、然后选择"Workload Security Webhooks"选项卡。下图显示了Slacks webhook创建屏幕示例。
+
+注意：用户必须是工作负载Security _Admin_才能创建和管理工作负载Security Webhook。
+
+image:ws_webhook_slack_example.png["工作负载安全性的webhook可宽延时间示例、宽度=500"]
+
+* 为每个字段输入适当的信息、然后单击"保存"。
+* 您也可以单击"Test Webhook"按钮来测试连接。请注意、此操作将根据选定方法将"消息正文"(不含替换项)发送到定义的URL。
+* SWS webhook包含许多默认参数。此外，您还可以创建自己的自定义参数或密码。
+
+
+
+
+== 参数：它们是什么以及如何使用它们？
+
+警报参数是为每个警报填充的动态值。例如、_%%严重性%%%_参数将替换为警报的严重性类型。
+
+请注意、单击"Test Webhook"按钮时不会执行替换；测试将发送一个有效负载、其中显示参数的占位符(_%Webhook%%<param-name>)、但不会将其替换为数据。
+
+
+
+=== 自定义参数和机密
+
+在本节中，您可以添加所需的任何自定义参数和 / 或密码。自定义参数或密钥可以位于URL或邮件正文中。密码允许用户配置安全自定义参数、例如password、/或类似的配置
+
+以下示例图像显示了在创建webhook时如何使用自定义参数。
+
+image:ws_webhook_parameters_example.png["工作负载安全性webhook、带参数、宽度=800"]
+
+
+
+== 工作负载安全性Webhook列表页面
+
+在Webhook列表页面上、显示的是名称、创建者、创建日期、状态、安全、 和上次报告的字段。注意："Status"列的值将根据最后一次webhook触发器结果不断更改。以下是状态结果的示例。
+
+|===
+
+
+| 状态 | 说明 
+
+
+| 确定 | 已成功发送通知。 
+
+
+| 403 | 已禁止。 
+
+
+| 404 | 未找到URL。 
+
+
+| 400  a| 
+请求错误。如果邮件正文中存在任何错误、您可能会看到此状态、例如：
+
+* 格式错误的json。
+* 为预留密钥提供的值无效。例如、PagerDity仅接受"严重性"的"严重/警告/错误/信息"。任何其他结果都可能产生400状态。
+* 应用程序特定的验证错误。例如、Sl延 时允许一个部分中最多包含10个字段。包含10个以上可能会导致状态为400。
+
+
+
+
+| 410 | 资源不再可用 
+|===
+“上次报告”列指示webhook上次触发的时间。
+
+在webhook列表页面中、用户还可以编辑/复制/删除webhook。
+
+
+
+== 在警报策略中配置Webhook通知
+
+要向警报策略添加webhook通知、请转到-Workload Security > Policies-并选择现有策略或添加新策略。在_Actions_部分>_Webhook通知_下拉列表中、选择所需的webhook。
+
+image:ws_edit_attack_policy.png["显示webhook下拉列表“编辑攻击策略”对话框，宽度=500"]
+
+webhook通知与策略相关联。当攻击(RW/DD/WARN)发生时、将执行配置的操作(创建快照/用户阻止)、然后触发关联的webhook通知。
+
+注意：电子邮件通知与策略无关、它们将照常触发。
+
+* 如果暂停策略、则不会触发webhook通知。
+* 可以将多个webhook附加到一个策略、但建议将不超过5个webhook附加到一个策略。
+
+
+
+
+=== 工作负载安全性Webhook示例
+
+用于Webhooklink:ws_webhook_example_slack.html["Slack"]的Webhook用于link:ws_webhook_example_pagerduty.html["PagerDty"]Webhooklink:ws_webhook_example_teams.html["团队"]的Webhooklink:ws_webhook_example_discord.html["不和"]

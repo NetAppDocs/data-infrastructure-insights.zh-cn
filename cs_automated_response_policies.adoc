@@ -18,7 +18,7 @@ summary: 您可以为潜在攻击（例如勒索软件）和 / 或活动警告�
 
 您可以在特定设备或所有设备上设置策略。要设置响应策略，请选择*管理>自动响应策略*，然后单击相应的*+Policy*按钮。您可以为攻击或警告创建策略。
 
-image:Automated_Response_Screenshot.png["创建攻击策略"]
+image:ws_add_attack_policy.png["添加一个\"攻击策略\"对话框、其中显示webhook下拉列表"]
 
 您必须使用唯一名称保存策略。
 
@@ -27,6 +27,8 @@ image:Automated_Response_Screenshot.png["创建攻击策略"]
 当针对指定设备（或所有设备，如果已选择）触发警报时，自动响应策略将为您的数据创建快照。您可以在上查看快照状态link:cs_alert_data.html#the-alert-details-page["警报详细信息页面"]。
 
 有关通过IP限制用户访问的详细信息、请参见link:cs_restrict_user_access.html["限制用户访问"]页面。
+
+您可以将一个或多个webhook附加到策略中、以便在创建警报并采取操作时收到通知。建议向策略中添加的webhook不超过10个。请注意、如果暂停策略、则不会触发webhook通知。
 
 您可以通过在策略的下拉菜单中选择相应选项来修改或暂停自动响应策略。
 

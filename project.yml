@@ -105,12 +105,22 @@ sidebar:
         url: "/task_create_monitor.html"
       - title: 查看和管理警报
         url: "/task_view_and_manage_alerts.html"
-      - title: 配置通知收件人
-        url: "/concept_notifications_email.html"
       - title: 系统定义的监控器
         url: "/task_system_monitors.html"
+      - title: 配置通知收件人
+        url: "/concept_notifications_email.html"
       - title: 网络挂机通知
-        url: "/task_create_webhook.html"
+        entries:
+        - title: 正在配置Webhook
+          url: "/task_create_webhook.html"
+        - title: webhook示例- Discord
+          url: "/task_webhook_example_discord.html"
+        - title: webhook示例- PagerDty
+          url: "/task_webhook_example_pagerduty.html"
+        - title: webhook示例- Slack
+          url: "/task_webhook_example_slack.html"
+        - title: webhook示例—团队
+          url: "/task_webhook_example_teams.html"
     - title: 使用标注
       entries:
       - title: 定义标注
@@ -263,8 +273,20 @@ sidebar:
       url: "/cs_restrict_user_access.html"
     - title: 模拟勒索软件攻击
       url: "/concept_cs_attack_simulator.html"
-    - title: 通知
+    - title: 电子邮件通知
       url: "/cs_notifications_email.html"
+    - title: 网络挂机通知
+      entries:
+      - title: 正在创建Webhook
+        url: "/ws_notifications_using_webhooks.html"
+      - title: Discord Webhook示例
+        url: "/ws_webhook_example_discord.html"
+      - title: PagerDty Webhook示例
+        url: "/ws_webhook_example_pagerduty.html"
+      - title: Slackwook.示例
+        url: "/ws_webhook_example_slack.html"
+      - title: 团队Webhook示例
+        url: "/ws_webhook_example_teams.html"
     - title: 工作负载安全API
       url: "/concept_cs_api.html"
     - title: SVM收集器故障排除

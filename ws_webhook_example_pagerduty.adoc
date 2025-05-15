@@ -28,7 +28,7 @@ NOTE: 本页面提及第三方说明、这些说明可能会更改。有关最�
 +
 image:Webhooks_PagerDutyScreen1.png["页面加载屏幕"]
 
-. 选择_Integrations_选项卡以查看*集成密钥*。在下面创建Data Infrastructure Insight webhook时、您需要此密钥。
+. 选择_Integrations_选项卡以查看*集成密钥*。在下面创建工作负载安全性webhook时、您将需要此密钥。
 
 
 . 请转到 * 意外事件 * 或 * 服务 * 以查看警报。
