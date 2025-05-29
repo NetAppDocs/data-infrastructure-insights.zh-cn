@@ -157,14 +157,6 @@ sidebar:
         url: "/concept_asset_page_overview.html"
       - title: 对象的上下文内筛选
         url: "/concept_in_context_filters.html"
-      - title: 摘要和拓扑部分
-        url: "/concept_asset_summary_section.html"
-      - title: 专家视图部分
-        url: "/concept_asset_expert_view_section.html"
-      - title: 用户数据部分
-        url: "/concept_asset_user_data_section.html"
-      - title: 相关警报部分
-        url: "/concept_asset_alerts_section.html"
       - title: 存储虚拟化
         url: "/concept_storage_virtualization.html"
       - title: 搜索资产的提示和提示
