@@ -309,7 +309,7 @@ image:CloudSecure_ActivitySelection.png["活动选择器，宽度 = 30%"]
 | 在"所有活动"表中的"用户"列下、用户名显示为："LDAP：HQ.COMPANYNAME.COM:S-1-5-21-3577637-1906459482-1437260136-1831817"或"LDAP：default：80038003" | 可能的原因可能是： 1.尚未配置任何用户目录收集器。要添加一个，请转到*工作负载安全性>收集器>用户目录收集器*，然后单击*+用户目录收集器*。选择 _Active Directory_ 或 _LDAP Directory Server_ 。2.已配置用户目录收集器，但它已停止或处于错误状态。请进入*收集器>用户目录收集器*并检查状态。有关故障排除提示、请参阅link:http://docs.netapp.com/us-en/cloudinsights/task_config_user_dir_connect.html#troubleshooting-user-directory-collector-configuration-errors["用户目录收集器故障排除"]文档的一节。正确配置后，此名称将在 24 小时内自动解析。如果仍无法解决此问题，请检查您是否添加了正确的用户数据收集器。确保用户确实属于添加的 Active Directory/LDAP 目录服务器。 
 
 
-| UI 中未显示某些 NFS 事件。 | 检查以下内容： 1.运行设置了 POSIX 属性的 AD 服务器的用户目录收集器时，应通过 UI 启用 unixid 属性。2.在UI 3的用户页面中搜索时、应显示正在进行NFS访问的任何用户。NFS 4 不支持原始事件（尚未发现用户的事件）。不会监控对 NFS 导出的匿名访问。5.确保在低于NFS4.1的版本中使用NFS版本。 
+| UI 中未显示某些 NFS 事件。 | 检查以下内容： 1.运行设置了 POSIX 属性的 AD 服务器的用户目录收集器时，应通过 UI 启用 unixid 属性。2.在UI 3的用户页面中搜索时、应显示正在进行NFS访问的任何用户。NFS 4 不支持原始事件（尚未发现用户的事件）。不会监控对 NFS 导出的匿名访问。5.确保使用的NFS版本为4.1或更低版本。(请注意、ONTAP 9.15或更高版本支持NFS 4.1。) 
 
 
 | 在Forsics_All Activity_或_indices_页面的筛选器中键入包含通配符(如星号(*))的某些字母后、页面加载速度非常慢。 | 搜索字符串中的星号(\*)将搜索所有内容。但是，诸如_*<searchTerm>_或_*<searchTerm>*_之类的前导通配符字符串会导致查询速度较慢。要获得更好的性能，请改用前缀字符串，格式为_<searchTerm>*_(换言之，请附加星号(*)_after_搜索词)。示例：使用字符串_testvolume*_，而不是_*testvolume_或_*test*volume_。使用目录搜索以递归方式查看给定文件夹下的所有活动(分层搜索)。例如、"/path1/path2/path3/"将以递归方式在/path1/path2/path3下列出所有活动。或者、使用所有活动选项卡下的"Add to Filter"(添加到筛选器)选项。 

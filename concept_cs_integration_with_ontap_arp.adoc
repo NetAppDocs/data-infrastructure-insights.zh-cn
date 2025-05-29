@@ -49,9 +49,8 @@ ONTAP 自主勒索软件保护(ARP)功能可利用NAS (NFS和SMB)环境中的工
 对于具有集群凭据的_CSUser_、请从ONTAP 命令行执行以下操作：
 
 ....
-security login rest-role create -role arwrole -api /api/storage/volumes -access readonly -vserver <cluster_name>
-security login rest-role create -api /api/security/anti-ransomware -access readonly  -role arwrole -vserver <cluster_name>
-security login create -user-or-group-name csuser -application http -authmethod password -role arwrole
+security login role create -role csrole -cmddirname "volume" -access readonly
+security login role create -role csrole -cmddirname "security anti-ransomware volume" -access readonly
 ....
 阅读有关配置其他的更多信息link:task_add_collector_svm.html["ONTAP权限"]。
 

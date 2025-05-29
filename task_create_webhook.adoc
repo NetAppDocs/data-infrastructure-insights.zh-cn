@@ -7,6 +7,10 @@ summary: 创建监控器，以便针对性能或清单阈值发出警报
 = 使用 Webhooks 发送通知
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -64,6 +68,8 @@ image:Webhook_Default_Parameters.png["Data Infrastructure Insight默认Webhook�
 === 参数：它们是什么？如何使用它们？
 
 警报参数是为每个警报填充的动态值。例如， _%%TrigeredOn%_ 参数将替换为触发警报的对象。
+
+您可以将任何对象属性(例如存储名称)作为参数添加到webhook中。例如、您可以在webhook说明中为卷名称和存储名称设置参数、例如："High Latery-for Volume：_%% relatedObject.volume.name%%_、Storage：_%% relatedObject.storage.name%%_"。
 
 请注意、在本节中、单击"Test Webhook"按钮时会执行_not_替换；该按钮会发送一个有效负载、其中显示了_%_替换项、但不会将其替换为数据。
 

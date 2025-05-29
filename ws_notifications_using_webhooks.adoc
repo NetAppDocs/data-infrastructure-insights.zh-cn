@@ -133,4 +133,6 @@ webhook通知与策略相关联。当攻击(RW/DD/WARN)发生时、将执行配�
 
 === 工作负载安全性Webhook示例
 
-用于Webhooklink:ws_webhook_example_slack.html["Slack"]的Webhook用于link:ws_webhook_example_pagerduty.html["PagerDty"]Webhooklink:ws_webhook_example_teams.html["团队"]的Webhooklink:ws_webhook_example_discord.html["不和"]
+用于的webhooklink:ws_webhook_example_slack.html["Slack"]
+
+用于Webhooklink:ws_webhook_example_pagerduty.html["PagerDty"]的Webhook link:ws_webhook_example_teams.html["团队"] for Webhook link:ws_webhook_example_discord.html["不和"]

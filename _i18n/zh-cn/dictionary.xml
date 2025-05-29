@@ -359,7 +359,6 @@
   <block id="9599db26f78c533407593a1835c7f6dc" category="paragraph">选择资产后，它将显示在 Additional Resources 部分中。如果您不再需要查看资产的相关信息、请单击垃圾桶图标以删除。</block>
   <block id="2d511a0af71415c4b6b394d9a1964225" category="summary">可以为大多数对象类型显示资产页面。</block>
   <block id="033cb70e428cff3c1584d7206da08f9c" category="doc">资产页面概述</block>
-  <block id="ab24a36f89b07d59e5cf53d5754754b1" category="paragraph">资产页面汇总了资产的当前状态，并包含指向有关资产及其相关资产的追加信息的链接。</block>
   <block id="39e070e3a04350745af06b7d21eb87f6" category="section-title">资产页面的类型</block>
   <block id="03d9b057f92af8e6f6c95a445dacda02" category="paragraph">Data Infrastructure Insight为以下资产提供了资产页面：</block>
   <block id="76c3fe1d90eec0f4dbe5dd8bf85ff05b" category="list-text">虚拟机</block>
@@ -379,8 +378,6 @@
   <block id="bbc155fb2b111bf61c4f5ff892915e6b" category="list-text">交换机</block>
   <block id="0ac79129f2a7ba5db5e1f4d755cb3231" category="list-text">网络结构</block>
   <block id="76ac23eeb60c7b4065805dfd0ddfebfd" category="section-title">更改显示数据的时间范围</block>
-  <block id="5e5521164b1b5af65706898441efc15d" category="paragraph">默认情况下，资产页面会显示最近 24 小时的数据；但是，您可以通过选择其他固定时间范围或自定义时间范围来更改显示的数据段，以查看较少或更多数据。</block>
-  <block id="8c4cd8b70017d76d9f40fc77fd6c6f13" category="paragraph">无论资产类型如何，您都可以使用每个资产页面上的选项来更改所显示数据的时间段。要更改时间范围，请单击顶部栏中显示的时间范围，然后从以下时间段中进行选择：</block>
   <block id="a926f64f96f29ebfa9e64241032a55b2" category="list-text">过去 15 分钟</block>
   <block id="0fd65d7e147096c119c6900ed5b5a8cd" category="list-text">过去30分钟</block>
   <block id="5b1e7feb1c634d40cb2a44e9b6e49484" category="list-text">过去60分钟</block>
@@ -395,7 +392,6 @@
   <block id="015a82ad52283ebee50f2819fc99d3eb" category="list-text">过去30天</block>
   <block id="31d24a48af5814ffeeb3d62fcd61c322" category="list-text">自定义时间范围</block>
   <block id="993bb582982b324ee6465cc1d0c1a2bd" category="paragraph">自定义时间范围允许您最多选择 31 个连续日期。您还可以为此范围设置开始时间和一天中的结束时间。默认开始时间为所选第一天的中午12：00、默认结束时间为所选最后一天的晚上11：59。单击应用将对资产页面应用自定义时间范围。</block>
-  <block id="ffe8a4f426307f8dd53338d7bc39db00" category="paragraph">资产页面摘要部分以及页面上的任何表或自定义小工具中的信息会根据选定时间范围自动刷新。当前刷新率显示在"Summary (摘要)"部分的右上角以及页面上的任何相关表或小工具上。</block>
   <block id="4feea054535349a31f7c12b7dcbc4d2b" category="section-title">添加自定义小工具</block>
   <block id="2c6503d76e77d1cf4b2836c66fb29d6e" category="paragraph">您可以将自己的小工具添加到任何资产页面。您添加的小工具将显示在该类型所有对象的资产页面上。例如，将自定义小工具添加到存储资产页面将在所有存储资产的资产页面上显示此小工具。</block>
   <block id="9dc6acc34988c6b63dea4000b689a580" category="summary">Data Infrastructure Insight中的资产页面摘要部分概述。</block>
@@ -3507,8 +3503,6 @@
   <block id="6e0dfd81ddc34b1c1736fb0d236a55db" category="paragraph"><block ref="6e0dfd81ddc34b1c1736fb0d236a55db" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8e590479d69be0679e0d2b7c5a78d3ab" category="paragraph">如果使用集群管理凭据添加Data Collector、则无需新权限。</block>
   <block id="a3fef797358352dd57f209719f4590ca" category="paragraph">如果使用自定义用户(例如、-CsUser_)添加收集器并授予该用户权限、请按照以下步骤为工作负载安全性授予向ONTAP注册"拒绝访问"事件所需的权限。</block>
-  <block id="b30a6e7a75eaf5af9f2106e8d96d324b" category="paragraph">对于具有_cluster-_凭据的CsUser、从ONTAP命令行执行以下命令。请注意、_csrestrolle_是自定义角色、而-CsUser_是ONTAP自定义用户。</block>
-  <block id="7a1aa4b5b013e91e379aedbfb6a633f3" category="paragraph">对于凭据为_svm_的CsUser、从ONTAP命令行执行以下命令：</block>
   <block id="6b112db6b76b4a3d519b727558f34cb6" category="section-title">拒绝访问事件</block>
   <block id="d3717aec38baca9f86dd49ee974d2ccf" category="paragraph">从ONTAP系统获取事件后、Workload Security Foreness页面将显示Access Denied Events。除了显示的信息之外、您还可以通过将_Desired Activity_列从齿轮图标添加到表中来查看特定操作缺少的用户权限。</block>
   <block id="fb4e4dc5cb185934a7a50a8b788d9a18" category="inline-image-macro">拒绝访问事件示例</block>
@@ -3999,7 +3993,6 @@
   <block id="0c4a0e9a569be65e94908f9222457694" category="inline-link-macro">用户目录收集器故障排除</block>
   <block id="fa754fd7176d2dbf75086e702bb8e0ba" category="cell">可能的原因可能是： 1.尚未配置任何用户目录收集器。要添加一个，请转到*工作负载安全性&gt;收集器&gt;用户目录收集器*，然后单击*+用户目录收集器*。选择 _Active Directory_ 或 _LDAP Directory Server_ 。2.已配置用户目录收集器，但它已停止或处于错误状态。请进入*收集器&gt;用户目录收集器*并检查状态。有关故障排除提示、请参阅<block ref="700dae282c67631ab7fef060d50fba0f" category="inline-link-macro-rx"></block>文档的一节。正确配置后，此名称将在 24 小时内自动解析。如果仍无法解决此问题，请检查您是否添加了正确的用户数据收集器。确保用户确实属于添加的 Active Directory/LDAP 目录服务器。</block>
   <block id="65524feb61d50c77bb7ba2638a763f8e" category="cell">UI 中未显示某些 NFS 事件。</block>
-  <block id="57312d53719f5635163cdff04dd88136" category="cell">检查以下内容： 1.运行设置了 POSIX 属性的 AD 服务器的用户目录收集器时，应通过 UI 启用 unixid 属性。2.在UI 3的用户页面中搜索时、应显示正在进行NFS访问的任何用户。NFS 4 不支持原始事件（尚未发现用户的事件）。不会监控对 NFS 导出的匿名访问。5.确保在低于NFS4.1的版本中使用NFS版本。</block>
   <block id="9bb3efbd29374edfd5411d3bf02b3b92" category="cell">在Forsics_All Activity_或_indices_页面的筛选器中键入包含通配符(如星号(*))的某些字母后、页面加载速度非常慢。</block>
   <block id="e7b6c39291eb31c1a3a49eb83274bc99" category="cell">使用路径筛选器时遇到"Request failed with status code 500/503"错误。</block>
   <block id="62ce499553ccf0270c3a01cc146e46fd" category="cell">请尝试使用较小的日期范围来筛选记录。</block>
@@ -5915,7 +5908,6 @@
   <block id="6b6a5e540baae01020db6abcb69752a2" category="list-text">此数据收集器支持以下功能：</block>
   <block id="b497cf0f1b1568d837947f6ad7ece7af" category="list-text">Data ONTAP 9.2 及更高版本为获得最佳性能、请使用9.13.1.以上的Data ONTAP版本。</block>
   <block id="343a405f2f06197f662e42373c7fb059" category="list-text">SMB协议3.1及更早版本。</block>
-  <block id="7c6a37577f49fc25a4c899cda17f9040" category="list-text">NFS版本(不低于NFS 4.1且安装了ONTAP 9.15.1或更高版本)。</block>
   <block id="ca25fd447f71b95ab21d53b012fa1ddc" category="list-text">ONTAP 9.4 及更高版本支持 FlexGroup</block>
   <block id="1b1cd01c54254af639999400741a0b75" category="list-text">支持ONTAP Select</block>
   <block id="37f8c5eb442d46d5ec5da0275366c9c8" category="list-text">仅支持数据类型 SVM 。不支持具有无限卷的 SVM 。</block>
@@ -5940,7 +5932,6 @@
   <block id="2d3cc76ffef3ba66813c26ecf4f96b0f" category="list-text">启用防火墙后，必须定义一个异常，以允许使用 Data ONTAP 数据收集器的端口传输 TCP 流量。</block>
   <block id="1b44ec95d8bb09c8257712da31dde413" category="inline-link-macro">代理要求</block>
   <block id="d47350de0cb738713602fc081af217e9" category="paragraph">有关配置信息、请参见。<block ref="66b24601b32ea1e28a736b303c9dda16" category="inline-link-macro-rx"></block>此适用场景内部部署代理和代理安装在云中。</block>
-  <block id="0deb145e97d2a45a78872c8c8eb51e12" category="list-text">在 AWS EC2 实例中安装代理以监控 Cloud ONTAP SVM 时，代理和存储必须位于同一个 VPC 中。如果它们位于不同的 VPC 中，则 VPC 之间必须有有效的路由。</block>
   <block id="5c62f1c9f30e0ad47fc12431846b6858" category="inline-link-macro">用户访问阻止</block>
   <block id="3307ea9b101dea248dbf60bf6f93ed75" category="paragraph">请注意以下事项<block ref="e513c094cbe732163e31cf30e277e8bc" category="inline-link-macro-rx"></block>：</block>
   <block id="0cd400e3d93cd7ed179f95d57d744891" category="section-title">有关权限的注释</block>
@@ -5971,7 +5962,6 @@
   <block id="c50f4a752643297cd09ba0deaf0c0827" category="cell">SVM名称</block>
   <block id="fabfbae9b52bdb9c35688428560d23d0" category="cell">SVM 的名称（通过集群 IP 进行连接时，此字段为必填字段）</block>
   <block id="f6039d44b29456b20f8f373155ae4973" category="cell">用户名</block>
-  <block id="1bcb892250552f8e5d36186788921c07" category="cell">通过集群 IP 添加时用于访问 SVM/ 集群的用户名选项为： 1.集群管理员 2.‘用户的 3.与 CsUser 具有类似角色的 AD 用户。通过SVM IP添加时、选项为：4. vsadmin 5.‘用户的 6.与 CsUser 角色类似的 AD-username 。</block>
   <block id="dc647eb65e6711e155375218212b3964" category="cell">密码</block>
   <block id="9333b5b26a1ca69c15cd77e46b9ddbf8" category="cell">上述用户名的密码</block>
   <block id="1f7c7e6ee279ff06baf8503f5be616f2" category="cell">筛选共享 / 卷</block>
@@ -5991,17 +5981,12 @@
   <block id="65b46bd8eed280f6feefa47f4a74d302" category="list-text">将两个数据收集器连接起来、一个连接到源SVM、另一个连接到目标SVM。</block>
   <block id="d5d55b52a220ca4d14feac2aa8b83d23" category="list-text">数据收集器应通过_Cluster IP_进行连接。</block>
   <block id="c2e2e688fedcc6b98883e05a15afc9b8" category="list-text">在任何时刻、一个数据收集器应正在运行、另一个数据收集器将出现错误。</block>
-  <block id="edf525ae0ad794e4070641e785a1a628" category="paragraph">当前的‘Running ' SVM的数据收集器将显示为_running。当前‘s的SVM数据收集器将显示为_Error_。</block>
-  <block id="6d1fbd196541e759b0a79fdf2b671bcd" category="list-text">只要发生切换、数据收集器的状态就会从‘running '更改为‘error '、反之亦然。</block>
   <block id="34d88af94446d0d86575e402898fc1b0" category="list-text">数据收集器需要长达两分钟的时间才能从"错误"状态变为"正在运行"状态。</block>
   <block id="f0240b95ecfe16d637a84130b5ed57d9" category="section-title">服务策略</block>
   <block id="4cb8e0d8b1d299b402fd5ddce7d39cd5" category="paragraph">如果将服务策略与ONTAP * 9.9.1或更高版本*结合使用、则要连接到数据源收集器、需要使用_data-fpolicy-client_服务以及数据服务_data-nfs_和/或_data-CIFS_。</block>
   <block id="ee22588534e4e3b699a85e968f56f4a7" category="paragraph">在9.1.1之前的ONTAP 版本中、不需要设置_data-fpolicy-client_。</block>
   <block id="27f986eca60850ba6afaf4deb6c8be29" category="section-title">播放-暂停Data Collector</block>
   <block id="37387a4cc8252dafbc2c17f057568ef6" category="paragraph">如果Data Collector处于_running"状态、则可以暂停收集。打开收集器的"三点"菜单、然后选择暂停。暂停收集器时、不会从ONTAP收集任何数据、也不会从收集器向ONTAP发送任何数据。这意味着、不会有Fpolicy事件从ONTAP流向数据收集器、也不会从数据收集器流向数据基础架构洞察。</block>
-  <block id="12a77ef251456c14c7516a531e07f62b" category="paragraph">请注意、如果在收集器暂停时在ONTAP上创建了任何新卷等、则"工作负载安全性"不会收集数据、这些卷等也不会反映在信息板或表中。</block>
-  <block id="ac08b45e1e6b3f3cb0a5ffc7cb738447" category="list-text">根据已暂停收集器上配置的设置、不会执行Snapshot清除。</block>
-  <block id="4a0a97ef2afa5a536e5dc77411dedca9" category="list-text">暂停的收集器不会处理EMS事件(如ONTAP ARP)。这意味着、如果ONTAP发现勒索软件攻击、Data Infrastructure Insight Workload Security将无法获得该事件。</block>
   <block id="7e41836b686c17a31fd348a24ad244d1" category="list-text">不会为已暂停的收集器发送运行状况通知电子邮件。</block>
   <block id="3683774ed8a4e1ec359bda17c740e07d" category="list-text">暂停的收集器不支持手动或自动操作(例如Snapshot或用户阻止)。</block>
   <block id="fa80f305470263b5f75374e020afeacd" category="list-text">在代理或收集器升级、代理VM重新启动/重新启动或代理服务重新启动时、暂停的收集器将保持_Paused.</block>
@@ -12167,7 +12152,6 @@
   <block id="4bffd602151b14e55ad1f19de262d0c1" category="list-text">确保此SVM已配置CIFS服务器：tistershell：&gt;<block ref="fafd8ff6ac4a59e73c5d4e3b47d545ee" prefix=" " category="inline-code"></block></block>
   <block id="52ea452f7c0975b526b909c63394b7e8" category="list-text">为 SVM vsadmin 用户设置密码。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：&gt;<block ref="73b77b9c99e693ec16bc3e4960672465" prefix=" " category="inline-code"></block></block>
   <block id="9b7edcaaf6b4a85dc972c92c9191eb04" category="list-text">解锁 SVM vsadmin 用户以进行外部访问。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：&gt;<block ref="db25ee40fb860a97415dab9c598caaf9" prefix=" " category="inline-code"></block></block>
-  <block id="368c3bb96cbd7737c094fe94dfdedf94" category="list-text">确保数据 LIF 的防火墙策略设置为 ‘mGMT ' （而不是 ‘data ' ）。如果使用专用管理lif添加SVM、请跳过此步骤<block ref="0197c7c6728dc0e945da717147320f69" prefix=" " category="inline-code"></block></block>
   <block id="c71b503670f2867f513635832d1599c3" category="paragraph"><block ref="c71b503670f2867f513635832d1599c3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d2b98171b3e920dab4bb3e92ccf4e89a" category="paragraph"><block ref="d2b98171b3e920dab4bb3e92ccf4e89a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="feacd3cef81abfcdbf59bda9ba5b97fd" category="paragraph"><block ref="feacd3cef81abfcdbf59bda9ba5b97fd" category="inline-image-macro-rx" type="image"></block></block>
@@ -12318,29 +12302,9 @@
   <block id="932f2c5acc21af69f8b6364c9253f343" category="cell">保存作业时、此文件夹可能会显示"团队内容"以及"Custom reports - xxxxxx"中的内容列表、但您无法在此处保存此作业、因为Cognos认为这是您无权写入的"团队内容"文件夹。</block>
   <block id="68d49a29df93f86fad174957a3b64f3e" category="cell">解决方法是创建一个具有唯一名称的新文件夹(即"NewFolder")并将其保存在该文件夹中、或者保存到"My Content"(我的内容)、然后复制/移动到"Custom Reports-xxxxxx"(自定义报告- xxxxxx)。</block>
   <block id="6c64b0b8fa6a49a7d9d02dc05ff84dd9" category="paragraph">注：如果第一个命令返回“No Resources Found”(未找到资源)，请按照以下说明卸载较旧版本的监控操作员。</block>
-  <block id="8f5d4322bbada1e271bc144d48fbd530" category="section-title">Kube-state-metrics 计数器</block>
-  <block id="0868aed0151117af81e4d8a3bf48f5d1" category="paragraph">使用以下链接访问这些Kubbe状态指标计数器的信息：</block>
-  <block id="dcd18b6a9c1c857332184b4ab6b6b876" category="inline-link">ConfigMap 指标</block>
-  <block id="43c0e039eb7d522a6d4d124fdff7e06f" category="list-text"><block ref="43c0e039eb7d522a6d4d124fdff7e06f" category="inline-link-rx"></block></block>
-  <block id="9c6d0e0120fcf6c4d873e186cc9739bf" category="list-text"><block ref="9c6d0e0120fcf6c4d873e186cc9739bf" category="inline-link-rx"></block></block>
-  <block id="aa7c0000dea1ded472606bf83241d554" category="list-text"><block ref="aa7c0000dea1ded472606bf83241d554" category="inline-link-rx"></block></block>
-  <block id="3743b47b26a692a03362afc5a67c0463" category="inline-link">传入指标</block>
-  <block id="4cb7ce0b5790952cc6bda2997a7dabc9" category="list-text"><block ref="4cb7ce0b5790952cc6bda2997a7dabc9" category="inline-link-rx"></block></block>
-  <block id="5fdc0df1bae486ee24716c612b24ca02" category="list-text"><block ref="5fdc0df1bae486ee24716c612b24ca02" category="inline-link-rx"></block></block>
-  <block id="8b04a06b05700061d42a433c93746a63" category="list-text"><block ref="8b04a06b05700061d42a433c93746a63" category="inline-link-rx"></block></block>
-  <block id="69207fca599a65027f8a0597b95b093d" category="list-text"><block ref="69207fca599a65027f8a0597b95b093d" category="inline-link-rx"></block></block>
-  <block id="ea541521b7c5e710af931c8e4f58eb87" category="inline-link">持久性卷声明指标</block>
-  <block id="628462d67f17543dc95a839333690c0e" category="list-text"><block ref="628462d67f17543dc95a839333690c0e" category="inline-link-rx"></block></block>
-  <block id="3962a47d5b09f2b1246c86d8bc272414" category="list-text"><block ref="3962a47d5b09f2b1246c86d8bc272414" category="inline-link-rx"></block></block>
-  <block id="5df76f1cf3ae3096632fd05036cd39a0" category="list-text"><block ref="5df76f1cf3ae3096632fd05036cd39a0" category="inline-link-rx"></block></block>
-  <block id="8f9fbab4275b3c6156f4a1e2bd589d5e" category="inline-link">机密指标</block>
-  <block id="94500053c0d8262e7a0caa0908ba6f8d" category="list-text"><block ref="94500053c0d8262e7a0caa0908ba6f8d" category="inline-link-rx"></block></block>
-  <block id="4e3e0b949c1506c4eb21f3ebfc141e3b" category="list-text"><block ref="4e3e0b949c1506c4eb21f3ebfc141e3b" category="inline-link-rx"></block></block>
-  <block id="3a41cf72ebe7dd71e2b8cb6f1a7e14ff" category="list-text"><block ref="3a41cf72ebe7dd71e2b8cb6f1a7e14ff" category="inline-link-rx"></block></block>
   <block id="dd76ae8de47aca7994545a7035613bf0" category="list-text">使用以下命令创建只读用户。执行 create 命令后，系统将提示您输入此用户的密码。请注意、在以下命令中、我们将角色设置显示为_CI_readonly _。如果您在上述步骤3中创建了一个名称不同的角色、请改用此自定义角色名称。</block>
   <block id="7b8cb6a2da35e297a98a9c7f685b10bf" category="summary">为工作负载安全警报通知创建webhook。</block>
   <block id="b4e56cbfee73fd0b031d980fbdbc1221" category="doc">使用webhook的工作负载安全通知</block>
-  <block id="bac104179c44c4bc668db684ba506bc9" category="paragraph">Webhook允许用户使用自定义的webhook通道向各种应用程序发送严重或警告警报通知。</block>
   <block id="990e31b802a497274f77721882cb6da4" category="paragraph">许多商业应用程序都支持将webhook作为标准输入接口、例如Slack, PagerDty, Teams,和Discord。通过支持可自定义的通用webhook通道、Workload Security可以支持其中许多交付通道。有关配置webhook的信息、请参见相应应用程序的网站。例如，Sl延 时提供<block ref="467ef0b7b93a9b44aaca1d16165eef1f" category="inline-link-macro-rx"></block>。</block>
   <block id="e62bbcee343d1c4078d7ed518ab7f3ee" category="paragraph">您可以创建多个webhook频道、每个频道针对不同的用途、不同的应用程序、不同的收件人等</block>
   <block id="0326dc02270d26b9aa0fcc21670bbc3c" category="paragraph">webhook通道实例由以下元素组成</block>
@@ -12388,7 +12352,6 @@
   <block id="5d85e370b1d77d0446861bca3ba2923b" category="list-text">如果暂停策略、则不会触发webhook通知。</block>
   <block id="a42fc48e948265e9bdcb235f801134f1" category="list-text">可以将多个webhook附加到一个策略、但建议将不超过5个webhook附加到一个策略。</block>
   <block id="01b91c7ee988946f75e90ac744922e22" category="section-title">工作负载安全性Webhook示例</block>
-  <block id="6357c8b51f784219ec3029dfa894719a" category="paragraph">用于Webhook<block ref="2990f1f56161b3387a3b4aed372cd205" category="inline-link-macro-rx"></block>的Webhook用于<block ref="119cd804e167819a5b1cbe06f835cd07" category="inline-link-macro-rx"></block>Webhook<block ref="fd47f99f71f4060a45930a1b7d2d1fd6" category="inline-link-macro-rx"></block>的Webhook<block ref="9ec366bafa5f53c82668f1616a12e6a8" category="inline-link-macro-rx"></block></block>
   <block id="e37a0dbdff524f7df33c9b0829c33ade" category="summary">为Discord创建工作负载安全性webhook以提醒安全性</block>
   <block id="ecd55cea03da0e912d8c61fb0a4aae96" category="doc">Workload Security Webhook Discord示例</block>
   <block id="a46dcf40ced5ca5e59453256043c2f70" category="admonition">本页提及第三方说明、可能会有更改。有关最新信息、请参见<block ref="d3daba8ef1153460be2adfd1c98aadd0" category="inline-link-macro-rx"></block>。</block>
@@ -12428,4 +12391,188 @@
   <block id="9129ee5b293413b88d69268ce77a5a06" category="sidebar">PagerDty Webhook示例</block>
   <block id="63a04ee1b7791a07aa2f0767ceb2cb77" category="sidebar">Slackwook.示例</block>
   <block id="b58ab179b4f6f21dfbd61177415644b6" category="sidebar">团队Webhook示例</block>
+  <block id="bc3e4d08429f2fe83d93664409d90af3" category="paragraph">资产登录页面汇总了资产的当前状态、并包含指向资产及其相关资产的其他信息的链接。</block>
+  <block id="ce40e4e25f8e81c59a3e8ff8a7087d26" category="paragraph">登录页面提供了对象的单页视图、其中包含摘要、性能和相关资源信息。</block>
+  <block id="537ff0ae72c035e90e343d13855ab696" category="inline-image-macro">全新LP设计</block>
+  <block id="515797dfe1a79b5ca70c9d78fd10a7f5" category="paragraph"><block ref="515797dfe1a79b5ca70c9d78fd10a7f5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="59e1a68528e01f267fb06f043e3f6327" category="section-title">摘要部分</block>
+  <block id="858dfbd6c853feb2bf9e5e1995eb0ad0" category="paragraph">登录页面顶部是"可预测摘要"部分、其中包含多个迷你图、用于显示吞吐量或延迟等方面的最新数据趋势、对象信息和属性以及可能针对对象发出警报的任何监控器。</block>
+  <block id="50fd8b4e8dccf53196cd167a3deffd99" category="paragraph">此外、摘要部分还会显示并允许您更改分配给资产的标注。</block>
+  <block id="df32be42ce13a454a80490019d1e61b4" category="section-title">性能部分</block>
+  <block id="9d8de83ddf2f9a829649efb6cd6b5c2c" category="paragraph">性能部分显示对象的性能数据。选择_Settings_向显示内容添加其他图表(如吞吐量或容量)、或者选择相关或贡献资源以将其数据绘制在对象的旁边。可能会引发资源争用的设备也会列在性能部分中。在数据收集器轮询和获取更新后的数据时、图表中的数据会自动刷新。</block>
+  <block id="aa59d67c2123f094d0d6798ffe651c4d" category="inline-xref">指标</block>
+  <block id="0be224f95f2ec766d623267c5fda4266" category="paragraph">您可以选择要在性能图表中查看的<block ref="87bce3adfac20fa01a38d970912dd0cf" category="inline-xref-macro-rx"></block>选定时间段。单击_Settings_下拉列表、然后从列出的指标中进行选择。</block>
+  <block id="7add752780e59436bc47146c3c66bf9a" category="paragraph">除了性能数据之外、还会显示选定页面时间范围内处于活动状态或处于活动状态的任何警报。</block>
+  <block id="6e6214a2bb3a60c94d2966bb25b38e06" category="inline-image-macro">登录页面上的警报示例</block>
+  <block id="ef8eb8d1f2ede0808c0ea48d158421c2" category="paragraph"><block ref="ef8eb8d1f2ede0808c0ea48d158421c2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e2f481c79142bc2991d1554a541a8f8e" category="paragraph">您可以从"性能"部分中列出的以下设备中进行选择：</block>
+  <block id="091dc51965787a0cc358e64e6aefb6d2" category="list-text">主要变更</block>
+  <block id="4b8f9a34385a1bb63231b156c73a29b0" category="paragraph">与近期变更相关的资产。</block>
+  <block id="3daa4fc9c3f0568d191d82716a583db7" category="section-title">其他资源部分</block>
+  <block id="53eff1e383b6c9cfcf6c62d1b80b41c8" category="paragraph">其他资源部分显示与当前对象类型相关的资源的数据表。您可以展开和折叠这些表、以便将重点放在特定资源上。选择齿轮图标可在表中临时显示其他指标或属性。</block>
+  <block id="561b6035e0c7c50948acedcd09074bae" category="paragraph">自定义小工具位于登录页面底部的"性能"和"资源"部分下方。</block>
+  <block id="183cc7e3db3df10d83d155985e0bd322" category="paragraph">默认情况下、资产页面会显示最近3小时的数据；但是、无论资产类型如何、您都可以使用每个资产页面上的选项来更改所显示数据的时间段。要更改时间范围，请单击顶部栏中显示的时间范围，然后从以下时间段中进行选择：</block>
+  <block id="17657700724fba34bb1d9643fc1f8e8c" category="list-text">过去14天</block>
+  <block id="75190982e0922ca96ba831f7c3eb9037" category="paragraph">页面上的信息会根据选定时间范围自动刷新。当前刷新率显示在"Summary (摘要)"部分的右上角以及页面上的任何相关表或小工具上。</block>
+  <block id="7da8efb3447cbcbdd54c3a4c0448213f" category="section-title">性能指标定义</block>
+  <block id="773a459dc0ea8ba03d599d96cb1af7ca" category="paragraph">性能部分可以根据为资产选择的时间段显示多个指标。每个指标都会显示在自己的性能图表中。您可以根据要查看的数据在图表中添加或删除指标和相关资产；您可以选择的指标因资产类型而异。</block>
+  <block id="5ff448003ebaf80171d13e6e73920334" category="section-title">2025年5月</block>
+  <block id="66268370e652ac71b7a282f1564eada1" category="section-title">新的登录页面可让您随时了解最新信息</block>
+  <block id="66b280f436bccd2b60ccd9302027e14f" category="paragraph">重新设计的登录页面可在一个视图中显示您所需的一切—摘要数据、性能图表、相关性、警报和更改以及关键资源。</block>
+  <block id="36e271cbdb94338e583c8a62c222fc36" category="paragraph">现在、您可以更快地排除故障并保持流畅状态、而不会在选项卡之间跳转或丢失上下文。</block>
+  <block id="19e3e493fd61bfb542d63d1787a371fe" category="inline-image-macro">新的登录页面设计、显示摘要、性能和其他资源部分的位置</block>
+  <block id="330485c83d01a77d87026da4a94ee5a4" category="paragraph"><block ref="330485c83d01a77d87026da4a94ee5a4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="931f1880ebd244ad86ecd6f673f150b9" category="paragraph">*Webhook现在可用于工作负载安全警报*</block>
+  <block id="400af3b7addfac8197f5d8e9203e17fa" category="paragraph">工作负载安全性现在支持向Slack, PagerDty和团队等工具发送即装即用的webhook通知。此外、我们还提供可自定义的模板、使您可以定制消息或与任何其他暹粒或第三方应用程序集成。将关键警报直接路由到现有安全工作流、以便您的团队可以更快地进行调查和响应。</block>
+  <block id="d64d4b328e6de76f90aacd35c6e7985f" category="inline-image-macro">工作负载安全性的webhook可宽延时间示例、宽度=400</block>
+  <block id="5a19779f32afde4c275f9ab3837de731" category="paragraph"><block ref="5a19779f32afde4c275f9ab3837de731" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e0bd3b304cebb26b01fd47c884e1f734" category="paragraph">*跨代理迁移工作负载安全性收集器*</block>
+  <block id="5d6403d20353cb4ed26a5c052ec10b1c" category="paragraph">您可以轻松地将工作负载安全收集器从一个代理迁移到另一个代理、从而在代理之间实现高效的收集器负载平衡。迁移与编辑收集器和从列表中选择目标代理一样简单。</block>
+  <block id="1ccc2eb64b83fa6e09434e4ea37a88d0" category="inline-image-macro">迁移收集器、宽度= 500</block>
+  <block id="ae4259864b7d97f132cd52c694934b13" category="paragraph"><block ref="ae4259864b7d97f132cd52c694934b13" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8e65de736413fe1500e6421db8bcb338" category="section-title">.CSV异步导出</block>
+  <block id="8c4c6f4970d330396c4b6db8dbc2c199" category="paragraph">将数据导出到.CSV可能需要几秒钟到几小时、具体取决于要导出的数据量。现在、Data Infrastructure Insight可以异步导出这些数据、因此您可以在编译.CSV时继续工作。</block>
+  <block id="81a50eeb7304ec057554482fccdab603" category="paragraph">选择右上角工具栏中的"铃"图标、查看.CSV导出。</block>
+  <block id="8f1c70af5d4417d2923f1e69c6064742" category="inline-image-macro">钟形图标以及.csv导出列表、可供下载、宽度为400</block>
+  <block id="d85e1869f257ad55bcc4f32c8ffba364" category="paragraph"><block ref="d85e1869f257ad55bcc4f32c8ffba364" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="32d0bc5fe8f489a61bffe14dcdec5020" category="paragraph">对于具有_cluster-_凭据的CsUser、从ONTAP命令行执行以下命令。请注意、此权限可能已存在。</block>
+  <block id="f54a1c8b2b5e04dbd1979146ff5b8090" category="paragraph">对于凭据为_svm_的CsUser、从ONTAP命令行执行以下命令。请注意、此权限可能已存在。</block>
+  <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetApp卷</block>
+  <block id="3b2e5f3c488708db173b7fd97e0aec26" category="cell"><block ref="3b2e5f3c488708db173b7fd97e0aec26" category="inline-link-macro-rx"></block></block>
+  <block id="2be0c164ecf3c2c6516b43029ec5e92d" category="cell">检查以下内容： 1.运行设置了 POSIX 属性的 AD 服务器的用户目录收集器时，应通过 UI 启用 unixid 属性。2.在UI 3的用户页面中搜索时、应显示正在进行NFS访问的任何用户。NFS 4 不支持原始事件（尚未发现用户的事件）。不会监控对 NFS 导出的匿名访问。5.确保使用的NFS版本为4.1或更低版本。(请注意、ONTAP 9.15或更高版本支持NFS 4.1。)</block>
+  <block id="673c98c370040e99535882f2b170dfb3" category="list-text">NFS版本(最高为NFS 4.1、含NFS 4.1)(请注意、ONTAP 9.15或更高版本支持NFS 4.1)。</block>
+  <block id="1c869a5fff9c63089d6bb005e760cadf" category="list-text">确保数据LIF的防火墙策略设置为"GMT"(而不是"data")。如果使用专用管理lif添加SVM、请跳过此步骤<block ref="0197c7c6728dc0e945da717147320f69" prefix=" " category="inline-code"></block></block>
+  <block id="5f0f73838943d279a29bfd722c6ee748" category="list-text">在 AWS EC2 实例中安装代理以监控 Cloud ONTAP SVM 时，代理和存储必须位于同一个 VPC 中。如果它们位于不同的VPC中、则VPC之间必须存在有效路由。</block>
+  <block id="4c3f5841ac6077689c88403769e710fb" category="paragraph">如果您使用的是自定义用户(例如、-CsUser_)并为该用户授予了权限、请按照中的步骤<block ref="e513c094cbe732163e31cf30e277e8bc" category="inline-link-macro-rx"></block>为"工作负载安全性"授予权限以阻止用户。</block>
+  <block id="1b0825e538a70e8323fac1cbfe230ee5" category="paragraph">注意：您可以创建一个角色、用于自定义用户的所有功能权限。如果存在现有用户、请先使用以下命令删除现有用户和角色：</block>
+  <block id="91f83541442d1c49aaf40212bccffad1" category="paragraph">注意：您可以创建一个角色、用于自定义用户的所有功能权限。如果存在现有用户、请先使用以下命令删除现有用户和角色：</block>
+  <block id="858faeb682f19ff16f83d24c86cb97f7" category="cell">通过集群 IP 添加时用于访问 SVM/ 集群的用户名选项为： 1.集群管理员 2.'CSUser' 3.与 CsUser 具有类似角色的 AD 用户。通过SVM IP添加时、选项为：4. vsadmin 5.'CSUser' 6.与 CsUser 角色类似的 AD-username 。</block>
+  <block id="0851edbfbb1a0406acbc79df15296b3f" category="paragraph">当前正在运行的SVM数据收集器将显示为_running"。当前的"已" SVM的数据收集器将显示为_Error_。</block>
+  <block id="046c8e391630ab49d75409e270a4f4b6" category="list-text">只要发生切换、数据收集器的状态就会从"正在运行"更改为"错误"、反之亦然。</block>
+  <block id="7a69a2fce9a9acb9c8a84936863c1330" category="paragraph">请注意、如果在收集器暂停时在ONTAP上创建了任何新卷等、则"工作负载安全性"不会收集数据、这些卷等也不会反映在信息板或表中。</block>
+  <block id="0d55775dbf06cf5596fe0f5c3363f19a" category="list-text">根据已暂停收集器上配置的设置、不会执行Snapshot清除。</block>
+  <block id="f8b4c5607366d38cf806b0860c9cc5e4" category="list-text">暂停的收集器不会处理EMS事件(如ONTAP ARP)。这意味着、如果ONTAP发现勒索软件攻击、Data Infrastructure Insight Workload Security将无法获取该事件。</block>
+  <block id="4f20cb3e8959a7865ba5aaa5af540ddb" category="section-title">配置/自定义操作员</block>
+  <block id="67dea165315ff79ce5620f051688d07c" category="paragraph">这些部分包含有关自定义操作员配置、使用代理、使用自定义或私有Docker存储库或使用OpenShift的信息。</block>
+  <block id="d9a52817194c8be56b59a9d57114278a" category="section-title">配置选项</block>
+  <block id="cac54dc379f23a7aed8745bde8386662" category="inline-link-macro">可用设置</block>
+  <block id="8baa15e22ac6c7ee4ce4e0a88da9798e" category="paragraph">最常修改的设置可以在_AgentConfiguration_自定义资源中进行配置。您可以通过编辑_operator-config.yaml文件来在部署操作员之前编辑此资源。此文件包含注释掉的设置示例。有关操作符的最新版本、请参见列表<block ref="d0a687c4569dc784e63f3960b33ab7c7" category="inline-link-macro-rx"></block>。</block>
+  <block id="27aa502b8f8f23143b77f0800d6dd42f" category="paragraph">您也可以在部署操作员后使用以下命令编辑此资源：</block>
+  <block id="3ab04e244a91c8a73c48633c62ac613a" category="paragraph">要确定您部署的操作员版本是否支持AgentConfiguration、请运行以下命令：</block>
+  <block id="51ba9262aad7e83aa5f74ed6dc93a039" category="paragraph">如果您看到“Error from server (NotFound)”消息，则必须先升级操作员，然后才能使用AgentConfiguration。</block>
+  <block id="7a7f1dddc2fef7ed16175a3e2e424b3f" category="paragraph">您可以在两个位置使用租户上的代理来安装Kubnetes Monitoring Operator。这些代理系统可以是相同的、也可以是单独的：</block>
+  <block id="92caa6668b03ccf88ed2c1dbef632933" category="paragraph">如果您对其中一个或这两个环境使用代理、则要安装Kubornetes Operating Monitor、必须首先确保您的代理已配置为能够与Data Infrastructure Insight环境进行良好的通信。如果您有一个代理、并且可以从要安装Operator的服务器/VM访问Data Infrastructure Insight、则您的代理可能已正确配置。</block>
+  <block id="4cf131cb570986a48574d0708d4c8b35" category="paragraph">对于用于安装Kubersnetes Operating Monitor的代理、在安装Operator之前、请设置_http_proxy/https_proxy_Environment变量。对于某些代理环境、您可能还需要设置_no_proxy environment_变量。</block>
+  <block id="e25c898cccd50c035eb1941a8411ba8b" category="paragraph">要设置变量，请在*安装Kubernetes Monitoring Operator之前*在系统上执行以下步骤：</block>
+  <block id="8abad16925d189288490bd9d8b5e034c" category="paragraph">要使Kubennetes集群所使用的代理与Data Infrastructure Insight环境进行通信、请在阅读所有这些说明后安装Kubennetes Monitoring Operator。</block>
+  <block id="6b883170f6284320691d7cfefa3f48e3" category="paragraph">在部署Kubernetes Monitoring Operator之前、请在operator-config.yaml中配置AgentConfiguration的代理部分。</block>
+  <block id="e79dbc8635cd754ff3943b0362cd5a36" category="paragraph">默认情况下、Kubnetes监控操作员将从Data Infrastructure Insight存储库中提取容器映像。如果您将某个Kubornetes集群用作监控目标、并且该集群配置为仅从自定义或私有Docker存储库或容器注册表中提取容器映像、则必须配置对Kubornetes监控操作员所需容器的访问权限。</block>
+  <block id="b1dbe9124bd000f8918a20bf61bc24f6" category="list-text">CI-KKube-RBAC-代理</block>
+  <block id="67efe5df179f0f50a5a5e82fd46a07fc" category="list-text">CI-KSM</block>
+  <block id="217b41d0f229477b95c3b46b9905e8a6" category="list-text">CI-(国际通信</block>
+  <block id="7357e4ce1b613c72370aa11b8881c327" category="list-text">CI-流畅位</block>
+  <block id="fe05143e1e28d056a7092a13c7ef1fda" category="list-text">CI-Kuber-netes-event-exporter</block>
+  <block id="ae233b4bee0ed9f611ffe211f5804e00" category="section-title">容差和污物</block>
+  <block id="6aae913b976c156306d8a5cbbbc06ad5" category="inline-link-macro">在_AgentConfiguration_中</block>
+  <block id="d6f0c62217650cf8ede1bd5e1e862b5a" category="paragraph">netapp-CI-tentlaf-ds_、_netapp-CI-fluent-bit-ds_和_netapp-CI-net-oboder-L4-DS_ DemonSets必须在集群中的每个节点上计划一个POD、以便正确收集所有节点上的数据。操作器已配置为允许某些众所周知的*污染*。如果您在节点上配置了任何自定义污染，从而阻止Pod在每个节点上运行，则可以为这些污染创建*toleration*<block ref="dc90f93af5ccf5020646213d9b7d2c3d" category="inline-link-macro-rx"></block>。如果已将自定义污染应用于集群中的所有节点、则还必须向操作员部署添加必要的容错值、以便可以计划和执行操作员POD。</block>
+  <block id="e1e08e40036f927a0e660c22aa837f88" category="inline-link-macro">损害和公差</block>
+  <block id="9680829f0eb82d9736ac7fe477135a87" category="paragraph">了解有关Kubbernetes的更多信息<block ref="2a69bcb19ea6a4db3f5d1b466ff78e77" category="inline-link-macro-rx"></block>。</block>
+  <block id="fbc05142fc5476cd7c2dd603607412ee" category="inline-link-macro">NetApp Kubernetes监控操作员安装*页面</block>
+  <block id="c425b824281c7958c5622dd1dc041533" category="paragraph">返回到<block ref="6f93c3205a564eadff1f05e34704d40c" category="inline-link-macro-rx"></block></block>
+  <block id="d8c9294ea12d1c7d12e34008f3ecee39" category="section-title">关于安全的注意事项</block>
+  <block id="bd0f62d92c7b0e5d6e74b4447418c58b" category="paragraph">要删除Kubernetes Monitoring Operator在集群范围内查看机密的权限、请在安装之前从_operator-setup.yaml文件中删除以下资源：</block>
+  <block id="1790cdbccc4ddd4389eb90d73e043f4b" category="paragraph">如果是升级、请同时从集群中删除资源：</block>
+  <block id="a66e68a20b3b94a700f3a3b9baa06764" category="paragraph">如果启用了"变更分析"、请修改_AgentConfiguration_或_operator-config.yaml_以取消注释change-management部分、并在change-management部分下包括_kindsToIgnoreFamWatch："secnes"_。记下此行中单引号和双引号的存在和位置。</block>
+  <block id="435f137980b3b041bbc191c90260bf28" category="section-title">验证Kubnetes监控操作员图像签名</block>
+  <block id="d9348d075dc7b3c91cff99d56dfc327b" category="inline-link-macro">Kubernetes 文档</block>
+  <block id="d4f8460ff8f7a6b9a2f0fa99bf9124dd" category="paragraph">操作员的映像及其部署的所有相关映像均由NetApp签名。您可以在安装之前使用联合签名工具手动验证映像、也可以配置Kubornetes接入控制器。有关详细信息，请参见<block ref="1aa503106da392b948a493e0ecf5782d" category="inline-link-macro-rx"></block>。</block>
+  <block id="c26df34b044a0a427be188b6e37d45c2" category="paragraph">用于验证图像签名的公共密钥可在"Monitoring Operator"安装磁贴中的_可 选：将操作员图像上传到您的私有存储库&gt;图像签名公共密钥_下找到</block>
+  <block id="0bc181a97045ca85d89be70b124298b4" category="paragraph">要手动验证映像签名、请执行以下步骤：</block>
+  <block id="b08a05b2c1b7cc9bf90ee55d748a813c" category="list-text">复制并运行映像提取片段</block>
+  <block id="2e9d4d6615af62102584a57c2c8ddacd" category="list-text">根据提示复制并输入存储库密码</block>
+  <block id="2cea2fa4f716d1fa2efbffe877eb702c" category="list-text">存储图像签名公共密钥(示例中为dII-image-signing.pub)</block>
+  <block id="55d6bfb079ee69230d07a9a9c1c17b66" category="list-text">使用联合签名验证图像。请参见以下联合签名用法示例</block>
+  <block id="5961d0092306c169d325c3e662030e8e" category="paragraph">在设置Kubnetes Monitoring Operator时遇到问题时、请尝试以下操作：</block>
+  <block id="3dcf0a51075fbcf98f9e53d661506adf" category="cell">我未看到 Kubernetes 永久性卷与相应后端存储设备之间的超链接 / 连接。我的 Kubernetes 永久性卷使用存储服务器的主机名进行配置。</block>
+  <block id="588706510a3c974b95453cecc3cb59d6" category="cell">按照以下步骤卸载现有的 Telegraf 代理，然后重新安装最新的 Telegraf 代理。您必须使用Telegraf 2.0或更高版本、并且Data Infrastructure Insight必须主动监控Kubernetes集群存储。</block>
+  <block id="a603e86bb87b54e9b7acc7e242269514" category="cell">I'm sing messages in the logs siking类似以下内容的消息：E0901 15：21：39.962145 1 refinder.go：178] K8s.io/Kube-state-metrics/Internal /store/Builder：352：failed to list *v1.MutatingWebhankConfiguration：the server could not find the requested resource resum.go (IO.lease.178) s/source.leasing.k8kv1/io：unfleasing.go to the resum.go inters.go list</block>
+  <block id="0428b79968fc5aa0a5b6d427e6815d82" category="cell">如果您运行的是Kube-state-metrics版本2.0.0或更高版本、而Kubernetes版本低于1.20、则可能会出现这些消息。要获取 Kubernetes 版本： _kubectl version_ 以获取 Kube-state-metrics 版本： _kubectl get deploy/Kube-state-metrics -o jsonpath="" ｛ ..image ｝ '_ 要防止发生这些消息，用户可以修改其 Kube-state-metrics 部署以禁用以下租约： _mutatingwebconfigurations _webhook_ ，具体可以使用以下参数： resources=certificatesigningrequests ， configmaps ， cronjobs ， demonsets ，部署，端点，水平 podautoscalers ， ingeses ，作业，限制范围，命名空间，网络策略，节点，复制卷，持久性卷， poddis中断 预算， Pod ，证书集，资源控制器，资源等，网络，存储器，卷，存储器，卷，存储器，存储器，存储器，卷，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，卷，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，卷，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，存储器，卷，存储器，存储器，存储器，存储器，存储器，存储器， 验证 webhookconfigurations ， volumeattachments</block>
+  <block id="b8ce784188c470b3c8ff0c7cc1a403e1" category="cell">我看到来自Telegraf的错误消息如下所示、但Telegraf确实启动并运行：10月11日14：23：41 IP-172-31-39-47 systemd[1]：启动插件驱动的服务器代理、以便向InfluxDB报告指标。10月11日14：23：41 IP-172-31-39-47电话[1827]：time="2021-10-11T14：23：41Z" level = error msg="failed to create cache directory。/etc/trendelaf/.cache/snowsclap, err: mkdir /etc/trendaf/.ca che: permission denied. ignored\n" func="gosnowscale.(*defaultLogg).Errorf" file="log.go:120" OCT11 14：23：41 IP-172-31-39-47 trendelaf[1827]：time="msg-10:23=11Z"打开错误。已忽略。打开/etc/trendelaf/.cache/snowsclap/ocsp_response_cache.json：无此文件或目录\n" func="gosnowsclap.（* defaultLogger).Errorf" file="log.go:120" OCT11 14：23：41 IP-172-31-39-47 trendaf[1827]：2021-10-11T14：23：41Z I！启动 Telegraf 1.19.3</block>
+  <block id="0ccd64b2e6202fbb544d22cd48a872b2" category="inline-link-macro">此 GitHub 文章</block>
+  <block id="8f176f657f418586c2a4828045ab0c37" category="cell">这是一个已知的问题描述。<block ref="23bd9a1f0b26414ad35f4299a95464f0" category="inline-link-macro-rx"></block>有关详细信息、请参见。只要 Telegraf 启动并运行，用户就可以忽略这些错误消息。</block>
+  <block id="9aab00e938cede2932654042bc507309" category="cell">在 Kubernetes 上，我的 Telegraf Pod 报告以下错误： " 处理 mountstats 信息时出错：无法打开 mountstats 文件： /hostfs/proc/1/mountstats ，错误： open /hostfs/proc/1/mountstats ：权限被拒绝 "</block>
+  <block id="4123cf4f6521073cef46192908207644" category="cell">如果启用并强制实施SELinux、则可能会阻止Telegraf Pod访问Kubelnetes节点上的/proc/1/mountstats文件。要克服此限制、请编辑代理配置并启用run特权 设置。有关详细信息，请参阅<block ref="f28efb863bb7dfcdf91b1badf5c0c340" category="inline-link-macro-rx"></block>。</block>
+  <block id="f997e79142f159c33823b9deeab809eb" category="cell">在 Kubernetes 上，我的 Telegraf ReplicaSet Pod 报告以下错误： inputs.prometheus] 插件错误：无法加载密钥类型 /etc/Kubernetes ， PKI/etcd/server.crt ： /etc/Kubernetes ， crt/etcd/server.key ：打开 /etc/Kubernetes ， pki/etcd/server.key ： open /etc/Kubernetes ， pki/etcd/server.key ： no 此类文件或目录</block>
+  <block id="9df12d675c4f61381132e45173ef90d0" category="cell">Telegraf ReplicaSet Pod 应在指定为主节点或 etcd 节点上运行。如果 ReplicaSet Pod 未在其中一个节点上运行，您将收到这些错误。检查您的主 /etcd 节点是否具有此类节点的影响。如果是，请将必要的容错添加到 Telegraf ReplicaSet ，即 Teleaf-RS 中。例如，编辑 ReplicaSet... kubectl edit RS ceaaf-rs ... 并将适当的容错添加到规范中。然后，重新启动 ReplicaSet Pod 。</block>
+  <block id="7f213685ee85ff84e10c6c9b9c633789" category="cell">我使用的是PSP/PSA环境。这是否会影响我的监控操作员？</block>
+  <block id="55b27691d4a3ba1d0f59fb6a06ac2e22" category="cell">如果您的Kubornetes集群运行的是Pod安全策略(PSP)或Pod安全准入(PSA)、则必须升级到最新的Kubornetes Monitoring Operator。按照以下步骤升级到支持PSP/PSA的当前Operator：1.<block ref="a7177598d8f3c4f7d3503ecefe58c480" category="inline-xref-macro-rx"></block>先前的监控运算符：kubect delete agent agent-monitoring-ngubect NetApp delete ns NetApp监控kubect delete crd agents.monitoring.kubec.com kubect delete NetApp NetApp delete-manager-roole agent-proxy-roxy-role-metric-reator kubect delete cluster cluster-manager-rolebingagent-proxy-rolebingagent-rolebingagent-roleb<block ref="6fd69549c3aeb303e3b2df8a94f1263f" category="inline-xref-macro-rx"></block>最新版本的监控操作符。</block>
+  <block id="b10669273dd57c8fd5d2fe2a3b97e299" category="cell">我在尝试部署操作员时遇到问题、并且我正在使用PSP/PSA。</block>
+  <block id="f005ad36a865e60c2f589a58c0daafa5" category="cell">1.使用以下命令编辑代理：kubect -n &lt;name-space&gt; edit agent 2.将"securtion-policy-enabled"标记为"false"。这将禁用Pod安全策略和Pod安全准入、并允许操作员进行部署。使用以下命令进行确认：kubectl get PSP (应显示Pod Security Policy Removed) kubectl get all -n &lt;namespace&gt; grep -i PSP (应显示未找到任何内容)</block>
+  <block id="59e3026f71d01a624108642cdb778ebd" category="cell">出现"ImagePullBackoff"错误</block>
+  <block id="43340e6cc4e88197d57f8d6d5ea50a46" category="inline-xref">阅读更多内容</block>
+  <block id="31c512270381a100a1d6ed5460e4382a" category="cell">如果您具有自定义或专用Docker存储库、但尚未将Kubornetes Monitoring Operator配置为正确识别它、则可能会出现这些错误。<block ref="64c2e35c96e92fc99426098fae703fff" category="inline-xref-macro-rx"></block>关于为自定义/专用repo配置。</block>
+  <block id="6da3e5f4ef4407262c741e8325a8249d" category="cell">我正在部署监控操作员问题描述 、而当前文档对我的解决没有帮助。</block>
+  <block id="368fbe1d48012e8e4f24249e2b27a8dd" category="paragraph">捕获或记下以下命令的输出、然后联系技术支持团队。</block>
+  <block id="70d79a6ca6098037988336f11346dce8" category="cell">Operator命名空间中的Net-Observer (Workload Map) Pod位于CrashLoopBackOff中</block>
+  <block id="b1dd812a8bc65d5769e88b945f591999" category="cell">这些Pod对应于用于网络可观察性的工作负载映射数据收集器。请尝试以下操作：•检查其中一个Pod的日志以确认最低内核版本。例如：---｛"ci租户id"："Your -en租 户id"、"cCollector cluster-cluster-"："Your -K8s-cluster-name"、"뮷 뺳"："prod"、"level "："error"、"msg"："验证失败。原因：内核版本3.10.0低于最低内核版本4.18.0"、"time"："2022-11-09T08：23：08Z"｝---•Net-observer Pod要求Linux内核版本至少为4.18.0。使用命令"uname -r "检查内核版本、并确保它们&gt;= 4.18.0</block>
+  <block id="e49c236734fe2ea50ae36fcb5353eed9" category="cell">Pod正在Operator命名空间中运行(默认值：netapo-monitoring)、但在查询中、UI中不会显示工作负载映射或KubeNet指标的任何数据</block>
+  <block id="b301a7b156c241fb466de1bca776811c" category="cell">检查K8S集群节点上的时间设置。为了准确地进行审核和数据报告、强烈建议使用网络时间协议(NTP)或简单网络时间协议(SNTP)同步Agent计算机上的时间。</block>
+  <block id="665dddc2adb2f34c745ef47345ee5e93" category="cell">Operator命名空间中的某些Net-observer Pod处于Pending状态</block>
+  <block id="c55a7a21faf06d9f162882100bc46e42" category="cell">Net-observer是一个DemonSet、在K8s集群的每个节点上运行一个POD。•记下处于“待定”状态的POD，并检查它是否遇到了CPU或内存的资源问题描述。确保节点中具有所需的内存和CPU。</block>
+  <block id="0b681475d547cee4e6a8aa2975d2a6ad" category="cell">安装Kubernetes监控操作员后、我的日志inputs.prometheus]中立即显示以下内容：[HTTP错误插件：向\tcp.svc.cluster-local:8080/metrics发出http://kube-state-metrics &lt;namespace&gt;请求时出错：get \tcp.svc.cluster-local:8080/metrics http://kube-state-metrics：拨打&lt;namespace&gt;&lt;namespace&gt;：LOOKUP Kupe-state-metrics.tcp.svc.cluster-local: no s헢 种主机</block>
+  <block id="d232f49a9877a99204dde54474c23ce6" category="cell">通常、只有在安装了新操作员且_craaf-RS_ POD在_KSM_ POD启动之前启动时、才会显示此消息。所有Pod运行后、这些消息应停止。</block>
+  <block id="02230bab9788e4843408e124331bb1ca" category="cell">我没有看到为集群中的Kubnetes CronJobs收集任何指标。</block>
+  <block id="b3b6bea000b13acbfcb412bad49ee494" category="cell">验证您的Kubbernetes版本(即<block ref="4fc58818ca77fb3a60cbd34a7f7d5071" prefix=" " category="inline-code"></block>)。如果是v1.20.x或更低版本、则这是预期的限制。随Kubernetes Monitoring Operator部署的Kube-state-metrics版本仅支持v1.cronjob.对于Kubernetes 1.2.x及更低版本、cronJob资源位于v1beta.cronJob。因此、Kube-state-metrics找不到cronJob资源。</block>
+  <block id="45698e13b1c2f7241751839133834506" category="cell">安装操作员后、该特拉夫DS Pod进入CrashLoopBackOff、并且POD日志指示"su：authentication failure"(su：身份验证失败)。</block>
+  <block id="e77701e8957afb414a45ca434ef7f000" category="cell">编辑_AgentConfiguration_中的"特拉夫"部分、并将_dockerMetricCollectionEnabled"设置为false。有关详细信息，请参阅操作员的<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>。.规范：..           -名称：Docker       run-mode：       - DemonSet      替换       项：-关键字：Docker _UNIS_sdoc_s占 位符        值：UNIX：///run/Docker。sk......</block>
+  <block id="802997bcb8e9581226b3000b8b611b1c" category="cell">我在Telegraf日志中看到重复出现以下错误消息：E! [agent]写入至Outputs.http：POST "\https：//lace/rest/v1/lace/ingest/影响xdb"时出错：超过上下文截止时间(&lt;tenant_url&gt;。 等待标头时超时)</block>
+  <block id="5a581223d2fea6c45a7ac1278334f8c1" category="cell">编辑_AgentConfiguration_中的"特拉夫"部分、并将_outputTimeout_增加到10秒。有关详细信息，请参阅操作员的<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>。</block>
+  <block id="4f05106cca363b0f3c492314ab777534" category="cell">我缺少一些事件日志的_volvedobject_数据。</block>
+  <block id="67ee92e19812baa7cedb346320ca0182" category="cell">确保已按照上述部分中的步骤进行操作<block ref="d9283cdb1b027ed2a61fa92c8dc3e314" category="inline-link-macro-rx"></block>。</block>
+  <block id="5e77ada1a807785ef1b03c3f1b96779c" category="cell">为什么我看到两个监控操作员Pod正在运行、一个名为NetApp-CI-monitoring operator-Pod &lt;pod&gt;、另一个名为monitoring operator-Pod？&lt;pod&gt;</block>
+  <block id="1c1bebc9155c93bfe8263d7dd59e4d97" category="inline-xref">删除旧运算符</block>
+  <block id="3aadd91c93bca2d335851fd692f310be" category="inline-xref">安装新的</block>
+  <block id="c3a998877066e09c478b4163a26933ab" category="cell">自2023年10月12日起、Data Infrastructure Insight对运营者进行了重构、以更好地为用户服务；要完全采用这些变更<block ref="860504374016936ed59489a365e20672" category="inline-xref-macro-rx"></block>、您必须和<block ref="26142c5a68eb5609ee139db77de754bb" category="inline-xref-macro-rx"></block>。</block>
+  <block id="d91f7c56a5bd6c0e9735fe39d7d2d1a6" category="cell">我的Kubbernetes事件意外停止向Data Infrastructure Insight报告。</block>
+  <block id="0f21fa822dc46792cc163d7e77fe6c2c" category="paragraph">检索事件导出器Pod的名称：</block>
+  <block id="9df5220f9f1e94f2849e58be10655af5" category="paragraph">此名称应为"NetApp-CI-event-exporter "或"event-exporter。接下来，编辑监控代理<block ref="254deec50834604297ddd3caab0d8ce7" prefix=" " category="inline-code"></block>，并设置log_file的值，以反映在上一步中找到的相应事件导出器POD名称。更具体地说、log_file应设置为"/var/log/containers/NetApp-CI-event-exporter .log"或"/var/log/containers/event-exporter *。log"</block>
+  <block id="fe98497efedbe156ecc4b953aea77e07" category="inline-xref">卸载</block>
+  <block id="7b4d917229221f1292dd0dc7b693cccf" category="inline-xref">重新安装</block>
+  <block id="e832e916ac4edbd5ff4fc3ce13949058" category="paragraph">或者、也可以<block ref="eb03b2f692ebf826fa07016cc9fa15a6" category="inline-xref-macro-rx"></block> <block ref="f33f6e060928000e7af3fed4c4e6c6a0" category="inline-xref-macro-rx"></block>选择代理。</block>
+  <block id="cacd73b257654b42f59477320860f203" category="cell">我发现Kubenetes监控操作员部署的POD因资源不足而崩溃。</block>
+  <block id="1bf4c34fd6e2ff1bf1741953bce0f5e1" category="cell">有关根据需要增加CPU和/或内存限制的信息、请参见Kubornetes Monitoring Operator<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>。</block>
+  <block id="d30a0cd77a13a9c540651e05cf93b85c" category="cell">缺少映像或配置无效会导致NetApp-CI-Kube-state-metrics Pod无法启动或准备就绪。现在、StatefulSet停止运行、并且配置更改未应用于NetApp-CI-KUE-STATE-MErics Pod。</block>
+  <block id="54ddc3c7d064822eed932015d8740336" category="inline-link-macro">已损坏</block>
+  <block id="24842c3920322c32befcba0bfb6c67b4" category="cell">“状态集”处于<block ref="01cb4c066842f659530df33ef9ef5308" category="inline-link-macro-rx"></block>状态。修复任何配置问题后、退回NetApp-CI-Kube-state-metrics Pod。</block>
+  <block id="ab53b155d3f5f63613ea9034aaafadbd" category="cell">运行Kubelnetes Operator升级后、netapo-CI-Kube-state-metrics Pod无法启动、引发ErrImagePull (无法提取映像)。</block>
+  <block id="da4a57ccdb996916b48d63fa3e08bb40" category="cell">尝试手动重置Pod。</block>
+  <block id="2bc94fccd24faa68b4153886af40ec57" category="cell">在日志分析下、我的Kubernetes集群显示"Event Discarded as older then maxEventAgeSonds"消息。</block>
+  <block id="6c71496a372f3b5c0cbc9e2eb84a5fd0" category="cell">修改Operator _agentconfiguration_并将_event-exporter maxEventAgeSonds_(例如、60秒)、_event-exporter kubeQPS_(例如、100)和_event-exporter kubeBurst _(例如、500)增加到。有关这些配置选项的更多详细信息、请参见<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>页面。</block>
+  <block id="7438b4e926a47d987228924d394e21fc" category="cell">Telegraf会发出警告、指出可锁定内存不足或崩溃。</block>
+  <block id="9953ac1176fec4ceef2b233ecd286c7b" category="cell">尝试增加底层操作系统/节点中Telegraf可锁定内存的限制。如果不能增加限制、请修改nLMO代理配置并将_Unproted_设置为_true。这将指示Telegraf不尝试预留锁定的内存页。由于解密的机密可能会交换到磁盘、因此这可能会带来安全风险、但它允许在无法预留锁定内存的环境中执行。有关_UnprotECE_配置选项的更多详细信息、请参阅<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>页面。</block>
+  <block id="d2402cb2e8bc53d6f0ea3a592a927071" category="cell">我看到Telegraf发出的警告消息如下所示：_W！[Inputs.diskio]无法收集"vdc"的磁盘名称：读取/dev/vdc时出错：没有此文件或目录_</block>
+  <block id="d167beea70a778e86c7a57bc2bd4338a" category="inline-link-macro">操作员配置选项</block>
+  <block id="1f3c6b9eb496e3586cb89ac14caca626" category="cell">对于Kubnetes监控操作员、这些警告消息不会产生负面影响、可以放心地忽略。  或者、也可以编辑AgentConfiguration中的"tendraf"部分、并将_runDs专用_设置为true。有关详细信息，请参阅<block ref="ebda7113c4f0b0fd6090a6c2a6162dc1" category="inline-link-macro-rx"></block>。</block>
+  <block id="828b70096630fbae314b6b8a4022c2d3" category="cell">我的流畅位POD出现故障、并出现以下错误：[2024/10/16 14：16：23][error][src/fluent-bit/plugins/in_outle/Tail_fs_inoTIFy.c：360 errno=24]打开的文件过多[2024/10/16 14：16：23][error] failed initiation input. 0 [2024/10/16：16：23] input[引擎初始化失败][错误]</block>
+  <block id="4c7e0efe737f180965ee5c651fc247df" category="paragraph">尝试更改集群中的_fsNOTES_设置：</block>
+  <block id="354078bb27a2ab00cc965db863bbe682" category="paragraph">重新启动Fluent位。</block>
+  <block id="1e5f8c710fd35d7d1072ae4bd3588a8f" category="paragraph">注意：要使这些设置在节点重新启动后保持不变、您需要在_/etc/syscntL.conf_中放置以下行</block>
+  <block id="70d57a4cf0763cd6479ef380a0e3959d" category="cell">该报电DS Pod报告错误、因为Kubbernetes输入插件由于无法验证TLS证书而无法发出HTTP请求。例如：E！[Inputs.Kubernetes]插件中的错误：发出获取TLS的<block ref="67e388e14afab5b44ba05645532bfd4c" category="inline-link-rx"></block>HTTP请求时出错<block ref="67e388e14afab5b44ba05645532bfd4c" category="inline-link-rx"></block>：无法验证证书：X509：无法验证&lt;kubelet_IP&gt;证书、因为它不包含任何IP SAN</block>
+  <block id="006f752e44410388cadd8f8a37ce069f" category="inline-link-macro">代理配置</block>
+  <block id="e7367bd1ec175ef5c58d982c52bc4348" category="inline-link-macro">serverTLSboot表带</block>
+  <block id="eb693e07b3c7e38a77aa691eee254db7" category="cell">如果kubelet正在使用自签名证书、和/或指定证书不在certificates _Subject备用名称_列表中包含&lt;kubelet_IP&gt;、则会出现此问题。要解决此问题，用户可以修改<block ref="1ff2a3d734af6ebdb77c417baa3479b1" category="inline-link-macro-rx"></block>，并将_TREALF：inureK8sSkipVerify_设置为_TRUE_。此操作将配置该电图输入插件以跳过验证。或者，用户也可以为配置kubelet<block ref="9ed8afe3c99331fa3d23c13414b98aba" category="inline-link-macro-rx"></block>，这将从'certificates.k8s.io' API触发证书请求。</block>
+  <block id="9c9d5560c9fe980c9cfc837919c7ecfa" category="paragraph">您可以将任何对象属性(例如存储名称)作为参数添加到警报说明中。例如、您可以在如下描述中为卷名称和存储名称设置参数："卷：_%% relatedObject.volume.name%%_的高延迟、存储：_%% relatedObject.storage.name%%_"。</block>
+  <block id="782368f0cf779dae181ca1a15b5e1609" category="paragraph">您可以将任何对象属性(例如存储名称)作为参数添加到webhook中。例如、您可以在webhook说明中为卷名称和存储名称设置参数、例如："High Latery-for Volume：_%% relatedObject.volume.name%%_、Storage：_%% relatedObject.storage.name%%_"。</block>
+  <block id="f9bf728d80a2e93034e1980e4b769331" category="summary">配置Google Cloud NetApp卷数据收集器</block>
+  <block id="61f5a9d6ac308733fa136e57d4b5632d" category="doc">NetApp Google Cloud NetApp卷数据收集器</block>
+  <block id="31a01859ca4a7c16eaa2d78f965019b1" category="paragraph">此数据收集器支持从Google NetApp Cloud Volumes云平台配置中收集清单和性能。此收集器将寻求发现一个Google组织内所有项目中的所有计算资源。如果您希望通过Data Infrastructure Insight发现多个Google组织、则需要为每个组织部署一个Data Infrastructure Insight收集器。</block>
+  <block id="d0e30a72147518a811af49d61e436b72" category="cell">选择"排除"或"包括"以按位置筛选GCNV资产</block>
+  <block id="4ffa818c022d19570d8e17b29333c422" category="cell">默认情况下、此收集器会发现组织中全球的所有GCNV卷、因此默认情况下会将其排除。</block>
+  <block id="df737fe9add18ce2518a85be515b48fb" category="cell">GCNV不包括/包括位置</block>
+  <block id="aeb2c618381901b42bfc96e1eaba0439" category="cell">默认情况下、此值为空、并与"Choose 'excuse"或"include"选项结合使用。如果只想发现世界某些地区的资产、可以通过这两个选项来限制此收集器的范围</block>
+  <block id="cfb59ac35dea35081dc8e9a9e178e6fa" category="cell">使用AU代理进行REST API调用</block>
+  <block id="c31db4d5c88645987121fa14f303decf" category="cell">此复选框将使收集器使用与收集器所在AU相同的代理。默认情况下不会启用此功能、这意味着收集器将尝试将HTTPS API调用直接发送到Google。</block>
+  <block id="86cdc2548407309cf22885284404c866" category="paragraph">Webhook允许用户使用自定义的webhook通道向各种应用程序发送严重或警告警报通知。</block>
+  <block id="fc2d88a1f6b61e7bd83c4e85a527c903" category="paragraph">用于的webhook<block ref="2990f1f56161b3387a3b4aed372cd205" category="inline-link-macro-rx"></block></block>
+  <block id="a2a31fbada6144e8ed1aea34738b3286" category="paragraph">用于Webhook<block ref="119cd804e167819a5b1cbe06f835cd07" category="inline-link-macro-rx"></block>的Webhook <block ref="fd47f99f71f4060a45930a1b7d2d1fd6" category="inline-link-macro-rx"></block> for Webhook <block ref="9ec366bafa5f53c82668f1616a12e6a8" category="inline-link-macro-rx"></block></block>
 </blocks>

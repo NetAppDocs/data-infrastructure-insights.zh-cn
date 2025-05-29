@@ -7,6 +7,10 @@ keywords: ransomware, ARP, Protection, Security, access
 = 与ONTAP集成访问被拒绝
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -14,7 +18,9 @@ ONTAP访问被拒绝功能会在NAS环境(NFS和SMB)中使用工作负载分析�
 
 数据基础架构洞察工作负载安全性可与ONTAP集成、以接收"拒绝访问"事件、并提供额外的分析和自动响应层。
 
-前提条件
+
+
+== 前提条件
 
 * 最低ONTAP版本：9.13.0。
 * 工作负载安全管理员必须在添加新收集器或编辑现有收集器时启用"访问被拒绝"功能、方法是选中"高级配置"下的_Monitor Access Denied Events_复选框。
@@ -30,20 +36,12 @@ image:WS_Access_Denied_Enable_in_Collector.png["在ONTAP收集器高级配置中
 
 如果使用自定义用户(例如、-CsUser_)添加收集器并授予该用户权限、请按照以下步骤为工作负载安全性授予向ONTAP注册"拒绝访问"事件所需的权限。
 
-对于具有_cluster-_凭据的CsUser、从ONTAP命令行执行以下命令。请注意、_csrestrolle_是自定义角色、而-CsUser_是ONTAP自定义用户。
+对于具有_cluster-_凭据的CsUser、从ONTAP命令行执行以下命令。请注意、此权限可能已存在。
 
-[listing]
-----
- security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <cluster_name>
- security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole
-----
-对于凭据为_svm_的CsUser、从ONTAP命令行执行以下命令：
+ security login role create -role csrole -cmddirname "vserver fpolicy" -access all
+对于凭据为_svm_的CsUser、从ONTAP命令行执行以下命令。请注意、此权限可能已存在。
 
-[listing]
-----
- security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <svm_name>
- security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole -vserver <svm_name>
-----
+ security login role create -vserver <vservername> -role csrole -cmddirname "vserver fpolicy" -access all
 阅读有关配置其他的更多信息link:task_add_collector_svm.html["ONTAP权限"]。
 
 
