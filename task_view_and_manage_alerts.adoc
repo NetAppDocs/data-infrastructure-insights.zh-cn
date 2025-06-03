@@ -52,11 +52,11 @@ TIP: 监控和报告功能在Data Infrastructure Insight标准版及更高版本
 
 
 
-== 警报详细信息页面
+== 警报详细信息面板
 
-" 警报详细信息 " 页面提供了有关警报的其他详细信息，包括 _Summary_ ，显示与对象数据相关的图形的 _Expert View_ ，警报调查人员输入的任何 _related asset_ 和 _comment_ 。
+选择任意警报行即可打开该警报的详细信息面板。警报详细信息面板提供有关该警报的更多详细信息，包括“摘要”、显示与对象数据相关的图表的“专家视图”、任何“相关资产”以及警报调查员输入的“注释”。
 
-image:alert_detail_page.png["警报详细信息页面"]
+image:metric_alert_detail_pane.png["指标警报详细信息面板"]
 
 
 

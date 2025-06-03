@@ -59,10 +59,13 @@ Data Infrastructure Insight从Rubik数据收集器采集以下清单信息。对
 | IP | Rubrik集群的IP地址 
 
 
-| 用户名 | 集群的用户名 
+| 用户名/服务帐户 | 集群的用户名 
 
 
-| 密码 | 集群的密码 
+| 密码/秘密 | 集群的密码 
+
+
+| 服务帐户的组织 ID | 这需要是完整的字符串，如“Organization:::nnnnnn-nnnn.....” 
 |===
 
 
@@ -93,6 +96,6 @@ Data Infrastructure Insight从Rubik数据收集器采集以下清单信息。对
 | 我收到一条消息、指出已创建多个存储。 | 检查集群配置是否正确、以及收集器是否指向单个集群。 
 
 
-| 我收到一条警告、指出磁盘API返回了更多数据 | 请咨询支持部门以获取其他数据。 
+| 轮询失败，错误代码为 400 [错误请求]....无效的 ManagedId.... | 您已在组织 ID 字段中填充了一个值，但 Rubrik 集群不认为这是一个有效的组织 ID，尽管 Rubrik 发出的错误消息将其称为“ManagedId” 
 |===
 有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

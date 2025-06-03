@@ -9338,8 +9338,6 @@
   <block id="e41f6efeb9a8c29ac8077a1348b68078" category="cell">集群的密码</block>
   <block id="444301801d58f01b1fb488fe224bb8c5" category="cell">我收到一条消息、指出已创建多个存储。</block>
   <block id="7de7475f4bb973126434d7c3f9801f08" category="cell">检查集群配置是否正确、以及收集器是否指向单个集群。</block>
-  <block id="fc971fc699329bc531b4d65ff180a629" category="cell">我收到一条警告、指出磁盘API返回了更多数据</block>
-  <block id="3cd62817285774be5e17bfa3b11a6309" category="cell">请咨询支持部门以获取其他数据。</block>
   <block id="aa7bcff87c480aa90d0e5d1001e89590" category="summary">配置 VMware 数据收集器。</block>
   <block id="3642158841a114e36a8c869b919b1091" category="doc">配置 VMware vSphere 数据收集器</block>
   <block id="2c2ae7694a57522d5f3200005b67fffd" category="paragraph">适用于VMware vSphere的数据收集器可收集VM子系统和ESXi主机性能和配置信息、并要求对vSphere中的所有对象使用只读Privileges。自2024年8月起、vSphere收集器还会另外收到vSphere环境中的日志消息以及一些VMware特定指标。请注意、数据基础架构洞察力只能从8.0.1或更高版本的环境中检索VMware日志信息。同样、只有vSphere 7+环境才支持供应商专用指标。因此、如果给定收集器指向的是旧版vSphere实例、则可能需要禁用此收集器上的日志和/或供应商特定指标复选框。</block>
@@ -10535,9 +10533,6 @@
   <block id="29e29650476f773b7c44149e72a13e69" category="list-text">* 取消 * 从活动警报列表中删除警报。</block>
   <block id="e8638926499f5e7bec918a2f4d6dc36a" category="paragraph">您可以通过选中每个警报左侧的复选框并单击 _Change Selected Alerts Status_ 来管理多个警报。</block>
   <block id="70a18f3fbffa69fc35378e4b2e87f766" category="paragraph">单击警报 ID 将打开警报详细信息页面。</block>
-  <block id="f7e83685d25e3038170e83ca19c3cbf0" category="section-title">警报详细信息页面</block>
-  <block id="b254b175b71c2c7dca19ba0dcbc5da07" category="paragraph">" 警报详细信息 " 页面提供了有关警报的其他详细信息，包括 _Summary_ ，显示与对象数据相关的图形的 _Expert View_ ，警报调查人员输入的任何 _related asset_ 和 _comment_ 。</block>
-  <block id="1b489429111564ed0ac0109b22575d28" category="paragraph"><block ref="1b489429111564ed0ac0109b22575d28" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0dc88092036f29d0c951123c9b9f932e" category="section-title">缺少数据时发出警报</block>
   <block id="ffbb059fbd1b72fd858ad1db288acd16" category="paragraph">在实时系统(如Data Infrastructure Insight)中、要触发监视器分析以确定是否应生成警报、我们需要遵循以下两项操作之一：</block>
   <block id="9f76cab36d38af05dce74499497c7b3b" category="list-text">要到达的下一个数据点</block>
@@ -12579,4 +12574,17 @@
   <block id="25663750e3a92ca79621844d9a055d8a" category="paragraph"><block ref="25663750e3a92ca79621844d9a055d8a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="44c7c3a77a122ce29cb93ab53513f83f" category="section-title">资产名称中的逗号</block>
   <block id="4d53c0239522855d4d60019758390f70" category="section-title">时间格式，还是非时间格式？</block>
+  <block id="3756ac460c094adc890ad7f26460010b" category="cell">35000-55000</block>
+  <block id="0e948943e8277507eeeec08bbb91d3b4" category="cell">集群管理IP</block>
+  <block id="8ad596bfbf4c5161efe95c1bf071f052" category="cell">从 ONTAP 集群管理 IP 到工作负载安全代理的通信，用于处理 *EMS 事件*。必须向工作负载安全代理打开这些端口，以便 ONTAP 向其发送 *EMS 事件*，包括工作负载安全代理本身上的任何防火墙（如果存在）。请注意、您无需预留*所有*这些端口、但为此预留的端口必须在此范围内。建议首先预留~100个端口、必要时增加。</block>
+  <block id="ab1259588b3e1ad3b770e413f8408667" category="cell">用户名/服务帐户</block>
+  <block id="2fde62a7ecea2efe8b301312f6a6b292" category="cell">密码/秘密</block>
+  <block id="8ec2e527e4b860bd5119c6e2816e5f0e" category="cell">服务帐户的组织 ID</block>
+  <block id="30993e7595c12ab5f7aa162f78a59c3b" category="cell">这需要是完整的字符串，如“Organization:::nnnnnn-nnnn.....”</block>
+  <block id="2ce06c7c6b7a3d5ec1168fa41dc94826" category="cell">轮询失败，错误代码为 400 [错误请求]....无效的 ManagedId....</block>
+  <block id="59e8601d861464a8b5978359c99a89b2" category="cell">您已在组织 ID 字段中填充了一个值，但 Rubrik 集群不认为这是一个有效的组织 ID，尽管 Rubrik 发出的错误消息将其称为“ManagedId”</block>
+  <block id="a6d988d681ec5a2ac741001e80c67bbc" category="section-title">警报详细信息面板</block>
+  <block id="bb9284d1e6e1080190597d2d9826cc87" category="paragraph">选择任意警报行即可打开该警报的详细信息面板。警报详细信息面板提供有关该警报的更多详细信息，包括“摘要”、显示与对象数据相关的图表的“专家视图”、任何“相关资产”以及警报调查员输入的“注释”。</block>
+  <block id="ce2f8058fa83417353b52945b6bfd42f" category="inline-image-macro">指标警报详细信息面板</block>
+  <block id="8f9a1f05fd3f7e730fd077aaaac2e6f0" category="paragraph"><block ref="8f9a1f05fd3f7e730fd077aaaac2e6f0" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
