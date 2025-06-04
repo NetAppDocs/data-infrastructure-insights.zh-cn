@@ -4,9 +4,13 @@ permalink: san_analyzer_overview.html
 summary: SAN Analyzer可为租户上的资产提供拓扑 
 keywords: topology, analyze, analysis, map 
 ---
-= SAN分析器概述
+= SAN 分析器概述
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -32,6 +36,10 @@ NOTE: 大多数SAN分析器筛选器(包括您可能添加的筛选器)都是上
 除了摘要选项卡之外、如果所选对象适用、则"分出"面板还会显示端口详细信息或区域信息等选项卡。
 
 image:san_analyzer_slideout_example.png["SAN分析器分出面板"]
+
+如果您的环境有不同的协议，您可以按 iSCSI 或 FC 进行过滤：
+
+image:san_analyzer_protocols.png["SAN 分析器协议"]
 
 如果您的环境包含iSCSI设备、则将鼠标悬停在_iSCSI_对象上方可突出显示与这些相关iSCSI设备相关的连接。
 
