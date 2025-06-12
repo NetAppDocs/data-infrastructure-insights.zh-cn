@@ -7,11 +7,39 @@ keywords: features
 = 数据基础架构洞察力的新增功能
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 NetApp 不断改进和完善其产品和服务。下面是Data Infrastructure Insight (原Cloud Insights)中提供的一些最新特性和功能。
 
+
+
+== 2025年6月
+
+
+
+=== VM Analyzer：全面的虚拟机到存储可视性和故障排除
+
+DII 的 *VM Analyzer* 功能提供全面的端到端虚拟化环境视图。VMAnalyzer 通过映射从虚拟机到存储的整个路径来简化故障排除，使用户能够快速查明虚拟磁盘、虚拟机、主机、数据存储区、卷和存储中的性能问题。借助直观的拓扑视图、筛选功能和详细的性能指标，管理员可以轻松识别瓶颈、分析流量不平衡并优化整体存储性能。
+
+image:vm_analyzer_example_with_panel.png["存储系统的VM分析器拓扑图"]
+
+
+
+=== 操作系统支持
+
+除了以下操作系统之外、Data Infrastructure Insight采集单元现在还支持这些操作系统link:concept_acquisition_unit_requirements.html["已支持"]：
+
+* Debian (64位) 12.
+* Oracle Enterprise Linux （ 64 位） 9.6
+* Red Hat（64位）9.6
+
+
+'''
 
 
 == 2025年5月

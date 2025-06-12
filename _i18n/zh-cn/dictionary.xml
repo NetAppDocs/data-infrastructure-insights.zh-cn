@@ -12581,4 +12581,13 @@
   <block id="f551ca729032aed761417786181395c8" category="paragraph">数据基础架构洞察使用Brocade FOS REST收集器发现运行FabricOS (FOS)固件8.2及更高版本的Brocade交换机设备的清单和性能。请注意，早期的 8.2 FOS 版本可能存在 REST API 错误；强烈建议运行您的平台支持的最新 FOS 版本。</block>
   <block id="882ec11eef2cffbd43db944e6046b98d" category="cell">错误：库存失败，出现 401 未授权...无效会话密钥...</block>
   <block id="fcad57aa5101382922e3f8fe687cf7b0" category="cell">这是 8.2 FOS 早期版本（例如 8.2.1c）中存在的一个明显 bug，这些版本无法正确支持 HTTP 基本身份验证。请升级到 8.2 或 9.* 版本。</block>
+  <block id="94d267f658e04734eb2e098127293a89" category="section-title">2025年6月</block>
+  <block id="b792c127dc9f478a7930f4bc0161feba" category="section-title">VM Analyzer：全面的虚拟机到存储可视性和故障排除</block>
+  <block id="2d1fb0b32df39d06f41d0fd035211a2a" category="paragraph">DII 的 *VM Analyzer* 功能提供全面的端到端虚拟化环境视图。VMAnalyzer 通过映射从虚拟机到存储的整个路径来简化故障排除，使用户能够快速查明虚拟磁盘、虚拟机、主机、数据存储区、卷和存储中的性能问题。借助直观的拓扑视图、筛选功能和详细的性能指标，管理员可以轻松识别瓶颈、分析流量不平衡并优化整体存储性能。</block>
+  <block id="8c044a5eedd54f1f8fba795eed42e6a6" category="inline-image-macro">存储系统的VM分析器拓扑图</block>
+  <block id="a3c3da49bc8b32e34a738f7438c8a53d" category="paragraph"><block ref="a3c3da49bc8b32e34a738f7438c8a53d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d7633d5867fc4c2291155ab5b8e0b0f0" category="paragraph">除了以下操作系统之外、Data Infrastructure Insight采集单元现在还支持这些操作系统<block ref="6afa3e3eb626ea3ea6592dfd126d0ce7" category="inline-link-macro-rx"></block>：</block>
+  <block id="b25b84328544405f6b0ef29d21ec179a" category="list-text">Debian (64位) 12.</block>
+  <block id="fc4f76c3c67141253726c8c6550bc344" category="list-text">Oracle Enterprise Linux （ 64 位） 9.6</block>
+  <block id="3f9083673db59761ee75134079acb794" category="list-text">Red Hat（64位）9.6</block>
 </blocks>
