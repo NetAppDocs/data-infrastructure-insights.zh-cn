@@ -22,7 +22,7 @@ keywords: AU, acquisition unit, requirements, sizing
 | 组件 | Linux 要求 | Windows 要求 
 
 
-| 操作系统 | 运行以下许可证版本之一的计算机：* AlmaLinux 9.3至9.5 * CentOS (64位)：7.2至7.9、8.1至8.4、Stream 8、Stream 9 * Debian (64位)：9至11 * SUSE Leap 7.9至15.6 * Oracle Enterprise Linux (64位)：7.5至7.9、8.1至8.10、9.3至9.5 * Red Hat (64位)：9至9.5 * Red Hat *、8.1至8.04 *、8.1 Linux *、8.1、Linux * 8.1至8.04 *、Linux *、Linux * 8.1、Linux * 8.1、Linux * 8.1、Linux * 8.1至8.15、Linux *、Linux * 8.1、Linux * 8.1、Linux * 8.1、Linux *建议使用专用服务器。如果您运行的是SELinux、建议在采集单元系统上执行以下命令：sudo semanage fcontext-a -t usr_t "/op/SELinux/kidsights NetApp (/.*)？" sudo reatorecon -R NetApp | 运行以下许可版本之一的计算机：* Microsoft Windows 10 64位* Microsoft Windows 11 * Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025此计算机不应运行任何其他应用程序级别的软件。建议使用专用服务器。 
+| 操作系统 | 运行以下任一许可版本的计算机：* AlmaLinux 9.3 至 9.5* Centos（64 位）：7.2 至 7.9、8.1 至 8.4、Stream 8、Stream 9* Debian（64 位）：9 至 12* OpenSUSE Leap 15.1 至 15.6* Oracle Enterprise Linux（64 位）：7.5 至 7.9、8.1 至 8.10、9.3 至 9.6* Red Hat（64 位）：7.2 至 7.9、8.1 至 8.10、9.1 至 9.6* Rocky 9.0 至 9.5* SUSE Linux Enterprise Server 15、15 SP2 至 15 SP6* Ubuntu Server：18.04、20.04、22.04、24.04 LTS* 上述平台上的 SELinux这台计算机不应运行其他应用程序级软件。建议使用专用服务器。如果您运行的是SELinux、建议在采集单元系统上执行以下命令：sudo semanage fcontext-a -t usr_t "/op/SELinux/kidsights NetApp (/.*)？" sudo reatorecon -R NetApp | 运行以下许可版本之一的计算机：* Microsoft Windows 10 64位* Microsoft Windows 11 * Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025此计算机不应运行任何其他应用程序级别的软件。建议使用专用服务器。 
 
 
 | CPU | 2 个 CPU 核 | 相同 
