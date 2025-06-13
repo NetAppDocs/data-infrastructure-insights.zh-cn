@@ -547,14 +547,11 @@
   <block id="d0c65e48e2de27f37b54853eb602f10b" category="cell">工作负载安全代理</block>
   <block id="1e5d29d467aa39ff7343d30dc2f8de5b" category="cell">&lt;site_name&gt;.cs01.cloudinsights.netapp.com &lt;site_name&gt;.c01.cloudinsights.netapp.com &lt;site_name&gt;.c02.cloudinsights.netapp.com</block>
   <block id="e3af7e29e4f0d53ce53a1e5fef5c3577" category="cell">访问数据基础架构洞察力</block>
-  <block id="4ce4e8664144d2ca2f89818a65da41cc" category="cell">gateway.c01.cloudinsights.netapp.com agentlogin.cs01.cloudinsights.netapp.com.</block>
   <block id="d4fedc7f035f96436f1598f9626876e2" category="cell">访问身份验证服务</block>
   <block id="cd901a4d0c763788558340776fd2cdb5" category="paragraph">对于*基于欧洲*的工作负载安全环境：</block>
   <block id="c4bd63902a8959d209469ec987ed87db" category="cell">&lt;site_name&gt;.cs01-eu-1.cloudinsights.netapp.com &lt;site_name&gt;.c01-eu-1.cloudinsights.netapp.com &lt;site_name&gt;.c02-eu-1.cloudinsights.netapp.com</block>
-  <block id="71459f50e034484f40116ee14f3856f9" category="cell">gateway.c01.cloudinsights.netapp.com agentlogin.cs01-eu-1.cloudinsights.netapp.com</block>
   <block id="fa226e3679ae6b7dab2869292b192728" category="paragraph">对于基于*亚太地区*的工作负载安全环境：</block>
   <block id="2a7a1c69f19a2dce7c6cd235a0426527" category="cell">&lt;site_name&gt;.cs01-ap-1.cloudinsights.netapp.com &lt;site_name&gt;.c01-ap-1.cloudinsights.netapp.com &lt;site_name&gt;.c02-ap-1.cloudinsights.netapp.com</block>
-  <block id="ccc64c65f1e8c75ec95b9e7045b1e7da" category="cell">gateway.c01.cloudinsights.netapp.com agentlogin.cs01-ap-1.cloudinsights.netapp.com</block>
   <block id="0cd58d8585970b5311e84ca2c34ba5ef" category="section-title">网络内规则</block>
   <block id="1b09a58921479be87f9dae639915150f" category="cell">389 （ LDAP ） 636 （ LDAPS / START-TLS ）</block>
   <block id="84caee864977bc98db0b0df24853f63c" category="cell">LDAP 服务器 URL</block>
@@ -583,7 +580,6 @@
   <block id="c346aec8c5c8cd10c853a9dc4560f5cd" category="admonition">您的令牌只能在创建过程中复制到剪贴板并进行保存。令牌创建后无法检索，因此强烈建议复制令牌并将其保存在安全位置。系统将提示您单击复制 API 访问令牌按钮，然后才能关闭令牌创建屏幕。</block>
   <block id="057865fdced8cf279cb948d9a000b58a" category="paragraph">在用户成功进行身份验证并授权访问后，应用程序会收到访问令牌，然后在调用目标 API 时将访问令牌作为凭据传递。传递的令牌将通知 API 令牌的持有人已获得访问 API 的授权，并根据授权期间授予的范围执行特定操作。</block>
   <block id="4885bebed0a488d050e9e3b9016b3fda" category="paragraph">传递访问令牌的 HTTP 标头为 * 。 X-CloudInsights ApiKey ： *</block>
-  <block id="eceeec5380f54a75da4fa160c300d56b" category="paragraph">其中， _&lt;API_Access_Token&gt;_ 是您在创建 API 访问密钥期间保存的令牌。</block>
   <block id="b9250c46598db43daf799f07c7d996da" category="paragraph">有关详细信息，请参见 _API Documentation_ 链接中的 * 管理 &gt; API 访问 * 。</block>
   <block id="ce86a5aaf36b8b44516c9a3d547bc544" category="section-title">通过API提取数据的脚本</block>
   <block id="abd1c518dbb73a973f62bdeac0383a1f" category="paragraph">工作负载安全代理包括一个导出脚本、用于通过将请求的时间范围划分为较小的批次来并行调用v2 API。</block>
@@ -594,54 +590,15 @@
   <block id="fca4fedbe53af4420a279beead573bdf" category="doc">工作负载安全性：模拟攻击</block>
   <block id="85bec7dd725b26542ae7c0d1c759836a" category="paragraph">您可以使用此页面上的说明来模拟攻击、以便使用随附的勒索软件模拟脚本测试或演示工作负载安全性。</block>
   <block id="c8722d0a5f0f718756806afb0f63faf3" category="section-title">开始之前需要注意的事项</block>
-  <block id="228b6b559614ae017988e0b66c4ab82c" category="list-text">勒索软件模拟脚本仅适用于 Linux 。</block>
   <block id="16fa78539f96944e79f64b961036e74d" category="list-text">此脚本随工作负载安全代理安装文件一起提供。它可在安装了工作负载安全代理的任何计算机上使用。</block>
   <block id="749376c343309b5abf1f8bc2f1e6e9f7" category="list-text">您可以在工作负载安全代理计算机本身上运行此脚本；无需准备其他Linux计算机。但是，如果您希望在其他系统上运行此脚本，只需复制此脚本并在其中运行即可。</block>
-  <block id="7507a6fc6500d36cd4c727aec7187901" category="section-title">至少具有 1 ， 000 个示例文件</block>
-  <block id="0b2c7f99606e39c9dac8c555454ca6a7" category="paragraph">此脚本应在包含要加密的文件的文件夹的 SVM 上运行。建议在该文件夹和任何子文件夹中至少有 1 ， 000 个文件。这些文件不能为空。请勿使用同一用户创建文件并对其进行加密。工作负载安全性会将此视为低风险活动、因此不会生成警报(即同一用户修改其刚刚创建的文件)。</block>
-  <block id="497ca441ba939bb60a530a6e3409b407" category="inline-link-macro">以编程方式创建非空文件</block>
-  <block id="af64720caca21622d75cb553bfdb8bd9" category="paragraph">有关的说明，请参阅下文<block ref="e4fffc8648374f8ac4aafa6cb656ffb6" category="inline-link-macro-rx"></block>。</block>
-  <block id="2855135907eef979db329ca6aebe0464" category="section-title">运行模拟器之前的准则：</block>
-  <block id="d786b68b9cf5f686784afa64b69b3bce" category="list-text">确保加密文件不为空。</block>
-  <block id="dc77d098f1840a6fa69f5b878fac260d" category="list-text">请确保对50个以上的文件进行加密。少量文件将被忽略。</block>
-  <block id="9cdd30f36b5b67d9fc64c9bd48e9fac8" category="list-text">请勿多次使用同一用户进行攻击。几次后、Workload Security将了解此用户行为并假设这是用户的正常行为。</block>
-  <block id="7a5e4b833809f504d9c40568ed0a5cec" category="list-text">不要对同一用户刚刚创建的文件进行加密。更改用户刚刚创建的文件不会被视为一项风险活动。而是使用另一用户创建的文件、或者在创建文件和对其进行加密之间等待几个小时。</block>
-  <block id="3eee06b6e6c02b14b6bf0a76a8e1ee71" category="section-title">准备系统</block>
-  <block id="0864c33fc7e49f7b5dabd2b27c2805d5" category="paragraph">首先，将目标卷挂载到计算机。您可以挂载 NFS 挂载或 CIFS 导出。</block>
   <block id="6a2eb10d0f7d8e6c5942069b7aa730bf" category="paragraph">要在 Linux 中挂载 NFS 导出，请执行以下操作：</block>
   <block id="dd94533008fec4ee5889a56fd78e2a26" category="paragraph">请勿挂载 NFS 4.1 ； Fpolicy 不支持此版本。</block>
   <block id="6006ea3f9ae2b497be9e9bce2d0ead62" category="paragraph">要在 Linux 中挂载 CIFS ，请执行以下操作：</block>
   <block id="a22c6eb3597528c16b0d46880ae4b1ae" category="paragraph">接下来，设置数据收集器：</block>
   <block id="5e7fe8c41f8a34a29dc01b5eced565e8" category="list-text">如果尚未配置工作负载安全代理、请进行配置。</block>
-  <block id="173dfa4be4da90a7d5d1ced4c9f85a25" category="list-text">如果尚未配置 SVM 数据收集器，请进行配置。</block>
   <block id="79e81469dc70b00e14fd266807fa2813" category="section-title">运行勒索软件模拟器脚本</block>
-  <block id="f133c978b541b977d0cbc025827ccf6d" category="list-text">登录(ssh)到工作负载安全代理计算机。</block>
-  <block id="785c0d55edba879bb891f6155bc195ee" category="list-text">导航到： _/opt/netapp/cloudsecure /agent/install_</block>
-  <block id="430319bb139c1067cd6f898a565a8e7f" category="list-text">调用不带参数的模拟器脚本以查看用法：</block>
-  <block id="873038227b1d58f9be9ac08fa093fdc8" category="section-title">对测试文件进行加密</block>
-  <block id="d6dd6615fa7234326463921d688a17cd" category="paragraph">要对文件进行加密，请运行以下命令：</block>
-  <block id="76b9b68624d8f14bfe2d4fa26a74327e" category="section-title">还原文件</block>
-  <block id="05b9537d4d6b18cde99b176600c5b6cb" category="paragraph">要解密，请运行以下命令：</block>
-  <block id="508c80147534839c8ece65596b3e23ca" category="section-title">多次运行此脚本</block>
-  <block id="dd844f5768b1b38bb3eaa8aad66cc28d" category="paragraph">在为用户生成勒索软件攻击后，切换到另一个用户以生成额外的攻击。工作负载安全性可了解用户行为、不会在短时间内对同一用户的重复勒索软件攻击发出警报。</block>
-  <block id="3c00df162167ecfa7cae1012f21e271a" category="section-title">以编程方式创建文件</block>
-  <block id="ddc197f26701abc15014fe5035957110" category="paragraph">在创建文件之前、必须先停止或暂停数据收集器处理。在将数据收集器添加到代理之前，请执行以下步骤。如果您已添加数据收集器，只需编辑数据收集器，输入无效密码并保存即可。此操作将暂时使数据收集器处于错误状态。注意：请务必记下原始密码！</block>
-  <block id="ce9b2cd4bcab7dbbf52b62cd18cb5c55" category="inline-link-macro">暂停收集器</block>
-  <block id="3fc1bb029faccb362d05bb964b9a5532" category="admonition">建议在创建文件之前选择<block ref="fab3704c9565365da788d72b33d2f55f" category="inline-link-macro-rx"></block>。]</block>
-  <block id="7fb4f29b2fbada5675e1ca18652cf155" category="paragraph">在运行模拟之前，您必须先添加要加密的文件。您可以手动将要加密的文件复制到目标文件夹中，也可以使用脚本（请参见以下示例）以编程方式创建文件。无论使用哪种方法，至少复制 1 ， 000 个文件。</block>
-  <block id="ab1689bf65069d89f2858a33f94e7a0c" category="paragraph">如果您选择以编程方式创建文件，请执行以下操作：</block>
   <block id="1ccbd3884a5f46ebee24ea2d455e82c6" category="list-text">登录到代理框。</block>
-  <block id="aa0db2c21e2f148a0198b8084fbcecf2" category="list-text">将 NFS 导出从存储器的 SVM 挂载到代理计算机。将 CD 复制到该文件夹。</block>
-  <block id="02f49225afe032e62af33156eb24f4d0" category="list-text">在该文件夹中，创建一个名为 createfiles.sh 的文件</block>
-  <block id="8c8c6d282bc49384bfe84c90829113ba" category="list-text">将以下行复制到该文件。</block>
-  <block id="01d3a32280cc94c7c057cd3d14488785" category="list-text">保存文件。</block>
-  <block id="03efecbfeba0123b6899f901d60d957a" category="list-text">确保对文件具有执行权限：</block>
-  <block id="6013cd3d50482e751e798f6b95a53f7e" category="list-text">执行脚本：</block>
-  <block id="f4cc1c9a55de42a2dbb9d5aa67b0ad18" category="paragraph">此时将在当前文件夹中创建 1000 个文件。</block>
-  <block id="f9c38f6218e4bf4132fd48e2dd8413c2" category="list-text">重新启用数据收集器</block>
-  <block id="123d317d6377a1184be4f3542b76e7fc" category="paragraph">如果您在步骤 1 中禁用了数据收集器，请编辑该数据收集器，输入正确的密码并保存。确保数据收集器重新处于运行状态。</block>
-  <block id="77b868151a2234cc10d342f43b6cbb14" category="inline-link-macro">恢复收集器</block>
-  <block id="7cf0ebff62dd478662f71d56cd0334d1" category="list-text">如果在执行这些步骤之前暂停了收集器，请确保<block ref="277e805b18142e57dd69c30e47ad86c3" category="inline-link-macro-rx"></block>。</block>
   <block id="b3431d54476e0f70ea6fc00bae48572b" category="summary">在安装 ONTAP SVM DSC 之前，可以运行此脚本来检查 SVM 中的事件速率</block>
   <block id="2723c4d559ff96bb42870d86c109708e" category="doc">SVM事件速率检查程序(代理规模估算指南)</block>
   <block id="0a2bd44573247d8e7748ce7d2d2a4b8f" category="paragraph">事件速率检查器用于在安装 ONTAP SVM 数据收集器之前检查 SVM 中的 NFS/SMB 组合事件速率，以查看一个代理计算机能够监控的 SVM 数量。使用事件速率检查器作为规模估算指南、帮助您规划安全环境。</block>
@@ -10876,8 +10833,6 @@
   <block id="140b66a6d0a9e50bee73565be1467b63" category="list-text">如果代理安装成功、则可以删除已下载的代理安装程序文件。</block>
   <block id="58130a8aadcaf720b42fcca8adaae36c" category="section-title">安装新的数据收集器。</block>
   <block id="1b36b33046ab8bd17922fc367347e295" category="paragraph">注意：本文档包含有关安装ONTAP SVM数据收集器的说明。"Amazon Cloud Volumes ONTAP数据收集器"和"Amazon FSx for NetApp ONTAP数据收集器"的步骤相同。</block>
-  <block id="a8dd0cd5ec6aa2fa59984595d5711e4f" category="list-text">转到需要安装收集器的系统、然后在/tmp目录下创建一个名为"cCollector "的目录。</block>
-  <block id="8343fe03336dda69cffe501d86dc3bd7" category="list-text">将"cCollector目录"的所有权更改为"cssys：cssys"(在代理安装期间将创建cssys用户和组)。</block>
   <block id="f88df495978aea1949fd994d1bd434f5" category="list-text">现在、我们需要提取收集器版本和收集器的UUID。导航到"云 安全_config.Collector类型"API。</block>
   <block id="d01630b920021fdbcfded91d28c943bb" category="list-text">转到Swagger、"gldSECURE _config.Collector类型"&gt;"/v1/gldSECURE /收集器类型"(GET) API。在"corgorCategory (收集器类别)"下拉列表中、选择"data (数据)"作为收集器类型。选择"全部"以提取所有收集器类型详细信息。</block>
   <block id="f48b5207fe43ebc5402b9c278bd7fcce" category="list-text">复制所需收集器类型的UUID。</block>
@@ -10887,14 +10842,12 @@
   <block id="c1c6a754702a1c4ab63fc9982a6ce591" category="list-text">导航到"volumee_0.Collector &gt;/v1/cluster SECURE /收集器类型/装置/｛集体TypeUUID｝"(GET) API。输入从上一步复制的UUID并下载安装程序文件。</block>
   <block id="58210a3367e2b67875991e5b52c1c1b3" category="inline-image-macro">用于按UUID下载收集器的API</block>
   <block id="77cc9fd7ee910c50aad73ab2803c0802" category="paragraph"><block ref="77cc9fd7ee910c50aad73ab2803c0802" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="960963d0b016c92eaeccc263ef52fdba" category="list-text">如果安装程序文件从外部下载到其他计算机、请将安装程序文件复制到运行代理的系统、并放在目录"/tmp/cCollector "中。</block>
   <block id="55a4c61aa7efda1711d77921e1a92a8d" category="list-text">或者、您也可以从同一API复制curl命令、并直接在要安装收集器的系统上运行它。</block>
   <block id="1fee2c4ec45fbe47ced2acd43c9d4447" category="paragraph">请注意、文件名应与下载收集器API的响应标题中的名称相同。请参见以下屏幕截图。</block>
   <block id="f97ed5d4ec9a9f6892a5bd58c8d7f8d1" category="inline-image-macro">显示模糊令牌的Curl命令示例</block>
   <block id="56c50c17d4584aa507435906081eea90" category="paragraph"><block ref="56c50c17d4584aa507435906081eea90" category="inline-image-macro-rx" type="image"></block></block>
   <block id="45212f4567fd41d5e2982cda11096e58" category="list-text">导航到*工作负载安全性&gt;收集器*并选择*+收集器*。选择_SVM_ ONTAP SVM_收集器。</block>
   <block id="615d69b66e616d31e597f5daab30304d" category="list-text">配置收集器详细信息并_Save_此收集器。</block>
-  <block id="86ecf670dbd931937d00a5378aa07840" category="list-text">单击"Save"(保存)后、代理进程将在"/tmp/cCollector /"目录中找到收集器安装程序、然后安装收集器。</block>
   <block id="6787ef48e0f1a2e3871017f73c1104d0" category="list-text">作为一种替代选项、您也可以通过API添加收集器、而不是通过UI添加此收集器。</block>
   <block id="b27df93d8844fa78c07fad879a901800" category="list-text">导航到"云 安全_config.Collector "&gt;""/v1/云 安全/收集器"(POST) API。</block>
   <block id="d91a6e2ddbc6f9b866b28804de7d2ea2" category="list-text">在示例下拉列表中、选择ONTAP SVM数据收集器json样本、更新收集器配置详细信息并执行。</block>
@@ -10903,7 +10856,6 @@
   <block id="65430216dd6e04aeb4ec77900543d9c0" category="list-text">‘D收集器现在应显示在“数据收集器”部分下。</block>
   <block id="94d2a0ff1886282d7a22d96e6a125118" category="inline-image-macro">显示收集器的UI列表页面</block>
   <block id="865fce37c12842e5291be9b402a14d00" category="paragraph"><block ref="865fce37c12842e5291be9b402a14d00" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e2dcb3aa661588b80bf624cee20a4d9a" category="list-text">如果收集器安装成功、则可以删除目录"/tmp/cCollector "中的所有文件。</block>
   <block id="5c988949b33fdff8d1cb685edd772a78" category="section-title">安装新的用户目录收集器</block>
   <block id="c1d3d73ef2be97edc6318c8b9e1be652" category="paragraph">注意：在本文档中、我们介绍了安装LDAP收集器的步骤。安装AD收集器的步骤相同。</block>
   <block id="c19db618d23b8481a170708a9d8e0ff7" category="list-text">现在、我们需要提取收集器的版本和UUID。导航到"云 安全_config.Collector类型"API。在"corgorCategory (收集器类别)"下拉列表中、选择"user (用户)"作为收集器类型。选择"全部"可在一个请求中提取所有收集器类型详细信息。</block>
@@ -10916,7 +10868,6 @@
   <block id="cac3390b8d7c3963dd149f531a17b42d" category="list-text">导航到"volumee_midsors.Collector "&gt;""/v1/cluster SECURE /收集器类型/midors/｛集体类型UUID｝"(GET) API。输入从上一步复制的UUID并下载安装程序文件。</block>
   <block id="5be257826b8572b5399a6ac7cb45e005" category="inline-image-macro">下载收集器的API和响应</block>
   <block id="24c87b789cdc065736704bc2ddff3be6" category="paragraph"><block ref="24c87b789cdc065736704bc2ddff3be6" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4c57cd0ffcecf9cea5cc8cd058524581" category="list-text">如果安装程序文件从外部下载到其他计算机、请将安装程序文件复制到运行代理的系统、并位于目录"/tmp/cCollector "中。</block>
   <block id="58237ddf4e8c451c3f1c93e5c96bf452" category="list-text">或者、您也可以从同一API复制curl命令、并直接在应安装收集器的系统中运行该命令。</block>
   <block id="8bafa229baea4166d12e6934ba137aa8" category="paragraph">请注意、文件名应与下载收集器API的响应标题中的名称相同。请参见以下屏幕截图。</block>
   <block id="1408f74b7a92dffe6114bf5f799f0f8a" category="inline-image-macro">CURL命令API</block>
@@ -10931,7 +10882,6 @@
   <block id="fe0c0f9a77be12447da802b62442e67e" category="list-text">‘SLDAP目录服务器详细信息、然后单击"保存"</block>
   <block id="7138e06d350a6ac3024a0be6b832038e" category="inline-image-macro">显示LDAP用户详细信息的UI</block>
   <block id="e395013e4e274cc2911f786ff10b3457" category="paragraph"><block ref="e395013e4e274cc2911f786ff10b3457" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e632d5518578306a762a61b755d4c5be" category="list-text">单击"Save"(保存)后、代理服务将在"/tmp/cCollector /"目录中找到收集器安装程序、然后安装收集器。</block>
   <block id="63a6b3c8c2e58ddc47bddb7e0e1765c6" category="list-text">作为一种替代选项、您也可以通过API添加收集器、而不是通过UI添加收集器。</block>
   <block id="a0a7d3e7a6cb2e91beed5114cc067cce" category="list-text">在示例下拉列表中、选择"LDAP Directory Server user Collector json sSample’"(LDAP目录服务器用户收集器json样本)、更新收集器配置详细信息、然后单击"Execute (执行)"。</block>
   <block id="0a721b8d54227b40387265009bce8ac5" category="inline-image-macro">LDAP收集器的API</block>
@@ -10954,14 +10904,12 @@
   <block id="73c28ff5675693eddcb79999e10da4d0" category="paragraph"><block ref="73c28ff5675693eddcb79999e10da4d0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f8f9f7f0d4337aaef721604bd0326c44" category="section-title">正在升级收集器</block>
   <block id="d64a61695a0497568adb11f38b555611" category="paragraph">注意：所有类型的收集器的升级步骤都相同。我们将在本文档中演示ONTAP SVM收集器升级。</block>
-  <block id="1788421524c681e92ffb072cb2b16ba4" category="list-text">转到需要升级收集器的系统、如果尚未创建目录"/tmp/cCollector "、请创建该目录。</block>
   <block id="055271148610e8cb492f1a5f67d7061f" category="list-text">确保目录"cCollector "归_cssys：cssys_所有。</block>
   <block id="30cb8ff7690cb51e2ba4a45fa1fec47b" category="list-text">在Swagger中、导航到"gldSECURE配置.收集器类型" GET API。在"corgorCategory (收集器类别)"下拉列表中、选择"data"(数据)(为用户目录收集器选择"user"或选择"all"(全部))。</block>
   <block id="b63f1156c2b0b306d2c21686c4671290" category="paragraph">从响应正文复制UUID和版本。</block>
   <block id="bdb4d7354cc8a41b106b9c9d369890b9" category="inline-image-macro">显示收集器UUID和版本的API响应已突出显示</block>
   <block id="983e33a17fd037d75d7911eb30c9e4dd" category="paragraph"><block ref="983e33a17fd037d75d7911eb30c9e4dd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="26f085ec96f326a83a2cd1c9a101547a" category="list-text">下载最新的收集器安装程序文件。</block>
-  <block id="38836b79dd635a5e513204082f0d059b" category="list-text">导航到"云 安全_massiders.Collector "&gt;""/v1/云 安全/收集器类型/配置程序/｛集体类型UUID｝"API。输入从上一步复制的"assorgorTypeUUUUU"。将安装程序下载到/tmp/cCollector目录。</block>
   <block id="4aca3370873bcc20704038a3b449349c" category="list-text">或者、也可以使用同一API的curl命令。</block>
   <block id="fb627a04ed10e35b8c6fd5fdca19b796" category="inline-image-macro">CURL命令示例</block>
   <block id="bc8d31643a32bf3e4e8aa0ce44aece11" category="paragraph"><block ref="bc8d31643a32bf3e4e8aa0ce44aece11" category="inline-image-macro-rx" type="image"></block></block>
@@ -10977,11 +10925,9 @@
   <block id="59e00ac512bd959d2a3ded4209823e6f" category="list-text">健全性检查。</block>
   <block id="eac5a780e5ba342d31bf3d406ab502ca" category="paragraph">收集器应在UI中处于running状态。</block>
   <block id="aefca8640c6f7317db4ede982986441e" category="list-text">升级后清理：</block>
-  <block id="f27db76a6388239fb1cfc200d1f859b7" category="list-text">如果收集器升级成功、则可以删除目录"/tmp/cCollector "中的所有文件。</block>
   <block id="991fefa76287bfa32eacbff100d426b8" category="paragraph">重复上述步骤以升级其他类型的收集器。</block>
   <block id="9d72500e8a5c053eafcdfe4056754eb8" category="section-title">共享问题和修复。</block>
   <block id="0b2c01fe038efdc8f7b27285140c4a04" category="list-text">AGENT0－0错误</block>
-  <block id="21375ff3b38428634b0bb8f11745059a" category="paragraph">如果收集器安装程序文件不在/tmp/cCollector目录中或无法访问、则会出现此错误。请确保下载安装程序文件、并且目录"canceller"和安装程序zip文件归cssys：cssys所有、然后重新启动代理服务—"systemnti restart cloudsecure-agent.service”</block>
   <block id="d8490c9089d989bf468613ea9b946f89" category="inline-image-macro">显示"agent homm"错误悬停提示的用户界面屏幕</block>
   <block id="275f1fc2756027a2e9293774dfb2629e" category="paragraph"><block ref="275f1fc2756027a2e9293774dfb2629e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="80c03754030e95a93e8d8526693ae86d" category="list-text">未授权错误</block>
@@ -12590,4 +12536,94 @@
   <block id="b25b84328544405f6b0ef29d21ec179a" category="list-text">Debian (64位) 12.</block>
   <block id="fc4f76c3c67141253726c8c6550bc344" category="list-text">Oracle Enterprise Linux （ 64 位） 9.6</block>
   <block id="3f9083673db59761ee75134079acb794" category="list-text">Red Hat（64位）9.6</block>
+  <block id="142b47c359d647af9faff9ef084152c7" category="cell">agentlogin.cs01.cloudinsights.netapp.com</block>
+  <block id="29acd3d3cfc5f8e3cb650abeb2622a68" category="cell">agentlogin.cs01-eu-1.cloudinsights.netapp.com</block>
+  <block id="012f0abca78822d24d27455403c3d089" category="cell">agentlogin.cs01-ap-1.cloudinsights.netapp.com</block>
+  <block id="5638f0cd643e22827b55eec8b52ab7e4" category="paragraph">其中 _&lt;API_Access_Token&gt;_ 是您在创建 API 访问密钥期间保存的令牌，而 _&lt;Workload Security Tenant&gt;_ 是您的 Workload Security 环境的租户 URL。</block>
+  <block id="9e2b8018039d7d99b04df272bce4aba9" category="list-text">勒索软件模拟脚本仅适用于 Linux 。如果用户将 ONTAP ARP 与工作负载安全集成，模拟脚本还应生成高置信度警报。</block>
+  <block id="61622ea1d4086909bd90c0efc1d6a2e5" category="list-text">仅当 ONTAP 版本为 9.15 或更高版本时，工作负载安全才会检测使用 NFS 4.1 生成的事件和警报。</block>
+  <block id="18ce72511b1d5c5efd6fbe69db6d9b27" category="list-text">用户可以根据自己的喜好和系统要求选择 Python 或 shell 脚本。</block>
+  <block id="9efded9e764f04e1a9d0996a56b10881" category="list-text">Python 脚本需要先安装。如果您不想使用 Python，请使用 Shell 脚本。</block>
+  <block id="9a759ff4b26a758a5b3f576e750e2b4f" category="section-title">指南：</block>
+  <block id="53ed8ffe6fb7e1643cb7f04fdaec4316" category="paragraph">此脚本应在包含大量待加密文件（包括子文件夹中的文件）的 SVM 上执行。理想情况下，加密文件数量应为 100 个或更多。请确保文件不为空。</block>
+  <block id="210fca07871efb876c9cd258ccc87ac5" category="paragraph">要生成警报，请在创建测试数据之前暂时暂停收集器。生成示例文件后，恢复收集器并启动加密过程。</block>
+  <block id="8f218e93bbeebaaf042e1b9c1eca99a1" category="section-title">准备系统：</block>
+  <block id="5e6702b9d02b30df0d4015b6d94c3ef5" category="paragraph">首先，将目标卷挂载到机器上。您可以挂载 NFS 或 CIFS 导出。</block>
+  <block id="d39b1e189739fcc0a92bdb5bb1b3e4d0" category="section-title">启用 ONTAP Autonomous 勒索软件防护（可选）：</block>
+  <block id="ad3dd38cdf18de03b5ea7c975f541873" category="paragraph">如果您的 ONTAP 集群版本为 9.11.1 或更高版本，您可以通过在 ONTAP 命令控制台上执行以下命令来启用 ONTAP 勒索软件防护服务。</block>
+  <block id="de5a41e583385a4169ca3909e0a409ca" category="list-text">如果尚未完成，请配置 SVM 数据收集器。</block>
+  <block id="9fe53685b26e1438594a879d69be82a9" category="list-text">确保在配置数据收集器时选择了安装协议。</block>
+  <block id="8242f31ea73970eea49f1da9ec4c8682" category="section-title">以编程方式生成示例文件：</block>
+  <block id="7bfd7dac59b3ec340e6de12e5559587b" category="inline-link-macro">暂停数据收集器</block>
+  <block id="e626adb133db9ae242d1ac6846c15bd4" category="paragraph">在创建文件之前，您必须先停止或<block ref="87f29f7287bc84941d1661609339f171" category="inline-link-macro-rx"></block>加工。</block>
+  <block id="5c0a7e6abb86aa633f255b3930a2a4f7" category="paragraph">在运行模拟之前，您必须先添加要加密的文件。您可以手动将待加密的文件复制到目标文件夹，也可以使用内置脚本以编程方式创建文件。无论使用哪种方法，请确保至少有 100 个文件需要加密。</block>
+  <block id="33f27f0c62992f4d122b27235df0dcf6" category="paragraph">如果您选择以编程方式创建文件，则可以使用 Shell 或 Python：</block>
+  <block id="7277c05557764137b065798ba5f5b395" category="section-title">壳：</block>
+  <block id="081d3bad0447c442fd5e047e6aa5fd40" category="list-text">将 NFS 或 CIFS 共享从文件管理器的 SVM 挂载到代理计算机。将 CD 复制到该文件夹。</block>
+  <block id="2f13c93c7b1aeabc37869487983edb01" category="list-text">将脚本从代理安装目录 (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/create_dataset.sh) 复制到目标挂载位置。</block>
+  <block id="7a00868b97e9df2a262e9df4e2e7853c" category="list-text">使用挂载目录（例如 /root/demo）中的脚本执行以下命令来创建测试数据集文件夹和文件：</block>
+  <block id="e67fb27f4270ecbdb972cec0c186f34e" category="list-text">这将在名为“test_dataset”的目录下的挂载文件夹内创建 100 个具有各种扩展名的非空文件。</block>
+  <block id="913ffb6e71174bb165d75e7127aff4c1" category="section-title">Python：</block>
+  <block id="70a2ef78424951a3f5229370056803f9" category="section-title">Python 脚本先决条件：</block>
+  <block id="c05c637867101ef9406f64dbe4ff6c30" category="list-text">安装 Python（如果尚未安装。）</block>
+  <block id="ce5abe1f3afb5729781cd65948bc066d" category="list-text">从以下位置下载 Python 3.5.2 或更高版本<block ref="98836946d56800459eb00ec3494ce132" category="inline-link-rx"></block> 。</block>
+  <block id="b2f1121510db38af62339a4ec7be8937" category="list-text">要检查 Python 安装，请运行<block ref="ac719163117fd79e0e5eddf5be2929c4" prefix=" " category="inline-code"></block> 。</block>
+  <block id="9fad0479a2dd9bda83a459acb14393be" category="list-text">Python 脚本已在 3.5.2 版本上进行测试。</block>
+  <block id="07923b667d14a8eb9e798afd4aa2f8bf" category="list-text">如果尚未安装 pip，请安装：</block>
+  <block id="b18187b45e35c02d4c0c88829cb4a40c" category="list-text">从以下位置下载 get-pip.py 脚本<block ref="e0a45e3d4ae57a2773c9b48c2e796662" category="inline-link-rx"></block> 。</block>
+  <block id="05f4aae53801ade399e1059b3e0c25f3" category="list-text">使用以下方式安装 pip <block ref="6466c1eab2e387cb6ad425357d1876b3" prefix=" " category="inline-code"></block> 。</block>
+  <block id="99751a3316b411e4e720694cd4828cc1" category="list-text">使用以下命令验证 pip 安装<block ref="3327b3fc56e7d8a50b0df977a4c20e3b" prefix=" " category="inline-code"></block> 。</block>
+  <block id="c504dca378218d6cdf3d28b602fbcdd5" category="list-text">PyCryptodome 库：</block>
+  <block id="55e7051b4957c7e336a593c0e6b0559d" category="list-text">该脚本使用 PyCryptodome 库。</block>
+  <block id="75e9ec642b87389a9b86b5ce6e71ed6e" category="list-text">使用以下方式安装 PyCryptodome <block ref="194fc90597125afc86caf1d15cbf368c" prefix=" " category="inline-code"></block> 。</block>
+  <block id="9433a1ee6fa8d9e22e21e24c09ea7eba" category="list-text">通过运行确认 PyCryptodome 安装<block ref="ee7f1b491d78d8f365fc68f9f583d45a" prefix=" " category="inline-code"></block> 。</block>
+  <block id="48e7e220919f1b9672323e91cc617634" category="section-title">Python创建文件脚本：</block>
+  <block id="78aa60bb27e1d3ef6ce810fba0dfd39a" category="list-text">将脚本从代理安装目录（%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/create_dataset.py）复制到目标安装位置。</block>
+  <block id="07f758b769fe4a6e63f6174d18e2b514" category="list-text">使用已挂载目录（例如 /root/demo）中的脚本执行以下命令来创建测试数据集文件夹和文件：</block>
+  <block id="9adc0908c00f75ca29814b238088a0cd" category="list-text">这将在名为“test_dataset”的目录下的挂载文件夹中创建 100 个具有各种扩展名的非空文件</block>
+  <block id="155946ddf8d31167ae2abad50439caac" category="section-title">恢复收集器</block>
+  <block id="58d83dc1e6706a52cd311f9c66f193d5" category="paragraph">如果您在执行这些步骤之前暂停了收集器，请确保在创建示例文件后恢复收集器。</block>
+  <block id="e6e76755f42136002c51ecb7c7acc410" category="paragraph">要生成勒索软件警报，您可以执行包含的脚本，该脚本将在工作负载安全中模拟勒索软件警报。</block>
+  <block id="210e93b8c7253e00f2206b155a242c53" category="list-text">将脚本从代理安装目录（%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/simulate_attack.sh）复制到目标安装位置。</block>
+  <block id="66a8eca27475656430ae411ce0277447" category="list-text">使用挂载目录（例如 /root/demo）中的脚本执行以下命令来加密测试数据集：</block>
+  <block id="71242fab4b4978991a34104b8fa81ff5" category="list-text">这将加密“test_dataset”目录下创建的示例文件。</block>
+  <block id="53892e18f05e7f30f463f70e99469111" category="list-text">将脚本从代理安装目录（%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/simulate_attack.py）复制到目标安装位置。</block>
+  <block id="1f5e50416d91123b2c5d110570af5cbd" category="list-text">请注意，python 先决条件是按照 Python 脚本先决条件部分安装的</block>
+  <block id="fc3fcfa41943a7c1be3c50948fd1afce" category="section-title">在工作负载安全中生成警报</block>
+  <block id="3773b4e166f62daeb6ab1370cdd8bfb8" category="paragraph">模拟器脚本执行完成后，几分钟内就会在 Web UI 上看到警报。</block>
+  <block id="c604216470772517b98066aae99e75be" category="paragraph">注意：如果满足以下所有条件，则会生成高置信度警报。</block>
+  <block id="bb37a91d3a7d038f7f196d7f342f5d41" category="list-text">监控的 SVM 的 ONTAP 版本高于 9.11.1</block>
+  <block id="9ce553df4934ac43b957143d21b265ff" category="list-text">ONTAP 自主勒索软件防护已配置</block>
+  <block id="ea7f417542fef98806d54f7dcd8a2d26" category="list-text">在集群模式下添加了工作负载安全数据收集器。</block>
+  <block id="7a59fff38776feaa8a27e18c15f3f839" category="paragraph">Workload Security 根据用户行为检测勒索软件模式，而 ONTAP ARP 根据文件中的加密活动检测勒索软件活动。</block>
+  <block id="59c0cecf99f5b7877b7f320da1734140" category="paragraph">如果满足条件，Workload Security 会将警报标记为高可信度警报。</block>
+  <block id="560a82b95d26c61a25e2894422b4eec0" category="paragraph">警报列表页面上的高可信度警报示例：</block>
+  <block id="dfbab6292d93300a244b9e81de9798af" category="inline-image-macro">高置信度警报示例，列表页</block>
+  <block id="684c628694341fccce0653b8e1661d28" category="paragraph"><block ref="684c628694341fccce0653b8e1661d28" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ea018ede78b5776eeee3e65c898067a" category="paragraph">高可信度警报详细信息示例：</block>
+  <block id="4864e30f3543ce6ffefe6866cd4df439" category="inline-image-macro">高置信度警报示例，详细信息页面</block>
+  <block id="8901b7a1034f6e31fa7c2f5929bdd211" category="paragraph"><block ref="8901b7a1034f6e31fa7c2f5929bdd211" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="36aed75d347e158fecfc525dc1d66a22" category="section-title">多次触发警报</block>
+  <block id="95d269995653ffa8a24d0a028366adbc" category="paragraph">Workload Security 会学习用户行为，并且不会对同一用户在 24 小时内重复的勒索软件攻击发出警报。</block>
+  <block id="7000a55791f1de1983f9adc601ad2e4e" category="paragraph">要使用不同的用户生成新的警报，请再次执行相同的步骤（创建测试数据，然后加密测试数据）。</block>
+  <block id="7fa8dbe788a697deed7782e6b66dda37" category="cell">* 检查日志文件中的收集时间戳并相应地修改轮询间隔 * 等待更长时间</block>
+  <block id="0dd0cb2a89009ebb8c43491b158c51e9" category="list-text">进入需要安装收集器的系统，在_agent安装路径_目录下创建名为_./tmp/collectors_的目录。</block>
+  <block id="160be90f41a3aa40c38fd58b92d331a5" category="paragraph">注意：如果代理安装在 _/opt/netapp_ 中，则导航到 _/opt/netapp/cloudsecure_。</block>
+  <block id="1bb789b4ee521f82afb89e5f0a083791" category="list-text">递归地将 _tmp_ 目录的所有权更改为 *cssys:cssys*（cssys 用户和组将在代理安装期间创建）。</block>
+  <block id="38a58c80edfd4b43de4d5799824f9540" category="list-text">如果安装程序文件是在不同的机器上外部下载的，请将安装程序文件复制到代理正在运行的系统并放在目录 _/{agent-install-path}/cloudsecure/tmp/collectors_ 中。</block>
+  <block id="1fcd3fe285cf6e02b7e385f38ef121c4" category="paragraph">注意：如果代理安装在 _/opt/netapp_ 中，则导航到 _/opt/netapp/cloudsecure/tmp/collectors_。</block>
+  <block id="15222b952186a89ae0af94ef3138670d" category="list-text">将收集器安装程序 zip 文件的所有权更改为 *cssys:cssys*。</block>
+  <block id="fc062559e675b7f328021e6c13796f74" category="list-text">单击“保存”后，代理进程将从_/{agent-install-path}/cloudsecure/tmp/collectors/_ 目录中找到收集器安装程序并安装收集器。</block>
+  <block id="57a553eefeb08a7b001e85e69a8b0fb0" category="list-text">如果收集器安装成功，则可以删除目录 _/{agent-install-path}/cloudsecure/tmp/collectors_ 中的所有文件。</block>
+  <block id="ddd1a3a80069f8ff96d5c2e94fb10103" category="list-text">1.进入需要安装收集器的系统，在_agent安装路径_目录下创建名为_./tmp/collectors_的目录。</block>
+  <block id="aa635673bd6f483378389839d0a8b528" category="list-text">将 _collectors_ 目录的所有权更改为 *cssys:cssys*</block>
+  <block id="f6a25ca8fac6fa2dc1d34ae3f8db8b18" category="list-text">如果安装程序文件是在不同的机器上外部下载的，请将安装程序文件复制到代理正在运行的系统和目录 _/{agent-installation-path}/cloudsecure/tmp/collectors_ 中。</block>
+  <block id="a7bb06f1f9304b3d3c9123250901fa9c" category="paragraph">另请注意，如果代理安装在 _/opt/netapp_ 中，则导航到 _/opt/netapp/cloudsecure/tmp/collectors_。</block>
+  <block id="2746097ba019e65ac9795a5791b28bde" category="list-text">单击“保存”后，代理服务将从_/{agent-install-path}/cloudsecure/tmp/collectors/_ 目录中找到收集器安装程序并安装收集器。</block>
+  <block id="3dbd3b781eed03e778b5e63a963dc871" category="list-text">代理应该在“代理”页面中可见，并且处于“连接”状态。</block>
+  <block id="e050e46ae9f60994ae399079f3a4b7e0" category="list-text">转到需要升级收集器的系统，并在“代理安装路径”目录下创建目录“./tmp/collectors”（如果尚不存在）。</block>
+  <block id="87f32e15c34ddfa8d208297ef6b3199e" category="paragraph">注意：如果代理安装在 _/opt/netapp_ 中，则导航到 _/opt/netapp/cloudsecure_ 目录。</block>
+  <block id="34d4df065e8cb474864212e7cbd25aab" category="list-text">导航至 _cloudsecure_installers.collector_ &gt; _/v1/cloudsecure/collector-types/installers/{collectorTypeUUID}_ API。输入上一步复制的 _collectorTypeUUID_。将安装程序下载至 _/{agent-install-path}/cloudsecure/tmp/collectors_ 目录。</block>
+  <block id="875ee097a763d140a4468d57aabb8d80" category="list-text">如果收集器升级成功，则可以删除目录 _/{agent-install-path}/cloudsecure/tmp/collectors_ 中的所有文件。</block>
+  <block id="f7185660114f7b999956b1355a59005c" category="paragraph">如果收集器安装程序文件未位于 _/{agent-install-path}/cloudsecure/tmp/collectors_ 目录中或无法访问，则会出现此错误。请确保安装程序文件已下载，并且 _collectors_ 和安装程序 zip 文件的完整目录结构归 cssys:cssys 所有，然后重新启动代理服务：_systemctl restart cloudsecure-agent.service_。</block>
 </blocks>

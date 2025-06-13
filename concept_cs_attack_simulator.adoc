@@ -7,6 +7,10 @@ summary: 您可以使用脚本模拟勒索软件攻击、以测试或演示工�
 = 工作负载安全性：模拟攻击
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -16,149 +20,196 @@ summary: 您可以使用脚本模拟勒索软件攻击、以测试或演示工�
 
 == 开始之前需要注意的事项
 
-* 勒索软件模拟脚本仅适用于 Linux 。
+* 勒索软件模拟脚本仅适用于 Linux 。如果用户将 ONTAP ARP 与工作负载安全集成，模拟脚本还应生成高置信度警报。
+* 仅当 ONTAP 版本为 9.15 或更高版本时，工作负载安全才会检测使用 NFS 4.1 生成的事件和警报。
 * 此脚本随工作负载安全代理安装文件一起提供。它可在安装了工作负载安全代理的任何计算机上使用。
 * 您可以在工作负载安全代理计算机本身上运行此脚本；无需准备其他Linux计算机。但是，如果您希望在其他系统上运行此脚本，只需复制此脚本并在其中运行即可。
+* 用户可以根据自己的喜好和系统要求选择 Python 或 shell 脚本。
+* Python 脚本需要先安装。如果您不想使用 Python，请使用 Shell 脚本。
 
 
 
 
-== 至少具有 1 ， 000 个示例文件
+== 指南：
 
-此脚本应在包含要加密的文件的文件夹的 SVM 上运行。建议在该文件夹和任何子文件夹中至少有 1 ， 000 个文件。这些文件不能为空。请勿使用同一用户创建文件并对其进行加密。工作负载安全性会将此视为低风险活动、因此不会生成警报(即同一用户修改其刚刚创建的文件)。
+此脚本应在包含大量待加密文件（包括子文件夹中的文件）的 SVM 上执行。理想情况下，加密文件数量应为 100 个或更多。请确保文件不为空。
 
-有关的说明，请参阅下文link:#create-files-programmatically["以编程方式创建非空文件"]。
-
-
-
-== 运行模拟器之前的准则：
-
-. 确保加密文件不为空。
-. 请确保对50个以上的文件进行加密。少量文件将被忽略。
-. 请勿多次使用同一用户进行攻击。几次后、Workload Security将了解此用户行为并假设这是用户的正常行为。
-. 不要对同一用户刚刚创建的文件进行加密。更改用户刚刚创建的文件不会被视为一项风险活动。而是使用另一用户创建的文件、或者在创建文件和对其进行加密之间等待几个小时。
+要生成警报，请在创建测试数据之前暂时暂停收集器。生成示例文件后，恢复收集器并启动加密过程。
 
 
 
+== 步骤
 
-== 准备系统
 
-首先，将目标卷挂载到计算机。您可以挂载 NFS 挂载或 CIFS 导出。
 
-要在 Linux 中挂载 NFS 导出，请执行以下操作：
+=== 准备系统：
 
-....
+首先，将目标卷挂载到机器上。您可以挂载 NFS 或 CIFS 导出。
+
+
+
+==== 要在 Linux 中挂载 NFS 导出，请执行以下操作：
+
+[listing]
+----
 mount -t nfs -o vers=4.0 10.193.177.158:/svmvol1 /mntpt
 mount -t nfs -o vers=4.0 Vserver data IP>:/nfsvol /destinationlinuxfolder
-....
+----
 请勿挂载 NFS 4.1 ； Fpolicy 不支持此版本。
 
-要在 Linux 中挂载 CIFS ，请执行以下操作：
 
- mount -t cifs //10.193.77.91/sharedfolderincluster /root/destinationfolder/ -o username=raisa
+
+==== 要在 Linux 中挂载 CIFS ，请执行以下操作：
+
+[listing]
+----
+mount -t cifs //10.193.77.91/sharedfolderincluster /root/destinationfolder/ -o username=raisa
+----
+
+
+==== 启用 ONTAP Autonomous 勒索软件防护（可选）：
+
+如果您的 ONTAP 集群版本为 9.11.1 或更高版本，您可以通过在 ONTAP 命令控制台上执行以下命令来启用 ONTAP 勒索软件防护服务。
+
+ security anti-ransomware volume enable -volume [volume_name] -vserver [svm_name]
 接下来，设置数据收集器：
 
 . 如果尚未配置工作负载安全代理、请进行配置。
-. 如果尚未配置 SVM 数据收集器，请进行配置。
+. 如果尚未完成，请配置 SVM 数据收集器。
+. 确保在配置数据收集器时选择了安装协议。
 
+
+
+
+== 以编程方式生成示例文件：
+
+在创建文件之前，您必须先停止或link:task_add_collector_svm.html#play-pause-data-collector["暂停数据收集器"]加工。
+
+在运行模拟之前，您必须先添加要加密的文件。您可以手动将待加密的文件复制到目标文件夹，也可以使用内置脚本以编程方式创建文件。无论使用哪种方法，请确保至少有 100 个文件需要加密。
+
+如果您选择以编程方式创建文件，则可以使用 Shell 或 Python：
+
+
+
+=== 壳：
+
+. 登录到代理框。
+. 将 NFS 或 CIFS 共享从文件管理器的 SVM 挂载到代理计算机。将 CD 复制到该文件夹。
+. 将脚本从代理安装目录 (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/create_dataset.sh) 复制到目标挂载位置。
+. 使用挂载目录（例如 /root/demo）中的脚本执行以下命令来创建测试数据集文件夹和文件：
++
+ './create_dataset.sh'
+. 这将在名为“test_dataset”的目录下的挂载文件夹内创建 100 个具有各种扩展名的非空文件。
+
+
+
+
+=== Python：
+
+
+
+==== Python 脚本先决条件：
+
+* 安装 Python（如果尚未安装。）
++
+** 从以下位置下载 Python 3.5.2 或更高版本 https://www.python.org/[] 。
+** 要检查 Python 安装，请运行 `python --version` 。
+** Python 脚本已在 3.5.2 版本上进行测试。
+
+
+* 如果尚未安装 pip，请安装：
++
+** 从以下位置下载 get-pip.py 脚本 https://bootstrap.pypa.io/[] 。
+** 使用以下方式安装 pip  `python get-pip.py` 。
+** 使用以下命令验证 pip 安装 `pip --version` 。
+
+
+* PyCryptodome 库：
++
+** 该脚本使用 PyCryptodome 库。
+** 使用以下方式安装 PyCryptodome  `pip install pycryptodome` 。
+** 通过运行确认 PyCryptodome 安装 `pip show pycryptodome` 。
+
+
+
+
+
+
+==== Python创建文件脚本：
+
+. 登录到代理框。
+. 将 NFS 或 CIFS 共享从文件管理器的 SVM 挂载到代理计算机。将 CD 复制到该文件夹。
+. 将脚本从代理安装目录（%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/create_dataset.py）复制到目标安装位置。
+. 使用已挂载目录（例如 /root/demo）中的脚本执行以下命令来创建测试数据集文件夹和文件：
++
+ 'python create_dataset.py'
+. 这将在名为“test_dataset”的目录下的挂载文件夹中创建 100 个具有各种扩展名的非空文件
+
+
+
+
+== 恢复收集器
+
+如果您在执行这些步骤之前暂停了收集器，请确保在创建示例文件后恢复收集器。
 
 
 
 == 运行勒索软件模拟器脚本
 
-. 登录(ssh)到工作负载安全代理计算机。
-. 导航到： _/opt/netapp/cloudsecure /agent/install_
-. 调用不带参数的模拟器脚本以查看用法：
+要生成勒索软件警报，您可以执行包含的脚本，该脚本将在工作负载安全中模拟勒索软件警报。
+
+
+
+=== 壳：
+
+. 将脚本从代理安装目录（%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/simulate_attack.sh）复制到目标安装位置。
+. 使用挂载目录（例如 /root/demo）中的脚本执行以下命令来加密测试数据集：
 +
-....
-# pwd
-/opt/netapp/cloudsecure/agent/install
-# ./ransomware_simulator.sh
-Error: Invalid directory  provided.
-Usage: ./ransomware_simulator.sh [-e] [-d] [-i <input_directory>]
-       -e to encrypt files (default)
-       -d to restore files
-       -i <input_directory> - Files under the directory to be encrypted
-....
+ './simulate_attack.sh'
+. 这将加密“test_dataset”目录下创建的示例文件。
+
+
+
+
+=== Python：
+
+. 将脚本从代理安装目录（%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/simulate_attack.py）复制到目标安装位置。
+. 请注意，python 先决条件是按照 Python 脚本先决条件部分安装的
+. 使用挂载目录（例如 /root/demo）中的脚本执行以下命令来加密测试数据集：
 +
-....
-Encrypt command example: ./ransomware_simulator.sh -e -i /mnt/audit/reports/
-Decrypt command example: ./ransomware_simulator.sh -d -i /mnt/audit/reports/
-....
+ 'python simulate_attack.py'
+. 这将加密“test_dataset”目录下创建的示例文件。
 
 
 
 
-== 对测试文件进行加密
+== 在工作负载安全中生成警报
 
-要对文件进行加密，请运行以下命令：
+模拟器脚本执行完成后，几分钟内就会在 Web UI 上看到警报。
 
-....
-# ./ransomware_simulator.sh -e -i /root/for/
-Encryption key is saved in /opt/netapp/cloudsecure/cloudsecure-agent-1.251.0/install/encryption-key,
-which can be used for restoring the files.
-Encrypted /root/for/File000.txt
-Encrypted /root/for/File001.txt
-Encrypted /root/for/File002.txt
-...
-....
+注意：如果满足以下所有条件，则会生成高置信度警报。
+
+. 监控的 SVM 的 ONTAP 版本高于 9.11.1
+. ONTAP 自主勒索软件防护已配置
+. 在集群模式下添加了工作负载安全数据收集器。
 
 
-== 还原文件
+Workload Security 根据用户行为检测勒索软件模式，而 ONTAP ARP 根据文件中的加密活动检测勒索软件活动。
 
-要解密，请运行以下命令：
+如果满足条件，Workload Security 会将警报标记为高可信度警报。
 
-....
-[root@scspa2527575001 install]# ./ransomware_simulator.sh -d -i /root/for/
-File /root/for/File000.txt is restored.
-File /root/for/File001.txt is restored.
-File /root/for/File002.txt is restored.
-...
-....
+警报列表页面上的高可信度警报示例：
 
+image:ws_high_confidence_alert.png["高置信度警报示例，列表页"]
 
-== 多次运行此脚本
+高可信度警报详细信息示例：
 
-在为用户生成勒索软件攻击后，切换到另一个用户以生成额外的攻击。工作负载安全性可了解用户行为、不会在短时间内对同一用户的重复勒索软件攻击发出警报。
+image:ws_high_confidence_alert_detail.png["高置信度警报示例，详细信息页面"]
 
 
 
-== 以编程方式创建文件
+== 多次触发警报
 
-在创建文件之前、必须先停止或暂停数据收集器处理。在将数据收集器添加到代理之前，请执行以下步骤。如果您已添加数据收集器，只需编辑数据收集器，输入无效密码并保存即可。此操作将暂时使数据收集器处于错误状态。注意：请务必记下原始密码！
+Workload Security 会学习用户行为，并且不会对同一用户在 24 小时内重复的勒索软件攻击发出警报。
 
-
-NOTE: 建议在创建文件之前选择link:task_add_collector_svm.html#play-pause-data-collector["暂停收集器"]。]
-
-在运行模拟之前，您必须先添加要加密的文件。您可以手动将要加密的文件复制到目标文件夹中，也可以使用脚本（请参见以下示例）以编程方式创建文件。无论使用哪种方法，至少复制 1 ， 000 个文件。
-
-如果您选择以编程方式创建文件，请执行以下操作：
-
-. 登录到代理框。
-. 将 NFS 导出从存储器的 SVM 挂载到代理计算机。将 CD 复制到该文件夹。
-. 在该文件夹中，创建一个名为 createfiles.sh 的文件
-. 将以下行复制到该文件。
-+
-....
-for i in {000..1000}
-do
-   echo hello > "File${i}.txt"
-done
-echo 3 > /proc/sys/vm/drop_caches ; sync
-....
-. 保存文件。
-. 确保对文件具有执行权限：
-+
- chmod 777 ./createfiles.sh
-. 执行脚本：
-+
- ./createfiles.sh
-+
-此时将在当前文件夹中创建 1000 个文件。
-
-. 重新启用数据收集器
-+
-如果您在步骤 1 中禁用了数据收集器，请编辑该数据收集器，输入正确的密码并保存。确保数据收集器重新处于运行状态。
-
-. 如果在执行这些步骤之前暂停了收集器，请确保link:task_add_collector_svm.html#play-pause-data-collector["恢复收集器"]。
-
+要使用不同的用户生成新的警报，请再次执行相同的步骤（创建测试数据，然后加密测试数据）。

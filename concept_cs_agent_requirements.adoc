@@ -62,7 +62,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 | TCP | 443 | 工作负载安全代理 | <site_name>.cs01.cloudinsights.netapp.com <site_name>.c01.cloudinsights.netapp.com <site_name>.c02.cloudinsights.netapp.com | 访问数据基础架构洞察力 
 
 
-| TCP | 443 | 工作负载安全代理 | gateway.c01.cloudinsights.netapp.com agentlogin.cs01.cloudinsights.netapp.com. | 访问身份验证服务 
+| TCP | 443 | 工作负载安全代理 | agentlogin.cs01.cloudinsights.netapp.com | 访问身份验证服务 
 |===
 对于*基于欧洲*的工作负载安全环境：
 
@@ -74,7 +74,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 | TCP | 443 | 工作负载安全代理 | <site_name>.cs01-eu-1.cloudinsights.netapp.com <site_name>.c01-eu-1.cloudinsights.netapp.com <site_name>.c02-eu-1.cloudinsights.netapp.com | 访问数据基础架构洞察力 
 
 
-| TCP | 443 | 工作负载安全代理 | gateway.c01.cloudinsights.netapp.com agentlogin.cs01-eu-1.cloudinsights.netapp.com | 访问身份验证服务 
+| TCP | 443 | 工作负载安全代理 | agentlogin.cs01-eu-1.cloudinsights.netapp.com | 访问身份验证服务 
 |===
 对于基于*亚太地区*的工作负载安全环境：
 
@@ -86,7 +86,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 | TCP | 443 | 工作负载安全代理 | <site_name>.cs01-ap-1.cloudinsights.netapp.com <site_name>.c01-ap-1.cloudinsights.netapp.com <site_name>.c02-ap-1.cloudinsights.netapp.com | 访问数据基础架构洞察力 
 
 
-| TCP | 443 | 工作负载安全代理 | gateway.c01.cloudinsights.netapp.com agentlogin.cs01-ap-1.cloudinsights.netapp.com | 访问身份验证服务 
+| TCP | 443 | 工作负载安全代理 | agentlogin.cs01-ap-1.cloudinsights.netapp.com | 访问身份验证服务 
 |===
 
 

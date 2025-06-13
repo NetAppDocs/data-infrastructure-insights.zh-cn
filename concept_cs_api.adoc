@@ -58,8 +58,8 @@ NOTE: 您的令牌只能在创建过程中复制到剪贴板并进行保存。�
 
 例如，使用以下命令检索存储资产：
 
- curl https://<tenant_host_name>/rest/v1/cloudsecure/activities -H 'X-CloudInsights-ApiKey: <API_Access_Token>'
-其中， _<API_Access_Token>_ 是您在创建 API 访问密钥期间保存的令牌。
+ curl https://<Workload Security tenant>/rest/v1/cloudsecure/activities -H 'X-CloudInsights-ApiKey: <API_Access_Token>'
+其中 _<API_Access_Token>_ 是您在创建 API 访问密钥期间保存的令牌，而 _<Workload Security Tenant>_ 是您的 Workload Security 环境的租户 URL。
 
 有关详细信息，请参见 _API Documentation_ 链接中的 * 管理 > API 访问 * 。
 
@@ -75,6 +75,6 @@ NOTE: 您的令牌只能在创建过程中复制到剪贴板并进行保存。�
 
 [source]
 ----
-python3 data-export.py --tenant_url <tenant id>.cs01.cloudinsights.netapp.com --access_key %ACCESS_KEY% --path_filter "<dir path>" --user_name "<user>" --from_time "01-08-2024 00:00:00" --to_time "31-08-2024 23:59:59" --iteration_interval 12 --num_workers 3
+python3 data-export.py --tenant_url <Workload Security tenant> --access_key %ACCESS_KEY% --path_filter "<dir path>" --user_name "<user>" --from_time "01-08-2024 00:00:00" --to_time "31-08-2024 23:59:59" --iteration_interval 12 --num_workers 3
 ----
 关键参数：- `--iteration_interval 12`：将请求的时间范围拆分为12小时的间隔。- `--num_workers 3`：使用3个线程并行提取这些间隔。
