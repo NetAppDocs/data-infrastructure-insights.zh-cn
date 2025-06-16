@@ -13,7 +13,7 @@ keywords: reporting, cognos, data warehouse, dwh
 Data Infrastructure Insight报告是一款业务智能工具、可用于查看预定义报告或创建自定义报告。
 
 
-NOTE: 数据基础架构洞察中提供了报告功能link:concept_subscribing_to_cloud_insights.html["高级版"]。
+NOTE: 数据基础架构洞察中提供了报告功能link:concept_subscribing_to_cloud_insights.html["高级版"]。报告功能的可用性取决于最低占用空间要求。link:https://www.netapp.com/forms/cloud-insights-contact-us/["联系您的 NetApp 销售代表"]了解更多信息。
 
 借助Data Infrastructure Insight报告、您可以执行以下任务：
 
