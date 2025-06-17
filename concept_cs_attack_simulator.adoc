@@ -59,7 +59,7 @@ mount -t nfs -o vers=4.0 Vserver data IP>:/nfsvol /destinationlinuxfolder
 
 
 
-==== 要在 Linux 中挂载 CIFS ，请执行以下操作：
+==== 要在 Linux 中挂载 CIFS：
 
 [listing]
 ----
