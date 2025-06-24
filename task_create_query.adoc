@@ -37,6 +37,12 @@ image:QuerySelectColumns.png["选择 Columns"]
 
 
 
+== 观看实际操作
+
+link:https://media.netapp.com/video-detail/d0530e0b-a222-52e7-92b1-dbeeee41b712/explore-and-analyze-with-queries-in-data-infrastructure-insights["使用数据基础设施洞察中的查询进行探索和分析（视频）"]
+
+
+
 == 选择聚合、单位、环境格式
 
 
