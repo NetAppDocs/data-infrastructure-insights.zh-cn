@@ -39,7 +39,7 @@ Data Infrastructure Insight提供了多种安全功能、使您的环境能够�
 安装AU后、SecurityAdmin工具位于采集单元系统的以下任一位置：
 
 ....
-Windows - C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat
+Windows - <install_path>\Cloud Insights\Acquisition Unit\acq\securityadmin\bin\securityadmin.bat
 Linux - /bin/oci-securityadmin.sh
 ....
 
@@ -61,7 +61,7 @@ image:SecurityAdminMenuChoices.png["安全管理工具选项(Linux)"]
 
 +
 ....
-Windows - C:\Program Files\SANscreen\backup\vault
+Windows - <install_path>\Cloud Insights\Acquisition Unit\acq\securityadmin\backup\vault
 Linux - /var/log/netapp/oci/backup/vault
 ....
 +
