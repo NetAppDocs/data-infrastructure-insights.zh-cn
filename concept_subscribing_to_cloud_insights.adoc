@@ -12,8 +12,8 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 [role="lead"]
 开始使用Data Infrastructure Insight只需三个简单步骤即可：
 
-* 在上注册一个帐户link:https://bluexp.netapp.com//["* NetApp BlueXP*"]、即可访问NetApp的所有云产品。
-* 注册免费试用Data Infrastructure Insight、了解可用功能。注册免费试用版：
+. 在上注册一个帐户link:https://bluexp.netapp.com//["* NetApp BlueXP*"]、即可访问NetApp的所有云产品。
+. 注册免费试用Data Infrastructure Insight、了解可用功能。注册免费试用版：
 +
 ** 转至 https://netapp.com[]
 ** 选择页面顶部的*如何购买*。
@@ -21,7 +21,19 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 ** 安排会议或等待代表就试用事宜与您联系。
 
 
-* *订阅*数据基础架构洞察、通过link:https://bluexp.netapp.com/contact-cds["NetApp 销售人员"]直接或持续无中断地访问数据link:https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe["AWS 市场"]。
+. *订阅*数据基础设施洞察，通过各种灵活的订阅选项持续、不间断地访问您的数据：
++
+** link:https://bluexp.netapp.com/contact-cds["NetApp 直销"]
+** AWS 市场：
++
+*** link:https://aws.amazon.com/marketplace/pp/prodview-axhuy7muvzfx2["固定期限订阅"]
+*** link:https://aws.amazon.com/marketplace/pp/prodview-rn4qwencpjpge["按需购买订阅"]
+*** link:https://aws.amazon.com/marketplace/pp/prodview-nku57vjsqdwzu["固定基数+按需付费超额订阅"]
+
+
+** link:https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.dii_premium["Azure Marketplace"] （所有订阅选项）
+
+
 
 
 在注册过程中、您可以选择托管Data Infrastructure Insight环境的全球区域。有关详细信息，请阅读有关Data Infrastructure洞察的link:security_information_and_region.html["信息和区域"]信息。
@@ -50,7 +62,7 @@ NOTE: 如果您需要更多时间来评估Data Infrastructure Insight、并且�
 
 === 通过AWS Marketplace试用
 
-您也可以通过AWS Marketplace注册免费试用。AWS Marketplace免费试用版允许您访问Data Infrastructure Insight、试用期为33天、最多支持499个<<observability-metering,受管单元>>(MU)。
+您也可以通过AWS Marketplace注册免费试用。通过 AWS Marketplace 免费试用，您可以访问数据基础设施洞察，试用期为 33 天。
 
 AWS Marketplace免费试用不能延长。试用期间、您可以随时访问*管理->订阅*页面、降级到Data Infrastructure Insight基础版订阅或更改为付费Data Infrastructure Insight订阅。
 
