@@ -12654,5 +12654,5 @@
   <block id="eaf0150fe02dfa14aeba907403d82430" category="list-text"><block ref="fbbacee6d384df67d0c4b258087bb5d8" category="inline-link-macro-rx"></block> （所有订阅选项）</block>
   <block id="fbcb8e05bba1155469592f550e005cf6" category="paragraph">在注册过程中、您可以选择托管Data Infrastructure Insight环境的全球区域。有关详细信息，请阅读有关Data Infrastructure洞察的<block ref="286a302a1ee50fd59eb368d3d9779037" category="inline-link-macro-rx"></block>信息。</block>
   <block id="48a6157894b0b86c589decc577da9409" category="paragraph">您也可以通过AWS Marketplace注册免费试用。通过 AWS Marketplace 免费试用，您可以访问数据基础设施洞察，试用期为 33 天。</block>
-  <block id="1f06ee3cbbfb94c83d737186b4f510ac" category="admonition">创建监视器后，DII 会查看前一周的所有现有数据，以发现显著的数据峰值或下降；这些峰值或下降被视为异常。在监视器创建后的第一周（“学习”阶段），警报中的“噪音”可能会增加。为了减轻这种噪音，只有持续时间超过 30 分钟的峰值或下降才会被视为异常并生成警报。在接下来的一周，随着更多数据的分析，噪音通常会减少，只有随后出现的显著峰值或下降才会被视为异常。</block>
+  <block id="0fb60d67e2b52b6e6bca8533e617e698" category="admonition">创建监视器后，DII 会查看前一周的所有现有数据，以发现显著的数据峰值或下降；这些峰值或下降被视为异常。在监视器创建后的第一周（“学习”阶段），警报中的“噪音”可能会增加。为了减轻这种噪音，只有持续时间超过 30 分钟的峰值或下降才会被视为异常并生成警报。在接下来的一周里，随着更多数据的分析，噪音通常会减少，并且持续一段时间的显著峰值或下降都将被视为异常。</block>
 </blocks>
