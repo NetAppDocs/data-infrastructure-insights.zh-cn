@@ -11,7 +11,7 @@ summary: '数据基础架构洞察从NetApp Active IQ数字顾问(也称为数�
 
 
 [role="lead"]
-NetApp link:https://www.netapp.com/us/products/data-infrastructure-management/active-iq.aspx["Active IQ Digital Advisor"](也称为数字顾问)为NetApp客户的硬件/软件系统提供一系列可视化、分析和其他支持相关服务。Digital Advisor报告的数据不仅可以增强系统故障排除能力、还可以深入了解与设备相关的优化和预测性分析。
+NetApp link:https://docs.netapp.com/us-en/active-iq/["Active IQ Digital Advisor"](也称为数字顾问)为NetApp客户的硬件/软件系统提供一系列可视化、分析和其他支持相关服务。Digital Advisor报告的数据不仅可以增强系统故障排除能力、还可以深入了解与设备相关的优化和预测性分析。
 
 数据基础架构洞察会收集由数字顾问监控和报告的任何NetApp集群模式Data ONTAP存储系统的*风险*。Data Infrastructure Insight会在从这些设备收集数据的过程中自动收集为存储系统报告的风险。您必须将相应的数据收集器添加到Data Infrastructure Insight、以收集Digital Advisor风险信息。
 

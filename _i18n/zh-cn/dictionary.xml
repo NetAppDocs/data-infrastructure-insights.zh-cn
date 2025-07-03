@@ -12151,7 +12151,6 @@
   <block id="a2efde4371837d491f7f2d093cb687a2" category="paragraph"><block ref="6239b49ee0db956af965dd1ce0c92bfa" category="inline-image-macro-rx" type="image"></block></block>
   <block id="67cdd97ee57ecbb8d5397980e2f337b2" category="summary">数据基础架构洞察从NetApp Active IQ数字顾问(也称为数字顾问)收集风险数据</block>
   <block id="dab2edf9eaac3950e92c281ce358af01" category="doc">Active IQ Digital Advisor</block>
-  <block id="c68ffc18976c6478ceba645cdcfe3ad4" category="paragraph">NetApp <block ref="cbe8da543274ee624cafab4e3c376bb9" category="inline-link-macro-rx"></block>(也称为数字顾问)为NetApp客户的硬件/软件系统提供一系列可视化、分析和其他支持相关服务。Digital Advisor报告的数据不仅可以增强系统故障排除能力、还可以深入了解与设备相关的优化和预测性分析。</block>
   <block id="bb4ab99c035d10d75227562a13f30fbd" category="paragraph">数据基础架构洞察会收集由数字顾问监控和报告的任何NetApp集群模式Data ONTAP存储系统的*风险*。Data Infrastructure Insight会在从这些设备收集数据的过程中自动收集为存储系统报告的风险。您必须将相应的数据收集器添加到Data Infrastructure Insight、以收集Digital Advisor风险信息。</block>
   <block id="5b3f4c933f6bb8b2000bc2d18617bf70" category="paragraph">数据基础架构洞察不会显示ONTAP系统中未由Digital Advisor监控和报告的风险数据。</block>
   <block id="512f021ba1976438e7134e934898c5bd" category="paragraph">报告的风险显示在_storage_和_storage nnode _资产登录页面上的"风险"表中。此表显示了风险详细信息、风险类别和风险的潜在影响、还提供了一个链接、可访问汇总存储节点所有风险的数字顾问页面(需要NetApp支持帐户登录)。</block>
@@ -12655,4 +12654,18 @@
   <block id="fbcb8e05bba1155469592f550e005cf6" category="paragraph">在注册过程中、您可以选择托管Data Infrastructure Insight环境的全球区域。有关详细信息，请阅读有关Data Infrastructure洞察的<block ref="286a302a1ee50fd59eb368d3d9779037" category="inline-link-macro-rx"></block>信息。</block>
   <block id="48a6157894b0b86c589decc577da9409" category="paragraph">您也可以通过AWS Marketplace注册免费试用。通过 AWS Marketplace 免费试用，您可以访问数据基础设施洞察，试用期为 33 天。</block>
   <block id="0fb60d67e2b52b6e6bca8533e617e698" category="admonition">创建监视器后，DII 会查看前一周的所有现有数据，以发现显著的数据峰值或下降；这些峰值或下降被视为异常。在监视器创建后的第一周（“学习”阶段），警报中的“噪音”可能会增加。为了减轻这种噪音，只有持续时间超过 30 分钟的峰值或下降才会被视为异常并生成警报。在接下来的一周里，随着更多数据的分析，噪音通常会减少，并且持续一段时间的显著峰值或下降都将被视为异常。</block>
+  <block id="7a20b5e6e74635b92f5666cd649ddfcc" category="paragraph">NetApp <block ref="f2ce28f6c068a59381fa4a12e4e21d63" category="inline-link-macro-rx"></block>(也称为数字顾问)为NetApp客户的硬件/软件系统提供一系列可视化、分析和其他支持相关服务。Digital Advisor报告的数据不仅可以增强系统故障排除能力、还可以深入了解与设备相关的优化和预测性分析。</block>
+  <block id="75aa1464e2cc1e0b9a103a1ed29b926c" category="cell">一般来说，DII 不支持采集单元和设备之间的网络地址转换或端口地址转换。DII可能检测到收集器配置中的主机名/IP 地址与设备认为的任何地址都不匹配。</block>
+  <block id="9591ee2075b3837328ec834b9318e6fd" category="cell">错误：....登录的最大远程会话数...</block>
+  <block id="9c157f91c84bf6ed98e9e4dc1f4e93da" category="cell">FOS 对每个用户角色支持的并发 SSH 会话数量有不同的限制。DII连接到此设备的 SSH 会话在登录时因违反这些限制而被拒绝。这可能表明您有重复的收集器发现了同一资产，应避免这种情况。</block>
+  <block id="8f11f053224e09627ccc999dee93a80d" category="cell">性能收集失败，原因为...SNMP 表中发现重复行...</block>
+  <block id="467d1dc00ef5f225297dd855ea67d851" category="cell">DII 检测到错误的 SNMP 响应。您运行的可能是 FOS 8.2.3e。请升级到 8.2.3e2 或更高版本。</block>
+  <block id="f42d37ad24590fafdd93dde1ee7e6f79" category="cell">性能收集失败，原因为...未知用户名...</block>
+  <block id="c2bcfc128dfe47b6cf1fb0bb2692cd17" category="cell">您已为 DII 收集器配置了“SNMP 用户名”值，但该值未插入 SNMPv3 用户槽。仅在 Brocade FOS 上创建用户并不一定能将其启用为 SNMPv3 用户 - 您必须将其插入 v3 用户槽。</block>
+  <block id="8861809df1f65f69315eda11de0ed238" category="cell">性能收集失败，原因为...不支持的安全级别...</block>
+  <block id="8b5084d74c95a6be4f7e840c45b1bb75" category="cell">您已将 DII 收集器配置为使用 SNMPv3，但相关设备上未启用加密（又称隐私）和/或授权设置。</block>
+  <block id="52fd100dcb3cd52b2b71dcd8d77edfca" category="cell">性能收集失败，显示...隐私密码为空，仅允许用于隐私协议 NONE</block>
+  <block id="871dd9472775ddbfdce3884fbc6130a5" category="cell">您已将 DII 收集器配置为使用 SNMPv3，并使用加密又称隐私协议（AES 等），但您的“SNMP 隐私密码”值为空，因此 DII 无法与此设备协商加密的 SNMPv3 数据流</block>
+  <block id="5fc13cc8fea1e8f6d7dfd8f19d75023f" category="cell">性能收集失败，错误为.....VF：nn，无访问权限...</block>
+  <block id="cda70acc46e3d1a4dc1d0f11bb28b33f" category="cell">您已将 DII 收集器配置为在启用了多个虚拟光纤通道 (VF) 的设备上使用 SNMPv3，但 SNMPv3 用户不具备 VF NN 的权限。DII不支持对物理资产进行部分发现 - 您应该始终主动授予 DII 对所有 128 个可能的 VF 的访问权限，因为 DII 始终会尝试检索给定物理设备上任何现有 VF 的性能数据。</block>
 </blocks>
