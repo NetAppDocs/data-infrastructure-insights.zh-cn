@@ -7,12 +7,14 @@ keywords: onboarding, new user
 = 数据基础架构洞察力入门
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 在开始使用数据基础架构洞察之前、您必须在* NetApp BlueXP *门户上注册。如果您已经拥有NetApp BlueXP  登录名、则只需几个快速步骤即可开始免费试用Data Infrastructure Insight。
-
-目录：[]
 
 
 
