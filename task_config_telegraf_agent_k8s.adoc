@@ -36,8 +36,6 @@ image:NKMO-Instructions-1.png["《监控操作员说明》"] image:NKMO-Instruct
 . 安装完成后、单击_Next_按钮。同时、请务必删除或安全地存储_operator-秘密.yaml文件。
 
 
-如果您使用的是代理，请阅读有关<<configuring-proxy-support,正在配置代理>>的信息。
-
 如果您有自定义存储库，请阅读有关<<using-a-custom-or-private-docker-repository,使用自定义/私有Docker存储库>>。
 
 
@@ -393,7 +391,7 @@ The following checks were performed on each of these signatures:
 | 我看到来自Telegraf的错误消息如下所示、但Telegraf确实启动并运行：10月11日14：23：41 IP-172-31-39-47 systemd[1]：启动插件驱动的服务器代理、以便向InfluxDB报告指标。10月11日14：23：41 IP-172-31-39-47电话[1827]：time="2021-10-11T14：23：41Z" level = error msg="failed to create cache directory。/etc/trendelaf/.cache/snowsclap, err: mkdir /etc/trendaf/.ca che: permission denied. ignored\n" func="gosnowscale.(*defaultLogg).Errorf" file="log.go:120" OCT11 14：23：41 IP-172-31-39-47 trendelaf[1827]：time="msg-10:23=11Z"打开错误。已忽略。打开/etc/trendelaf/.cache/snowsclap/ocsp_response_cache.json：无此文件或目录\n" func="gosnowsclap.（* defaultLogger).Errorf" file="log.go:120" OCT11 14：23：41 IP-172-31-39-47 trendaf[1827]：2021-10-11T14：23：41Z I！启动 Telegraf 1.19.3 | 这是一个已知的问题描述。link:https://github.com/influxdata/telegraf/issues/9407["此 GitHub 文章"]有关详细信息、请参见。只要 Telegraf 启动并运行，用户就可以忽略这些错误消息。 
 
 
-| 在 Kubernetes 上，我的 Telegraf Pod 报告以下错误： " 处理 mountstats 信息时出错：无法打开 mountstats 文件： /hostfs/proc/1/mountstats ，错误： open /hostfs/proc/1/mountstats ：权限被拒绝 " | 如果启用并强制实施SELinux、则可能会阻止Telegraf Pod访问Kubelnetes节点上的/proc/1/mountstats文件。要克服此限制、请编辑代理配置并启用run特权 设置。有关详细信息，请参阅link:task_config_telegraf_agent_k8s.html#openshift-instructions["OpenShift 说明"]。 
+| 在 Kubernetes 上，我的 Telegraf Pod 报告以下错误： " 处理 mountstats 信息时出错：无法打开 mountstats 文件： /hostfs/proc/1/mountstats ，错误： open /hostfs/proc/1/mountstats ：权限被拒绝 " | 如果启用并强制实施SELinux、则可能会阻止Telegraf Pod访问Kubelnetes节点上的/proc/1/mountstats文件。要克服此限制、请编辑代理配置并启用run特权 设置。有关更多详细信息，请参阅 OpenShift 说明。 
 
 
 | 在 Kubernetes 上，我的 Telegraf ReplicaSet Pod 报告以下错误： inputs.prometheus] 插件错误：无法加载密钥类型 /etc/Kubernetes ， PKI/etcd/server.crt ： /etc/Kubernetes ， crt/etcd/server.key ：打开 /etc/Kubernetes ， pki/etcd/server.key ： open /etc/Kubernetes ， pki/etcd/server.key ： no 此类文件或目录 | Telegraf ReplicaSet Pod 应在指定为主节点或 etcd 节点上运行。如果 ReplicaSet Pod 未在其中一个节点上运行，您将收到这些错误。检查您的主 /etcd 节点是否具有此类节点的影响。如果是，请将必要的容错添加到 Telegraf ReplicaSet ，即 Teleaf-RS 中。例如，编辑 ReplicaSet... kubectl edit RS ceaaf-rs ... 并将适当的容错添加到规范中。然后，重新启动 ReplicaSet Pod 。 
