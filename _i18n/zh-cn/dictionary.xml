@@ -10621,9 +10621,7 @@
   <block id="c6e2ba85460afb33b2bbe0fcfd9a3568" category="paragraph"><block ref="c6e2ba85460afb33b2bbe0fcfd9a3568" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0adbbc22841794e4fddaba88c2c92a43" category="list-text">为所需事件（严重，警告，已解决）选择 " 团队 " 网络锁</block>
   <block id="3cc4e4e22440eccabf6117795fc161eb" category="paragraph"><block ref="3cc4e4e22440eccabf6117795fc161eb" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1d292eb6751a0db171502dec84f9f7c0" category="summary">NetApp Kubarnetes Monitoring Operator提供了许多可配置选项。</block>
   <block id="9c64a0e0a0e22cc18b7137e967889926" category="doc">Kubnetes监控操作员配置选项</block>
-  <block id="f32519ffeecd98f4c4f06a7bf1c7a34c" category="paragraph"><block ref="025a80672f7feae526479c9984c435c7" category="inline-link-macro-rx"></block>配置可以自定义。</block>
   <block id="2d18be6c8402f4ca0cb26ce68adc0564" category="paragraph">下表列出了_AgentConfiguration_文件的可能选项：</block>
   <block id="b33aed8f3134996703dc39f9a7c95783" category="cell">代理</block>
   <block id="4e49d105e5ecfd95da78eb980f698488" category="cell">操作员可以安装的所有组件通用的配置选项。这些选项可视为"全局"选项。</block>
@@ -10688,7 +10686,6 @@
   <block id="3b720d9649ae501d73e8f8c4a7a15348" category="cell">要捕获的资源的逗号分隔列表。示例：cronjobs、守护程序集、部署、服务器、作业、名称空间、节点、永久性卷、持久性卷、Pod、复制集、资源均衡器、服务、状态集</block>
   <block id="d6c26478ca41a23cc9741a4e92576269" category="cell">公差</block>
   <block id="c511c601aee805f46f3767063104cdd8" category="cell">Kube-state-metrics的其他容错性。</block>
-  <block id="cea61529c4fbcfd86c0a3459bc229a87" category="cell">Kube-state-metrics应捕获+++的资源列表(以英文逗号分隔)示例：复制作业=[*]、守护程序=[*]、部署=[*]、ingress=[*]、作业=[*]、名称空间=[*]、节点=[*]、持久性卷=[*]、属性[*]、服务[*][=*]</block>
   <block id="d795ec2d0a164433572a8d5d91b8fae0" category="cell">可自定义操作员日志收集和安装的配置选项</block>
   <block id="031104420a282e1bdb63e280c40a4938" category="cell">readFromHead</block>
   <block id="d7ff51440723c6bba696ef19f757a8af" category="cell">true或false、则应以流畅位从head读取日志</block>
@@ -10723,8 +10720,6 @@
   <block id="6e753299d008aca89690ad5b5c6b784f" category="cell">change-ob맛 달 풱-Watch RS的MEM限制</block>
   <block id="582e83d73d36aa6674624867468704da" category="cell">对change-ob맛 달 풱-手表-rs的CPU请求</block>
   <block id="d73c96f8e69fcf08ffd440cc16f573af" category="cell">MEM请求change-ob맛 달 풱-Watch RS</block>
-  <block id="5190879b0edfb4a53603a0ab23ab40e8" category="cell">failureMins</block>
-  <block id="6e18e5efc4d170de4ac66b784ca443b6" category="cell">工作负载部署失败后将标记为失败的间隔(以分钟为单位)</block>
   <block id="c055d40d7bbe856522ad8c59006f6754" category="cell">部署聚合IntervalSeconds</block>
   <block id="e06e4cc3c2b6796e0850387e7147734e" category="cell">发送正在进行的工作负载部署事件的频率</block>
   <block id="43aa9b44901fa9982cd6c7faf3f97402" category="cell">nonWorkloadAggrIntervalSeconds</block>
@@ -12473,15 +12468,10 @@
   <block id="eb693e07b3c7e38a77aa691eee254db7" category="cell">如果kubelet正在使用自签名证书、和/或指定证书不在certificates _Subject备用名称_列表中包含&lt;kubelet_IP&gt;、则会出现此问题。要解决此问题，用户可以修改<block ref="1ff2a3d734af6ebdb77c417baa3479b1" category="inline-link-macro-rx"></block>，并将_TREALF：inureK8sSkipVerify_设置为_TRUE_。此操作将配置该电图输入插件以跳过验证。或者，用户也可以为配置kubelet<block ref="9ed8afe3c99331fa3d23c13414b98aba" category="inline-link-macro-rx"></block>，这将从'certificates.k8s.io' API触发证书请求。</block>
   <block id="9c9d5560c9fe980c9cfc837919c7ecfa" category="paragraph">您可以将任何对象属性(例如存储名称)作为参数添加到警报说明中。例如、您可以在如下描述中为卷名称和存储名称设置参数："卷：_%% relatedObject.volume.name%%_的高延迟、存储：_%% relatedObject.storage.name%%_"。</block>
   <block id="782368f0cf779dae181ca1a15b5e1609" category="paragraph">您可以将任何对象属性(例如存储名称)作为参数添加到webhook中。例如、您可以在webhook说明中为卷名称和存储名称设置参数、例如："High Latery-for Volume：_%% relatedObject.volume.name%%_、Storage：_%% relatedObject.storage.name%%_"。</block>
-  <block id="f9bf728d80a2e93034e1980e4b769331" category="summary">配置Google Cloud NetApp卷数据收集器</block>
-  <block id="61f5a9d6ac308733fa136e57d4b5632d" category="doc">NetApp Google Cloud NetApp卷数据收集器</block>
-  <block id="31a01859ca4a7c16eaa2d78f965019b1" category="paragraph">此数据收集器支持从Google NetApp Cloud Volumes云平台配置中收集清单和性能。此收集器将寻求发现一个Google组织内所有项目中的所有计算资源。如果您希望通过Data Infrastructure Insight发现多个Google组织、则需要为每个组织部署一个Data Infrastructure Insight收集器。</block>
   <block id="d0e30a72147518a811af49d61e436b72" category="cell">选择"排除"或"包括"以按位置筛选GCNV资产</block>
   <block id="4ffa818c022d19570d8e17b29333c422" category="cell">默认情况下、此收集器会发现组织中全球的所有GCNV卷、因此默认情况下会将其排除。</block>
   <block id="df737fe9add18ce2518a85be515b48fb" category="cell">GCNV不包括/包括位置</block>
-  <block id="aeb2c618381901b42bfc96e1eaba0439" category="cell">默认情况下、此值为空、并与"Choose 'excuse"或"include"选项结合使用。如果只想发现世界某些地区的资产、可以通过这两个选项来限制此收集器的范围</block>
   <block id="cfb59ac35dea35081dc8e9a9e178e6fa" category="cell">使用AU代理进行REST API调用</block>
-  <block id="c31db4d5c88645987121fa14f303decf" category="cell">此复选框将使收集器使用与收集器所在AU相同的代理。默认情况下不会启用此功能、这意味着收集器将尝试将HTTPS API调用直接发送到Google。</block>
   <block id="86cdc2548407309cf22885284404c866" category="paragraph">Webhook允许用户使用自定义的webhook通道向各种应用程序发送严重或警告警报通知。</block>
   <block id="fc2d88a1f6b61e7bd83c4e85a527c903" category="paragraph">用于的webhook<block ref="2990f1f56161b3387a3b4aed372cd205" category="inline-link-macro-rx"></block></block>
   <block id="a2a31fbada6144e8ed1aea34738b3286" category="paragraph">用于Webhook<block ref="119cd804e167819a5b1cbe06f835cd07" category="inline-link-macro-rx"></block>的Webhook <block ref="fd47f99f71f4060a45930a1b7d2d1fd6" category="inline-link-macro-rx"></block> for Webhook <block ref="9ec366bafa5f53c82668f1616a12e6a8" category="inline-link-macro-rx"></block></block>
@@ -12666,4 +12656,15 @@
   <block id="5fc13cc8fea1e8f6d7dfd8f19d75023f" category="cell">性能收集失败，错误为.....VF：nn，无访问权限...</block>
   <block id="cda70acc46e3d1a4dc1d0f11bb28b33f" category="cell">您已将 DII 收集器配置为在启用了多个虚拟光纤通道 (VF) 的设备上使用 SNMPv3，但 SNMPv3 用户不具备 VF NN 的权限。DII不支持对物理资产进行部分发现 - 您应该始终主动授予 DII 对所有 128 个可能的 VF 的访问权限，因为 DII 始终会尝试检索给定物理设备上任何现有 VF 的性能数据。</block>
   <block id="8ff9d3e7325b20dc214cb38b6233f6c6" category="cell">如果启用并强制实施SELinux、则可能会阻止Telegraf Pod访问Kubelnetes节点上的/proc/1/mountstats文件。要克服此限制、请编辑代理配置并启用run特权 设置。有关更多详细信息，请参阅 OpenShift 说明。</block>
+  <block id="a51d5815fff9d493e0bde769c3ac52cd" category="summary">配置Google Cloud NetApp Volumes数据收集器。</block>
+  <block id="a003df7b52c5682e8dd7ee12e523a2c8" category="doc">Google Cloud NetApp Volumes数据收集器</block>
+  <block id="17dbbe1b03933e008635798c32e51898" category="paragraph">此数据收集器支持从Google Cloud NetApp Volumes配置中收集清单和性能信息。它能够发现 Google 组织内所有项目中的NetApp卷和存储资源。如果您希望使用Data Infrastructure Insights监控多个 Google 组织，请为每个组织部署一个收集器。</block>
+  <block id="492f865b5fade01a28fef8824749466a" category="list-text">您必须按照中的说明创建服务帐户<block ref="c28b074b5309c5497b50c55bf7b3a88a" category="inline-link-macro-rx"></block>。该服务帐户由唯一 ID（称为 _clientId_）标识，该 ID 将用作用户名。</block>
+  <block id="44690d418c76e0ca92d23ed5623ea33b" category="cell">默认为空，与“选择‘排除’或‘包含’选项”一起使用。如果您只想发现特定区域内的资产，请使用这两个选项来限制此收集器的范围。</block>
+  <block id="c3fd7f4eb7ebff0a7ad57fe275b56834" category="cell">选择此选项可让收集器使用与其所在的采集单元相同的代理。默认情况下，此选项处于停用状态，这意味着收集器会尝试直接向 Google 发送 HTTPS API 调用。</block>
+  <block id="ae4768c261eca8a6c88e3f5101e586e5" category="summary">使用 AgentConfiguration 选项配置NetApp Kubernetes Monitoring Operator。</block>
+  <block id="4b6ede77804c1986eba28cc32fdecda4" category="paragraph">这<block ref="025a80672f7feae526479c9984c435c7" category="inline-link-macro-rx"></block>通过 AgentConfiguration 文件提供丰富的自定义选项。配置资源限制、收集间隔、代理设置、容忍度以及 telegraf、kube-state-metrics、日志收集、工作负载映射、变更管理等组件的特定设置，以优化 Kubernetes 环境的监控。</block>
+  <block id="c84711fe6ad5fa23070462b2086412e2" category="cell">kube-state-metrics 应捕获标签的资源的逗号分隔列表 +++ 示例：cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*], persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*] +++</block>
+  <block id="f7b8b6cbce2f95ef7109d41adce08b69" category="cell">工作负载失败声明间隔秒数</block>
+  <block id="02c3ccd1d51babc54da2759d79e61c5c" category="cell">工作负载部署失败后将被标记为失败的时间间隔（以秒为单位）</block>
 </blocks>
