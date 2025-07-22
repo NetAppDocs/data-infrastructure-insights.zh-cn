@@ -158,6 +158,9 @@ summary: 使用 AgentConfiguration 选项配置NetApp Kubernetes Monitoring Oper
 |  | Event-exporter—maxEventAgeSeconds | 事件导出器最大事件期限。请参见 https://github.com/jkroepke/resmoio-kubernetes-event-exporter[] 
 
 
+|  | 流利位容器日志路径 | 默认情况下，Fluentbit DaemonSet 将挂载 /var/log 和 /var/lib/docker/containers 主机路径来访问/读取 Kubernetes 容器日志。如果 Kubernetes 已配置为将容器日志放置在非默认位置，请使用此选项修改 Fluentbit DaemonSet 以挂载非默认路径。 
+
+
 | 工作负载映射 |  | 可自定义Operator的工作负载映射收集和安装的配置选项。 
 
 
@@ -421,6 +424,11 @@ spec:
     # fluent-bit-memLimit: '1Gi'
     # fluent-bit-cpuRequest: '50m'
     # fluent-bit-memRequest: '100Mi'
+
+    # By default, the Fluentbit DaemonSet will mount the /var/log and /var/lib/docker/containers host paths to access/read the
+    # Kubernetes container logs.  If Kubernetes has been configured to place container logs in a non-default location, use
+    # this option to modify the Fluentbit DaemonSet to mount the non-default path.
+    # fluent-bit-containerLogPath
 
   # # Settings for the Network Performance and Map feature.
   # workload-map:
