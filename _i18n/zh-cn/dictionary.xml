@@ -10626,11 +10626,8 @@
   <block id="b33aed8f3134996703dc39f9a7c95783" category="cell">代理</block>
   <block id="4e49d105e5ecfd95da78eb980f698488" category="cell">操作员可以安装的所有组件通用的配置选项。这些选项可视为"全局"选项。</block>
   <block id="286bec770910c4da609323e21222e283" category="cell">文档报告员报告</block>
-  <block id="55f37f5127b4085cc0881e89df336196" category="cell">与Data Infrastructure Insight Docker repo相比、使用dockerRepo覆盖从客户的私有Docker reposo中提取映像。默认值为Data Infrastructure Insight Docker repo</block>
   <block id="994be3a18bf7e0a16ab2be2d5c1643ae" category="cell">dockerImagePullSecret</block>
-  <block id="9f033a5b208feb9ef67ab1def3051525" category="cell">可选：客户专用repo的机密</block>
   <block id="343d28c140c3f5ce20a1ac3f8f7dae2c" category="cell">clusterName</block>
-  <block id="5a550f6f445193e3c7e81200a2c9d8de" category="cell">自由文本字段、用于在所有客户集群中唯一标识集群。这在Data Infrastructure Insight租户中应该是唯一的。默认值是客户在UI中为"Cluster Name"字段输入的内容</block>
   <block id="5c7af4a6b686285084e62f255503c141" category="cell">代理格式：代理：服务器：端口：用户名：密码：noProxy：isTelegrafProxyEnabled：isAuProxyEnabled：isFluentbitProxyEnabled：isCollectorProxyEnabled：</block>
   <block id="f8ac74d8a3668ddf89efeb8e806ca908" category="cell">可选设置代理。这通常是客户的公司代理。</block>
   <block id="0c8011c6947aae43789eb8972c306e85" category="cell">配置选项、可自定义操作员的安装</block>
@@ -10720,10 +10717,6 @@
   <block id="6e753299d008aca89690ad5b5c6b784f" category="cell">change-ob맛 달 풱-Watch RS的MEM限制</block>
   <block id="582e83d73d36aa6674624867468704da" category="cell">对change-ob맛 달 풱-手表-rs的CPU请求</block>
   <block id="d73c96f8e69fcf08ffd440cc16f573af" category="cell">MEM请求change-ob맛 달 풱-Watch RS</block>
-  <block id="c055d40d7bbe856522ad8c59006f6754" category="cell">部署聚合IntervalSeconds</block>
-  <block id="e06e4cc3c2b6796e0850387e7147734e" category="cell">发送正在进行的工作负载部署事件的频率</block>
-  <block id="43aa9b44901fa9982cd6c7faf3f97402" category="cell">nonWorkloadAggrIntervalSeconds</block>
-  <block id="cff422cbad1df823699a6830f754d451" category="cell">合并和发送非工作负载部署的频率</block>
   <block id="6d53bc2f7711e2d9a24631defb23b18f" category="cell">TermsToRedact</block>
   <block id="532aa006f97c495d1734618405645779" category="cell">在env名称和数据映射中使用的一组正则表达式、其值将被编辑示例术语："pwd"、"password"、"t令牌"、"APIkey"、"API-key"、"JWT"</block>
   <block id="44011a6b8af68cc46d2d0dfb669fd887" category="cell">其他KindsToWatch</block>
@@ -11290,7 +11283,6 @@
   <block id="ca351e1a429ee72dbdb2061c22743ef6" category="list-text">导航到*可观察性&gt;浏览-&gt;+New Metric Query*。</block>
   <block id="5e7f24385025eba3461014d3d964455b" category="paragraph">要去除不活动的设备，只需选择要去除的设备，然后在*散装 操作*下拉列表中选择_Delete In-In外 形设备_。</block>
   <block id="72a442c57900f55848aa4acb856a507d" category="sidebar">标识非活动设备</block>
-  <block id="2f461803a8b3a27284482a32459a1078" category="cell">请参阅此<block ref="0dcd3ea27696029fecb8ccd7e247f633" category="inline-link-macro-rx"></block>。设置_UNprotECed_将指示Kubelnetes Monitoring Operator使用标志运行Telegraf<block ref="3a41393afb053a415e6dc30cf704d899" prefix=" " category="inline-code"></block>。</block>
   <block id="0860569a69c3584507ee09f4be585418" category="cell">insecureK8sSkipVerify</block>
   <block id="3008cd3125cccc003fa13335717e556e" category="cell">如果由于缺少IP SAN而无法验证证书、请尝试启用验证跳过</block>
   <block id="9e43104f0687bd3a308759c5411641d7" category="paragraph"><block ref="9e43104f0687bd3a308759c5411641d7" category="inline-link-macro-rx"></block></block>
@@ -12663,10 +12655,20 @@
   <block id="44690d418c76e0ca92d23ed5623ea33b" category="cell">默认为空，与“选择‘排除’或‘包含’选项”一起使用。如果您只想发现特定区域内的资产，请使用这两个选项来限制此收集器的范围。</block>
   <block id="c3fd7f4eb7ebff0a7ad57fe275b56834" category="cell">选择此选项可让收集器使用与其所在的采集单元相同的代理。默认情况下，此选项处于停用状态，这意味着收集器会尝试直接向 Google 发送 HTTPS API 调用。</block>
   <block id="ae4768c261eca8a6c88e3f5101e586e5" category="summary">使用 AgentConfiguration 选项配置NetApp Kubernetes Monitoring Operator。</block>
-  <block id="4b6ede77804c1986eba28cc32fdecda4" category="paragraph">这<block ref="025a80672f7feae526479c9984c435c7" category="inline-link-macro-rx"></block>通过 AgentConfiguration 文件提供丰富的自定义选项。配置资源限制、收集间隔、代理设置、容忍度以及 telegraf、kube-state-metrics、日志收集、工作负载映射、变更管理等组件的特定设置，以优化 Kubernetes 环境的监控。</block>
   <block id="c84711fe6ad5fa23070462b2086412e2" category="cell">kube-state-metrics 应捕获标签的资源的逗号分隔列表 +++ 示例：cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*], persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*] +++</block>
   <block id="f7b8b6cbce2f95ef7109d41adce08b69" category="cell">工作负载失败声明间隔秒数</block>
   <block id="02c3ccd1d51babc54da2759d79e61c5c" category="cell">工作负载部署失败后将被标记为失败的时间间隔（以秒为单位）</block>
   <block id="8edfed76354af11279c58c2d91948eda" category="cell">流利位容器日志路径</block>
   <block id="3150c73f1d1522f3b831f0d591077194" category="cell">默认情况下，Fluentbit DaemonSet 将挂载 /var/log 和 /var/lib/docker/containers 主机路径来访问/读取 Kubernetes 容器日志。如果 Kubernetes 已配置为将容器日志放置在非默认位置，请使用此选项修改 Fluentbit DaemonSet 以挂载非默认路径。</block>
+  <block id="7e5bd63d855501c5e08449ea5b593ee7" category="summary">监控基础设施健康状况</block>
+  <block id="48f51aa9a5737857bbd298bfb874281e" category="doc">监控基础设施健康状况</block>
+  <block id="a2c6fd0b23854404c386430346919db8" category="paragraph">这<block ref="025a80672f7feae526479c9984c435c7" category="inline-link-macro-rx"></block>通过 AgentConfiguration 文件提供丰富的自定义选项。您可以配置资源限制、收集间隔、代理设置、容差以及特定于组件的设置，以优化 Kubernetes 环境的监控。使用这些选项可以自定义 telegraf、kube-state-metrics、日志收集、工作负载映射、变更管理和其他监控组件。</block>
+  <block id="ea55ba51f0b69383ec5bb89cabada638" category="cell">dockerRepo 覆盖，用于从客户的私有 Docker 存储库（而不是Data Infrastructure Insights Docker 存储库）拉取镜像。默认为Data Infrastructure Insights Docker 存储库。</block>
+  <block id="8e8bb119221ff93e3f93bea9ae89444f" category="cell">可选：客户私有存储库的秘密。</block>
+  <block id="82b5c50bc4616a08a16b907f9dd29573" category="cell">自由文本字段，用于在所有客户集群中唯一标识一个集群。此字段在Data Infrastructure Insights租户中应是唯一的。默认值为客户在 UI 中为“集群名称”字段输入的内容。</block>
+  <block id="d466d69e5a5f62e5d6773f7d399fe086" category="cell">看看这个<block ref="0dcd3ea27696029fecb8ccd7e247f633" category="inline-link-macro-rx"></block> 。设置 _unprotected_ 将指示 Kubernetes Monitoring Operator 使用以下方式运行 Telegraf <block ref="3a41393afb053a415e6dc30cf704d899" prefix=" " category="inline-code"></block>旗帜。</block>
+  <block id="fded60399ef22b3b04bd3856d344233b" category="cell">工作负载部署聚合间隔秒数</block>
+  <block id="f5d43bfb3eaf806884e4936fc4453865" category="cell">合并和发送工作负载部署的频率（以秒为单位）</block>
+  <block id="fb937d63289578595fb05fc626554661" category="cell">nonWorkloadDeployAggrIntervalSeconds</block>
+  <block id="e4685d20c866cca50df5bea5e4230497" category="cell">非工作负载部署合并发送的频率（以秒为单位）</block>
 </blocks>
