@@ -1857,7 +1857,6 @@
   <block id="dcfc2d1a305cec73fa5f84fa3a0ed89c" category="paragraph">免费试用即将结束时、Data Infrastructure Insight会显示一个横幅在该横幅中有一个_View订阅_链接、用于打开*管理-&gt;订阅*页面。非管理员用户将看到横幅，但无法转到 " 订阅 " 页面。</block>
   <block id="14e0941a34fd8121073e220481ffa66f" category="admonition">如果您需要更多时间来评估Data Infrastructure Insight、并且您的试用版设置为在4天或更短时间内过期、则可以将试用版再延长30天。您只能延长试用一次。如果您的试用已过期，则无法延长。</block>
   <block id="de41af8028b5287cc6d65bb0e73cae11" category="section-title">通过AWS Marketplace试用</block>
-  <block id="c66bd552dea63071ad19e124c869ab2e" category="paragraph">AWS Marketplace免费试用不能延长。试用期间、您可以随时访问*管理-&gt;订阅*页面、降级到Data Infrastructure Insight基础版订阅或更改为付费Data Infrastructure Insight订阅。</block>
   <block id="03742c91392961db83c5540550a3500a" category="section-title">如果我的试用已过期，该怎么办？</block>
   <block id="55b44e6cb866667b35e33325e5f2b246" category="paragraph">如果您的免费试用版已过期、但尚未订阅Data Infrastructure Insight、则在订阅之前、您的功能将受到限制。数据采集可能会停止、几周后、根据我们的数据保留政策、您的数据将被删除。</block>
   <block id="35b65825e5ac5124cb47e8b94e7e203a" category="paragraph">如果您订阅了Data Infrastructure Insight、但该订阅已过期、您将有五天的宽限期来续订您的订阅。在此宽限期内、所有Data Infrastructure Insight功能都将保持活动状态。</block>
@@ -12671,4 +12670,5 @@
   <block id="f5d43bfb3eaf806884e4936fc4453865" category="cell">合并和发送工作负载部署的频率（以秒为单位）</block>
   <block id="fb937d63289578595fb05fc626554661" category="cell">nonWorkloadDeployAggrIntervalSeconds</block>
   <block id="e4685d20c866cca50df5bea5e4230497" category="cell">非工作负载部署合并发送的频率（以秒为单位）</block>
+  <block id="1cd8d8ba87dcbd642231ac1e1fb52f76" category="paragraph">AWS Marketplace 免费试用期无法延长。</block>
 </blocks>

@@ -8,6 +8,9 @@ summary: Kubbernetes Monitoring Operator收集Kubbernetes数据、以供Data Inf
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -92,7 +95,7 @@ cosign copy <DII container registry>/netapp-monitoring:<image version> <private 
 
 确定现有Operator是否存在AgentConfiguration (如果您的命名空间不是默认的_NetApp-monitoring _、请替换相应的命名空间)：
 
- kubectl -n netapp-monitoring get agentconfiguration netapp-monitoring-configuration
+ kubectl -n netapp-monitoring get agentconfiguration netapp-ci-monitoring-configuration
 如果存在AgentConfiguration：
 
 * <<installing-the-kubernetes-monitoring-operator,安装>>现有运算符上的最新运算符。
@@ -325,8 +328,8 @@ netapp-CI-tentlaf-ds_、_netapp-CI-fluent-bit-ds_和_netapp-CI-net-oboder-L4-DS_
 
 [listing]
 ----
- ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
- ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding
+ ClusterRole/netapp-ci<namespace>-agent-secret
+ ClusterRoleBinding/netapp-ci<namespace>-agent-secret
 ----
 如果是升级、请同时从集群中删除资源：
 
@@ -334,11 +337,12 @@ netapp-CI-tentlaf-ds_、_netapp-CI-fluent-bit-ds_和_netapp-CI-net-oboder-L4-DS_
 ----
  kubectl delete ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
  kubectl delete ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding
+
 ----
 如果启用了"变更分析"、请修改_AgentConfiguration_或_operator-config.yaml_以取消注释change-management部分、并在change-management部分下包括_kindsToIgnoreFamWatch："secnes"_。记下此行中单引号和双引号的存在和位置。
 
 ....
-# change-management:
+change-management:
   ...
   # # A comma separated list of kinds to ignore from watching from the default set of kinds watched by the collector
   # # Each kind will have to be prefixed by its apigroup
