@@ -5930,8 +5930,6 @@
   <block id="eff16f7e2ed55dec2fc30b6481ebf593" category="paragraph">对于MetroCluster、建议执行以下操作：</block>
   <block id="65b46bd8eed280f6feefa47f4a74d302" category="list-text">将两个数据收集器连接起来、一个连接到源SVM、另一个连接到目标SVM。</block>
   <block id="d5d55b52a220ca4d14feac2aa8b83d23" category="list-text">数据收集器应通过_Cluster IP_进行连接。</block>
-  <block id="c2e2e688fedcc6b98883e05a15afc9b8" category="list-text">在任何时刻、一个数据收集器应正在运行、另一个数据收集器将出现错误。</block>
-  <block id="34d88af94446d0d86575e402898fc1b0" category="list-text">数据收集器需要长达两分钟的时间才能从"错误"状态变为"正在运行"状态。</block>
   <block id="f0240b95ecfe16d637a84130b5ed57d9" category="section-title">服务策略</block>
   <block id="4cb8e0d8b1d299b402fd5ddce7d39cd5" category="paragraph">如果将服务策略与ONTAP * 9.9.1或更高版本*结合使用、则要连接到数据源收集器、需要使用_data-fpolicy-client_服务以及数据服务_data-nfs_和/或_data-CIFS_。</block>
   <block id="ee22588534e4e3b699a85e968f56f4a7" category="paragraph">在9.1.1之前的ONTAP 版本中、不需要设置_data-fpolicy-client_。</block>
@@ -12344,8 +12342,6 @@
   <block id="1b0825e538a70e8323fac1cbfe230ee5" category="paragraph">注意：您可以创建一个角色、用于自定义用户的所有功能权限。如果存在现有用户、请先使用以下命令删除现有用户和角色：</block>
   <block id="91f83541442d1c49aaf40212bccffad1" category="paragraph">注意：您可以创建一个角色、用于自定义用户的所有功能权限。如果存在现有用户、请先使用以下命令删除现有用户和角色：</block>
   <block id="858faeb682f19ff16f83d24c86cb97f7" category="cell">通过集群 IP 添加时用于访问 SVM/ 集群的用户名选项为： 1.集群管理员 2.'CSUser' 3.与 CsUser 具有类似角色的 AD 用户。通过SVM IP添加时、选项为：4. vsadmin 5.'CSUser' 6.与 CsUser 角色类似的 AD-username 。</block>
-  <block id="0851edbfbb1a0406acbc79df15296b3f" category="paragraph">当前正在运行的SVM数据收集器将显示为_running"。当前的"已" SVM的数据收集器将显示为_Error_。</block>
-  <block id="046c8e391630ab49d75409e270a4f4b6" category="list-text">只要发生切换、数据收集器的状态就会从"正在运行"更改为"错误"、反之亦然。</block>
   <block id="7a69a2fce9a9acb9c8a84936863c1330" category="paragraph">请注意、如果在收集器暂停时在ONTAP上创建了任何新卷等、则"工作负载安全性"不会收集数据、这些卷等也不会反映在信息板或表中。</block>
   <block id="0d55775dbf06cf5596fe0f5c3363f19a" category="list-text">根据已暂停收集器上配置的设置、不会执行Snapshot清除。</block>
   <block id="f8b4c5607366d38cf806b0860c9cc5e4" category="list-text">暂停的收集器不会处理EMS事件(如ONTAP ARP)。这意味着、如果ONTAP发现勒索软件攻击、Data Infrastructure Insight Workload Security将无法获取该事件。</block>
@@ -12671,4 +12667,8 @@
   <block id="fb937d63289578595fb05fc626554661" category="cell">nonWorkloadDeployAggrIntervalSeconds</block>
   <block id="e4685d20c866cca50df5bea5e4230497" category="cell">非工作负载部署合并发送的频率（以秒为单位）</block>
   <block id="1cd8d8ba87dcbd642231ac1e1fb52f76" category="paragraph">AWS Marketplace 免费试用期无法延长。</block>
+  <block id="f9140e559462604832a886e4eb558360" category="list-text">在任何时间点，一个数据收集器应该处于运行状态，另一个数据收集器将显示为_已停止_。</block>
+  <block id="a2c39bece4ce05e23c13d7dc078d390f" category="paragraph">当前“正在运行”的 SVM 的数据收集器将显示为“正在运行”。当前“停止”的 SVM 数据收集器将显示为“已停止”。</block>
+  <block id="e02fc5a08fc17a2cc71f90cc044645af" category="list-text">每当发生切换时，数据收集器的状态就会从“运行”变为“停止”，反之亦然。</block>
+  <block id="f2d8284860e834b1803b72a789ffeb84" category="list-text">数据收集器从_停止_状态转变为_运行_状态最多需要两分钟。</block>
 </blocks>
