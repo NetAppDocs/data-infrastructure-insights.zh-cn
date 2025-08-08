@@ -7,6 +7,10 @@ summary: 适用于Kubbernetes的数据收集器
 = Data Collector：KubeNet
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

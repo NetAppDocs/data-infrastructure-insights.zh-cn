@@ -12655,8 +12655,6 @@
   <block id="02c3ccd1d51babc54da2759d79e61c5c" category="cell">工作负载部署失败后将被标记为失败的时间间隔（以秒为单位）</block>
   <block id="8edfed76354af11279c58c2d91948eda" category="cell">流利位容器日志路径</block>
   <block id="3150c73f1d1522f3b831f0d591077194" category="cell">默认情况下，Fluentbit DaemonSet 将挂载 /var/log 和 /var/lib/docker/containers 主机路径来访问/读取 Kubernetes 容器日志。如果 Kubernetes 已配置为将容器日志放置在非默认位置，请使用此选项修改 Fluentbit DaemonSet 以挂载非默认路径。</block>
-  <block id="7e5bd63d855501c5e08449ea5b593ee7" category="summary">监控基础设施健康状况</block>
-  <block id="48f51aa9a5737857bbd298bfb874281e" category="doc">监控基础设施健康状况</block>
   <block id="a2c6fd0b23854404c386430346919db8" category="paragraph">这<block ref="025a80672f7feae526479c9984c435c7" category="inline-link-macro-rx"></block>通过 AgentConfiguration 文件提供丰富的自定义选项。您可以配置资源限制、收集间隔、代理设置、容差以及特定于组件的设置，以优化 Kubernetes 环境的监控。使用这些选项可以自定义 telegraf、kube-state-metrics、日志收集、工作负载映射、变更管理和其他监控组件。</block>
   <block id="ea55ba51f0b69383ec5bb89cabada638" category="cell">dockerRepo 覆盖，用于从客户的私有 Docker 存储库（而不是Data Infrastructure Insights Docker 存储库）拉取镜像。默认为Data Infrastructure Insights Docker 存储库。</block>
   <block id="8e8bb119221ff93e3f93bea9ae89444f" category="cell">可选：客户私有存储库的秘密。</block>
@@ -12667,8 +12665,9 @@
   <block id="fb937d63289578595fb05fc626554661" category="cell">nonWorkloadDeployAggrIntervalSeconds</block>
   <block id="e4685d20c866cca50df5bea5e4230497" category="cell">非工作负载部署合并发送的频率（以秒为单位）</block>
   <block id="1cd8d8ba87dcbd642231ac1e1fb52f76" category="paragraph">AWS Marketplace 免费试用期无法延长。</block>
-  <block id="f9140e559462604832a886e4eb558360" category="list-text">在任何时间点，一个数据收集器应该处于运行状态，另一个数据收集器将显示为_已停止_。</block>
-  <block id="a2c39bece4ce05e23c13d7dc078d390f" category="paragraph">当前“正在运行”的 SVM 的数据收集器将显示为“正在运行”。当前“停止”的 SVM 数据收集器将显示为“已停止”。</block>
-  <block id="e02fc5a08fc17a2cc71f90cc044645af" category="list-text">每当发生切换时，数据收集器的状态就会从“运行”变为“停止”，反之亦然。</block>
   <block id="f2d8284860e834b1803b72a789ffeb84" category="list-text">数据收集器从_停止_状态转变为_运行_状态最多需要两分钟。</block>
+  <block id="da3fe25b9ad7a2bbb8f75a52d2d39828" category="summary">监控基础设施健康状况</block>
+  <block id="0513a990ff8b7eb9d4d9e530e812b450" category="paragraph">ONTAP SVM 数据收集器使工作负载安全能够监控NetApp ONTAP存储虚拟机 (SVM) 上的文件和用户访问活动。本指南将引导您完成 SVM 数据收集器的先决条件、配置和管理，以便为您的ONTAP环境提供全面的安全监控。</block>
+  <block id="57da797adb74a055edb3de9c7e734b65" category="list-text">在任何时间点，当前“正在运行”的 SVM 的数据收集器将显示为“正在运行”。当前“停止”的 SVM 数据收集器将显示为“已停止”。</block>
+  <block id="61dcd000a72340c1c72d4c7a96c2ec90" category="list-text">每当发生切换时，数据收集器的状态将从_Running_变为_Stopped，反之亦然。</block>
 </blocks>
