@@ -82,7 +82,7 @@ sidebar:
       - title: 修改或删除查询
         url: "/task_modify_delete_query.html"
       - title: 为对象分配多个应用程序 / 标注
-        url: "/task_query_assign_multiple_applicationss.html"
+        url: "/task_query_assign_multiple_applications.html"
       - title: 将表值复制到剪贴板
         url: "/task_query_copy_table_values.html"
       - title: 正在查询日志
@@ -171,6 +171,8 @@ sidebar:
         url: "/san_analyzer_overview.html"
       - title: VM 分析器
         url: "/vm_analyzer_overview.html"
+      - title: 监控基础设施健康状况
+        url: "/monitor_infrastructure_health.html"
     - title: 报告
       entries:
       - title: 报告概述

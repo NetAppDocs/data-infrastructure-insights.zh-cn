@@ -13,12 +13,3 @@ keywords: coming soon, preview,
 Data Infrastructure Insight以_Preview_的方式突出显示新特性和功能。预览功能可在有限的环境中使用、也可在有限的容量下使用。
 
 如果您有兴趣预览其中一项或多项功能、请联系link:https://bluexp.netapp.com/contact-cds["NetApp 销售团队"]以了解详细信息。
-
-|===
-
-
-| * 功能 * | * 问题描述 * 
-
-
-| 回收ONTAP 冷存储 | 提供有关ONTAP 卷工作负载的冷容量以及其他相关指标的可视化信息。 
-|===

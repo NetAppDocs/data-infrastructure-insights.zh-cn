@@ -1692,7 +1692,6 @@
   <block id="2240ee7d4e56b8ba7ac49b14311cdeed" category="inline-link-macro">NetApp 销售团队</block>
   <block id="5fa0ef8fc40e60003288942e2da3e300" category="cell">* 功能 *</block>
   <block id="d972e288b86634fdb9a758828b4d511a" category="cell">回收ONTAP 冷存储</block>
-  <block id="e1f1a8af4cedab3466112b828b25b73f" category="cell">提供有关ONTAP 卷工作负载的冷容量以及其他相关指标的可视化信息。</block>
   <block id="5f06573aae905166447bf8d646c6bf89" category="summary">查询概述</block>
   <block id="fadb076bccad39c075c50bfa7f81bc31" category="doc">查询中使用的资产</block>
   <block id="01baf5f78b2649e6a38c88d12944a3d9" category="paragraph">请注意，标注规则会自动为资产分配标注， _require_ 查询。</block>
@@ -4058,7 +4057,6 @@
   <block id="44b44ec49661da05e81e9deacf4859c9" category="list-text">太棒了！下一步是什么？<block ref="30a61035c14bad051f5a421dfd3d3693" category="inline-link-macro-rx"></block> <block ref="e6669e87e16244b0fccfa5ac76c749db" category="inline-link-macro-rx"></block> <block ref="e09dedd8fbac179aa2311a644e5eafb9" category="inline-link-macro-rx"></block> <block ref="4a83477a1c1cd11a9cc88c7f83441cbd" category="inline-link-macro-rx"></block> <block ref="0a7046f023aad7ac467f1bc6bd4c7520" category="inline-link-macro-rx"></block></block>
   <block id="d17aef0dcce543eeda80f0586306b127" category="inline-link-macro">* 订阅 *</block>
   <block id="f22fe88435293fe687ec1e801a002593" category="list-text">这是很棒的东西！我准备好了<block ref="ba6df6766cca6593f2f22c86bc0c10f1" category="inline-link-macro-rx"></block>。</block>
-  <block id="a6a9e422cc6712614bdeb1c7c082055f" category="summary">Cloud Insights可跟踪基础架构变更、以便于分析和故障排除。</block>
   <block id="48ad331c1d02b88cdeaea9528083c718" category="doc">基础架构变更分析</block>
   <block id="2309f522d85e82b60b3b59f8e753778b" category="section-title">基础架构变更分析有何帮助？</block>
   <block id="9aad3ab86193ce06a9d17691b4d44ab4" category="paragraph">在任何环境中、由于配置不当的更改、断电等原因、可能会对资源进行更改。"更改分析"通过提供一个窗格来查看资源运行状况并将其与中断或计划内更改关联起来、从而提供帮助。更改将通过每个清单轮询(在新收集器上的首次轮询之后)进行计算。</block>
@@ -9087,7 +9085,6 @@
   <block id="5c60750a2abc4b9d7aa61cc76e102a94" category="cell">可能的解决方案： * 建议：使用更强的（例如 1024 位） RSA 密钥。* 不建议使用：修改 JVM java.security 配置以利用约束 JDK.certpath.disableAlgorithms 允许使用 512 位 RSA 密钥。请参见中的JDK 7 update 40发行说明<block ref="ac06061ee1016775797c99e274153a15" category="inline-link-rx"></block></block>
   <block id="2b9be21f00b184f2a6ee90f1574df505" category="summary">ONTAP REST数据收集器</block>
   <block id="e61b2d254813ba4e2bc2a8a223f0e0eb" category="doc">NetApp ONTAP REST数据收集器</block>
-  <block id="550bad6f96e635103df31a148cb33c00" category="paragraph">此数据收集器使用REST API调用从运行ONTAP 9.14.1及更高版本的存储系统采集清单、EMS日志和性能数据。对于早期版本的ONTAP系统、请使用基于ZAPI的NetApp ONTAP数据管理软件收集器类型。</block>
   <block id="a5bc5e25da90f0de3436e66f223df7bc" category="inline-link-macro">ONTAP 9.14.1 ONTAPI到REST的映射</block>
   <block id="6e2fe63a1853939e7fbcdfb785f57e86" category="admonition">ONTAP REST收集器可用于替代以前基于ONTAPI的收集器。因此、收集或报告的指标可能存在差异。有关ONTAPI和REST之间差异的详细信息、请参见<block ref="239e0ab1e46437458ce3ffae42b58457" category="inline-link-macro-rx"></block>文档。</block>
   <block id="992ec6f152c405f64da205561d5810c3" category="list-text">您必须能够访问具有所需访问级别的用户帐户。请注意、创建新的REST用户/角色时需要管理员权限。</block>
@@ -12666,8 +12663,38 @@
   <block id="e4685d20c866cca50df5bea5e4230497" category="cell">非工作负载部署合并发送的频率（以秒为单位）</block>
   <block id="1cd8d8ba87dcbd642231ac1e1fb52f76" category="paragraph">AWS Marketplace 免费试用期无法延长。</block>
   <block id="f2d8284860e834b1803b72a789ffeb84" category="list-text">数据收集器从_停止_状态转变为_运行_状态最多需要两分钟。</block>
-  <block id="da3fe25b9ad7a2bbb8f75a52d2d39828" category="summary">监控基础设施健康状况</block>
   <block id="0513a990ff8b7eb9d4d9e530e812b450" category="paragraph">ONTAP SVM 数据收集器使工作负载安全能够监控NetApp ONTAP存储虚拟机 (SVM) 上的文件和用户访问活动。本指南将引导您完成 SVM 数据收集器的先决条件、配置和管理，以便为您的ONTAP环境提供全面的安全监控。</block>
   <block id="57da797adb74a055edb3de9c7e734b65" category="list-text">在任何时间点，当前“正在运行”的 SVM 的数据收集器将显示为“正在运行”。当前“停止”的 SVM 数据收集器将显示为“已停止”。</block>
   <block id="61dcd000a72340c1c72d4c7a96c2ec90" category="list-text">每当发生切换时，数据收集器的状态将从_Running_变为_Stopped，反之亦然。</block>
+  <block id="342c42c2979927d6b0d68318cd6111a6" category="summary">Data Infrastructure Insights跟踪基础设施的变化，以便于分析和故障排除。</block>
+  <block id="65be717dc296d58230cdf6471cf551c6" category="summary">根据性能、容量、配置和组件警报通过统一评分来监控基础设施健康状况，以便主动解决问题。</block>
+  <block id="48f51aa9a5737857bbd298bfb874281e" category="doc">监控基础设施健康状况</block>
+  <block id="9af3e29dc9d4dd7c03ed034e837cae19" category="paragraph">Data Infrastructure Insights提供全面的基础设施健康监控，可跟踪存储环境的性能、容量、配置和组件状态。健康分数是根据这些类别的监控警报计算得出的，为您提供系统健康状况的统一视图并实现主动解决问题。</block>
+  <block id="6021dbd64d31bad79679304f2df95f96" category="section-title">基础设施健康仪表板</block>
+  <block id="90fee6011aeb14ebd1b3f6d5319de775" category="admonition">监控基础设施健康状况<block ref="312c0c6b46ba32b4b11ba8c9da5788ed" category="inline-link-macro-rx"></block>功能，并且可能会发生变化。</block>
+  <block id="6d6ede202b061f87d3856c3a68a32733" category="paragraph">导航到*可观察性&gt;分析*并选择*基础设施健康*。仪表板根据如下所述的监控警报类别和分数提供系统健康状况的概述。在顶部设置过滤器以缩小调查范围。</block>
+  <block id="2fea58dd0f63d16cb2264053904f52cb" category="inline-image-macro">基础设施健康概览</block>
+  <block id="de0fb65c9e3436d4f762f2f75c9c80b0" category="paragraph"><block ref="de0fb65c9e3436d4f762f2f75c9c80b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1aa157ede793f01cc555adc2a30791e8" category="paragraph">默认情况下，健康分数按数据中心分组；您可以选择最适合您的会话的分组。</block>
+  <block id="066389fa03fcba02204f22926e22624e" category="section-title">配置用于监控基础设施健康状况的监视器</block>
+  <block id="a60dbecbd86aeef8b8d3aa2ad769c85b" category="paragraph">健康分数由配置为纳入系统健康计算的警报驱动。</block>
+  <block id="ee7e09ec846abc74e8ad67f86534b722" category="paragraph">为基础设施对象创建监视器时，您可以选择是否在计算中包含来自监视器的警报。在屏幕底部，展开高级配置并选择_包含在基础设施健康计算中_。选择要应用监视器计算的类别：</block>
+  <block id="1498d49bfadff63838ea7195f135ac9e" category="list-text">*组件健康* - 风扇故障、服务处理器离线等。</block>
+  <block id="6b97abbf6ca0e03a0cd3a9533866bf5f" category="list-text">*性能健康* - 存储节点利用率高、节点延迟异常飙升等。</block>
+  <block id="bf79b02d39df2b08288a4abe2535b26a" category="list-text">*容量健康* - 存储池容量接近满，LUN 快照空间不足等。</block>
+  <block id="c843c56f83e57485f38786634addb64f" category="list-text">*配置健康* - 云层无法访问、 SnapMirror关系不同步等。</block>
+  <block id="d40858c687455dd29e9ad9471cef9f13" category="inline-image-macro">监控高级配置以添加到健康计算，宽度=400</block>
+  <block id="d3b587e592f9498e43468c5ad959f251" category="paragraph"><block ref="d3b587e592f9498e43468c5ad959f251" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d3146ac696d63c6e03b116d00c510d06" category="section-title">健康评分解释</block>
+  <block id="a0d13ceea9d5180b46f6c11f89216bc8" category="paragraph">分数以 0 到 100 的等级显示，其中 100 表示完全健康。当前或最近遇到问题的受监控基础设施对象将根据以下加权平均值降低此分数：</block>
+  <block id="ae476e1f9649f2266c271a5cdda0e9cc" category="list-text">组件、性能或容量：各占 30%</block>
+  <block id="c99f872e67eeb86518c37462b0a7f179" category="list-text">配置：10%</block>
+  <block id="3488867800ace6ce0bd52ef898824a3d" category="paragraph">健康评分会受到您配置为包含在基础设施健康计算中的监视器生成的警报的影响，影响方式如下：</block>
+  <block id="be8af7f981a23068d2bbb2ca5b2a82e9" category="list-text">严重警报会使健康评分下降_full_类别权重</block>
+  <block id="a5d26862450bfc0c6b76f92767759d6f" category="list-text">警告警报会使类别权重的分数下降一半。</block>
+  <block id="7641f230a605045bb26fee7202d471e4" category="paragraph">如果任何类别未报告，加权平均值将相应调整。</block>
+  <block id="f4cd96b732f2628b044469cd1a104e85" category="paragraph">例如：组件上的 1 个严重警报 (-30) 和性能上的 1 个警告警报 (30 的 50% = -15) 产生的健康评分为 55（100 减 45）。</block>
+  <block id="9a1645f81973ce35a5b8a3cb57dafb2e" category="paragraph">当警报得到解决时，这些健康分数的降低会逐渐消失，并且分数会在 2 小时内完全恢复。</block>
+  <block id="3ad17df8e0c21cd3fba4fa89d748a88e" category="paragraph">该数据收集器使用 REST API 调用从运行ONTAP 9.14.1 及更高版本的存储系统获取库存、EMS 日志和性能数据。对于早期版本的ONTAP系统，请使用基于 ZAPI 的“NetApp ONTAP数据管理软件”收集器类型。</block>
+  <block id="93c13f56f33b4026f411d3de7b0577a5" category="paragraph">如果需要，您可以检查 spi 访问权限：</block>
 </blocks>
