@@ -11206,7 +11206,6 @@
   <block id="3208596ca58c1fef6b7222123babb2fc" category="paragraph"><block ref="3208596ca58c1fef6b7222123babb2fc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9c55b8bf6c1b8aab646e91366d10f4c2" category="list-text">显示_Activity History_(基于选定全局时间范围)的图形</block>
   <block id="977eedf5743a236d4137f46ddfcd8dea" category="list-text">_All Activity_数据的列表。</block>
-  <block id="ce0a4ef9bdcf713141ba5af92b5449a2" category="list-text">分组依据下拉列表提供了按用户、路径、实体类型等对活动进行分组的选项</block>
   <block id="2f67a7ee2834facb4c2289f3f9f8a7b0" category="list-text">表上方将提供一个通用路径按钮、单击此按钮后、我们可以看到包含实体路径详细信息的滑出面板。</block>
   <block id="2b9b3cac1b8e073b6533f3389ac6ad5f" category="list-text">通过作为滑出面板的链接访问实体的*用户*<block ref="62cf04ad66abc0c5964885d5ae0624ca" category="inline-link-macro-rx"></block>。</block>
   <block id="2c20ae8e4eac25c0be12e73a9aea15f8" category="list-text">一级文件夹(根)*是实体路径的根目录(小写)。</block>
@@ -12697,4 +12696,5 @@
   <block id="9a1645f81973ce35a5b8a3cb57dafb2e" category="paragraph">当警报得到解决时，这些健康分数的降低会逐渐消失，并且分数会在 2 小时内完全恢复。</block>
   <block id="3ad17df8e0c21cd3fba4fa89d748a88e" category="paragraph">该数据收集器使用 REST API 调用从运行ONTAP 9.14.1 及更高版本的存储系统获取库存、EMS 日志和性能数据。对于早期版本的ONTAP系统，请使用基于 ZAPI 的“NetApp ONTAP数据管理软件”收集器类型。</block>
   <block id="93c13f56f33b4026f411d3de7b0577a5" category="paragraph">如果需要，您可以检查 spi 访问权限：</block>
+  <block id="1895704ffbc6e56720172ab7d145f8ae" category="list-text">分组下拉菜单将提供按用户、实体类型等对活动进行分组的选项。</block>
 </blocks>
