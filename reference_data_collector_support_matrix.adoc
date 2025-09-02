@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference_data_collector_support_matrix.html 
 summary: Data Collector 支持列表包含有关支持的数据收集器的详细信息。 
-keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, Huawei 
+keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, Huawei, OpenStack 
 ---
 = Data Infrastructure Insight Data Collector支持列表
 :hardbreaks:
@@ -142,7 +142,7 @@ keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, H
 .5+| 信息 | API名称 | 已实施 | SSH |  
 
 
-| API版本 | 已实施 | SSH |  
+| API版本 | 已实施 | SSH | 谷歌 
 
 
 | 数据源名称 | 已实施 | SSH | 信息 
@@ -11676,6 +11676,392 @@ keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, H
 |===
 
 
+== Google Cloud Netapp 卷
+
+此数据收集器支持的产品：
+
+|===
+| 产品 | 类别 | 功能/属性 | 状态 | 使用的协议 | 追加信息 
+
+
+.71+| 基础 .7+| 文件共享 | 名称 | 已实施 | HTTPS |  
+
+
+| 路径 | 已实施 | HTTPS | 文件共享的路径 
+
+
+| qtree ID | 已实施 | HTTPS | qtree的唯一ID 
+
+
+| 是内部卷 | 已实施 | HTTPS | 文件共享是表示内部卷(NetApp卷)还是内部卷中的qtree/文件夹 
+
+
+| 已共享 | 已实施 | HTTPS | 此文件共享是否具有任何关联的共享 
+
+
+| 状态 | 已实施 | HTTPS |  
+
+
+| 安全类型 | 已实施 | HTTPS |  
+
+
+.3+| 信息 | 数据源名称 | 已实施 | HTTPS | 信息 
+
+
+| 发起端ID | 已实施 | HTTPS |  
+
+
+| 日期 | 已实施 | HTTPS |  
+
+
+.24+| 内部卷 | 内部卷ID | 已实施 | HTTPS |  
+
+
+| 名称 | 已实施 | HTTPS |  
+
+
+| 存储池ID | 已实施 | HTTPS |  
+
+
+| 键入 | 差距 | HTTPS |  
+
+
+| 精简配置 | 已实施 | HTTPS |  
+
+
+| 支持精简配置 | 已实施 | HTTPS | 此内部卷是否支持对其上的卷层进行精简配置 
+
+
+| 已启用重复数据删除 | 已实施 | HTTPS | 已在存储池上启用重复数据删除 
+
+
+| 已启用数据压缩 | 已实施 | HTTPS | 是否在存储池上启用了数据压缩 
+
+
+| 上次Snapshot时间 | 已实施 | HTTPS | 上次快照的时间 
+
+
+| Snapshot计数 | 已实施 | HTTPS | 内部卷上的快照数量 
+
+
+| 状态 | 已实施 | HTTPS |  
+
+
+| 保护类型 | 已实施 | HTTPS |  
+
+
+| Snapshot已用容量 | 已实施 | HTTPS |  
+
+
+| Snapshot分配的容量 | 差距 | HTTPS | 已分配的快照容量(以MB为单位) 
+
+
+| 已用数据容量 | 已实施 | HTTPS |  
+
+
+| 数据已分配容量 | 差距 | HTTPS | 为数据分配的容量 
+
+
+| 已用总容量 | 已实施 | HTTPS | 总容量(以MB为单位) 
+
+
+| 已分配总容量 | 已实施 | HTTPS |  
+
+
+| 原始可用比率 | 已实施 | HTTPS | 从可用容量转换为原始容量的比率 
+
+
+| 分层最短冷却天数 | 已实施 | HTTPS |  
+
+
+| QoS—策略 | 已实施 | HTTPS |  
+
+
+|  | 已实施 | HTTPS |  
+
+
+| 注释 | 差距 | HTTPS | 省/自治区/直辖市：描述SVM的自由文本注释 
+
+
+| 原始QoS限制 | 已实施 | HTTPS |  
+
+
+.5+| qtree | qtree ID | 已实施 | HTTPS | qtree的唯一ID 
+
+
+| 名称 | 已实施 | HTTPS |  
+
+
+| 安全模式 | 已实施 | HTTPS | 目录的安全模式：UNIX、NTFS或混合 
+
+
+| 状态 | 已实施 | HTTPS |  
+
+
+| 键入 | 差距 | HTTPS |  
+
+
+.3+| 共享 | 名称 | 已实施 | HTTPS |  
+
+
+| 协议 | 已实施 | HTTPS | 共享协议的枚举 
+
+
+| IP接口 | 已实施 | HTTPS | 公开此共享的IP地址的逗号分隔列表 
+
+
+.2+| 共享启动程序 | 启动程序 | 已实施 | HTTPS |  
+
+
+| 权限 | 已实施 | HTTPS | 此特定共享的权限 
+
+
+.10+| 存储 | IP | 已实施 | HTTPS |  
+
+
+| 显示IP | 已实施 | HTTPS |  
+
+
+| 名称 | 已实施 | HTTPS |  
+
+
+| 制造商 | 已实施 | HTTPS |  
+
+
+| 系列 | 已实施 | HTTPS | 存储系列可以是Clariion、Symmetrix等 
+
+
+| 虚拟 | 已实施 | HTTPS | 这是存储虚拟化设备吗？ 
+
+
+| 管理URL | 已实施 | HTTPS |  
+
+
+| 总原始容量 | 已实施 | HTTPS | 总原始容量(阵列上所有磁盘的总和) 
+
+
+| 备用原始容量 | 已实施 | HTTPS | 备用磁盘的原始容量(所有备用磁盘的总和) 
+
+
+| 故障原始容量 | 已实施 | HTTPS | 故障磁盘的原始容量(所有故障磁盘的总和) 
+
+
+.17+| 存储池 | 存储池ID | 已实施 | HTTPS |  
+
+
+| 名称 | 已实施 | HTTPS |  
+
+
+| 键入 | 差距 | HTTPS |  
+
+
+| 状态 | 已实施 | HTTPS |  
+
+
+| 支持精简配置 | 已实施 | HTTPS | 此内部卷是否支持对其上的卷层进行精简配置 
+
+
+| 包括在Dwh容量中 | 已实施 | HTTPS | 一种从ACQ到控制DWH容量中关注哪些存储池的方法 
+
+
+| 供应商层 | 已实施 | HTTPS | 供应商专用层名称 
+
+
+| 已启用重复数据删除 | 已实施 | HTTPS | 已在存储池上启用重复数据删除 
+
+
+| 已启用数据压缩 | 已实施 | HTTPS | 是否在存储池上启用了数据压缩 
+
+
+| 虚拟 | 已实施 | HTTPS | 这是存储虚拟化设备吗？ 
+
+
+| RAID 组 | 已实施 | HTTPS | 指示此StoragePool是否为RAID组 
+
+
+| 已用数据容量 | 已实施 | HTTPS |  
+
+
+| 数据已分配容量 | 差距 | HTTPS | 为数据分配的容量 
+
+
+| 已分配总容量 | 已实施 | HTTPS |  
+
+
+| 物理磁盘容量(MB) | 已实施 | HTTPS | 用作存储池的原始容量 
+
+
+| 原始可用比率 | 已实施 | HTTPS | 从可用容量转换为原始容量的比率 
+
+
+|  | 已实施 | HTTPS |  
+
+
+.52+| 性能 .21+| 内部卷 | 总延迟 | 已实施 | HTTPS |  
+
+
+| 已用对象存储空间 | 已实施 | HTTPS |  
+
+
+| 总容量 | 已实施 | HTTPS |  
+
+
+| 延迟读取 | 已实施 | HTTPS |  
+
+
+| IOPS其他 | 已实施 | HTTPS |  
+
+
+| IOPS写入 | 已实施 | HTTPS |  
+
+
+| 已用容量 | 已实施 | HTTPS |  
+
+
+| 吞吐量读取 | 已实施 | HTTPS |  
+
+
+| 服务器ID | 已实施 | HTTPS |  
+
+
+| IOPS总数 | 已实施 | HTTPS |  
+
+
+| Snapshot已用容量比率 | 已实施 | HTTPS | 报告为时间序列 
+
+
+| 写入延迟 | 已实施 | HTTPS |  
+
+
+| IOPS读取 | 已实施 | HTTPS | 磁盘上的读取IOPS数 
+
+
+| 已用容量比率 | 已实施 | HTTPS |  
+
+
+| 总数据容量 | 已实施 | HTTPS |  
+
+
+| 已用数据容量 | 已实施 | HTTPS |  
+
+
+| 写入吞吐量 | 已实施 | HTTPS |  
+
+
+| 总吞吐量 | 已实施 | HTTPS | 平均磁盘总速率(在所有磁盘中读取和写入)、以MB/秒为单位 
+
+
+| Snapshot已用容量 | 已实施 | HTTPS |  
+
+
+| 密钥 | 已实施 | HTTPS |  
+
+
+| Snapshot预留容量 | 已实施 | HTTPS |  
+
+
+.16+| 存储 | 总延迟 | 已实施 | HTTPS |  
+
+
+| 故障原始容量 | 已实施 | HTTPS |  
+
+
+| 备用原始容量 | 已实施 | HTTPS | 备用磁盘的原始容量(所有备用磁盘的总和) 
+
+
+| 延迟读取 | 已实施 | HTTPS |  
+
+
+| IOPS其他 | 已实施 | HTTPS |  
+
+
+| IOPS写入 | 已实施 | HTTPS |  
+
+
+| 原始容量 | 已实施 | HTTPS |  
+
+
+| 吞吐量读取 | 已实施 | HTTPS |  
+
+
+| 服务器ID | 已实施 | HTTPS |  
+
+
+| IOPS总数 | 已实施 | HTTPS |  
+
+
+| 写入延迟 | 已实施 | HTTPS |  
+
+
+| IOPS读取 | 已实施 | HTTPS | 磁盘上的读取IOPS数 
+
+
+| StoragePools容量 | 已实施 | HTTPS |  
+
+
+| 写入吞吐量 | 已实施 | HTTPS |  
+
+
+| 总吞吐量 | 已实施 | HTTPS | 平均磁盘总速率(在所有磁盘中读取和写入)、以MB/秒为单位 
+
+
+| 密钥 | 已实施 | HTTPS |  
+
+
+.15+| StoragePool磁盘 | 已用对象存储空间 | 已实施 | HTTPS |  
+
+
+| 总容量 | 已实施 | HTTPS |  
+
+
+| IOPS写入 | 已实施 | HTTPS |  
+
+
+| 已用容量 | 已实施 | HTTPS |  
+
+
+| 原始容量 | 已实施 | HTTPS |  
+
+
+| 吞吐量读取 | 已实施 | HTTPS |  
+
+
+| IOPS总数 | 已实施 | HTTPS |  
+
+
+| IOPS读取 | 已实施 | HTTPS | 磁盘上的读取IOPS数 
+
+
+| 已用容量比率 | 已实施 | HTTPS |  
+
+
+| 总数据容量 | 已实施 | HTTPS |  
+
+
+| 已配置容量 | 已实施 | HTTPS |  
+
+
+| 已用数据容量 | 已实施 | HTTPS |  
+
+
+| 写入吞吐量 | 已实施 | HTTPS |  
+
+
+| 总吞吐量 | 已实施 | HTTPS | 平均磁盘总速率(在所有磁盘中读取和写入)、以MB/秒为单位 
+
+
+| 过量使用容量比率 | 已实施 | HTTPS | 报告为时间序列 
+|===
+此数据收集器使用的管理API：
+
+|===
+| API | 使用的协议 | 使用的传输层协议 | 已使用传入端口 | 已使用传出端口 | 支持身份验证 | 仅需要"只读"凭据 | 支持加密 | 防火墙友好型(静态端口) 
+
+
+| Google计算平台REST API | HTTPS |  | 443 |  | true | true | true | true 
+|===
+
+
 == HDS HCP (HTTPS)
 
 此数据收集器支持的型号和版本：
@@ -19912,8 +20298,8 @@ keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, H
 * 9.8.0P7
 * 9.8.0P8
 * 9.8.0P9
-* 9.9.0
-* 9.9.1
+* 9.0
+* 9.1
 * 9.9.1P10
 * 9.9.1P11
 * 9.9.1P12
@@ -22029,26 +22415,48 @@ keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, H
 
 
 | A150 FAS-A220 A250 A300 FAS-A400 A70 A700 AFF AFF AFF ASA ASA A800 A90 A900 FAS2720 FAS2750 FAS2820 FAS8200 FAS8300 FAS8700 FAS9000 FAS9500 C190 ASA C250 AFF ASA C400 AFF ASA A250 AFF AFF A250 AFF AFF A800 AFF AFF AFF A800 FASD250 AFF C800 CDvM200 AFF AFF  a| 
-* Netapp9.14.1P10版：2024年11月28日星期四12：32：16 UTC
-* Netapp9.14.1P11版：UTC 2025年1月22日星期三11：55：28
-* Netapp9.14.1P1版：2024年2月15日(周四)：45：21 UTC
-* Netapp9.14.1P4：UTC 2024年4月18日星期四15：59：10
-* Netapp9.14.1P5版：2024年5月18日星期六19：42：16 UTC
-* Netapp9.14.1P6版：星期二6月18日16：11：44 UTC 2024
-* NetApp 9.14.1P7版：2024年8月3日(星期四) 03：07：44 (UTC)
-* NetApp 9.14.1P8版：2024年9月13日星期五07：12：27 (UTC)
-* Netapp9.14.1P9版：2024年10月21日星期一18：04：05 (UTC)
-* Netapp9.15.1版：2004年7月(星期四) 12：21：07 UTC 2024
-* Netapp9.15.1P1版：星期二7月30日05：15：49 UTC 2024
-* Netapp9.15.1P2版：2024年8月27日星期二16：35：16 UTC
-* Netapp9.15.1P3版：2024年9月25日星期三22：33：44 UTC
-* Netapp9.15.1P4：Sun 10月27日20：15：53 UTC 2024
-* Netapp9.15.1P5版：Sun 11月24日16：31：37 UTC 2024
-* Netapp9.15.1P6版：2024年12月04日星期三01：42：39 UTC
-* NetApp 9.15.1P7版：2018年1月周六21：34：02 (UTC) 2025
-* Netapp9.15.1RC2版：2024年6月24日(星期一) 04：49：55 (UTC)
-* NetappRelease 9.16.1：2018年1月19：31：15 (UTC)、2025年
-* Netapp9.16.1P1版：2025年2月14日(星期五) 03：53：50 (UTC)
+* NetApp版本 9.14.1P10：2024 年 11 月 28 日星期四 12:32:16 UTC
+* NetApp版本 9.14.1P11：2025 年 1 月 22 日星期三 11:55:28 UTC
+* NetApp版本 9.14.1P1：2024 年 2 月 15 日星期四 00:45:21 UTC
+* NetApp版本 9.14.1P4：2024 年 4 月 18 日星期四 15:59:10 UTC
+* NetApp版本 9.14.1P5：2024 年 5 月 18 日星期六 19:42:16 UTC
+* NetApp版本 9.14.1P6：2024 年 6 月 18 日星期二 16:11:44 UTC
+* NetApp版本 9.14.1P7：2024 年 8 月 1 日星期四 03:07:44 UTC
+* NetApp版本 9.14.1P8：2024 年 9 月 13 日星期五 07:12:27 UTC
+* NetApp版本 9.14.1P9：2024 年 10 月 21 日星期一 18:04:05 UTC
+* NetApp版本 9.15.1：2024 年 7 月 4 日星期四 12:21:07 UTC
+* NetApp版本 9.15.1P1：2024 年 7 月 30 日星期二 05:15:49 UTC
+* NetApp版本 9.15.1P2：2024 年 8 月 27 日星期二 16:35:16 UTC
+* NetApp版本 9.15.1P3：2024 年 9 月 25 日星期三 22:33:44 UTC
+* NetApp版本 9.15.1P4：2024 年 10 月 27 日星期日 20:15:53 UTC
+* NetApp版本 9.15.1P5：2024 年 11 月 24 日星期日 16:31:37 UTC
+* NetApp版本 9.15.1P6：2024 年 12 月 4 日星期三 01:42:39 UTC
+* NetApp版本 9.15.1P7：2025 年 1 月 18 日星期六 21:34:02 UTC
+* NetApp版本 9.15.1RC2：2024 年 6 月 24 日星期一 04:49:55 UTC
+* NetApp版本 9.16.1：2025 年 1 月 18 日星期六 19:31:15 UTC
+* NetApp版本 9.16.1P1：2025 年 2 月 14 日星期五 03:53:50 UTC
+* NetApp版本 9.16.1RC1：2024 年 11 月 4 日星期一 10:39:46 UTC
+* NetApp版本 9.16.1X26：2024 年 12 月 9 日星期一 10:27:42 UTC
+* NetApp版本 9.16.1X29：2025 年 1 月 12 日星期日 11:18:25 UTC
+* NetApp版本 9.17.1X7：2025 年 2 月 14 日星期五 11:21:52 UTC
+* NetApp发布 Clawhammer__9.14.1：2024 年 5 月 18 日星期六 09:23:49 UTC
+* NetApp发布 Cloudstream__9.16.1：2024 年 11 月 4 日星期一 05:51:46 UTC
+* NetApp发布 Cloudstream__9.16.1：2025 年 3 月 13 日星期四 20:55:54 UTC
+* NetApp发布 Electricjellyfish__9.17.1：2025 年 3 月 3 日星期一 05:57:49 UTC
+* NetApp发布 Electricjellyfish__9.17.1：2025 年 3 月 9 日星期日 05:56:14 UTC
+* NetApp发布 Electricjellyfish__9.17.1：2025 年 3 月 16 日星期日 04:54:53 UTC
+* NetApp发布 Electricjellyfish__9.17.1：2025 年 1 月 28 日星期二 11:48:14 UTC
+* NetApp发布 Electricjellyfish__9.17.1：2025 年 3 月 18 日星期二 04:59:54 UTC
+* NetApp发布 Electricjellyfish__9.17.1：2025 年 3 月 12 日星期三 04:42:03 UTC
+* NetApp版本 Mightysquirrel__9.15.1：2024 年 5 月 24 日星期五 05:03:10 UTC
+* NetApp版本 Mightysquirrel__9.15.1：2025 年 1 月 18 日星期六 11:39:42 UTC
+* NetApp发布 Tropicallightning__9.18.0：2025 年 2 月 21 日星期五 14:02:58 UTC
+* NetApp发布 Tropicallightning__9.18.0：2025 年 2 月 17 日星期一 08:18:14 UTC
+* NetApp发布 Tropicallightning__9.18.0：2025 年 2 月 20 日星期四 08:11:55 UTC
+* NetApp发布 Tropicallightning__9.18.0：2025 年 2 月 27 日星期四 04:15:40 UTC
+* NetApp发布 Tropicallightning__9.18.0：2025 年 2 月 18 日星期二 14:00:54 UTC
+* NetApp发布 Tropicallightning__9.18.0：2025 年 2 月 26 日星期三 08:19:21 UTC
+* NetApp发布 Tropicallightning__9.18.0：2025 年 1 月 29 日星期三 08:34:06 UTC
 
 
 |===
@@ -24380,6 +24788,268 @@ keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, H
 
 
 | Nutanix REST API | HTTPS | HTTPS | 443 |  | true | true | true | true 
+|===
+
+
+== OpenStack（REST API/SSH）
+
+|===
+|===
+此数据收集器支持的产品：
+
+|===
+| 产品 | 类别 | 功能/属性 | 状态 | 使用的协议 | 追加信息 
+
+
+.76+| 基础 .7+| 数据存储 | 容量 | 已实施 | HTTPS | Snapshot已用容量(以MB为单位) 
+
+
+| MOID | 已实施 | HTTPS |  
+
+
+| 名称 | 已实施 | HTTPS |  
+
+
+| OID | 已实施 | HTTPS |  
+
+
+| 已配置容量 | 已实施 | HTTPS |  
+
+
+| 已用容量 | 已实施 | HTTPS |  
+
+
+| 虚拟中心IP | 已实施 | HTTPS |  
+
+
+.3+| NASShare数据存储库 | 数据存储库OID | 已实施 | HTTPS |  
+
+
+| NAS共享OID | 已实施 | HTTPS |  
+
+
+| OID | 已实施 | HTTPS |  
+
+
+.4+| NASShare主机 | NAS共享OID | 已实施 | HTTPS |  
+
+
+| 主机OID | 已实施 | HTTPS |  
+
+
+| OID | 已实施 | HTTPS |  
+
+
+| 只读 | 已实施 | HTTPS |  
+
+
+.6+| LUN | OID | 已实施 | HTTPS |  
+
+
+| 数字 | 已实施 | HTTPS |  
+
+
+| 数据存储库OID | 已实施 | HTTPS |  
+
+
+| 主机OID | 已实施 | HTTPS |  
+
+
+| 磁盘名称 | 已实施 | HTTPS |  
+
+
+| TID | 已实施 | HTTPS |  
+
+
+.6+| NAS共享 | 容量 | 已实施 | HTTPS | 已分配容量(以MB为单位) 
+
+
+| 存储器IP | 已实施 | HTTPS |  
+
+
+| 存储器名称 | 已实施 | HTTPS |  
+
+
+| OID | 已实施 | HTTPS |  
+
+
+| 共享路径 | 已实施 | HTTPS | HvNasShare与共享匹配 
+
+
+| 键入 | 差距 | HTTPS |  
+
+
+.6+| 路径 | OID | 已实施 | HTTPS |  
+
+
+| LUN OID | 已实施 | HTTPS |  
+
+
+| 主机端口WWPN | 已实施 | HTTPS |  
+
+
+| 存储端口WWPN | 已实施 | HTTPS |  
+
+
+| 活动 | 已实施 | HTTPS |  
+
+
+| 键入 | 差距 | HTTPS |  
+
+
+.6+| 服务器 | 集群 | 已实施 | HTTPS | 集群名称 
+
+
+| 数据中心名称 | 已实施 | HTTPS |  
+
+
+| 主机OID | 已实施 | HTTPS |  
+
+
+| MOID | 已实施 | HTTPS |  
+
+
+| OID | 已实施 | HTTPS |  
+
+
+| 虚拟中心IP | 已实施 | HTTPS |  
+
+
+.7+| 虚拟磁盘 | 容量 | 已实施 | HTTPS | Snapshot已用容量(以MB为单位) 
+
+
+| 数据存储库OID | 已实施 | HTTPS |  
+
+
+| LUN OID | 已实施 | HTTPS |  
+
+
+| 名称 | 已实施 | HTTPS |  
+
+
+| OID | 已实施 | HTTPS |  
+
+
+| 键入 | 差距 | HTTPS |  
+
+
+| 已用容量 | 已实施 | HTTPS |  
+
+
+.13+| 虚拟机 | 来宾状态 | 已实施 | HTTPS |  
+
+
+| 数据存储库OID | 已实施 | HTTPS |  
+
+
+| 主机OID | 已实施 | HTTPS |  
+
+
+| IP | 已实施 | HTTPS |  
+
+
+| MOID | 已实施 | HTTPS |  
+
+
+| 内存 | 已实施 | HTTPS |  
+
+
+| 名称 | 已实施 | HTTPS |  
+
+
+| OID | 已实施 | HTTPS |  
+
+
+| 电源状态 | 已实施 | HTTPS |  
+
+
+| 状态更改时间 | 已实施 | HTTPS |  
+
+
+| 处理器 | 已实施 | HTTPS |  
+
+
+| 已配置容量 | 已实施 | HTTPS |  
+
+
+| 已用容量 | 已实施 | HTTPS |  
+
+
+.3+| 虚拟机磁盘 | OID | 已实施 | HTTPS |  
+
+
+| virtualDisk OID | 已实施 | HTTPS |  
+
+
+| 虚拟机OID | 已实施 | HTTPS |  
+
+
+.7+| 主机 | 主机CPU计数 | 已实施 | HTTPS |  
+
+
+| 主机域 | 已实施 | HTTPS |  
+
+
+| 主机安装的内存 | 已实施 | HTTPS |  
+
+
+| 主机操作系统 | 已实施 | HTTPS |  
+
+
+| IP | 已实施 | HTTPS |  
+
+
+| 名称 | 已实施 | HTTPS |  
+
+
+| OID | 已实施 | HTTPS |  
+
+
+.4+| iSCSI节点 | 主机别名 | 已实施 | HTTPS |  
+
+
+| 节点名称 | 已实施 | HTTPS |  
+
+
+| OID | 已实施 | HTTPS |  
+
+
+| 键入 | 差距 | HTTPS |  
+
+
+.4+| 信息 | 数据源名称 | 已实施 | HTTPS | 信息 
+
+
+| 日期 | 已实施 | HTTPS |  
+
+
+| 发起端ID | 已实施 | HTTPS |  
+
+
+| 发起端密钥 | 已实施 | HTTPS |  
+
+
+.4+| 性能 .4+| 主机 | CPU总利用率 | 已实施 |  |  
+
+
+| 密钥 | 已实施 |  |  
+
+
+| 总内存利用率 | 已实施 |  |  
+
+
+| 服务器ID | 已实施 |  |  
+|===
+此数据收集器使用的管理API：
+
+|===
+| API | 使用的协议 | 使用的传输层协议 | 已使用传入端口 | 已使用传出端口 | 支持身份验证 | 仅需要"只读"凭据 | 支持加密 | 防火墙友好型(静态端口) 
+
+
+| OpenStack REST API | HTTPS | HTTPS | 443 |  | true | false | true | true 
+
+
+| OpenStack SSH | SSH | SSH | 22 |  | true | false | true | true 
 |===
 
 

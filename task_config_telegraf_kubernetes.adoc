@@ -43,5 +43,9 @@ NetApp Kuber-netes监控操作员会提取下面列出的Kube-state-metrics计�
 . POD 指标
 . ReplicaSet 指标
 . 服务指标
-. StatusSet 指标
+. StatefulSet 指标
+. 水平 Pod 自动缩放器指标
+. Cronjob 指标
+. 工作指标
+. 资源配额指标
 
