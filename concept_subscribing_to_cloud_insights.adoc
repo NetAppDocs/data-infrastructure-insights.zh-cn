@@ -7,6 +7,10 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 = 订阅Data Infrastructure Insight
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -38,10 +42,7 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 
 在注册过程中、您可以选择托管Data Infrastructure Insight环境的全球区域。有关详细信息，请阅读有关Data Infrastructure洞察的link:security_information_and_region.html["信息和区域"]信息。
 
-有关Data Infrastructure Insight基础版和高级版中可用功能的完整比较、请参见link:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing["Data Infrastructure Insight版本"]页面。
-
-
-WARNING: 删除非活动Data Infrastructure Insight Basic Edition环境并回收其资源。如果连续 30 天没有用户活动，或者连续 7 天未载入数据，则环境将被视为非活动环境。Data Infrastructure Insight将发送通知并提供四天的宽限期、然后才能删除环境。
+有关Data Infrastructure Insights功能和定价选项的详细信息，请参阅link:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing["Data Infrastructure Insight版本"]页。
 
 在使用Data Infrastructure Insight时，如果您看到挂锁图标image:padlock.png["挂锁"]，则表示该功能在您的当前订阅中不可用，或者以有限的形式提供。订阅该功能可获得完全访问权限。某些功能可在订阅前使用 <<module-evaluation,模块评估>> 。
 

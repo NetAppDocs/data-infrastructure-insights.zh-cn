@@ -512,9 +512,6 @@
   <block id="81e9e10a5416438d2549dae075160792" category="list-text">单击表格右上角的_Export_按钮<block ref="7d9204e8192ad34899f7f874d914194c" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="7201440e51225680b60dccf28366c73d" category="paragraph">显示的审核事件将导出到 .CSV 文件，最多 10 ， 000 行。</block>
   <block id="e229d51ca45046e23340982a0d911a30" category="section-title">保留审核数据</block>
-  <block id="f16df2bb3736cac60f6b4d0b1344f646" category="paragraph">Data Infrastructure Insight根据您的版本保留审计数据的时间量：</block>
-  <block id="6140d54709a2f0707aaa20367fd479a2" category="list-text">基本版本：审核数据保留 30 天</block>
-  <block id="ef14a516a82a51d74eaeb8e2193667cb" category="list-text">标准版和高级版：审核数据保留 1 年 + 1 天</block>
   <block id="7ad87c3be379b9de0a9009199fb5401c" category="paragraph">系统会自动清除早于保留时间的审核条目。无需用户交互。</block>
   <block id="231cf4c70d866b616c21baddaeed0696" category="section-title">故障排除</block>
   <block id="c0e7fce2cca0be472d3098957e2a4864" category="paragraph">您可以在此处找到有关对审核问题进行故障排除的建议。</block>
@@ -1709,7 +1706,6 @@
   <block id="4e4315d948ef3fd3aad9be88a442863d" category="paragraph"><block ref="4e4315d948ef3fd3aad9be88a442863d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="79bac41a8e857539d5a75dc7e93e17d8" category="summary">您可以查看知识库文章，与 NetApp 社区联系，查看视频或打开请求支持的服务单。</block>
   <block id="69ac5d78c7ecb4ab9a461a7400773ec3" category="doc">请求支持</block>
-  <block id="fbecb4e743bc1aa59e79031c4717bf84" category="paragraph">您可以通过单击*帮助&gt;支持*来访问Data Infrastructure Insight中的支持选项。您可以使用的支持选项取决于您的Data Infrastructure Insight版。</block>
   <block id="b9bfbe11ded79fa1b72b327d0497f9dd" category="inline-image-macro">支持页面</block>
   <block id="2a0a63dd16c8b87a179a933b2e9eb92e" category="paragraph"><block ref="2a0a63dd16c8b87a179a933b2e9eb92e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e9d356ec51ae4d84881e70ea3c98b6dc" category="section-title">正在激活支持授权</block>
@@ -1737,9 +1733,6 @@
   <block id="d41c7a89c53943f7c86e80fe6a27b4dc" category="list-text">作为 NetApp 的新客户，您还需要创建一个 NetApp 支持站点 (NSS) 用户帐户，以便将来进行注册，并访问支持门户以获取技术支持聊天和 Web 服务单。此链接位于<block ref="4b0df7f6652ef877e322a199d6b6edce" category="inline-link-rx"></block>。您可以提供新注册的Data Infrastructure Insight序列号来加快此过程。</block>
   <block id="3757ee6dbdcabe2780104f98224939d5" category="list-text">这是一次性注册Data Infrastructure Insight NetApp序列号。</block>
   <block id="bc4afdcc32d9a7d1bc03c2d8ad5b1828" category="section-title">获取支持信息</block>
-  <block id="1f3c67de4e7c07c414ec4689b1724561" category="paragraph">NetApp通过多种方式为数据基础架构洞察力提供支持。全天候提供广泛的免费自助支持选项，例如知识库（ KB ）文章或 NetApp 社区。订阅* Data Infrastructure Insight的用户可通过电话或Web服务单获得技术支持。Web 服务单以及案例管理需要使用 NetApp 支持站点 (NSS) SSO 帐户。</block>
-  <block id="54b9dfbc2f7a4721e38bff7e643a574c" category="paragraph">*只要您的所有NetApp存储系统都至少在高级支持级别提供支持、即可在Basic Edition中获得支持。</block>
-  <block id="3b2314bf0168715cc6642c0246916477" category="paragraph">许多NetApp产品都将数据基础架构洞察力基础版作为软件包的一部分提供。如果您要升级到高级版、请联系您的销售代表。</block>
   <block id="0ead5de583924ac8d48848b85f68e778" category="section-title">自助服务支持：</block>
   <block id="6c0afebc7e7822e3ca22734d7b5d42c0" category="paragraph">这些支持选项在试用模式下提供，并且全天候免费提供：</block>
   <block id="5b6cf869265c13af8566f192b4ab3d2a" category="inline-link-macro">文档</block>
@@ -1840,7 +1833,6 @@
   <block id="6341e61d6dc641d29b3f2e7300137ea9" category="list-text">在上注册一个帐户<block ref="e0b3e45a049f223d3b91d005d1e31db5" category="inline-link-macro-rx"></block>、即可访问NetApp的所有云产品。</block>
   <block id="cab27dc53edb571cac663ce2e16450dc" category="inline-link-macro">AWS 市场</block>
   <block id="7bc1d8b07dfc0e98950abc0c7f3979a5" category="inline-link-macro">信息和区域</block>
-  <block id="ef66b5abbe1e0b79e23deb05dd2d11a9" category="admonition">删除非活动Data Infrastructure Insight Basic Edition环境并回收其资源。如果连续 30 天没有用户活动，或者连续 7 天未载入数据，则环境将被视为非活动环境。Data Infrastructure Insight将发送通知并提供四天的宽限期、然后才能删除环境。</block>
   <block id="d618d9be50e37adf260935938e49af96" category="inline-image-macro">挂锁</block>
   <block id="12ddfc86083937d7a126f2fd8615aa6b" category="inline-xref">模块评估</block>
   <block id="9d7c20493442236d34ddee65579e8971" category="paragraph">在使用Data Infrastructure Insight时，如果您看到挂锁图标<block ref="3d68554889a6297f572b65a3534d0ef0" category="inline-image-macro-rx" type="image"></block>，则表示该功能在您的当前订阅中不可用，或者以有限的形式提供。订阅该功能可获得完全访问权限。某些功能可在订阅前使用 <block ref="7f89ca2c071a1700db286ba62f9d3c95" category="inline-xref-macro-rx"></block> 。</block>
@@ -1947,16 +1939,11 @@
   <block id="aa7aad98c338c5186d969cd18fc94b86" category="paragraph">您可以<block ref="f3a940944ed2b77ff0757ee9675312e7" category="inline-link-macro-rx"></block>在Data Infrastructure Insight *帮助&gt;支持*页面上找到更多故障排除和其他信息。</block>
   <block id="7f6383a46fdc2ac52c791c8ea4cf03b6" category="summary">介绍了数据保留时间和缩减采样</block>
   <block id="2acd8b96cc968efd569f0e0169390b9b" category="doc">数据保留和缩减采样数据</block>
-  <block id="51eee046c9fbdc20d91f82f659d9904f" category="paragraph">由于Data Infrastructure Insight会将数据保留一段规定的时间(按版本)、因此可能会处理数千个数据点。因此，数据可能会先进行缩减采样，然后再显示在图表和表中。</block>
   <block id="fd8da5ef10133e4ba884d6f85e21c49d" category="section-title">数据保留</block>
-  <block id="79f48f9e4032922de4c24d6a18806c0c" category="paragraph">Data Infrastructure Insight会将数据保留一段时间、保留时间由活动订阅版本决定。</block>
-  <block id="226c03c443192cffffa4a924b4ccffde" category="cell">版本</block>
   <block id="972e73b7a882d0802a4e3a16946a2f94" category="cell">基本</block>
   <block id="374616a0b786e9bffadc7f28e68d6c59" category="cell">7天</block>
   <block id="8d5e7e72f12067991186cdf3cb7d5d9d" category="cell">高级版</block>
   <block id="025025548582d3777fd0b072c16e2656" category="cell">13 个月</block>
-  <block id="a4d110a0ddc628e94b4e9223300af49b" category="inline-link-macro">版本和定价</block>
-  <block id="cc0d9aba6833845d2acc4d718cf71f18" category="paragraph">有关每个版本中可用功能的完整列表、请参见Data Infrastructure Insight<block ref="9f9283f57379e70b90560c22a58eac88" category="inline-link-macro-rx"></block>页面。</block>
   <block id="876f04f443f4acb1176812eb95c5206c" category="section-title">数据缩减采样</block>
   <block id="832befb5fcd1bf513bc9413c7b9a2e13" category="paragraph">* 下采样 * 可提供图表中数据的统计近似值，让您可以高效地查看数据，而无需显示每个数据点，同时还可以准确地查看收集的数据。</block>
   <block id="b75dadfce21049a86b69409a71f9d89d" category="section-title">为什么需要缩减采样？</block>
@@ -7049,8 +7036,6 @@
   <block id="46152eb4e0d7febe5ed5ec5aa51b068f" category="admonition">对于具有大量相关资产的环境，向这些资产继承应用程序分配可能需要几分钟的时间。如果您拥有许多相关资产，请留出更多时间进行继承。</block>
   <block id="f64880272c45a077dc9152ab7dd2f24a" category="paragraph">将主机分配给应用程序后，您可以将其余资产分配给应用程序。要访问应用程序的登录页面，请单击 * 管理 &gt; 应用程序 * 并选择您创建的应用程序。</block>
   <block id="91771bf0d5be307a250d706e57df1eb1" category="summary">创建监控器，以便针对性能或清单阈值以及指标或日志条件发出警报。</block>
-  <block id="a0fb87896105c24e490432fa6ee285d3" category="paragraph">您可以创建监控器来设置触发警报的阈值，以便向您通知与网络中资源相关的问题。例如，您可以创建一个监控器，以便针对任意多种协议发出 _node write latency 警报。</block>
-  <block id="bd49848e16630c106919628a09948a9c" category="admonition">所有Data Infrastructure Insight版本均提供"监控和通知"功能、但基本版本需遵循以下条件：*一次最多只能有五个活动的自定义监控器。超过五个的任何监控器将在_Paused_state中创建或移至_Paused_state。*不支持VMDK、虚拟机、主机和数据存储库指标监控器。如果为这些指标创建了监控器、则在降级到Basic Edition时、这些监控器将暂停、无法恢复。</block>
   <block id="3f5fb2a45a144339f9591a104342f79b" category="paragraph">通过监控，您可以为存储， VM ， EC2 和端口等 " 基础架构 " 对象生成的指标以及为 Kubernetes ， ONTAP 高级指标和 Telegraf 插件收集的 " 集成 " 数据设置阈值。当超过警告级别或严重级别阈值时，这些 _metric_ 监控器会向您发出警报。</block>
   <block id="e730b9c349889018dc9deaccaa5a438b" category="paragraph">您还可以创建监控器，以便在检测到指定的 _log events_之后 触发警告，严重或信息级别的警报。</block>
   <block id="b18c8095ec7b7cd0c63a4e28b715f6c1" category="inline-link-macro">系统定义的监控器</block>
@@ -11224,7 +11209,6 @@
   <block id="dac09bc6942369c2d0f8d36f26d2e201" category="cell">"/AutoDir1/AutoFile03242022/"</block>
   <block id="17411e5191f440928552bd359518e697" category="cell">Works；返回与AutoDir1和AutoFile03242022匹配的一级目录和二级目录的所有活动(区分大小写)</block>
   <block id="ee0b2f1c8ad7945cf603e8d752a5e7b5" category="inline-link-macro">Data Infrastructure Insight版本</block>
-  <block id="bbf9080a1bf1fb2f62558ce683d64be0" category="paragraph">有关Data Infrastructure Insight基础版和高级版中可用功能的完整比较、请参见<block ref="49bb501f6c401ae5b06c3dbe5fc987bd" category="inline-link-macro-rx"></block>页面。</block>
   <block id="3bbdd1e5a1fbf0d58680e594b8806722" category="section-title">验证电报包校验和</block>
   <block id="7ff5578ba477d9e2321cffdc188dd439" category="paragraph">Data Infrastructure Insight代理安装程序会执行完整性检查、但某些用户可能希望在安装下载的Telegraf二进制文件之前执行自己的验证。为此、可以下载安装程序并为下载的软件包生成校验和、然后将校验和与安装说明中显示的值进行比较。</block>
   <block id="741ebc51b7127a27c632897c49b71ad3" category="paragraph">要执行仅下载操作(与默认的下载和安装相反)、用户可以编辑从用户界面获取的代理安装命令并删除"install"选项。</block>
@@ -12631,7 +12615,6 @@
   <block id="e4685d20c866cca50df5bea5e4230497" category="cell">非工作负载部署合并发送的频率（以秒为单位）</block>
   <block id="1cd8d8ba87dcbd642231ac1e1fb52f76" category="paragraph">AWS Marketplace 免费试用期无法延长。</block>
   <block id="f2d8284860e834b1803b72a789ffeb84" category="list-text">数据收集器从_停止_状态转变为_运行_状态最多需要两分钟。</block>
-  <block id="0513a990ff8b7eb9d4d9e530e812b450" category="paragraph">ONTAP SVM 数据收集器使工作负载安全能够监控NetApp ONTAP存储虚拟机 (SVM) 上的文件和用户访问活动。本指南将引导您完成 SVM 数据收集器的先决条件、配置和管理，以便为您的ONTAP环境提供全面的安全监控。</block>
   <block id="57da797adb74a055edb3de9c7e734b65" category="list-text">在任何时间点，当前“正在运行”的 SVM 的数据收集器将显示为“正在运行”。当前“停止”的 SVM 数据收集器将显示为“已停止”。</block>
   <block id="61dcd000a72340c1c72d4c7a96c2ec90" category="list-text">每当发生切换时，数据收集器的状态将从_Running_变为_Stopped，反之亦然。</block>
   <block id="342c42c2979927d6b0d68318cd6111a6" category="summary">Data Infrastructure Insights跟踪基础设施的变化，以便于分析和故障排除。</block>
@@ -12750,4 +12733,20 @@
   <block id="8a971d74114c901e6e49ec38adf35b17" category="list-text">Cronjob 指标</block>
   <block id="9184717578be39d9d8ce4dc4caf1561d" category="list-text">工作指标</block>
   <block id="e68008fca3fcb96a93c82b9cf703aee3" category="list-text">资源配额指标</block>
+  <block id="c9714a192e747c57a94bb2f6639adb5b" category="paragraph">Data Infrastructure Insights保留审计数据的时间取决于您的订阅：</block>
+  <block id="25ce197231569d5340a6575531a40987" category="list-text">试用环境：审计数据保留 30 天</block>
+  <block id="99ec4b43a691fff456c908babbf2e4b6" category="list-text">订阅环境：审计数据保留 1 年零 1 天</block>
+  <block id="8305fef4b296f66634635a66ae1c297a" category="paragraph">您可以通过选择“帮助”&gt;“支持”来访问Data Infrastructure Insights中可用的支持选项。</block>
+  <block id="56f5911bfca7593d469553cb475e6033" category="paragraph">NetApp通过多种方式为Data Infrastructure Insights提供支持。提供全天候的广泛免费自助支持选项，例如知识库 (KB) 文章或NetApp社区。对于订阅Data Infrastructure Insights的用户，可以通过电话或网络票务获得技术支持。网络票证和案例管理需要NetApp支持站点 (NSS) SSO 帐户。</block>
+  <block id="d9a8e11a5035deb3c16b4dd70ca066ca" category="paragraph">有关Data Infrastructure Insights功能和定价选项的详细信息，请参阅<block ref="49bb501f6c401ae5b06c3dbe5fc987bd" category="inline-link-macro-rx"></block>页。</block>
+  <block id="bbfa6d956cfb6da0d57f5f523f9a05be" category="paragraph">根据您的订阅，Data Infrastructure Insights会保留数据 7 天到 13 个月不等的时间。显示大型数据集时，可能会对数据进行下采样，以确保图表和图形有效加载，同时保持统计准确性。</block>
+  <block id="b3fd89fffb7a017d757c048752783ccd" category="paragraph">Data Infrastructure Insights会保留数据一段时间，该时间由您的订阅类型决定。</block>
+  <block id="4c52b16391c4a95b395f3762741ff88f" category="cell">订阅类型</block>
+  <block id="1b52c526b858eb9dd2c66da1c0b8f44d" category="cell">审判</block>
+  <block id="808c7457c768423c5651cbf676d9f6d7" category="cell">已订阅</block>
+  <block id="b56a9b49aabd38d375de7e8e4f8b5622" category="inline-link-macro">Data Infrastructure Insights定价</block>
+  <block id="fc3f2409a092c3652206602369d9f86a" category="paragraph">有关Data Infrastructure Insights功能和定价选项的详细信息，请参阅<block ref="39a77f6e3fa694dcfc09652d16b8431a" category="inline-link-macro-rx"></block>页。</block>
+  <block id="babe60c38b9af7eae2a65400f72c52c7" category="paragraph">ONTAP SVM 数据收集器使工作负载安全能够监控NetApp ONTAP存储虚拟机 (SVM) 上的文件和用户访问活动。本指南将指导您完成 SVM 数据收集器的配置和管理，以便为您的ONTAP环境提供全面的安全监控。</block>
+  <block id="097b5088c2a3d7584f939f2bcd00152f" category="admonition">全局变化可能会对您的ONTAP系统产生潜在影响。强烈建议在非高峰时段进行影响大量数据收集器的更改。</block>
+  <block id="3c86c080f12d925b5a5ec1ad14563f65" category="paragraph">配置监视器以跟踪基础设施资源的性能阈值、日志事件和异常。为节点写入延迟、存储容量或应用程序性能等指标创建自定义警报，并在满足这些条件时接收通知。</block>
 </blocks>

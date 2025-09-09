@@ -7,6 +7,10 @@ summary: 通过Audit可以查看Data Infrastructure Insight系统中的系统和
 = 审核
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -135,11 +139,13 @@ Data Infrastructure Insight审核的事件和操作可分为以下几大类：
 
 == 保留审核数据
 
-Data Infrastructure Insight根据您的版本保留审计数据的时间量：
+Data Infrastructure Insights保留审计数据的时间取决于您的订阅：
 
-* 基本版本：审核数据保留 30 天
-* 标准版和高级版：审核数据保留 1 年 + 1 天
+* 试用环境：审计数据保留 30 天
+* 订阅环境：审计数据保留 1 年零 1 天
 
+
+系统会自动清除早于保留时间的审核条目。无需用户交互。
 
 系统会自动清除早于保留时间的审核条目。无需用户交互。
 

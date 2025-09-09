@@ -10,9 +10,7 @@ keywords: support, knowledgebase, documentation, community, chat, videos, help, 
 
 
 [role="lead"]
-目录：[]
-
-您可以通过单击*帮助>支持*来访问Data Infrastructure Insight中的支持选项。您可以使用的支持选项取决于您的Data Infrastructure Insight版。
+您可以通过选择“帮助”>“支持”来访问Data Infrastructure Insights中可用的支持选项。
 
 image:SupportPageWithLearningCenter.png["支持页面"]
 
@@ -70,11 +68,7 @@ image:SupportPage_SN_Section-NA.png["SN_screen"]
 
 == 获取支持信息
 
-NetApp通过多种方式为数据基础架构洞察力提供支持。全天候提供广泛的免费自助支持选项，例如知识库（ KB ）文章或 NetApp 社区。订阅* Data Infrastructure Insight的用户可通过电话或Web服务单获得技术支持。Web 服务单以及案例管理需要使用 NetApp 支持站点 (NSS) SSO 帐户。
-
-*只要您的所有NetApp存储系统都至少在高级支持级别提供支持、即可在Basic Edition中获得支持。
-
-许多NetApp产品都将数据基础架构洞察力基础版作为软件包的一部分提供。如果您要升级到高级版、请联系您的销售代表。
+NetApp通过多种方式为Data Infrastructure Insights提供支持。提供全天候的广泛免费自助支持选项，例如知识库 (KB) 文章或NetApp社区。对于订阅Data Infrastructure Insights的用户，可以通过电话或网络票务获得技术支持。网络票证和案例管理需要NetApp支持站点 (NSS) SSO 帐户。
 
 
 

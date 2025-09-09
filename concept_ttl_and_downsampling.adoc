@@ -10,24 +10,24 @@ keywords: time-to-live, TTL, downsampling, downsample, retention
 
 
 [role="lead"]
-由于Data Infrastructure Insight会将数据保留一段规定的时间(按版本)、因此可能会处理数千个数据点。因此，数据可能会先进行缩减采样，然后再显示在图表和表中。
+根据您的订阅，Data Infrastructure Insights会保留数据 7 天到 13 个月不等的时间。显示大型数据集时，可能会对数据进行下采样，以确保图表和图形有效加载，同时保持统计准确性。
 
 
 
 == 数据保留
 
-Data Infrastructure Insight会将数据保留一段时间、保留时间由活动订阅版本决定。
+Data Infrastructure Insights会保留数据一段时间，该时间由您的订阅类型决定。
 
 |===
-| 版本 | 数据保留 
+| 订阅类型 | 数据保留 
 
 
-| 基本 | 7天 
+| 审判 | 7天 
 
 
-| 高级版 | 13 个月 
+| 已订阅 | 13 个月 
 |===
-有关每个版本中可用功能的完整列表、请参见Data Infrastructure Insightlink:https://bluexp.netapp.com/cloud-insights-pricing["版本和定价"]页面。
+有关Data Infrastructure Insights功能和定价选项的详细信息，请参阅link:https://bluexp.netapp.com/cloud-insights-pricing["Data Infrastructure Insights定价"]页。
 
 
 
