@@ -12557,8 +12557,6 @@
   <block id="09562317f0e4300c8d530df45c626200" category="paragraph"><block ref="09562317f0e4300c8d530df45c626200" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fdbcd622aeb7794a55d5a3c57f4ed433" category="admonition">大多数VM分析器筛选器(包括您可能添加的筛选器)都是上下文相关的；在其中一个筛选器中选择对象时、其他筛选器下拉列表中提供的选项将根据选定的一个或多个对象进行刷新。</block>
   <block id="86975522d809db49e0c205d536440123" category="paragraph">单击某个对象或组将打开一个分出面板、其中提供了有关该对象及其连接的其他详细信息。滑出式面板会显示摘要，其中包含所选对象的详细信息（例如，吞吐量或利用率，具体取决于对象的类型），以及显示该对象指标（例如延迟或 IOPS）的图表。其他选项卡可用于探索相关的其他资源、更改和警报。如果需要，您还可以选择在图表上显示“排名靠前”或“竞争”对象的指标。</block>
-  <block id="d2471c4bc746eeea68ab17452321a403" category="inline-link-macro">使用 VM Analyzer 简化故障排除（视频）</block>
-  <block id="6e27a8c95ed5ddbd5bf8c70b3cdcde35" category="paragraph"><block ref="6e27a8c95ed5ddbd5bf8c70b3cdcde35" category="inline-link-macro-rx"></block></block>
   <block id="f463cb1a5df7d729d273f46c1e5cb861" category="sidebar">分析数据</block>
   <block id="c917a46858bc7b65af2e1c90ee0a1453" category="sidebar">SAN 分析器</block>
   <block id="2e2565dd8910383ad2b3626e2b5d37b2" category="sidebar">VM 分析器</block>
@@ -12749,4 +12747,10 @@
   <block id="babe60c38b9af7eae2a65400f72c52c7" category="paragraph">ONTAP SVM 数据收集器使工作负载安全能够监控NetApp ONTAP存储虚拟机 (SVM) 上的文件和用户访问活动。本指南将指导您完成 SVM 数据收集器的配置和管理，以便为您的ONTAP环境提供全面的安全监控。</block>
   <block id="097b5088c2a3d7584f939f2bcd00152f" category="admonition">全局变化可能会对您的ONTAP系统产生潜在影响。强烈建议在非高峰时段进行影响大量数据收集器的更改。</block>
   <block id="3c86c080f12d925b5a5ec1ad14563f65" category="paragraph">配置监视器以跟踪基础设施资源的性能阈值、日志事件和异常。为节点写入延迟、存储容量或应用程序性能等指标创建自定义警报，并在满足这些条件时接收通知。</block>
+  <block id="7c2fe93d0a150c1ccb110c7be9ba4de5" category="inline-link-macro">使用NetApp创建强大的仪表板（视频）</block>
+  <block id="87844637813d306b7e217695fa07af30" category="paragraph"><block ref="87844637813d306b7e217695fa07af30" category="inline-link-macro-rx"></block></block>
+  <block id="0fa83ca72fc86aac9bf3cb98f8457548" category="inline-link-macro">注释和注释规则（视频），window=read-later</block>
+  <block id="7353b790cd233bfb4d223636cde644bc" category="paragraph"><block ref="7353b790cd233bfb4d223636cde644bc" category="inline-link-macro-rx"></block></block>
+  <block id="1fdb67257568169e128ab9cf001f8475" category="inline-link-macro">使用 VM Analyzer 简化故障排除（视频），window=read-later</block>
+  <block id="b1cd067329cb001e27800ecd33c25fac" category="paragraph"><block ref="b1cd067329cb001e27800ecd33c25fac" category="inline-link-macro-rx"></block></block>
 </blocks>

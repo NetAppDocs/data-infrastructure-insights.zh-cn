@@ -31,6 +31,12 @@ IMPORTANT: 这些部分中的示例仅供说明之用，并不涵盖所有可能
 
 
 
+== 观看实际操作
+
+link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8["使用NetApp创建强大的仪表板（视频）"]
+
+
+
 == 信息板控件
 
 信息板屏幕包含多个控件：

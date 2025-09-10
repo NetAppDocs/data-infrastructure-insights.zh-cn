@@ -7,6 +7,10 @@ summary: 业务实体标注可用于监控和报告业务层次结构中的资�
 = 业务实体标注
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

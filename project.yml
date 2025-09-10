@@ -27,8 +27,6 @@ sidebar:
       url: "/security_admin_tool.html"
   - title: 入门
     entries:
-    - title: 功能教程
-      url: "/concept_feature_tutorials.html"
     - title: 正在收集数据
       entries:
       - title: 概述

@@ -7,6 +7,10 @@ summary: 使用标注跟踪数据。
 = 定义标注
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -24,6 +28,12 @@ summary: 使用标注跟踪数据。
 * 创建规则以自动将标注应用于同一类型的多个资产。
 * 按标注筛选资产。
 
+
+
+
+== 观看实际操作
+
+link:https://media.netapp.com/video-detail/248621bd-6619-5dc8-9718-5d78d0fd21da["注释和注释规则（视频），window=read-later"]
 
 
 

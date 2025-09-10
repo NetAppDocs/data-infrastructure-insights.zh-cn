@@ -7,6 +7,10 @@ keywords: dashboard, hints, tips, best practice, widgets, metrics,
 = 信息板和小工具的最佳实践
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

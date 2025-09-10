@@ -7,6 +7,10 @@ summary: 如何创建标注。
 = 使用标注
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
