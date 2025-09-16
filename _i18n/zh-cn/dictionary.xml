@@ -11249,7 +11249,6 @@
   <block id="72a442c57900f55848aa4acb856a507d" category="sidebar">标识非活动设备</block>
   <block id="0860569a69c3584507ee09f4be585418" category="cell">insecureK8sSkipVerify</block>
   <block id="3008cd3125cccc003fa13335717e556e" category="cell">如果由于缺少IP SAN而无法验证证书、请尝试启用验证跳过</block>
-  <block id="9e43104f0687bd3a308759c5411641d7" category="paragraph"><block ref="9e43104f0687bd3a308759c5411641d7" category="inline-link-macro-rx"></block></block>
   <block id="2b8272217b69f1c5b5ad5968f0bc0945" category="list-text">注册免费试用Data Infrastructure Insight、了解可用功能。注册免费试用版：</block>
   <block id="6d2404e5699069be70636f65562fe693" category="list-text">转至<block ref="66922be03d9fc23a3ec9641b7884c8f2" category="inline-link-rx"></block></block>
   <block id="e78fd759357c2a61f07ddc6a902f9270" category="list-text">选择页面顶部的*如何购买*。</block>
@@ -11587,7 +11586,6 @@
   <block id="bc23aa0997542e15a65a21a96991960a" category="paragraph">The user can go to the add/edit collector page, enter the cluster level details (in Cluster Mode) or SVM level details (in SVM Mode), and click on the *Test Connection* button. Workload Security will then process the request and display an appropriate success or failure message.</block>
   <block id="e8f41baace36619af4a7292787a17936" category="inline-image-macro">Workload Security 'Test Connection' success message</block>
   <block id="e6ea93198fd78cbc89b93053e0d0b573" category="paragraph"><block ref="e6ea93198fd78cbc89b93053e0d0b573" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c033c9dce9a48cc67d3409bab6aab6ba" category="paragraph"><block ref="c033c9dce9a48cc67d3409bab6aab6ba" category="inline-link-macro-rx"></block></block>
   <block id="88c55c9f00e518db40a6c680728b787f" category="section-title">2025年3月</block>
   <block id="27e5c5c33051ef47e145b432e9e357db" category="section-title">增强的上下文导航功能、可实现高效的基础架构管理</block>
   <block id="ca3a08b4a664d3460c1afb17ce14a0ca" category="paragraph">利用数据基础架构洞察力实现卓越运营、从而节省时间。现在、我们将添加上下文菜单链接、使您可以直接从任何对象跳至资产登录页面、以获得设备性能洞察、SAN Analyzer用于网络拓扑可视化、日志用于运营感知、变更分析器用于配置管理。</block>
@@ -12754,4 +12752,6 @@
   <block id="cd0e26864bdcc93e571cf104049dc723" category="summary">ONTAP全 SAN 阵列数据 (ASA r2 ) 收集器</block>
   <block id="4d632e035deea033a31abbef4a39ee80" category="doc">NetApp ONTAP ASA r2（全SAN阵列）数据收集器</block>
   <block id="d97291003c6a6e6615571bf02531ca30" category="sidebar">ONTAP ASA （全 SAN 阵列）r2</block>
+  <block id="32344df03ee279db932571d5121eebc2" category="paragraph"><block ref="32344df03ee279db932571d5121eebc2" category="inline-link-macro-rx"></block></block>
+  <block id="af88d796899408a2445389775634dda1" category="paragraph"><block ref="af88d796899408a2445389775634dda1" category="inline-link-macro-rx"></block></block>
 </blocks>
