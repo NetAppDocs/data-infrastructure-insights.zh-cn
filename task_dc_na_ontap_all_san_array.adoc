@@ -1,12 +1,16 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_na_ontap_all_san_array.html 
-keywords: data collector, ontap, ontap, CDOT, REST, SAN, ASA 
-summary: ONTAP全SAN阵列数据收集器 
+keywords: data collector, ontap, ontap, CDOT, REST, SAN, ASA, r2 
+summary: 'ONTAP全 SAN 阵列数据 (ASA r2 ) 收集器' 
 ---
-= NetApp ONTAP纯SAN阵列(ASA)数据收集器
+= NetApp ONTAP ASA r2（全SAN阵列）数据收集器
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

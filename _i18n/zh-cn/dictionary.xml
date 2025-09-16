@@ -11126,12 +11126,8 @@
   <block id="e28cace0b0e193aac1db472078caa8fb" category="paragraph">protobuf需要特定权限(其中部分或全部可能已存在)：</block>
   <block id="f0eddc4fb4218ed4ec07da7604fbc1c8" category="inline-image-macro">修改部署选项、宽度=700</block>
   <block id="593e78308f625f4551ee5b44b6d582e5" category="paragraph"><block ref="593e78308f625f4551ee5b44b6d582e5" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ee063f6b962df93a461d2ffc011f30c6" category="inline-link-macro">NetApp ONTAP纯SAN阵列(ASA)收集器</block>
-  <block id="9e21612beb462f7bd1f813292fecce9e" category="cell"><block ref="9e21612beb462f7bd1f813292fecce9e" category="inline-link-macro-rx"></block></block>
   <block id="b9b8d4cf4d94212bab3d8ce132b74a37" category="inline-link-macro">庞大的数据存储库</block>
   <block id="9b445526869ff95a6549cc8c81c4131b" category="cell"><block ref="9b445526869ff95a6549cc8c81c4131b" category="inline-link-macro-rx"></block></block>
-  <block id="53c9e67c854dc8f210a1632d7ec33799" category="summary">ONTAP全SAN阵列数据收集器</block>
-  <block id="a6415bd2448b7919eed8f0af42d67ee9" category="doc">NetApp ONTAP纯SAN阵列(ASA)数据收集器</block>
   <block id="b405c90a99544fe264526a99edd2f41c" category="paragraph">此数据收集器使用REST API调用从运行ONTAP 9.16.0及更高版本的存储系统采集清单、EMS日志和性能数据。</block>
   <block id="87df89e1b5a76047447b71a01aec2982" category="list-text">ONTAP 9.16.0或更高版本。</block>
   <block id="7032ac73bd8241edcec890cdcfabcfa3" category="summary">配置庞大的数据数据存储库存储数据收集器。</block>
@@ -12753,4 +12749,9 @@
   <block id="7353b790cd233bfb4d223636cde644bc" category="paragraph"><block ref="7353b790cd233bfb4d223636cde644bc" category="inline-link-macro-rx"></block></block>
   <block id="1fdb67257568169e128ab9cf001f8475" category="inline-link-macro">使用 VM Analyzer 简化故障排除（视频），window=read-later</block>
   <block id="b1cd067329cb001e27800ecd33c25fac" category="paragraph"><block ref="b1cd067329cb001e27800ecd33c25fac" category="inline-link-macro-rx"></block></block>
+  <block id="e71b7decdb06d88e6cf8e034f1ca4723" category="inline-link-macro">NetApp ONTAP ASA r2（全 SAN 阵列）收集器</block>
+  <block id="0267323ec2e3fd51bbb26379e2be67ad" category="cell"><block ref="0267323ec2e3fd51bbb26379e2be67ad" category="inline-link-macro-rx"></block></block>
+  <block id="cd0e26864bdcc93e571cf104049dc723" category="summary">ONTAP全 SAN 阵列数据 (ASA r2 ) 收集器</block>
+  <block id="4d632e035deea033a31abbef4a39ee80" category="doc">NetApp ONTAP ASA r2（全SAN阵列）数据收集器</block>
+  <block id="d97291003c6a6e6615571bf02531ca30" category="sidebar">ONTAP ASA （全 SAN 阵列）r2</block>
 </blocks>

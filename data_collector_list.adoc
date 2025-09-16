@@ -247,7 +247,7 @@ Data Infrastructure Insight支持的数据收集器的字母顺序列表：
 | link:task_dc_na_ontap_rest.html["NetApp ONTAP REST收集器"] | 基础架构 
 
 
-| link:task_dc_na_ontap_all_san_array.html["NetApp ONTAP纯SAN阵列(ASA)收集器"] | 基础架构 
+| link:task_dc_na_ontap_all_san_array.html["NetApp ONTAP ASA r2（全 SAN 阵列）收集器"] | 基础架构 
 
 
 | link:task_dc_na_cdot.html["NetApp ONTAP Select"] | 基础架构 
