@@ -521,8 +521,6 @@
   <block id="256a0ce1cb9ac99794371e404aa7446e" category="cell">在开发和测试新功能期间， NetApp 工程师通常会使用导出自定义监控器配置。如果您不希望看到此消息，请考虑了解审核操作中指定的用户的操作，或者联系支持部门。</block>
   <block id="03b8f305db2c82bc6a850a57ec12d044" category="summary">用作代理的服务器或 VM 必须满足最低要求</block>
   <block id="a7ef8f0bed1d94220b7abd3877b10643" category="doc">工作负载安全代理要求</block>
-  <block id="b6818f4aea164eb8b94acf9d70d2e034" category="inline-link-macro">安装代理</block>
-  <block id="36bb58d4c9e71b2c4ea1af277d7e3a81" category="paragraph">您必须<block ref="8c7f43ef892529523b024d4c41e5a1ca" category="inline-link-macro-rx"></block>从数据收集器获取信息。在安装 Agent 之前，您应确保环境满足操作系统， CPU ，内存和磁盘空间要求。</block>
   <block id="c441ee50c88f6e5e3a7c69fc69dad8b8" category="cell">命令</block>
   <block id="92094f10227c0d6e4da9a65b1cc23700" category="cell">安装需要"unzip "。此外、安装、运行脚本和卸载都需要使用"sudo su–"命令。</block>
   <block id="805053e0ff5abb1e01f2d2ce7d07ad96" category="cell">4 个 CPU 核</block>
@@ -12534,7 +12532,6 @@
   <block id="f7185660114f7b999956b1355a59005c" category="paragraph">如果收集器安装程序文件未位于 _/{agent-install-path}/cloudsecure/tmp/collectors_ 目录中或无法访问，则会出现此错误。请确保安装程序文件已下载，并且 _collectors_ 和安装程序 zip 文件的完整目录结构归 cssys:cssys 所有，然后重新启动代理服务：_systemctl restart cloudsecure-agent.service_。</block>
   <block id="7d7553997a3a5a75a3b0c10d87de471a" category="inline-link-macro">联系您的 NetApp 销售代表</block>
   <block id="9cff751c63b93d5cf30de3f9b1c5ae37" category="admonition">数据基础架构洞察中提供了报告功能<block ref="e53fcfe2d8e430963458770e616738bd" category="inline-link-macro-rx"></block>。报告功能的可用性取决于最低占用空间要求。<block ref="1609ad57ad0e13d165eb8d59f42fcd45" category="inline-link-macro-rx"></block>了解更多信息。</block>
-  <block id="49efdacfb2c6deb2da842846699cf1e7" category="cell">运行以下任一许可版本的计算机：* AlmaLinux 9.4 和 9.5（64 位），包括 SELinux* CentOS 9 Stream（64 位）* Debian 11（64 位）和 12（64 位），包括 SELinux* OpenSUSE Leap 15.3（64 位）至 15.6（64 位）* Oracle Linux 8.10（64 位）和 9.1（64 位）至 9.6（64 位），包括 SELinux* Red Hat Enterprise Linux 8.10（64 位）和 9.1（64 位）至 9.6（64 位），包括 SELinux* Rocky 9.4（64 位）和 9.5（64 位），包括 SELinux* SUSE Linux Enterprise Server 15 SP4（64 位）至 15 SP6（64 位），包括 SELinux* Ubuntu 20.04 LTS（64 位）、22.04 LTS（64 位）和 24.04 LTS（64 位）此计算机不应运行其他应用程序级软件。建议使用专用服务器。</block>
   <block id="edf63ae7e3cf0cd744884c156cab7abb" category="section-title">要在 Linux 中挂载 CIFS：</block>
   <block id="ee817f2b2a73b759041de15700c640ab" category="list-text">勒索软件模拟脚本仅适用于 Linux 。如果用户将 ONTAP ARP 与 Workload Security 集成，模拟脚本还应生成高置信度警报。</block>
   <block id="aeb28c68bc1dab765c30f59d6d996ff2" category="section-title">观看实际操作</block>
@@ -12639,7 +12636,6 @@
   <block id="9a1645f81973ce35a5b8a3cb57dafb2e" category="paragraph">当警报得到解决时，这些健康分数的降低会逐渐消失，并且分数会在 2 小时内完全恢复。</block>
   <block id="3ad17df8e0c21cd3fba4fa89d748a88e" category="paragraph">该数据收集器使用 REST API 调用从运行ONTAP 9.14.1 及更高版本的存储系统获取库存、EMS 日志和性能数据。对于早期版本的ONTAP系统，请使用基于 ZAPI 的“NetApp ONTAP数据管理软件”收集器类型。</block>
   <block id="93c13f56f33b4026f411d3de7b0577a5" category="paragraph">如果需要，您可以检查 spi 访问权限：</block>
-  <block id="1895704ffbc6e56720172ab7d145f8ae" category="list-text">分组下拉菜单将提供按用户、实体类型等对活动进行分组的选项。</block>
   <block id="661407737232b02ed42fdcaccc52a989" category="summary">您可以导入推荐的仪表板来帮助回答业务洞察问题。您还可以导入之前导出的自定义仪表板。</block>
   <block id="814e9312d5012962801c92801ada715a" category="doc">导入仪表板</block>
   <block id="35642875ab84f7c01f7b4f8c5b7370eb" category="paragraph">Data Infrastructure Insights提供了许多推荐的仪表板，为您的数据提供业务洞察。每个仪表板都包含旨在帮助回答特定问题或解决与当前在租户上收集的数据相关的特定问题的小部件。  DII 还允许您导出有用的仪表板并将其导入到另一个租户。</block>
@@ -12755,4 +12751,10 @@
   <block id="af88d796899408a2445389775634dda1" category="paragraph"><block ref="af88d796899408a2445389775634dda1" category="inline-link-macro-rx"></block></block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">开源</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知文件提供有关NetApp软件中使用的第三方版权和许可的信息。</block>
+  <block id="bee347f35c7a237c1f2d5d7193252244" category="inline-link-macro">安装工作负载安全代理</block>
+  <block id="1de0df19f89310a1407a7686c6dcad7c" category="paragraph">你必须<block ref="588188a9e8b5d243fbdbf4e2ce1c4421" category="inline-link-macro-rx"></block>以便从数据收集者那里获取信息。在安装代理之前，请确保您的环境满足操作系统、CPU、内存和磁盘空间要求。</block>
+  <block id="0d9233050a9086b67df84f668963e42d" category="cell">运行以下任一许可版本的计算机：* AlmaLinux 9.4（64 位）至 9.5（64 位）、10（64 位），包括 SELinux* CentOS Stream 9（64 位）* Debian 11（64 位）、12（64 位），包括 SELinux* OpenSUSE Leap 15.3（64 位）至 15.6（64 位）* Oracle Linux 8.10（64 位）、9.1（64 位）至 9.6（64 位），包括 SELinux* Red Hat Enterprise Linux 8.10（64 位）、9.1（64 位）至 9.6（64 位）、10（64 位），包括 SELinux* Rocky 9.4（64 位）至 9.6（64 位），包括 SELinux* SUSE Linux Enterprise Server 15 SP4（64 位）至 15 SP6（64 位），包括 SELinux * Ubuntu 20.04 LTS（64 位）、22.04 LTS（64 位）、24.04 LTS（64 位） 此计算机不应运行其他应用程序级软件。建议使用专用服务器。</block>
+  <block id="caecf875ec87c246704ef07763a1f352" category="list-text">分组下拉菜单将提供按用户、文件夹、实体类型等对活动进行分组的选项。</block>
+  <block id="4372644de09f6a468879ea88e6579002" category="list-text">ONTAP 9.7 及更高版本的 NFS 支持FlexCache 。</block>
+  <block id="5a97d130bacafd15fd7701e8032dcd68" category="list-text">ONTAP 9.14.1 及更高版本的 SMB 支持FlexCache 。</block>
 </blocks>
