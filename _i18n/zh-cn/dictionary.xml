@@ -11987,7 +11987,6 @@
   <block id="a39507b873640f4e60c12fb375005a04" category="paragraph">导出取证数据可能需要几秒钟到几小时不等、具体取决于要导出的数据量。Workload Security会异步导出这些数据、以便您可以在编译.CSV时继续工作。</block>
   <block id="6c17946dd20446540805b53e2f7cd731" category="section-title">分组到规则中的Data Collector通知</block>
   <block id="c3bd9ae81ad0672e842d282715d758e1" category="paragraph">如果您已在数据收集器上配置通知、则从4月15日开始、这些通知将在通知规则中进行处理、并为收件人相同的收集器配置一条规则。具有不同收件人的收集器将具有单独的规则。现有收集器通知将迁移到通知规则。</block>
-  <block id="1178bc1f7bc2e2481537fe9d595549fd" category="paragraph">包括：https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-source-notice-intro.adoc[]</block>
   <block id="4bffd602151b14e55ad1f19de262d0c1" category="list-text">确保此SVM已配置CIFS服务器：tistershell：&gt;<block ref="fafd8ff6ac4a59e73c5d4e3b47d545ee" prefix=" " category="inline-code"></block></block>
   <block id="52ea452f7c0975b526b909c63394b7e8" category="list-text">为 SVM vsadmin 用户设置密码。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：&gt;<block ref="73b77b9c99e693ec16bc3e4960672465" prefix=" " category="inline-code"></block></block>
   <block id="9b7edcaaf6b4a85dc972c92c9191eb04" category="list-text">解锁 SVM vsadmin 用户以进行外部访问。如果使用自定义用户或集群管理员用户、请跳过此步骤。cluster shell：&gt;<block ref="db25ee40fb860a97415dab9c598caaf9" prefix=" " category="inline-code"></block></block>
@@ -12754,4 +12753,6 @@
   <block id="d97291003c6a6e6615571bf02531ca30" category="sidebar">ONTAP ASA （全 SAN 阵列）r2</block>
   <block id="32344df03ee279db932571d5121eebc2" category="paragraph"><block ref="32344df03ee279db932571d5121eebc2" category="inline-link-macro-rx"></block></block>
   <block id="af88d796899408a2445389775634dda1" category="paragraph"><block ref="af88d796899408a2445389775634dda1" category="inline-link-macro-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">开源</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知文件提供有关NetApp软件中使用的第三方版权和许可的信息。</block>
 </blocks>
