@@ -145,7 +145,7 @@ Data Infrastructure Insight可观察性根据租户上的存储层来测量使�
 
 每个层按不同的速率计量，并将整数一起计算，以提供加权授权。计算加权使用量的公式如下：
 
- Weighted usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
+ Weighted Capacity = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioned TiB)
 为便于实现此目的、DII会根据_subscribed _数量计算单个*加权授权*编号；然后、它会根据_DIsc发现_存储计算同一个编号、并且只有发现的容量大于加权授权时才会声明违反。这样、您就可以灵活地监控与每个层的订阅量不同的数量、只要发现的总存储在订阅加权授权范围内、DII就允许这样做。
 
 
