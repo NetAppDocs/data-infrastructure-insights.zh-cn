@@ -12,9 +12,15 @@ keywords: data collector, queries, create, storagegrid
 [role="lead"]
 NetApp StorageGRID 数据收集器支持从 StorageGRID 配置收集清单和性能。
 
+[NOTE]
+====
+为了在所有StorageGRID系统中对 DII 权利进行一致的计量，无论底层硬件拓扑和配置如何， Data Infrastructure Insights都会使用总可用容量（storagegrid_storage_utilization_total_space_bytes），而不是基于物理磁盘布局的 RAW 容量。
 
-NOTE: StorageGRID 按不同的原始 TB 到受管单元速率进行计量。每40 TB未格式化的StorageGRID容量将按1收费link:concept_subscribing_to_cloud_insights.html#pricing["受管单元（ MU ）"]。
+对于使用基于容量的许可模式的客户， StorageGRID被计量为“对象”存储。
 
+对于使用传统 (MU) 许可模式的客户， StorageGRID按 40TiB 比 1 MU 的比率计量为二级存储。
+
+====
 
 
 == 术语

@@ -9119,7 +9119,6 @@
   <block id="c98d332ba8a502696256ec21ebc2eab0" category="summary">配置 NetApp StorageGRID 数据收集器</block>
   <block id="40d661645d6b35dfe2c38e25507244ac" category="doc">NetApp StorageGRID 数据收集器</block>
   <block id="f9df060c8d375048604f19820f72d8cf" category="paragraph">NetApp StorageGRID 数据收集器支持从 StorageGRID 配置收集清单和性能。</block>
-  <block id="60299c50762b8f548c3ba08173af15db" category="admonition">StorageGRID 按不同的原始 TB 到受管单元速率进行计量。每40 TB未格式化的StorageGRID容量将按1收费<block ref="1802ea889a272a3510701d2ff63bbea6" category="inline-link-macro-rx"></block>。</block>
   <block id="1a11df726501498f41b0a07dead00843" category="paragraph">数据基础架构洞察从NetApp StorageGRID收集器采集以下清单信息。对于所采集的每种资产类型，均显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：</block>
   <block id="392d70ca39f31f10bd637936769788df" category="cell">StorageGRID</block>
   <block id="71939180bcd43cc6a5d2266fda82622f" category="paragraph">以下是配置此数据源的要求：</block>
@@ -12757,4 +12756,7 @@
   <block id="caecf875ec87c246704ef07763a1f352" category="list-text">分组下拉菜单将提供按用户、文件夹、实体类型等对活动进行分组的选项。</block>
   <block id="4372644de09f6a468879ea88e6579002" category="list-text">ONTAP 9.7 及更高版本的 NFS 支持FlexCache 。</block>
   <block id="5a97d130bacafd15fd7701e8032dcd68" category="list-text">ONTAP 9.14.1 及更高版本的 SMB 支持FlexCache 。</block>
+  <block id="181a51adda79e935faca2d7b775d08b6" category="paragraph">为了在所有StorageGRID系统中对 DII 权利进行一致的计量，无论底层硬件拓扑和配置如何， Data Infrastructure Insights都会使用总可用容量（storagegrid_storage_utilization_total_space_bytes），而不是基于物理磁盘布局的 RAW 容量。</block>
+  <block id="57c5326214c52d2a92dd11ca997a6719" category="paragraph">对于使用基于容量的许可模式的客户， StorageGRID被计量为“对象”存储。</block>
+  <block id="c865955193b52e756a8fdaf662399f0d" category="paragraph">对于使用传统 (MU) 许可模式的客户， StorageGRID按 40TiB 比 1 MU 的比率计量为二级存储。</block>
 </blocks>
