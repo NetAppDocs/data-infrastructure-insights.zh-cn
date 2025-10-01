@@ -9313,7 +9313,6 @@
   <block id="3937c19963e89baafdbfa5c84162007d" category="cell">可用于定义环境中的不同服务级别。层可以定义级别的类型，例如所需的速度（例如金牌或银牌）。此功能仅适用于内部卷， qtree ，存储阵列，存储池和卷。</block>
   <block id="ada9af7e09b3cd313d5b59cd63288dc4" category="cell">违规严重性</block>
   <block id="34c0c2c5a3a24bf63af1919806d5cc0d" category="cell">在重要性从高到低的层次结构中对违规（例如，缺少主机端口或缺少冗余）进行排名（例如，重大）。</block>
-  <block id="b87860ab0dc061b503ef8df718421f44" category="admonition">别名，数据中心，热，服务级别， Sunset ， 交换机级别，层和违规严重性是系统级别的标注，您不能删除或重命名这些标注；您只能更改其分配的值。</block>
   <block id="5f1e3307a64cd09f6f6b66948ee50fa2" category="section-title">创建自定义标注</block>
   <block id="adc16f9bee699a3b015a38321d0c9cee" category="paragraph">通过标注，您可以将符合业务需求的自定义业务特定数据添加到资产中。虽然Data Infrastructure Insight提供了一组默认标注、但您可能会发现希望以其他方式查看数据。自定义标注中的数据可补充已收集的设备数据，例如存储制造商，卷数量和性能统计信息。Data Infrastructure Insight不会发现您使用标注添加的数据。</block>
   <block id="84ec1a20b4e3f52996fa59ae944a6700" category="list-text">在Data Infrastructure Insight菜单中、单击*管理&gt;标注*。</block>
@@ -11990,9 +11989,6 @@
   <block id="c71b503670f2867f513635832d1599c3" category="paragraph"><block ref="c71b503670f2867f513635832d1599c3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d2b98171b3e920dab4bb3e92ccf4e89a" category="paragraph"><block ref="d2b98171b3e920dab4bb3e92ccf4e89a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="feacd3cef81abfcdbf59bda9ba5b97fd" category="paragraph"><block ref="feacd3cef81abfcdbf59bda9ba5b97fd" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="24b75506ade423135a0ebfd6a8ab8fa4" category="paragraph">布尔值：创建一个下拉列表、其中包含yes和no选项。例如、"direct assed"标注为布尔值。日期：这将创建一个保存日期的字段。例如，如果标注将是日期，请选择此项。list：创建以下任一项：*固定的下拉列表</block>
-  <block id="3eb86d134a8e7d548d1298e1aa9a12d5" category="paragraph">+当其他人在设备上分配此标注类型时、无法向列表中添加更多值。*一个灵活的下拉列表</block>
-  <block id="d8f872f26b52cf9aec4a137dbe0a8c26" category="paragraph">+如果在创建此列表时选择Add new values" on the fly"选项、则当其他人在设备上分配此标注类型时、他们可以向列表中添加更多值。</block>
   <block id="d41b70ca456515e9579f88a5bc4b81f5" category="paragraph">Number：创建一个字段、分配标注的用户可以在该字段中输入数字。例如，如果标注类型为 " 楼层 " ，则用户可以选择 " 数字 " 值类型并输入楼层编号。</block>
   <block id="9dc3b5c01c2c832a96e1c6c19e498029" category="paragraph">Text：创建允许自由格式文本的字段。例如，您可以输入 " 语言 " 作为标注类型，选择 " 文本 " 作为值类型，然后输入语言作为值。</block>
   <block id="bf446d389b04278c2780f587bb4b6e54" category="paragraph">如果出现错误、您可以单击已安装数据收集器页面的_Status_列中的_more详细信息_以了解有关此错误的详细信息。</block>
@@ -12737,8 +12733,6 @@
   <block id="3c86c080f12d925b5a5ec1ad14563f65" category="paragraph">配置监视器以跟踪基础设施资源的性能阈值、日志事件和异常。为节点写入延迟、存储容量或应用程序性能等指标创建自定义警报，并在满足这些条件时接收通知。</block>
   <block id="7c2fe93d0a150c1ccb110c7be9ba4de5" category="inline-link-macro">使用NetApp创建强大的仪表板（视频）</block>
   <block id="87844637813d306b7e217695fa07af30" category="paragraph"><block ref="87844637813d306b7e217695fa07af30" category="inline-link-macro-rx"></block></block>
-  <block id="0fa83ca72fc86aac9bf3cb98f8457548" category="inline-link-macro">注释和注释规则（视频），window=read-later</block>
-  <block id="7353b790cd233bfb4d223636cde644bc" category="paragraph"><block ref="7353b790cd233bfb4d223636cde644bc" category="inline-link-macro-rx"></block></block>
   <block id="1fdb67257568169e128ab9cf001f8475" category="inline-link-macro">使用 VM Analyzer 简化故障排除（视频），window=read-later</block>
   <block id="b1cd067329cb001e27800ecd33c25fac" category="paragraph"><block ref="b1cd067329cb001e27800ecd33c25fac" category="inline-link-macro-rx"></block></block>
   <block id="e71b7decdb06d88e6cf8e034f1ca4723" category="inline-link-macro">NetApp ONTAP ASA r2（全 SAN 阵列）收集器</block>
@@ -12759,4 +12753,21 @@
   <block id="181a51adda79e935faca2d7b775d08b6" category="paragraph">为了在所有StorageGRID系统中对 DII 权利进行一致的计量，无论底层硬件拓扑和配置如何， Data Infrastructure Insights都会使用总可用容量（storagegrid_storage_utilization_total_space_bytes），而不是基于物理磁盘布局的 RAW 容量。</block>
   <block id="57c5326214c52d2a92dd11ca997a6719" category="paragraph">对于使用基于容量的许可模式的客户， StorageGRID被计量为“对象”存储。</block>
   <block id="c865955193b52e756a8fdaf662399f0d" category="paragraph">对于使用传统 (MU) 许可模式的客户， StorageGRID按 40TiB 比 1 MU 的比率计量为二级存储。</block>
+  <block id="24c8b6cd775a9f5db48def0a8d60b2de" category="section-title">过滤布尔值</block>
+  <block id="e21bd2c5e8c9a18f8a46d4982abc7d19" category="paragraph">当过滤布尔值时，您可能会看到以下过滤选项：</block>
+  <block id="2c60a6bf607f2604b1c9ea225c01fe5f" category="list-text">*任何*：这将返回所有结果，包括设置为“是”、“否”或根本没有设置的结果。</block>
+  <block id="b450055879101bef9c44908d590708e3" category="list-text">*是*：仅返回“是”的结果。请注意，DII 在大多数表格中均显示“是”作为复选标记。值可以设置为“True”、“On”等；DII 将所有这些都视为“是”。</block>
+  <block id="2d8a6f63945d37accd14439bc5c628c0" category="list-text">*否*：仅返回“否”结果。请注意，DII 在大多数表格中将“否”显示为“X”。值可以设置为“False”、“Off”等；DII 将所有这些都视为“No”。</block>
+  <block id="76ea59ab07652499ae39b947c6c24151" category="list-text">*无*：仅返回根本没有设置值的结果。也称为“空”值。</block>
+  <block id="5f5a92bd58c38457567a8f638d79bbae" category="admonition">别名、数据中心、热门、服务级别、日落、交换机级别、层级和违规严重性是系统级注释，您不能删除或重命名；您只能更改其分配的值。</block>
+  <block id="ad1e3d1ed847d48da9abca38044ca432" category="list-text">布尔值：创建一个下拉列表，其中包含“是”和“否”选项。例如，“直接连接”注释就是布尔值。</block>
+  <block id="3b7bd4f31319fccc3c2226989f30f2ae" category="list-text">日期：这将创建一个包含日期的字段。例如，如果注释是日期，请选择此项。</block>
+  <block id="543916d2ebe7d28ba5b4e5adc23f1e1c" category="list-text">列表：创建以下任一项：</block>
+  <block id="909b59bf6aecf275b91dbb2cf2ec5521" category="list-text">下拉固定列表</block>
+  <block id="ef957d205d8a4826f9552e63f41f17fe" category="paragraph">当其他人在设备上分配此注释类型时，他们无法向列表中添加更多值。</block>
+  <block id="1658a49ef0d858de0e9ee69c3a5e10b4" category="list-text">下拉灵活列表</block>
+  <block id="6c97cf7a205eed7477c9cb071a14d09e" category="paragraph">如果您在创建此列表时选择动态添加新值选项，则当其他人在设备上分配此注释类型时，他们可以向列表中添加更多值。</block>
+  <block id="c17dfb3f3f4ae3af21c5846ff8667831" category="paragraph-title">关于布尔注释的说明</block>
+  <block id="86268b3f5a0b59ea7ad7bf21fde99e9d" category="paragraph">当对布尔注释进行过滤时，您可能会看到以下要过滤的值：</block>
+  <block id="5d7833cba1c63365c4f78e55d7a8df24" category="list-text">*无*：仅返回根本没有设置注释的结果。也称为“空”值。</block>
 </blocks>
