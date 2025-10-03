@@ -2,23 +2,27 @@
 sidebar: sidebar 
 permalink: concept_requesting_support.html 
 summary: 您可以查看知识库文章，与 NetApp 社区联系，查看视频或打开请求支持的服务单。 
-keywords: support, knowledgebase, documentation, community, chat, videos, help, contact, intercom 
+keywords: support, knowledgebase, documentation, community, videos, help, contact 
 ---
 = 请求支持
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 您可以通过选择“帮助”>“支持”来访问Data Infrastructure Insights中可用的支持选项。
 
-image:SupportPageWithLearningCenter.png["支持页面"]
+image:SupportPageExample.png["支持页面，宽度=600"]
 
 
 
 == 正在激活支持授权
 
-在试用模式下运行时、Data Infrastructure Insight提供自助服务和电子邮件支持。订阅服务后，强烈建议您激活支持授权。激活支持授权后，您可以通过在线聊天， Web 服务单系统和电话访问技术支持。注册完成前，默认支持模式为自助服务。请参见<<obtaining-support-information,详细信息>>下文。
+Data Infrastructure Insights在试用模式下提供自助服务和电子邮件支持。一旦您订阅了该服务，强烈建议您激活支持权利。激活支持权利后，您可以通过网络票务系统和电话获得技术支持。在注册完成之前，默认支持模式是自助服务。看<<obtaining-support-information,详细信息>>以下。
 
 在初始订阅过程中、您的Data Infrastructure Insight实例将生成一个以"950"开头的20位NetApp序列号。此NetApp序列号表示与您的帐户关联的Data Infrastructure Insight订阅。您必须注册 NetApp 序列号才能激活支持授权。我们提供了两种支持注册选项：
 
@@ -60,7 +64,7 @@ image:NewCustomerRegExample.png["新的客户表单"]
 image:SupportPage_SN_Section-NA.png["SN_screen"]
 
 . 如果未发生错误，系统会将用户定向到 " 已成功提交注册 " 页面。与用于注册的 NSS SSO 用户名关联的电子邮件地址将在几小时内收到一封电子邮件，指出 " 您的产品现在有资格获得支持 " 。
-. 作为 NetApp 的新客户，您还需要创建一个 NetApp 支持站点 (NSS) 用户帐户，以便将来进行注册，并访问支持门户以获取技术支持聊天和 Web 服务单。此链接位于 https://mysupport.netapp.com/eservice/public/now.do[]。您可以提供新注册的Data Infrastructure Insight序列号来加快此过程。
+. 作为新的NetApp客户，您还需要创建一个NetApp支持站点 (NSS) 用户帐户，以便将来注册并访问支持门户以获取技术支持和网络票务。此链接位于 https://mysupport.netapp.com/eservice/public/now.do[]。您可以提供新注册的Data Infrastructure Insights序列号以加快该过程。
 . 这是一次性注册Data Infrastructure Insight NetApp序列号。
 
 
@@ -107,7 +111,6 @@ NOTE: 您必须注册才能<<activating-support-entitlement,激活支持>>获得
 
 * link:https://www.netapp.com/us/contact-us/support.aspx["* 电话 *"]
 * link:https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase["* 支持服务单 *"]
-* *Chat*-您将与NetApp支持人员联系以获得帮助(仅限工作日)。任何Data Infrastructure Insight屏幕右上角的*帮助>实时聊天*菜单选项均提供聊天功能。
 
 
 您也可以单击链接申请销售支持link:https://bluexp.netapp.com/contact-cds["* 联系销售人员 *"]。
