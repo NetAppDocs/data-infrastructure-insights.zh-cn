@@ -14,9 +14,7 @@ keywords: topology, analyze, analysis, map
 
 
 [role="lead"]
-SAN在处理重要工作负载方面发挥着至关重要的作用、但其复杂性可能会导致严重中断和客户中断。借助DII的*SAN Analyzer *，SAN管理变得更简单、更高效。这款功能强大的工具提供端到端可见性、可将虚拟机/主机到网络的依赖关系映射到LUN和存储。
-
-通过提供交互式拓扑图、SAN分析器可帮助您确定问题、了解变化并增强对数据流的理解。借助SAN Analyzer简化复杂IT环境中的SAN管理、并提高对块工作负载的可见性。
+SAN 在处理重要工作负载方面发挥着至关重要的作用，但其复杂性可能会导致严重的中断和客户中断。借助 DII 的 *SAN Analyzer*，管理 SAN 变得更简单、更高效。这个强大的工具提供了端到端的可视性，将依赖关系从 VM/主机映射到网络、LUN 和存储。通过提供交互式拓扑图，SAN Analyzer 使您能够查明问题、了解变化并增强对数据流的理解。使用 SAN Analyzer 简化复杂 IT 环境中的 SAN 管理并提高对块工作负载的可见性。
 
 image:san_analyzer_example_with_panel.png["存储系统的SAN分析器拓扑图"]
 
@@ -44,3 +42,17 @@ image:san_analyzer_protocols.png["SAN 分析器协议"]
 如果您的环境包含iSCSI设备、则将鼠标悬停在_iSCSI_对象上方可突出显示与这些相关iSCSI设备相关的连接。
 
 image:san_analyzer_iscsi_traffic.png["iSCSI流量已突出显示"]
+
+
+
+== 故障排除技巧
+
+如果遇到问题，请尝试以下方法：
+
+[cols="2*"]
+|===
+| * 问题： * | * 请尝试此操作： * 
+
+
+| 我在图例中看到诸如_trafficUtilization_或_trafficRate_等指标的<0、=0或>0。 | 这种情况可能在极少数情况下发生，即度量值低于小数点后两位，例如 0.000123。扩大时间窗口可能有助于更有效地分析指标。 
+|===

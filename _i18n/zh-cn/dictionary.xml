@@ -11198,8 +11198,6 @@
   <block id="e78fd759357c2a61f07ddc6a902f9270" category="list-text">选择页面顶部的*如何购买*。</block>
   <block id="e461fd437885ee63b7f00e77ade6b3cb" category="list-text">安排会议或等待代表就试用事宜与您联系。</block>
   <block id="44d2017272b4664ce749afa3c1fc2785" category="summary">SAN Analyzer可为租户上的资产提供拓扑</block>
-  <block id="a720fce5b3da4c111f19c80487c269cf" category="paragraph">SAN在处理重要工作负载方面发挥着至关重要的作用、但其复杂性可能会导致严重中断和客户中断。借助DII的*SAN Analyzer *，SAN管理变得更简单、更高效。这款功能强大的工具提供端到端可见性、可将虚拟机/主机到网络的依赖关系映射到LUN和存储。</block>
-  <block id="b03a68ce04fd31de1bf167d4c6537d2f" category="paragraph">通过提供交互式拓扑图、SAN分析器可帮助您确定问题、了解变化并增强对数据流的理解。借助SAN Analyzer简化复杂IT环境中的SAN管理、并提高对块工作负载的可见性。</block>
   <block id="9c6601cca8cd67405c34e4897bb272f1" category="section-title">探索资产之间的联系</block>
   <block id="14fe64769d4df689f51e13f60c5ec439" category="admonition">如果某个收集器的用户受限、则无法暂停此收集器。暂停收集器之前、请恢复用户访问权限。</block>
   <block id="81c776ec15386302abf1c34d317e3393" category="paragraph">选择*Observability &gt; Analyze &gt; SAN Analyzer*以查看SAN Analyzer。设置应用程序、主机、网络结构和/或存储的筛选器。此时将显示对象的地图、其中显示了连接的对象。将鼠标悬停在某个对象上可查看这些连接的流量指标。</block>
@@ -12768,4 +12766,9 @@
   <block id="5a9b478b441f7c2030a759e864c6a230" category="cell">请联系您的帐户管理员以验证对Data Infrastructure Insights的访问权限。验证您的控制台配置文件电子邮件地址是否与Data Infrastructure Insights欢迎电子邮件中显示的电子邮件地址相匹配</block>
   <block id="247e36ea24d5c72138f2f225cbb3ff5a" category="paragraph">更多故障排除技巧可在<block ref="f2ab65542a88d990d661538806479fe3" category="inline-link-macro-rx"></block>（需要支持登录）。</block>
   <block id="62d43538bf5a9e08593a0549e6121905" category="cell">当 AU 安装在 SELINUX 上时，SE 应设置为 _permissive_ 模式。不支持_Enforcing_模式。将SELINUX设置为宽容模式后，重新启动AU服务。</block>
+  <block id="7f87992c9dca3c36f4f05468d9b74826" category="paragraph">SAN 在处理重要工作负载方面发挥着至关重要的作用，但其复杂性可能会导致严重的中断和客户中断。借助 DII 的 *SAN Analyzer*，管理 SAN 变得更简单、更高效。这个强大的工具提供了端到端的可视性，将依赖关系从 VM/主机映射到网络、LUN 和存储。通过提供交互式拓扑图，SAN Analyzer 使您能够查明问题、了解变化并增强对数据流的理解。使用 SAN Analyzer 简化复杂 IT 环境中的 SAN 管理并提高对块工作负载的可见性。</block>
+  <block id="98ec681d588dc0fae27ac945915ffe5e" category="section-title">故障排除技巧</block>
+  <block id="2f0b05ac17e2cbf6a46b1c047243119b" category="paragraph">如果遇到问题，请尝试以下方法：</block>
+  <block id="5ae21ce2895991936f988458e0d59550" category="cell">我在图例中看到诸如_trafficUtilization_或_trafficRate_等指标的&lt;0、=0或&gt;0。</block>
+  <block id="08e0ca793e3dec21e2eea30949c98088" category="cell">这种情况可能在极少数情况下发生，即度量值低于小数点后两位，例如 0.000123。扩大时间窗口可能有助于更有效地分析指标。</block>
 </blocks>
