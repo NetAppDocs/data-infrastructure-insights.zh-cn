@@ -74,6 +74,6 @@ image:ProxyEndpoints_NewTable.png["代理端点表"]
 
 == 资源
 
-有关其他故障排除提示、请参见link:https://kb.netapp.com/Cloud/BlueXP/DII["NetApp 知识库"](需要支持登录)。
+更多故障排除技巧可在link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs["NetApp 知识库"]（需要支持登录）。
 
 有关其他支持信息、请参见Data Infrastructure Insightlink:concept_requesting_support.html["支持"]页面。

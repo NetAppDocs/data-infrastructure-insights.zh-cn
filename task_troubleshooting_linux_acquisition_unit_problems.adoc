@@ -21,7 +21,7 @@ keywords: AU, acquisition unit, trioubleshooting
 | 采集单元*选项卡中的*Observability > Collectors*页面上的AU状态显示“证书已过期”或“证书已撤销”。 | 单击 AU 右侧的菜单，然后选择 * 还原连接 * 。按照说明还原采集单元： 1.停止采集单元（ Acquisition Unit ， AU ）服务。您可以单击 _Copy Stop Command_ 按钮将命令快速复制到剪贴板，然后将此命令粘贴到采集单元计算机上的命令提示符中。2.在AU上的/var/lib/uidsights NetApp /acq/conf_文件夹中创建一个名为"令牌"的文件。3.单击_Copy令牌_按钮、然后将此令牌粘贴到您创建的文件中。4.重新启动 AU 服务。单击 _Copy Restart Command_ 按钮，然后将命令粘贴到 AU 上的命令提示符中。 
 
 
-| 启动采集单元服务器服务时权限被拒绝 | 当AU安装在SELinux上时、应将SE设置为_permisent_模式。不支持_Enforcerent_模式。将SELinux设置为许可模式后、重新启动AU服务。link:https://kb.netapp.com/Cloud/BlueXP/DII/Permission_denied_when_starting_the_Cloud_Insight_Acquisition_Unit_Server_Service["了解更多信息。"](英文) 
+| 启动采集单元服务器服务时权限被拒绝 | 当 AU 安装在 SELINUX 上时，SE 应设置为 _permissive_ 模式。不支持_Enforcing_模式。将SELINUX设置为宽容模式后，重新启动AU服务。 
 
 
 | 未满足服务器要求 | 确保采集单元服务器或VM满足要求link:concept_acquisition_unit_requirements.html["要求"] 
@@ -90,6 +90,6 @@ image:ProxyEndpoints_NewTable.png["代理端点表"]
 
 == 资源
 
-有关其他故障排除提示、请参见link:https://kb.netapp.com/Cloud/BlueXP/DII["NetApp 知识库"](需要支持登录)。
+更多故障排除技巧可在link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs["NetApp 知识库"]（需要支持登录）。
 
 有关其他支持信息、请参见Data Infrastructure Insightlink:concept_requesting_support.html["支持"]页面。

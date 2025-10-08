@@ -89,9 +89,6 @@ image:Audit_Filters.png["审核筛选器"]
 Data Infrastructure Insight审核的事件和操作可分为以下几大类：
 
 * * 用户帐户 * ：登录，注销，角色更改等
-+
-示例：_User *Tony Lavoie*从*10.1.20.15*登录，用户代理*Mozilla／5.0 (Windows NT 10.0；Win64；x64) AppleWebKit/537.36 (KHTML，如Gecko) Chrome／85.0.4183.121 Safari／537.36*，登录方法*BlueXP Portal Login_*
-
 * * 采集单元 * ：创建，删除等
 +
 示例： _Acquisition unit * 澳大利亚 - 波士顿 1* removed_.

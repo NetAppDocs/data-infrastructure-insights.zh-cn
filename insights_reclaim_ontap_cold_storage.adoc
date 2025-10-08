@@ -7,6 +7,10 @@ summary: 通过洞察力、您可以了解资源如何影响租户上的其他�
 = 洞察：回收ONTAP 冷存储
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

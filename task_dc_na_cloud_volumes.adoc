@@ -7,6 +7,10 @@ keywords: data collector, NetApp, Cloud, AWS
 = 适用于 AWS 数据收集器的 NetApp Cloud Volumes Services
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -51,6 +55,6 @@ keywords: data collector, NetApp, Cloud, AWS
 | 问题： | 请尝试以下操作： 
 
 
-| 我收到类似于此错误的错误："无法执行请求：连接到<AWS区域端点>：8080 [<AWS区域端点>/AWS区域端点IP>]失败：连接超时：获取\https://<AWS区域端点FQDN>：8080/v1/Storage/IPRanges HTTP/1.1 " | link:task_configure_acquisition_unit.html#proxy-configuration-2["代理"]Data Infrastructure Insight用于与采集单元进行通信的不会在Data Infrastructure Insight与Data Collector本身之间进行通信。您可以尝试以下几项操作：确保采集单元能够解析FQDN并访问所需的端口。在错误消息中确认不需要代理即可访问指定端点。可以使用curl测试采集单元与端点之间的通信。确保您*不*使用代理进行此测试。示例：root@acemisionunit# Curl -s -H accept：application/json -H "Conteme-type：application/json"-H api-key：<api key used in the data Collector credifrs -H secret-key：<secret-key used in the data Collector crediftes>-X get \https://<AWS Regional Endpoint：8080/v1/storage/IPRanges请参见此link:https://kb.netapp.com/Cloud/BlueXP/DII/Data_Infrastructure_Insights_fails_discovery_for_Cloud_Volumes_Service_for_AWS["NetApp知识库文章"]。 
+| 我收到类似于此错误的错误："无法执行请求：连接到<AWS区域端点>：8080 [<AWS区域端点>/AWS区域端点IP>]失败：连接超时：获取\https://<AWS区域端点FQDN>：8080/v1/Storage/IPRanges HTTP/1.1 " | 这link:task_configure_acquisition_unit.html#proxy-configuration-2["代理"]Data Infrastructure Insights用于与采集单元进行通信，Data Infrastructure Insights和数据收集器本身之间不会进行通信。您可以尝试以下几种方法：确保采集单元能够解析 fqdn 并到达所需的端口。确认不需要代理即可到达错误消息中指定的端点。 Curl 可用于测试采集单元和端点之间的通信。确保您没有使用代理进行此测试。示例：root@acquisitionunit# curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<数据收集器凭证中使用的 api 密钥 -H secret-key:<数据收集器凭证中使用的密钥> -X GET \https://<AWS 区域终端节点>:8080/v1/Storage/IPRanges 
 |===
 有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。

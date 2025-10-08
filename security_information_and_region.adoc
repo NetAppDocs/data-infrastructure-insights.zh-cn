@@ -40,7 +40,7 @@ Data Infrastructure Insight可存储以下信息：
 
 * 用户访问数据
 +
-允许NetApp BlueXP  与区域数据基础架构洞察站点通信的身份验证和访问信息、包括与用户授权相关的数据。
+允许NetApp控制台与区域Data Infrastructure Insights站点通信的身份验证和访问信息，包括与用户授权相关的数据。
 
 * 存储工作负载安全性用户目录数据
 +
@@ -76,7 +76,7 @@ Data Infrastructure Insight根据创建环境的区域存储信息。
 无论您的Data Infrastructure Insight环境位于哪个地区、以下信息都驻留在美国：
 
 * 环境站点（有时称为 " 租户 " ）信息，例如站点 / 帐户所有者。
-* 允许NetApp BlueXP  与区域数据基础架构洞察站点进行通信的信息、包括与用户授权相关的任何信息。
+* 允许NetApp控制台与区域Data Infrastructure Insights站点通信的信息，包括与用户授权有关的任何信息。
 * 与Data Infrastructure Insight用户和租户之间的关系相关的信息。
 
 

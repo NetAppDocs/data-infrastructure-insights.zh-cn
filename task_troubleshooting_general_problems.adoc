@@ -25,19 +25,19 @@ keywords: troubleshooting, problems, browser, login, log in, accessing, access t
 | Data Infrastructure Insight每6小时自动注销一次 | 这是由于禁用了浏览器第三方Cookie。用户可以将其浏览器配置为启用所有第三方Cookie、也可以使用较窄的例外列表仅启用Data Infrastructure Insight的例外列表。示例：打开浏览器设置选择"允许所有cookie"选项。*或*选择"阻止第三方cookie"并为_[\*.]auth0.com和_[*.]Cookie.com_添加例外NetApp。Microsoft Edge会对例外情况采用与Chrome相同的格式。在Firefox中、Cookie例外仅指定为_auth0.com和_netapp.com。 
 
 
-| 我有BlueXP帐户、但无法登录到BlueXP。 | 从打开服务单 https://mysupport.netapp.com/site/help[]。选择类别“blueXP.netapp.com >帐户/登录问题”或“bluexp.netapp.com >联合问题”。这些内容专门针对BlueXP问题。有关所有其他Data Infrastructure Insight技术支持问题，请联系link:concept_requesting_support.html["NetApp 支持"]。 
+| 我有一个控制台帐户，但无法登录。 | 从以下位置打开票证 https://mysupport.netapp.com/site/help[]。选择类别 console.netapp.com > 帐户/登录问题”或 console.netapp.com > 联合问题”。这些专门针对控制台问题或疑问。对于所有其他Data Infrastructure Insights技术支持问题，请联系link:concept_requesting_support.html["NetApp 支持"]。 
 
 
-| 我受邀参加Data Infrastructure Insight、但收到一条"未授权"消息。 | 确认您已注册BlueXP帐户、或者您的组织对BlueXP使用SSO登录。验证您的BlueXP  个人资料电子邮件地址是否与您的数据基础架构洞察欢迎电子邮件中显示的电子邮件地址匹配。如果此电子邮件不匹配，请使用正确的电子邮件地址请求新的邀请。 
+| 我受邀参加Data Infrastructure Insight、但收到一条"未授权"消息。 | 验证您是否已注册 Console 帐户，或者您的组织是否使用 Console 的 SSO 登录。验证您的控制台配置文件电子邮件地址是否与Data Infrastructure Insights欢迎电子邮件中显示的电子邮件地址相符。如果电子邮件不匹配，请使用正确的电子邮件地址请求新的邀请。 
 
 
-| 我从BlueXP  中注销、并自动从Data Infrastructure Insight中注销。 | 跨NetApp云服务的单点登录(Single Sign-On、SSO)会注销所有数据基础架构洞察会话。如果您有权访问多个Data Infrastructure Insight帐户、则从任一帐户注销都会注销所有活动会话。重新登录以访问您的帐户。 
+| 我从控制台注销，并自动从Data Infrastructure Insights中注销。 | 跨NetApp云服务的单点登录(Single Sign-On、SSO)会注销所有数据基础架构洞察会话。如果您有权访问多个Data Infrastructure Insight帐户、则从任一帐户注销都会注销所有活动会话。重新登录以访问您的帐户。 
 
 
-| 几天后，我被自动注销。 | NetApp云帐户需要每隔几天重新进行一次身份验证(当前BlueXP设置为7天)。重新登录以访问您的帐户。 
+| 几天后，我被自动注销。 | NetApp Cloud 帐户需要每隔几天重新进行一次身份验证（当前控制台设置为 7 天）。重新登录以访问您的帐户。 
 
 
-| 我收到错误消息 " 不再授权登录 " 。 | 请联系您的客户管理员以验证对Data Infrastructure Insight的访问权限。验证您的BlueXP  个人资料电子邮件地址是否与您的数据基础架构洞察欢迎电子邮件中显示的电子邮件地址匹配 
+| 我收到错误消息 " 不再授权登录 " 。 | 请联系您的帐户管理员以验证对Data Infrastructure Insights的访问权限。验证您的控制台配置文件电子邮件地址是否与Data Infrastructure Insights欢迎电子邮件中显示的电子邮件地址相匹配 
 
 
 | 其他登录错误 | 请尝试在 Chrome 中使用匿名模式，或者清除浏览器历史记录， Cookie 和缓存。请尝试使用其他浏览器配置文件（例如 Chrome - 添加人员）。 
@@ -64,7 +64,7 @@ keywords: troubleshooting, problems, browser, login, log in, accessing, access t
 
 == 资源
 
-有关其他故障排除提示、请参见link:https://kb.netapp.com/Cloud/BlueXP/DII["NetApp 知识库"](需要支持登录)。
+更多故障排除技巧可在link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs["NetApp 知识库"]（需要支持登录）。
 
 有关其他支持信息、请参见Data Infrastructure Insightlink:concept_requesting_support.html["支持"]页面。
 

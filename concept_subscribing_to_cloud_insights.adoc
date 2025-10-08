@@ -16,18 +16,18 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 [role="lead"]
 开始使用Data Infrastructure Insight只需三个简单步骤即可：
 
-. 在上注册一个帐户link:https://bluexp.netapp.com//["* NetApp BlueXP*"]、即可访问NetApp的所有云产品。
+. 注册一个账户link:https://console.netapp.com//["* NetApp控制台*"]即可访问 NetApp 的所有云产品。
 . 注册免费试用Data Infrastructure Insight、了解可用功能。注册免费试用版：
 +
 ** 转至 https://netapp.com[]
 ** 选择页面顶部的*如何购买*。
-** 选择*申请试用*。如果您尚未注册BlueXP 、请输入您的详细信息并注册。否则、请登录。
+** 选择*请求试用*。如果您尚未在控制台注册，请输入您的详细信息并注册。否则，请登录。
 ** 安排会议或等待代表就试用事宜与您联系。
 
 
 . *订阅*数据基础设施洞察，通过各种灵活的订阅选项持续、不间断地访问您的数据：
 +
-** link:https://bluexp.netapp.com/contact-cds["NetApp 直销"]
+** link:https://console.netapp.com/contact-cds["NetApp 直销"]
 ** AWS 市场：
 +
 *** link:https://aws.amazon.com/marketplace/pp/prodview-axhuy7muvzfx2["固定期限订阅"]
@@ -202,7 +202,7 @@ NOTE: 您必须是帐户所有者或管理员、才能将AWS Marketplace订阅�
 
 输入总受管单元数并选择 12 个月或 36 个月订阅期限后，单击 * 设置您的帐户 * 以完成订阅过程。
 
-AWS订阅流程完成后、您将返回到Data Infrastructure Insight环境。或者、如果环境不再处于活动状态(例如、您已注销)、则会转到NetApp BlueXP登录页面。再次登录Data Infrastructure Insight后、您的订阅将有效。
+AWS 订阅过程完成后，您将返回到Data Infrastructure Insights环境。或者，如果环境不再处于活动状态（例如，您已注销），您将被带到 NetAPp 控制台登录页面。当您再次登录Data Infrastructure Insights时，您的订阅将处于活动状态。
 
 
 NOTE: 在 AWS Marketplace 页面上单击 * 设置您的帐户 * 后，您必须在一小时内完成 AWS 订阅过程。如果您未在一小时内完成此操作，则需要再次单击 * 设置您的帐户 * 才能完成此过程。

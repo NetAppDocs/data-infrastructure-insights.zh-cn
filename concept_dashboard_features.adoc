@@ -797,7 +797,7 @@ image:UnitsOnPrimaryAndSecondaryYAxis.png["两个 Y 轴上的单位"]
 与 * 电视模式 * 结合使用时，自动刷新功能可在信息板或资产页面上近乎实时地显示数据。TV 模式提供了一个清晰的显示；导航菜单将被隐藏，从而为数据显示提供更多屏幕空间，编辑按钮也是一样。TV模式会忽略典型的Data Infrastructure Insight超时、在通过授权安全协议手动或自动注销之前、显示屏将保持活动状态。
 
 
-NOTE: 由于NetApp BlueXP  自己的用户登录超时为7天、因此Data Infrastructure Insight也必须在该事件中注销。您只需重新登录，您的信息板就会继续显示。
+NOTE: 由于NetApp Console 自己的用户登录超时时间为 7 天，因此Data Infrastructure Insights也必须在该事件发生时注销。您只需再次登录，您的仪表板将继续显示。
 
 * 要激活电视模式、请单击电视模式按钮。
 * 要禁用 TV 模式，请单击屏幕左上角的 * 退出 * 按钮。

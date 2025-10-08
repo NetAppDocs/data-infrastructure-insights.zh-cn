@@ -124,7 +124,7 @@ Data Infrastructure Insight最多可提供四个用户帐户角色：帐户所�
 
 == 通过邀请用户创建帐户
 
-通过BlueXP创建新的用户帐户。用户可以回复通过电子邮件发送的邀请、但如果用户没有BlueXP帐户、则需要注册BlueXP、以便接受邀请。
+通过NetApp Console 可以创建新用户帐户。用户可以回复通过电子邮件发送的邀请，但如果用户没有控制台帐户，则用户需要注册才能接受邀请。
 
 .开始之前
 * 用户名是邀请函的电子邮件地址。
@@ -209,18 +209,18 @@ image:Assign_Account_Owner.png["显示帐户所有者选择的用户更改对话
 使用身份联合：
 
 * 身份验证会使用企业目录中的客户凭据以及多因素身份验证（ Multi-Factor Authentication ， MFA ）等自动化策略委派给客户的身份管理系统。
-* 用户只需登录一次所有NetApp BlueXP服务(单点登录)。
+* 用户只需登录一次即可访问所有NetApp控制台服务（单点登录）。
 
 
-用户帐户在适用于所有云服务的NetApp BlueXP中进行管理。默认情况下、身份验证使用BlueXP本地用户配置文件完成。下面简要概述了该过程：
+所有云服务的用户帐户均在NetApp控制台中管理。默认情况下，使用控制台本地用户配置文件进行身份验证。以下是该过程的简化概述：
 
-image:BlueXP_Authentication_Local.png["使用本地进行BlueXP身份验证"]
+image:Authentication_Local.png["使用本地身份验证"]
 
-但是、有些客户希望使用自己的身份提供程序对其用户进行数据基础架构洞察和其他NetApp BlueXP  服务的身份验证。通过身份联合、NetApp BlueXP帐户将使用企业目录中的凭据进行身份验证。
+但是，一些客户希望使用自己的身份提供商来验证其Data Infrastructure Insights和其他NetApp控制台服务的用户身份。通过身份联合， NetApp控制台帐户可以使用来自公司目录的凭证进行身份验证。
 
 以下是该过程的简化示例：
 
-image:BlueXP_Authentication_Federated.png["使用联合进行BlueXP身份验证"]
+image:Authentication_Federated.png["使用联合身份验证"]
 
 在上图中、当用户访问Data Infrastructure Insight时、该用户将被定向到客户的身份管理系统进行身份验证。对帐户进行身份验证后、用户将定向到Data Infrastructure Insight租户URL。
 
@@ -228,16 +228,16 @@ image:BlueXP_Authentication_Federated.png["使用联合进行BlueXP身份验证"
 
 === 正在启用身份联合
 
-BlueXP使用Auth0实施身份联合、并与Active Directory联合身份验证服务(ADFS)和Microsoft Azure Active Directory (AD)等服务集成。要配置身份联合，请参见link:https://services.cloud.netapp.com/misc/federation-support["BlueXP联合说明"]。
+控制台使用 Auth0 实现身份联合并与 Active Directory 联合身份验证服务 (ADFS) 和 Microsoft Azure Active Directory (AD) 等服务集成。要配置联合身份验证，请参阅link:https://services.cloud.netapp.com/misc/federation-support["联邦指令"]。
 
 
-NOTE: 您必须先配置BlueXP  身份联合、然后才能将SSO与数据基础架构洞察结合使用。
+NOTE: 您必须先配置身份联合，然后才能将 SSO 与Data Infrastructure Insights结合使用。
 
-请务必了解、在BlueXP  中更改身份联合不仅适用于数据基础架构洞察力、还适用于所有NetApp BlueXP  服务。客户应与他们拥有的每个BlueXP产品的NetApp团队讨论此更改、以确保他们使用的配置可与身份联合使用、或者在需要对任何客户进行调整时也可使用。客户还需要让内部 SSO 团队参与身份联合的变更。
+重要的是要理解，更改身份联合不仅适用于Data Infrastructure Insights，还适用于所有NetApp控制台服务。客户应与其拥有的每个产品的NetApp团队讨论此更改，以确保他们使用的配置可与身份联合配合使用，或者是否需要对任何帐户进行调整。客户还需要让其内部 SSO 团队参与身份联合的变革。
 
-另外、还必须认识到、一旦启用身份联合、对公司身份提供程序进行的任何更改(例如从SAML迁移到Microsoft AD)都可能需要在BlueXP中进行故障排除/更改/关注、才能更新用户的配置文件。
+同样重要的是要认识到，一旦启用身份联合，对公司身份提供者的任何更改（例如从 SAML 转移到 Microsoft AD）都可能需要进行故障排除/更改/注意更新用户的配置文件。
 
-对于此联盟问题或任何其他联盟问题、您可以在中打开支持服务单 https://mysupport.netapp.com/site/help[]并选择类别BlueXP ．NetApp．com >联盟问题。
+对于此问题或任何其他联盟问题，您可以打开支持票 https://mysupport.netapp.com/site/help[]。
 
 
 
@@ -246,9 +246,9 @@ NOTE: 您必须先配置BlueXP  身份联合、然后才能将SSO与数据基�
 除了邀请用户之外，管理员还可以为公司域中的所有用户启用*单点登录(SSO)用户自动配置*对Data Infrastructure Insight的访问，而无需单独邀请他们。启用SSO后、具有相同域电子邮件地址的任何用户都可以使用其企业凭据登录到Data Infrastructure Insight。
 
 
-NOTE: _SSO用户自动配置_在Data Infrastructure Insight高级版中可用、必须先对其进行配置、然后才能为Data Infrastructure Insight启用该功能。link:https://services.cloud.netapp.com/misc/federation-support["身份联合"]如上一节所述、SSO用户自动配置包括通过NetApp BlueXP  进行的配置。联合允许单点登录用户使用企业目录中的凭据、并使用安全断言标记语言2.0 (SAML)和OpenID连接(OIDC)等开放式标准访问NetApp BlueXP帐户。
+NOTE: _SSO 用户自动配置_在Data Infrastructure Insights Premium Edition 中可用，必须先进行配置才能为Data Infrastructure Insights启用。 SSO 用户自动配置包括link:https://services.cloud.netapp.com/misc/federation-support["身份联合"]通过NetApp Console 进行操作，如上节所述。联合允许单点登录用户使用来自公司目录的凭证访问您的NetApp控制台帐户，并使用安全断言标记语言 2.0 (SAML) 和 OpenID Connect (OIDC) 等开放标准。
 
-要配置_SSO用户自动配置_，必须先在*Admin > User Management*页上设置BlueXP身份联合。选择横幅中的*设置联合*链接以继续BlueXP联合。完成配置后、Data Infrastructure Insight管理员可以启用SSO用户登录。当管理员启用 _SSO 用户自动配置 _ 时，他们会为所有 SSO 用户（如来宾或用户）选择一个默认角色。通过 SSO 登录的用户将具有此默认角色。
+要在*管理 > 用户管理*页面上配置_SSO 用户自动配置_，您必须首先设置身份联合。选择横幅中的“*设置联合*”链接以继续进行控制台联合。配置完成后，Data Infrastructure Insights管理员就可以启用 SSO 用户登录。当管理员启用_SSO 用户自动配置_时，他们会为所有 SSO 用户（例如访客或用户）选择一个默认角色。通过 SSO 登录的用户将具有该默认角色。
 
 image:Roles_federation_Banner.png["使用联合进行用户管理"]
 
