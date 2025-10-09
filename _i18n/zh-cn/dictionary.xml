@@ -12771,4 +12771,26 @@
   <block id="2f0b05ac17e2cbf6a46b1c047243119b" category="paragraph">如果遇到问题，请尝试以下方法：</block>
   <block id="5ae21ce2895991936f988458e0d59550" category="cell">我在图例中看到诸如_trafficUtilization_或_trafficRate_等指标的&lt;0、=0或&gt;0。</block>
   <block id="08e0ca793e3dec21e2eea30949c98088" category="cell">这种情况可能在极少数情况下发生，即度量值低于小数点后两位，例如 0.000123。扩大时间窗口可能有助于更有效地分析指标。</block>
+  <block id="99dfa28920a40a7be0858c50f989a3e5" category="section-title">2025年10月</block>
+  <block id="7ce7a14f7a7ab13259d78d9c587f7511" category="section-title">基础设施健康：即时了解存储和结构风险</block>
+  <block id="6b389c7abe5315fe2f49fdfe2039f913" category="paragraph">利用我们全新的“基础设施健康”功能，您可以即时了解存储和结构中的潜在风险。单一、颜色编码的仪表板为您提供统一的风险可见性，帮助您最大限度地减少停机时间并快速减轻收入损失。</block>
+  <block id="98c92459566d46664ff09992678f57e4" category="paragraph">低于 100 的分数表示存在潜在问题；分数越低，资源越不健康。按数据中心或区域对资源进行分组，以获得直观、综合的健康评分，让您可以轻松地确定关键区域的优先级并进行故障排除。</block>
+  <block id="8d76e9d5c3edb494701feea84d6ebc83" category="inline-image-macro">基础设施健康仪表板显示红色、琥珀色和绿色资源健康分数，宽度=600</block>
+  <block id="09d53ec06bd688b410a942777bbb1b63" category="paragraph"><block ref="09d53ec06bd688b410a942777bbb1b63" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="95fe62dd1c108211a44df9ddcea7cb02" category="paragraph">只需单击按钮即可在屏幕滑出面板中查看详细信息，快速查明需要注意的问题并确保系统安全和弹性。</block>
+  <block id="5c15a89f3dfcc5cf28e75e2462b8b75d" category="inline-image-macro">基础设施健康细节面板，宽度=600</block>
+  <block id="698352f404a2b3d6a5b56b12386329b8" category="paragraph"><block ref="698352f404a2b3d6a5b56b12386329b8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="df8b5251af7e98385c1a69f727713bf1" category="section-title">多条件监控器，实现精确警报</block>
+  <block id="6709c50f3a253900061ba24b2457f82a" category="paragraph">通过向任何指标监视器添加可选的第二个条件，减少警报噪音并提高监视精度。仅当同时满足两个条件时才会触发警报，从而为您提供更有针对性的通知，重点关注对您最重要的场景。</block>
+  <block id="19d168d964447f9cb9ed51c40e9beb67" category="inline-image-macro">向监视器添加第二个条件，宽度=600</block>
+  <block id="4c1f0d772f71f8ead992bbfa6c328771" category="paragraph"><block ref="4c1f0d772f71f8ead992bbfa6c328771" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f36d230c5a43a53a188667b9257b8ddc" category="section-title">查询改进：一目了然的对象详细信息</block>
+  <block id="05814820cd0dcd3b5db2b55adc94c207" category="paragraph">选择对象查询结果列表中的一行将打开所选对象的详细信息面板。快速查看指标和属性（对象查询的默认视图）、警报和更改、性能和健康评分，或探索相关资源。所有相关对象信息都触手可及。</block>
+  <block id="b398dd7f0628e0209062c867a19f996c" category="inline-image-macro">查询滑出面板的插图，默认为指标和属性选项卡，宽度=600</block>
+  <block id="a8ee3fea585c41aa1d8564b06059227c" category="paragraph"><block ref="a8ee3fea585c41aa1d8564b06059227c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f410f0ddc632aab6b49db918a669ccd7" category="paragraph">两个新的 API 可让您更好地控制工作负载安全环境：</block>
+  <block id="ebf69be04c82e1675fd92ad104156771" category="list-text">使用 _GET /rest/v1/cloudsecure/activities/groups_ 查看和管理群组。</block>
+  <block id="2a6cfdee3521e533287663e97fd888a4" category="list-text">使用 _POST /rest/v1/cloudsecure/collectors/{collector-uuid}/status_ 暂停和恢复数据收集器</block>
+  <block id="faaf8042743d6c4413633d0cd0603f36" category="paragraph">此外，工作负载安全角色权限检查现在更加安全。由于安全性的提高，一些现有用户在添加收集器时可能会遇到权限问题。按照<block ref="90660a14ff858b5310896684a88b82bc" category="inline-link-macro-rx"></block>。</block>
+  <block id="0b472b999667cd3663a08684d640b8a4" category="summary">2018-2019 年Data Infrastructure Insights中的新特性和功能</block>
 </blocks>

@@ -1,0 +1,419 @@
+---
+sidebar: sidebar 
+permalink: whats_new_archive_2018-2019.html 
+summary: 2018-2019 年Data Infrastructure Insights中的新特性和功能 
+keywords: features 
+---
+= 数据基础架构洞察力的新增功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp 不断改进和完善其产品和服务。下面是Data Infrastructure Insight (原Cloud Insights)中提供的一些最新特性和功能。
+
+
+
+== 2019年12月
+
+
+
+=== 业务实体可以在筛选器中使用
+
+业务实体标注可在查询，小工具，性能策略和登录页面的筛选器中使用。
+
+
+
+=== 可对单值小工具和量表小工具以及由 " 全部 " 滚动到的任何小工具进行深入分析
+
+单击单值或量表小工具中的值将打开一个查询页面，其中显示了此小工具中使用的第一个查询的结果。此外，如果单击任何小工具的图例，并且其数据由 "all" 汇总，则还会打开一个查询页面，其中显示了此小工具中使用的第一个查询的结果。
+
+
+
+=== 试用期延长
+
+注册免费试用 Cloud Insights 的新用户现在有 30 天的时间对产品进行评估。这比上一个 14 天试用期有所增加。
+
+
+
+=== 受管单元计算
+
+Cloud Insights 中的受管单元（ MTU ）计算已更改为以下值：
+
+* 1 个受管单元 = 2 个主机（任何虚拟机或物理机）
+* 1 个受管单元 = 4 TB 未格式化的物理或虚拟磁盘容量
+
+
+此更改会将您可以使用现有 Cloud Insights 订阅监控的环境容量有效地提高一倍。
+
+'''
+
+
+== 2019年11月
+
+
+
+== 2019年10月
+
+
+
+=== 报告
+
+link:reporting_overview.html["* Cloud Insights 报告 *"]是一款业务智能工具、可用于查看预定义报告或创建自定义报告。通过报告，您可以执行以下任务：
+
+* 运行预定义报告
+* 创建自定义报告
+* 自定义报告格式和交付方法
+* 计划自动运行报告
+* 通过电子邮件发送报告
+* 使用颜色表示数据的阈值
+
+
+Cloud Insights 报告可以为成本分摊，消费分析和预测等领域生成自定义报告，并有助于解决问题解答问题，例如：
+
+* 我拥有哪些清单？
+* 我的清单在哪里？
+* 谁在使用我们的资产？
+* 业务单位所分配存储的成本分摊是多少？
+* 需要获取更多存储容量之前需要多长时间？
+* 业务单位是否遵循正确的存储层？
+* 存储分配在一个月，一个季度或一年中有何变化？
+
+
+Cloud Insights * 高级版 * 提供报告功能。
+
+
+
+=== Active IQ 增强功能
+
+link:concept_activeiq.html["Active IQ 风险"]现在可作为对象进行查询、并可在信息板表小工具中使用。其中包括以下风险对象属性： * 类别 * 缓解类别 * 潜在影响 * 风险详细信息 * 严重性 * 源 * 存储 * 存储节点 * UI 类别
+
+'''
+
+
+== 2019年9月
+
+
+
+=== 新的 Gauge 小工具
+
+我们提供了两个新的小工具，用于根据您指定的阈值在信息板上以醒目的颜色显示单值数据。您可以使用 * 实心量表 * 或 * 项目符号量表 * 显示值。位于警告范围内的值将显示为橙色。严重范围内的值以红色显示。低于警告阈值的值将显示为绿色。
+
+image:Gauge-Solid.png["实心 / 传统量表"] image:Gauge-Bullet.png["项目符号量表"]
+
+
+
+=== 单值小工具的条件颜色格式
+
+现在，您可以根据设置的阈值以彩色背景显示单值小工具。
+
+image:Single-Value Widgets - Formatted.png["具有格式的单值小工具"]
+
+
+
+=== 在入职期间邀请用户
+
+在入职过程中的任何时候，您都可以单击 " 管理员 ">" 用户管理 ">" + 用户 " 邀请其他用户加入您的 Cloud Insights 环境。请注意，一旦完成入职并收集数据，具有 _Guest_ 或 _User_ 角色的用户将获得更大的优势。
+
+
+
+=== 改进了 Data Collector 详细信息页面
+
+数据收集器详细信息页面已进行改进，可以更易读的格式显示错误。现在，错误会显示在页面上的单独表中，如果数据收集器出现多个错误，则每个错误都会显示在单独的行中。
+
+'''
+
+
+== 2019年8月
+
+
+
+=== 所有数据收集器与可用数据收集器
+
+在将数据收集器添加到环境中时，您可以设置一个筛选器，以便根据订阅级别仅显示可供您使用的数据收集器，或者仅显示所有数据收集器。
+
+
+
+=== Active IQ 集成
+
+Cloud Insights 从 NetApp ActiveIQ 收集数据，该 Active IQ 可为 NetApp 客户及其硬件 / 软件系统提供一系列可视化，分析和其他支持相关服务。Cloud Insights 可与 ONTAP 数据管理系统集成。有关详细信息、请参见 link:concept_activeiq.html["Active IQ"] 。
+
+'''
+
+
+== 2019年7月
+
+
+
+=== 信息板改进
+
+信息板和小工具已通过以下更改进行了改进：
+
+* 除了总和，最小值，最大值和平均值之外， * 计数 * 现在还可用于在单值小工具中汇总。按 " 计数 " 进行滚动时， Cloud Insights 会检查对象是否处于活动状态，并且仅将活动对象添加到计数中。生成的数量取决于聚合和筛选器。
+* 在单值小工具中，您现在可以选择显示得到的小数位数，小数为 0 ， 1 ， 2 ， 3 或 4 。
+* 绘制一个计数器时，折线图会显示一个轴标签和单位。
+* 现在，所有时间序列小工具中的所有指标都提供了服务集成数据 * 转换 * 选项。对于时间序列小工具(Line、Spline、Area、Stacked Area)中的任何服务集成(Telegraf)计数器或度量指标，您可以选择所需的方式link:concept_telegraf_display_options.html["转换这些值"]。无（显示的值为 " 当前 " ），总和，增量，累计等
+
+
+
+
+=== 降级到 Basic Edition
+
+如果未配置在过去 7 天内成功完成轮询的可用 NetApp 设备，则降级到 Basic Edition 将失败并显示错误消息。
+
+
+
+=== 正在收集 Kube-State-Metrics
+
+link:task_config_telegraf_kubernetes.html["Kubernetes Data Collector"]现在、可从Kube-state-metrics插件收集对象和计数器、从而大大扩展了可在Cloud Insights中监控的指标数量和范围。
+
+'''
+
+
+== 2019年6月
+
+
+
+=== Cloud Insights 版本
+
+Cloud Insights 提供不同版本，可满足您的预算和业务需求。拥有有效 NetApp 支持帐户的现有 NetApp 客户可以使用免费 * 基本版 * 享受 7 天的数据保留和对 NetApp 数据收集器的访问，或者通过 * 标准版 * 更多地保留数据，访问所有受支持的数据收集器，获得专家技术支持等。有关可用功能的详细信息、请参见NetApplink:https://www.netapp.com/cloud-services/cloud-insights/["Cloud Insights"]站点。
+
+
+
+=== 新的基础架构数据收集器： NetApp HCI
+
+* link:task_dc_na_hci.html["NetApp HCI 虚拟中心"]已添加为基础架构数据收集器。HCI 虚拟中心数据收集器收集 NetApp HCI 主机信息，并要求对虚拟中心内的所有对象具有只读权限。
+
+
+请注意， HCI 数据收集器仅从 HCI 虚拟中心采集数据。要从存储系统收集数据、还必须配置NetApplink:task_dc_na_solidfire["SolidFire"]数据收集器。
+
+'''
+
+
+== 2019年5月
+
+
+
+=== 新的服务数据收集器： Kapacitor
+
+* link:task_config_telegraf_kapacitor.html["Kapacitor"]已添加为服务的数据收集器。
+
+
+
+
+=== 通过 Telegraf 与服务集成
+
+除了从交换机和存储等基础架构设备采集数据之外、Cloud Insights现在还会从各种操作系统和服务收集数据、用于link:task_config_telegraf_agent.html["Telegraf 作为其代理"]收集集成数据。Telegraf 是一种插件驱动的代理，可用于收集和报告指标。输入插件用于通过直接访问系统 /OS ，调用第三方 API 或侦听已配置的流将所需信息收集到代理中。
+
+有关当前支持的集成的文档，请参见左侧菜单中的 * 参考和支持 * 。
+
+
+
+=== Storage Virtual Machine 资产
+
+* Storage Virtual Machine （ SVM ）可作为 Cloud Insights 中的资产使用。SVM 具有自己的资产登录页面，可以在搜索，查询和筛选器中显示和使用。SVM 也可以在信息板小工具中使用，并与标注关联。
+
+
+
+
+=== 降低了采集单元系统要求
+
+* 采集单元（ Acquisition Unit ， AU ）软件的系统 CPU 和内存要求已降低。新要求包括：
+
+
+|===
+
+
+| * 组件 * | * 旧要求 * | * 新要求 * 
+
+
+| CPU 核心 | 4 | 2 
+
+
+| 内存 | 16 GB | 8 GB 
+|===
+
+
+=== 支持的其他平台
+
+* 在当前平台的基础上添加了以下平台link:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["支持 Cloud Insights"]：
+
+
+|===
+
+
+| Linux | Windows 
+
+
+| CentOS 7.3 64 位 CentOS 7.4 64 位 CentOS 7.6 64 位 Debian 9 64 位 Red Hat Enterprise Linux 7.3 64 位 Red Hat Enterprise Linux 7.4 64 位 Red Hat Enterprise Linux 7.6 64 位 Ubuntu Server 18.04 LTS | Microsoft Windows 10 64 位 Microsoft Windows Server 2008 R2 Microsoft Windows Server 2019 
+|===
+'''
+
+
+== 2019年4月
+
+
+
+=== 按标记筛选虚拟机
+
+在配置以下数据收集器时，您可以根据虚拟机的标记或标签进行筛选，以便在数据收集中包括或排除虚拟机。
+
+* link:task_dc_amazon_ec2.html#advanced-configuration["Amazon EC2"]
+* link:task_dc_ms_azure.html#advanced-configuration["Azure"]
+* link:task_dc_google_cloud.html#advanced-configuration["Google Cloud Platform"]
+
+
+'''
+
+
+== 2019年3月
+
+
+
+=== 订阅相关事件的电子邮件通知
+
+* 当发生与订阅相关的事件(例如、即将到期的试用版或订阅帐户更改)时、您可以选择电子邮件的收件人link:concept_notifications_email.html["通知"]。您可以从以下选项中为这些通知选择收件人：
++
+** 所有帐户所有者
+** 所有管理员
+** 指定的其他电子邮件地址
+
+
+
+
+
+
+=== 其他信息板
+
+* 以下新的AWS关注内容link:concept_import_from_dashboard_gallery.html["信息板"]已添加到库中、可供导入：
++
+** AWS 管理员—哪些 EC2 需求较高？
+** 按区域显示 AWS EC2 实例性能
+
+
+
+
+'''
+
+
+== 2019年2月
+
+
+
+=== 从 AWS 子帐户收集
+
+* Cloud Insights可在一个数据收集器中支持link:task_dc_amazon_ec2.html#collecting-from-aws-child-accounts["从 AWS 子帐户收集"]。您必须将 AWS 环境配置为允许 Cloud Insights 从子帐户收集数据。
+
+
+
+
+=== 数据收集器命名
+
+* 现在，除了字母，数字和下划线之外， Data Collector 名称还可以包括句点（ . ），连字符（ - ）和空格（）。名称不能以空格，句点或连字符开头或结尾。
+
+
+
+
+=== 适用于 Windows 的采集单元
+
+* 您可以在 Windows 服务器 /VM 上配置 Cloud Insights 采集单元。在安装之前查看Windowslink:concept_acquisition_unit_requirements.html["前提条件"]link:task_configure_acquisition_unit.html["采集单元软件"]。
+
+
+'''
+
+
+== 2019年1月
+
+
+
+=== " 所有者 " 字段更易读
+
+* 在信息板和查询列表中， " 所有者 " 字段的数据以前是授权 ID 字符串，而不是用户友好的所有者名称。现在， " 所有者 " 字段将显示一个更简单，更易读的所有者名称。
+
+
+
+
+=== 订阅页面上的受管单元细分
+
+* 对于 * 管理 > 订阅 * 页面上列出的每个数据收集器，您现在可以查看主机和存储的受管单元（ Managed Unit ， MU ）计数以及总数的细分。
+
+
+'''
+
+
+== 2018年12月
+
+
+
+=== 改进了 UI 加载时间
+
+* Cloud Insights 用户界面（ UI ）的初始加载时间已显著缩短。在加载元数据的情况下， UI 的刷新时间也会因这种改进而受益。
+
+
+
+
+=== 批量编辑数据收集器
+
+* 您可以同时编辑多个数据收集器的信息。在*Observability > Collectors*页面上，选中每个数据收集器左侧的框并单击*散装 操作*按钮，以选择要修改的数据收集器。选择 * 编辑 * 并修改必要的字段。
++
+选定的数据收集器必须是相同的供应商和型号，并且位于同一个采集单元上。
+
+
+
+
+
+=== 支持和订阅页面可在入职期间使用
+
+* 在入职工作流期间，您可以导航到 * 帮助 > 支持 * 和 * 管理员 > 订阅 * 页面。如果您尚未关闭浏览器选项卡，则从这些页面返回将返回到入职工作流。
+
+
+'''
+
+
+== 2018年11月
+
+
+
+=== 通过 NetApp 销售部门或 AWS Marketplace 订阅
+
+* 现在，您可以直接通过 NetApp 订阅和计费 Cloud Insights 。这是对 AWS Marketplace 提供的自助订阅的补充。"* 管理员 ">" 订阅 * " 页面上显示了一个新的 * 联系销售人员 * 链接。如果客户的环境具有或预期具有 1 ， 000 个或更多受管单元（ MTU ），建议通过 " 联系销售人员 " 链接联系 NetApp 销售人员。
+
+
+
+
+=== 文本标注超链接
+
+* 文本类型的标注现在可以包含超链接。
+
+
+
+
+=== 入职演练
+
+* 现在， Cloud Insights 提供了一个入职演练，供第一个用户（管理员或帐户所有者）登录到新环境。演练将指导您完成安装采集单元，配置初始数据收集器以及选择一个或多个有用的信息板的过程。
+
+
+
+
+=== 从图库导入信息板
+
+* 除了在入职期间选择信息板之外，您还可以通过 * 信息板 > 显示所有信息板 * 导入信息板，然后单击 * + 从图库 * 导入信息板。
+
+
+
+
+=== 复制信息板
+
+* 已将复制信息板的功能添加到信息板列表页面中，并可在每个信息板的选项菜单中进行选择，也可从 _Save_ 菜单中选择复制信息板的主页面本身。
+
+
+
+
+=== Cloud Central 产品菜单
+
+* 用于切换到其他 NetApp Cloud Central 产品的菜单已移至屏幕右上角。
+
