@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_storage_virtualization.html 
-summary: Data Infrastructure Insight可以提供前端和后端虚拟化存储的视图。 
+summary: Data Infrastructure Insights可以提供前端和后端虚拟化存储的视图。 
 keywords: storage, virtual, virtualized, virtualization, 
 ---
 = 存储虚拟化
@@ -10,34 +10,34 @@ keywords: storage, virtual, virtualized, virtualization,
 
 
 [role="lead"]
-Data Infrastructure Insight可以区分具有本地存储的存储阵列或虚拟化其他存储阵列的存储阵列。这样、您就可以将成本和性能从前端一直与基础架构的后端关联起来。
+Data Infrastructure Insights可以区分具有本地存储的存储阵列或其他存储阵列的虚拟化。这使您能够关联成本并区分从基础设施前端到后端的性能。
 
 
 
-=== 表小工具中的虚拟化
+=== 表格小部件中的虚拟化
 
-开始了解存储虚拟化的最简单方法之一是创建一个显示虚拟化类型的信息板表小工具。在为小工具构建查询时、只需将"虚拟 类型"添加到您的分组或筛选器中即可。
+开始查看存储虚拟化的最简单方法之一是创建一个显示虚拟化类型的仪表板表小部件。在为小部件构建查询时，只需将“virtualizedType”添加到分组或过滤器中。
 
-image:StorageVirtualization_TableWidgetSettings.png["用于显示存储虚拟化的T型 的基本查询"]
+image:StorageVirtualization_TableWidgetSettings.png["显示存储虚拟化类型的基本查询"]
 
-生成的表小工具将显示租户上的_Standard"、"Backend"和"_Virtual_"存储。
+生成的表格小部件向您显示租户上的_标准_、_后端_和_虚拟_存储。
 
-image:StorageVirtualization_TableWidgetShowingVirtualizedTypes.png["显示虚拟化类型的表"]
-
-
-
-=== 登录页面显示了虚拟化信息
-
-在存储、卷、内部卷或磁盘登录页面上、您可以看到相关的虚拟化信息。例如、通过查看下面的存储登录页面、您可以看到这是一个虚拟存储、以及适用的后端存储系统。登录页面上的任何相关表也将显示适用的虚拟化信息。
-
-image:StorageVirtualization_StorageSummary.png["显示虚拟和备份存储信息的存储登录页面"]
+image:StorageVirtualization_TableWidgetShowingVirtualizedTypes.png["显示虚拟化类型的表格"]
 
 
 
-=== 现有登录页面和信息板
+=== 登陆页面显示虚拟化信息
 
-请注意、如果租户上当前已有自定义登录页面或信息板、则默认情况下、这些页面或信息板不会自动显示所有虚拟化信息。但是、您可以还原为默认值_任何自定义信息板或登录页面(您必须重新实施自定义设置)、也可以修改相关小工具以包含所需的虚拟化属性或指标。
+在存储、卷、内部卷或磁盘登录页面上，您可以看到相关的虚拟化信息。例如，查看下面的存储登陆页面，您可以看到这是一个虚拟存储，以及适用哪个后端存储系统。登陆页面上的任何相关表格也将显示适用的虚拟化信息。
 
-可在自定义信息板或登录页面屏幕的右上角使用_RERT to Default_。
+image:StorageVirtualization_StorageSummary.png["显示虚拟和备份存储信息的存储登陆页面"]
 
-image:RevertToDefault.png["还原为默认值按钮"]
+
+
+=== 现有的登陆页面和仪表板
+
+请注意，如果您当前在租户上有自定义的登录页面或仪表板，则默认情况下这些页面或仪表板不会自动显示所有虚拟化信息。但是，您可以将任何自定义仪表板或登录页面_恢复为默认_（您必须重新实现自定义），或修改相关小部件以包含所需的虚拟化属性或指标。
+
+_恢复默认_位于自定义仪表板或登录页面屏幕的右上角。
+
+image:RevertToDefault.png["恢复默认按钮"]

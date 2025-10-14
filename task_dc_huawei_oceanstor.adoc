@@ -2,49 +2,49 @@
 sidebar: sidebar 
 permalink: task_dc_huawei_oceanstor.html 
 keywords: data collector, Huawei, OceanStor, Dorado 
-summary: 配置 Huawei OceanStor （ REST/HTTPS ）数据收集器。 
+summary: '配置华为 OceanStor (REST/HTTPS) 数据收集器。' 
 ---
-= Huawei OceanStor 数据收集器
+= 华为OceanStor数据采集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insight使用华为OceANStor (RE/HTTPS)数据收集器来发现华为OceANStor和OceANStor Dorado存储的清单和性能。
+Data Infrastructure Insights使用华为 OceanStor（REST/HTTPS）数据收集器来发现华为 OceanStor 和 OceanStor Dorado 存储的库存和性能。
 
 
 
-== 术语
+== Terminology
 
-Data Infrastructure Insight从华为OceanaStor采集以下清单和性能信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从华为 OceanStor 获取以下库存和性能信息。对于Data Infrastructure Insights获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 存储池 | 存储池 
 
 
-| 文件系统 | 内部卷 
+| 文件系统 | 内部体积 
 
 
 | 控制器 | 存储节点 
 
 
-| FC 端口（已映射） | 卷映射 
+| FC 端口（已映射） | 体积图 
 
 
-| 主机 FC 启动程序（已映射） | 卷掩码 
+| 主机 FC 启动器（已映射） | 体积遮罩 
 
 
-| NFS/CIFS 共享 | 共享 
+| NFS/CIFS共享 | 共享 
 
 
-| iSCSI 链路目标 | iSCSI 目标节点 
+| iSCSI 链接目标 | iSCSI 目标节点 
 
 
-| iSCSI 链路启动程序 | iSCSI 启动程序节点 
+| iSCSI 链路启动器 | iSCSI 发起节点 
 
 
 | 磁盘 | 磁盘 
@@ -56,10 +56,10 @@ Data Infrastructure Insight从华为OceanaStor采集以下清单和性能信息�
 
 == 要求
 
-要配置此数据收集器，需要满足以下要求：
+配置此数据收集器需要满足以下要求：
 
 * 设备 IP 地址
-* 用于访问 OceanStor 设备管理器的凭据
+* 访问 OceanStor 设备管理器的凭证
 * 端口 8088 必须可用
 
 
@@ -69,16 +69,16 @@ Data Infrastructure Insight从华为OceanaStor采集以下清单和性能信息�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
 | OceanStor 主机 IP 地址 | OceanStor Device Manager 的 IP 地址或完全限定域名 
 
 
-| 用户名 | 用于登录到 OceanStor Device Manager 的名称 
+| 用户名 | 用于登录 OceanStor Device Manager 的名称 
 
 
-| 密码 | 用于登录到 OceanStor Device Manager 的密码 
+| 密码 | 登录OceanStor Device Manager的密码 
 |===
 
 
@@ -86,19 +86,19 @@ Data Infrastructure Insight从华为OceanaStor采集以下清单和性能信息�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| TCP端口 | 用于连接到 OceanStor Device Manager 的 TCP 端口。默认值为8088。 
+| TCP 端口 | 用于连接 OceanStor Device Manager 的 TCP 端口。默认值为 8088。 
 
 
-| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认时间间隔为 60 分钟。 
+| 库存轮询间隔（分钟） | 库存调查之间的间隔。默认时间间隔为 60 分钟。 
 
 
-| 性能轮询间隔（秒）。 | 默认值为300秒。 
+| 性能轮询间隔（秒）。 | 默认值为 300 秒。 
 |===
 
 
 == 故障排除
 
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

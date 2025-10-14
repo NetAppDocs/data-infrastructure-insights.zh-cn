@@ -4,45 +4,45 @@ permalink: infrastructure_change_analytics.html
 keywords: changes, management, analysis, infra, infrastructure 
 summary: Data Infrastructure Insights跟踪基础设施的变化，以便于分析和故障排除。 
 ---
-= 基础架构变更分析
+= 基础设施变化分析
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-基础架构变更分析可为您提供有关租户基础架构(存储、交换机等)最近变更的一体化视图。通过"变更分析"、您可以跟踪配置变更并深入了解预期和意外问题。
+基础设施变更分析为您提供租户基础设施（存储、交换机等）最新变更的一体化视图。通过变更分析，您可以跟踪配置变更并深入了解预期和意外的问题。
 
 
 
-== 基础架构变更分析有何帮助？
+== 基础设施变化分析有何帮助？
 
-在任何环境中、由于配置不当的更改、断电等原因、可能会对资源进行更改。"更改分析"通过提供一个窗格来查看资源运行状况并将其与中断或计划内更改关联起来、从而提供帮助。更改将通过每个清单轮询(在新收集器上的首次轮询之后)进行计算。
+在任何环境中，您的资源都可能由于配置错误的更改、断电等原因而发生变化。变更分析通过提供单一窗格来查看资源的健康状况并将其与中断或计划的变更关联起来，从而提供帮助。每次库存轮询都会计算变化（在对新收集器进行第一次轮询之后）。
 
-要分析基础架构变更，请导航到*Observability > Change Analysi*。此时将列出当前时间范围的警报和配置更改。警报行显示当前警报状态(活动或已解决)。
+要分析基础设施变化，请导航至*可观察性>变化分析*。列出了当前时间范围内的警报和配置更改。警报行显示当前警报状态（活动或已解决）。
 
-您还可以导航到资源的登录页面。如果对该资源或相关资源进行了更改、这些更改将显示在页面的"Expert View"部分中。放大以调查单个更改、或者将视图保持宽屏以查看选定时间范围内的所有更改。将鼠标悬停在更改上方将显示更改摘要。单击该更改将使专家视图集中显示该更改的时间。
+您还可以导航到资源的登录页面。如果该资源或相关资源发生了变化，这些变化将显示在页面的性能部分。放大以调查个别变化，或保持视图宽以查看选定时间范围内的所有变化。将鼠标悬停在更改处将显示更改的摘要。单击该更改将关注更改时的性能。
 
-image:change_analysis_on_a_landing_page.png["登录页面上的变更分析"]
+image:change_analysis_on_a_landing_page.png["着陆页上的变化分析"]
 
-在列表中选择一个项目将打开一个分页窗格、提供有关警报或变更的更多详细信息。
+选择列表中的某个项目将打开一个滑出窗格，提供有关警报或更改的更多详细信息。
 
 
 
 == 筛选
 
-与Cloud Insights的所有功能一样、筛选更改列表也非常直观：在页面顶部、您可以筛选特定资产类型(_T触发 时间：type_)、和/或仅筛选具有特定名称的资产(_T触发 时间：name_)、也可以通过选择｛+]按钮添加您自己的筛选器。
+与Cloud Insights的所有功能一样，过滤更改列表非常直观：在页面顶部，您可以过滤特定的资产类型（_Triggered On:type_），和/或根据需要仅过滤具有特定名称的资产（_Triggered On:name_），或者通过选择 {+] 按钮添加您自己的过滤器。
 
-image:infraChange_filter_dropdown.png["基础架构变更筛选下拉列表"]
+image:infraChange_filter_dropdown.png["基础设施变更过滤下拉菜单"]
 
-您也可以直接从筛选器设置下方的状态部分转到关键警报或更改、包括警报最多的当前前三个资源。
+您还可以从过滤器设置下方的状态部分直接转到关键警报或更改，包括当前警报最多的前三个资源。
 
-image:Change_Analysis_filters_and_status.png["警报和更改的状态和快速链接"]
+image:Change_Analysis_filters_and_status.png["状态以及警报和更改的快速链接"]
 
 
 
-== 对哪些对象进行变更分析？
+== 分析哪些对象有变化？
 
-下表列出了基础架构变更分析中包含的对象和属性。
+下表列出了基础设施变更分析中包含的对象和属性。
 
 |===
 
@@ -50,46 +50,46 @@ image:Change_Analysis_filters_and_status.png["警报和更改的状态和快速�
 | 对象类型 | 属性 
 
 
-| 磁盘 | disksize.Total isVirtual diskGroup速度类型位置序列号角色状态供应商型号storage.name storagePools.name名称已加密 
+| 磁盘 | diskSize.total 是虚拟磁盘组速度类型位置序列号角色状态供应商型号storage.name storagePools.name 名称是加密的 
 
 
-| 存储 | 系列IP isActive微码版本型号名称协议序列号供应商 
+| 存储 | 系列 ip 是否活动 微码版本 型号名称 协议 序列号 供应商 
 
 
-| StorageNode | 名称storage.name nodeVersion modelSerialNumber NumberOfProcessors state partner.name缓存内存管理IpAddresses parentSerialNumber siteName 
+| 存储节点 | 名称存储.名称节点版本模型序列号处理器数量状态合作伙伴.名称缓存内存管理IP地址父序列号站点名称 
 
 
-| StoragePool | 名称类型isAutoTiering isVirtual re冗 余VendorTier usesFlashPools storage.Vendor storage.ip storage.modelstorage.家庭storage.name storageNodes.name cacity.Total (动态属性) isCompactionSavingsEnabled is加密 的objectStoreName objectStoreProviderType objectStoreSizeLimit objectStoreTieringFullnessThreshold objectStoreS3Name objectStoreServer 
+| 存储池 | 名称类型 isAutoTiering isVirtual 冗余 vendorTier 使用 FlashPools storage.vendor storage.ip storage.model storage.family storage.name storageNodes.name capacity.total（动态属性） isCompactionSavingsEnabled isEncrypted objectStoreName objectStoreProviderType objectStoreSizeLimit objectStoreTieringFullnessThreshold objectStoreS3Name objectStoreServer 
 
 
-| qtree | 键入"ssuitystye" isOplocksEnabled shares.name storage.name internalVolume.name storageVirtualMachine.name simpleName STATUSTEXT名称 
+| qtree | 类型 securityStyle isOplocksEnabled 共享名称 存储名称 内部卷名称 存储虚拟机名称 简单名称 状态文本名称 
 
 
-| StorageVirtualMachine | 名称storage.name状态类型IPSpace protocols internalVolumeLimit 
+| 存储虚拟机 | 名称storage.name状态类型ipSpace协议internalVolumeLimit 
 
 
-| 卷 | 名称simpleName标签类型storage.name storage.vendor storage.ip storage.model.roamate isAutoTiering isThinPreseded diskGroup is大型 机Ismeta isReplication icaSource isReplication目标isSnapshot isVirtual internalVolume.name interalVolume.virtualStorage storageNodes.name storageNodes.partner.name storagePools.name storageVirtualMachine.name storageGroups is加密 的isCompresEnabled qosBurstIOPS qosLimitIOPS qosLimit MBPS qosMinitosPolicy qosRaw IOPS 
+| 卷 | 名称 simpleName 标签类型 storage.name storage.vendor storage.ip storage.model storage.family isAutoTiering isThinProvisioned diskGroup isMainframe isMeta isReplicaSource isReplicaTarget isSnapshot isVirtual internalVolume.name internalVolume.virtualStorage storageNodes.name storageNodes.partner.name storagePools.name storageVirtualMachine.name storageGroups isEncrypted isCompressionEnabled qosBurstIOPS qosLimitIOPS qosLimitMBPS qosMinIOPS qosPolicy qosLimitRaw 
 
 
-| 内部卷 | flashPoolEligility名称simpleName spaceBaretee状态类型virtualStorage replicaSources.name storageNodes.name storageNodes.partner.name storage.name storage.vendor storage.ip storage.model.froge storageVirtualMachine.name storagePool.name cacity.isThinProvided qosPolicy qosLimit原始qosLimitIOPS qosLimitMBPS已启动适配器QosPolicy MinimionPath对象加密策略TieringStoreumCoolingDays 
+| 内部容积 | flashPoolEligibility 名称 simpleName spaceGuarantee 状态类型 virtualStorage replicaSources.name storageNodes.name storageNodes.partner.name storage.name storage.vendor storage.ip storage.model storage.family storageVirtualMachine.name storagePool.name capacity.isThinProvisioned qosPolicy qosLimitRaw qosLimitIOPS qosLimitMBPS isEncrypted adaptiveQosPolicy junctionPath objectStoreTieringPolicy tieringMinimumCoolingDays 
 
 
-| 虚拟机 | 名称dnsName IP OS memory processors guest State powerstate host.name host.集群 名称host.ip host.os datastore.name instanceType publicIps secureGroups virtualCenterIp 
+| 虚拟机 | 名称 dnsName ip os 内存处理器 guestState powerState host.name host.clusterName host.ip host.os dataStore.name 实例类型 publicIps 安全组 virtualCenterIp 
 
 
-| 数据存储库 | 名称virtualCenterIp类型 
+| 数据存储 | 名称 virtualCenterIp 类型 
 
 
-| 主机 | 名称型号IP isActive OS制造商CPUCount内存isHypervisory集群名称virtualCenterIp 
+| 主机 | 名称 型号 ip isActive os 制造商 cpuCount 内存 isHypervisor clusterName virtualCenterIp 
 
 
-| VMDK (VirtualMachineDisk) | 名称类型datastore.name isRdm virtualMachine.host.name virtualMachine.name isSnapshot 
+| vmdk（虚拟机磁盘） | 名称类型dataStore.name isRdmvirtualMachine.host.namevirtualMachine.name isSnapshot 
 
 
-| 端口 | 名称isActive WWN type portIndex刀片速度gbicType connectedPorts.device.name connectedPorts.device.type connectedPorts.name connectedPorts.nodeWwn连接端口.wwncontroller device.name device.type fabrics.name网络结构.vsanId nodeWwnDescription 
+| 端口 | 名称 isActive wwn 类型 portIndex blade 速度 gbicType connectedPorts.device.name connectedPorts.device.type connectedPorts.name connectedPorts.nodeWwn connectedPorts.wwn 控制器 device.name device.type fabrics.name fabrics.vsanId nodeWwn 描述 
 |===
 “变更分析”跟踪以下情况的警报：
 
-* 日志中的警报会监控_logs.vmware.events_和_logs.vms.es_日志类型NetApp。
-* 指标监控器针对上述对象类型发出的警报；必须在_Group by_字段中选择这些警报、才能使"变更分析"跟踪这些警报。
+* 来自日志监视器的有关日志类型 _logs.vmware.events_ 和 _logs.netapp.ems_ 的警报。
+* 来自上述对象类型的指标监视器的警报；必须在“Group By”字段中选择这些警报，以便变更分析能够跟踪它们。
 

@@ -10,19 +10,19 @@ summary: 配置 IBM SAN Volume Controller 数据收集器。
 
 
 [role="lead"]
-IBM SAN Volume Controller （ SVC ）数据收集器使用 SSH 收集清单和性能数据，从而支持运行 SVC 操作系统的各种设备。
+IBM SAN Volume Controller (SVC) 数据收集器使用 SSH 收集库存和性能数据，支持运行 SVC 操作系统的各种设备。
 
-支持的设备列表包括 SVC ， v7000 ， V5000 和 V3700 等型号。有关支持的型号和固件版本、请参见Data Infrastructure Insight支持列表。
+支持的设备列表包括 SVC、v7000、v5000 和 v3700 等型号。请参阅Data Infrastructure Insights支持矩阵以了解支持的型号和固件版本。
 
 
 
-== 术语
+== Terminology
 
-Data Infrastructure Insight从IBM SVC数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从 IBM SVC 数据收集器获取以下库存信息。对于Data Infrastructure Insights获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 驱动器 | 磁盘 
@@ -34,21 +34,21 @@ Data Infrastructure Insight从IBM SVC数据收集器采集以下清单信息。�
 | 节点 | 存储节点 
 
 
-| Mdisk 组 | 存储池 
+| Mdisk集团 | 存储池 
 
 
-| vDisk | 卷 
+| 虚拟磁盘 | 卷 
 
 
-| Mdisk | 后端 LUN 和路径 
+| 磁盘 | 后端 LUN 和路径 
 |===
-注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情况。
 
 
 
-=== 清单要求
+=== 库存需求
 
-* 每个 SVC 集群的 IP 地址
+* 每个SVC集群的IP地址
 * 端口 22 可用
 * 只读用户名和密码
 
@@ -57,11 +57,11 @@ Data Infrastructure Insight从IBM SVC数据收集器采集以下清单信息。�
 
 === 性能要求
 
-* SVC 控制台，任何 SVC 集群都必须使用此控制台， SVC 发现基础包也需要此控制台。
-* 只有在将性能文件从集群节点复制到配置节点时，凭据才需要管理访问级别。
-* 通过 SSH 连接到 SVC 集群并运行： _svctask startstats -interval 1_ 来启用数据收集
+* SVC 控制台，对于任何 SVC 集群都是必需的，并且是 SVC 发现基础包所必需的。
+* 凭证仅需要管理访问级别才能将性能文件从集群节点复制到配置节点。
+* 通过 SSH 连接到 SVC 集群并运行以下命令来启用数据收集：_svctask startstats -interval 1_
 +
-注意：或者，也可以使用 SVC 管理用户界面启用数据收集。
+注意：或者，使用 SVC 管理用户界面启用数据收集。
 
 
 
@@ -71,16 +71,16 @@ Data Infrastructure Insight从IBM SVC数据收集器采集以下清单信息。�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
 | 集群 IP 地址 | SVC 存储的 IP 地址或完全限定域名 
 
 
-| 清单用户名 | SVC 命令行界面的用户名 
+| 库存用户名 | SVC CLI 的用户名 
 
 
-| 清单密码 | SVC 命令行界面的密码 
+| 库存密码 | SVC CLI 的密码 
 |===
 
 
@@ -88,37 +88,37 @@ Data Infrastructure Insight从IBM SVC数据收集器采集以下清单信息。�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认值为40分钟。 
+| 库存轮询间隔（分钟） | 库存调查之间的间隔。默认值为 40 分钟。 
 
 
-| 性能轮询间隔（秒） | 性能轮询之间的时间间隔。默认值为300秒。 
+| 性能轮询间隔（秒） | 性能轮询之间的间隔。默认值为 300 秒。 
 
 
-| 清理转储的统计信息文件 | 选中此复选框可清除转储的统计数据文件 
+| 清理转储的统计文件 | 选中此复选框可清理转储的统计文件 
 |===
 
 
 == 故障排除
 
-如果此数据收集器出现问题，请尝试执行以下操作：
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| 错误： " 无法启动此命令，因为它未在配置节点上运行。 " | 必须在配置节点上执行此命令。 
+| 错误：“无法启动该命令，因为它未在配置节点上运行。” | 该命令必须在配置节点上执行。 
 |===
-如果此数据收集器出现问题，请尝试执行以下操作：
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| 错误： " 无法启动此命令，因为它未在配置节点上运行。 " | 必须在配置节点上执行此命令。 
+| 错误：“无法启动该命令，因为它未在配置节点上运行。” | 该命令必须在配置节点上执行。 
 |===
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

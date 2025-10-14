@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reference_object_icons.html 
-summary: Data Infrastructure Insight对象图标参考。 
+summary: Data Infrastructure Insights对象图标参考。 
 keywords: icons, assets, objects, reference, map 
 ---
 = 对象图标参考
@@ -14,22 +14,22 @@ keywords: icons, assets, objects, reference, map
 
 
 [role="lead"]
-Data Infrastructure Insight中使用的对象图标。
+Data Infrastructure Insights中使用的对象图标。
 
 
 
-== 基础架构图标：
+== 基础设施图标：
 
-image:Icon_Glossary.png["基础架构图标参考"]
-
-
-
-== KubeNet图标：
-
-image:K8sIconsWithLabels.png["Kubernetes图标参考、宽度= 180"]
+image:Icon_Glossary.png["基础设施图标参考"]
 
 
 
-== Kubnetes网络性能监控和映射图标：
+== Kubernetes 图标：
 
-image:ServiceMap_Icons.png["Kubernetes网络性能监控和映射、宽度=640"]
+image:K8sIconsWithLabels.png["Kubernetes 图标参考，宽度=180"]
+
+
+
+== Kubernetes 网络性能监控和地图图标：
+
+image:ServiceMap_Icons.png["Kubernetes 网络性能监控及地图，width=640"]

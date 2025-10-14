@@ -10,51 +10,51 @@ summary: 配置 Amazon EC2 数据收集器。
 
 
 [role="lead"]
-Data Infrastructure Insight使用Amazon EC2数据收集器从EC2实例获取清单和性能数据。
+Data Infrastructure Insights使用 Amazon EC2 数据收集器从 EC2 实例获取库存和性能数据。
 
 
 
 == 要求
 
-要从 Amazon EC2 设备收集数据，您必须具有以下信息：
+为了从 Amazon EC2 设备收集数据，您必须拥有以下信息：
 
-* 您必须具有以下项之一：
+* 您必须具有以下之一：
 +
-** 如果使用 IAM 角色身份验证，则您的 Amazon EC2 云帐户的 * IAM 角色 * 。仅当采集单元安装在 AWS 实例上时， IAM 角色才适用。
-** 如果使用 IAM 访问密钥身份验证，则为您的 Amazon EC2 云帐户提供 * IAM 访问密钥 * ID 和机密访问密钥。
+** 如果使用 IAM 角色身份验证，则为 Amazon EC2 云帐户的 *IAM 角色*。仅当您的采集单元安装在 AWS 实例上时，IAM 角色才适用。
+** 如果使用 IAM 访问密钥身份验证，则为 Amazon EC2 云帐户的 *IAM 访问密钥* ID 和秘密访问密钥。
 
 
-* 您必须具有 " 列表组织 " 权限
-* 端口443 HTTPS
-* EC2 实例可以报告为虚拟机，也可以报告为主机（不太自然）。EBS 卷既可以报告为虚拟机使用的虚拟磁盘，也可以报告为虚拟磁盘提供容量的数据存储库。
+* 您必须拥有“列出组织”权限
+* 端口 443 HTTPS
+* EC2 实例可以被报告为虚拟机，或者（不太自然地）主机。  EBS 卷既可以报告为 VM 使用的虚拟磁盘，也可以报告为虚拟磁盘提供容量的数据存储。
 
 
-访问密钥由一个访问密钥 ID （例如， AKIIOSFODNN7EXAMPLE ）和一个机密访问密钥（例如， wJALRXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY ）组成。如果您使用 Amazon EC2 SDK ， REST 或查询 API 操作，则可以使用访问密钥对向 EC2 发出的编程请求进行签名。这些密钥随 Amazon 的合同一起提供。
+访问密钥由访问密钥 ID（例如，AKIAIOSFODNN7EXAMPLE）和秘密访问密钥（例如，wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY）组成。如果您使用 Amazon EC2 SDK、REST 或查询 API 操作，则可以使用访问密钥来签署向 EC2 发出的编程请求。这些密钥是随亚马逊的合同提供的。
 
 
 
 == 配置
 
-根据下表在数据收集器字段中输入数据：
+根据下表将数据输入数据收集器字段：
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| AWS 地区 | 选择 AWS 区域 
+| AWS 区域 | 选择 AWS 区域 
 
 
-| IAM角色 | 仅在 AWS 中的 AU 上采集时使用。有关的详细信息，请参见下文<<iam-role,IAM角色>>。 
+| IAM 角色 | 仅可在 AWS 中的 AU 上获取时使用。请参阅下文以了解更多信息<<iam-role,IAM 角色>>。 
 
 
-| AWS IAM 访问密钥 ID | 输入 AWS IAM 访问密钥 ID 。如果不使用 IAM 角色，则此为必填项。 
+| AWS IAM 访问密钥 ID | 输入 AWS IAM 访问密钥 ID。如果您不使用 IAM 角色，则需要此属性。 
 
 
-| AWS IAM 机密访问密钥 | 输入 AWS IAM 机密访问密钥。如果不使用 IAM 角色，则此为必填项。 
+| AWS IAM 秘密访问密钥 | 输入 AWS IAM 秘密访问密钥。如果您不使用 IAM 角色，则需要此属性。 
 
 
-| 我了解 AWS 会向我发出 API 请求 | 选中此框可确认您已了解AWS会针对Data Infrastructure Insight轮询所发出的API请求向您收费。 
+| 我了解 AWS 会向我收取 API 请求的费用 | 选中此项以验证您是否理解 AWS 会针对Data Infrastructure Insights轮询发出的 API 请求向您收费。 
 |===
 
 
@@ -62,91 +62,91 @@ Data Infrastructure Insight使用Amazon EC2数据收集器从EC2实例获取清�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 包括其他区域 | 指定要包括在轮询中的其他区域。 
+| 包括额外区域 | 指定要包含在轮询中的其他区域。 
 
 
-| 跨帐户角色 | 用于访问不同 AWS 帐户中的资源的角色。 
+| 跨账户角色 | 用于访问不同 AWS 账户中的资源的角色。 
 
 
-| 清单轮询间隔（分钟） | 默认值为60 
+| 库存轮询间隔（分钟） | 默认值为 60 
 
 
-| 选择 " 排除 " 或 " 包括 " 以应用于按标记筛选 VM | 指定在收集数据时是包含还是排除虚拟机的按标记。如果选择了 ‘include ' ，则标记密钥字段不能为空。 
+| 选择“排除”或“包含”以按标签过滤虚拟机 | 指定收集数据时是否通过标签包含或排除虚拟机。如果选择‘包含’，则标签键字段不能为空。 
 
 
-| 标记要筛选 VM 的密钥和值 | 单击 * + Filter Tag * ，通过筛选与 VM 上的密钥和标记值匹配的密钥和值来选择要包含 / 排除的 VM （以及关联磁盘）。标记密钥为必填项，标记值为可选项。如果标记值为空，则只要虚拟机与标记密钥匹配，就会对其进行筛选。 
+| 用于筛选虚拟机的标签键和值 | 单击“*+ 过滤标签*”，通过过滤与虚拟机上的标签的键和值匹配的键和值来选择要包含/排除的虚拟机（和相关磁盘）。标签键是必填项，标签值是可选的。当Tag Value为空时，只要与Tag Key匹配，则过滤该VM。 
 
 
-| 性能轮询间隔（秒） | 默认值为1800 
+| 性能轮询间隔（秒） | 默认值为 1800 
 
 
-| CloudWatch 代理指标命名空间 | EC2/EBS 中用于收集数据的命名空间。请注意、如果更改此命名空间中默认度量指标的名称、Data Infrastructure Insight可能无法收集重命名后的数据。建议保留默认指标名称。 
+| CloudWatch 代理指标命名空间 | EC2/EBS 中用于收集数据的命名空间。请注意，如果此命名空间中的默认指标名称发生更改，Data Infrastructure Insights可能无法收集重命名的数据。建议保留默认指标名称。 
 |===
 
 
-== IAM访问密钥
+== IAM 访问密钥
 
-访问密钥是 IAM 用户或 AWS 帐户 root 用户的长期凭据。访问密钥用于对指向 AWS 命令行界面或 AWS API 的编程请求进行签名（直接或使用 AWS SDK ）。
+访问密钥是 IAM 用户或 AWS 账户根用户的长期凭证。访问密钥用于签署对 AWS CLI 或 AWS API 的编程请求（直接或使用 AWS SDK）。
 
-访问密钥包括两部分：访问密钥 ID 和机密访问密钥。使用 _IAM 访问密钥 _ 身份验证（与 _IAM 角色 _ 身份验证不同）时，必须同时使用访问密钥 ID 和机密访问密钥来对请求进行身份验证。有关详细信息，请参阅上的Amazon文档link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html["访问密钥"]。
-
-
-
-== IAM角色
-
-使用 _IAM role_ 身份验证（与 IAM 访问密钥身份验证不同）时，您必须确保您创建或指定的角色具有访问资源所需的适当权限。
-
-例如，如果您创建了一个名为 _InstanceEE2ReadOnly" 的 IAM 角色，则必须设置此策略，以便为此 IAM 角色向所有 EC2 资源授予 EC2 只读列表访问权限。此外，您还必须授予 STS （安全令牌服务）访问权限，以便允许此角色跨帐户承担角色。
-
-创建IAM角色后、您可以在创建新EC2实例或任何现有EC2实例时附加此角色。
-
-将 IAM 角色 _InstanceEE2ReadOnly" 附加到 EC2 实例后，您将能够通过实例元数据按 IAM 角色名称检索临时凭据，并使用它通过在此 EC2 实例上运行的任何应用程序访问 AWS 资源。
-
-有关详细信息，请参阅上的Amazon文档link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html["IAM 角色"]。
-
-注意：只有在采集单元在 AWS 实例中运行时，才能使用 IAM 角色。
+访问密钥由两部分组成：访问密钥 ID 和秘密访问密钥。当您使用_IAM 访问密钥_身份验证（而不是_IAM 角色_身份验证）时，您必须同时使用访问密钥 ID 和秘密访问密钥来对请求进行身份验证。欲了解更多信息，请参阅亚马逊文档link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html["访问键"]。
 
 
 
-== 将Amazon标记映射到Data Infrastructure Insight标注
+== IAM 角色
 
-Amazon EC2数据收集器提供了一个选项、可用于使用EC2上配置的标记填充Data Infrastructure Insight标注。标注的名称必须与 EC2 标记完全相同。Data Infrastructure Insight将始终填充同名文本类型的标注、并"尽力"填充其他类型(数字、布尔值等)的标注。如果您的标注类型不同，而数据收集器无法填充，则可能需要删除此标注并将其重新创建为文本类型。
+当使用_IAM 角色_身份验证（而不是 IAM 访问密钥身份验证）时，您必须确保您创建或指定的角色具有访问资源所需的适当权限。
 
-请注意、AWS区分大小写、而Data Infrastructure Insight不区分大小写。因此、如果您在Data Infrastructure Insight中创建了一个名为"owner"的标注、并在EC2中创建了名为"owner"、"owner"和"owner"的标记、则所有EC2变体"owner"都将映射到Cloud Insight的"owner"标注。
+例如，如果您创建一个名为 _InstanceEc2ReadOnly_ 的 IAM 角色，则必须设置策略以授予此 IAM 角色对所有 EC2 资源的 EC2 只读列表访问权限。此外，您必须授予 STS（安全令牌服务）访问权限，以便允许该角色跨账户承担角色。
 
+创建 IAM 角色后，您可以在创建新的 EC2 实例或任何现有 EC2 实例时附加它。
 
+将 IAM 角色 _InstanceEc2ReadOnly_ 附加到 EC2 实例后，您将能够通过 IAM 角色名称通过实例元数据检索临时凭证，并使用它来通过在此 EC2 实例上运行的任何应用程序访问 AWS 资源。
 
-== 包括其他区域
+更多信息请参阅亚马逊文档link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html["IAM 角色"]。
 
-在 AWS Data Collector * 高级配置 * 部分中，您可以设置 * 包括额外区域 * 字段以包括其他区域，以逗号或分号分隔。默认情况下，此字段设置为 * 。 * _ * ，它会在所有美国 AWS 地区收集数据。要在 _all_ 地区收集数据，请将此字段设置为 * 。 * _ * 。如果 * 包括额外区域 * 字段为空，则数据收集器将收集在 * 配置 * 部分中指定的 * AWS 区域 * 字段中指定的资产。
-
-
-
-== 从 AWS 子帐户收集
-
-Data Infrastructure Insight支持在一个AWS数据收集器中收集AWS的子帐户。此收集的配置在 AWS 环境中执行：
-
-* 您必须将每个子帐户配置为具有一个AWS角色、此角色允许主帐户ID从子帐户访问EC2详细信息。
-* 每个子帐户都必须将角色名称配置为相同的字符串。
-* 在Data Infrastructure Insight AWS Data Collector *高级配置*部分的*交叉帐户角色*字段中输入此角色名称字符串。
-* 安装收集器的帐户需要具有_Delegate access administrator_ Privileges。link:https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-delegated-admin.html["AWS 文档"]有关详细信息、请参见。
+注意：仅当采集单元在 AWS 实例中运行时才可使用 IAM 角色。
 
 
-最佳实践：强烈建议将 AWS 预定义的 _AmazonEC2ReadOnlyAccess_ 策略分配给 EC2 主帐户。此外，在数据源中配置的用户应至少分配预定义的 _AWSOrganizationsReadOnlyAccess_ 策略，以便查询 AWS 。
 
-有关配置您的环境以允许Data Infrastructure Insight从AWS子帐户收集数据的信息、请参见以下内容：
+== 将 Amazon 标签映射到Data Infrastructure Insights注释
 
-link:https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html["教程：使用 IAM 角色跨 AWS 帐户委派访问"]
+Amazon EC2 数据收集器包含一个选项，允许您使用在 EC2 上配置的标签填充Data Infrastructure Insights注释。注释的名称必须与 EC2 标签的名称完全相同。Data Infrastructure Insights将始终填充同名的文本类型注释，并将“尽最大努力”填充其他类型（数字、布尔值等）的注释。如果您的注释属于不同类型并且数据收集器无法填充它，则可能需要删除该注释并将其重新创建为文本类型。
 
-link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html["AWS 设置：在您拥有的另一个 AWS 帐户中提供对 IAM 用户的访问权限"]
+请注意，AWS 区分大小写，而Data Infrastructure Insights不区分大小写。因此，如果您在Data Infrastructure Insights中创建名为“OWNER”的注释，并在 EC2 中创建名为“OWNER”、“Owner”和“owner”的标签，则“owner”的所有 EC2 变体都将映射到 Cloud Insight 的“OWNER”注释。
 
-link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["创建角色以将权限委派给 IAM 用户"]
+
+
+== 包括额外区域
+
+在 AWS 数据收集器 *高级配置* 部分中，您可以设置 *包括额外区域* 字段以包含其他区域，以逗号或分号分隔。默认情况下，此字段设置为 *_us-.*_*，即收集所有美国 AWS 区域。要收集所有区域，请将此字段设置为 *_.*_*。如果“*包括额外区域*”字段为空，数据收集器将按照“*配置*”部分中的指定，在“*AWS 区域*”字段中收集指定的资产。
+
+
+
+== 从 AWS 子账户收集
+
+Data Infrastructure Insights支持在单个 AWS 数据收集器内收集 AWS 的子账户。此集合的配置在 AWS 环境中执行：
+
+* 您必须配置每个子帐户以具有一个 AWS 角色，该角色允许主帐户 ID 从子帐户访问 EC2 详细信息。
+* 每个子账户的角色名称必须配置为相同的字符串。
+* 将此角色名称字符串输入到Data Infrastructure InsightsAWS 数据收集器 *高级配置* 部分的 *跨账户角色* 字段中。
+* 安装收集器的帐户需要具有_委托访问管理员_权限。查看link:https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-delegated-admin.html["AWS 文档"]了解更多信息。
+
+
+最佳实践：强烈建议将 AWS 预定义的 _AmazonEC2ReadOnlyAccess_ 策略分配给 EC2 主账户。此外，数据源中配置的用户至少应分配预定义的 _AWSOrganizationsReadOnlyAccess_ 策略，以便查询 AWS。
+
+有关配置环境以允许Data Infrastructure Insights从 AWS 子账户收集信息，请参阅以下内容：
+
+link:https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html["教程：使用 IAM 角色跨 AWS 账户委托访问权限"]
+
+link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html["AWS 设置：向您拥有的另一个 AWS 账户中的 IAM 用户提供访问权限"]
+
+link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["创建角色以将权限委托给 IAM 用户"]
 
 
 
 == 故障排除
 
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

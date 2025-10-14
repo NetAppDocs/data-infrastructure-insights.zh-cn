@@ -10,31 +10,31 @@ summary: 配置 XtremeIO 数据收集器。
 
 
 [role="lead"]
-EMC XtremIO 数据收集器从 EMC XtremIO 存储系统采集清单和性能数据。
+EMC XtremIO 数据收集器从 EMC XtremIO 存储系统获取清单和性能数据。
 
 
 
 == 要求
 
-要配置 EMC XtremIO （ HTTP ）数据收集器，您必须具有：
+要配置 EMC XtremIO (HTTP) 数据收集器，您必须具有：
 
-* XtremIO 管理服务器（ XMS ）主机地址
+* XtremIO 管理服务器 (XMS) 主机地址
 * 具有管理员权限的帐户
-* 访问端口 443 （ HTTPS ）
+* 访问端口 443 (HTTPS)
 
 
 
 
-== 术语
+== Terminology
 
-Data Infrastructure Insight从EMC XtremIO数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据源或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从 EMC XtremIO 数据收集器获取以下清单信息。对于Data Infrastructure Insights获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据源故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
-| 磁盘(SSD) | 磁盘 
+| 磁盘（SSD） | 磁盘 
 
 
 | 集群 | 存储 
@@ -46,18 +46,18 @@ Data Infrastructure Insight从EMC XtremIO数据收集器采集以下清单信息
 | 卷 | 卷 
 
 
-| LUN 映射 | 卷映射 
+| LUN 映射 | 体积图 
 
 
-| 目标 FC 启动程序 | 卷掩码 
+| 目标 FC 发起者 | 体积遮罩 
 |===
-注意：这些只是常见的术语映射，可能并不代表此数据源的所有情形。
+注意：这些只是常用术语映射，可能并不代表此数据源的所有情况。
 
 
 
 == 要求
 
-* XtremIO 管理服务器（ XMS ）主机 IP 地址
+* XtremIO 管理服务器 (XMS) 主机 IP 地址
 * XtremIO 的管理员用户名和密码
 
 
@@ -67,7 +67,7 @@ Data Infrastructure Insight从EMC XtremIO数据收集器采集以下清单信息
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
 | XMS 主机 | XtremIO 管理服务器的 IP 地址或完全限定域名 
@@ -84,19 +84,19 @@ Data Infrastructure Insight从EMC XtremIO数据收集器采集以下清单信息
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| TCP 端口 | 用于连接到 XTremIO 管理服务器的 TCP 端口。默认值为443。 
+| TCP 端口 | 用于连接 XTremIO 管理服务器的 TCP 端口。默认值为 443。 
 
 
-| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认时间间隔为 60 分钟。 
+| 库存轮询间隔（分钟） | 库存调查之间的间隔。默认时间间隔为 60 分钟。 
 
 
-| 性能轮询间隔（秒） | 性能轮询之间的时间间隔。默认值为300秒。 
+| 性能轮询间隔（秒） | 性能轮询之间的间隔。默认值为 300 秒。 
 |===
 
 
 == 故障排除
 
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

@@ -4,21 +4,21 @@ permalink: task_dc_google_cloud.html
 summary: 配置 Google Compute 数据收集器 
 keywords: data collector, queries, create 
 ---
-= NetApp Google 计算数据收集器
+= NetApp Google Compute 数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-此数据收集器支持从 Google Compute 云平台配置收集清单和性能。此收集器将寻求发现一个 Google 组织内所有项目中的所有计算资源。如果您希望通过Data Infrastructure Insight发现多个Google组织、则需要为每个组织部署一个Data Infrastructure Insight收集器。
+该数据收集器支持从 Google Compute 云平台配置收集库存和性能。该收集器将尝试发现一个 Google 组织内所有项目内的所有计算资源。如果您想要使用Data Infrastructure Insights发现多个 Google 组织，则需要为每个组织部署一个Data Infrastructure Insights收集器。
 
 
 
 == 服务帐户要求
 
-* 您必须按照中的说明创建服务帐户link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["创建/管理服务帐户"]。此类服务帐户通过一个唯一ID (称为_clientId_)标识、该ID将用作用户名。
-* 此外，请按照中的说明创建服务帐户密钥link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys["创建/管理服务帐户密钥"]。此密钥可作为json文件下载、其内容将用作密码。
-* 服务帐户的范围必须为_compute。readonly _、_monitoring.read_和_Cloud平台_。
+* 您必须按照link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["创建/管理服务帐户"]。此类服务帐户由唯一 ID（称为 _clientId_）标识，该 ID 将用作用户名。
+* 此外，请按照以下说明创建服务帐户密钥：link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys["创建/管理服务帐户密钥"] 。该密钥可以作为 json 文件下载，其内容将用作密码。
+* 服务帐户的范围必须为 _compute.readonly_、_monitoring.read_ 和 _cloud-platform_。
 
 
 
@@ -27,22 +27,22 @@ keywords: data collector, queries, create
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 组织 ID | 要使用此收集器发现的组织 ID 。如果您的服务帐户可以看到多个组织，则此字段为必填字段 
+| 组织 ID | 您想要使用此收集器发现的组织 ID。如果您的服务帐户能够查看多个组织，则此字段为必填项 
 
 
-| 选择 " 排除 " 或 " 包括 " 以按 ID 筛选 GCP 项目 | 如果您希望限制将哪些项目资源引入数据基础架构洞察力中、 
+| 选择“排除”或“包含”以按 ID 过滤 GCP 项目 | 如果您想限制哪些项目的资源被带入Data Infrastructure Insights。 
 
 
-| 项目 ID | 要筛选或筛选发现结果的项目 ID 列表，具体取决于 " 选择 " 排除 "..." 值的值。默认列表为空 
+| 项目 ID | 根据“选择‘排除’...”的值，您想要从发现中过滤掉或剔除的项目 ID 列表。默认列表为空 
 
 
 | 客户端 ID | Google Cloud Platform 配置的客户端 ID 
 
 
-| 在此处复制并粘贴 Google 凭据文件的内容 | 将云平台帐户的 Google 凭据复制到此字段 
+| 将您的 Google 凭证文件的内容复制并粘贴到此处 | 将 Cloud Platform 帐户的 Google 凭据复制到此字段 
 |===
 
 
@@ -50,22 +50,22 @@ keywords: data collector, queries, create
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 清单轮询间隔（分钟） | 默认值为60分钟 
+| 库存轮询间隔（分钟） | 默认为 60 分钟 
 
 
-| 选择 " 排除 " 或 " 包括 " 以应用于按标签筛选 VM | 指定在收集数据时是按标签包含还是排除虚拟机。如果选择了 ‘include ' ，则 Label Key 字段不能为空。 
+| 选择“排除”或“包含”以按标签过滤虚拟机 | 指定收集数据时是否通过标签包含或排除虚拟机。如果选择‘包含’，则标签键字段不能为空。 
 
 
-| 标记要筛选 VM 的密钥和值 | 单击 * + 筛选器标签 * ，通过筛选与 VM 上的密钥和标签值匹配的密钥和值来选择要包含 / 排除的 VM （以及关联磁盘）。标签密钥为必填项，标签值为可选项。如果 Label 值为空，则只要 VM 与 Label Key 匹配，就会对其进行筛选。 
+| 用于筛选虚拟机的标签键和值 | 单击“*+ 过滤标签*”，通过过滤与虚拟机上的标签的键和值匹配的键和值来选择要包含/排除的虚拟机（和相关磁盘）。标签键是必需的，标签值是可选的。当 Label Value 为空时，只要与 Label Key 匹配，则过滤该 VM。 
 
 
-| 性能轮询间隔（秒） | 默认值为1800秒 
+| 性能轮询间隔（秒） | 默认值为 1800 秒 
 |===
 
 
 == 故障排除
 
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

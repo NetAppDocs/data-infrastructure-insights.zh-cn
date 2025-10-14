@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reporting_create_example.html 
-summary: 使用此过程创建使用预定义Data Infrastructure Insight报告的报告。 
+summary: 使用此过程使用预定义的Data Infrastructure Insights报告创建报告。 
 keywords: reporting, cognos, data warehouse, dwh, create, report 
 ---
 = 创建报告（示例）
@@ -10,47 +10,47 @@ keywords: reporting, cognos, data warehouse, dwh, create, report
 
 
 [role="lead"]
-使用此示例中的步骤生成一个简单的报告，以了解多个数据中心中存储和存储池的物理容量。
+使用此示例中的步骤生成有关多个数据中心的存储和存储池的物理容量的简单报告。
 
 .步骤
-. 导航到*菜单>内容>团队内容>报告*
+. 导航至*菜单 > 内容 > 团队内容 > 报告*
 . 在屏幕右上角，选择*[New +]*
 . 选择*报告*
 +
 image:Reporting_New_Report.png["创建新报告"]
 
-. 在*Templates *选项卡上，选择_Blank_
+. 在“模板”选项卡上，选择“空白”
 +
-此时将显示源和数据选项卡
+显示“源”和“数据”选项卡
 
-. 打开*选择源+*
-. 在*Team content*下，打开*Packages*
+. 打开*选择来源+*
+. 在“团队内容”下，打开“包”
 +
-此时将显示可用软件包的列表。
+显示可用包的列表。
 
-. 选择*存储和存储池容量*image:Reporting_Select_Source_For_Report.png["选择报告的来源"]
-. 选择*打开*
+. 选择*存储和存储池容量*image:Reporting_Select_Source_For_Report.png["选择报告来源"]
+. 选择“打开”
 +
-此时将显示报告的可用样式。
+将显示报告可用的样式。
 
-. 选择*List*
+. 选择*列表*
 +
 为列表和查询添加适当的名称
 
-. 选择 * 确定 *
-. 展开 _physical capacity_
-. 扩展到 _Data Center_ 的最低级别
-. 将 _Data Center_ 拖动到报告平台。
-. 展开 _capacity （ MB ） _
-. 将 _capacity （ MB ） _ 拖动到报告平台。
-. 将 _used capacity （ MB ） _ 拖动到报告平台。
-. 从*Run*菜单中选择输出类型，以运行报告。
+. 选择“确定”
+. 扩展_物理容量_
+. 扩展到_数据中心_的最低级别
+. 将“数据中心”拖到“报告中”。
+. 扩展_容量 (MB)_
+. 将“容量 (MB)”拖到“报告”面板。
+. 将“已用容量 (MB)”拖到“报告”面板。
+. 通过从*运行*菜单中选择输出类型来运行报告。
 +
 image:Reporting_Running_A_Report.png["选择报告输出"]
 
 
 
 .结果
-此时将创建类似于以下内容的报告：
+将创建类似以下内容的报告：
 
 image:Reporting-Example1.png["报告示例"]

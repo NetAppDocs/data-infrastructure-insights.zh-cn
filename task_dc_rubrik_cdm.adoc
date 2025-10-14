@@ -2,25 +2,25 @@
 sidebar: sidebar 
 permalink: task_dc_rubrik_cdm.html 
 keywords: data collector, Rubrik, 
-summary: 配置Rubrik CDM数据收集器。 
+summary: 配置 Rubrik CDM 数据收集器。 
 ---
-= Rubrik CDM数据收集器
+= Rubrik CDM 数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insight使用Rubeck数据收集器从Rubeck存储设备中获取清单和性能数据。
+Data Infrastructure Insights使用 Rubrik 数据收集器从 Rubrik 存储设备获取库存和性能数据。
 
 
 
-== 术语
+== Terminology
 
-Data Infrastructure Insight从Rubik数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从 Rubrik 数据收集器获取以下库存信息。对于Data Infrastructure Insights获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 集群 | 存储、存储池 
@@ -31,20 +31,20 @@ Data Infrastructure Insight从Rubik数据收集器采集以下清单信息。对
 
 | 磁盘 | 磁盘 
 |===
-注意：这些只是常见的术语映射，可能并不代表此数据源的所有情形。
+注意：这些只是常用术语映射，可能并不代表此数据源的所有情况。
 
 
 
 == 要求
 
-要配置此数据收集器，需要满足以下条件：
+配置此数据收集器需要以下内容：
 
-* Data Infrastructure Insight采集单元将启动与TCP端口443的连接、并连接到Rubeck集群。每个集群一个收集器。
-* Rubrik集群IP地址。
+* Data Infrastructure Insights采集单元将启动与 Rubrik 集群的 TCP 端口 443 的连接。每个集群一个收集器。
+* Rubrik 集群 IP 地址。
 * 集群的用户名和密码。
-* Rubeck集群IP地址或主机名。
-* 对于基本身份验证、是指集群的用户名和密码。如果您希望使用基于服务帐户的身份验证、则需要服务帐户、机密和组织ID
-* 端口要求： HTTPS 443
+* Rubrik 集群 IP 地址或主机名。
+* 对于基本身份验证，需要集群的用户名和密码。如果您更喜欢使用基于服务帐户的身份验证，则需要一个服务帐户、密钥和一个组织 ID
+* 端口要求：HTTPS 443
 
 
 
@@ -53,7 +53,7 @@ Data Infrastructure Insight从Rubik数据收集器采集以下清单信息。对
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
 | IP | Rubrik集群的IP地址 
@@ -62,7 +62,7 @@ Data Infrastructure Insight从Rubik数据收集器采集以下清单信息。对
 | 用户名/服务帐户 | 集群的用户名 
 
 
-| 密码/秘密 | 集群的密码 
+| 密码/秘密 | 集群密码 
 
 
 | 服务帐户的组织 ID | 这需要是完整的字符串，如“Organization:::nnnnnn-nnnn.....” 
@@ -73,16 +73,16 @@ Data Infrastructure Insight从Rubik数据收集器采集以下清单信息。对
 
 [cols="2*"]
 |===
-| 清单轮询间隔（分钟） | 默认值为60 
+| 库存轮询间隔（分钟） | 默认值为 60 
 
 
-| 性能轮询间隔（秒） | 默认值为300 
+| 性能轮询间隔（秒） | 默认值为 300 
 |===
 
 
 == 故障排除
 
-如果此数据收集器出现问题，请尝试执行以下操作：
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 
 
@@ -90,12 +90,12 @@ Data Infrastructure Insight从Rubik数据收集器采集以下清单信息。对
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| 我收到一条消息、指出已创建多个存储。 | 检查集群配置是否正确、以及收集器是否指向单个集群。 
+| 我收到一条消息，提示已创建多个存储。 | 检查集群是否配置正确，以及收集器是否指向单个集群。 
 
 
-| 轮询失败，错误代码为 400 [错误请求]....无效的 ManagedId.... | 您已在组织 ID 字段中填充了一个值，但 Rubrik 集群不认为这是一个有效的组织 ID，尽管 Rubrik 发出的错误消息将其称为“ManagedId” 
+| 轮询失败，返回 400 [错误请求]....无效的 ManagedId.... | 您已在组织 ID 字段中填充了一个值，但 Rubrik 集群不认为这是一个有效的组织 ID，尽管 Rubrik 发出的错误消息将其称为“ManagedId” 
 |===
-有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+更多信息可从link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

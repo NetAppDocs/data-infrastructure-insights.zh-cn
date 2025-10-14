@@ -10,43 +10,43 @@ summary: Consul 数据收集器配置
 
 
 [role="lead"]
-Data Infrastructure Insight可使用此数据收集器从整合服务收集指标。
+Data Infrastructure Insights使用此数据收集器从 Consul 收集指标。
 
 
 
 == 安装
 
-. 从*Observability > Collectors*中，单击*+Data Collector*。选择"执行"。
+. 从*可观察性 > 收集器*中，单击*+数据收集器*。选择 Consul。
 +
-如果尚未配置用于收集的Agent、系统将提示您在租户上配置link:task_config_telegraf_agent.html["安装代理"]。
+如果您尚未配置用于收集的代理，系统会提示您link:task_config_telegraf_agent.html["安装代理"]您的租户。
 
 +
-如果已配置代理，请选择相应的操作系统或平台，然后单击 * 继续 * 。
+如果您已经配置了代理，请选择适当的操作系统或平台，然后单击“继续”。
 
-. 按照 Consul Configuration 屏幕中的说明配置数据收集器。这些说明因用于收集数据的操作系统或平台的类型而异。
+. 按照 Consul 配置屏幕中的说明配置数据收集器。说明根据您用于收集数据的操作系统或平台的类型而有所不同。
 
 
 
 
 == 设置
 
-有关信息，请参见link:https://www.consul.io/docs/index.html["Consul 文档"]。
+信息可以在link:https://www.consul.io/docs/index.html["Consul 文档"]。
 
 
 
-== 用于转换的对象和计数器
+== 领事的对象和计数器
 
-将收集以下对象及其计数器：
+收集以下对象及其计数器：
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
-| 对象： | 标识符： | 属性： | 数据点： 
+| 目的： | 标识符： | 属性： | 数据点： 
 
 
-| Consu | 命名空间检查 ID 服务节点 | 节点 IP 节点操作系统节点 UUID 节点名称服务名称检查名称服务 ID 状态 | 严重通过警告 
+| 领事 | 命名空间检查ID服务节点 | 节点 IP 节点 OS 节点 UUID 节点名称 服务名称 检查名称 服务 ID 状态 | 关键超车警告 
 |===
 
 
 == 故障排除
 
-有关其他信息、请参见link:concept_requesting_support.html["支持"]页面。
+更多信息可从link:concept_requesting_support.html["支持"]页。

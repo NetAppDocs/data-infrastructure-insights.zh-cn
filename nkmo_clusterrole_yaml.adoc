@@ -2,16 +2,16 @@
 sidebar: sidebar 
 permalink: nkmo_clusterrole_yaml.html 
 keywords: NKMO, yaml, 
-summary: NKMOO集群角色的YAML文件示例 
+summary: NKMO Clusterrole 的示例 YAML 文件 
 ---
-= NKMO"集群角色YAML"示例
+= NKMO Clusterrole YAML 示例
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
 
 
 [role="lead"]
-需要至少为NetApp Kubernetes监控操作员(NKMO）的_kubectl_组件配置对以下Kubernetes对象的访问权限：代理、集群角色、集群绑定、自定义资源定义、部署、 命名空间、角色、轮绑定、密码、服务帐户、 和服务。以下是具有这些最低权限的clusterrole示例。
+NetApp Kubernetes 监控操作员 (NKMO) 的 _kubectl_ 组件至少需要配置为可以访问以下 kubernetes 对象：代理、集群角色、集群角色绑定、自定义资源定义、部署、命名空间、角色、角色绑定、机密、服务帐户和服务。下面是具有这些最低权限的示例集群角色。
 
 [listing]
 ----

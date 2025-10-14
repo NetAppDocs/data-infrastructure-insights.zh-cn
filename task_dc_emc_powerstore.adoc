@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_emc_powerstore.html 
 keywords: data collector, PowerStore, EMC, DELL 
-summary: 配置 Dell EMC PowerStore 数据收集器。 
+summary: 配置 DELL EMC PowerStore 数据收集器。 
 ---
 = Dell EMC PowerStore 数据收集器
 :hardbreaks:
@@ -10,54 +10,54 @@ summary: 配置 Dell EMC PowerStore 数据收集器。
 
 
 [role="lead"]
-EMC PowerStore 数据收集器从 EMC PowerStore 存储收集清单信息。在配置方面，数据收集器需要存储处理器的 IP 地址以及只读用户名和密码。
+EMC PowerStore 数据收集器从 EMC PowerStore 存储收集库存信息。为了进行配置，数据收集器需要存储处理器的 IP 地址以及只读用户名和密码。
 
-EMC PowerStore 数据收集器收集 PowerStore 在其他存储阵列之间协调的卷到卷复制关系。Data Infrastructure Insight会显示每个PowerStore集群的存储阵列、并收集该集群上节点和存储端口的清单数据。不会收集任何存储池或卷数据。
+EMC PowerStore 数据收集器收集 PowerStore 在其他存储阵列之间协调的卷到卷的复制关系。Data Infrastructure Insights显示每个 PowerStore 集群的存储阵列，并收集该集群上的节点和存储端口的库存数据。未收集任何存储池或卷数据。
 
 
 
-== 术语
+== Terminology
 
-Data Infrastructure Insight从该数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从该数据收集器获取以下库存信息。对于Data Infrastructure Insights获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | host | host 
 
 
-| host_volume_mapping | host_volume_mapping 
+| 主机卷映射 | 主机卷映射 
 
 
-| 硬件（驱动器位于 "ext_details" 对象下）： drives | 磁盘 
+| 硬件（在“extra_details”对象下有驱动器）：驱动器 | 磁盘 
 
 
-| 设备 | StoragePool 
+| 设备 | 存储池 
 
 
 | 集群 | 存储阵列 
 
 
-| 节点 | StorageNode 
+| 节点 | 存储节点 
 
 
-| FC_port | 端口 
+| fc_端口 | 端口 
 
 
 | volume | 卷 
 
 
-| 内部卷 | file_system 
+| 内部容积 | 文件系统 
 |===
-注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情况。
 
 
 
 == 要求
 
-要配置此数据收集器，需要以下信息：
+配置此数据收集器需要以下信息：
 
 * 存储处理器的 IP 地址或完全限定域名
 * 只读用户名和密码
@@ -69,7 +69,7 @@ Data Infrastructure Insight从该数据收集器采集以下清单信息。对�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
 | PowerStore 网关 | PowerStore 存储的 IP 地址或完全限定域名 
@@ -86,18 +86,18 @@ Data Infrastructure Insight从该数据收集器采集以下清单信息。对�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| HTTPS端口 | 默认值为 443 
+| HTTPS 端口 | 默认值为 443 
 
 
-| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认时间间隔为 60 分钟。 
+| 库存轮询间隔（分钟） | 库存调查之间的间隔。默认时间间隔为 60 分钟。 
 |===
-Cloud Insight 的 PowerStore 性能收集利用了 PowerStore 的 5 分钟粒度源数据。因此、Data Infrastructure Insight每五分钟轮询一次该数据、这是不可配置的。
+Cloud Insight 的 PowerStore 性能收集利用了 PowerStore 的 5 分钟粒度源数据。因此，Data Infrastructure Insights每五分钟轮询一次该数据，并且这是不可配置的。
 
 
 
 == 故障排除
 
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

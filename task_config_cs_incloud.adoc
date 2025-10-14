@@ -2,56 +2,56 @@
 sidebar: sidebar 
 permalink: task_config_cs_incloud.html 
 keywords: Cloud, Storage, AWS, Cloud Volumes, Cloud ONTAP, firewall, VPC, Subnet,  cloud secure 
-summary: 工作负载安全性使用数据收集器从设备收集文件和用户访问数据。 
+summary: 工作负载安全使用数据收集器从设备收集文件和用户访问数据。 
 ---
-= 为NetApp ONTAP 收集器配置Cloud Volumes ONTAP 和Amazon FSX
+= 配置Cloud Volumes ONTAP和Amazon FSx for NetApp ONTAP收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-工作负载安全性使用数据收集器从设备收集文件和用户访问数据。
+工作负载安全使用数据收集器从设备收集文件和用户访问数据。
 
 
 
-== Cloud Volumes ONTAP 存储配置
+== Cloud Volumes ONTAP存储配置
 
-要配置单节点/HA AWS实例以托管工作负载安全代理、请参见OnCommand Cloud Volumes ONTAP文档：https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[]
+请参阅OnCommand Cloud Volumes ONTAP文档，以配置单节点/HA AWS 实例来托管工作负载安全代理：https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[]
 
-配置完成后、按照以下步骤设置SVM：https://docs.netapp.com/us-en/cloudinsights/task_add_collector_svm.html[]
+配置完成后，按照以下步骤设置您的 SVM：https://docs.netapp.com/us-en/cloudinsights/task_add_collector_svm.html[]
 
 
 
 == 支持的平台
 
-* Cloud Volumes ONTAP 、在所有可用的云服务提供商中均受支持。例如：Amazon、Azure、Google Cloud。
-* ONTAP Amazon FSX
+* Cloud Volumes ONTAP，在所有可用的云服务提供商处均受支持。例如：Amazon、Azure、Google Cloud。
+* ONTAPAmazon FSx
 
 
 
 
-== 代理计算机配置
+== 代理机器配置
 
-必须在云服务提供商的相应子网中配置代理计算机。请在"代理要求"中阅读有关网络访问的更多信息。
+代理机器必须在云服务提供商的各自子网中配置。在[代理要求]中阅读有关网络访问的更多信息。
 
-以下是在AWS中安装Agent的步骤。在Azure或Google Cloud中、可以按照适用于云服务提供商的等效步骤进行安装。
+以下是在 AWS 中安装代理的步骤。可以在 Azure 或 Google Cloud 中按照适用于云服务提供商的等效步骤进行安装。
 
-在AWS中、按照以下步骤配置要用作工作负载安全代理的计算机：
+在 AWS 中，使用以下步骤将机器配置为用作工作负载安全代理：
 
-按照以下步骤配置要用作工作负载安全代理的计算机：
+使用以下步骤将机器配置为工作负载安全代理：
 
 .步骤
-. 登录到 AWS 控制台并导航到 EC2-Instances 页面，然后选择 _Launch Instance_ 。
-. 选择具有此页面中所述的相应版本的RHEL或CentOS AMI：https://docs.netapp.com/us-en/cloudinsights/concept_cs_agent_requirements.html[]
-. 选择 Cloud ONTAP 实例所在的 VPC 和子网。
-. 选择 _t2.xlarge_ （ 4 个 vCPU 和 16 GB RAM ）作为已分配的资源。
+. 登录 AWS 控制台并导航到 EC2-Instances 页面并选择_启动实例_。
+. 选择具有此页面中提到的适当版本的 RHEL 或 CentOS AMI：https://docs.netapp.com/us-en/cloudinsights/concept_cs_agent_requirements.html[]
+. 选择 Cloud ONTAP实例所在的 VPC 和子网。
+. 选择 _t2.xlarge_（4 vcpus 和 16 GB RAM）作为分配的资源。
 +
 .. 创建 EC2 实例。
 
 
-. 使用 YUM 软件包管理器安装所需的 Linux 软件包：
+. 使用 YUM 包管理器安装所需的 Linux 包：
 +
-.. 安装 _wget_ 和 _unzip _ 原生 Linux 软件包。
+.. 安装 _wget_ 和 _unzip_ 本机 Linux 包。
 
 
 
@@ -60,20 +60,20 @@ summary: 工作负载安全性使用数据收集器从设备收集文件和用�
 
 == 安装工作负载安全代理
 
-. 以管理员或帐户所有者身份登录到您的Data Infrastructure Insight环境。
-. 导航到工作负载安全性*Collectors*并单击*Agents*选项卡。
-. 单击 * + 代理 * 并指定 RHEL 作为目标平台。
+. 以管理员或帐户所有者的身份登录到您的Data Infrastructure Insights环境。
+. 导航到工作负载安全*收集器*并单击*代理*选项卡。
+. 单击 *+Agent* 并指定 RHEL 作为目标平台。
 . 复制代理安装命令。
-. 将代理安装命令粘贴到您已登录的 RHEL EC2 实例中。此操作将安装Workload Security代理、前提是满足所有link:concept_cs_agent_requirements.html["代理前提条件"]要求。
+. 将代理安装命令粘贴到您登录的 RHEL EC2 实例中。这将安装 Workload Security 代理，提供所有link:concept_cs_agent_requirements.html["代理先决条件"]均已满足。
 
 
-有关详细步骤、请访问此链接：https://docs。NetApp．com/us-en/ldinsights /Task _cs_add_agent.html#Steps-to－install-agent
+有关详细步骤，请参阅此链接： https://docs.netapp.com/us-en/cloudinsights/task_cs_add_agent.html#steps-to-install-agent
 
 
 
 == 故障排除
 
-下表介绍了已知问题及其解决方法。
+下表描述了已知问题及其解决方法。
 
 |===
 
@@ -81,5 +81,5 @@ summary: 工作负载安全性使用数据收集器从设备收集文件和用�
 | 问题 | 解决方法 
 
 
-| 数据收集器显示"工作负载安全性：无法确定Amazon FxSN数据收集器的ONTAP 类型"错误。客户无法将新的Amazon FSxN数据收集器添加到工作负载安全性中。从代理通过端口443连接到FSxN集群时超时。防火墙和AWS安全组启用了允许通信所需的规则。代理已部署且位于同一AWS帐户中。同一代理用于连接和监控其余NetApp设备(并且所有设备均正常运行)。 | 通过将fsxadmin LIF网段添加到代理的安全规则来解决此问题描述。如果不确定端口、则允许使用所有端口。 
+| 数据收集器显示“工作负载安全：无法确定 Amazon FxSN 数据收集器的ONTAP类型”错误。客户无法将新的 Amazon FSxN 数据收集器添加到 Workload Security 中。从代理到端口 443 上的 FSxN 集群的连接超时。防火墙和 AWS 安全组已启用所需规则以允许通信。代理已部署并且也位于同一个 AWS 账户中。同一代理用于连接和监控其余的NetApp设备（并且所有设备都在运行）。 | 通过将 fsxadmin LIF 网络段添加到代理的安全规则来解决此问题。如果您不确定端口，请允许所有端口。 
 |===

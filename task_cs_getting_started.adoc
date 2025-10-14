@@ -2,17 +2,17 @@
 sidebar: sidebar 
 permalink: task_cs_getting_started.html 
 keywords: collectors, data collectors, configure, introduction, browsers , Cloud Secure 
-summary: 您可以通过几个简单的步骤开始使用工作负载安全性 
+summary: 只需几个简单的步骤即可开始使用 Workload Security 
 ---
-= 工作负载安全性入门
+= 工作负载安全入门
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-在开始使用工作负载安全性监控用户活动之前、需要完成一些配置任务。
+在开始使用 Workload Security 监控用户活动之前，需要完成一些配置任务。
 
-工作负载安全系统使用代理从存储系统收集访问数据、并从目录服务服务器收集用户信息。
+工作负载安全系统使用代理从存储系统收集访问数据并从目录服务服务器收集用户信息。
 
 在开始收集数据之前，您需要配置以下内容：
 
@@ -28,19 +28,19 @@ link:concept_cs_agent_requirements.html["代理要求"]
 
 link:task_cs_add_agent.html["添加代理"]
 
-link:https://netapp.hubs.vidyard.com/watch/Lce7EaGg7NZfvCUw4Jwy5P?["* 视频 * ：代理部署"]
+link:https://netapp.hubs.vidyard.com/watch/Lce7EaGg7NZfvCUw4Jwy5P?["*视频*：代理部署"]
 
 
 
-| 配置用户目录连接器 | link:task_config_user_dir_connect.html["添加 User Directory Connector"] link:https://netapp.hubs.vidyard.com/watch/NEmbmYrFjCHvPps7QMy8me?["* 视频 * ： Active Directory 连接"] 
+| 配置用户目录连接器 | link:task_config_user_dir_connect.html["添加用户目录连接器"] link:https://netapp.hubs.vidyard.com/watch/NEmbmYrFjCHvPps7QMy8me?["*视频*：Active Directory 连接"] 
 
 
-| 配置数据收集器 | 单击*工作负载安全性>收集器*单击要配置的数据收集器。请参见文档中的《Data Collector供应商参考》一节。link:https://netapp.hubs.vidyard.com/watch/YSQrcYA7DKXbj1UGeLYnSF?["* 视频 * ： ONTAP SVM 连接"] 
+| 配置数据收集器 | 单击*工作负载安全>收集器*单击要配置的数据收集器。请参阅文档的数据收集器供应商参考部分。link:https://netapp.hubs.vidyard.com/watch/YSQrcYA7DKXbj1UGeLYnSF?["*视频*： ONTAP SVM 连接"] 
 
 
 | 创建用户帐户 | link:concept_user_roles.html["管理用户帐户"] 
 
 
-| 故障排除 | link:https://netapp.hubs.vidyard.com/watch/Fs8N2w9wBtsFGrhRH9X85U?["* 视频 * ：故障排除"] 
+| 故障排除 | link:https://netapp.hubs.vidyard.com/watch/Fs8N2w9wBtsFGrhRH9X85U?["*视频*：故障排除"] 
 |===
-工作负载安全性也可以与其他工具集成。例如、link:http://docs.netapp.com/us-en/cloudinsights/CloudInsights_CloudSecure_Splunk_integration_guide.pdf["请参见本指南"]与Splunk集成时。
+工作负载安全也可以与其他工具集成。例如，link:http://docs.netapp.com/us-en/cloudinsights/CloudInsights_CloudSecure_Splunk_integration_guide.pdf["请参阅本指南"]与 Splunk 集成。

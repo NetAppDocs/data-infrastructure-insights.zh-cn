@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_na_cloud_volumes.html 
-summary: 为 AWS 数据收集器配置 NetApp Cloud Volumes Services 
+summary: 为 AWS 数据收集器配置NetApp Cloud Volumes Services 
 keywords: data collector, NetApp, Cloud, AWS 
 ---
-= 适用于 AWS 数据收集器的 NetApp Cloud Volumes Services
+= 适用于 AWS 数据收集器的NetApp Cloud Volumes Services
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ keywords: data collector, NetApp, Cloud, AWS
 
 
 [role="lead"]
-此数据收集器支持从适用于 AWS 的 NetApp Cloud Volumes Services 配置中收集清单。
+该数据收集器支持从NetApp Cloud Volumes Services 收集 AWS 配置的库存。
 
 
 
@@ -22,10 +22,10 @@ keywords: data collector, NetApp, Cloud, AWS
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| Cloud Volumes 区域 | 适用于 AWS 的 NetApp Cloud Volumes Services 所在地区 
+| Cloud Volumes 区域 | 适用于 AWS 的NetApp Cloud Volumes 服务区域 
 
 
 | API 密钥 | Cloud Volumes API 密钥 
@@ -39,22 +39,22 @@ keywords: data collector, NetApp, Cloud, AWS
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 清单轮询间隔（分钟） | 默认值为60分钟 
+| 库存轮询间隔（分钟） | 默认为 60 分钟 
 |===
 
 
 == 故障排除
 
-如果此数据收集器出现问题，请尝试执行以下操作：
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| 我收到类似于此错误的错误："无法执行请求：连接到<AWS区域端点>：8080 [<AWS区域端点>/AWS区域端点IP>]失败：连接超时：获取\https://<AWS区域端点FQDN>：8080/v1/Storage/IPRanges HTTP/1.1 " | 这link:task_configure_acquisition_unit.html#proxy-configuration-2["代理"]Data Infrastructure Insights用于与采集单元进行通信，Data Infrastructure Insights和数据收集器本身之间不会进行通信。您可以尝试以下几种方法：确保采集单元能够解析 fqdn 并到达所需的端口。确认不需要代理即可到达错误消息中指定的端点。 Curl 可用于测试采集单元和端点之间的通信。确保您没有使用代理进行此测试。示例：root@acquisitionunit# curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<数据收集器凭证中使用的 api 密钥 -H secret-key:<数据收集器凭证中使用的密钥> -X GET \https://<AWS 区域终端节点>:8080/v1/Storage/IPRanges 
+| 我收到了类似这样的错误：“无法执行请求：连接到 <AWS 区域端点>:8080 [<AWS 区域端点>/AWS 区域端点 IP>] 失败：连接超时：GET \https://<AWS 区域端点 FQDN>:8080/v1/Storage/IPRanges HTTP/1.1” | 这link:task_configure_acquisition_unit.html#proxy-configuration-2["代理人"]Data Infrastructure Insights用于与采集单元进行通信，Data Infrastructure Insights和数据收集器本身之间不会进行通信。您可以尝试以下几种方法：确保采集单元能够解析 fqdn 并到达所需的端口。确认不需要代理即可到达错误消息中指定的端点。 Curl 可用于测试采集单元和端点之间的通信。确保您没有使用代理进行此测试。示例：root@acquisitionunit# curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<数据收集器凭证中使用的 api 密钥 -H secret-key:<数据收集器凭证中使用的密钥> -X GET \https://<AWS 区域终端节点>:8080/v1/Storage/IPRanges 
 |===
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

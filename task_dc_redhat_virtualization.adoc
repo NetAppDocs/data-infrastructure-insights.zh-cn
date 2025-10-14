@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_redhat_virtualization.html 
 keywords: data collector, Red Hat Virtualization 
-summary: 配置 Red Hat 虚拟化数据收集器。 
+summary: 配置 Red Hat Virtualization 数据收集器。 
 ---
 = Red Hat 虚拟化数据收集器
 :hardbreaks:
@@ -10,17 +10,17 @@ summary: 配置 Red Hat 虚拟化数据收集器。
 
 
 [role="lead"]
-Data Infrastructure Insight使用Red Hat虚拟化数据收集器从虚拟化Linux和Microsoft Windows工作负载收集清单数据。
+Data Infrastructure Insights使用 Red Hat Virtualization 数据收集器从虚拟化 Linux 和 Microsoft Windows 工作负载收集库存数据。
 
 
 
-== 术语
+== Terminology
 
-对于Data Infrastructure Insight采集的每种资产类型、显示了该资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+对于Data Infrastructure Insights获取的每种资产类型，都会显示该资产最常用的术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 磁盘 | 虚拟磁盘 
@@ -37,15 +37,15 @@ Data Infrastructure Insight使用Red Hat虚拟化数据收集器从虚拟化Linu
 
 | 逻辑单元 | LUN 
 |===
-注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情况。
 
 
 
 == 要求
 
-* 通过 REST API 通过端口 443 访问 RHEV-Server 的 IP 地址
+* 通过 REST API 通过端口 443 获取 RHEV 服务器的 IP 地址
 * 只读用户名和密码
-* RHEV3.0 及更高版本
+* RHEV 版本 3.0+
 
 
 
@@ -54,10 +54,10 @@ Data Infrastructure Insight使用Red Hat虚拟化数据收集器从虚拟化Linu
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| RHEV 服务器 IP 地址 | 存储系统的 IP 地址 
+| RHEV 服务器 IP 地址 | 存储系统的IP地址 
 
 
 | 用户名 | 具有管理员权限的用户名 
@@ -71,16 +71,16 @@ Data Infrastructure Insight使用Red Hat虚拟化数据收集器从虚拟化Linu
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| HTTPS 通信端口 | 用于与 RHEV-HTTPS 通信的端口 
+| HTTPS 通信端口 | 用于与 RHEV 进行 HTTPS 通信的端口 
 
 
-| 清单轮询间隔（分钟） | 默认值为20分钟。 
+| 库存轮询间隔（分钟） | 默认值为 20 分钟。 
 |===
 
 
 == 故障排除
 
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

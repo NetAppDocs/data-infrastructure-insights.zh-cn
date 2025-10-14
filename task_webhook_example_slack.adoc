@@ -2,39 +2,39 @@
 sidebar: sidebar 
 permalink: task_webhook_example_slack.html 
 keywords: webhook, notification, Slack, integration 
-summary: 创建一个网络挂钩，以便针对可宽延性的性能或清单阈值发出警报 
+summary: 创建 Webhook 来针对 Slack 的性能或库存阈值发出警报 
 ---
-= Slack 的 webhook 示例
+= Slack 的 Webhook 示例
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-网络挂机允许用户使用自定义的网络挂机通道向各种应用程序发送警报通知。此页面提供了一个为 Slack 设置 webhooks 的示例。
+Webhook 允许用户使用自定义的 webhook 通道向各种应用程序发送警报通知。本页提供了为 Slack 设置 webhook 的示例。
 
 
-NOTE: 此页面引用第三方说明，可能会有所更改。有关最新信息、请参见link:https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack["Slack 文档"]。
+NOTE: 本页引用第三方说明，可能会有所变更。请参阅link:https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack["Slack 文档"]以获取最新信息。
 
 
 
-== 可宽延时间示例：
+== Slack 示例：
 
-* 转到 https://api.slack.com/apps[]并创建新应用程序为其指定一个有意义的名称，然后选择 Slack Workspace 。
+* 前往 https://api.slack.com/apps[]并创建一个新的应用程序。给它一个有意义的名字并选择 Slack Workspace。
 +
 image:Webhooks_Slack_Create_Webhook.png["创建 Slack Webhook"]
 
-* 转至传入的 Webhooks ，单击 _Activate Incoming Webhook_ ，请求 _Add New Webhook_ ，然后选择要发布的通道。
-* 复制 Webhook URL 。您需要将此信息粘贴到Data Infrastructure Insight webhook配置中。
+* 转到传入 Webhook，单击_激活传入 Webhook_，请求_添加新 Webhook_，然后选择要发布的频道。
+* 复制 Webhook URL。您需要将其粘贴到Data Infrastructure Insightswebhook 配置中。
 
 
 
 
-== 创建数据基础架构洞察力Webhook：
+== 创建Data Infrastructure InsightsWebhook：
 
-. 在Data Infrastructure Insight中、导航到*管理>通知*、然后选择* Webhook *选项卡。单击 * + Webhook* 以创建新的 webhook 。
-. 为 webhook 指定一个有意义的名称，例如 "slack Webhook" 。
-. 在 _Template Type_ 下拉列表中，选择 * 可宽延 * 。
-. 将上述 URL 粘贴到 _url_ 字段中。
+. 在Data Infrastructure Insights中，导航到 *管理 > 通知* 并选择 *Webhooks* 选项卡。单击 *+Webhook* 创建一个新 webhook。
+. 为 webhook 赋予一个有意义的名称，例如“Slack Webhook”。
+. 在“模板类型”下拉菜单中，选择“Slack”。
+. 将上面的 URL 粘贴到 _URL_ 字段中。
 
 
 image:Webhooks-Slack_example.png["Slack webhook 模板"]
@@ -43,13 +43,13 @@ image:Webhooks-Slack_example.png["Slack webhook 模板"]
 
 == 通过 Webhook 发送通知
 
-要通过webhook通知事件，请在Data Infrastructure Insight中导航到*Alerts > Monitors*，然后单击*+Monitor*创建新的link:task_create_monitor.html["监控"]。
+要通过 webhook 通知事件，请在Data Infrastructure Insights中导航至 *Alerts > Monitors*，然后单击 *+Monitor* 以创建新的link:task_create_monitor.html["监视器"]。
 
-* 选择一个指标并定义监控器的条件。
-* 在 _set up team notification （ s ）下，选择 * Webhook* 传送方法。
-* 为所需事件（严重，警告，已解决）选择 "slack （可宽限） " webhook
+* 选择一个指标并定义监视器的条件。
+* 在“设置团队通知”下，选择“Webhook”传送方式。
+* 为所需事件（严重、警告、已解决）选择“Slack”webhook
 +
-image:Webhooks_Slack_Notifications.png["网络挂机通知"]
+image:Webhooks_Slack_Notifications.png["Webhook 通知"]
 
 
 
@@ -57,6 +57,6 @@ image:Webhooks_Slack_Notifications.png["网络挂机通知"]
 
 ==== 更多信息：
 
-* 要修改消息格式和布局、请参见 https://api.slack.com/messaging/composing[]
+* 要修改消息格式和布局，请参阅 https://api.slack.com/messaging/composing[]
 * 错误处理： https://api.slack.com/messaging/webhooks#handling_errors[]
 

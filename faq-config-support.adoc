@@ -10,58 +10,58 @@ summary:
 
 
 [role="lead"]
-本常见问题解答解答解答了有关Data Infrastructure Insight配置和受支持设备的常见问题。
+此常见问题解答解答了有关Data Infrastructure Insights配置和支持设备的常见问题。
 
 
 
-== Data Infrastructure Insight是否会对我的环境进行更改？
+== Data Infrastructure Insights是否会改变我的环境？
 
-不可以。Data Infrastructure Insight是一种收集有关您环境的信息的只读工具。Data Infrastructure Insight绝不会对您的资产或配置进行任何更改。
-
-
-
-== Data Infrastructure Insight需要对我的设备具有哪些权限级别访问权限？
-
-在大多数情况下，如果设备支持只读访问，则只需进行只读访问即可。某些解决方案不允许只读访问，因此需要适当的提升权限。
+否。Data Infrastructure Insights是一个只读工具，用于收集有关您的环境的信息。Data Infrastructure Insights永远不会对您的资产或配置进行任何更改。
 
 
 
-== Data Infrastructure Insight收集信息的频率如何？
+== Data Infrastructure Insights需要对我的设备具有什么权限级别的访问权限？
 
-Data Infrastructure ½通常每5分钟收集一次性能数据、每隔 小时发现一次逻辑和物理构造。Data Infrastructure Insight根据建议的最佳实践和可扩展性设置默认轮询间隔、但确实允许用户完全控制这些间隔。
-
-
-
-== Data Infrastructure Insight对我的环境有何影响？
-
-Data Infrastructure Insight的无代理、带外和被动IP通信有助于最大限度地减少设置、维护和对数据中心生态系统的影响。Data Infrastructure Insight的性能开发团队采取了大量措施、在性能监控活动中最大限度地减少对数据中心性能的任何影响。在正常操作环境中，影响可忽略不计，在高利用率或性能低下的技术平台中，影响可以宽松或收紧。有关详细信息、请参见《Data Infrastructure Insight安装指南》。
+在设备支持的大多数情况下，只需要只读访问。有些解决方案不允许只读访问，因此需要适当的提升权限。
 
 
 
-== 如何在Data Infrastructure Insight中列出所有主机/VM？
+== Data Infrastructure Insights多久收集一次信息？
 
-Data Infrastructure Insight支持的小工具和查询列表功能可用于为数据中心资产提供清单模式列表。虚拟机列表直至磁盘轴，以及之间的大量构造均可用于查询，小工具，信息板和数据仓库报告，并可通过 RESTful API 进行访问。
-
-
-
-== Data Infrastructure Insight是否为相关的非虚拟机管理程序主机(即物理服务器)提供相同类型的支持？
-
-VMware 等虚拟机管理程序可提供有关 ESXi 主机及其虚拟机（ VM ）的详细信息。对于物理服务器、Data Infrastructure Insight会收集截至主机HBA的指标。Data Infrastructure Insight采用一种独特的方法来发现使用正在申请专利的技术的物理服务器。发现存储和 / 或交换机后，物理服务器的主机名包含在网络结构别名信息中。Data Infrastructure Insight会选择这些主机名并在DNS中进行匹配、然后自动将这些主机引入Data Infrastructure Insight。这种技术可以极大地减少手动输入更新和工具清单维护的需求。
+Data Infrastructure Insights通常每 5 分钟收集一次性能数据，每半小时发现一次逻辑和物理结构。Data Infrastructure Insights根据建议的最佳实践和可扩展性设置默认轮询间隔，但允许用户完全控制这些间隔。
 
 
 
-== Data Infrastructure Insight是否在异构环境中提供相同的设备指标深度(奇偶校验)？
+== 数据基础设施洞察对我的环境有何影响？
 
-第三方平台和供应商技术的标准化程度，通用性和命名方式各不相同。Data Infrastructure Insight会尝试将容量和性能信息规范化为一个一致的框架。某些容量和性能指标是通过设备的计数器本机提供的，例如 IOPS ，延迟和原始容量。如果未提供计数器、Data Infrastructure Insight可以尝试汇总这些值(例如、通过汇总底层卷的IOPS或容量)、如果两者均不可用、则Data Infrastructure Insight将尝试通过各种计算算法得出指标值。Data Infrastructure Insight提供了通用SNMP集成功能、可整合Data Infrastructure Insight当前未收集的其他指标。
-
-
-
-== Data Infrastructure Insight是否支持光纤通道交换机？
-
-是的、除了从存储资产中收集数据之外、数据基础架构洞察还可以从租户上的Cisco、Brocade和QLogic交换机采集清单和性能数据。
+Data Infrastructure Insights 的无代理、带外和被动 IP 通信有助于最大限度地减少设置、维护和对数据中心生态系统的影响。 Data Infrastructure Insights 的性能开发团队在监控性能本身的活动中采取了重大措施，以尽量减少对数据中心性能的影响。在正常操作环境中，影响可以忽略不计，而在利用率高或性能不佳的技术平台中，影响可以放宽或收紧。有关详细信息，请参阅Data Infrastructure Insights安装指南。
 
 
 
-== 整个基础架构的拓扑视图是否可用？数据基础架构洞察力是否显示"端到端可见性"？
+== 如何列出Data Infrastructure Insights中的所有主机/虚拟机？
 
-是的、Data Infrastructure Insight可以动态发现和映射逻辑和物理构造、从而提供计算、网络结构、虚拟化为器和后端存储的交互式端到端拓扑视图。通过拓扑图标，可以快速启动对受影响资源的导航，并有助于识别共享存储环境中的工作负载和违规。
+数据基础设施洞察的小部件和查询列表功能可用于提供数据中心资产的库存样式列表。虚拟机列表直至主轴以及其间的众多构造都可以用于查询、小部件、仪表板和数据仓库报告，并且可以通过 RESTful API 访问。
+
+
+
+== Data Infrastructure Insights是否为相关的非虚拟机管理程序主机（即物理服务器）提供相同类型的支持？
+
+VMware 等虚拟机管理程序提供有关 ESXI 主机及其虚拟机 (VM) 的详细信息。对于物理服务器，Data Infrastructure Insights会收集主机 HBA 的指标。Data Infrastructure Insights采用一种独特的方法，使用正在申请专利的技术来发现物理服务器。一旦发现存储和/或交换机，物理服务器的主机名就包含在结构别名信息中。Data Infrastructure Insights选择这些主机名，在 DNS 中匹配它们，并自动将主机带入Data Infrastructure Insights。该技术极大地减少了手动输入更新和工具库存维护的需要。
+
+
+
+== Data Infrastructure Insights是否在异构环境中提供相同的设备指标深度（奇偶校验）？
+
+第三方平台和供应商技术的标准化、通用性和命名法程度各不相同。Data Infrastructure Insights尝试将容量和性能信息规范化到一致的框架中。一些容量和性能指标由设备计数器原生提供，例如 IOP、延迟和原始容量。当未提供计数器时，Data Infrastructure Insights可以尝试汇总值（例如，通过计算底层卷的 IOP 或容量之和），如果两者都不可用，Data Infrastructure Insights将尝试通过各种计算算法来得出指标值。Data Infrastructure Insights提供了通用的 SNMP 集成功能，以整合当前Data Infrastructure Insights尚未收集的附加指标。
+
+
+
+== Data Infrastructure Insights是否支持光纤通道交换机？
+
+是的，除了从您的存储资产收集数据之外， Data Infrastructure Insights还从您的租户上的Cisco、 Brocade和 QLogic 交换机获取库存和性能数据。
+
+
+
+== 是否可以提供整个基础设施的拓扑视图？Data Infrastructure Insights是否显示“端到端可见性”？
+
+是的，Data Infrastructure Insights动态发现并映射逻辑和物理结构，提供计算、结构、虚拟化器和后端存储的交互式端到端拓扑视图。拓扑图标允许快速启动导航到受影响的资源并有助于识别共享存储环境中的工作负载和违规行为。

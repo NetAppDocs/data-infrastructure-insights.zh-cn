@@ -2,27 +2,27 @@
 sidebar: sidebar 
 permalink: task_dc_na_hci.html 
 keywords: data collector, VMware, hci 
-summary: 配置 NetApp HCI 管理服务器数据收集器。 
+summary: 配置NetApp HCI管理服务器数据收集器。 
 ---
-= 配置 NetApp HCI 管理服务器数据收集器
+= 配置NetApp HCI管理服务器数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-NetApp HCI 管理服务器数据收集器收集 NetApp HCI 主机信息，并要求对管理服务器中的所有对象具有只读权限。
+NetApp HCI管理服务器数据收集器收集NetApp HCI主机信息，并要求对管理服务器内的所有对象具有只读权限。
 
-此数据收集器仅从 * NetApp HCI 管理服务器 * 采集数据。要从存储系统收集数据、还必须配置link:task_dc_na_solidfire.html["NetApp SolidFire"]数据收集器。
+此数据收集器仅从 * NetApp HCI管理服务器* 获取数据。要从存储系统收集数据，您还必须配置link:task_dc_na_solidfire.html["NetApp SolidFire"]数据收集器。
 
 
 
-== 术语
+== Terminology
 
-Data Infrastructure Insight从该数据收集器采集以下清单信息。对于所采集的每种资产类型，都会显示该资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从该数据收集器获取以下库存信息。对于所获取的每种资产类型，都会显示该资产最常用的术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 虚拟磁盘 | 磁盘 
@@ -42,23 +42,23 @@ Data Infrastructure Insight从该数据收集器采集以下清单信息。对�
 
 | 光纤通道端口 | 端口 
 |===
-这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+这些只是常见的术语映射，可能并不代表该数据收集器的所有情况。
 
 
 
 == 要求
 
-要配置此数据收集器，需要以下信息：
+配置此数据收集器需要以下信息：
 
-* NetApp HCI 管理服务器的 IP 地址
-* NetApp HCI 管理服务器的只读用户名和密码
-* 对 NetApp HCI 管理服务器中的所有对象具有只读权限。
-* NetApp HCI 管理服务器上的 SDK 访问—通常已设置。
-* 端口要求： HTTP-80 https-443
-* 验证访问：
+* NetApp HCI管理服务器的 IP 地址
+* NetApp HCI管理服务器的只读用户名和密码
+* 对NetApp HCI管理服务器中所有对象的只读权限。
+* NetApp HCI管理服务器上的 SDK 访问 – 通常已经设置。
+* 端口要求：http-80 https-443
+* 验证访问权限：
 +
-** 使用上述用户名和密码登录到 NetApp HCI 管理服务器
-** 验证是否已启用 SDK ： Telnet <vc_ip> 443
+** 使用上述用户名和密码登录NetApp HCI管理服务器
+** 验证 SDK 是否已启用：telnet <vc_ip> 443
 
 
 
@@ -69,13 +69,13 @@ Data Infrastructure Insight从该数据收集器采集以下清单信息。对�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
 | 名称 | 数据收集器的唯一名称 
 
 
-| 采集单元 | 采集单元的名称 
+| 采集单元 | 收购单位名称 
 |===
 
 
@@ -83,49 +83,49 @@ Data Infrastructure Insight从该数据收集器采集以下清单信息。对�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| NetApp HCI 存储集群 MVIP | 管理虚拟 IP 地址 
+| NetApp HCI存储集群 MVIP | 管理虚拟 IP 地址 
 
 
-| SolidFire 管理节点（ mNode ） | 管理节点 IP 地址 
+| SolidFire管理节点 (mNode) | 管理节点IP地址 
 
 
-| 用户名 | 用于访问 NetApp HCI 管理服务器的用户名 
+| 用户名 | 用于访问NetApp HCI管理服务器的用户名 
 
 
-| 密码 | 用于访问 NetApp HCI 管理服务器的密码 
+| 密码 | 用于访问NetApp HCI管理服务器的密码 
 
 
-| vCenter 用户名 | vCenter 的用户名 
+| vCenter 用户名 | VCenter 的用户名 
 
 
-| vCenter 密码 | vCenter 的密码 
+| vCenter 密码 | VCenter 密码 
 |===
 
 
 == 高级配置
 
-在高级配置屏幕中，选中 * 虚拟机性能 * 框以收集性能数据。默认情况下，清单收集处于启用状态。可以配置以下字段：
+在高级配置屏幕中，选中“*VM 性能*”框以收集性能数据。默认情况下启用库存收集。可以配置以下字段：
 
 [cols="2*"]
 |===
 
 
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 清单轮询间隔（分钟） | deafResult 为 20 
+| 库存轮询间隔（分钟） | 默认值为 20 
 
 
-| 按筛选 VM | 选择集群，数据中心或 ESX 主机 
+| 虚拟机筛选依据 | 选择集群、数据中心或 ESX 主机 
 
 
-| 选择 " 排除 " 或 " 包括 " 以指定列表 | 指定是包含还是排除 VM 
+| 选择“排除”或“包含”来指定列表 | 指定是否包含或排除虚拟机 
 
 
-| 筛选设备列表 | 要筛选的 VM 列表（如果值中使用了逗号，则以逗号分隔或以分号分隔），仅用于按 ESX_host ，集群和数据中心进行筛选 
+| 过滤设备列表 | 要过滤的虚拟机列表（以逗号分隔，如果值中使用逗号，则以分号分隔），仅按 ESX_HOST、CLUSTER 和 DATACENTER 进行过滤 
 
 
 | 性能轮询间隔（秒） | 默认值为 300 
@@ -134,7 +134,7 @@ Data Infrastructure Insight从该数据收集器采集以下清单信息。对�
 
 == 故障排除
 
-如果此数据收集器出现问题，请尝试执行以下操作：
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 
 
@@ -142,15 +142,15 @@ Data Infrastructure Insight从该数据收集器采集以下清单信息。对�
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| 错误：用于筛选 VM 的包含列表不能为空 | 如果选择了包含列表，请列出有效的数据中心，集群或主机名称以筛选 VM 
+| 错误：用于过滤虚拟机的列表不能为空 | 如果选择“包含列表”，请列出有效的数据中心、集群或主机名来过滤虚拟机 
 
 
-| 错误：无法通过 IP 实例化与 VirtualCenter 的连接 | 可能的解决方案： * 验证输入的凭据和 IP 地址。* 尝试使用基础架构客户端与虚拟中心进行通信。* 尝试使用受管对象浏览器（例如 MOB ）与虚拟中心进行通信。 
+| 错误：无法实例化与 IP 上的 VirtualCenter 的连接 | 可能的解决方案：* 验证输入的凭据和 IP 地址。  * 尝试使用基础设施客户端与虚拟中心进行通信。  * 尝试使用托管对象浏览器（例如 MOB）与虚拟中心进行通信。 
 
 
-| 错误： VirtualCenter AT IP 具有 JVM 所需的不符合证书 | 可能的解决方案： * 建议：使用更强的（例如 1024 位） RSA 密钥。* 不建议使用：修改 JVM java.security 配置以利用约束 JDK.certpath.disableAlgorithms 允许使用 512 位 RSA 密钥。请参见中的JDK 7 update 40发行说明"http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html"[] 
+| 错误：IP 处的 VirtualCenter 具有不符合 JVM 要求的证书 | 可能的解决方案：* 推荐：使用更强的（例如 1024 位）RSA 密钥为虚拟中心重新生成证书。 * 不推荐：修改 JVM java.security 配置以利用约束 jdk.certpath.disabledAlgorithms 来允许 512 位 RSA 密钥。请参阅 JDK 7 update 40 发行说明"http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html"[] 
 |===
-有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+更多信息可从link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

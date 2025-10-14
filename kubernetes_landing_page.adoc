@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: kubernetes_landing_page.html 
 keywords: telegraf, installation, install, kubernetes, pods, clusters, filters, filtering, k8s 
-summary: 介绍了 Kubernetes 登录页面 
+summary: Kubernetes 登陆页面说明 
 ---
 = Kubernetes 集群概述
 :hardbreaks:
@@ -10,11 +10,11 @@ summary: 介绍了 Kubernetes 登录页面
 
 
 [role="lead"]
-Data Infrastructure Insight Kubernetes Explorer是一款功能强大的工具、可用于显示Kubernetes集群的整体运行状况和使用情况、并可用于轻松深入研究调查领域。
+Data Infrastructure InsightsKubernetes Explorer 是一个强大的工具，可以显示 Kubernetes 集群的整体健康状况和使用情况，并允许您轻松深入调查领域。
 
-单击*信息板> Kubernetes Explorer*将打开Kubernetes集群列表页面。此概述页面包含租户上的Kubbernetes集群表。
+单击“仪表板”>“Kubernetes 资源管理器”打开 Kubernetes 集群列表页面。此概览页面包含租户上的 Kubernetes 集群表。
 
-image:Kubernetes_List_Page_new.png["Kubernetes列表页面"]
+image:Kubernetes_List_Page_new.png["Kubernetes 列表页面"]
 
 
 
@@ -22,26 +22,26 @@ image:Kubernetes_List_Page_new.png["Kubernetes列表页面"]
 
 集群列表显示租户上每个集群的以下信息：
 
-* 集群*名称*。单击集群名称将打开该集群的。link:kubernetes_cluster_detail.html["* 详细信息页面 *"]
-* *饱和*百分比。整体饱和是CPU、内存或存储饱和的最高值。
-* 集群中的*节点*数量。单击此编号将打开节点列表页面。
-* 集群中的* Pod *数量。单击此编号将打开Pod列表页面。
-* 集群中的*命名空间*数量。单击此数字将打开"命名空间"列表页面。
-* 集群中的*工作负载*数量。单击此数字将打开工作负载列表页面。
+* 集群*名称*。点击集群名称将打开link:kubernetes_cluster_detail.html["*详情页*"]对于该集群。
+* *饱和度*百分比。总体饱和度是 CPU、内存或存储饱和度中的最高值。
+* 集群中的*节点*数量。单击此数字将打开节点列表页面。
+* 集群中的*Pod*数量。点击此数字将打开 Pod 列表页面。
+* 集群中的*命名空间*的数量。单击此数字将打开命名空间列表页面。
+* 集群中的*工作负载*数量。单击此数字将打开工作量列表页面。
 
 
 
 
-== 细化筛选器
+== 优化过滤器
 
-筛选时，在开始键入时，系统会根据当前文本显示一个 * 通配符筛选器 * 。选择此选项将返回与通配符表达式匹配的所有结果。您也可以使用 NOT 或 AND 创建 * 表达式 * ，也可以选择 " 无 " 选项来筛选字段中的空值。
+当您进行过滤时，当您开始输入时，系统会向您显示基于当前文本创建*通配符过滤器*的选项。选择此选项将返回与通配符表达式匹配的所有结果。您还可以使用 NOT 或 AND 创建*表达式*，或者您可以选择“无”选项来过滤字段中的空值。
 
-image:Filter_Kubernetes_Explorer.png["在 K8S 资源管理器中使用通配符筛选"]
+image:Filter_Kubernetes_Explorer.png["在 K8S Explorer 中使用通配符进行过滤"]
 
-基于通配符或表达式（例如 NOT ， AND ， "None" 等）在筛选器字段中显示为深蓝色。您直接从列表中选择的项目将以淡蓝色显示。
+基于通配符或表达式的过滤器（例如 NOT、AND、“无”等）在过滤器字段中以深蓝色显示。您直接从列表中选择的项目显示为浅蓝色。
 
-image:Filter_Kubernetes_Explorer_2.png["显示通配符和选定项的筛选器"]
+image:Filter_Kubernetes_Explorer_2.png["显示通配符和选定项目的过滤器"]
 
-Kubernetes 筛选器为上下文筛选器，例如，如果您位于特定节点页面上，则 pod_name 筛选器仅会列出与该节点相关的 Pod 。此外，如果您对特定命名空间应用筛选器，则 pod_name 筛选器将仅列出该命名空间中节点 _and_ 上的 Pod 。
+Kubernetes 过滤器是上下文相关的，例如，如果您在特定节点页面上，pod_name 过滤器仅列出与该节点相关的 pod。此外，如果您对特定命名空间应用过滤器，则 pod_name 过滤器将仅列出该节点上和该命名空间中的 pod。
 
-请注意，通配符和表达式筛选适用于文本或列表，但不适用于数值，日期或布尔值。
+请注意，通配符和表达式过滤适用于文本或列表，但不适用于数字、日期或布尔值。

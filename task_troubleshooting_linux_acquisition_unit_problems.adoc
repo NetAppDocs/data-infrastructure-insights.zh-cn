@@ -1,88 +1,88 @@
 ---
 sidebar: sidebar 
 permalink: task_troubleshooting_linux_acquisition_unit_problems.html 
-summary: 有关采集单元问题的故障排除提示。 
+summary: 采集单元问题的故障排除提示。 
 keywords: AU, acquisition unit, trioubleshooting 
 ---
-= 排除 Linux 上的采集单元问题
+= Linux 上的采集单元故障排除
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-您可以在此处找到有关排除 Linux 服务器上采集单元问题的建议。
+在这里您可以找到有关解决 Linux 服务器上的采集单元问题的建议。
 
 |===
 
 
-| * 问题： * | * 请尝试此操作： * 
+| *问题：* | *试试这个：* 
 
 
-| 采集单元*选项卡中的*Observability > Collectors*页面上的AU状态显示“证书已过期”或“证书已撤销”。 | 单击 AU 右侧的菜单，然后选择 * 还原连接 * 。按照说明还原采集单元： 1.停止采集单元（ Acquisition Unit ， AU ）服务。您可以单击 _Copy Stop Command_ 按钮将命令快速复制到剪贴板，然后将此命令粘贴到采集单元计算机上的命令提示符中。2.在AU上的/var/lib/uidsights NetApp /acq/conf_文件夹中创建一个名为"令牌"的文件。3.单击_Copy令牌_按钮、然后将此令牌粘贴到您创建的文件中。4.重新启动 AU 服务。单击 _Copy Restart Command_ 按钮，然后将命令粘贴到 AU 上的命令提示符中。 
+| *可观察性 > 收集器* 页面上的 *采集单元* 选项卡上的 AU 状态显示“证书已过期”或“证书已撤销”。 | 点击 AU 右侧的菜单并选择 *恢复连接*。按照说明恢复您的采集单元：1.停止采集单元 (AU) 服务。您可以单击“复制停止命令”按钮快速将命令复制到剪贴板，然后将该命令粘贴到采集单元机器上的命令提示符中。2.在 AU 上的 _/var/lib/netapp/cloudinsights/acq/conf_ 文件夹中创建一个名为“token”的文件。3.单击“复制令牌”按钮，然后将此令牌粘贴到您创建的文件中。4.重新启动 AU 服务。单击“复制重启命令”按钮，然后将命令粘贴到 AU 上的命令提示符中。 
 
 
 | 启动采集单元服务器服务时权限被拒绝 | 当 AU 安装在 SELINUX 上时，SE 应设置为 _permissive_ 模式。不支持_Enforcing_模式。将SELINUX设置为宽容模式后，重新启动AU服务。 
 
 
-| 未满足服务器要求 | 确保采集单元服务器或VM满足要求link:concept_acquisition_unit_requirements.html["要求"] 
+| 未满足服务器要求 | 确保您的采集单元服务器或虚拟机满足link:concept_acquisition_unit_requirements.html["要求"] 
 
 
-| 未满足网络要求 | 确保采集单元服务器/VM可以通过端口443通过<environment-name>连接访问数据基础架构洞察力环境(SSL.C01.Cloud NetApp、com)。请尝试以下命令：_ping <environment-name>．C01.Cloud．NetApp NetApp．com_ traceroute．C01.Cloud．NetApp．com__cURL \https：//Data．C01.Cloud．NetApp．com_ wget \https：//Data．C01．<environment-name>．<environment-name>．com_请注意、端口基础架构需要从<environment-name> 443 "出站"打开到Data。 
+| 未满足网络要求 | 确保您的采集单元服务器/VM 可以通过端口 443 上的 SSL 连接访问您的Data Infrastructure Insights环境 (<environment-name>.c01.cloudinsights.netapp.com)。尝试以下命令： _ping <environment-name>.c01.cloudinsights.netapp.com_ _traceroute <environment-name>.c01.cloudinsights.netapp.com_ _curl \https://<environment-name>.c01.cloudinsights.netapp.com_ _wget \https://<environment-name>.c01.cloudinsights.netapp.com_ 请注意，需要从 AU 到Data Infrastructure Insights 的“出站”端口 443 开放。 
 
 
-| 代理服务器配置不正确 | 验证代理设置，并根据需要卸载 / 重新安装采集单元软件以输入正确的代理设置。1.尝试"卷曲"。有关代理的信息 / 文档请参见 "man curle" ： -preproxy ， -proxy-* （这是通配符 "*" ，因为 cURL 支持多种代理设置）。2.尝试"wget "。有关代理选项，请查看文档。 
+| 代理服务器配置不正确 | 验证您的代理设置，并在必要时卸载/重新安装采集单元软件以输入正确的代理设置。1.尝试“卷曲”。请参阅有关代理的“man curl”信息/文档：--preproxy，--proxy-*（这是一个通配符“*”，因为 curl 支持许多代理设置）。2.尝试“wget”。检查代理选项的文档。 
 
 
-| 在Data Infrastructure Insight中、采集单元安装失败、启动采集服务时出现凭据错误(并显示在acq.log中)。 | 这可能是由于代理凭据中包含特殊字符所致。卸载 AU （ _sudo cloudinsors-uninstall.sh_ ）并重新安装，而不使用特殊字符。 
+| 启动采集服务时，Data Infrastructure Insights中的采集单元安装失败，出现凭证错误（在 acq.log 中可见）。 | 这可能是由于代理凭据中包含特殊字符造成的。卸载 AU（_sudo cloudinsights-uninstall.sh_）并重新安装，不要使用特殊字符。 
 
 
-| Linux ：缺少库 / 未找到文件 | 确保 Linux 采集单元服务器 /VM 具有所有必要的库。例如，您必须在服务器上安装 _unzip 库。要安装 _unzip 库，请在运行采集单元安装脚本之前运行命令 _* sudo yum install unzip * _ 
+| Linux：缺少库/未找到文件 | 确保您的 Linux 采集单元服务器/VM 具有所有必要的库。例如，您必须在服务器上安装_unzip_库。要安装 _unzip_ 库，请在运行采集单元安装脚本之前运行命令 _*sudo yum install unzip*_ 
 
 
-| 权限问题 | 请确保您以具有 _sudo 权限的用户身份登录 
+| 权限问题 | 确保您以具有_sudo_权限的用户身份登录 
 
 
-| 采集未运行： | 从 /opt/netapp/cloudinsents/acq/logs （ Linux ）收集 acq.log 重新启动采集服务： sudo cloudinsights-service.sh restart acquisition 
+| 采集未运行： | 从 /opt/netapp/cloudinsights/acq/logs 收集 acq.log (Linux) 重新启动采集服务：sudo cloudinsights-service.sh restart acquisition 
 
 
-| 数据收集问题： | 单击 " 发送错误报告 " 按钮，从 Data Collector 登录页面发送错误报告 
+| 数据收集问题： | 单击“发送错误报告”按钮，从数据收集器登录页面发送错误报告 
 
 
-| 状态：检测信号失败 | 采集单元(AU)每60秒向Data Infrastructure Insight发送一次检测信号、以续订其租约。如果检测信号调用因网络问题或Data Infrastructure Insight无响应而失败、则AU的租赁时间不会更新。AU的租赁时间到期后、Data Infrastructure Insight将显示状态为"Heartbeat failed (检测信号失败)"。故障排除步骤：检查采集单元服务器与 CloudInsights 之间的网络连接。检查采集单元服务是否正在运行。如果此服务未运行，请启动此服务。检查采集单元日志（ /var/log/netapp/cloudinsides/acq/acq.log ）以查看是否存在任何错误。 
+| 状态：心跳失败 | 采集单元 (AU) 每 60 秒向Data Infrastructure Insights发送一次心跳以续订其租约。如果由于网络问题或Data Infrastructure Insights无响应而导致心跳调用失败，则 AU 的租用时间不会更新。当 AU 的租赁时间到期时，Data Infrastructure Insights将显示“心跳失败”状态。故障排除步骤：检查采集单元服务器和 CloudInsights 之间的网络连接。检查采集单元服务是否正在运行。如果服务未运行，请启动该服务。检查采集单元日志（/var/log/netapp/cloudinsights/acq/acq.log）以查看是否存在任何错误。 
 
 
-| 我看到"Heartbeat Error:(检测信号错误：)"消息 | 如果网络中断导致采集单元与Data Infrastructure Insight环境之间的通信中断超过一分钟、则可能会出现此错误。验证AU和Data Infrastructure Insight之间的连接是否稳定且处于活动状态。 
+| 我看到“心跳错误：”消息 | 如果网络中断导致采集单元和Data Infrastructure Insights环境之间的通信中断超过一分钟，则可能会发生此错误。验证 AU 和Data Infrastructure Insights之间的连接是否稳定且活跃。 
 
 
-| 重新安装采集单元时、我看到"ValueError：File contextfor /opt/londinsights NetApp (/.*)？already defined"。 | 在使用SELinux的系统上、执行并重新安装采集单元后、可能会出现此错误消息 `cloudinsights-uninstall.sh -p`。运行命令 `semanage fcontext -d -t usr_t "/opt/netapp/cloudinsights(/.*)?"`应更正此问题并删除此消息。 
+| 重新安装采集单元时，我看到“ValueError：/opt/netapp/cloudinsights(/.*) 的文件上下文？已定义”。 | 在装有 SELinux 的系统上，此错误消息可能出现在 `cloudinsights-uninstall.sh -p`已执行并且要重新安装采集单元。运行命令 `semanage fcontext -d -t usr_t "/opt/netapp/cloudinsights(/.*)?"`应该纠正问题并删除该消息。 
 |===
 
 
-== 有关 Proxies 和防火墙的注意事项
+== 关于代理和防火墙的注意事项
 
-如果您的组织需要使用代理访问Internet、您可能需要了解组织的代理行为并寻求某些例外情况、以便Data Infrastructure Insight能够正常工作。请记住以下几点：
+如果您的组织需要使用代理来访问互联网，您可能需要了解组织的代理行为并寻求某些例外以使Data Infrastructure Insights能够发挥作用。请记住以下几点：
 
-* 首先，贵组织是否默认阻止访问，并且例外情况下仅允许访问特定网站 / 域？如果是，则需要将以下域添加到异常列表中：
+* 首先，您的组织是否默认阻止访问，并且仅允许例外访问特定网站/域？如果是这样，您需要将以下域添加到例外列表中：
 +
  *.cloudinsights.netapp.com
 +
-您的数据基础架构洞察采集单元以及您在Web浏览器中与数据基础架构洞察进行的交互都将转到具有该域名的主机。
+您的Data Infrastructure Insights采集单元以及您在 Web 浏览器中与Data Infrastructure Insights的交互都将转到具有该域名的主机。
 
-* 其次、某些代理尝试使用非NetApp生成的数字证书模拟Data Infrastructure Insight网站来执行TLS/SSL检查。Data Infrastructure Insight采集单元的安全模式与这些技术根本不兼容。为了使Data Infrastructure Insight采集单元成功登录到Data Infrastructure Insight并促进数据发现、您还需要除此功能之外的上述域名。
+* 其次，一些代理尝试通过使用非NetApp生成的数字证书冒充Data Infrastructure Insights网站来执行 TLS/SSL 检查。Data Infrastructure Insights获取单元的安全模型与这些技术根本不兼容。您还需要将上述域名排除在此功能之外，以便Data Infrastructure Insights获取单元能够成功登录Data Infrastructure Insights并促进数据发现。
 
 
-如果为流量检查设置了代理、则必须将Data Infrastructure Insight环境添加到代理配置中的例外列表中。此例外列表的格式和设置因代理环境和工具而异、但通常、您必须将Data Infrastructure Insight服务器的URL添加到此例外列表中、以便AU能够与这些服务器正确通信。
+如果设置代理进行流量检查，则必须将Data Infrastructure Insights环境添加到代理配置中的例外列表中。此例外列表的格式和设置根据您的代理环境和工具而有所不同，但通常您必须将Data Infrastructure Insights服务器的 URL 添加到此例外列表中，以允许 AU 正确与这些服务器通信。
 
-最简单的方法是将Data Infrastructure Insight域本身添加到例外列表中：
+最简单的方法是将Data Infrastructure Insights域本身添加到例外列表中：
 
  *.cloudinsights.netapp.com
-如果未设置代理来进行流量检查，则可能需要或不需要例外列表。如果您不确定是否需要将Data Infrastructure Insight添加到例外列表中、或者由于代理和/或防火墙配置而在安装或运行Data Infrastructure Insight时遇到困难、请与代理管理团队联系、以设置代理对SSL截取的处理方式。
+如果没有设置代理进行流量检查，则可能需要或不需要例外列表。如果您不确定是否需要将Data Infrastructure Insights添加到例外列表中，或者由于代理和/或防火墙配置而遇到安装或运行Data Infrastructure Insights的困难，请与您的代理管理团队联系以设置代理对 SSL 拦截的处理。
 
 
 
 === 查看代理端点
 
-在入职期间选择数据收集器时，您可以单击 * 代理设置 * 链接，或者单击 * 帮助 > 支持 * 页面上 _ 代理设置 _ 下的链接来查看代理端点。此时将显示如下表。如果您的环境中具有工作负载安全性、则已配置的端点URL也会显示在此列表中。
+您可以在入职期间选择数据收集器时单击“*代理设置*”链接，或单击“*帮助 > 支持*”页面上“代理设置”下的链接来查看您的代理端点。将显示如下表。如果您的环境中有工作负载安全，则配置的端点 URL 也将显示在此列表中。
 
 image:ProxyEndpoints_NewTable.png["代理端点表"]
 
@@ -92,4 +92,4 @@ image:ProxyEndpoints_NewTable.png["代理端点表"]
 
 更多故障排除技巧可在link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs["NetApp 知识库"]（需要支持登录）。
 
-有关其他支持信息、请参见Data Infrastructure Insightlink:concept_requesting_support.html["支持"]页面。
+可以从Data Infrastructure Insights中找到其他支持信息link:concept_requesting_support.html["支持"]页。

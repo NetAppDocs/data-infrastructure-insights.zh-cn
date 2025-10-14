@@ -4,23 +4,23 @@ permalink: task_dc_vmware.html
 keywords: data collector, VMware, 
 summary: 配置 VMware 数据收集器。 
 ---
-= 配置 VMware vSphere 数据收集器
+= 配置 VMware VSphere 数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-适用于VMware vSphere的数据收集器可收集VM子系统和ESXi主机性能和配置信息、并要求对vSphere中的所有对象使用只读Privileges。自2024年8月起、vSphere收集器还会另外收到vSphere环境中的日志消息以及一些VMware特定指标。请注意、数据基础架构洞察力只能从8.0.1或更高版本的环境中检索VMware日志信息。同样、只有vSphere 7+环境才支持供应商专用指标。因此、如果给定收集器指向的是旧版vSphere实例、则可能需要禁用此收集器上的日志和/或供应商特定指标复选框。
+VMware vSphere 的数据收集器收集 VM 客户机和 ESXi 主机性能和配置信息，并需要对 vSphere 内的所有对象具有只读权限。自 2024 年 8 月起，vSphere 收集器还会引入来自 vSphere 环境的日志消息以及一些 VMware 特定指标。请注意，Data Infrastructure Insights只能从 vSphere 8.0.1 或更高版本的环境中检索 VMware 日志信息。同样，供应商特定指标仅支持 vSphere 7+ 环境。因此，如果指向较旧的 vSphere 实例，您可能需要禁用给定收集器上的日志和/或供应商特定指标复选框。
 
 
 
-== 术语
+== Terminology
 
-Data Infrastructure Insight从VMware vSphere数据收集器采集以下清单信息。对于所采集的每种资产类型，都会显示该资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从 VMware vSphere 数据收集器获取以下库存信息。对于所获取的每种资产类型，都会显示该资产最常用的术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 虚拟磁盘 | 磁盘 
@@ -40,23 +40,23 @@ Data Infrastructure Insight从VMware vSphere数据收集器采集以下清单信
 
 | 光纤通道端口 | 端口 
 |===
-这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+这些只是常见的术语映射，可能并不代表该数据收集器的所有情况。
 
 
 
 == 要求
 
-要配置此数据收集器，需要以下信息：
+配置此数据收集器需要以下信息：
 
-* Virtual Center 服务器的 IP 地址
-* Virtual Center 中的只读用户名和密码
-* 我们要求对 Virtual Center 中的所有对象具有只读权限。
-* 虚拟中心服务器上的 SDK 访问—通常已设置。
-* 端口要求： HTTP-80 https-443
-* 验证访问：
+* 虚拟中心服务器的 IP 地址
+* 虚拟中心中的只读用户名和密码
+* 我们要求对虚拟中心内的所有对象拥有只读权限。
+* 虚拟中心服务器上的 SDK 访问 – 通常已经设置。
+* 端口要求：http-80 https-443
+* 验证访问权限：
 +
-** 使用上述用户名和密码登录到 Virtual Center Client
-** 验证是否已启用 SDK ： Telnet <vc_ip> 443
+** 使用上述用户名和密码登录 Virtual Center Client
+** 验证 SDK 是否已启用：telnet <vc_ip> 443
 
 
 
@@ -67,13 +67,13 @@ Data Infrastructure Insight从VMware vSphere数据收集器采集以下清单信
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
 | 名称 | 数据收集器的唯一名称 
 
 
-| 采集单元 | 采集单元的名称 
+| 采集单元 | 收购单位名称 
 |===
 
 
@@ -81,10 +81,10 @@ Data Infrastructure Insight从VMware vSphere数据收集器采集以下清单信
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 虚拟中心 IP 地址 | 虚拟中心的 IP 地址 
+| 虚拟中心IP地址 | 虚拟中心的 IP 地址 
 
 
 | 用户名 | 用于访问虚拟中心的用户名 
@@ -96,22 +96,22 @@ Data Infrastructure Insight从VMware vSphere数据收集器采集以下清单信
 
 == 高级配置
 
-在高级配置屏幕中，选中 * 虚拟机性能 * 框以收集性能数据。默认情况下，清单收集处于启用状态。可以配置以下字段：
+在高级配置屏幕中，选中“*VM 性能*”框以收集性能数据。默认情况下启用库存收集。可以配置以下字段：
 
 [cols="2*"]
 |===
 
 
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 清单轮询间隔（分钟） | 默认值为 20 
+| 库存轮询间隔（分钟） | 默认值为 20 
 
 
-| 筛选 VM | 选择集群，数据中心或 ESX 主机 
+| 过滤虚拟机 | 选择集群、数据中心或 ESX 主机 
 
 
-| 选择 " 排除 " 或 " 包括 " 以指定列表 | 创建筛选器列表（集群，数据中心和 / 或 ESX_host ） 
+| 选择“排除”或“包含”来指定列表 | 创建过滤器列表（CLUSTER、DATACENTER 和/或 ESX_HOST） 
 
 
 | 重试次数 | 默认值为 3 
@@ -120,31 +120,31 @@ Data Infrastructure Insight从VMware vSphere数据收集器采集以下清单信
 | 通信端口 | 默认值为 443 
 
 
-| 筛选设备列表 ... | 此列表必须包含完全匹配的字符串-如果要按esx_host进行筛选、则必须根据Data Infrastructure Insight和vSphere中的报告、构建一个包含ESX主机的确切"名称"的逗号分隔列表。这些 " 名称 " 可以是 IP 地址，简单主机名或完全限定域名（ FQDN ），这取决于这些主机最初添加到 vSphere 时的命名方式。按集群筛选时、请使用虚拟机管理程序上的CI报告的Data Infrastructure洞察力模式集群名称—Data Infrastructure洞察力在vSphere集群名称前面附加vSphere数据中心名称、并使用正斜杠—DC1/cluster A是Data Infrastructure Insight在数据中心DC1内的集群A上报告的集群名称。 
+| 过滤设备列表... | 此列表必须由精确的字符串匹配组成 - 如果您打算按 ESX_HOST 进行过滤，则必须构建一个以逗号分隔的列表，其中包含Data Infrastructure Insights和 vSphere 中报告的 ESX 主机的精确“名称”。这些“名称”可以是 IP 地址、简单主机名或完全限定域名 (FQDN) - 这取决于这些主机最初添加到 vSphere 时的命名方式。按 CLUSTER 进行过滤时，使用 CI 在虚拟机管理程序上报告的Data Infrastructure Insights样式的集群名称 - Data Infrastructure Insights在 vSphere 集群名称前面加上 vSphere 数据中心名称和正斜杠 - “DC1/clusterA”是Data Infrastructure Insights将在数据中心 DC1 内的 clusterA 中的虚拟机管理程序上报告的集群名称。 
 
 
 | 性能轮询间隔（秒） | 默认值为 300 
 |===
 
 
-== 将VMware标记映射到Data Infrastructure Insight标注
+== 将 VMware 标签映射到Data Infrastructure Insights注释
 
-通过VMware数据收集器、您可以使用在VMware上配置的标记来填充Data Infrastructure Insight标注。DII标注名称必须与VMware *类别*名称相同；然后、该标记将作为与类别同名的DII标注的标注值应用。Data Infrastructure Insight将始终填充同名文本类型的标注、并"尽力"填充其他类型(数字、布尔值等)的标注。如果您的标注类型不同，而数据收集器无法填充，则可能需要删除此标注并将其重新创建为文本类型。
+VMware 数据收集器允许您使用在 VMware 上配置的标签填充Data Infrastructure Insights注释。 DII 注释名称必须与 VMware *类别* 名称相同；然后该标签将应用为与类别同名的 DII 注释的注释值。Data Infrastructure Insights将始终填充同名的文本类型注释，并将“尽最大努力”填充其他类型（数字、布尔值等）的注释。如果您的注释属于不同类型并且数据收集器无法填充它，则可能需要删除该注释并将其重新创建为文本类型。
 
-请注意、VMware标记可能区分大小写、而Data Infrastructure Insight标记不区分大小写。因此、如果您在Data Infrastructure Insight中创建名为"owner"的标注、并在VMware中创建名为"owner"、"owner"和"owner"的标记、则所有这些"owner"变体都会映射到Cloud Insight的"owner"标注。
+请注意，VMware 标签可能区分大小写，而Data Infrastructure Insights标签不区分大小写。因此，如果您在Data Infrastructure Insights中创建名为“OWNER”的注释，并在 VMware 中创建名为“OWNER”、“Owner”和“owner”的标签，则“owner”的所有这些变体都将映射到 Cloud Insight 的“OWNER”注释。
 
 请记住以下几点：
 
-* Data Infrastructure Insight目前仅自动发布NetApp设备的支持信息。
-* 由于此支持信息以标注形式保存、因此您可以查询它或在信息板中使用它。
-* 如果用户覆盖或清空标注值、则在Data Infrastructure Insight更新标注时、该值会再次自动调整、每天更新一次。
+* Data Infrastructure Insights目前仅自动发布NetApp设备的支持信息。
+* 由于此支持信息以注释形式保存，因此您可以在仪表板中查询或使用它。
+* 如果用户覆盖或清空注释值，则当Data Infrastructure Insights更新注释时，该值会再次自动填充（每天更新一次）。
 
 
 
 
 == 故障排除
 
-如果此数据收集器出现问题，请尝试执行以下操作：
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 
 
@@ -152,18 +152,18 @@ Data Infrastructure Insight从VMware vSphere数据收集器采集以下清单信
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| 错误：用于筛选 VM 的包含列表不能为空 | 如果选择了包含列表，请列出有效的数据中心，集群或主机名称以筛选 VM 
+| 错误：用于过滤虚拟机的列表不能为空 | 如果选择“包含列表”，请列出有效的数据中心、集群或主机名来过滤虚拟机 
 
 
-| 错误：无法通过 IP 实例化与 VirtualCenter 的连接 | 可能的解决方案： * 验证输入的凭据和 IP 地址。* 尝试使用 VMware Infrastructure Client 与虚拟中心进行通信。* 尝试使用受管对象浏览器（例如 MOB ）与虚拟中心进行通信。 
+| 错误：无法实例化与 IP 上的 VirtualCenter 的连接 | 可能的解决方案：* 验证输入的凭据和 IP 地址。  * 尝试使用 VMware Infrastructure Client 与 Virtual Center 通信。  * 尝试使用托管对象浏览器（例如 MOB）与虚拟中心进行通信。 
 
 
-| 错误： VirtualCenter AT IP 具有 JVM 所需的不符合证书 | 可能的解决方案： * 建议：使用更强的（例如 1024 位） RSA 密钥。* 不建议使用：修改 JVM java.security 配置以利用约束 JDK.certpath.disableAlgorithms 允许使用 512 位 RSA 密钥。请参阅。 link:http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html["JDK 7 Update 40发行说明"] 
+| 错误：IP 处的 VirtualCenter 具有不符合 JVM 要求的证书 | 可能的解决方案：* 推荐：使用更强的（例如 1024 位）RSA 密钥为虚拟中心重新生成证书。 * 不推荐：修改 JVM java.security 配置以利用约束 jdk.certpath.disabledAlgorithms 来允许 512 位 RSA 密钥。看link:http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html["JDK 7 更新 40 发行说明"] 。 
 
 
-| 我看到以下消息："VMware Logs package is not supported on VMware belowed on VMware belowed belowed belowed on 8.0.1" | VMware 8.0.1 之前的版本不支持日志收集。如果您希望使用Data Infrastructure Insights中的日志收集功能，请将 VI Center Infrastructure 升级到 8.0.1 或更高版本。有关详细信息，请参阅link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["知识库文章"]。 
+| 我看到以下消息：“VMware 8.0.1 以下版本不支持 VMware 日志包” | VMware 8.0.1 之前的版本不支持日志收集。如果您希望使用Data Infrastructure Insights中的日志收集功能，请将 VI Center Infrastructure 升级到 8.0.1 或更高版本。有关详细信息，请参阅link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["知识库文章"]。 
 |===
-有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+更多信息可从link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

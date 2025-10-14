@@ -4,7 +4,7 @@ permalink: telegraf_agent_k8s_config_options.html
 keywords: telegraf, installation, install, agent, telegraf agent, kubernetes, eks, operator, k8s, options, configuration 
 summary: 使用 AgentConfiguration 选项配置NetApp Kubernetes Monitoring Operator。 
 ---
-= Kubnetes监控操作员配置选项
+= Kubernetes 监控 Operator 配置选项
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,196 +14,196 @@ summary: 使用 AgentConfiguration 选项配置NetApp Kubernetes Monitoring Oper
 
 
 [role="lead"]
-这link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Kubbernetes监控操作员"]通过 AgentConfiguration 文件提供丰富的自定义选项。您可以配置资源限制、收集间隔、代理设置、容差以及特定于组件的设置，以优化 Kubernetes 环境的监控。使用这些选项可以自定义 telegraf、kube-state-metrics、日志收集、工作负载映射、变更管理和其他监控组件。
+这link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Kubernetes 监控操作员"]通过 AgentConfiguration 文件提供丰富的自定义选项。您可以配置资源限制、收集间隔、代理设置、容差以及特定于组件的设置，以优化 Kubernetes 环境的监控。使用这些选项可以自定义 telegraf、kube-state-metrics、日志收集、工作负载映射、变更管理和其他监控组件。
 
-下表列出了_AgentConfiguration_文件的可能选项：
+下表列出了 _AgentConfiguration_ 文件的可能选项：
 
 [cols="1,1,2"]
 |===
-| 组件 | 选项 | 说明 
+| 组件 | 选项 | 描述 
 
 
-| 代理 |  | 操作员可以安装的所有组件通用的配置选项。这些选项可视为"全局"选项。 
+| 代理人 |  | 操作员可以安装的所有组件所共有的配置选项。这些可以被视为“全局”选项。 
 
 
-|  | 文档报告员报告 | dockerRepo 覆盖，用于从客户的私有 Docker 存储库（而不是Data Infrastructure Insights Docker 存储库）拉取镜像。默认为Data Infrastructure Insights Docker 存储库。 
+|  | dockerRepo | dockerRepo 覆盖，用于从客户的私有 Docker 存储库（而不是Data Infrastructure Insights Docker 存储库）拉取镜像。默认为Data Infrastructure Insights Docker 存储库。 
 
 
 |  | dockerImagePullSecret | 可选：客户私有存储库的秘密。 
 
 
-|  | clusterName | 自由文本字段，用于在所有客户集群中唯一标识一个集群。此字段在Data Infrastructure Insights租户中应是唯一的。默认值为客户在 UI 中为“集群名称”字段输入的内容。 
+|  | 集群名称 | 自由文本字段，用于在所有客户集群中唯一标识一个集群。此字段在Data Infrastructure Insights租户中应是唯一的。默认值为客户在 UI 中为“集群名称”字段输入的内容。 
 
 
-|  | 代理格式：代理：服务器：端口：用户名：密码：noProxy：isTelegrafProxyEnabled：isAuProxyEnabled：isFluentbitProxyEnabled：isCollectorProxyEnabled： | 可选设置代理。这通常是客户的公司代理。 
+|  | 代理格式：代理：服务器：端口：用户名：密码：noProxy：isTelegrafProxyEnabled：isAuProxyEnabled：isFluentbitProxyEnabled：isCollectorProxyEnabled： | 可选择设置代理。这通常是客户的公司代理。 
 
 
-| 电报 |  | 配置选项、可自定义操作员的安装 
+| 电讯报 |  | 可以自定义 Operator 的 telegraf 安装的配置选项 
 
 
-|  | secionInterval | 指标收集间隔(以秒为单位)(最大= 60秒) 
+|  | 收集间隔 | 指标收集间隔，以秒为单位（最大 60 秒） 
 
 
-|  | dsCpuLimit | 用于数据终端的CPU限制 
+|  | dsCpuLimit | telegraf ds 的 CPU 限制 
 
 
-|  | dsMemLimit | 用于数据的存储器限制 
+|  | dsMemLimit | telegraf ds 的内存限制 
 
 
-|  | dsCpuRequest | 为数据发送的CPU请求 
+|  | dsCpu请求 | telegraf ds 的 CPU 请求 
 
 
-|  | dsMemRequest | 为数据发送的内存请求 
+|  | dsMem请求 | telegraf ds 的内存请求 
 
 
-|  | rsCpuLimit | 用于RS的CPU限制 
+|  | rsCpuLimit | telegraf rs 的 CPU 限制 
 
 
-|  | rsMemLimit | 用于Rs的存储器限制 
+|  | rsMemLimit | telegraf rs 的内存限制 
 
 
-|  | rsCpuRequest | 对RS的CPU请求 
+|  | rsCpu请求 | telegraf rs 的 CPU 请求 
 
 
-|  | rsMemRequest | 对RS的存储器请求 
+|  | rsMem请求 | telegraf rs 的内存请求 
 
 
-|  | run特权 | 在特权模式下运行特拉特夫DemonSet的_table-mountstats-poller_容器。如果在Kubnetes节点上启用了SELinux、请将此选项设置为true。 
+|  | 运行特权 | 在特权模式下运行 telegraf DaemonSet 的 _telegraf-mountstats-poller_ 容器。如果您的 Kubernetes 节点上启用了 SELinux，请将其设置为 true。 
 
 
-|  | 运行特权 | 将runDs专用 设置为true可在特权模式下运行特拉特拉夫DemonSet的特拉特拉特容器。 
+|  | 运行Ds特权 | 将 runDsPrivileged 设置为 true 以在特权模式下运行 telegraf DaemonSet 的 telegraf 容器。 
 
 
-|  | 批大小 | 请参见 link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf配置文档"] 
+|  | 批量大小 | 看link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf 配置文档"] 
 
 
-|  | 缓冲区限制 | 请参见 link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf配置文档"] 
+|  | 缓冲区限制 | 看link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf 配置文档"] 
 
 
-|  | RoundInterval | 请参见 link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf配置文档"] 
+|  | 轮次间隔 | 看link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf 配置文档"] 
 
 
-|  | Jitter | 请参见 link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf配置文档"] 
+|  | 集合抖动 | 看link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf 配置文档"] 
 
 
-|  | 精确度 | 请参见 link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf配置文档"] 
+|  | 精确 | 看link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf 配置文档"] 
 
 
-|  | FlushInterval | 请参见 link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf配置文档"] 
+|  | 刷新间隔 | 看link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf 配置文档"] 
 
 
-|  | Flush抖动 | 请参见 link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf配置文档"] 
+|  | 刷新抖动 | 看link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf 配置文档"] 
 
 
-|  | 输出超时 | 请参见 link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf配置文档"] 
+|  | 输出超时 | 看link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf 配置文档"] 
 
 
-|  | ds.公差 | Telegraf-DS的额外耐受性。 
+|  | dsTolerations | telegraf-ds 额外的容忍度。 
 
 
-|  | Rs公差 | Telegraf-RS额外的耐受性。 
+|  | rsTolerations | telegraf-rs 额外的容忍度。 
 
 
-|  | skipProcessorsAfterRegators | 请参见 link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf配置文档"] 
+|  | skipProcessorsAfterAggregators | 看link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Telegraf 配置文档"] 
 
 
-|  | 未受保护 | 看看这个link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376["已知电报问题描述"] 。设置 _unprotected_ 将指示 Kubernetes Monitoring Operator 使用以下方式运行 Telegraf  `--unprotected`旗帜。 
+|  | 未受保护 | 看看这个link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376["已知的 Telegraf 问题"] 。设置 _unprotected_ 将指示 Kubernetes Monitoring Operator 使用以下方式运行 Telegraf  `--unprotected`旗帜。 
 
 
-|  | insecureK8sSkipVerify | 如果由于缺少IP SAN而无法验证证书、请尝试启用验证跳过 
+|  | insecureK8sSkipVerify | 如果由于缺少 IP SAN，telegraf 无法验证证书，请尝试启用验证跳过 
 
 
-| Kube-state-metrics |  | 可自定义操作员的KUbe状态指标安装的配置选项 
+| kube 状态指标 |  | 可以自定义 Operator 的 kube 状态指标安装的配置选项 
 
 
-|  | cpuLimit | Kube-state-metrics部署的CPU限制 
+|  | CPU限制 | kube-state-metrics 部署的 CPU 限制 
 
 
-|  | memLimit | Kube-state-metrics部署的MEM限制 
+|  | 内存限制 | kube-state-metrics 部署的内存限制 
 
 
-|  | cpuQuest | KU状态指标部署的CPU请求 
+|  | CPU请求 | kube 状态指标部署的 CPU 请求 
 
 
-|  | MemQuest | MEM请求部署KIBEstate metrics 
+|  | 内存请求 | kube 状态指标部署的内存请求 
 
 
-|  | 资源 | 要捕获的资源的逗号分隔列表。示例：cronjobs、守护程序集、部署、服务器、作业、名称空间、节点、永久性卷、持久性卷、Pod、复制集、资源均衡器、服务、状态集 
+|  | 资源 | 要捕获的资源的逗号分隔列表。例如：cronjobs、daemonsets、deployments、ingresses、jobs、namespaces、nodes、persistentvolumeclaims、persistentvolumes、pods、replicasets、resourcequotas、services、statefulsets 
 
 
-|  | 公差 | Kube-state-metrics的其他容错性。 
+|  | 容忍度 | kube-state-metrics 额外的容忍度。 
 
 
-|  | labels | kube-state-metrics 应捕获标签的资源的逗号分隔列表 +++ 示例：cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*], persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*] +++ 
+|  | 标签 | kube-state-metrics 应捕获标签的资源的逗号分隔列表 +++ 示例：cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*], persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*] +++ 
 
 
-| 日志 |  | 可自定义操作员日志收集和安装的配置选项 
+| logs |  | 可以自定义日志收集和 Operator 安装的配置选项 
 
 
-|  | readFromHead | true或false、则应以流畅位从head读取日志 
+|  | readFromHead | true/false，Fluent Bit 是否应该从头部读取日志 
 
 
-|  | 超时 | 超时(以秒为单位) 
+|  | timeout | 超时，以秒为单位 
 
 
-|  | dnsMode | TCP/UDP、DNS的模式 
+|  | dns模式 | TCP/UDP，DNS 模式 
 
 
-|  | 流畅的位容差 | Fluent-Bit-DS的额外容差。 
+|  | 流利位容忍度 | fluent-bit-ds 额外的容忍度。 
 
 
-|  | 事件-导出器-容错 | 事件导出器附加容错。 
+|  | 事件导出器容忍度 | 事件导出器额外的容忍度。 
 
 
-|  | Event-exporter—maxEventAgeSeconds | 事件导出器最大事件期限。请参见 https://github.com/jkroepke/resmoio-kubernetes-event-exporter[] 
+|  | 事件导出器-maxEventAgeSeconds | 事件导出器最大事件年龄。看 https://github.com/jkroepke/resmoio-kubernetes-event-exporter[] 
 
 
-|  | 流利位容器日志路径 | 默认情况下，Fluentbit DaemonSet 将挂载 /var/log 和 /var/lib/docker/containers 主机路径来访问/读取 Kubernetes 容器日志。如果 Kubernetes 已配置为将容器日志放置在非默认位置，请使用此选项修改 Fluentbit DaemonSet 以挂载非默认路径。 
+|  | fluent-bit-containerLogPath | 默认情况下，Fluentbit DaemonSet 将挂载 /var/log 和 /var/lib/docker/containers 主机路径来访问/读取 Kubernetes 容器日志。如果 Kubernetes 已配置为将容器日志放置在非默认位置，请使用此选项修改 Fluentbit DaemonSet 以挂载非默认路径。 
 
 
-| 工作负载映射 |  | 可自定义Operator的工作负载映射收集和安装的配置选项。 
+| 工作负载图 |  | 可以自定义 Operator 的工作负载地图收集和安装的配置选项。 
 
 
-|  | cpuLimit | Net observer DS的CPU限制 
+|  | CPU限制 | 网络观察者 ds 的 CPU 限制 
 
 
-|  | memLimit | 净观察者DS的MEM限制 
+|  | 内存限制 | 网络观察者 ds 的内存限制 
 
 
-|  | cpuQuest | Net observer DS的CPU请求 
+|  | CPU请求 | 网络观察者 ds 的 CPU 请求 
 
 
-|  | MemQuest | MEM请求提供Net observer DS 
+|  | 内存请求 | 网络观察者 ds 的内存请求 
 
 
-|  | metricRegationInterval | 指标聚合间隔(以秒为单位) 
+|  | 度量聚合间隔 | 指标聚合间隔（以秒为单位） 
 
 
-|  | bpfPolollInterval | BPF轮询间隔(以秒为单位) 
+|  | bpf轮询间隔 | BPF 轮询间隔，以秒为单位 
 
 
-|  | 启用DNSLook.e. | 是非题、启用DNS查找 
+|  | 启用DNS查找 | true/false，启用 DNS 查找 
 
 
-|  | L4-公 差 | Net-obler-L4-DS附加容错。 
+|  | l4-容忍度 | net-observer-l4-ds 额外的容忍度。 
 
 
-|  | run特权 | true或false—如果在Kubbernetes节点上启用了SELinux、则将run特权 设置为true。 
+|  | 运行特权 | true/false - 如果在 Kubernetes 节点上启用了 SELinux，则将 runPrivileged 设置为 true。 
 
 
-| 变更管理 |  | Kubnetes变更管理和分析的配置选项 
+| 变革管理 |  | Kubernetes 变更管理和分析的配置选项 
 
 
-|  | cpuLimit | change-ob맛 달 풱-Watch RS的CPU限制 
+|  | CPU限制 | change-observer-watch-rs 的 CPU 限制 
 
 
-|  | memLimit | change-ob맛 달 풱-Watch RS的MEM限制 
+|  | 内存限制 | change-observer-watch-rs 的内存限制 
 
 
-|  | cpuQuest | 对change-ob맛 달 풱-手表-rs的CPU请求 
+|  | CPU请求 | change-observer-watch-rs 的 CPU 请求 
 
 
-|  | MemQuest | MEM请求change-ob맛 달 풱-Watch RS 
+|  | 内存请求 | change-observer-watch-rs 的内存请求 
 
 
 |  | 工作负载失败声明间隔秒数 | 工作负载部署失败后将被标记为失败的时间间隔（以秒为单位） 
@@ -215,25 +215,25 @@ summary: 使用 AgentConfiguration 选项配置NetApp Kubernetes Monitoring Oper
 |  | nonWorkloadDeployAggrIntervalSeconds | 非工作负载部署合并发送的频率（以秒为单位） 
 
 
-|  | TermsToRedact | 在env名称和数据映射中使用的一组正则表达式、其值将被编辑示例术语："pwd"、"password"、"t令牌"、"APIkey"、"API-key"、"JWT" 
+|  | 删除条款 | 一组用于环境名称和数据映射的正则表达式，其值将被编辑示例术语：“pwd”、“password”、“token”、“apikey”、“api-key”、“jwt” 
 
 
-|  | 其他KindsToWatch | 收集器监控的一组默认类型中要监控的其他类型的逗号分隔列表 
+|  | 额外观看种类 | 收集器监视的默认种类集合中需要监视的附加种类的逗号分隔列表 
 
 
-|  | kindsToIgnoreFromWatch | 收集器监控的一组默认类型中要忽略的监视类型的逗号分隔列表 
+|  | 忽略监视的种类 | 收集器默认监视的种类列表中，需要忽略的种类，以逗号分隔 
 
 
-|  | LogRecordAggrIntervalSeconds | 从收集器向CI发送日志记录的频率 
+|  | 日志记录聚合间隔秒数 | 日志记录从收集器发送到 CI 的频率 
 
 
-|  | 手表耐受性 | change-ob맛 달 풱-Watch—DS的额外容差。仅限简写单行格式。示例："｛key：tint1、operator：exists、effect：NoSchedule｝、｛key：tint2、operator：exists、effect：NoExecute｝" 
+|  | 观察容忍度 | 改变观察者观察 ds 额外的容忍度。仅限缩写单行格式。示例：'{key：taint1，operator：Exists，effect：NoSchedule}，{key：taint2，operator：Exists，effect：NoExecute}' 
 |===
 
 
-== AgentConfiguration文件示例
+== 示例代理配置文件
 
-以下是_AgentConfiguration_文件示例。
+下面是一个示例_AgentConfiguration_文件。
 
 [listing]
 ----

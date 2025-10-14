@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_cs_api.html 
 keywords: api, access, token, swagger 
-summary: 工作负载安全性包括一个功能强大的API、可与CMDB等其他应用程序集成。 
+summary: 工作负载安全包括一个强大的 API，可与其他应用程序（如 CMDB）集成。 
 ---
-= 工作负载安全API
+= 工作负载安全 API
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,67 +14,67 @@ summary: 工作负载安全性包括一个功能强大的API、可与CMDB等其�
 
 
 [role="lead"]
-通过工作负载安全API、NetApp客户和独立软件供应商(ISV)可以将工作负载安全与其他应用程序(例如CMDB或其他票证系统)集成在一起。
+工作负载安全 API 使NetApp客户和独立软件供应商 (ISV) 能够将工作负载安全与其他应用程序（例如 CMDB 或其他票务系统）集成。
 
 API 访问要求：
 
 * API 访问令牌模型用于授予访问权限。
-* API令牌管理由具有管理员角色的工作负载安全用户执行。
+* API 令牌管理由具有管理员角色的工作负载安全用户执行。
 
 
 
 
-== API 文档（ Swagger ）
+== API 文档（Swagger）
 
-要查看最新的API信息、请登录到工作负载安全性并导航到*管理> API访问*。单击 * API Documentation" 链接。API文档基于Swagger、可提供API的简要说明和使用情况信息、并允许您在租户上试用。
+通过登录 Workload Security 并导航到 *Admin > API Access* 可以找到最新的 API 信息。单击*API 文档*链接。  API 文档基于 Swagger，提供 API 的简要描述和使用信息，并允许您在租户上试用。
 
 
-NOTE: 如果调用取证活动API、请使用云安全取证活动.*v2* API。如果要对此API进行多个调用、请确保这些调用按顺序进行、而不是并行进行。多个并行调用可能会导致API超时。
+NOTE: 如果调用取证活动 API，请使用 cloudsecure_forensics.activities.*v2* API。如果您要多次调用此 API，请确保调用按顺序进行，而不是并行进行。多次并行调用可能会导致 API 超时。
 
 
 
 == API 访问令牌
 
-在使用工作负载安全API之前、必须创建一个或多个* API访问令牌*。访问令牌授予读取权限。您还可以为每个访问令牌设置到期时间。
+在使用工作负载安全 API 之前，您必须创建一个或多个 *API 访问令牌*。访问令牌授予读取权限。您还可以设置每个访问令牌的有效期。
 
-创建访问令牌：
+要创建访问令牌：
 
-* 单击 * 管理 > API 访问 *
-* 单击 * + API 访问令牌 *
-* 输入 * 令牌名称 *
-* 指定 * 令牌到期 *
+* 点击“管理”>“API 访问”
+* 点击*+API 访问令牌*
+* 输入*代币名称*
+* 指定*令牌到期*
 
 
 
-NOTE: 您的令牌只能在创建过程中复制到剪贴板并进行保存。令牌创建后无法检索，因此强烈建议复制令牌并将其保存在安全位置。系统将提示您单击复制 API 访问令牌按钮，然后才能关闭令牌创建屏幕。
+NOTE: 您的令牌仅可在创建过程中复制到剪贴板并保存。令牌一旦创建就无法检索，因此强烈建议复制令牌并将其保存在安全的位置。系统将提示您单击“复制 API 访问令牌”按钮，然后才能关闭令牌创建屏幕。
 
-您可以禁用，启用和撤消令牌。可以启用已禁用的令牌。
+您可以禁用、启用和撤销令牌。已禁用的令牌可以启用。
 
-令牌可从客户角度授予对API的通用访问权限、从而管理对其租户范围内的API的访问。
+令牌从客户的角度授予对 API 的通用访问权限，管理其自身租户范围内对 API 的访问。
 
-在用户成功进行身份验证并授权访问后，应用程序会收到访问令牌，然后在调用目标 API 时将访问令牌作为凭据传递。传递的令牌将通知 API 令牌的持有人已获得访问 API 的授权，并根据授权期间授予的范围执行特定操作。
+用户成功验证并授权访问后，应用程序将收到访问令牌，然后在调用目标 API 时将访问令牌作为凭证传递。传递的令牌通知 API，令牌持有者已被授权访问 API 并根据授权期间授予的范围执行特定操作。
 
-传递访问令牌的 HTTP 标头为 * 。 X-CloudInsights ApiKey ： *
+传递访问令牌的 HTTP 标头是 *X-CloudInsights-ApiKey:*
 
 例如，使用以下命令检索存储资产：
 
  curl https://<Workload Security tenant>/rest/v1/cloudsecure/activities -H 'X-CloudInsights-ApiKey: <API_Access_Token>'
 其中 _<API_Access_Token>_ 是您在创建 API 访问密钥期间保存的令牌，而 _<Workload Security Tenant>_ 是您的 Workload Security 环境的租户 URL。
 
-有关详细信息，请参见 _API Documentation_ 链接中的 * 管理 > API 访问 * 。
+详细信息可以在*管理 > API 访问*下的_API 文档_链接中找到。
 
 
 
-== 通过API提取数据的脚本
+== 通过 API 提取数据的脚本
 
-工作负载安全代理包括一个导出脚本、用于通过将请求的时间范围划分为较小的批次来并行调用v2 API。
+工作负载安全代理包括一个导出脚本，通过将请求的时间范围划分为更小的批次来促进对 v2 API 的并行调用。
 
-该脚本位于：/opt/tase/云NetApp安全/agent/export脚本_。同一目录中的README文件提供了使用说明。
+该脚本位于 _/opt/netapp/cloudsecure/agent/export-script_。同一目录中的 README 文件提供了使用说明。
 
-以下是调用该脚本的命令示例：
+以下是调用脚本的示例命令：
 
 [source]
 ----
 python3 data-export.py --tenant_url <Workload Security tenant> --access_key %ACCESS_KEY% --path_filter "<dir path>" --user_name "<user>" --from_time "01-08-2024 00:00:00" --to_time "31-08-2024 23:59:59" --iteration_interval 12 --num_workers 3
 ----
-关键参数：- `--iteration_interval 12`：将请求的时间范围拆分为12小时的间隔。- `--num_workers 3`：使用3个线程并行提取这些间隔。
+关键参数：- `--iteration_interval 12` ：将请求的时间范围分成 12 小时的间隔。  - `--num_workers 3` ：使用 3 个线程并行获取这些间隔。

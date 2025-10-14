@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_create_webhook.html 
 keywords: webhook, notification, slack, integration 
-summary: 创建监控器，以便针对性能或清单阈值发出警报 
+summary: 创建监视器以对性能或库存阈值发出警报 
 ---
-= 使用 Webhooks 发送通知
+= 使用 Webhook 进行通知
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: 创建监控器，以便针对性能或清单阈值发出警报
 
 
 [role="lead"]
-网络挂机允许用户使用自定义的网络挂机通道向各种应用程序发送警报通知。
+Webhook 允许用户使用自定义的 webhook 通道向各种应用程序发送警报通知。
 
-许多商业应用程序都支持使用 webhooks 作为标准输入接口，例如， Slack ， PagerDty ， Teams 和 Chand 都支持 webhooks 。通过支持通用的可自定义webhook渠道、Data Infrastructure Insight可以支持其中许多交付渠道。有关 webhooks 的信息，请访问这些应用程序网站。例如，Sl延 时提供link:https://api.slack.com/messaging/webhooks["本指南非常有用"]。
+很多商业应用都支持webhooks作为标准输入接口，例如：Slack、PagerDuty、Teams、Discord都支持webhooks。通过支持通用、可定制的 webhook 通道， Data Infrastructure Insights可以支持许多此类交付通道。可以在这些应用程序网站上找到有关 webhook 的信息。例如，Slack 提供link:https://api.slack.com/messaging/webhooks["这个有用的指南"]。
 
-您可以创建多个 webhook 通道，每个通道的目标是不同的用途；不同的应用程序，不同的收件人等
+您可以创建多个 webhook 通道，每个通道针对不同的目的；单独的应用程序、不同的收件人等。
 
-webhook 通道实例由以下元素组成：
+Webhook 通道实例由以下元素组成：
 
 |===
 
@@ -28,73 +28,73 @@ webhook 通道实例由以下元素组成：
 | 名称 | 唯一名称 
 
 
-| URL | webhook目标URL、包括_url http://_或_url前缀以及https://_参数 
+| URL | Webhook 目标 URL，包括 _http://_ 或 _https://_ 前缀以及 URL 参数 
 
 
-| 方法 | GET ， POST —默认值为 POST 
+| 方法 | GET、POST - 默认为 POST 
 
 
 | 自定义标题 | 在此指定任何自定义标题行 
 
 
-| 消息正文 | 请将邮件正文放在此处 
+| 消息正文 | 在此处填写您的邮件正文 
 
 
-| 默认警报参数 | 列出了 webhook 的默认参数 
+| 默认警报参数 | 列出 webhook 的默认参数 
 
 
-| 自定义参数和机密 | 自定义参数和密码允许您添加唯一参数和安全元素，例如密码 
+| 自定义参数和机密 | 自定义参数和秘密允许您添加唯一参数和安全元素，例如密码 
 |===
 
 
 == 创建 Webhook
 
-要创建Data Infrastructure Insight webhook、请转到*管理>通知*并选择* Webhooks*选项卡。
+要创建Data Infrastructure Insightswebhook，请转到 *管理 > 通知* 并选择 *Webhooks* 选项卡。
 
-下图显示了一个为 Slack 配置的示例 webhook ：
+下图显示了为 Slack 配置的示例 webhook：
 
-image:Webhook_Example_Slack.png["webhook 示例"]
+image:Webhook_Example_Slack.png["Webhook 示例"]
 
-为每个字段输入适当的信息、完成后单击"保存"。
+在每个字段中输入适当的信息，完成后单击“保存”。
 
-您也可以单击"Test Webhook"按钮来测试连接。请注意、此操作将根据选定方法将"消息正文"(不含替换项)发送到定义的URL。
+您也可以点击“测试 Webhook”按钮来测试连接。请注意，这将根据所选方法将“消息正文”（不带替换）发送到定义的 URL。
 
-Data Infrastructure Insight webhook包含许多默认参数。此外，您还可以创建自己的自定义参数或密码。
+Data Infrastructure Insightswebhook 包含许多默认参数。此外，您还可以创建自己的自定义参数或秘密。
 
-image:Webhook_Default_Parameters.png["Data Infrastructure Insight默认Webhook参数"]
+image:Webhook_Default_Parameters.png["Data Infrastructure Insights默认 Webhook 参数"]
 
 
 
-=== 参数：它们是什么？如何使用它们？
+=== 参数：它们是什么以及如何使用它们？
 
-警报参数是为每个警报填充的动态值。例如， _%%TrigeredOn%_ 参数将替换为触发警报的对象。
+警报参数是每个警报填充的动态值。例如，_%%TriggeredOn%%_ 参数将被替换为触发警报的对象。
 
-您可以将任何对象属性(例如存储名称)作为参数添加到webhook中。例如、您可以在webhook说明中为卷名称和存储名称设置参数、例如："High Latery-for Volume：_%% relatedObject.volume.name%%_、Storage：_%% relatedObject.storage.name%%_"。
+您可以将任何对象属性（例如，存储名称）作为参数添加到 webhook。例如，您可以在 webhook 描述中设置卷名称和存储名称的参数，如：“卷的高延迟：_%%relatedObject.volume.name%%_，存储：_%%relatedObject.storage.name%%_”。
 
-请注意、在本节中、单击"Test Webhook"按钮时会执行_not_替换；该按钮会发送一个有效负载、其中显示了_%_替换项、但不会将其替换为数据。
+请注意，在本节中，单击“测试 Webhook”按钮时不会执行替换；该按钮发送一个显示 _%%_ 替换的有效负载，但不会用数据替换它们。
 
 
 
 === 自定义参数和机密
 
-在本节中，您可以添加所需的任何自定义参数和 / 或密码。出于安全原因，如果定义了密钥，则只有 webhook 创建程序可以修改此 webhook 通道。它对其他用户是只读的。您可以在 URL/Headers 中使用密码： _%%<secret_name>%%_ 。
+在本节中，您可以添加任何您想要的自定义参数和/或秘密。出于安全原因，如果定义了机密，则只有 webhook 创建者可以修改此 webhook 通道。对于其他人来说它是只读的。您可以在 URL/Headers 中使用秘密作为 _%%<secret_name>%%_。
 
 
 
-=== webhook列表页面
+=== Webhook 列表页面
 
-在Webhook列表页面上、显示的是名称、创建者、创建日期、状态、安全、 和上次报告的字段。
+Webhooks 列表页面显示名称、创建者、创建日期、状态、安全和上次报告字段。
 
 
 
-== 选择监控器中的 Webhook 通知
+== 在监视器中选择 Webhook 通知
 
-要在中选择webhook通知link:task_create_monitor.html["监控"]，请进入*警报>管理监视器*并选择所需的监视器，或添加新监视器。在 _set up team notifications _ 部分中，选择 _Webhook_ 作为交付方法。选择警报级别（严重，警告，已解决），然后选择所需的网络连接。
+要选择 webhook 通知link:task_create_monitor.html["监视器"]，转到*警报>管理监视器*并选择所需的监视器，或添加新的监视器。在“设置团队通知”部分，选择“Webhook”作为传送方式。选择警报级别（严重、警告、已解决），然后选择所需的 webhook。
 
 image:Webhook_Monitor_Notify.png["Webhook 监控通知"]
 
 
 
-== webhook 示例：
+== Webhook 示例：
 
-用于Webhooklink:task_webhook_example_slack.html["Slack"]的Webhook用于link:task_webhook_example_pagerduty.html["PagerDty"]Webhooklink:task_webhook_example_teams.html["团队"]的Webhooklink:task_webhook_example_discord.html["不和"]
+Webhook 适用于link:task_webhook_example_slack.html["松弛"]Webhook 适用于link:task_webhook_example_pagerduty.html["PagerDuty"]Webhook 适用于link:task_webhook_example_teams.html["团队"]Webhook 适用于link:task_webhook_example_discord.html["不和谐"]

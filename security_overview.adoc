@@ -1,107 +1,107 @@
 ---
 sidebar: sidebar 
 permalink: security_overview.html 
-summary: Data Infrastructure Insight在整个发布生命周期遵循安全最佳实践。 
+summary: Data Infrastructure Insights在整个发布生命周期中遵循安全最佳实践。 
 keywords: security, risk, protection 
 ---
-= 数据基础架构洞察力安全性
+= Data Infrastructure Insights安全
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-产品和客户数据安全性在 NetApp 至关重要。Data Infrastructure Insight在整个发布生命周期遵循安全最佳实践、以确保以尽可能最佳的方式保护客户信息和数据。
+产品和客户数据安全对于NetApp来说至关重要。Data Infrastructure Insights在整个发布生命周期中遵循安全最佳实践，以确保以最佳方式保护客户信息和数据的安全。
 
 
 
-== 安全性概述
+== 安全概述
 
 
 
-=== 物理安全性
+=== 物理安全
 
-Data Infrastructure Insight生产基础架构托管在Amazon Web Services (AWS)中。Data Infrastructure Insight生产服务器(包括建筑物以及门上使用的锁或钥匙)的物理和环境安全相关控制由AWS管理。根据 AWS ： " 物理访问由专业安全人员利用视频监控，入侵检测系统和其他电子手段在外围和构建入口点进行控制。授权人员可利用多因素身份验证机制访问数据中心楼层。 "
+Data Infrastructure Insights生产基础设施托管在 Amazon Web Services (AWS) 中。Data Infrastructure Insights生产服务器的物理和环境安全相关控制（包括建筑物以及门上使用的锁或钥匙）由 AWS 管理。根据 AWS 的说法：“专业安全人员利用视频监控、入侵检测系统和其他电子手段在周边和建筑物入口处控制物理访问。授权人员利用多因素身份验证机制访问数据中心楼层。”
 
-Data Infrastructure Insight遵循link:https://aws.amazon.com/compliance/shared-responsibility-model/["共同责任模式"]AWS所述的最佳实践。
+Data Infrastructure Insights遵循link:https://aws.amazon.com/compliance/shared-responsibility-model/["共担责任模型"]由 AWS 描述。
 
 
 
-=== 产品安全性
+=== 产品安全
 
-与发布周期较长的开发方法相比、Data Infrastructure Insight遵循敏捷原则、遵循开发生命周期、因此可以更快地解决任何以安全为导向的软件缺陷。通过采用持续集成方法，我们可以快速响应功能和安全方面的变化。变更管理过程和策略用于定义何时以及如何发生变更，并有助于保持生产环境的稳定性。在将任何有影响的变更发布到生产环境之前，系统会正式传达，协调，适当审核和批准这些变更。
+Data Infrastructure Insights遵循符合敏捷原则的开发生命周期，因此与较长的发布周期开发方法相比，我们可以更快地解决任何面向安全的软件缺陷。使用持续集成方法，我们能够快速响应功能和安全变化。变更管理程序和政策定义了变更发生的时间和方式，并有助于维护生产环境的稳定性。任何有影响的变化在发布到生产环境之前都会得到正式沟通、协调、适当审查和批准。
 
 
 
 === 网络安全
 
-在Data Infrastructure Insight环境中、对资源的网络访问由基于主机的防火墙控制。每个资源（例如负载平衡器或虚拟机实例）都有一个基于主机的防火墙，该防火墙仅限制入站流量，使其仅限于该资源执行其功能所需的端口。
+Data Infrastructure Insights环境中的资源网络访问由基于主机的防火墙控制。每个资源（例如负载均衡器或虚拟机实例）都有一个基于主机的防火墙，将入站流量限制到该资源执行其功能所需的端口。
 
-Data Infrastructure Insight使用各种机制(包括入侵检测服务)监控生产环境中的安全异常。
+Data Infrastructure Insights使用包括入侵检测服务在内的各种机制来监控生产环境中的安全异常。
 
 
 
 === 风险评估
 
-数据基础架构洞察力团队遵循正式的风险评估流程、提供一种系统、可重复的方法来识别和评估风险、以便通过风险处理计划对其进行适当管理。
+Data Infrastructure Insights团队遵循正式的风险评估流程，提供系统、可重复的方法来识别和评估风险，以便通过风险处理计划对其进行适当的管理。
 
 
 
 === 数据保护
 
-Data Infrastructure Insight生产环境是在高度冗余的基础架构中设置的、该基础架构会对所有服务和组件使用多个可用性分区。除了利用高可用性和冗余计算基础架构之外，还会定期备份关键数据，并定期测试恢复情况。正式的备份策略和程序可最大限度地减少业务活动中断的影响，保护业务流程免受信息系统故障或灾难的影响，并确保及时，充分地恢复这些策略和程序。
+Data Infrastructure Insights生产环境建立在高度冗余的基础设施中，利用所有服务和组件的多个可用区域。除了利用高可用性和冗余的计算基础设施外，还会定期备份关键数据并定期测试恢复。正式的备份政策和程序可最大限度地减少业务活动中断的影响，并保护业务流程免受信息系统故障或灾难的影响，并确保及时、充分地恢复。
 
 
 
 === 身份验证和访问管理
 
-所有客户对Data Infrastructure Insight的访问均通过https上的浏览器UI交互完成。身份验证通过第三方服务 Auth0 完成。NetApp 已将此作为所有云数据服务的身份验证层进行了集中处理。
+所有客户对Data Infrastructure Insights的访问都是通过 https 上的浏览​​器 UI 交互完成的。身份验证通过第三方服务 Auth0 完成。  NetApp已将此集中作为所有云数据服务的身份验证层。
 
-Data Infrastructure Insight遵循行业最佳实践、包括围绕对Data Infrastructure Insight生产环境的逻辑访问的"最低权限"和"基于角色的访问控制"。访问权限严格按照需要进行控制，并且仅允许使用多因素身份验证机制的特定授权人员进行访问。
+Data Infrastructure Insights遵循行业最佳实践，包括围绕Data Infrastructure Insights生产环境的逻辑访问的“最小特权”和“基于角色的访问控制”。访问权限严格按照需求进行控制，并且仅使用多因素身份验证机制授予选定的授权人员。
 
 
 
-=== 收集和保护客户数据
+=== 客户数据的收集和保护
 
-所有客户数据都会在公有网络之间传输时进行加密，并在空闲时进行加密。Data Infrastructure Insight利用系统中各个点的加密功能、使用包括传输层安全(Transport Layer Security、TLS)和行业标准AES-256算法在内的技术来保护客户数据。
+所有客户数据在通过公共网络传输时均经过加密，并且在静止时也经过加密。Data Infrastructure Insights利用系统各个点的加密技术来保护客户数据，使用的技术包括传输层安全性 (TLS) 和行业标准 AES-256 算法。
 
 
 
 === 客户取消配置
 
-电子邮件通知会以不同的时间间隔发送，以通知客户其订阅即将到期。订阅过期后， UI 将受到限制，并开始为数据收集提供宽限期。然后，系统会通过电子邮件通知客户。试用订阅享有 14 天的宽限期，付费订阅帐户享有 28 天的宽限期。宽限期到期后，系统会通过电子邮件通知客户帐户将在 2 天后被删除。付费客户也可以直接请求停止服务。
+电子邮件通知会以不同的时间间隔发送，告知客户他们的订阅即将到期。订阅到期后，UI 将受到限制，并且数据收集的宽限期将开始。然后通过电子邮件通知客户。试用订阅有 14 天的宽限期，付费订阅帐户有 28 天的宽限期。宽限期过后，将通过电子邮件通知客户该帐户将在 2 天内被删除。付费客户也可以直接请求停止服务。
 
-宽限期结束时、或者在确认客户终止其帐户的请求后、Data Infrastructure Insight Operations (SRE)团队会删除过期的租户和所有关联的客户数据。无论哪种情况， SRE 团队都会运行 API 调用来删除帐户。API 调用将删除租户实例和所有客户数据。通过调用同一 API 并验证客户租户状态是否为 " 已删除 " ，可以验证客户删除情况。
+宽限期结束时或确认客户终止其帐户的请求后，Data Infrastructure Insights运营 (SRE) 团队将删除过期的租户和所有相关的客户数据。无论哪种情况，SRE 团队都会运行 API 调用来删除该帐户。 API 调用删除租户实例和所有客户数据。通过调用相同的 API 并验证客户租户状态是否为“已删除”来验证客户删除。
 
 
 
-=== 安全意外事件管理
+=== 安全事件管理
 
-数据基础架构洞察力与NetApp的产品安全事件响应团队(Product Security Incident Response Team、PFIRT)流程相集成、可发现、评估和解决已知漏洞。PSIRT 可从多个渠道获取漏洞信息，包括客户报告，内部工程以及 CVE 数据库等广泛认可的源。
+Data Infrastructure Insights与 NetApp 的产品安全事件响应团队 (PSIRT) 流程集成，以查找、评估和解决已知漏洞。  PSIRT 从多个渠道获取漏洞信息，包括客户报告、内部工程以及 CVE 数据库等广泛认可的来源。
 
-如果Data Infrastructure Insight工程团队检测到问题、该团队将启动PTIRT流程、评估并可能修复该问题。
+如果Data Infrastructure Insights工程团队检测到问题，该团队将启动 PSIRT 流程，评估并可能修复该问题。
 
-数据基础架构洞察客户或研究人员也可能发现数据基础架构洞察产品存在安全问题、并将此问题报告给技术支持或直接报告给NetApp的意外事件响应团队。在这些情况下、数据基础架构洞察力团队将启动PTIRT流程、评估并可能修复问题。
+Data Infrastructure Insights客户或研究人员也可能会发现Data Infrastructure Insights产品的安全问题，并将该问题报告给技术支持或直接报告给 NetApp 的事件响应团队。在这些情况下，Data Infrastructure Insights团队将启动 PSIRT 流程，评估并可能修复问题。
 
 
 
 === 漏洞和渗透测试
 
-Data Infrastructure Insight遵循行业最佳实践、并使用内部和外部安全专业人员和公司定期执行漏洞和渗透测试。
+Data Infrastructure Insights遵循行业最佳实践，并使用内部和外部安全专业人员和公司定期执行漏洞和渗透测试。
 
 
 
 === 安全意识培训
 
-所有Data Infrastructure Insight人员都要接受针对个人角色制定的安全培训、以确保每位员工都有能力应对其角色中特定的安全挑战。
+所有Data Infrastructure Insights人员都接受针对各自角色开发的安全培训，以确保每位员工都能够应对其角色特定的安全挑战。
 
 
 
-=== 合规性
+=== Compliance
 
-Data Infrastructure Insight对外部特许会计师事务所的安全性、流程和服务执行独立的第三方审计和验证、包括完成SOC 2审计。
+Data Infrastructure Insights对其安全性、流程和服务进行独立的第三方审计和外部持牌 CPA 事务所的验证，包括完成 SOC 2 审计。
 
 
 
-=== NetApp安全通报
+=== NetApp安全公告
 
-您可以查看NetApp提供的安全建议link:https://security.netapp.com/advisory/["此处"]。
+您可以查看 NetApp 的可用安全公告link:https://security.netapp.com/advisory/["此处"]。

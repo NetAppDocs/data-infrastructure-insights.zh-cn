@@ -1,16 +1,16 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_na_cloud_volumes_ontap.html 
-summary: 配置 NetApp Cloud Volumes ONTAP 数据收集器 
+summary: 配置NetApp Cloud Volumes ONTAP数据收集器 
 keywords: data collector, NetApp, Cloud, ONTAP 
 ---
-= NetApp Cloud Volumes ONTAP 数据收集器
+= NetApp Cloud Volumes ONTAP数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-此数据收集器支持从 Cloud Volumes ONTAP 配置收集清单。
+该数据收集器支持从Cloud Volumes ONTAP配置收集库存。
 
 
 
@@ -18,13 +18,13 @@ keywords: data collector, NetApp, Cloud, ONTAP
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| NetApp 管理 IP 地址 | Cloud Volumens ONTAP 的 IP 地址 
+| NetApp管理 IP 地址 | Cloud Volumens ONTAP的 IP 地址 
 
 
-| 用户名 | Cloud Volumes ONTAP 的用户名 
+| 用户名 | Cloud Volumes ONTAP的用户名 
 
 
 | 密码 | 上述用户的密码 
@@ -35,46 +35,46 @@ keywords: data collector, NetApp, Cloud, ONTAP
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 连接类型 | 建议使用 HTTPS 。还显示默认端口。 
+| 连接类型 | 建议使用 HTTPS。还显示默认端口。 
 
 
-| 覆盖通信端口 | 如果不是默认端口，则使用此端口。 
+| 覆盖通信端口 | 如果不是默认端口则使用端口。 
 
 
-| 清单轮询间隔（分钟） | 默认值为 60 分钟。 
+| 库存轮询间隔（分钟） | 默认为 60 分钟。 
 
 
-| 清单并发线程计数 | 并发线程数。 
+| 库存并发线程数 | 并发线程数。 
 
 
-| 对 HTTPS 强制使用 TLS | 强制基于 HTTPS 使用 TLS 
+| 强制使用 TLS 进行 HTTPS | 强制通过 HTTPS 进行 TLS 
 
 
 | 自动查找网络组 | 自动查找网络组 
 
 
-| 网络组扩展 | 选择 Shell 或 File 
+| 网络组扩展 | 选择 Shell 或文件 
 
 
-| HTTP 读取超时秒数 | 默认值为30秒 
+| HTTP 读取超时秒数 | 默认值为 30 秒 
 
 
 | 强制响应为 UTF-8 | 强制响应为 UTF-8 
 
 
-| 性能轮询间隔（分钟） | 默认值为900秒。 
+| 性能轮询间隔（分钟） | 默认值为 900 秒。 
 
 
 | 性能并发线程数 | 并发线程数。 
 
 
-| 高级计数器数据收集 | 选中此选项可让Data Infrastructure Insight从以下列表中收集高级指标。 
+| 高级计数器数据收集 | 选中此项可以让Data Infrastructure Insights从下面的列表中收集高级指标。 
 |===
 
 
 == 故障排除
 
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

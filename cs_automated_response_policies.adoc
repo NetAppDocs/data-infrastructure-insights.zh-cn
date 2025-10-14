@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: cs_automated_response_policies.html 
 keywords: alert, snapshot, ransomware, attack 
-summary: 您可以为潜在攻击（例如勒索软件）和 / 或活动警告设置自动响应策略 
+summary: 您可以针对潜在攻击（例如勒索软件）和/或活动警告设置自动响应策略 
 ---
 = 自动响应策略
 :hardbreaks:
@@ -14,24 +14,24 @@ summary: 您可以为潜在攻击（例如勒索软件）和 / 或活动警告�
 
 
 [role="lead"]
-响应策略会触发一些操作，例如在发生攻击或用户行为异常时创建快照或限制用户访问。
+响应策略会在发生攻击或异常用户行为时触发诸如拍摄快照或限制用户访问等操作。
 
-您可以在特定设备或所有设备上设置策略。要设置响应策略，请选择*管理>自动响应策略*，然后单击相应的*+Policy*按钮。您可以为攻击或警告创建策略。
+您可以针对特定设备或所有设备设置策略。要设置响应策略，请选择*管理 > 自动响应策略*，然后单击相应的*+策略*按钮。您可以创建针对攻击或警告的策略。
 
-image:ws_add_attack_policy.png["添加一个\"攻击策略\"对话框、其中显示webhook下拉列表"]
+image:ws_add_attack_policy.png["添加显示 webhook 下拉菜单的攻击策略对话框"]
 
-您必须使用唯一名称保存策略。
+您必须使用唯一的名称保存该策略。
 
-要禁用自动响应操作（例如，创建 Snapshot ），只需取消选中该操作并保存策略即可。
+要禁用自动响应操作（例如，拍摄快照），只需取消选中该操作并保存策略。
 
-当针对指定设备（或所有设备，如果已选择）触发警报时，自动响应策略将为您的数据创建快照。您可以在上查看快照状态link:cs_alert_data.html#the-alert-details-page["警报详细信息页面"]。
+当针对指定设备（或所有设备，如果选择）触发警报时，自动响应策略会对您的数据进行快照。您可以在link:cs_alert_data.html#the-alert-details-page["警报详细信息页面"]。
 
-有关通过IP限制用户访问的详细信息、请参见link:cs_restrict_user_access.html["限制用户访问"]页面。
+查看link:cs_restrict_user_access.html["限制用户访问"]页面以了解有关通过 IP 限制用户访问的更多详细信息。
 
-您可以将一个或多个webhook附加到策略中、以便在创建警报并采取操作时收到通知。建议向策略中添加的webhook不超过10个。请注意、如果暂停策略、则不会触发webhook通知。
+您可以将一个或多个 webhook 附加到策略，以便在创建警报和采取行动时收到通知。建议向策略添加不超过 10 个 webhook。请记住，如果策略暂停，则不会触发 webhook 通知。
 
-您可以通过在策略的下拉菜单中选择相应选项来修改或暂停自动响应策略。
+您可以通过选择策略下拉菜单中的选项来修改或暂停自动响应策略。
 
-工作负载安全性将根据Snapshot清除设置每天自动删除一次快照。
+工作负载安全将根据快照清除设置每天自动删除一次快照。
 
-image:CloudSecure_SnapshotPurgeSettings.png["Snapshot 清除设置"]
+image:CloudSecure_SnapshotPurgeSettings.png["快照清除设置"]

@@ -2,40 +2,40 @@
 sidebar: sidebar 
 permalink: task_dc_na_7mode.html 
 keywords: data collector, 7-mode, NetApp 
-summary: 配置 NetApp 7- 模式数据收集器。 
+summary: 配置NetApp 7 模式数据收集器。 
 ---
-= 在 7- 模式下运行的 NetApp Data ONTAP 数据收集器
+= NetApp Data ONTAP在 7-模式数据收集器中运行
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-对于使用在 7- 模式下运行的 Data ONTAP 软件的存储系统，您可以使用 7- 模式数据收集器，该收集器使用命令行界面来获取容量和性能数据。
+对于使用以 7 模式运行的Data ONTAP软件的存储系统，您可以使用 7 模式数据收集器，它使用 CLI 获取容量和性能数据。
 
 
 
-== 术语
+== Terminology
 
-数据基础架构洞察从NetApp 7-模式数据收集器采集以下清单信息。对于所采集的每种资产类型，均显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从NetApp 7 模式数据收集器获取以下库存信息。对于所获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 
-NOTE: 此数据收集器为link:task_getting_started_with_cloud_insights.html#useful-definitions["已弃用"]。
+NOTE: 该数据收集器link:task_getting_started_with_cloud_insights.html#useful-definitions["已弃用"]。
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 磁盘 | 磁盘 
 
 
-| RAID 组 | 磁盘组 
+| 突袭小组 | 磁盘组 
 
 
-| 存储器 | 存储 
+| 文件管理器 | 存储 
 
 
-| 存储器 | 存储节点 
+| 文件管理器 | 存储节点 
 
 
 | 聚合 | 存储池 
@@ -44,27 +44,27 @@ NOTE: 此数据收集器为link:task_getting_started_with_cloud_insights.html#us
 | LUN | 卷 
 
 
-| 卷 | 内部卷 
+| 卷 | 内部体积 
 |===
-注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情况。
 
 
 
 == 要求
 
-要配置和使用此数据收集器，您需要满足以下要求：
+您需要以下内容来配置和使用此数据收集器：
 
-* FAS 存储控制器和配对节点的 IP 地址。
+* FAS存储控制器及其合作伙伴的 IP 地址。
 * 端口 443
-* 控制器和配对控制器的自定义管理员级别用户名和密码，对于 7- 模式具有以下角色功能：
+* 控制器和合作伙伴控制器的自定义管理员级别用户名和密码，具有 7-模式的以下角色功能：
 +
-** "api-*" ：使用此命令可以使 OnCommand Insight 执行所有 NetApp 存储 API 命令。
-** "login-http-admin" ：使用此命令可以允许 OnCommand Insight 通过 HTTP 连接到 NetApp 存储。
-** "security-api-vfiler" ：使用此命令可以使 OnCommand Insight 执行 NetApp 存储 API 命令来检索 vFiler 单元信息。
-** "cli-options" ：使用此选项可读取存储系统选项。
-** "CLI-LUN" ：访问这些命令以管理 LUN 。显示给定 LUN 或 LUN 类的状态（ LUN 路径，大小，联机 / 脱机状态和共享状态）。
-** cli-df ：使用此选项可显示可用磁盘空间。
-** cli-ifconfig ：使用此命令可显示接口和 IP 地址。
+** “api-*”：使用此项允许OnCommand Insight执行所有NetApp存储 API 命令。
+** “login-http-admin”：使用此项允许OnCommand Insight通过 HTTP 连接到NetApp存储。
+** “security-api-vfiler”：使用此功能允许OnCommand Insight执行NetApp存储 API 命令来检索 vFiler 单元信息。
+** “cli-options”：使用它来读取存储系统选项。
+** “cli-lun”：访问这些命令来管理 LUN。显示给定 LUN 或 LUN 类的状态（LUN 路径、大小、联机/脱机状态和共享状态）。
+** “cli-df”：使用此功能显示可用磁盘空间。
+** “cli-ifconfig”：使用它来显示接口和 IP 地址。
 
 
 
@@ -75,25 +75,25 @@ NOTE: 此数据收集器为link:task_getting_started_with_cloud_insights.html#us
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 存储系统的地址 | NetApp 存储系统的 IP 地址或完全限定域名 
+| 存储系统地址 | NetApp存储系统的 IP 地址或完全限定域名 
 
 
-| 用户名 | NetApp 存储系统的用户名 
+| 用户名 | NetApp存储系统的用户名 
 
 
-| 密码 | NetApp 存储系统的密码 
+| 密码 | NetApp存储系统的密码 
 
 
-| 集群中 HA 配对节点的地址 | HA 配对节点的 IP 地址或完全限定域名 
+| 集群中 HA 合作伙伴的地址 | HA 合作伙伴的 IP 地址或完全限定域名 
 
 
-| 集群中 HA 配对节点的用户名 | HA 配对节点的用户名 
+| 集群中 HA 合作伙伴的用户名 | HA 合作伙伴的用户名 
 
 
-| 集群中 HA 配对文件存储器的密码 | HA 配对节点的密码 
+| 集群中 HA 合作伙伴文件管理器的密码 | HA 合作伙伴的密码 
 |===
 
 
@@ -101,64 +101,64 @@ NOTE: 此数据收集器为link:task_getting_started_with_cloud_insights.html#us
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认值为20分钟。 
+| 库存轮询间隔（分钟） | 库存调查之间的间隔。默认值为 20 分钟。 
 
 
-| 连接类型 | HTTPS 或 HTTP 也会显示默认端口 
+| 连接类型 | HTTPS 或 HTTP，还显示默认端口 
 
 
-| 覆盖连接端口 | 如果为空，请使用连接类型字段中的默认端口，否则输入要使用的连接端口 
+| 覆盖连接端口 | 如果为空，则在连接类型字段中使用默认端口，否则输入要使用的连接端口 
 
 
-| 性能轮询间隔（秒） | 性能轮询之间的时间间隔。默认值为300秒。 
+| 性能轮询间隔（秒） | 性能轮询之间的间隔。默认值为 300 秒。 
 |===
 
 
 == 存储系统连接
 
-除了使用此数据收集器的默认管理用户之外，您还可以直接在 NetApp 存储系统上为用户配置管理权限，以便此数据收集器可以从 NetApp 存储系统获取数据。
+作为使用此数据收集器的默认管理用户的替代方法，您可以直接在NetApp存储系统上配置具有管理权限的用户，以便此数据收集器可以从NetApp存储系统获取数据。
 
-要连接到 NetApp 存储系统，需要在获取存储系统所在的主 pfiler 时指定的用户满足以下条件：
+连接到NetApp存储系统要求获取主 pfiler（存储系统所在的位置）时指定的用户满足以下条件：
 
-* 用户必须位于 vfiler0 （根存储器 /pfiler ）上。
+* 用户必须位于 vfiler0（根文件管理器/pfiler）上。
 +
-存储系统是在采集主 pfiler 时采集的。
+在获取主 pfiler 时会获取存储系统。
 
-* 以下命令定义了用户角色功能：
+* 以下命令定义用户角色能力：
 +
-** "API"—*：使用此命令可使Data Infrastructure Insight执行所有NetApp存储API命令。
+** “api-*”：使用此功能允许Data Infrastructure Insights执行所有NetApp存储 API 命令。
 +
-要使用 ZAPI ，需要使用此命令。
+使用 ZAPI 需要此命令。
 
-** login-http-admin：使用此选项可允许Data Infrastructure Insight通过HTTP连接到NetApp存储。要使用 ZAPI ，需要使用此命令。
-** secure-API-vfiler：使用此命令可使数据基础架构洞察力执行NetApp存储API命令来检索vfiler单元信息。
-** cli-options ：用于 "options" 命令，用于配对 IP 和已启用许可证。
-** "CLI-LUN" ：访问这些命令以管理 LUN 。显示给定 LUN 或 LUN 类的状态（ LUN 路径，大小，联机 / 脱机状态和共享状态）。
-** cli-df ：用于 "df -s " ， "df -r" ， "df -a -r" 命令，用于显示可用空间。
-** cli-ifconfig ：用于 "ifconfig -a " 命令，用于获取存储器 IP 地址。
-** cli-rdfile ：用于 "rdfile /etc/netgroup" 命令，用于获取网络组。
-** cli-date ：表示 date 命令，用于获取 Snapshot 副本的完整日期。
-** cli-snap ：用于 "snap list" 命令，用于获取 Snapshot 副本。
-
-
+** “login-http-admin”：使用此功能允许Data Infrastructure Insights通过 HTTP 连接到NetApp存储。使用 ZAPI 需要此命令。
+** “security-api-vfiler”：使用此功能允许Data Infrastructure Insights执行NetApp存储 API 命令来检索 vFiler 单元信息。
+** “cli-options”：用于“options”命令并用于合作伙伴 IP 和启用的许可证。
+** “cli-lun”：访问这些命令来管理 LUN。显示给定 LUN 或 LUN 类的状态（LUN 路径、大小、联机/脱机状态和共享状态）。
+** “cli-df”：用于“df -s”、“df -r”、“df -A -r”命令，显示可用空间。
+** “cli-ifconfig”：用于“ifconfig -a”命令，获取文件服务器 IP 地址。
+** “cli-rdfile”：用于“rdfile /etc/netgroup”命令，获取网络组。
+** “cli-date”：用于“date”命令，获取 Snapshot 副本的完整日期。
+** “cli-snap”：用于“snap list”命令并获取 Snapshot 副本。
 
 
-如果未提供 cli-date 或 cli-snap 权限，则可以完成采集，但不会报告 Snapshot 副本。
 
-要成功获取 7- 模式数据源并在存储系统上不生成警告，您应使用以下命令字符串之一定义用户角色。此处列出的第二个字符串是第一个字符串的简化版本：
 
-* login-http-admin ， api-* ， security-api-vfile ， cli-rdfile ， cli-options ， cli-df ， cli-lun ， cli-ifconfig ， cli-date ， cli-snap ， _
-* login-http-admin ， api-* ， security-api-vfile ， cli-
+如果未提供 cli-date 或 cli-snap 权限，则可以完成获取，但不会报告 Snapshot 副本。
+
+要成功获取 7-模式数据源并且不会在存储系统上生成警告，您应该使用以下命令字符串之一来定义您的用户角色。这里列出的第二个字符串是第一个字符串的精简版本：
+
+* 登录 http 管理员、api-*、安全 api-vfile、cli-rdfile、cli-options、cli-df、cli-lun、cli-ifconfig、cli-date、cli-snap、_
+* 登录-http-admin，api-*，安全api-vfile，cli-
 
 
 
 
 == 故障排除
 
-如果此数据收集器出现问题，请尝试执行以下操作：
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 
 
@@ -166,45 +166,45 @@ NOTE: 此数据收集器为link:task_getting_started_with_cloud_insights.html#us
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| 接收 401 HTTP 响应或 13003 ZAPI 错误代码， ZAPI 返回 " 权限不足 " 或 " 未授权使用此命令 " | 检查用户名和密码以及用户权限。 
+| 收到 401 HTTP 响应或 13003 ZAPI 错误代码，并且 ZAPI 返回“权限不足”或“未授权执行此命令” | 检查用户名和密码以及用户权限/许可。 
 
 
-| " 无法执行命令 " 错误 | 检查用户是否对设备具有以下权限：•API-*•clie-date•clie-df•clie-ifconfig•clie-LUN•clie-operas•clie-rdfile•clie-snap•login-http-admin•secure-API-vfiler此外、还会检查Data Infrastructure Insight是否支持ONTAP版本、并验证使用的凭据是否与设备凭据匹配 
+| “无法执行命令”错误 | 检查用户是否具有设备的以下权限： • api-* • cli-date • cli-df • cli-ifconfig • cli-lun • cli-operations • cli-rdfile • cli-snap • login-http-admin • security-api-vfiler 还要检查Data Infrastructure Insights是否支持ONTAP版本，并验证使用的凭据是否与设备凭据匹配 
 
 
-| 集群版本小于 8.1 | 集群支持的最低版本为 8.1 。升级到支持的最低版本。 
+| 集群版本小于 8.1 | 集群最低支持版本为 8.1。升级到最低支持版本。 
 
 
-| ZAPI 返回 "cluster role is not cluster_mgmt LIF" | AU 需要与集群管理 IP 进行通信。检查 IP 并根据需要更改为其他 IP 
+| ZAPI 返回“集群角色不是 cluster_mgmt LIF” | AU 需要与集群管理 IP 对话。检查 IP 并在必要时更改为其他 IP 
 
 
-| 错误： " 不支持 7 模式存储器 " | 如果使用此数据收集器发现 7 模式存储器，则可能会发生这种情况。更改 IP 以指向 cdot filer 。 
+| 错误：“不支持 7 模式文件管理器” | 如果您使用此数据收集器来发现 7 模式文件管理器，就会发生这种情况。将 IP 更改为指向 cdot filer。 
 
 
-| 重试后， ZAPI 命令失败 | AU 与集群通信出现问题。检查网络，端口号和 IP 地址。用户还应尝试从 AU 计算机的命令行运行命令。 
+| 重试后 ZAPI 命令失败 | AU 与集群存在通信问题。检查网络、端口号和 IP 地址。用户还应该尝试从 AU 机器的命令行运行命令。 
 
 
-| AU 无法连接到 ZAPI | 检查 IP/ 端口连接并断言 ZAPI 配置。 
+| AU 无法连接到 ZAPI | 检查 IP/端口连接并确认 ZAPI 配置。 
 
 
-| AU 无法通过 HTTP 连接到 ZAPI | 检查 ZAPI 端口是否接受纯文本。如果 AU 尝试向 SSL 套接字发送纯文本，则通信将失败。 
+| AU 无法通过 HTTP 连接到 ZAPI | 检查 ZAPI 端口是否接受纯文本。如果 AU 尝试向 SSL 套接字发送纯文本，则通信失败。 
 
 
-| 通信失败，并出现 SSLException | AU 正在尝试向存储器上的纯文本端口发送 SSL 。检查 ZAPI 端口是接受 SSL 还是使用其他端口。 
+| 通信失败并出现 SSLException | AU 正在尝试将 SSL 发送到文件管理器上的纯文本端口。检查 ZAPI 端口是否接受 SSL，或者使用其他端口。 
 
 
-| 其他连接错误： ZAPI 响应的错误代码为 13001 ， " 数据库未打开 " ZAPI 错误代码为 60 ，响应包含 "API 未按时完成 " ZAPI 响应包含 "initialize_session （） ReturnD NULL environment " ZAPI 错误代码为 14007 ，响应包含 "Node is not healthy" | 检查网络，端口号和 IP 地址。用户还应尝试从 AU 计算机的命令行运行命令。 
+| 其他连接错误： ZAPI 响应的错误代码为 13001，“数据库未打开” ZAPI 错误代码为 60，响应包含“API 未按时完成” ZAPI 响应包含“initialize_session() 返回 NULL 环境” ZAPI 错误代码为 14007，响应包含“节点不健康” | 检查网络、端口号和 IP 地址。用户还应该尝试从 AU 机器的命令行运行命令。 
 
 
-| ZAPI 出现套接字超时错误 | 检查存储器连接和 / 或增加超时。 
+| ZAPI 套接字超时错误 | 检查文件连接和/或增加超时。 
 
 
-| 错误： C 模式集群不受 7- 模式数据源支持 | 检查 IP 并将 IP 更改为 7 模式集群。 
+| “7 模式数据源不支持 C 模式集群”错误 | 检查 IP 并将 IP 更改为 7 模式集群。 
 
 
-| 出现 " 无法连接到 vFiler " 错误 | 至少检查获取用户功能是否包括以下内容： api-* security-api-vFiler login-http-admin 确认存储器正在运行最低 ONTAPI 1.7 版。 
+| “无法连接到 vFiler”错误 | 检查获取用户功能至少包括以下内容：api-* security-api-vfiler login-http-admin 确认文件管理器运行的是最低 ONTAPI 版本 1.7。 
 |===
-有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+更多信息可从link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

@@ -10,23 +10,23 @@ summary: 配置 Azure 计算数据收集器。
 
 
 [role="lead"]
-Data Infrastructure Insight使用Azure计算数据收集器从Azure计算实例中获取清单和性能数据。
+Data Infrastructure Insights使用 Azure 计算数据收集器从 Azure 计算实例获取库存和性能数据。
 
 
 
 == 要求
 
-要配置此数据收集器，您需要以下信息。
+您需要以下信息来配置此数据收集器。
 
-* 端口要求： 443 HTTPS
-* Azure OAuth 2.0 重定向 URI （ login.microsoftonline.com ）
-* Azure 管理 REST IP （ management.azure.com ）
-* Azure Resource Manager IP （ management.core.windows.net ）
-* Azure 服务主体应用程序（客户端） ID （需要读取器角色）
+* 端口要求：443 HTTPS
+* Azure OAuth 2.0 重定向 URI (login.microsoftonline.com)
+* Azure 管理 Rest IP (management.azure.com)
+* Azure 资源管理器 IP (management.core.windows.net)
+* Azure 服务主体应用程序（客户端）ID（需要读者角色）
 * Azure 服务主体身份验证密钥（用户密码）
-* 您需要为Data Infrastructure Insight发现设置一个Azure帐户。
+* 您需要设置一个 Azure 帐户来发现Data Infrastructure Insights。
 +
-正确配置帐户并在Azure中注册应用程序后、您将获得通过Data Infrastructure Insight发现Azure实例所需的凭据。以下链接介绍了如何设置用于发现的帐户。https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal[]
+一旦正确配置了帐户并在 Azure 中注册了应用程序，您将拥有使用Data Infrastructure Insights发现 Azure 实例所需的凭据。以下链接描述了如何设置发现帐户。https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal[]
 
 
 
@@ -34,23 +34,23 @@ Data Infrastructure Insight使用Azure计算数据收集器从Azure计算实例�
 
 == 配置
 
-根据下表在数据收集器字段中输入数据：
+根据下表将数据输入数据收集器字段：
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| Azure 服务主体应用程序（客户端） ID （需要读取器角色） | 登录到 Azure 的 ID 。需要读取器角色访问。 
+| Azure 服务主体应用程序（客户端）ID（需要读者角色） | Azure 的登录 ID。需要读者角色访问权限。 
 
 
 | Azure 租户 ID | Microsoft 租户 ID 
 
 
-| Azure 服务主体身份验证密钥 | 登录身份验证密钥 
+| Azure 服务主体身份验证密钥 | 登录认证密钥 
 
 
-| 我了解 Microsoft 为 API 请求向我收费 | 选中此复选框可验证您是否了解 Microsoft 会为 Insight 轮询发出的 API 请求向您收费。 
+| 我了解 Microsoft 会向我收取 API 请求费用 | 选中此项以验证您是否理解 Microsoft 会针对 Insight 轮询发出的 API 请求向您收费。 
 |===
 
 
@@ -58,22 +58,22 @@ Data Infrastructure Insight使用Azure计算数据收集器从Azure计算实例�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 清单轮询间隔（分钟） | 默认值为60 
+| 库存轮询间隔（分钟） | 默认值为 60 
 
 
-| 选择 " 排除 " 或 " 包括 " 以应用于按标记筛选 VM | 指定在收集数据时是包含还是排除虚拟机的按标记。如果选择了 ‘include ' ，则标记密钥字段不能为空。 
+| 选择“排除”或“包含”以按标签过滤虚拟机 | 指定收集数据时是否通过标签包含或排除虚拟机。如果选择‘包含’，则标签键字段不能为空。 
 
 
-| 标记要筛选 VM 的密钥和值 | 单击 * + Filter Tag * ，通过筛选与 VM 上的密钥和标记值匹配的密钥和值来选择要包含 / 排除的 VM （以及关联磁盘）。标记密钥为必填项，标记值为可选项。如果标记值为空，则只要虚拟机与标记密钥匹配，就会对其进行筛选。 
+| 用于筛选虚拟机的标签键和值 | 单击“*+ 过滤标签*”，通过过滤与虚拟机上的标签的键和值匹配的键和值来选择要包含/排除的虚拟机（和相关磁盘）。标签键是必填项，标签值是可选的。当Tag Value为空时，只要与Tag Key匹配，则过滤该VM。 
 
 
-| 性能轮询间隔（秒） | 默认值为300 
+| 性能轮询间隔（秒） | 默认值为 300 
 |===
 
 
 == 故障排除
 
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

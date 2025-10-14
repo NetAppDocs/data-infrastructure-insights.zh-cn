@@ -1,40 +1,40 @@
 ---
 sidebar: sidebar 
 permalink: index.html 
-summary: 欢迎访问Data Infrastructure Insight文档门户。 
+summary: 欢迎来到Data Infrastructure Insights文档门户。 
 keywords:  
 ---
-= Data Infrastructure Insight文档
+= Data Infrastructure Insights文档
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-NetApp数据基础架构洞察(原Cloud Insights)是一款云基础架构监控工具、可让您深入了解整个基础架构。借助Data Infrastructure Insight、您可以监控和优化所有资源、包括公有云和私有数据中心、并对其进行故障排除。
+NetApp Data Infrastructure Insights （以前称为Cloud Insights）是一种云基础设施监控工具，可让您了解整个基础设施。借助Data Infrastructure Insights，您可以监控、排除故障并优化所有资源，包括公共云和私有数据中心。
 
 
 
-== Data Infrastructure Insight对我有何作用？
+== Data Infrastructure Insights能为我做什么？
 
-Data Infrastructure Insight提供混合多云监控功能、支持您对基础架构和工作负载进行全栈观察。
+Data Infrastructure Insights提供混合多云监控，让您可以全栈观察基础设施和工作负载。
 
-* 用于异构基础架构和工作负载的数据收集器、包括Kubernetes
-* 开放式Telegraf收集器和开放式API、便于集成
+* 异构基础设施和工作负载的数据收集器，包括 Kubernetes
+* 开放 Telegraf 收集器和开放 API，方便集成
 * 全面的警报和通知
-* 机器学习、获得智能洞察力
+* 机器学习带来智能洞察
 * 优化资源利用率
-* 内置或可自定义的信息板、带有高级筛选器、可最大程度地减少问题解答 问题的显示噪声
-* 发现ONTAP 存储操作的运行状况 
-* 保护您最宝贵的业务资产—数据—免受勒索软件或数据销毁攻击
+* 内置或可定制的仪表板，配有高级过滤器，可最大限度地减少显示噪音，从而回答问题
+* 了解ONTAP存储操作的健康状况 
+* 保护您最宝贵的商业资产——数据——免受勒索软件或数据破坏攻击
 
 
 '''
 
 
-== 入门
+== 入门指南
 
-* 如何link:task_cloud_insights_onboarding_1.html["*开始使用*"]利用数据基础架构洞察力？
-* 我已注册。现在我该怎么办？link:task_getting_started_with_cloud_insights.html["正在获取数据"] link:concept_user_roles.html["设置用户"]
-* 太棒了！下一步是什么？link:task_defining_annotations.html["准备资产：添加标注"] link:concept_querying_assets.html["查找所需资产： Querying"] link:concept_dashboards_overview.html["查看所需数据：信息板"] link:task_create_monitor.html["监控和警报"] link:task_cs_getting_started.html["保护数据安全"]
-* 这是很棒的东西！我准备好了link:concept_subscribing_to_cloud_insights.html["* 订阅 *"]。
+* 我该如何link:task_cloud_insights_onboarding_1.html["*开始*"]具有Data Infrastructure Insights？
+* 我已经报名了。现在我该怎么办？link:task_getting_started_with_cloud_insights.html["获取数据"] link:concept_user_roles.html["设置用户"]
+* 惊人的！下一步是什么？link:task_defining_annotations.html["准备资产：注释"] link:concept_querying_assets.html["查找所需资产：查询"] link:concept_dashboards_overview.html["查看您想要的数据：仪表板"] link:task_create_monitor.html["监控和警报"] link:task_cs_getting_started.html["保护数据"]
+* 这是很棒的东西！我准备好了link:concept_subscribing_to_cloud_insights.html["*订阅*"]。
 

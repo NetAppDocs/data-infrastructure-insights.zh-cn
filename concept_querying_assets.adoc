@@ -10,17 +10,17 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 
 
 [role="lead"]
-通过查询、您可以根据用户选择的标准(例如标注)精细地搜索租户上的资产和指标、从而监控网络并对网络进行故障排除。
+通过查询，您可以根据用户选择的条件（例如，注释）在粒度级别上搜索租户上的资产和指标，从而监控和排除网络故障。
 
-请注意，标注规则会自动为资产分配标注， _require_ 查询。
+请注意，注释规则会自动将注释分配给资产，需要查询。
 
-您可以查询租户上的物理或虚拟清单资产(及其关联指标)、也可以查询随集成提供的指标、例如Kubernetes或ONTAP高级数据。
+您可以查询租户上的物理或虚拟库存资产（及其相关指标），或查询 Kubernetes 或ONTAP Advanced Data 等集成提供的指标。
 
 
 
-== 清单资产
+== 库存资产
 
-以下资产类型可用于查询，信息板小工具和自定义资产登录页面。可用于筛选器，表达式和显示的字段和计数器因资产类型而异。并非所有资产都可以在所有小工具类型中使用。
+以下资产类型可用于查询、仪表板小部件和自定义资产登录页面。可用于过滤器、表达式和显示的字段和计数器将因资产类型而异。并非所有资产都可以在所有小部件类型中使用。
 
 * 应用程序
 * 数据存储库
@@ -28,7 +28,7 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 * 网络结构
 * 通用设备
 * 主机
-* 内部卷
+* 内部体积
 * iSCSI 会话
 * iSCSI 网络门户
 * 路径
@@ -46,13 +46,13 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 * 虚拟机
 * 卷
 * 分区
-* 区域成员
+* 区域会员
 
 
 
 
-== 集成度量指标
+== 集成指标
 
-除了查询清单资产及其关联的性能指标之外，您还可以查询 * 集成数据 * 指标，例如由 Kubernetes 或 Docker 生成或随 ONTAP 高级指标提供的指标。
+除了查询库存资产及其相关性能指标之外，您还可以查询*集成数据*指标，例如由 Kubernetes 或 Docker 生成的指标，或ONTAP高级指标提供的指标。
 
-image:QueryPageFilter.png["集成查询筛选器示例"]
+image:QueryPageFilter.png["集成查询过滤器示例"]

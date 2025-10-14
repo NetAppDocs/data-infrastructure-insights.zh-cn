@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: insights_reclaim_ontap_cold_storage.html 
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload 
-summary: 通过洞察力、您可以了解资源如何影响租户上的其他资源。 
+summary: 洞察可以让您了解资源如何影响租户上的其他资源。 
 ---
-= 洞察：回收ONTAP 冷存储
+= 见解：回收ONTAP冷存储
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,37 +14,37 @@ summary: 通过洞察力、您可以了解资源如何影响租户上的其他�
 
 
 [role="lead"]
-回收ONTAP 冷存储Insight可提供有关ONTAP 系统上卷的冷容量、潜在成本/电耗节省和建议操作项的数据。
+_Reclaim ONTAP Cold Storage_ Insight 提供有关冷容量、潜在成本/电力节省以及ONTAP系统上卷的推荐操作项目的数据。
 
-要查看这些洞察、请导航到*信息板>洞察力*、然后查看_RecaLate ONTAP Cold Storage_ Insight。请注意、只有在Data Infrastructure Insight检测到冷存储时、此Insight才会列出受影响的存储、否则您将看到"全部清除"消息。
+要查看这些见解，请导航至*仪表板>见解*并查看_Reclaim ONTAP Cold Storage_见解。请注意，如果Data Infrastructure Insights检测到冷存储，此洞察才会列出受影响的存储，否则您将看到“全部清除”消息。
 
-请注意、系统不会显示30天以内的冷数据。
+请记住，不会显示少于 30 天的冷数据。
 
-image:Cold_Data_Insight_List.png["Insight列表显示了3个包含冷数据的存储"]
+image:Cold_Data_Insight_List.png["显示 3 个包含冷数据的存储的洞察列表"]
 
-Insight问题描述 可快速指示检测到的"冷"数据量以及数据所在的存储。该表还提供了包含冷数据的工作负载计数。
+Insight 描述快速指示了被检测为“冷”的数据量以及该数据驻留在哪个存储中。该表还提供了冷数据的工作负载数量。
 
-从列表中选择Insight将打开一个页面、其中显示了更多详细信息、包括将数据移动到云或关闭未经过磁盘的周期的建议、以及实施这些建议可能节省的估计成本和电耗。该页面甚至提供了一个方便的链接link:https://bluexp.netapp.com/cloud-tiering-service-tco["NetApp的TCO计算器"]、您可以尝试使用这些数字。
+从列表中选择一个洞察将打开一个页面，显示更多详细信息，包括将数据移动到云端或循环使用统一磁盘的建议，以及实施这些建议可能实现的估计成本和电力节省。该页面甚至提供了一个便捷的链接link:https://bluexp.netapp.com/cloud-tiering-service-tco["NetApp 的 TCO 计算器"]这样你就可以用这些数字来做实验。
 
-image:Cold_Data_Power_Info.png["冷数据电源信息"]
+image:Cold_Data_Power_Info.png["冷数据电力信息"]
 
 
 
 === 建议
 
-在Insight页面上、展开*建议*以浏览以下选项：
+在“洞察”页面上，展开“建议”以探索以下选项：
 
-* 将未使用的工作负载(zombian)移至成本较低的存储层(HDD)
+* 将未使用的工作负载（僵尸）移动到成本较低的存储层（HDD）
 +
-利用zombie标志、冷存储和天数、查找最冷和最大的数据量、并将工作负载移至成本较低的存储层(例如使用硬盘存储的存储池)。如果工作负载在30天或更长时间内未收到任何重大IO请求、则会被视为"灵俑"。
+利用僵尸标志、冷存储和天数，找到最冷和最大的数据量，并将工作负载移动到成本较低的存储层（例如使用硬盘存储的存储池）。如果工作负载在 30 天或更长时间内未收到任何重要的 IO 请求，则该工作负载被视为“僵尸”。
 
 * 删除未使用的工作负载
 +
-确认哪些工作负载未在使用中、并考虑将其归档或从存储系统中删除。
+验证哪些工作负载未被使用，并考虑将其存档或从存储系统中删除。
 
-* 请考虑NetApp的Fabric Pool解决方案
+* 考虑 NetApp 的 Fabric Pool 解决方案
 +
-NetApplink:https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html#features["Fabric Pool解决方案"]可自动将冷数据分层到低成本云存储、从而提高性能层的效率并提供远程数据保护。
+NetApp 的link:https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html#features["Fabric 池解决方案"]自动将冷数据分层到低成本云存储，从而提高性能层的效率并提供远程数据保护。
 
 
 
@@ -52,6 +52,6 @@ NetApplink:https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tie
 
 === 可视化和探索
 
-图形和表提供了其他趋势信息、并可用于深入了解各个工作负载。
+图表和表格提供了额外的趋势信息，并允许您深入了解各个工作负载。
 
 image:Cold_Data_Storage_Trend.png["冷数据摘要图"] image:Cold_Data_Workload_Table.png["冷数据工作负载表"]

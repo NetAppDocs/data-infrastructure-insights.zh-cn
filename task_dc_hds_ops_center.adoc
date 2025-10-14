@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_hds_ops_center.html 
 keywords: data collector, Hitachi Ops Center 
-summary: 配置 HDS 操作中心数据收集器。 
+summary: 配置 HDS Ops Center 数据收集器。 
 ---
 = Hitachi Ops Center 数据收集器
 :hardbreaks:
@@ -10,17 +10,17 @@ summary: 配置 HDS 操作中心数据收集器。
 
 
 [role="lead"]
-此数据收集器使用 Hitachi Ops Center 的集成应用程序套件来访问多个存储设备的清单和性能数据。要发现清单和容量，您的运营中心安装必须同时包含 " 通用服务 " 和 " 管理员 " 组件。要收集性能，您还必须部署 " 分析器 " 。
+该数据收集器使用 Hitachi Ops Center 的集成应用程序套件来访问多个存储设备的库存和性能数据。对于库存和容量发现，您的 Ops Center 安装必须同时包含“通用服务”和“管理员”组件。为了进行性能收集，您还必须部署“分析器”。
 
 
 
-== 术语
+== Terminology
 
-Data Infrastructure Insight从该数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从该数据收集器获取以下库存信息。对于Data Infrastructure Insights获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 存储系统 | 存储 
@@ -29,45 +29,45 @@ Data Infrastructure Insight从该数据收集器采集以下清单信息。对�
 | 卷 | 卷 
 
 
-| 奇偶校验组 | 存储池（ RAID ），磁盘组 
+| 奇偶校验组 | 存储池（RAID）、磁盘组 
 
 
 | 磁盘 | 磁盘 
 
 
-| 存储池 | 存储池（精简，快照） 
+| 存储池 | 存储池（Thin、SNAP） 
 
 
-| 外部奇偶校验组 | 存储池（后端），磁盘组 
+| 外部奇偶校验组 | 存储池（后端）、磁盘组 
 
 
-| 端口 | 存储节点→控制器节点→端口 
+| 端口 | 存储节点 → 控制节点 → 端口 
 
 
-| 主机组 | 卷映射和屏蔽 
+| 主机组 | 体积映射和遮罩 
 
 
-| 卷对 | 存储同步 
+| 交易量对 | 存储同步 
 |===
-注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情况。
 
 
 
-== 清单要求
+== 库存需求
 
-要收集清单数据，您必须满足以下条件：
+为了收集库存数据，您必须具备以下条件：
 
-* 托管"通用服务"组件的操作中心服务器的IP地址或主机名
-* 托管Operations Center组件的所有服务器上存在的root/sysadmin用户帐户和密码。在Operations Center 10.8+之前、HDS未实施REST API支持以供LDAP/SSO用户使用
+* 托管“公共服务”组件的 Ops Center 服务器的 IP 地址或主机名
+* 所有托管 Ops Center 组件的服务器上都存在 Root/sysadmin 用户帐户和密码。直到 Ops Center 10.8+ 版本，HDS 才实现 REST API 支持供 LDAP/SSO 用户使用
 
 
 
 
 == 性能要求
 
-要收集性能数据，必须满足以下要求：
+为了收集性能数据，必须满足以下要求：
 
-必须安装HDS操作中心"分析器"模块存储阵列必须向操作中心"分析器"模块馈送数据
+必须安装 HDS Ops Center“分析器”模块 存储阵列必须为 Ops Center“分析器”模块提供数据
 
 
 
@@ -75,16 +75,16 @@ Data Infrastructure Insight从该数据收集器采集以下清单信息。对�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| Hitachi Ops Center IP 地址 | 托管 " 通用服务 " 组件的操作中心服务器的 IP 地址或完全限定域名 
+| Hitachi Ops Center IP 地址 | 托管“通用服务”组件的 Ops Center 服务器的 IP 地址或完全限定域名 
 
 
-| 用户名 | Operations Center 服务器的用户名。 
+| 用户名 | Ops Center 服务器的用户名。 
 
 
-| 密码 | 用于 Operations Center 服务器的密码。 
+| 密码 | 用于 Ops Center 服务器的密码。 
 |===
 
 
@@ -93,24 +93,24 @@ Data Infrastructure Insight从该数据收集器采集以下清单信息。对�
 |===
 
 
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 连接类型 | HTTPS （端口 443 ）为默认值 
+| 连接类型 | HTTPS（端口 443）是默认端口 
 
 
 | 覆盖 TCP 端口 | 指定要使用的端口（如果不是默认端口） 
 
 
-| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认值为40。 
+| 库存轮询间隔（分钟） | 库存调查之间的间隔。默认值为 40。 
 
 
-| 选择 " 排除 " 或 " 包括 " 以指定列表 | 指定在收集数据时是包含还是排除以下阵列列表。 
+| 选择“排除”或“包含”来指定列表 | 指定收集数据时是否包含或排除以下数组列表。 
 
 
-| 筛选设备列表 | 要包含或排除的设备序列号的逗号分隔列表 
+| 过滤设备列表 | 要包含或排除的设备序列号的逗号分隔列表 
 
 
-| 性能轮询间隔（秒） | 性能轮询之间的时间间隔。默认值为300。 
+| 性能轮询间隔（秒） | 性能轮询之间的间隔。默认值为 300。 
 |===
-有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+更多信息可从link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

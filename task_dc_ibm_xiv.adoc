@@ -2,23 +2,23 @@
 sidebar: sidebar 
 permalink: task_dc_ibm_xiv.html 
 keywords: IBM, XIV, SAN, A9000 
-summary: 配置 IBM X4/A9000 数据收集器。 
+summary: 配置 IBM XIV/A9000 数据收集器。 
 ---
-= 配置 IBM X4/A9000 数据收集器
+= 配置 IBM XIV/A9000 数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-IBM XIV 和 A9000 （ CLI ）数据收集器使用 XIV 命令行界面收集清单数据，而性能收集则通过对 XIV/A9000 阵列进行 SMI-S 调用来完成， XIV/A9000 阵列在端口 7778 上运行 SMI-S 提供程序。
+IBM XIV 和 A9000 (CLI) 数据收集器使用 XIV 命令行界面收集库存数据，而性能收集则通过对 XIV/A9000 阵列进行 SMI-S 调用来完成，该阵列在端口 7778 上运行 SMI-S 提供程序。
 
 
 
-== 术语
+== Terminology
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 磁盘 | 磁盘 
@@ -36,25 +36,25 @@ IBM XIV 和 A9000 （ CLI ）数据收集器使用 XIV 命令行界面收集清�
 
 == 要求
 
-要配置和使用此数据收集器，必须满足以下要求：
+配置和使用此数据收集器必须满足以下要求：
 
-* 端口要求： TCP 端口 7778
+* 端口要求：TCP 端口 7778
 * 只读用户名和密码
-* XIV 命令行界面必须安装在 AU 上
+* 必须在 AU 上安装 XIV CLI
 
 
 
 
 == 性能要求
 
-以下是性能收集的要求：
+绩效收集的要求如下：
 
 * SMI-S Agent 1.4 或更高版本
-* 在阵列上运行与 SMI-S 兼容的 CMIMService 。默认情况下，大多数 XIV 阵列都会安装 CIMServer 。
-* 必须为 CIMServer 提供用户登录名。登录必须对阵列配置和属性具有完全读取访问权限。
-* SMI-S 命名空间。默认值为 root/IBM 。可以在 CIMServer 中配置此功能。
-* 端口要求： 5988 表示 HTTP ， 5989 表示 HTTPS 。
-* 有关如何为SMI-S性能收集创建帐户的信息、请参见以下链接： https://www.ibm.com/docs/en/products?topic=/com.ibm.tpc_V41.doc/fqz0_t_adding_cim_agent.html[]
+* 在阵列上运行的 SMI-S 兼容 CIMService。大多数 XIV 阵列默认安装了 CIMServer。
+* 必须为 CIMServer 提供用户登录。登录必须具有对阵列配置和属性的完全读取权限。
+* SMI-S 命名空间。默认为 root/ibm。这可以在 CIMServer 中配置。
+* 端口要求：HTTP 为 5988，HTTPS 为 5989。
+* 请参阅以下链接了解如何创建 SMI-S 性能收集帐户： https://www.ibm.com/docs/en/products?topic=/com.ibm.tpc_V41.doc/fqz0_t_adding_cim_agent.html[]
 
 
 
@@ -63,10 +63,10 @@ IBM XIV 和 A9000 （ CLI ）数据收集器使用 XIV 命令行界面收集清�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| XIV IP 地址 | XIV 存储的 IP 地址或完全限定域名 
+| 十四、IP地址 | XIV 存储的 IP 地址或完全限定域名 
 
 
 | 用户名 | XIV 存储的用户名 
@@ -75,10 +75,10 @@ IBM XIV 和 A9000 （ CLI ）数据收集器使用 XIV 命令行界面收集清�
 | 密码 | XIV 存储的密码 
 
 
-| XIV 命令行界面目录的完整路径 | 包含 XIV 命令行界面的文件夹的完整路径 
+| XIV CLI 目录的完整路径 | 包含 XIV CLI 的文件夹的完整路径 
 
 
-| SMI-S 主机 IP 地址 | SMI-S 主机的 IP 地址 
+| SMI-S 主机 IP 地址 | SMI-S主机的IP地址 
 |===
 
 
@@ -86,28 +86,28 @@ IBM XIV 和 A9000 （ CLI ）数据收集器使用 XIV 命令行界面收集清�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认值为40分钟。 
+| 库存轮询间隔（分钟） | 库存调查之间的间隔。默认值为 40 分钟。 
 
 
-| SMI-S 协议 | 用于连接到 SMI-S 提供程序的协议。同时显示默认端口。 
+| SMI-S协议 | 用于连接到 SMI-S 提供程序的协议。还显示默认端口。 
 
 
-| 覆盖 SMI-S 端口 | 如果为空，请使用连接类型字段中的默认端口，否则输入要使用的连接端口 
+| 覆盖 SMI-S 端口 | 如果为空，则在连接类型字段中使用默认端口，否则输入要使用的连接端口 
 
 
-| 用户名 | SMI-S Provider 主机的用户名 
+| 用户名 | SMI-S 提供程序主机的用户名 
 
 
-| 密码 | SMI-S Provider 主机的密码 
+| 密码 | SMI-S 提供程序主机的密码 
 
 
-| 性能轮询间隔（秒） | 性能轮询之间的时间间隔。默认值为300秒。 
+| 性能轮询间隔（秒） | 性能轮询之间的间隔。默认值为 300 秒。 
 |===
 
 
 == 故障排除
 
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

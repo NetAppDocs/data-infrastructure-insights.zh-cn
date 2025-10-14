@@ -4,23 +4,23 @@ permalink: task_dc_infinidat_infinibox.html
 keywords: data collector, infinidat, InfiniBox 
 summary: 配置 Infinidat InfiniBox 数据收集器。 
 ---
-= Infinidat InfiniBox 数据收集器
+= Infinidat InfiniBox数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Infinidat InfiniBox （ HTTP ）数据收集器用于从 Infinidat InfiniBox 存储系统收集清单信息。
+Infinidat InfiniBox (HTTP) 数据收集器用于从 Infinidat InfiniBox 存储系统收集库存信息。
 
 
 
-== 术语
+== Terminology
 
-Data Infrastructure Insight从Infinidat InfiniBox数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从 Infinidat InfiniBox 数据收集器获取以下库存信息。对于Data Infrastructure Insights获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 存储池 | 存储池 
@@ -29,10 +29,10 @@ Data Infrastructure Insight从Infinidat InfiniBox数据收集器采集以下清�
 | 节点 | 控制器 
 
 
-| 文件系统 | 内部卷 
+| Filesystem | 内部体积 
 
 
-| 文件系统 | 文件共享 
+| Filesystem | 文件共享 
 
 
 | 文件系统导出 | 共享 
@@ -41,11 +41,11 @@ Data Infrastructure Insight从Infinidat InfiniBox数据收集器采集以下清�
 
 == 要求
 
-以下是配置此数据收集器的要求。
+以下是配置此数据收集器时的要求。
 
 * InfiniBox 管理节点的 IP 地址或 FQDN
-* 管理员用户 ID 和密码
-* 通过 REST API 的端口 443
+* 管理员用户名和密码
+* 通过 REST API 访问端口 443
 
 
 
@@ -54,7 +54,7 @@ Data Infrastructure Insight从Infinidat InfiniBox数据收集器采集以下清�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
 | InfiniBox 主机 | InfiniBox 管理节点的 IP 地址或完全限定域名 
@@ -71,16 +71,16 @@ Data Infrastructure Insight从Infinidat InfiniBox数据收集器采集以下清�
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| TCP端口 | 用于连接到 InfiniBox 服务器的 TCP 端口。默认值为443。 
+| TCP 端口 | 用于连接到 InfiniBox 服务器的 TCP 端口。默认值为 443。 
 
 
-| 清单轮询间隔 | 两次清单轮询的间隔。默认时间间隔为 60 分钟。 
+| 库存轮询间隔 | 库存调查之间的间隔。默认时间间隔为 60 分钟。 
 |===
 
 
 == 故障排除
 
-有关此Data Collector的其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

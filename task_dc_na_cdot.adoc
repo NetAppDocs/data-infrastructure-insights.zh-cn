@@ -2,31 +2,31 @@
 sidebar: sidebar 
 permalink: task_dc_na_cdot.html 
 keywords: data collector, ontap, ontap, CDOT 
-summary: ONTAP 数据收集器 
+summary: ONTAP数据收集器 
 ---
-= NetApp ONTAP 数据管理软件数据收集器
+= NetApp ONTAP数据管理软件数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-此数据收集器使用 ONTAP 帐户中的只读 API 调用从运行 ONTAP 的存储系统采集清单和性能数据。此数据收集器还会在集群应用程序注册表中创建一条记录，以加快支持速度。
+该数据收集器使用来自ONTAP帐户的只读 API 调用从运行ONTAP 的存储系统获取库存和性能数据。该数据收集器还在集群应用程序注册表中创建记录以加速支持。
 
 
 
-== 术语
+== Terminology
 
-数据基础架构洞察从ONTAP数据收集器采集清单和性能数据。对于所采集的每种资产类型，都会显示该资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从ONTAP数据收集器获取库存和性能数据。对于所获取的每种资产类型，都会显示该资产最常用的术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 磁盘 | 磁盘 
 
 
-| RAID 组 | 磁盘组 
+| 突袭小组 | 磁盘组 
 
 
 | 集群 | 存储 
@@ -41,80 +41,80 @@ summary: ONTAP 数据收集器
 | LUN | 卷 
 
 
-| 卷 | 内部卷 
+| 卷 | 内部体积 
 |===
 
 
-== ONTAP 数据管理术语
+== ONTAP数据管理术语
 
-以下术语适用于您在 ONTAP 数据管理存储资产登录页面上可能找到的对象或参考。其中许多术语也适用于其他数据收集器。
+以下术语适用于您可能在ONTAP数据管理存储资产登录页面上找到的对象或参考。其中许多术语也适用于其他数据收集器。
 
 
 
 === 存储
 
-* 型号—此集群中唯一的离散节点型号名称的逗号分隔列表。如果集群中的所有节点的型号类型相同，则只会显示一个型号名称。
-* Vendor —与配置新数据源时看到的 Vendor 名称相同。
-* Serial Number —阵列序列号。在 ONTAP 数据管理等集群架构存储系统上，此序列号可能不如单个 " 存储节点 " 序列号有用。
-* IP —通常是数据源中配置的 IP 或主机名。
-* 微代码版本—固件。
-* 原始容量—系统中所有物理磁盘的基本 2 总和，而不管其角色如何。
-* 延迟—表示主机在读取和写入工作负载方面所遇到的情况。理想情况下、Data Infrastructure Insight会直接获取这种价值、但事实往往并非如此。Data Infrastructure Insight通常会根据各个内部卷的统计信息执行IOPS加权计算、而不是使用阵列来提供此功能。
-* 吞吐量—从内部卷聚合。管理—可能包含设备管理界面的超链接。由Data Infrastructure Insight数据源以编程方式在清单报告中创建。
+* 模型 – 此集群内唯一、离散节点模型名称的逗号分隔列表。如果集群中的所有节点都是相同的模型类型，则只会出现一个模型名称。
+* 供应商 – 如果您正在配置新的数据源，您将看到相同的供应商名称。
+* 序列号 – 阵列序列号。在ONTAP数据管理等集群架构存储系统上，此序列号可能不如单个“存储节点”序列号有用。
+* IP – 通常是数据源中配置的 IP 或主机名。
+* 微码版本 – 固件。
+* 原始容量——系统中所有物理磁盘的以 2 为底的总和，无论其作用如何。
+* 延迟——表示主机在读取和写入过程中所面临的工作负载的情况。理想情况下，Data Infrastructure Insights会直接获取该值，但事实往往并非如此。代替提供此功能的阵列，Data Infrastructure Insights通常会执行根据各个内部卷的统计数据得出的 IOP 加权计算。
+* 吞吐量——从内部卷聚合而成。管理——这可能包含设备管理界面的超链接。由Data Infrastructure Insights数据源以编程方式创建，作为库存报告的一部分。
 
 
 
 
 === 存储池
 
-* 存储—此池所在的存储阵列。必填。
-* type —从枚举的可能性列表中获取的描述性值。最常见的是 " 聚合 " 或 "RAID 组 " 。
-* 节点—如果此存储阵列的架构使池属于特定存储节点，则其名称将在此处显示为指向其自身登录页面的超链接。
-* 使用 Flash Pool —是 / 否值—此基于 SATA/SAS 的池是否使用 SSD 进行缓存加速？
-* 冗余— RAID 级别或保护方案。RAID-DP 为双奇偶校验， raid_TP 为三重奇偶校验。
-* 容量—此处的值为逻辑已用容量，可用容量和逻辑总容量以及这些容量中使用的百分比。
-* 过量使用的容量—如果您使用效率技术分配的卷或内部卷总容量大于存储池的逻辑容量，则此处的百分比值将大于 0% 。
-* Snapshot —已用快照容量和总容量，前提是存储池架构将部分容量专用于专为快照划分的区域。MetroCluster 配置中的 ONTAP 很可能会显示这一点，而其他 ONTAP 配置则不会显示这一点。
-* 利用率—一个百分比值，显示为该存储池贡献容量的任何磁盘的最高磁盘繁忙百分比。磁盘利用率不一定与阵列性能密切相关—如果没有主机驱动的工作负载，则由于磁盘重建，重复数据删除活动等，利用率可能会很高。此外，许多阵列的复制实施可能会提高磁盘利用率，而不会显示为内部卷或卷工作负载。
-* IOPS —为该存储池贡献容量的所有磁盘的 IOPS 之和。吞吐量—为该存储池贡献容量的所有磁盘的总吞吐量。
+* 存储——该池位于哪个存储阵列上。强制的。
+* 类型——来自可能性枚举列表的描述性值。最常见的是“聚合”或“RAID 组””。
+* 节点 - 如果此存储阵列的架构使得池属于特定的存储节点，则其名称将在此处显示为其自己的登录页面的超链接。
+* 使用闪存池 – 是/否值 – 这个基于 SATA/SAS 的池是否有用于缓存加速的 SSD？
+* 冗余——RAID 级别或保护方案。  RAID_DP 是双重奇偶校验，RAID_TP 是三重奇偶校验。
+* 容量——这里的值是逻辑已用容量、可用容量和逻辑总容量，以及这些容量中使用的百分比。
+* 过度承诺的容量 - 如果您使用效率技术分配的卷或内部卷容量总和大于存储池的逻辑容量，则此处的百分比值将大于 0%。
+* 快照 - 如果您的存储池架构将其部分容量专用于专门用于快照的分段区域，则快照容量已用和总计。  MetroCluster配置中的ONTAP可能会出现这种情况，而其他ONTAP配置则不太会出现这种情况。
+* 利用率——一个百分比值，显示为该存储池贡献容量的任何磁盘的最高磁盘繁忙百分比。磁盘利用率不一定与阵列性能有很强的相关性——在没有主机驱动的工作负载的情况下，由于磁盘重建、重复数据删除活动等，利用率可能会很高。此外，许多阵列的复制实现可能会提高磁盘利用率，但不会显示为内部卷或卷工作负载。
+* IOPS – 为该存储池贡献容量的所有磁盘的 IOP 总和。吞吐量——为该存储池贡献容量的所有磁盘的总吞吐量。
 
 
 
 
 === 存储节点
 
-* 存储—此节点所属的存储阵列。必填。
-* HA 配对节点—在某个节点将故障转移到一个且只有另一个节点的平台上，通常会显示在此处。
-* 状态—节点的运行状况。仅当阵列运行状况良好，足以供数据源进行资源清点时才可用。
-* model —节点的型号名称。
-* version —设备的版本名称。
-* Serial Number —节点序列号。
-* 内存—如果可用，则为基础 2 内存。
-* 利用率—在 ONTAP 上，这是一个来自专有算法的控制器压力指数。每次性能轮询都会报告一个介于 0 到 100% 之间的数字，该数字在 WAFL 磁盘争用或平均 CPU 利用率中较高。如果您观察到持续值 > 50% ，则表示规模估算不足—可能是控制器 / 节点不够大或旋转磁盘不足，无法承受写入工作负载。
-* IOPS—直接源自节点对象上的ONTAP ZAPI调用。
-* 延迟—直接源自节点对象上的ONTAP ZAPI调用。
-* 吞吐量—直接源自节点对象上的ONTAP ZAPI调用。
-* 处理器— CPU 计数。
+* 存储——此节点属于哪个存储阵列。强制的。
+* HA 合作伙伴 – 在一个节点将故障转移到一个且仅一个其他节点的平台上，通常会在这里看到它。
+* 状态——节点的健康状况。仅当阵列足够健康，可以被数据源清点时才可用。
+* 模型——节点的模型名称。
+* 版本——设备的版本名称。
+* 序列号 – 节点序列号。
+* 内存 – 以 2 为基数的内存（如果可用）。
+* 利用率 – 在ONTAP上，这是来自专有算法的控制器压力指数。每次性能轮询时，都会报告 0 到 100% 之间的数字，该数字是WAFL磁盘争用或平均 CPU 利用率中的较高者。如果您观察到持续值 > 50%，则表明规模不足 - 可能是控制器/节点不够大或旋转磁盘不够大，无法吸收写入工作负载。
+* IOPS – 直接从节点对象上的ONTAP ZAPI 调用派生。
+* 延迟 – 直接源自对节点对象的ONTAP ZAPI 调用。
+* 吞吐量 – 直接来自对节点对象的ONTAP ZAPI 调用。
+* 处理器 – CPU 数量。
 
 
 
 
 == 要求
 
-配置和使用此数据收集器的要求如下：
+以下是配置和使用此数据收集器的要求：
 
-* 您必须有权访问为只读 API 调用配置的管理员帐户。
+* 您必须具有为只读 API 调用配置的管理员帐户的访问权限。
 * 帐户详细信息包括用户名和密码。
-* 端口要求： 80 或 443
+* 端口要求：80 或 443
 * 帐户权限：
 +
-** 将 ontapi 应用程序的只读角色名称分配给默认 SVM
-** 您可能需要其他可选写入权限。请参见下面的 " 关于权限的注释 " 。
+** 只读角色名称到 ontapi 应用程序到默认 Vserver
+** 您可能需要额外的可选写入权限。请参阅下面有关权限的说明。
 
 
-* ONTAP 许可证要求：
+* ONTAP许可证要求：
 +
-** 光纤通道发现所需的 FCP 许可证和映射 / 屏蔽卷
+** 光纤通道发现所需的 FCP 许可证和映射/屏蔽卷
 
 
 
@@ -123,7 +123,7 @@ summary: ONTAP 数据收集器
 
 === 收集ONTAP交换机指标的权限要求
 
-数据基础架构洞察可以在收集器<<advanced-configuration,高级配置>>设置中选择收集ONTAP集群交换机数据。除了在数据基础架构洞察收集器上启用此功能之外，您还必须*将ONTAP系统*本身配置为提供link:https://docs.netapp.com/us-en/ontap-cli-98/system-switch-ethernet-create.html["交换机信息"]，并确保<<a-note-about-permissions,权限>>设置正确的，以允许将交换机数据发送到数据基础架构洞察。
+Data Infrastructure Insights能够收集ONTAP集群交换机数据，作为收集器的一个选项<<advanced-configuration,高级配置>>设置。除了在Data Infrastructure Insights收集器上启用此功能外，您还必须*配置ONTAP系统*本身以提供link:https://docs.netapp.com/us-en/ontap-cli-98/system-switch-ethernet-create.html["交换机信息"]，并确保正确<<a-note-about-permissions,权限>>进行设置，以允许将交换机数据发送到Data Infrastructure Insights。
 
 
 
@@ -131,16 +131,16 @@ summary: ONTAP 数据收集器
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| NetApp 管理 IP | NetApp 集群的 IP 地址或完全限定域名 
+| NetApp管理 IP | NetApp集群的 IP 地址或完全限定域名 
 
 
-| 用户名 | NetApp 集群的用户名 
+| 用户名 | NetApp集群的用户名 
 
 
-| 密码 | NetApp 集群的密码 
+| 密码 | NetApp集群密码 
 |===
 
 
@@ -148,49 +148,49 @@ summary: ONTAP 数据收集器
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 连接类型 | 选择 HTTP （默认端口 80 ）或 HTTPS （默认端口 443 ）。默认值为 HTTPS 
+| 连接类型 | 选择 HTTP（默认端口 80）或 HTTPS（默认端口 443）。默认为 HTTPS 
 
 
 | 覆盖通信端口 | 如果不想使用默认端口，请指定其他端口 
 
 
-| 清单轮询间隔（分钟） | 默认值为 60 分钟。 
+| 库存轮询间隔（分钟） | 默认为 60 分钟。 
 
 
-| 用于 HTTPS 的 TLS | 仅在使用 HTTPS 时允许使用 TLS 作为协议 
+| 对于 TLS 和 HTTPS | 使用 HTTPS 时仅允许 TLS 作为协议 
 
 
-| 自动查找网络组 | 为导出策略规则启用自动网络组查找 
+| 自动查找网络组 | 启用导出策略规则的自动网络组查找 
 
 
-| 网络组扩展 | 网络组扩展策略。选择 _files_ 或 _shell_ 。默认值为 _shell_ 。 
+| 网络组扩展 | Netgroup 扩张战略。选择_file_或_shell_。默认值是 _shell_。 
 
 
 | HTTP 读取超时秒数 | 默认值为 30 
 
 
-| 强制响应为 UTF-8 | 强制数据收集器代码将命令行界面中的响应解释为 UTF-8 格式 
+| 强制响应为 UTF-8 | 强制数据收集器代码将 CLI 的响应解释为 UTF-8 
 
 
-| 性能轮询间隔（秒） | 默认值为900秒。 
+| 性能轮询间隔（秒） | 默认值为 900 秒。 
 
 
-| 高级计数器数据收集 | 启用 ONTAP 集成。选择此选项可在轮询中包含 ONTAP 高级计数器数据。从列表中选择所需的计数器。 
+| 高级计数器数据收集 | 启用ONTAP集成。选择此选项可将ONTAP高级计数器数据包含在轮询中。从列表中选择所需的计数器。 
 
 
-| 集群交换机指标 | 允许Data Infrastructure Insight收集集群交换机数据。请注意、除了在数据基础架构洞察端启用此功能之外、您还必须将ONTAP系统配置为提供link:https://docs.netapp.com/us-en/ontap-cli-98/system-switch-ethernet-create.html["交换机信息"]、并确保<<a-note-about-permissions,权限>>设置正确的、以允许将交换机数据发送到数据基础架构洞察。请参见下面的"权限注意事项"。 
+| 集群交换机指标 | 允许Data Infrastructure Insights收集集群交换机数据。请注意，除了在Data Infrastructure Insights方面启用此功能外，还必须配置ONTAP系统以提供link:https://docs.netapp.com/us-en/ontap-cli-98/system-switch-ethernet-create.html["交换机信息"]，并确保正确<<a-note-about-permissions,权限>>进行设置，以允许将交换机数据发送到Data Infrastructure Insights。请参阅下面的“关于权限的说明”。 
 |===
 
 
 == ONTAP功率指标
 
-多个ONTAP模型为数据基础架构洞察力提供了功率指标、可用于监控或发出警报。
+多种ONTAP模型为Data Infrastructure Insights提供了可用于监控或警报的功率指标​​。
 
 
-NOTE: 这些列表并不全面，可能会有所变更。一般而言，如果某个型号与列表中的型号属于同一系列，则支持内容应该相同，但不保证一定相同。如果您不确定您的型号是否支持功率指标，请联系 ONTAP 支持。
+NOTE: 这些列表并不全面，并且可能会发生变化。一般来说，如果某个型号与列表中的型号属于同一系列，则支持应该相同，但不保证一定相同。如果您不确定您的型号是否支持功率指标，请联系ONTAP支持。
 
 支持的型号：
 
@@ -198,19 +198,19 @@ A200 A220 A250 A300 A320 A400 A700 A700s A800 A900 C190 FAS2240-4 FAS2552 FAS265
 
 不支持的型号：
 
-FAS2620 AFF FAS3250 FAS3270 FAS500f FAS6280 FAS/FAS8020 FAS或AFF FAS 8040 FAS或AFF 8060 FAS或AFF 8080
+FAS2620 FAS3250 FAS3270 FAS500f FAS6280 FAS/ AFF 8020 FAS/ AFF 8040 FAS/ AFF 8060 FAS/ AFF 8080
 
 
 
-== 有关权限的注释
+== 关于权限的说明
 
-由于许多数据基础架构洞察的ONTAP信息板都依赖于高级ONTAP计数器、因此您必须在数据收集器高级配置部分中启用*高级计数器数据收集*。
+由于许多Data Infrastructure Insights的ONTAP仪表板依赖于高级ONTAP计数器，因此您必须在数据收集器的高级配置部分中启用 *高级计数器数据收集*。
 
-您还应确保已启用对 ONTAP API 的写入权限。这通常需要一个集群级别的帐户，并具有必要的权限。
+您还应确保已启用对ONTAP API 的写入权限。这通常需要具有必要权限的集群级别帐户。
 
-要在集群级别为数据基础架构洞察力创建本地帐户、请使用集群管理管理员用户名/密码登录到ONTAP、然后在ONTAP服务器上执行以下命令：
+要在集群级别为Data Infrastructure Insights创建本地帐户，请使用集群管理管理员用户名/密码登录ONTAP ，然后在ONTAP服务器上执行以下命令：
 
-. 开始之前，您必须使用 _Administrator_ 帐户登录到 ONTAP ，并且必须启用 _diagnostic-level commands_。
+. 在开始之前，您必须使用_管理员_帐户登录ONTAP ，并且必须启用_诊断级命令_。
 . 使用以下命令创建只读角色。
 +
 ....
@@ -218,21 +218,21 @@ security login role create -role ci_readonly -cmddirname DEFAULT -access readonl
 security login role create -role ci_readonly -cmddirname security -access readonly
 security login role create -role ci_readonly -access all -cmddirname {cluster application-record create}
 ....
-. 使用以下命令创建只读用户。执行 create 命令后，系统将提示您输入此用户的密码。
+. 使用以下命令创建只读用户。执行创建命令后，系统将提示您输入该用户的密码。
 +
  security login create -username ci_user -application ontapi -authentication-method password -role ci_readonly
 
 
-如果使用 AD/LDAP 帐户，则命令应为
+如果使用 AD/LDAP 帐户，则命令应该是
 
  security login create -user-or-group-name DOMAIN\aduser/adgroup -application ontapi -authentication-method domain -role ci_readonly
-如果要收集集群交换机数据：
+如果您正在收集集群交换机数据：
 
 ....
 security login rest-role create -role ci_readonly_rest -api /api/network/ethernet -access readonly
 security login create -user-or-group-name ci_user -application http -authmethod password -role ci_readonly_rest
 ....
-生成的角色和用户登录信息如下所示。实际输出可能会有所不同：
+最终的角色和用户登录将类似于以下内容。您的实际输出可能会有所不同：
 
 ....
 Role Command/ Access
@@ -250,13 +250,13 @@ UserName    Application   Method      Role Name      Locked
 ci_user     ontapi      password    ci_readonly   no
 ....
 
-NOTE: 如果ONTAP访问控制设置不正确、则Data Infrastructure Insight REST调用可能会失败、从而导致设备数据出现空隙。例如、如果您在数据基础架构洞察力收集器上启用了该功能、但尚未配置ONTAP上的权限、则采集将失败。此外、如果先前已在ONTAP上定义此角色、而您要添加REST API功能、请确保将_http_添加到此角色中。
+NOTE: 如果ONTAP访问控制设置不正确，则Data Infrastructure InsightsREST 调用可能会失败，从而导致设备数据出现差距。例如，如果您已在Data Infrastructure Insights收集器上启用它，但尚未在ONTAP上配置权限，则获取将失败。此外，如果该角色先前在ONTAP上定义，并且您正在添加 Rest API 功能，请确保将 _http_ 添加到该角色。
 
 
 
 == 故障排除
 
-如果此数据收集器出现问题，请尝试执行以下操作：
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 
 
@@ -264,31 +264,31 @@ NOTE: 如果ONTAP访问控制设置不正确、则Data Infrastructure Insight RE
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| 接收 401 HTTP 响应或 13003 ZAPI 错误代码， ZAPI 返回 " 权限不足 " 或 " 未授权使用此命令 " | 检查用户名和密码以及用户权限。 
+| 收到 401 HTTP 响应或 13003 ZAPI 错误代码，并且 ZAPI 返回“权限不足”或“未授权执行此命令” | 检查用户名和密码以及用户权限/许可。 
 
 
-| 集群版本小于 8.1 | 集群支持的最低版本为 8.1 。升级到支持的最低版本。 
+| 集群版本小于 8.1 | 集群最低支持版本为 8.1。升级到最低支持版本。 
 
 
-| ZAPI 返回 "cluster role is not cluster_mgmt LIF" | AU 需要与集群管理 IP 进行通信。检查 IP 并根据需要更改为其他 IP 
+| ZAPI 返回“集群角色不是 cluster_mgmt LIF” | AU 需要与集群管理 IP 对话。检查 IP 并在必要时更改为其他 IP 
 
 
-| 错误： " 不支持 7 模式存储器 " | 如果使用此数据收集器发现 7 模式存储器，则可能会发生这种情况。请将 IP 更改为指向 cdot 集群。 
+| 错误：“不支持 7 模式文件管理器” | 如果您使用此数据收集器来发现 7 模式文件管理器，就会发生这种情况。将 IP 更改为指向 cdot 集群。 
 
 
-| 重试后， ZAPI 命令失败 | AU 与集群通信出现问题。检查网络，端口号和 IP 地址。用户还应尝试从 AU 计算机的命令行运行命令。 
+| 重试后 ZAPI 命令失败 | AU 与集群存在通信问题。检查网络、端口号和 IP 地址。用户还应该尝试从 AU 机器的命令行运行命令。 
 
 
-| AU 无法通过 HTTP 连接到 ZAPI | 检查 ZAPI 端口是否接受纯文本。如果 AU 尝试向 SSL 套接字发送纯文本，则通信将失败。 
+| AU 无法通过 HTTP 连接到 ZAPI | 检查 ZAPI 端口是否接受纯文本。如果 AU 尝试向 SSL 套接字发送纯文本，则通信失败。 
 
 
-| 通信失败，并出现 SSLException | AU 正在尝试向存储器上的纯文本端口发送 SSL 。检查 ZAPI 端口是接受 SSL 还是使用其他端口。 
+| 通信失败并出现 SSLException | AU 正在尝试将 SSL 发送到文件管理器上的纯文本端口。检查 ZAPI 端口是否接受 SSL，或者使用其他端口。 
 
 
-| 其他连接错误： ZAPI 响应的错误代码为 13001 ， " 数据库未打开 " ZAPI 错误代码为 60 ，响应包含 "API 未按时完成 " ZAPI 响应包含 "initialize_session （） ReturnD NULL environment " ZAPI 错误代码为 14007 ，响应包含 "Node is not healthy" | 检查网络，端口号和 IP 地址。用户还应尝试从 AU 计算机的命令行运行命令。 
+| 其他连接错误： ZAPI 响应的错误代码为 13001，“数据库未打开” ZAPI 错误代码为 60，响应包含“API 未按时完成” ZAPI 响应包含“initialize_session() 返回 NULL 环境” ZAPI 错误代码为 14007，响应包含“节点不健康” | 检查网络、端口号和 IP 地址。用户还应该尝试从 AU 机器的命令行运行命令。 
 |===
 
 
@@ -296,9 +296,9 @@ NOTE: 如果ONTAP访问控制设置不正确、则Data Infrastructure Insight RE
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| " 无法从 ZAPI 收集性能 " 错误 | 这通常是因为性能统计未运行。在每个节点上尝试以下命令： >_system node systemshell -node * -command "spmctl -h cmd – stop ； spmctl -h cmd – exec 
+| “无法从 ZAPI 收集性能”错误 | 这通常是由于 perf stat 没有运行造成的。在每个节点上尝试以下命令：> _system node systemshell -node * -command “spmctl -h cmd –stop; spmctl -h cmd –exec”_ 
 |===
-有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+更多信息可从link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

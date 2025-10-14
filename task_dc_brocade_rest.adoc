@@ -2,37 +2,37 @@
 sidebar: sidebar 
 permalink: task_dc_brocade_rest.html 
 keywords: data collector, Brocade, FC switch, FOS, Rest 
-summary: 正在配置Brocade FOS REST数据收集器。 
+summary: 配置Brocade FOS REST 数据收集器。 
 ---
-= Brocade FOS REST数据收集器
+= Brocade FOS REST 数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-数据基础架构洞察使用Brocade FOS REST收集器发现运行FabricOS (FOS)固件8.2及更高版本的Brocade交换机设备的清单和性能。请注意，早期的 8.2 FOS 版本可能存在 REST API 错误；强烈建议运行您的平台支持的最新 FOS 版本。
+Data Infrastructure Insights使用Brocade FOS REST 收集器来发现运行 FabricOS (FOS) 固件 8.2 及更高版本的Brocade交换机设备的库存和性能。请注意，早期的 8.2 FOS 版本可能存在 REST API 错误；强烈建议运行您的平台支持的最新 FOS 版本。
 
-请注意：FOS的默认"用户"级别不足以让Data Infrastructure Insight查看设备的所有逻辑方面-我们需要一个启用了"机箱角色"的用户帐户、以及对交换机上配置的所有虚拟网络结构的权限。
+请注意：FOS 的默认“用户”级别不足以让Data Infrastructure Insights查看设备的所有逻辑方面 - 我们需要一个启用了“机箱角色”的用户帐户，以及交换机上配置的所有虚拟结构的权限。
 
-以下示例说明了如何在与FOS设备的SSH会话中为Data Infrastructure Insight的使用情况创建"最低权限"用户帐户：
+以下是如何在与 FOS 设备的 SSH 会话中为Data Infrastructure Insights使用创建“最小权限”用户帐户的示例：
 
-userconfig --add netappcIUser -r user -l 1-128 -c user -p localety!
+userConfig --add NetAppCIUser -r 用户 -l 1-128 -c 用户 -p Qwerty！
 
-这将创建密码为"!"的用户"NetApp CIUser"。此用户在所有128个可能的虚拟网络结构(-l)中具有"用户"角色(-r)。此外、此用户还具有所需的"机箱"角色(-c)、并分配了用户级别访问权限。
+这将创建一个用户“NetAppCIUser”，密码为“Qwerty！”。该用户在所有 128 个可能的虚拟结构 ( -l ) 中具有“用户”角色 ( -r )。该用户还具有所需的“Chassis”角色（-c），并分配了用户级别访问权限。
 
-默认情况下、此收集器将尝试发现交换机所属所有网络结构中的所有FOS设备。
+默认情况下，此收集器将尝试发现交换机所属的所有结构中的所有 FOS 设备。
 
-请注意：FOS的默认只读用户"user"没有对所有虚拟结构的查看权限、也没有"机箱角色"权限。这意味着、使用Data Infrastructure Insight中的"用户"获得成功的可能性较低、因为它需要了解FOS设备的物理和逻辑配置。
+请注意：FOS 的默认只读用户“用户”对所有虚拟结构都没有查看权限，也没有“机箱角色”权限。这意味着使用具有Data Infrastructure Insights的“用户”成功的可能性很低，因为它需要了解 FOS 设备的物理和逻辑配置。
 
 
 
-== 术语
+== Terminology
 
-数据基础架构洞察从Brocade FOS REST数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从Brocade FOS REST 数据收集器获取以下库存信息。对于Data Infrastructure Insights获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 交换机 | 交换机 
@@ -41,7 +41,7 @@ userconfig --add netappcIUser -r user -l 1-128 -c user -p localety!
 | 端口 | 端口 
 
 
-| 虚拟网络结构，物理网络结构 | 网络结构 
+| 虚拟结构、物理结构 | 网络结构 
 
 
 | 分区 | 分区 
@@ -50,16 +50,16 @@ userconfig --add netappcIUser -r user -l 1-128 -c user -p localety!
 | 逻辑交换机 | 逻辑交换机 
 
 
-| LSAN 区域 | IVR 区域 
+| LSAN 区域 | IVR区域 
 |===
-注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情形。
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情况。
 
 
 
 == 要求
 
-* 必须与网络结构中的所有交换机建立TCP连接。此数据收集器类型将为网络结构中的每个设备无缝尝试HTTP和HTTPS。如果选中_Discover all switches in the Fabric _复选框、Data Infrastructure Insight将标识网络结构中的所有交换机；但是、它需要通过与这些附加交换机的TCP连接来发现它们。
-* 网络结构中的所有交换机需要全局使用同一个帐户。您可以使用设备的Web界面确认访问。
+* 结构中的所有交换机都必须具有 TCP 连接。此数据收集器类型将为结构中的每个设备无缝尝试 HTTP 和 HTTPS。如果选中“发现结构中的所有交换机”复选框，Data Infrastructure Insights将识别结构中的所有交换机；但是，它需要与这些额外的交换机建立 TCP 连接才能发现它们。
+* 结构中的所有交换机都需要全局使用相同的帐户。您可以使用设备的 Web 界面来确认访问。
 
 
 
@@ -68,16 +68,16 @@ userconfig --add netappcIUser -r user -l 1-128 -c user -p localety!
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 交换机IP | FOS交换机的IP地址或完全限定域名 
+| 切换 IP | FOS 交换机的 IP 地址或完全限定域名 
 
 
 | 用户名 | 交换机的用户名 
 
 
-| 密码 | 交换机的密码 
+| 密码 | 交换机密码 
 |===
 
 
@@ -85,34 +85,34 @@ userconfig --add netappcIUser -r user -l 1-128 -c user -p localety!
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 排除的设备 | 要从轮询中排除的设备IPv4地址的逗号分隔列表。 
+| 排除的设备 | 要从轮询中排除的设备 IPv4 地址的逗号分隔列表。 
 
 
-| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认值为60。 
+| 库存轮询间隔（分钟） | 库存调查之间的间隔。默认值为 60。 
 
 
-| 发现网络结构中的所有交换机 | 选择此选项可发现网络结构中的所有交换机。 
+| 发现结构中的所有交换机 | 选择发现结构中的所有交换机。 
 
 
-| 选择优先使用HBA还是分区别名 | 选择是支持HBA还是分区别名。 
+| 选择支持 HBA 还是区域别名 | 选择是否支持 HBA 或区域别名。 
 
 
-| 连接类型 | HTTP或HTTPS。 
+| 连接类型 | HTTP 或 HTTPS。 
 
 
-| 请注意，此设置仅更改CI首先尝试按设备使用的协议-如果默认失败，CI将自动尝试相反协议 | 覆盖 TCP 端口 
+| 请注意，此设置仅更改 CI 首先尝试为每个设备使用的协议 - 如果默认协议失败，CI 将自动尝试相反的协议 | 覆盖 TCP 端口 
 
 
-| 如果未使用默认端口、请指定一个端口。 | 性能轮询间隔（秒） 
+| 如果不使用默认端口，请指定一个端口。 | 性能轮询间隔（秒） 
 |===
 
 
 == 故障排除
 
-如果此数据收集器出现问题，请尝试执行以下操作：
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 
 
@@ -120,21 +120,21 @@ userconfig --add netappcIUser -r user -l 1-128 -c user -p localety!
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| 测试功能警告我协议不可访问 | 给定的Brocade FOS 8.1+设备只想通过HTTP或HTTPS进行通信-如果交换机安装了数字证书、则在尝试使用未加密HTTP与HTTPS进行通信时、交换机将引发HTTP错误。此测试功能会尝试与HTTP和HTTPS进行通信-如果此测试告诉您一个协议通过、您可以安全地保存此收集器、而不必担心另一个协议失败-此收集器会在收集期间尝试使用这两个协议、并且只有在这两个协议都不起作用时才会失败。 
+| 测试功能警告我协议无法访问 | 给定的Brocade FOS 8.2+ 设备将仅希望通过 HTTP 或 HTTPS 进行通信 - 如果交换机安装了数字证书，则当尝试使用未加密的 HTTP 而不是 HTTPS 与其通信时，交换机将抛出 HTTP 错误。测试功能尝试使用 HTTP 和 HTTPS 进行通信 - 如果测试告诉您一个协议通过，您可以安全地保存收集器而不必担心另一个协议不成功 - 收集器将在收集期间尝试两种协议，并且只有当两者都不起作用时才会失败。 
 
 
-| 错误：库存失败，出现 401 未授权...无效会话密钥... | 这是 8.2 FOS 早期版本（例如 8.2.1c）中存在的一个明显 bug，这些版本无法正确支持 HTTP 基本身份验证。请升级到 8.2 或 9.* 版本。 
+| 错误：库存失败，出现 401 未授权...无效会话密钥... | 这是一些非常早期的 8.2 FOS 版本（例如 8.2.1c）中的明显错误，这些版本不能正确支持 HTTP 基本身份验证。升级到更高版本 8.2 或 9.* 
 
 
-| 错误："Data Infrastructure Insight received Invalid Chassis Role" | 检查是否已为此数据源中配置的用户授予机箱角色权限。 
+| 错误：“Data Infrastructure Insights收到无效的机箱角色” | 检查该数据源中配置的用户是否已被授予chassis角色权限。 
 
 
-| 错误： " 机箱 IP 地址不匹配 " | 更改数据源配置以使用机箱 IP 地址。 
+| 错误：“机箱 IP 地址不匹配” | 更改数据源配置以使用机箱 IP 地址。 
 
 
-| 清单失败、并显示403已禁止 | 这可能只是凭据错误、也可能表明您尝试使用的角色功能不足-请记住、"用户"级别的用户没有所需的"机箱角色"权限、或者无法查看对非默认虚拟结构的访问权限。 
+| 库存失败，出现 403 Forbidden | 这可能只是凭证错误，或者可能表明您尝试使用权限不够强的角色 - 请记住“用户”级别的用户没有所需的“机箱角色”权限，或者没有查看非默认虚拟结构的权限。 
 |===
-有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+更多信息可从link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

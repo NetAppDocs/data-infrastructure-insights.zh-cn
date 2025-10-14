@@ -4,25 +4,25 @@ permalink: task_config_telegraf_puppetagent.html
 keywords: telegraf, installation, install, Puppet 
 summary: Puppet 数据收集器配置 
 ---
-= Puppet Agent 数据收集器
+= Puppet代理数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insight使用此数据收集器从Puppet Agent收集指标。
+Data Infrastructure Insights使用此数据收集器从 Puppet Agent 收集指标。
 
 
 
 == 安装
 
-. 从*Observability > Collectors*中，单击*+Data Collector*。选择Puppet。
+. 从*可观察性 > 收集器*中，单击*+数据收集器*。选择 Puppet。
 +
-选择安装了 Telegraf 代理的操作系统或平台。
+选择安装 Telegraf 代理的操作系统或平台。
 
-. 如果尚未安装用于收集的代理，或者要为其他操作系统或平台安装代理，请单击_Show Instructions _展开说明。link:task_config_telegraf_agent.html["代理安装"]
-. 选择要用于此数据收集器的代理访问密钥。您可以通过单击 * + 代理访问密钥 * 按钮来添加新的代理访问密钥。最佳实践：仅当您要按操作系统 / 平台对数据收集器进行分组时，才使用其他代理访问密钥。
-. 按照配置步骤配置数据收集器。这些说明因用于收集数据的操作系统或平台的类型而异。
+. 如果您尚未安装用于收集的代理，或者您希望为不同的操作系统或平台安装代理，请单击“显示说明”以展开link:task_config_telegraf_agent.html["代理安装"]指示。
+. 选择用于此数据收集器的代理访问密钥。您可以通过单击 *+ 代理访问密钥* 按钮添加新的代理访问密钥。最佳实践：仅当您想要对数据收集器进行分组（例如按操作系统/平台）时才使用不同的代理访问密钥。
+. 按照配置步骤配置数据收集器。说明根据您用于收集数据的操作系统或平台的类型而有所不同。
 
 
 image:PuppetDCConfigWindows.png["Puppet 配置"]
@@ -31,25 +31,25 @@ image:PuppetDCConfigWindows.png["Puppet 配置"]
 
 == 设置
 
-有关信息、请参见 https://puppet.com/docs["Puppet 文档"]
+信息可以在 https://puppet.com/docs["Puppet 文档"]
 
 
 
-== 对象和计数器
+== 物体和计数器
 
-将收集以下对象及其计数器：
+收集以下对象及其计数器：
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 
 
-| 对象： | 标识符： | 属性： | 数据点： 
+| 目的： | 标识符： | 属性： | 数据点： 
 
 
-| Puppet 代理 | 命名空间节点 UUID | 节点名称位置节点 IP 版本配置字符串版本 Puppet | 更改总数事件失败事件成功事件总资源更改资源失败资源无法重新启动资源异步资源重新启动资源已计划资源已跳过资源总时间锁定时间配置检索时间 Cron Time Exec 时间文件分段时间 lastrun 时间包时间计划时间服务时间 Sshaucorizedkey 时间总计 时间用户 
+| 傀儡代理 | 命名空间节点 UUID | 节点名称 位置 节点 IP 版本 配置字符串版本 Puppet | 更改总数 事件数 失败事件数 成功事件数 总资源数 已更改资源数 失败资源数 重启失败资源数 不同步资源数 重启资源数 已调度资源数 跳过资源数 总时间 锚点时间 配置检索时间 Cron 时间 执行时间 文件时间 文件桶时间 上次运行时间 包时间 调度时间 服务时间 Sshauthorizedkey 时间 总时间 用户 
 |===
 
 
 == 故障排除
 
-有关其他信息、请参见link:concept_requesting_support.html["支持"]页面。
+更多信息可从link:concept_requesting_support.html["支持"]页。

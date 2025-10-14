@@ -10,19 +10,19 @@ summary: PostgreSQL 数据收集器配置
 
 
 [role="lead"]
-Data Infrastructure Insight使用此数据收集器从PostgreSQL收集指标。
+Data Infrastructure Insights使用此数据收集器从 PostgreSQL 收集指标。
 
 
 
 == 安装
 
-. 从*Observability > Collectors*中，单击*+Data Collector*。选择PostgreSQL。
+. 从*可观察性 > 收集器*中，单击*+数据收集器*。选择 PostgreSQL。
 +
-选择安装了 Telegraf 代理的操作系统或平台。
+选择安装 Telegraf 代理的操作系统或平台。
 
-. 如果尚未安装用于收集的代理，或者要为其他操作系统或平台安装代理，请单击_Show Instructions _展开说明。link:task_config_telegraf_agent.html["代理安装"]
-. 选择要用于此数据收集器的代理访问密钥。您可以通过单击 * + 代理访问密钥 * 按钮来添加新的代理访问密钥。最佳实践：仅当您要按操作系统 / 平台对数据收集器进行分组时，才使用其他代理访问密钥。
-. 按照配置步骤配置数据收集器。这些说明因用于收集数据的操作系统或平台的类型而异。
+. 如果您尚未安装用于收集的代理，或者您希望为不同的操作系统或平台安装代理，请单击“显示说明”以展开link:task_config_telegraf_agent.html["代理安装"]指示。
+. 选择用于此数据收集器的代理访问密钥。您可以通过单击 *+ 代理访问密钥* 按钮添加新的代理访问密钥。最佳实践：仅当您想要对数据收集器进行分组（例如按操作系统/平台）时才使用不同的代理访问密钥。
+. 按照配置步骤配置数据收集器。说明根据您用于收集数据的操作系统或平台的类型而有所不同。
 
 
 image:PostgreSQLDCConfigLinux.png["PostgreSQL 配置"]
@@ -31,26 +31,26 @@ image:PostgreSQLDCConfigLinux.png["PostgreSQL 配置"]
 
 == 设置
 
-有关信息，请参见link:https://www.postgresql.org/docs/["PostgreSQL 文档"]。
+信息可以在link:https://www.postgresql.org/docs/["PostgreSQL 文档"]。
 
 
 
-== 对象和计数器
+== 物体和计数器
 
-将收集以下对象及其计数器：
+收集以下对象及其计数器：
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
-| 对象： | 标识符： | 属性： | 数据点： 
+| 目的： | 标识符： | 属性： | 数据点： 
 
 
-| PostgreSQL 服务器 | 命名空间数据库服务器 | 节点名称节点 IP | 缓冲区已分配缓冲区后端缓冲区后端文件同步缓冲区检查点缓冲区清理检查点同步时间检查点写入时间检查点请求检查点已写入时间最大值 
+| PostgreSQL 服务器 | 命名空间数据库服务器 | 节点名称 节点IP | 缓冲区 已分配缓冲区 后端缓冲区 后端文件同步缓冲区 检查点缓冲区 清理检查点 同步时间检查点 写入时间检查点 请求检查点 定时最大写入清理 
 
 
-| PostgreSQL 数据库 | 命名空间数据库服务器 | 数据库 OID 节点名称节点 IP | 块读取时间块写入时间块命中块读取冲突死锁客户端编号临时文件字节临时文件编号行删除行提取行插入行返回行更新已提交事务已回滚 
+| PostgreSQL 数据库 | 命名空间数据库服务器 | 数据库 OID 节点名称 节点 IP | 块读取时间块写入时间块命中块读取冲突死锁客户端数量临时文件字节临时文件数量行删除行获取行插入行返回行更新事务提交事务回滚 
 |===
 
 
 == 故障排除
 
-有关其他信息、请参见link:concept_requesting_support.html["支持"]页面。
+更多信息可从link:concept_requesting_support.html["支持"]页。

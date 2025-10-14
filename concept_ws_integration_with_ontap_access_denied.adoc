@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_ws_integration_with_ontap_access_denied.html 
-summary: '工作负载安全性可与ONTAP集成、以接收"拒绝访问"事件、并提供额外的分析和自动响应层。' 
+summary: 工作负载安全与ONTAP集成以接收访问被拒绝事件并提供额外的分析和自动响应层。 
 keywords: ransomware, ARP, Protection, Security, access 
 ---
 = 与ONTAP集成访问被拒绝
@@ -14,40 +14,40 @@ keywords: ransomware, ARP, Protection, Security, access
 
 
 [role="lead"]
-ONTAP访问被拒绝功能会在NAS环境(NFS和SMB)中使用工作负载分析来主动检测文件操作失败(即尝试执行其无权限操作的用户)并发出警告。这些失败的文件操作通知(尤其是在出现与安全相关的故障时)将进一步有助于在早期阶段阻止内部攻击。
+ONTAP访问被拒绝功能使用 NAS 环境（NFS 和 SMB）中的工作负载分析来主动检测并警告失败的文件操作（即用户尝试执行他们没有权限的操作）。这些失败的文件操作通知——特别是在发生与安全相关的故障的情况下——将进一步有助于在早期阶段阻止内部攻击。
 
-数据基础架构洞察工作负载安全性可与ONTAP集成、以接收"拒绝访问"事件、并提供额外的分析和自动响应层。
+Data Infrastructure Insights工作负载安全与ONTAP集成以接收访问被拒绝事件并提供额外的分析和自动响应层。
 
 
 
 == 前提条件
 
 * 最低ONTAP版本：9.13.0。
-* 工作负载安全管理员必须在添加新收集器或编辑现有收集器时启用"访问被拒绝"功能、方法是选中"高级配置"下的_Monitor Access Denied Events_复选框。
+* 工作负载安全管理员必须在添加新收集器或编辑现有收集器时启用“拒绝访问”功能，方法是选中“高级配置”下的“监控拒绝访问事件”复选框。
 
 
-image:WS_Access_Denied_Enable_in_Collector.png["在ONTAP收集器高级配置中启用拒绝访问"]
+image:WS_Access_Denied_Enable_in_Collector.png["在ONTAP收集器高级配置中启用“拒绝访问”"]
 
 
 
 == 需要用户权限
 
-如果使用集群管理凭据添加Data Collector、则无需新权限。
+如果使用集群管理凭据添加数据收集器，则不需要新的权限。
 
-如果使用自定义用户(例如、-CsUser_)添加收集器并授予该用户权限、请按照以下步骤为工作负载安全性授予向ONTAP注册"拒绝访问"事件所需的权限。
+如果使用自定义用户（例如 _csuser_）添加收集器并向该用户授予权限，请按照以下步骤为工作负载安全提供必要的权限，以便使用ONTAP注册访问被拒绝事件。
 
-对于具有_cluster-_凭据的CsUser、从ONTAP命令行执行以下命令。请注意、此权限可能已存在。
+对于具有 _cluster_ 凭据的 csuser，从ONTAP命令行执行以下命令。请注意，此权限可能已经存在。
 
  security login role create -role csrole -cmddirname "vserver fpolicy" -access all
-对于凭据为_svm_的CsUser、从ONTAP命令行执行以下命令。请注意、此权限可能已存在。
+对于具有 _SVM_ 凭据的 csuser，从ONTAP命令行执行以下命令。请注意，此权限可能已经存在。
 
  security login role create -vserver <vservername> -role csrole -cmddirname "vserver fpolicy" -access all
-阅读有关配置其他的更多信息link:task_add_collector_svm.html["ONTAP权限"]。
+阅读有关配置其他内容的更多信息link:task_add_collector_svm.html["ONTAP 权限"]。
 
 
 
-== 拒绝访问事件
+== 访问被拒绝事件
 
-从ONTAP系统获取事件后、Workload Security Foreness页面将显示Access Denied Events。除了显示的信息之外、您还可以通过将_Desired Activity_列从齿轮图标添加到表中来查看特定操作缺少的用户权限。
+从ONTAP系统获取事件后，“工作负载安全取证”页面将显示“访问被拒绝”事件。除了显示的信息之外，您还可以通过从齿轮图标向表中添加“所需活动”列来查看特定操作缺少的用户权限。
 
-image:WS_Access_Denied_Example_Event_1.png["拒绝访问事件示例"]
+image:WS_Access_Denied_Example_Event_1.png["访问被拒绝事件示例"]

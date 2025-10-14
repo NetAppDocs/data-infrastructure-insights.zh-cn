@@ -2,39 +2,39 @@
 sidebar: sidebar 
 permalink: insights_overview.html 
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload, ttf, time to full, k8s, kubernetes, namespace 
-summary: 通过洞察、您可以了解资源使用情况和趋势。 
+summary: 洞察让您了解资源使用情况和趋势。 
 ---
-= 洞察力
+= 洞察
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-通过洞察、您可以了解资源使用情况及其对其他资源的影响、或者分析时间到全满等因素。
+通过洞察，您可以了解资源使用情况及其对其他资源的影响，或完整分析的时间。
 
-我们提供了许多Insights。导航到*仪表板>洞察力*开始深入了解。您可以在主选项卡上查看活动的洞察力(当前正在进行的洞察力)、也可以在_INactive"洞察力_选项卡上查看非活动的洞察力。非活动洞察力是指以前处于活动状态但不再发生的洞察力。
+有许多见解可供参考。导航至 *仪表板 > 洞察* 开始深入了解。您可以在主选项卡上查看活动洞察（当前正在发生的洞察），或在_非活动洞察_选项卡上查看非活动洞察。非活动洞察是指那些之前处于活动状态但不再发生的洞察。
 
 
 
-== Insight类型
+== 洞察类型
 
 
 
 === 共享资源面临压力
 
-高影响工作负载会降低共享资源中其他工作负载的性能。这会使共享资源承受压力。Data Infrastructure Insight提供的工具可帮助您调查资源饱和及其对租户的影响。link:insights_shared_resources_under_stress.html["了解更多信息"]
+高影响的工作负载可能会降低共享资源中其他工作负载的性能。这给共享资源带来了压力。Data Infrastructure Insights提供工具来帮助您调查资源饱和度及其对租户的影响。link:insights_shared_resources_under_stress.html["了解更多"]
 
 
 
-=== Kubernetes命名空间即将用尽
+=== Kubernetes 命名空间空间不足
 
-通过Kubenetes命名空间即将用尽空间Insight、您可以查看Kubenetes命名空间上存在空间即将用尽风险的工作负载、并估计每个空间将达到全满前的剩余天数。link:insights_k8s_namespaces_running_out_of_space.html["了解更多信息"]
-
-
-
-=== 回收ONTAP 冷存储
-
-回收ONTAP冷存储Insight可提供有关ONTAP系统上卷的冷容量、潜在成本/电耗节省和建议操作项的数据。link:insights_reclaim_ontap_cold_storage.html["了解更多信息"]
+Kubernetes 命名空间空间耗尽洞察让您可以查看 Kubernetes 命名空间中面临空间耗尽风险的工作负载，并估算每个空间耗尽之前剩余的天数。link:insights_k8s_namespaces_running_out_of_space.html["了解更多"]
 
 
-NOTE: 这是一项_Preview_功能、可能会随着时间的推移进行更改。link:/concept_preview_features.html["了解更多信息。"] 关于Data Infrastructure Insight Preview功能。
+
+=== 回收ONTAP冷存储
+
+_Reclaim ONTAP Cold Storage_ Insight 提供有关冷容量、潜在成本/电力节省以及ONTAP系统上卷的推荐操作项目的数据。link:insights_reclaim_ontap_cold_storage.html["了解更多"]
+
+
+NOTE: 这是一个_预览_功能，随着改进可能会随时改变。link:/concept_preview_features.html["了解更多"]关于Data Infrastructure Insights预览功能。

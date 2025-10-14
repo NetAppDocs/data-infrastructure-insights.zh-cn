@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: troubleshooting_collector_svm.html 
 keywords: data collector, ONTAP, NetApp, SVM, cloud ontap, firewall 
-summary: 对工作负载安全性数据收集器进行故障排除 
+summary: 工作负载安全数据收集器故障排除 
 ---
-= 对ONTAP SVM数据收集器进行故障排除
+= ONTAP SVM 数据收集器故障排除
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,82 +14,82 @@ summary: 对工作负载安全性数据收集器进行故障排除
 
 
 [role="lead"]
-工作负载安全性使用数据收集器从设备收集文件和用户访问数据。您可以在此处找到有关对此收集器问题进行故障排除的提示。
+工作负载安全使用数据收集器从设备收集文件和用户访问数据。您可以在这里找到解决此收集器问题的提示。
 
-有关配置此收集器的说明、请参见link:task_add_collector_svm.html["配置SVM收集器"]页面。
+查看link:task_add_collector_svm.html["配置 SVM 收集器"]页面以获取有关配置此收集器的说明。
 
-如果出现错误、您可以单击已安装数据收集器页面的_Status_列中的_more详细信息_以了解有关此错误的详细信息。
+如果出现错误，您可以单击“已安装的数据收集器”页面的“状态”列中的“更多详细信息”来了解有关错误的详细信息。
 
 image:CS_Data_Collector_Error.png["工作负载安全收集器错误更多详细信息链接"]
 
-下面介绍了已知问题及其解决方法。
+已知问题及其解决方案如下所述。
 
 ****
-*问题：* Data Collector运行一段时间、并在随机时间后停止、失败并显示："错误消息：连接器处于错误状态。服务名称： audit 。失败原因：外部 fpolicy 服务器过载。 "
+*问题：*数据收集器运行一段时间后在随机时间后停止，并出现故障：“错误消息：连接器处于错误状态。服务名称：审计。失败原因：外部 fpolicy 服务器超载。”
 
-*尝试此操作：* ONTAP的事件速率远远高于Agent Box所能处理的事件速率。因此，此连接已终止。
+*尝试一下：* ONTAP的事件率远远高于代理盒可以处理的事件率。因此连接被终止。
 
-检查断开连接时 CloudSecure 中的峰值流量。您可以从 * CloudSecure > 活动取证 > 所有活动 * 页面查看此信息。
+检查断开连接时 CloudSecure 中的峰值流量。您可以从 *CloudSecure > Activity Forensics > All Activity* 页面进行检查。
 
-如果聚合流量峰值高于 Agent Box 可以处理的流量，请参阅 Event Rate Checker 页面，了解如何在 Agent Box 中估算收集器部署的规模。
+如果峰值聚合流量高于代理箱可以处理的流量，请参阅事件速率检查器页面，了解如何确定代理箱中收集器的部署规模。
 
-如果此代理在2021年3月4日之前安装在Agent框中、请在Agent框中运行以下命令：
+如果代理是在 2021 年 3 月 4 日之前安装在代理框中的，请在代理框中运行以下命令：
 
 ....
 echo 'net.core.rmem_max=8388608' >> /etc/sysctl.conf
 echo 'net.ipv4.tcp_rmem = 4096 2097152 8388608' >> /etc/sysctl.conf
 sysctl -p
 ....
-调整大小后、从UI重新启动收集器。
+调整大小后从 UI 重新启动收集器。
 
 ****
 ****
-*问题：*收集器报告错误消息："在可访问SVM数据接口的连接器上找不到本地IP地址"。*请尝试以下操作：*这很可能是由于ONTAP端的网络问题。请按照以下步骤操作：
+*问题：*收集器报告错误消息：“在连接器上未找到可以到达 SVM 数据接口的本地 IP 地址”。 *尝试一下：*这很可能是由于ONTAP端的网络问题造成的。请按照以下步骤操作：
 
-. 确保 SVM 数据 LIF 或管理 LIF 上没有防火墙阻止与 SVM 的连接。
-. 通过集群管理IP添加SVM时、请确保SVM的数据LIP和管理LIP可从此代理VM执行ping。如果出现问题，请检查网关，网络掩码和 LIF 路由。
+. 确保 SVM 数据生命周期或管理生命周期上没有防火墙阻止来自 SVM 的连接。
+. 通过集群管理 IP 添加 SVM 时，请确保 SVM 的数据 lif 和管理 lif 可以从代理 VM ping 通。如果出现问题，请检查网关、网络掩码和路由。
 +
-您也可以尝试使用集群管理 IP 通过 ssh 登录到集群，并对代理 IP 执行 ping 操作。确保代理IP可执行pingable：
+您还可以尝试使用集群管理 IP 通过 ssh 登录集群，并 ping 代理 IP。确保代理 IP 可 ping 通：
 
 +
  network ping -vserver <vserver name> -destination <Agent IP> -lif <Lif Name> -show-detail
 +
-如果无法执行pingable，请确保ONTAP中的网络设置正确，以便Agent计算机可以执行pingable。
+如果无法 ping 通，请确保ONTAP中的网络设置正确，以便 Agent 机器可以 ping 通。
 
-. 如果您尝试通过集群IP进行连接、但该连接不起作用、请尝试直接通过SVM IP进行连接。有关通过 SVM IP 进行连接的步骤，请参见上文。
-. 通过SVM IP和vsadmin凭据添加收集器时、请检查SVM LIF是否已启用数据加管理角色。在这种情况下，对 SVM LIF 执行 ping 操作将有效，但对 SVM LIF 执行 SSH 将不起作用。如果是，请创建一个仅 SVM 管理 LIF ，并尝试通过此仅 SVM 管理 LIF 进行连接。
-. 如果仍然无法正常工作、请创建一个新的SVM LIF、然后尝试通过该LIF进行连接。确保子网掩码设置正确。
+. 如果您尝试通过 Cluster IP 连接但不成功，请尝试直接通过 SVM IP 连接。请参阅上文了解通过 SVM IP 连接的步骤。
+. 通过 SVM IP 和 vsadmin 凭据添加收集器时，检查 SVM Lif 是否启用了数据加管理角色。在这种情况下，ping 到 SVM Lif 将会起作用，但是 SSH 到 SVM Lif 将不起作用。如果是，请创建一个 SVM Mgmt Only Lif 并尝试通过此 SVM 管理专用 Lif 进行连接。
+. 如果仍然不起作用，请创建一个新的 SVM Lif 并尝试通过该 Lif 进行连接。确保子网掩码设置正确。
 . 高级调试：
 +
 .. 在ONTAP中启动数据包跟踪。
-.. 尝试从CloudSecure UI将数据收集器连接到SVM。
-.. 请等待、直到出现错误。停止 ONTAP 中的数据包跟踪。
-.. 从ONTAP打开数据包跟踪。可从该位置获取
+.. 尝试从 CloudSecure UI 将数据收集器连接到 SVM。
+.. 等待直到错误出现。在ONTAP中停止数据包跟踪。
+.. 从ONTAP打开数据包跟踪。可在此位置获取
 +
  https://<cluster_mgmt_ip>/spi/<clustername>/etc/log/packet_traces/
-.. 确保有一个从ONTAP到Agent框的SNT。
-.. 如果没有来自ONTAP的任何Synology认证系统、则表示ONTAP中的防火墙存在问题。
-.. 打开ONTAP中的防火墙、以便ONTAP能够连接代理盒。
+.. 确保从ONTAP到代理框有一个 SYN。
+.. 如果没有来自ONTAP的 SYN，那么这是ONTAP中的防火墙存在问题。
+.. 在ONTAP中打开防火墙，以便ONTAP能够连接代理盒。
 
 
-. 如果它仍然不工作、请咨询网络团队、以确保没有外部防火墙阻止从ONTAP到Agent Box的连接。
-. 如果上述方法均无法解决问题、请向创建案例以link:concept_requesting_support.html["NetApp 支持"]获得进一步帮助。
-
-
-****
-****
-*问题：*消息："无法确定[主机名：<IP Address>的ONTAP类型。原因：存储系统<IP Address>连接错误：无法访问主机(无法访问主机)"*请尝试此操作：*
-
-. 验证是否已提供正确的SVM IP管理地址或集群管理IP。
-. 通过SSH连接到要连接的SVM或集群。连接后，请确保 SVM 或集群名称正确无误。
+. 如果仍然不起作用，请咨询网络团队，以确保没有外部防火墙阻止从ONTAP到代理盒的连接。
+. 如果以上方法都无法解决问题，请提交案例link:concept_requesting_support.html["Netapp 支持"]以获得进一步的帮助。
 
 
 ****
 ****
-*问题:*错误消息:“连接器处于错误状态。service.name ：审核。失败原因：外部 fpolicy 服务器已终止。 "* 请尝试此操作： *
+*问题：*消息：“无法确定 [主机名：<IP 地址>] 的ONTAP类型。原因：与存储系统 <IP 地址> 的连接错误：主机无法访问（主机无法访问）”*尝试此操作：*
 
-. 很可能是防火墙阻止了代理计算机中的必要端口。验证是否已为代理计算机打开端口范围 35000-55000/TCP ，以便从 SVM 进行连接。此外，请确保 ONTAP 端未启用防火墙，从而无法与代理计算机进行通信。
-. 在代理框中键入以下命令、并确保端口范围已打开。
+. 验证是否提供了正确的 SVM IP 管理地址或集群管理 IP。
+. 通过 SSH 连接到您要连接的 SVM 或集群。连接后，请确保 SVM 或集群名称正确。
+
+
+****
+****
+*问题：*错误消息：“连接器处于错误状态。服务名称：审计。失败原因：外部 fpolicy 服务器终止。”  *试试这个：*
+
+. 最有可能的是防火墙阻止了代理机器中的必要端口。验证端口范围 35000-55000/tcp 是否已打开，以便代理计算机从 SVM 进行连接。还要确保ONTAP端没有启用防火墙来阻止与代理机器的通信。
+. 在代理框中输入以下命令并确保端口范围是开放的。
 +
  sudo iptables-save | grep 3500*
 +
@@ -97,96 +97,96 @@ sysctl -p
 
 +
  -A IN_public_allow -p tcp -m tcp --dport 35000 -m conntrack -ctstate NEW -j ACCEPT
-. 登录到 SVM ，输入以下命令并检查是否未设置防火墙以阻止与 ONTAP 的通信。
+. 登录 SVM，输入以下命令并检查是否没有设置防火墙来阻止与ONTAP 的通信。
 +
 ....
 system services firewall show
 system services firewall policy show
 ....
 +
-link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nmg%2FGUID-969851BB-4302-4645-8DAC-1B059D81C5B2.html["检查防火墙命令"]在ONTAP端。
+link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nmg%2FGUID-969851BB-4302-4645-8DAC-1B059D81C5B2.html["检查防火墙命令"]在ONTAP方面。
 
-. 通过SSH连接到要监控的SVM/集群。从SVM数据Lf对Agent框执行Ping操作(支持CIFS和NFS协议)、并确保Ping操作正常：
+. 通过 SSH 连接到您要监控的 SVM/集群。从 SVM 数据生命周期 (支持 CIFS、NFS 协议) 对代理盒执行 ping 操作，并确保 ping 操作正常：
 +
  network ping -vserver <vserver name> -destination <Agent IP> -lif <Lif Name> -show-detail
 +
-如果无法执行pingable，请确保ONTAP中的网络设置正确，以便Agent计算机可以执行pingable。
+如果无法 ping 通，请确保ONTAP中的网络设置正确，以便 Agent 机器可以 ping 通。
 
-. 如果通过2个数据收集器将一个SVM添加到租户中两次、则会显示此错误。通过用户界面删除其中一个数据收集器。然后，通过 UI 重新启动另一个数据收集器。然后，数据收集器将显示 " 正在运行 " 状态，并开始从 SVM 接收事件。
+. 如果通过 2 个数据收集器将单个 SVM 两次添加到租户，则会显示此错误。通过 UI 删除其中一个数据收集器。然后通过 UI 重新启动其他数据收集器。然后数据收集器将显示“RUNNING”状态并开始从 SVM 接收事件。
 +
-基本上，在租户中， 1 个 SVM 只能通过 1 个数据收集器添加一次。1 个 SVM 不应通过 2 个数据收集器添加两次。
+基本上，在一个租户中，应该只通过 1 个数据收集器添加 1 个 SVM 一次。  1 个 SVM 不应通过 2 个数据收集器添加两次。
 
-. 如果在两个不同的工作负载安全环境(租户)中添加了同一个SVM、则最后一个SVM始终会成功。第二个收集器将使用自己的 IP 地址配置 fpolicy ，并启动第一个收集器。因此，第一个收集器将停止接收事件，其 " 审核 " 服务将进入错误状态。要防止这种情况发生，请在一个环境中配置每个 SVM 。
-. 如果服务策略配置不正确、也可能发生此错误。对于ONTAP 9.8或更高版本、要连接到数据源收集器、需要提供data-fpolicy-client服务以及数据服务data-nfs和/或data-cifs。此外、data-fpolicy-client服务必须与受监控SVM的数据LIF关联。
+. 如果在两个不同的工作负载安全环境（租户）中添加了相同的 SVM，则最后一个 SVM 始终会成功。第二个收集器将使用自己的 IP 地址配置 fpolicy，并踢出第一个收集器。因此第一个收集器将停止接收事件，并且其“审计”服务将进入错误状态。为防止这种情况，请在单个环境上配置每个 SVM。
+. 如果服务策略配置不正确，也可能会出现此错误。使用ONTAP 9.8 或更高版本时，为了连接到数据源收集器，需要 data-fpolicy-client 服务以及数据服务 data-nfs 和/或 data-cifs 。此外，data-fpolicy-client 服务必须与受监控 SVM 的数据生命周期相关联。
 
 
 ****
 ****
-*问题:*活动页面中未显示任何事件。* 请尝试此操作： *
+*问题：*活动页面中未显示任何事件。  *试试这个：*
 
-. 检查ONTAP收集器是否处于"正在运行"状态。如果是，请通过打开某些文件确保在 CIFS 客户端 VM 上生成某些 CIFS 事件。
-. 如果未发现任何活动、请登录到SVM并输入以下命令。
+. 检查ONTAP收集器是否处于“正在运行”状态。如果是，则通过打开一些文件确保在 cifs 客户端虚拟机上生成一些 cifs 事件。
+. 如果没有看到任何活动，请登录 SVM 并输入以下命令。
 +
  <SVM>event log show -source fpolicy
 +
-请确保没有与fpolicy相关的错误。
+请确保没有与 fpolicy 相关的错误。
 
-. 如果未发现任何活动、请登录到SVM。输入以下命令：
+. 如果没有看到任何活动，请登录 SVM。输入以下命令：
 +
  <SVM>fpolicy show
 +
-检查是否已设置以"云 安全_"前缀命名的fpolicy策略、并且状态是否为"on"。如果未设置，则代理很可能无法在 SVM 中执行这些命令。请确保已遵循页面开头所述的所有前提条件。
+检查以“cloudsecure_”为前缀的 fpolicy 策略是否已设置且状态为“on”。如果未设置，那么代理很可能无法执行 SVM 中的命令。请确保已遵循页面开头所述的所有先决条件。
 
 
 
 ****
 ****
-*问题：* SVM Data Collector处于错误状态、并且错误消息为"Agent failed to connect to the Collector (代理无法连接到收集器)"*请尝试此操作：*
+*问题：* SVM 数据收集器处于错误状态，错误消息为“代理无法连接到收集器” *尝试以下操作：*
 
-. 代理很可能过载、无法连接到数据源收集器。
-. 检查有多少数据源收集器连接到代理。
-. 此外、还可以在用户界面的"All Active"(所有活动)页面中查看数据流速率。
-. 如果每秒的活动数非常高，请安装另一个代理并将某些数据源收集器移动到新的代理。
+. 最有可能的是代理超载并且无法连接到数据源收集器。
+. 检查有多少个数据源收集器连接到代理。
+. 还可以检查 UI 中“所有活动”页面的数据流量。
+. 如果每秒的活动数量非常高，请安装另一个代理并将一些数据源收集器移动到新的代理。
 
 
 ****
 ****
-*问题：* SVM数据收集器显示错误消息"fpolicy.server.connectError:节点无法与FPolicy服务器建立连接"12.195.15.146(原因："选择超时")"*尝试此操作：*已在SVM/集群中启用防火墙。因此， fpolicy 引擎无法连接到 fpolicy 服务器。ONTAP中可用于获取详细信息的命令行界面包括：
+*问题：* SVM 数据收集器显示错误消息为“fpolicy.server.connectError：节点无法与 FPolicy 服务器“12.195.15.146”建立连接（原因：“选择超时”）” *尝试此操作：* SVM/Cluster 中启用了防火墙。因此 fpolicy 引擎无法连接到 fpolicy 服务器。  ONTAP中可用于获取更多信息的 CLI 包括：
 
 ....
 event log show -source fpolicy which shows the error
 event log show -source fpolicy -fields event,action,description which shows more details.
 ....
-link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nmg%2FGUID-969851BB-4302-4645-8DAC-1B059D81C5B2.html["检查防火墙命令"]在ONTAP端。
+link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nmg%2FGUID-969851BB-4302-4645-8DAC-1B059D81C5B2.html["检查防火墙命令"]在ONTAP方面。
 
 ****
 ****
-*问题：*错误消息：“连接器处于错误状态。服务名称： audit 。失败原因：在 SVM 上未找到有效的数据接口（角色：数据，数据协议： NFS 或 CIFS 或两者，状态：已启动）。 "*请尝试以下操作：*确保有一个操作接口(角色为数据、数据协议为CIFS或NFS)。
+*问题：*错误消息：“连接器处于错误状态。服务名称：审计。失败原因：在 SVM 上未找到有效的数据接口（角色：数据、数据协议：NFS 或 CIFS 或两者、状态：启动）。  *尝试一下：*确保有一个操作接口（具有数据角色和 CIFS/NFS 数据协议）。
 
 ****
 ****
-*问题:*数据收集器进入错误状态,一段时间后进入运行状态,然后再次返回错误。此周期将重复。*请尝试以下操作：*这通常发生在以下情形中：
+*问题：*数据收集器进入错误状态，一段时间后进入运行状态，然后再次返回错误状态。如此循环往复。  *尝试一下：*这通常发生在以下场景中：
 
 . 添加了多个数据收集器。
-. 显示此类行为的数据收集器将向这些数据收集器添加1个SVM。表示将 2 个或更多数据收集器连接到 1 个 SVM 。
-. 确保1个数据收集器仅连接到1个SVM。
-. 删除连接到同一SVM的其他数据收集器。
+. 表现出这种行为的数据收集器将会有 1 个 SVM 添加到这些数据收集器中。意思是 2 个或更多数据收集器连接到 1 个 SVM。
+. 确保 1 个数据收集器仅连接到 1 个 SVM。
+. 删除连接到同一 SVM 的其他数据收集器。
 
 
 ****
 ****
-*问题：*连接器处于错误状态。服务名称： audit 。失败原因：无法配置（ SVM svmname 上的策略。原因：为"fpolicy.policy.scope修改"中的"shares-to include"元素指定的值无效："fedified"*尝试此操作：**共享名称必须不带任何引号。编辑 ONTAP SVM DSC 配置以更正共享名称。
+*问题：*连接器处于错误状态。服务名称：审计。失败原因：无法配置（SVM svmname 上的策略）。原因：在“fpolicy.policy.scope-modify: "Federal" 中为“shares-to-include”元素指定的值无效 *尝试此操作：* *共享名称需要不带任何引号。编辑ONTAP SVM DSC 配置以更正共享名称。
 
-_include 和 exclude shares_ 不适用于长列表的共享名称。如果要包含或排除大量共享，请改用按卷筛选。
+_包括和排除共享_不适用于较长的共享名称列表。如果您需要包含或排除大量股票，请使用按数量过滤。
 
 ****
 ****
-*问题：*集群中存在未使用的现有fpolicies.在安装工作负载安全性之前、应如何处理这些问题？*请尝试以下操作：*建议删除所有现有的未使用的fpolicy设置，即使这些设置处于断开状态也是如此。工作负载安全性将创建前缀为"cloudsure_"的fpolicy。可以删除所有其他未使用的 fpolicy 配置。
+*问题：*集群中存在未使用的现有 fpolicies。在安装 Workload Security 之前应该做什么？ *尝试一下：*建议删除所有现有的未使用的 fpolicy 设置，即使它们处于断开连接状态。工作负载安全将创建带有前缀“cloudsecure_”的 fpolicy。所有其他未使用的 fpolicy 配置都可以删除。
 
-用于显示fpolicy list的命令行界面命令：
+显示 fpolicy 列表的 CLI 命令：
 
  fpolicy show
-删除fpolicy配置的步骤：
+删除 fpolicy 配置的步骤：
 
 ....
 fpolicy disable -vserver <svmname> -policy-name <policy_name>
@@ -195,36 +195,36 @@ fpolicy policy delete -vserver <svmname> -policy-name <policy_name>
 fpolicy policy event delete -vserver <svmname> -event-name <event_list>
 fpolicy policy external-engine delete -vserver <svmname> -engine-name <engine_name>
 ....
-|启用工作负载安全性后、ONTAP性能会受到影响：延迟偶尔会很高、IOPS偶尔会很低。|在将ONTAP与工作负载安全性结合使用时、有时可能会在ONTAP中出现延迟问题。出现这种情况的可能原因如下：link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994["第1294."]、 https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152["1415152"]、、 https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207["1438207"]、 https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704["1479704"] https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659["1354659"]。所有这些问题在ONTAP 9.13.1.及更高版本中均已修复；强烈建议使用这些更高版本之一。
+|启用工作负载安全后， ONTAP性能会受到影响：延迟偶尔会变高，IOP 偶尔会变低。 |将ONTAP与工作负载安全结合使用时，有时会在ONTAP中看到延迟问题。造成这种情况的可能原因有很多，如下所示：link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994["1372994"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152["1415152"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207["1438207"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704["1479704"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659["1354659"] 。所有这些问题均已在ONTAP 9.13.1 及更高版本中修复；强烈建议使用其中一个更高版本。
 
 ****
 ****
-*问题:*数据收集器出错,显示此错误消息。" 错误：连接器处于错误状态。服务名称： audit 。失败原因：无法在 SVM SVM_test 上配置策略。原因： ZAPI 字段： Events 缺少值。"*请尝试此操作：*
+*问题：*数据收集器出错，显示此错误消息。 “错误：连接器处于错误状态。服务名称：审计。失败原因：无法在 SVM svm_test 上配置策略。原因：zapi 字段缺少值：事件。  “*试试这个：*
 
-. 从仅配置 NFS 服务的新 SVM 开始。
-. 在工作负载安全性中添加ONTAP SVM数据收集器。在工作负载安全性中添加ONTAP SVM数据收集器时、CIFS会配置为SVM的允许协议。
-. 请等待、直到工作负载安全性中的数据收集器显示错误。
-. 由于未在SVM上配置CIFS服务器、因此Workload Security将显示左侧所示的此错误。
-. 编辑 ONTAP SVM 数据收集器并取消选中 CIFS 作为允许的协议。保存数据收集器。它将在仅启用 NFS 协议的情况下开始运行。
-
-
-****
-****
-*问题：*数据收集器显示错误消息："错误：无法在2次重试中确定收集器的运行状况、请尝试重新启动收集器(错误代码：AGENT008)"。* 请尝试此操作： *
-
-. 在数据收集器页面上，滚动到出现错误的数据收集器右侧，然后单击 3 点菜单。选择 _Edit_ 。再次输入数据收集器的密码。按 _Save_ 按钮保存数据收集器。Data Collector 将重新启动，并应解决此错误。
-. Agent计算机可能没有足够的CPU或RAM余量、这就是DSC出现故障的原因。请检查添加到计算机中代理的数据收集器的数量。如果超过20、请增加Agent计算机的CPU和RAM容量。增加CPU和RAM后、DSCS将自动进入Initializing状态、然后自动进入Running状态。查看上的规模估算指南link:concept_cs_event_rate_checker.html["此页面"]。
+. 从仅配置了 NFS 服务的新 SVM 开始。
+. 在工作负载安全中添加ONTAP SVM 数据收集器。在工作负载安全中添加ONTAP SVM 数据收集器时，CIFS 配置为 SVM 允许的协议。
+. 等到工作负载安全中的数据收集器显示错误。
+. 由于 SVM 上未配置 CIFS 服务器，因此左侧所示的错误由 Workload Security 显示。
+. 编辑ONTAP SVM 数据收集器并取消选中 CIF 作为允许的协议。保存数据收集器。它将仅启用 NFS 协议开始运行。
 
 
 ****
 ****
-*问题：*选择SVM模式后、Data Collector出现错误。*Try this：*在SVM模式下连接时、如果使用集群管理IP而不是SVM管理IP进行连接、则连接将出错。确保使用正确的SVM IP。
+*问题：*数据收集器显示错误消息：“错误：两次重试后无法确定收集器的健康状况，请尝试重新启动收集器（错误代码：AGENT008）”。  *试试这个：*
+
+. 在数据收集器页面上，滚动到出现错误的数据收集器的右侧，然后单击 3 个点菜单。选择“编辑”。再次输入数据采集器的密码。按下“保存”按钮保存数据收集器。数据收集器将重新启动并且错误应该得到解决。
+. 代理机器可能没有足够的 CPU 或 RAM 空间，这就是 DSC 失败的原因。请检查机器中添加到代理的数据收集器的数量。如果超过20，请增加Agent机器的CPU和RAM容量。一旦 CPU 和 RAM 增加，DSC 将自动进入初始化状态，然后进入运行状态。查看尺码指南link:concept_cs_event_rate_checker.html["本页"]。
+
 
 ****
 ****
-*问题:*启用“拒绝访问”功能时，数据收集器显示错误消息：“连接器处于错误状态。服务名称： audit 。失败原因：无法在SVM test_SVM上配置fpolicy。原因：用户未获得授权。"*请尝试以下操作：*用户可能缺少"拒绝访问"功能所需的REST权限。请按照上的说明link:concept_ws_integration_with_ontap_access_denied.html["此页面"]设置权限。
-
-设置权限后、重新启动收集器。
+*问题：*选择 SVM 模式时数据收集器出错。 *尝试一下：*在 SVM 模式下连接时，如果使用集群管理 IP 而不是 SVM 管理 IP 进行连接，则连接将出错。确保使用正确的 SVM IP。
 
 ****
-如果您仍遇到问题，请访问 * 帮助 > 支持 * 页面中提到的支持链接。
+****
+*问题：*启用“拒绝访问”功能时，数据收集器显示一条错误消息：“连接器处于错误状态。服务名称：审计。失败原因：无法在 SVM test_svm 上配置 fpolicy。原因：用户未获得授权。” *尝试一下：*用户可能缺少“拒绝访问”功能所需的 REST 权限。请按照link:concept_ws_integration_with_ontap_access_denied.html["本页"]设置权限。
+
+设置权限后重新启动收集器。
+
+****
+如果您仍然遇到问题，请联系*帮助>支持*页面中提到的支持链接。

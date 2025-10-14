@@ -4,26 +4,26 @@ permalink: task_config_telegraf_docker.html
 keywords: telegraf, installation, install, docker 
 summary: Docker 数据收集器配置 
 ---
-= Docker Data Collector
+= Docker 数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insight使用此数据收集器从Docker收集指标。
+Data Infrastructure Insights使用此数据收集器从 Docker 收集指标。
 
 
 
 == 安装
 
-. 从*Observability > Collectors*中，单击*+Data Collector*。选择Docker。
+. 从*可观察性 > 收集器*中，单击*+数据收集器*。选择 Docker。
 +
-如果尚未配置用于收集的Agent、系统将提示您在租户上配置link:task_config_telegraf_agent.html["安装代理"]。
+如果您尚未配置用于收集的代理，系统会提示您link:task_config_telegraf_agent.html["安装代理"]您的租户。
 
 +
-如果已配置代理，请选择相应的操作系统或平台，然后单击 * 继续 * 。
+如果您已经配置了代理，请选择适当的操作系统或平台，然后单击“继续”。
 
-. 按照 Docker 配置屏幕中的说明配置数据收集器。这些说明因用于收集数据的操作系统或平台的类型而异。
+. 按照 Docker 配置屏幕中的说明配置数据收集器。说明根据您用于收集数据的操作系统或平台的类型而有所不同。
 
 
 image:DockerDCConfigLinux.png["Docker 配置"]
@@ -32,13 +32,13 @@ image:DockerDCConfigLinux.png["Docker 配置"]
 
 == 设置
 
-适用于 Docker 的 Telegraf 输入插件通过指定的 UNIX 套接字或 TCP 端点收集指标。
+Docker 的 Telegraf 输入插件通过指定的 UNIX 套接字或 TCP 端点收集指标。
 
 
 
 === 兼容性
 
-配置是根据 Docker 1.12.6 版开发的。
+配置是针对 Docker 版本 1.12.6 开发的。
 
 
 
@@ -48,10 +48,10 @@ image:DockerDCConfigLinux.png["Docker 配置"]
 
 === 通过 UNIX 套接字访问 Docker
 
-如果 Telegraf 代理正在 BareMetal 上运行，请运行以下命令将此 Telegraf Unix 用户添加到 Docker Unix 组：
+如果 Telegraf 代理在裸机上运行，请通过运行以下命令将 telegraf Unix 用户添加到 docker Unix 组：
 
  sudo usermod -aG docker telegraf
-如果 Telegraf 代理在 Kubernetes Pod 中运行，请将此套接字映射到 Pod 中作为卷，然后将此卷挂载到 /var/run/docker.sock ，以公开 Docker Unix 套接字。例如，将以下内容添加到 PodSpec 中：
+如果 Telegraf 代理在 Kubernetes pod 中运行，则通过将套接字作为卷映射到 pod 中，然后将该卷挂载到 /var/run/docker.sock 来公开 Docker Unix 套接字。例如，将以下内容添加到 PodSpec：
 
 [listing]
 ----
@@ -71,38 +71,38 @@ volumeMounts:
 - name: docker-sock
 mountPath: /var/run/docker.sock
 ----
-请注意、为Kubernetes平台提供的Data Infrastructure Insight安装程序会自动执行此映射。
+请注意，为 Kubernetes 平台提供的Data Infrastructure Insights安装程序会自动处理此映射。
 
 
 
 === 通过 TCP 端点访问 Docker
 
-默认情况下， Docker 使用端口 2375 进行未加密访问，而使用端口 2376 进行加密访问。
+默认情况下，Docker 使用端口 2375 进行未加密访问，使用端口 2376 进行加密访问。
 
 
 
-== 对象和计数器
+== 物体和计数器
 
-将收集以下对象及其计数器：
+收集以下对象及其计数器：
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
-| 对象： | 标识符： | 属性： | 数据点： 
+| 目的： | 标识符： | 属性： | 数据点： 
 
 
-| Docker 引擎 | 命名空间 Docker 引擎 | 节点名称节点 IP 节点 UUID 节点操作系统 Kubernetes 集群 Docker 版本单元 | Memory Containers Paused Containers Running Containers Stopped CPU Go 例程图像侦听器事件已用文件描述符数据可用数据总已用数据可用元数据已用元数据总元数据池块大小 
+| Docker 引擎 | 命名空间 Docker 引擎 | 节点名称 节点IP 节点UUID 节点OS Kubernetes集群 Docker版本 单元 | 内存容器 已暂停的容器 正在运行的容器 已停止的容器 CPU Go 例程 图像 侦听器事件 已使用的文件描述符 可用数据 已使用的数据总量 可用元数据 元数据 已使用的总元数据 池 块大小 
 
 
-| Docker 容器 | 命名空间容器名称 Docker 引擎 | Kubernetes 容器哈希 Kubernetes 容器端口 Kubernetes 容器重新启动计数 Kubernetes 容器终止消息路径 Kubernetes 容器终止消息策略 Kubernetes Pod 终止宽限期容器映像容器状态容器版本节点名称 Kubernetes 容器日志路径 Kubernetes 容器名称 Kubernetes Docker 类型 Kubernetes Pod 名称 Kubernetes Pod 名称 Kubernetes Pod 命名空间 POD UID Kubernetes 沙盒 ID 节点 IP 节点 UUID Docker 版本 Kubernetes IO 配置已查看 Kubernetes IO 配置源 OpenShift IO SCC Kubernetes 问题描述 Kubernetes 显示名称 OpenShift 标记 Kompose Service Pod 模板哈希控制器修订哈希模板生成许可证架构构建日期架构许可证架构名称架构 URL 架构 VCS URL 架构供应商架构版本架构版本维护人员客户 Pod Kubernetes StatusSet Pod Name Tenant WEBCONSOLE Architecture 权威源 URL 构建日期 RH 构建主机 RH 组件分发范围安装发行运行摘要卸载 VCS 参考 VCS 类型供应商版本运行状况容器 ID | 内存活动匿名内存活动文件内存缓存内存分层限制内存非活动匿名内存非活动文件内存限制内存映射的文件内存最大使用量内存页面故障内存页面内存中的主要故障内存分页内存驻留设置内存驻留设置大小内存设置大小巨大内存总活动量 匿名内存总活动文件内存总缓存总非活动匿名内存总非活动文件内存总映射文件内存总页面故障内存总页面主要故障内存总分页内存总分页内存总分页内存总驻留设置大小内存总驻留设置大小内存总内存总内存总内存总内存总内存总内存总内存总容量 Unevictable Memory Unevictable Memory Usage Memory Usage Percent Exit Code OOM Ked PID 在错误的数据流时启动 
+| Docker容器 | 命名空间容器名称 Docker 引擎 | Kubernetes 容器哈希 Kubernetes 容器端口 Kubernetes 容器重启计数 Kubernetes 容器终止消息路径 Kubernetes 容器终止消息策略 Kubernetes Pod 终止宽限期 容器镜像 容器状态 容器版本 节点名称 Kubernetes 容器日志路径 Kubernetes 容器名称 Kubernetes Docker 类型 Kubernetes Pod 名称 Kubernetes Pod 命名空间 Kubernetes Pod UID Kubernetes 沙盒 ID 节点 IP 节点 UUID Docker 版本 Kubernetes IO 配置可见 Kubernetes IO 配置源 OpenShift IO SCC Kubernetes 描述 Kubernetes 显示名称 OpenShift 标签 Kompose 服务 Pod 模板哈希 控制器修订哈希 Pod 模板生成 许可证架构 构建日期 架构 许可证架构名称 架构 URL 架构 VCS URL 架构 供应商架构 版本 架构 架构版本维护者 客户 Pod Kubernetes StatefulSet Pod 名称 租户 Web 控制台 架构 权威来源 URL 构建日期 RH 构建主机 RH 组件分布范围 安装发布运行摘要 卸载 VCS 引用 VCS 类型 供应商版本 健康状况 容器 ID | 内存活动匿名内存活动文件内存缓存内存层次限制内存非活动匿名内存非活动文件内存限制内存映射文件内存最大使用量内存页面错误内存页面严重错误内存分页传入内存分页传出内存驻留集大小内存驻留集大小巨大内存总活动匿名内存总活动文件内存总缓存内存总非活动匿名内存总非活动文件内存总映射文件内存总页面错误内存总页面严重错误内存总分页传入内存总分页传出内存总驻留集大小内存总驻留集大小巨大内存总不可清除内存不可清除内存使用情况内存使用率退出代码 OOM 终止 PID 启动于失败连胜 
 
 
-| Docker 容器块 IO | 命名空间容器名称设备 Docker 引擎 | Kubernetes 容器哈希 Kubernetes 容器端口 Kubernetes 容器重新启动计数 Kubernetes 容器终止消息路径 Kubernetes 容器终止消息策略 Kubernetes Pod 终止宽限期容器映像容器状态容器版本节点名称 Kubernetes 容器日志路径 Kubernetes 容器名称 Kubernetes Docker 类型 Kubernetes Pod 名称 Kubernetes Pod 名称 Kubernetes Pod 命名空间 POD UID Kubernetes 沙盒 ID 节点 IP 节点 UUID Docker 版本 Kubernetes 配置已查看 Kubernetes 配置源 OpenShift SCC Kubernetes 问题描述 Kubernetes 显示名称 OpenShift 标记架构版本 Pod 模板哈希控制器版本哈希模板生成科姆服务架构构建日期架构架构许可证名称架构供应商客户 POD Kubernetes StatusSet Pod Name Tenant WEBCONSOLE Build Date License Vendor Architecture Authoritative Source URL RH Build Host RH Component Distribution Scope Install Maintainer Release Run Summary 卸载 VCS 参考 VCS 类型版本架构 URL 架构 VCS URL 架构版本容器 ID | IO 服务字节数递归异步 IO 服务字节数递归读取 IO 服务字节数递归同步 IO 服务字节数递归总 IO 服务字节数递归写入 IO 服务递归异步异步 IO 服务递归读取 IO 服务的递归同步 IO 服务的递归总 IO 服务的递归写入 
+| Docker 容器块 IO | 命名空间容器名称设备Docker引擎 | Kubernetes 容器哈希 Kubernetes 容器端口 Kubernetes 容器重启计数 Kubernetes 容器终止消息路径 Kubernetes 容器终止消息策略 Kubernetes Pod 终止宽限期 容器镜像 容器状态 容器版本 节点名称 Kubernetes 容器日志路径 Kubernetes 容器名称 Kubernetes Docker 类型 Kubernetes Pod 名称 Kubernetes Pod 命名空间 Kubernetes Pod UID Kubernetes 沙盒 ID 节点 IP 节点 UUID Docker 版本 Kubernetes 配置可见 Kubernetes 配置源 OpenShift SCC Kubernetes 描述 Kubernetes 显示名称 OpenShift 标签 架构 架构版本 Pod 模板哈希 控制器修订哈希 Pod 模板生成 Kompose 服务架构 构建日期 架构许可证 架构名称 架构供应商 客户 Pod Kubernetes StatefulSet Pod 名称 租户 Web 控制台 构建日期 许可证供应商 架构 权威来源 URL RH 构建主机 RH 组件分布范围 安装 维护者 发布 运行摘要 卸载 VCS 引用 VCS 类型 版本 架构 URL 架构 VCS URL 架构版本 容器 ID | IO 服务字节数 递归异步 IO 服务字节数 递归读取 IO 服务字节数 递归同步 IO 服务字节数 递归总计 IO 服务字节数 递归写入 IO 服务 递归异步 IO 服务 递归读取 IO 服务 递归同步 IO 服务 递归总计 IO 服务 递归写入 
 
 
-| Docker 容器网络 | 命名空间容器名称网络 Docker 引擎 | 容器映像容器状态容器版本节点名称节点 IP 节点 UUID 节点操作系统 K8s 集群 Docker 版本容器 ID | Rx 丢弃的 Rx 字节接收错误接收数据包 Tx 丢弃的 TX 字节 Tx 错误 Tx 数据包 
+| Docker容器网络 | 命名空间容器名称网络Docker引擎 | 容器镜像 容器状态 容器版本 节点名称 节点IP 节点UUID 节点OS K8s集群 Docker版本 容器ID | RX 丢弃 RX 字节数 RX 错误数 RX 数据包数 TX 丢弃 TX 字节数 TX 错误数 TX 数据包数 
 
 
-| Docker 容器 CPU | 命名空间容器名称 CPU Docker 引擎 | Kubernetes 容器哈希 Kubernetes 容器端口 Kubernetes 容器重新启动计数 Kubernetes 容器终止消息路径 Kubernetes 容器终止消息策略 Kubernetes Pod 终止宽限期 Kubernetes 配置源 OpenShift SCC 容器映像容器状态容器版本节点名称 Kubernetes 容器日志路径 Kubernetes 容器名称 Docker Kubernetes 容器名称 键入 Kubernetes Pod 名称 Kubernetes Pod 命名空间 Kubernetes Pod UID Kubernetes 沙盒 ID 节点 IP 节点 UUID 节点操作系统 Kubernetes 集群 Docker 版本 Kubernetes 问题描述 Kubernetes 显示名称 OpenShift 标记架构版本模板哈希控制器版本哈希 Pod 模板生成工具服务架构构建日期架构许可证架构名称 架构供应商客户 Pod Kubernetes StatusSet Pod Name Tenant WEBCONSOLE Build Date License Vendor Architecture Authoritative Source URL RH Build Host RH Component Distribution Scope Install Maintainer Release Run Summary 卸载 VCS 参考 VCS Type 版本架构 URL 架构 VCS URL 架构 URL 架构版本容器 ID | 限制期限限制限制期限限制内核模式下的限制时间使用在用户模式下的使用量使用量百分比使用量系统使用量总数 
+| Docker 容器 CPU | 命名空间容器名称CPU Docker引擎 | Kubernetes 容器哈希 Kubernetes 容器端口 Kubernetes 容器重启计数 Kubernetes 容器终止消息路径 Kubernetes 容器终止消息策略 Kubernetes Pod 终止宽限期 Kubernetes 配置可见 Kubernetes 配置源 OpenShift SCC 容器镜像 容器状态 容器版本 节点名称 Kubernetes 容器日志路径 Kubernetes 容器名称 Kubernetes Docker 类型 Kubernetes Pod 名称 Kubernetes Pod 命名空间 Kubernetes Pod UID Kubernetes 沙盒 ID 节点 IP 节点 UUID 节点操作系统 Kubernetes 集群 Docker 版本 Kubernetes 描述 Kubernetes 显示名称 OpenShift 标签 架构版本 Pod 模板哈希 控制器修订哈希 Pod 模板生成 Kompose 服务架构构建日期 架构许可证 架构名称 架构供应商客户 Pod Kubernetes StatefulSet Pod 名称租户 Web 控制台构建日期 许可证供应商架构权威来源 URL RH 构建主机 RH 组件分布范围安装维护者发布运行摘要卸载 VCS 引用 VCS 类型版本架构 URL 架构 VCS URL 架构版本容器 ID | 限制周期限制限制周期限制限制时间内核模式使用率用户模式使用率使用率百分比系统使用率总计 
 |===
 
 
@@ -110,9 +110,9 @@ mountPath: /var/run/docker.sock
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| 按照配置页面上的说明操作后、我在Data Infrastructure Insight中看不到我的Docker指标。 | 检查 Telegraf 代理日志，查看它是否报告以下错误： e ！插件 [inputs.docker] 中的错误：尝试连接到 Docker 守护进程套接字时被拒绝获得权限如果确实如此，请按照上述说明执行必要的步骤为 Telegraf 代理提供对 Docker Unix 套接字的访问权限。 
+| 按照配置页面上的说明操作后，我没有在Data Infrastructure Insights中看到我的 Docker 指标。 | 检查 Telegraf 代理日志，看它是否报告以下错误：E！插件 [inputs.docker] 中的错误：尝试连接到 Docker 守护程序套接字时权限被拒绝如果确实如此，请采取必要的步骤，以便按照上面指定的方式为 Telegraf 代理提供对 Docker Unix 套接字的访问权限。 
 |===
-有关其他信息、请参见link:concept_requesting_support.html["支持"]页面。
+更多信息可从link:concept_requesting_support.html["支持"]页。

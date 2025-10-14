@@ -4,26 +4,26 @@ permalink: task_dc_oracle_zfs.html
 keywords: data collector, Oracle, ZFS, storage applicance 
 summary: 配置 Oracle ZFS 数据收集器。 
 ---
-= Oracle ZFS Storage Appliance 数据收集器
+= Oracle ZFS 存储设备数据收集器
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insight使用Oracle ZFS存储设备数据收集器收集清单和性能数据。
+Data Infrastructure Insights使用 Oracle ZFS 存储设备数据收集器来收集库存和性能数据。
 
 
 
-== 术语
+== Terminology
 
-Data Infrastructure Insight使用Oracle ZFS数据收集器采集清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights使用 Oracle ZFS 数据收集器获取库存信息。对于Data Infrastructure Insights获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
-| 磁盘(SSD) | 磁盘 
+| 磁盘（SSD） | 磁盘 
 
 
 | 集群 | 存储 
@@ -35,15 +35,15 @@ Data Infrastructure Insight使用Oracle ZFS数据收集器采集清单信息。�
 | LUN | 卷 
 
 
-| LUN 映射 | 卷映射 
+| LUN 映射 | 体积图 
 
 
-| 启动程序，目标 | 卷掩码 
+| 发起者，目标 | 体积遮罩 
 
 
-| 共享 | 内部卷 
+| 共享 | 内部体积 
 |===
-注意：这些只是常见的术语映射，可能并不代表此数据源的所有情形。
+注意：这些只是常用术语映射，可能并不代表此数据源的所有情况。
 
 
 
@@ -51,22 +51,22 @@ Data Infrastructure Insight使用Oracle ZFS数据收集器采集清单信息。�
 
 * ZFS Controller-1 和 ZFS Controller-2 的主机名
 * 管理员用户名和密码
-* 端口要求： 215 HTTP/HTTPS
+* 端口要求：215 HTTP/HTTPS
 
 
 
 
-== 所需性能指标
+== 所需绩效指标
 
-Oracle ZFS设备使存储管理员可以灵活地捕获性能统计信息。Data Infrastructure Insight希望您在高可用性对中配置_each_控制器、以捕获以下指标：
+Oracle ZFS 设备为存储管理员提供了很大的灵活性来捕获性能统计数据。Data Infrastructure Insights希望您将高可用性对中的每个控制器配置为捕获以下指标：
 
-* SMB2.ops[共享]
-* nfs3.ops[共享]
-* NFS4.ops[共享]
-* NFS4-1.ops[共享]
+* smb2.ops[分享]
+* nfs3.ops[分享]
+* nfs4.ops[分享]
+* nfs4-1.ops[分享]
 
 
-如果控制器未能捕获任何或所有这些数据、则可能会导致Data Infrastructure Insight不存在或低估"内部卷"上的工作负载。
+如果控制器无法捕获其中的任何一个或全部，则可能会导致Data Infrastructure Insights没有或少报“内部卷”上的工作负载。
 
 
 
@@ -74,13 +74,13 @@ Oracle ZFS设备使存储管理员可以灵活地捕获性能统计信息。Data
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| ZFS Controller-1 主机名 | 存储控制器 1 的主机名 
+| ZFS 控制器-1 主机名 | 存储控制器 1 的主机名 
 
 
-| ZFS Controller-2 主机名 | 存储控制器 2 的主机名 
+| ZFS 控制器-2 主机名 | 存储控制器 2 的主机名 
 
 
 | 用户名 | 存储系统管理员用户帐户的用户名 
@@ -94,25 +94,25 @@ Oracle ZFS设备使存储管理员可以灵活地捕获性能统计信息。Data
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 连接类型 | HTTPS 或 HTTP 也会显示默认端口 
+| 连接类型 | HTTPS 或 HTTP，还显示默认端口 
 
 
-| 覆盖连接端口 | 如果为空，请使用连接类型字段中的默认端口，否则输入要使用的连接端口 
+| 覆盖连接端口 | 如果为空，则在连接类型字段中使用默认端口，否则输入要使用的连接端口 
 
 
-| 清单轮询间隔 | 默认值为60秒 
+| 库存轮询间隔 | 默认值为 60 秒 
 
 
-| 性能轮询间隔（秒） | 默认值为300。 
+| 性能轮询间隔（秒） | 默认值为 300。 
 |===
 
 
 == 故障排除
 
-如果此数据收集器出现问题，请尝试执行以下操作：
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 
 
@@ -120,43 +120,43 @@ Oracle ZFS设备使存储管理员可以灵活地捕获性能统计信息。Data
 
 [cols="2a, 2a"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
  a| 
-" 登录凭据无效 "
+“登录凭据无效”
  a| 
-验证 ZFS 用户帐户和密码
-
-
-
- a| 
-"请求失败、状态为404 \https://.....:215/api/access/v1"
- a| 
-ZFS数组可能太旧，无法支持REST API。AK 2013.1.3.0是第一个支持REST API的ZFS操作系统版本、并非所有ZFS设备都可以升级到该版本。
+验证 Zfs 用户帐户和密码
 
 
 
  a| 
-" 配置错误 " ，并显示错误消息 "REST Service is disabled"
+“请求失败，状态为 404 \https://.....:215/api/access/v1”
  a| 
-验证是否已在此设备上启用 REST 服务。
+您的 ZFS 阵列可能太旧，无法支持 REST API。  AK 2013.1.3.0 是第一个支持 REST API 的 ZFS OS 版本，并非所有 ZFS 设备都可以升级到它。
 
 
 
  a| 
-" 配置错误 " ，并显示错误消息 " 用户未授权命令 "
+“配置错误”，错误消息为“REST 服务已禁用”
  a| 
-此错误可能是由于配置的用户未包含某些角色(例如、"advanced_Analytics ")。
+验证此设备上是否启用了 REST 服务。
 
-对具有只读角色的用户应用分析范围可能会删除此错误。请按照以下步骤操作：
 
-. 在ZFS系统上，从“Configuration -> Users”(配置->用户)屏幕中，将鼠标移动到角色上并双击以进行编辑
-. 从范围下拉菜单中选择"分析"。此时将显示可能属性的列表。
-. 单击最顶部的复选框、它将选择所有三个属性。
+
+ a| 
+“配置错误”，错误消息为“用户未授权执行命令”
+ a| 
+此错误可能是由于配置的用户未包含某些角色（例如“advanced_analytics”）。
+
+对具有只读角色的用户应用分析范围可能会消除该错误。按照下面的步骤进行操作：
+
+. 在 ZFs 系统上，从配置 -> 用户屏幕，将鼠标移到角色上并双击以允许编辑
+. 从范围下拉菜单中选择“分析”。出现可能的属性列表。
+. 单击最顶部的复选框，它将选择所有三个属性。
 . 单击右侧的添加按钮。
-. 单击弹出窗口右上角的应用按钮。此时将关闭弹出窗口。
+. 单击弹出窗口右上角的应用按钮。弹出窗口将会关闭。
 
 
 |===
-有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+更多信息可从link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

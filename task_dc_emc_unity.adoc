@@ -10,29 +10,29 @@ summary: 配置 VNXe 数据收集器。
 
 
 [role="lead"]
-Dell EMC Unity （原 VNXe ）数据收集器可为 VNXe 统一存储阵列提供清单支持。Data Infrastructure Insight目前支持iSCSI和NAS协议。
+DELL EMC Unity（以前称为 VNXe）数据收集器为 VNXe 统一存储阵列提供库存支持。Data Infrastructure Insights目前支持 iSCSI 和 NAS 协议。
 
 
 
 == 要求
 
-* Unity 数据收集器基于 CLI ；您必须将 Unisphere for Unity CLI （ uemcli.exe ）安装到 VNXe 数据收集器所在的采集单元上。
+* Unity 数据收集器基于 CLI；您必须将 Unisphere for Unity CLI (uemcli.exe) 安装到 VNXe 数据收集器所在的采集单元上。
 * uemcli.exe 使用 HTTPS 作为传输协议，因此采集单元需要能够启动与 Unity 的 HTTPS 连接。
 * Unity 设备的 IP 地址或完全限定域名
-* 您必须至少具有一个只读用户，以供数据收集器使用。
-* 端口 443 上的 HTTPS 为必填项
-* EMC Unity数据收集器为清单提供NAS和iSCSI支持；系统将发现光纤通道卷、但Data Infrastructure Insight不会报告FC映射、屏蔽或存储端口。
+* 您必须至少拥有一个只读用户以供数据收集器使用。
+* 端口 443 上需要 HTTPS
+* EMC Unity 数据收集器为库存提供 NAS 和 iSCSI 支持；将发现光纤通道卷，但Data Infrastructure Insights不会报告 FC 映射、屏蔽或存储端口。
 
 
 
 
-== 术语
+== Terminology
 
-Data Infrastructure Insight从Unity数据收集器采集以下清单信息。对于Data Infrastructure Insight采集的每种资产类型、显示了此资产最常用的术语。查看此数据收集器或对其进行故障排除时，请记住以下术语：
+Data Infrastructure Insights从 Unity 数据收集器获取以下库存信息。对于Data Infrastructure Insights获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：
 
 [cols="2*"]
 |===
-| 供应商 / 型号术语 | 数据基础架构洞察力一词 
+| 供应商/型号术语 | Data Infrastructure Insights术语 
 
 
 | 磁盘 | 磁盘 
@@ -47,7 +47,7 @@ Data Infrastructure Insight从Unity数据收集器采集以下清单信息。对
 | 存储池 | 存储池 
 
 
-| 常规iSCSI块信息、VMware VMFS | 共享 
+| 常规 iSCSI 块信息，VMware VMFS | 共享 
 
 
 | 复制远程系统 | 同步 
@@ -56,9 +56,9 @@ Data Infrastructure Insight从Unity数据收集器采集以下清单信息。对
 | iSCSI 节点 | iSCSI 目标节点 
 
 
-| iSCSI 启动程序 | iSCSI 目标启动程序 
+| iSCSI 发起程序 | iSCSI 目标启动器 
 |===
-注意：这些只是常见的术语映射，可能并不代表此数据源的所有情形。
+注意：这些只是常用术语映射，可能并不代表此数据源的所有情况。
 
 
 
@@ -66,10 +66,10 @@ Data Infrastructure Insight从Unity数据收集器采集以下清单信息。对
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| Unity 存储 | Unity 设备的 IP 地址或完全限定域名 
+| Unity存储 | Unity 设备的 IP 地址或完全限定域名 
 
 
 | 用户名 | Unity 设备的用户名 
@@ -78,7 +78,7 @@ Data Infrastructure Insight从Unity数据收集器采集以下清单信息。对
 | 密码 | Unity 设备的密码 
 
 
-| 可执行文件 UEMFLI 的完整路径 | 包含 _uemcli.exe 可执行文件的文件夹的完整路径 
+| 可执行 UEMCLI 的完整路径 | 包含 _uemcli.exe_ 可执行文件的文件夹的完整路径 
 |===
 
 
@@ -86,22 +86,22 @@ Data Infrastructure Insight从Unity数据收集器采集以下清单信息。对
 
 [cols="2*"]
 |===
-| 字段 | 说明 
+| 字段 | 描述 
 
 
-| 清单轮询间隔（分钟） | 两次清单轮询的间隔。默认值为40分钟 
+| 库存轮询间隔（分钟） | 库存调查之间的间隔。默认值为 40 分钟 
 
 
-| Unity 命令行界面端口 | 用于 Unity 命令行界面的端口 
+| Unity CLI 端口 | Unity CLI 使用的端口 
 
 
-| 性能轮询间隔（秒） | 默认值为300。 
+| 性能轮询间隔（秒） | 默认值为 300。 
 |===
 
 
 == 故障排除
 
-如果此数据收集器出现问题，请尝试执行以下操作：
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 
 
@@ -109,9 +109,9 @@ Data Infrastructure Insight从Unity数据收集器采集以下清单信息。对
 
 [cols="2*"]
 |===
-| 问题： | 请尝试以下操作： 
+| 问题： | 尝试一下： 
 
 
-| " 无法执行外部实用程序 " ，并显示错误消息 " 找不到 Unisphere 可执行文件 uemcli " | *验证IP地址、用户名和密码是否正确*确认Data Infrastructure Insight采集单元上安装了Unisphere命令行界面*确认数据源配置中的Unisphere命令行界面安装目录是否正确*确认VNXe的IP在数据源配置中是否正确。从Data Infrastructure Insight采集单元中、打开一个CMD并更改为已配置的安装目录：$｛INSTALLLDIR。尝试通过键入以下命令与 VNXe 设备建立连接： uemcli -d <your IP> -u <your ID>/sys/general show 
+| “无法执行外部实用程序”，错误消息为“无法找到 Unisphere 可执行文件 uemcli” | * 验证正确的 IP 地址、用户名和密码 * 确认 Unisphere CLI 已安装在Data Infrastructure Insights采集单元上 * 确认数据源配置中的 Unisphere CLI 安装目录正确 * 确认数据源配置中的 VNXe 的 IP 正确。从Data Infrastructure Insights采集单元打开 CMD 并更改为配置的安装目录：${INSTALLDIR.尝试通过键入以下内容与 VNXe 设备建立连接：uemcli -d <Your IP> -u <Your ID> /sys/general show 
 |===
-有关其他信息，请参见link:concept_requesting_support.html["支持"]页面或link:reference_data_collector_support_matrix.html["数据收集器支持列表"]。
+更多信息可从link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

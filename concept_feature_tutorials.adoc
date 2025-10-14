@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_feature_tutorials.html 
-summary: Data Infrastructure Insight提供了一些教程、用于向您展示如何执行许多任务。 
+summary: Data Infrastructure Insights有教程向您展示如何执行许多任务。 
 keywords: onboarding, getting started, video, tutorial, resolution, dashboard, query, troubleshooting 
 ---
 = 功能教程
@@ -14,27 +14,27 @@ keywords: onboarding, getting started, video, tutorial, resolution, dashboard, q
 
 
 [role="lead"]
-Data Infrastructure Insight加载了许多有用的功能、可帮助您快速轻松地解决问题、并深入了解您的企业环境。通过功能强大的查询轻松查找数据，在信息板中直观显示数据，并针对您设置的数据阈值发送电子邮件警报。
+Data Infrastructure Insights具有许多实用功能，可让您快速轻松地解决问题，并深入了解您的企业环境。使用强大的查询功能轻松查找数据，在仪表板中可视化数据，并针对您设置的数据阈值发送电子邮件警报。
 
 
 
-== 检查清单和视频教程
+== 清单和视频教程
 
-Data Infrastructure Insight租户上显示的*启动检查清单*包含几个有用的任务和概念的列表。在检查清单中选择一项后、您将转到该概念对应的Data Infrastructure Insight页面。例如，单击_Create a Dashboard _项可打开Data Infrastructure Insight *Dbards*页面。
+Data Infrastructure Insights租户上显示的*启动清单*包含几个有用的任务和概念的列表。选择清单中的一项将带您进入适合该概念的Data Infrastructure Insights页面。例如，单击“创建仪表板”项将打开Data Infrastructure Insights“仪表板”页面。
 
-image:OnboardingChecklist.png["教程检查清单进度"]
+image:OnboardingChecklist.png["教程清单进度"]
 
-页面顶部是一个视频教程链接，用于显示如何创建信息板。您可以根据需要多次查看此视频，直到单击 _got it ！不要再显示此内容 _ 链接。每次转到 " 信息板 " 页面时，都会显示此视频，直到您将其取消为止。
+页面顶部有一个视频教程链接，展示如何创建仪表板。您可以随意多次观看该视频，直到单击“知道了！”不要再显示这个_该视频的链接。每次您进入仪表板页面时都会看到该视频，直到您关闭它为止。
 
 image:Startup-DashboardWatchVideo.png["观看视频链接"]
 
-至少观看一次视频后，检查清单中的 _Create a Dashboard_ 项将被选中，表示您已完成此教程。然后，您可以继续学习下一个教程。
+观看视频至少一次后，清单中的“创建仪表板”项目将被勾选，表明您已完成本教程。然后您可以继续下一个教程。
 
 
-NOTE: 您可以按自己喜欢的顺序查看教程，也可以根据需要多次查看，直到被取消为止。
+NOTE: 您可以按照自己喜欢的顺序查看教程，并且可以多次查看，直到关闭为止。
 
 
 
-=== 取消检查清单
+=== 取消清单
 
-启动检查清单会一直显示、直到您单击检查清单底部的_不再显示此项_链接。即使取消检查清单、在您从消息标题栏中取消显示每个教程之前、每个相应的Data Infrastructure Insight页面上仍会显示这些教程。
+启动检查表会一直显示，直到您单击检查表底部的“不再显示”链接为止。即使在关闭清单之后，教程仍然可以在每个适当的Data Infrastructure Insights页面上找到，直到您从消息标题栏中关闭每个教程为止。

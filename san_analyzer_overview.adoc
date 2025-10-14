@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: san_analyzer_overview.html 
-summary: SAN Analyzer可为租户上的资产提供拓扑 
+summary: SAN Analyzer 为租户上的资产提供拓扑 
 keywords: topology, analyze, analysis, map 
 ---
 = SAN 分析器概述
@@ -16,32 +16,32 @@ keywords: topology, analyze, analysis, map
 [role="lead"]
 SAN 在处理重要工作负载方面发挥着至关重要的作用，但其复杂性可能会导致严重的中断和客户中断。借助 DII 的 *SAN Analyzer*，管理 SAN 变得更简单、更高效。这个强大的工具提供了端到端的可视性，将依赖关系从 VM/主机映射到网络、LUN 和存储。通过提供交互式拓扑图，SAN Analyzer 使您能够查明问题、了解变化并增强对数据流的理解。使用 SAN Analyzer 简化复杂 IT 环境中的 SAN 管理并提高对块工作负载的可见性。
 
-image:san_analyzer_example_with_panel.png["存储系统的SAN分析器拓扑图"]
+image:san_analyzer_example_with_panel.png["存储系统的 SAN Analyzer 拓扑图"]
 
 
 
 == 探索资产之间的联系
 
-选择*Observability > Analyze > SAN Analyzer*以查看SAN Analyzer。设置应用程序、主机、网络结构和/或存储的筛选器。此时将显示对象的地图、其中显示了连接的对象。将鼠标悬停在某个对象上可查看这些连接的流量指标。
+选择 *Observability > Analyze > SAN Analyzer* 来查看 SAN Analyzer。为应用程序、主机、结构和/或存储设置过滤器。显示对象的地图，其中显示了连接的对象。将鼠标悬停在某个对象上即可查看该连接的流量指标。
 
-image:san_analyzer_traffic_metrics.png["SAN分析器流量指标示例"]
+image:san_analyzer_traffic_metrics.png["SAN 分析器流量指标示例"]
 
 
-NOTE: 大多数SAN分析器筛选器(包括您可能添加的筛选器)都是上下文相关的；在其中一个筛选器中选择对象时、其他筛选器下拉列表中提供的选项将根据选定的一个或多个对象进行刷新。唯一的例外是应用程序、端口和交换机；这些筛选器不是上下文筛选器。
+NOTE: 大多数 SAN Analyzer 过滤器（包括您可能添加的过滤器）都是上下文相关的；当您在其中一个过滤器中选择一个对象时，其他过滤器下拉菜单中显示的选项将根据所选对象的上下文进行刷新。唯一的例外是应用程序、端口和交换机；这些过滤器不是上下文的。
 
-单击某个对象或组将打开一个分出面板、其中提供了有关该对象及其连接的其他详细信息。"分出"面板将显示一个摘要、其中提供了有关选定对象的详细信息(例如、IP、虚拟机管理程序、已连接网络结构等、具体取决于对象类型)、并通过图表显示对象的指标(例如延迟或IOPS)以及相关更改和警报。如果需要、您也可以选择显示图表中前相关对象的指标。
+单击某个对象或组将打开一个滑出面板，提供有关该对象及其连接的更多详细信息。滑出面板显示摘要，其中提供有关所选对象的详细信息（例如，IP、虚拟机管理程序、连接结构等，具体取决于对象的类型），以及显示对象指标（例如延迟或 IOPS）以及相关更改和警报的图表。如果需要，您还可以选择在图表上显示“最相关”对象的指标。
 
-除了摘要选项卡之外、如果所选对象适用、则"分出"面板还会显示端口详细信息或区域信息等选项卡。
+除了“摘要”选项卡之外，滑出面板还显示适用于所选对象的端口详细信息或区域信息等选项卡。
 
-image:san_analyzer_slideout_example.png["SAN分析器分出面板"]
+image:san_analyzer_slideout_example.png["SAN 分析器滑出面板"]
 
 如果您的环境有不同的协议，您可以按 iSCSI 或 FC 进行过滤：
 
 image:san_analyzer_protocols.png["SAN 分析器协议"]
 
-如果您的环境包含iSCSI设备、则将鼠标悬停在_iSCSI_对象上方可突出显示与这些相关iSCSI设备相关的连接。
+如果您的环境包含 iSCSI 设备，将鼠标悬停在 _iSCSI_ 对象上会突出显示与这些相关 iSCSI 设备相关的连接。
 
-image:san_analyzer_iscsi_traffic.png["iSCSI流量已突出显示"]
+image:san_analyzer_iscsi_traffic.png["突出显示 iSCSI 流量"]
 
 
 
@@ -51,7 +51,7 @@ image:san_analyzer_iscsi_traffic.png["iSCSI流量已突出显示"]
 
 [cols="2*"]
 |===
-| * 问题： * | * 请尝试此操作： * 
+| *问题：* | *试试这个：* 
 
 
 | 我在图例中看到诸如_trafficUtilization_或_trafficRate_等指标的<0、=0或>0。 | 这种情况可能在极少数情况下发生，即度量值低于小数点后两位，例如 0.000123。扩大时间窗口可能有助于更有效地分析指标。 

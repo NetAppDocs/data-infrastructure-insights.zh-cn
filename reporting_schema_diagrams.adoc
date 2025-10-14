@@ -4,7 +4,7 @@ permalink: reporting_schema_diagrams.html
 keywords: Schema, DB Schema, premium, dwh, data warehouse 
 summary: 报告架构图 
 ---
-= Data Infrastructure Insight报告架构图
+= Data Infrastructure Insights报告架构图
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -17,13 +17,13 @@ summary: 报告架构图
 本文档提供了报告数据库的架构图。
 
 
-NOTE: 数据基础架构洞察中提供了报告功能link:concept_subscribing_to_cloud_insights.html["高级版"]。
+NOTE: 报告功能可在Data Infrastructure Insights中使用link:concept_subscribing_to_cloud_insights.html["高级版"]。
 
 
 
-== 清单数据集市
+== 库存数据集市
 
-以下图像介绍了清单数据集市。
+下图描述了库存数据集市。
 
 
 
@@ -39,45 +39,45 @@ image:apps_annot.jpg["应用程序"]
 
 
 
-=== Kubnetes指标
+=== Kubernetes 指标
 
 image:k8s.jpg["Kubernetes"]
 
 
 
-==== Kubbernetes集群指标数据
+==== Kubernetes 集群指标事实
 
-image:k8s_cluster_metrics_fact.jpg["Kubbernetes集群指标数据"]
-
-
-
-==== Kubbernetes命名空间指标数据
-
-image:k8s_namespace_metrics_fact.jpg["Kubbernetes命名空间指标数据"]
+image:k8s_cluster_metrics_fact.jpg["Kubernetes 集群指标事实"]
 
 
 
-==== Kubbernetes节点指标数据
+==== Kubernetes 命名空间指标事实
 
-image:k8s_node_metrics_fact.jpg["Kubbernetes节点指标数据"]
-
-
-
-==== Kubbernetes PVC指标数据
-
-image:k8s_pvc_metrics_fact.jpg["Kubbernetes PVC指标数据"]
+image:k8s_namespace_metrics_fact.jpg["Kubernetes 命名空间指标事实"]
 
 
 
-==== Kubnetes工作负载指标数据
+==== Kubernetes 节点指标事实
 
-image:k8s_workload_metrics_fact.jpg["Kubnetes工作负载指标数据"]
+image:k8s_node_metrics_fact.jpg["Kubernetes 节点指标事实"]
+
+
+
+==== Kubernetes PVC 指标事实
+
+image:k8s_pvc_metrics_fact.jpg["Kubernetes PVC 指标事实"]
+
+
+
+==== Kubernetes 工作负载指标事实
+
+image:k8s_workload_metrics_fact.jpg["Kubernetes 工作负载指标事实"]
 
 
 
 === NAS
 
-image:nas.jpg["NAS"]
+image:nas.jpg["nas"]
 
 
 
@@ -95,7 +95,7 @@ image:connectivity.jpg["端口连接"]
 
 === SAN 网络结构
 
-image:fabric.jpg["SAN网络结构"]
+image:fabric.jpg["SAN 结构"]
 
 
 
@@ -111,22 +111,22 @@ image:storage_node.jpg["存储节点"]
 
 
 
-=== 虚拟机
+=== VM
 
-image:vm.jpg["虚拟机"]
+image:vm.jpg["virtual machine"]
 
 '''
 
 
-== 容量数据艺术
+== 容量数据集市
 
-下图说明了容量数据艺术。
+下图描述了容量数据集市。
 
 
 
-=== 成本分摊
+=== 退款
 
-image:Chargeback_Fact.jpg["成本分摊"]
+image:Chargeback_Fact.jpg["退款"]
 
 
 
@@ -142,21 +142,21 @@ image:fs_util.jpg["文件系统利用率"]
 
 
 
-=== 内部卷容量
+=== 内部容积
 
-image:Internal_Volume_Capacity_Fact.jpg["内部卷容量"]
-
-
-
-=== Kubnetes PV容量
-
-image:k8s_pvc_capacity_fact.jpg["Kubnetes PV容量"]
+image:Internal_Volume_Capacity_Fact.jpg["内部容积"]
 
 
 
-=== 端口容量
+=== Kubernetes PV 容量
 
-image:ports.png["端口容量"]
+image:k8s_pvc_capacity_fact.jpg["Kubernetes PV 容量"]
+
+
+
+=== 港口容量
+
+image:ports.png["港口容量"]
 
 
 
@@ -190,22 +190,22 @@ image:VM_Capacity_Fact.jpg["VM 容量"]
 
 
 
-=== 卷容量
+=== 容积容量
 
-image:Volume_Capacity.jpg["卷容量"]
+image:Volume_Capacity.jpg["容积容量"]
 
 '''
 
 
-== 性能数据集市
+== 绩效数据集市
 
-下图说明了性能数据集市。
+下图描述了性能数据集市。
 
 
 
-=== 应用程序卷每小时性能
+=== 应用程序量每小时表现
 
-image:application_performance_fact.jpg["应用程序卷每小时性能"]
+image:application_performance_fact.jpg["应用程序量每小时表现"]
 
 
 
@@ -215,9 +215,9 @@ image:cluster_switch_performance_fact.jpg["集群交换机性能"]
 
 
 
-=== 磁盘每日性能
+=== 磁盘每日表现
 
-image:disk_daily_performance_fact.jpg["磁盘每日性能"]
+image:disk_daily_performance_fact.jpg["磁盘每日表现"]
 
 
 
@@ -227,45 +227,45 @@ image:disk_hourly_performance_fact.jpg["磁盘每小时性能"]
 
 
 
-=== 主机每小时性能
+=== 主持人每小时表现
 
-image:host_performance_fact.jpg["主机每小时性能"]
-
-
-
-=== 主机VM每日性能
-
-image:host_vm_daily_performance_fact.jpg["主机VM每日性能"]
+image:host_performance_fact.jpg["主持人每小时表现"]
 
 
 
-=== 主机VM每小时性能
+=== 主机虚拟机每日性能
 
-image:host_vm_hourly_performance_fact.jpg["主机VM每小时性能"]
-
-
-
-=== 内部卷每小时性能
-
-image:internal_volume_performance_fact.jpg["内部卷每小时性能"]
+image:host_vm_daily_performance_fact.jpg["主机虚拟机每日性能"]
 
 
 
-=== 内部卷每日性能
+=== 主机虚拟机每小时性能
 
-image:internal_volume_daily_performance_fact.jpg["内部卷每日性能"]
-
-
-
-=== qtree 每日性能
-
-image:QtreeDailyPerformanceFact.jpg["qtree 每日性能"]
+image:host_vm_hourly_performance_fact.jpg["主机虚拟机每小时性能"]
 
 
 
-=== qtree每小时性能
+=== 内部交易量每小时表现
 
-image:QtreeHourlyPerformanceFact.jpg["qtree每小时性能"]
+image:internal_volume_performance_fact.jpg["内部交易量每小时表现"]
+
+
+
+=== 内部交易量每日表现
+
+image:internal_volume_daily_performance_fact.jpg["内部交易量每日表现"]
+
+
+
+=== Qtree 每日表现
+
+image:QtreeDailyPerformanceFact.jpg["Qtree 每日表现"]
+
+
+
+=== Qtree 每小时性能
+
+image:QtreeHourlyPerformanceFact.jpg["Qtree 每小时性能"]
 
 
 
@@ -287,51 +287,51 @@ image:switch_performance_for_host_hourly_fact.jpg["主机的交换机每小时�
 
 
 
-=== 端口的交换机每小时性能
+=== 端口每小时切换性能
 
-image:switch_performance_for_port_hourly_fact.jpg["端口的交换机每小时性能"]
-
-
-
-=== 存储的交换机每小时性能
-
-image:switch_performance_for_storage_hourly_fact.jpg["存储的交换机每小时性能"]
+image:switch_performance_for_port_hourly_fact.jpg["端口每小时切换性能"]
 
 
 
-=== 磁带的交换机每小时性能
+=== 存储交换机每小时性能
 
-image:switch_performance_for_tape_hourly_fact.jpg["磁带的交换机每小时性能"]
-
-
-
-=== 虚拟机性能
-
-image:vm_hourly_performance_fact.png["虚拟机性能"]
+image:switch_performance_for_storage_hourly_fact.jpg["存储交换机每小时性能"]
 
 
 
-=== 主机的虚拟机每日性能
+=== 磁带的每小时切换性能
 
-image:vm_daily_performance_fact.png["主机的虚拟机每日性能"]
-
-
-
-=== 主机的虚拟机每小时性能
-
-image:vmware_host_performance_fact.jpg["VM每小时主机性能"]
+image:switch_performance_for_tape_hourly_fact.jpg["磁带的每小时切换性能"]
 
 
 
-=== 主机的虚拟机每日性能
+=== VM 性能
 
-image:vm_daily_performance_fact.png["主机的虚拟机每日性能"]
+image:vm_hourly_performance_fact.png["VM 性能"]
 
 
 
-=== 主机的虚拟机每小时性能
+=== 主机虚拟机每日性能
 
-image:vm_hourly_performance_fact.png["主机的虚拟机每小时性能"]
+image:vm_daily_performance_fact.png["主机虚拟机每日性能"]
+
+
+
+=== 主机虚拟机每小时性能
+
+image:vmware_host_performance_fact.jpg["VM 每小时主机性能"]
+
+
+
+=== 主机虚拟机每日性能
+
+image:vm_daily_performance_fact.png["主机虚拟机每日性能"]
+
+
+
+=== 主机虚拟机每小时性能
+
+image:vm_hourly_performance_fact.png["主机虚拟机每小时性能"]
 
 
 
@@ -347,12 +347,12 @@ image:vmdk_hourly_performance_fact.jpg["VMDK 每小时性能"]
 
 
 
-=== 卷每小时性能
+=== 每小时成交量表现
 
-image:volume_performance_fact.jpg["卷每小时性能"]
+image:volume_performance_fact.jpg["每小时成交量表现"]
 
 
 
-=== 卷每日性能
+=== 成交量每日表现
 
-image:volume_daily_performance_fact.jpg["卷每日性能"]
+image:volume_daily_performance_fact.jpg["成交量每日表现"]
