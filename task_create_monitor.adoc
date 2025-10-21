@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_create_monitor.html 
 keywords: monitors, alerts, log, metric, system-defined, system, metric, 
-summary: 创建监视器来对性能或库存阈值以及指标或日志条件发出警报。 
+summary: 创建自定义指标和日志监视器，以通过自动警报和通知主动跟踪基础设施性能、容量阈值和关键事件。 
 ---
 = 使用监视器发出警报
 :hardbreaks:
@@ -67,8 +67,19 @@ image:MonitorMetricFilter.png["指标过滤"]
 
 处理集成数据（Kubernetes、 ONTAP Advanced Data 等）时​​，指标过滤会从绘制的数据系列中删除单个/不匹配的数据点，这与基础设施数据（存储、VM、端口等）不同，其中过滤器会对数据系列的聚合值进行处理，并可能从图表中删除整个对象。
 
+指标监视器适用于存储、交换机、主机、虚拟机等库存对象，以及ONTAP Advanced 或 Kubernetes 数据等集成指标。监控库存对象时，请注意不能选择“分组依据”方法。但是，监控集成数据时允许分组。
 
-TIP: 要创建多条件监视器（例如，IOPS > X 和延迟 > Y），请将第一个条件定义为阈值，将第二个条件定义为过滤器。
+
+
+==== 多条件监视器
+
+您可以选择通过添加第二个条件来进一步优化您的指标监视器。只需展开“+添加次要指标条件”提示并配置附加条件。
+
+image:multi-condition_monitor_second_condition.png["设置第二个条件"]
+
+如果两个条件都满足，监视器就会发出警报。
+
+请注意，您只能“AND”第二个条件；您不能选择在一个条件“OR”另一个条件上发出警报。
 
 
 

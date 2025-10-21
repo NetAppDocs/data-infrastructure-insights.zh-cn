@@ -7,6 +7,10 @@ summary: Data Infrastructure Insights跟踪基础设施的变化，以便于分�
 = 基础设施变化分析
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -37,6 +41,12 @@ image:infraChange_filter_dropdown.png["基础设施变更过滤下拉菜单"]
 您还可以从过滤器设置下方的状态部分直接转到关键警报或更改，包括当前警报最多的前三个资源。
 
 image:Change_Analysis_filters_and_status.png["状态以及警报和更改的快速链接"]
+
+
+
+== 关于长期警报的说明
+
+请注意，保持活动状态超过 24 小时的警报将每 24 小时在“警报和更改”列表中显示一次，因此您可能会注意到同一条警报被列出多次。每个警报都具有相同的警报 ID、相同的开始时间等，并且状态为“警报中”，直到警报得到解决。
 
 
 

@@ -32,6 +32,7 @@ NOTE: ONTAP REST 收集器可用作以前基于 ONTAPI 的收集器的替代品�
 
 * ONTAP版本 9.14.1 或更高版本。
 * 端口要求：443
+* 请注意， ONTAP REST 收集器不支持 Fpolicy 指标（工作负载安全数据收集器使用 FPolicy 服务器，而 FPolicy 指标允许您监控工作负载安全数据收集活动）。要支持 Fpolicy 指标，请使用 link:task_dc_na_cdot.html["ONTAP数据管理"] 集电极。
 
 
 

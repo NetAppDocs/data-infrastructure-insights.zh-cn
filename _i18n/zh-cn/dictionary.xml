@@ -5577,7 +5577,6 @@
   <block id="6a0fb4ccd9df37a4928d666f900fc111" category="list-text">9.11.1P7</block>
   <block id="ee297c3ee4d46f935bc45d0d064be8f4" category="list-text">9.11.1P8</block>
   <block id="ac844c749ee94b582ae244c828b00311" category="list-text">9.11.1P9</block>
-  <block id="b50ef0c82f2cb86e10106d6dcf4be872" category="list-text">9.11.1X12</block>
   <block id="eba1f3287bdc33dfa25c084b5e15a4c5" category="list-text">9.12.1</block>
   <block id="b5c4301816e6af2bf88c788518733eb7" category="list-text">9.12.1P1</block>
   <block id="8f54fbf368765fd506959c0f94135922" category="list-text">9.12.1P10</block>
@@ -5630,9 +5629,6 @@
   <block id="ebbe4cbae17517c84e54eba083c8da4b" category="list-text">9.14.1P8</block>
   <block id="d73363717d834d4a2ab99eeb68453131" category="list-text">9.14.1P8D5</block>
   <block id="f8a8cd0923816d5b6d78f88100eeeb74" category="list-text">9.14.1P9</block>
-  <block id="86259c42e39aca9d604557fc0df7cdfd" category="list-text">9.14.1X14</block>
-  <block id="e2a6950e117d892956cab85ead3b8f5f" category="list-text">9.14.1X20</block>
-  <block id="2f550d4ca52f3cf0205b3dc3813685a1" category="list-text">9.14.1X24</block>
   <block id="d9df468f7ec059062fe27406e7e15237" category="list-text">9.15.0P1</block>
   <block id="d8fde17f7482290d3fc56b981fe6e5f3" category="list-text">9.15.0P2</block>
   <block id="120ae360daecd24b580b71f9f2766bbc" category="list-text">9.15.1</block>
@@ -5646,15 +5642,9 @@
   <block id="a94def7bd8645fffeb7856a0b730acfb" category="list-text">9.15.1P7</block>
   <block id="cc1e51f6714a9a4de877bfe5d6abc663" category="list-text">9.15.1P7D4</block>
   <block id="fd43304224fcabc307d59c5ec05b2dec" category="list-text">9.15.1P8</block>
-  <block id="988a2f8f75724c92369ef7cf6c1af9c3" category="list-text">9.15.1X19</block>
-  <block id="398a2f5fbfe6d752b77067052fc148f5" category="list-text">9.15.1X27</block>
   <block id="0bd0e673df4c14cae45a11fac30c530b" category="list-text">9.16.1</block>
   <block id="5329b0514f6808bed8f7ea91aa5dfffe" category="list-text">9.16.1P1</block>
-  <block id="38581ea3df1d6327e2ef6aa30a992d3d" category="list-text">9.16.1X16</block>
-  <block id="309cc4b6e6becf1dabfbf424307d63a3" category="list-text">9.16.1X26</block>
-  <block id="abcfd7456fda735d64d7072f1f14b7a9" category="list-text">9.16.1X29</block>
   <block id="81e76ca235a16e1d875f94529d326de0" category="list-text">9.17.1</block>
-  <block id="c4e97bb93085dd52655d04ae6039f80d" category="list-text">9.17.1X7</block>
   <block id="ede0f5d55262ef3a8fefabdc493d497d" category="list-text">9.2.0P3</block>
   <block id="db3defc5982e5a3ab1c7c23c3b9bd186" category="list-text">9.2.0P4</block>
   <block id="b7cc677864a8a148a8f6712077c927d6" category="list-text">9.3.0P15</block>
@@ -5707,7 +5697,6 @@
   <block id="300af83339932c117e40a26058e99342" category="list-text">9.7.0P7</block>
   <block id="7bf36aff015b9cae71de886282513b8d" category="list-text">9.7.0P8</block>
   <block id="ce901682465ebe915d94307190f673c8" category="list-text">9.7.0P9</block>
-  <block id="3944340f50ba82bd002202199d7abe5e" category="list-text">9.7.0X17</block>
   <block id="b986ed6de4db8c07091d6f0b537ea702" category="list-text">9.8.0</block>
   <block id="da6f3108688381d819a41aa913cf1e19" category="list-text">9.8.0P1</block>
   <block id="deb8a9119a167f8fa049b82613624fbc" category="list-text">9.8.0P10</block>
@@ -5715,7 +5704,6 @@
   <block id="85c61f496ad4ea3c959fecea506ac58e" category="list-text">9.8.0P12</block>
   <block id="3c92472032750ed4a2c0e27d1800b25e" category="list-text">9.8.0P13</block>
   <block id="7f9b4710e7cd1de83b1d2aacebadcc53" category="list-text">9.8.0P14</block>
-  <block id="0125e3652c60c88a180594ab60564bba" category="list-text">9.8.0P14X5</block>
   <block id="8c5f541323d4aa6813a524fbf9dd59a8" category="list-text">9.8.0P15</block>
   <block id="4a6dae456f8b918b4c60072a72969636" category="list-text">9.8.0P16</block>
   <block id="8a3155dbb9a7e427a5aefa328145b791" category="list-text">9.8.0P17</block>
@@ -5745,7 +5733,6 @@
   <block id="f42881361c9c6865d49fd05bf347146a" category="list-text">9.9.1P2</block>
   <block id="d4960421bee21c61ebf8d27b38d6080a" category="list-text">9.9.1P20</block>
   <block id="7d6a08d11ebcd453bf13060310fcfeeb" category="list-text">9.9.1P3</block>
-  <block id="f9d157259fbe48b272c368d76bb54049" category="list-text">9.9.1P5X2</block>
   <block id="baf935f699cf2fba569f01e21467a7d7" category="list-text">9.9.1P6</block>
   <block id="5c5ab1439f6ac62d53efee3758d3c999" category="list-text">9.9.1P7</block>
   <block id="f6d334c5abfc986211c0472ba79714a7" category="list-text">9.9.1P9</block>
@@ -5787,9 +5774,6 @@
   <block id="7fdbd16e1ff751fad04600d723d8011d" category="list-text">NetApp版本 9.16.1：2025 年 1 月 18 日星期六 19:31:15 UTC</block>
   <block id="88021ecf50f7541d3d24492a191e471b" category="list-text">NetApp版本 9.16.1P1：2025 年 2 月 14 日星期五 03:53:50 UTC</block>
   <block id="652755e90249a76ef63d7204d6ab39ec" category="list-text">NetApp版本 9.16.1RC1：2024 年 11 月 4 日星期一 10:39:46 UTC</block>
-  <block id="e47d8be37475d6721d2595b43299102a" category="list-text">NetApp版本 9.16.1X26：2024 年 12 月 9 日星期一 10:27:42 UTC</block>
-  <block id="7faf1c14f22abc4af287a0938e0e11d4" category="list-text">NetApp版本 9.16.1X29：2025 年 1 月 12 日星期日 11:18:25 UTC</block>
-  <block id="047366cbe3a752b392b76ee3de5a0693" category="list-text">NetApp版本 9.17.1X7：2025 年 2 月 14 日星期五 11:21:52 UTC</block>
   <block id="7012035b5539239acce1eeb19262a908" category="list-text">NetApp发布 Clawhammer__9.14.1：2024 年 5 月 18 日星期六 09:23:49 UTC</block>
   <block id="85d028d27872290fedf829049ad47f51" category="list-text">NetApp发布 Cloudstream__9.16.1：2024 年 11 月 4 日星期一 05:51:46 UTC</block>
   <block id="efb74c609c847e1c896c8b72027c2404" category="list-text">NetApp发布 Cloudstream__9.16.1：2025 年 3 月 13 日星期四 20:55:54 UTC</block>
@@ -8235,7 +8219,6 @@
   <block id="46152eb4e0d7febe5ed5ec5aa51b068f" category="admonition">对于具有大量相关资产的环境，将应用程序分配继承到这些资产可能需要几分钟。如果您拥有许多相关资产，请留出更多时间进行继承。</block>
   <block id="f64880272c45a077dc9152ab7dd2f24a" category="paragraph">将主机分配给应用程序后，您可以将剩余资产分配给应用程序。要访问应用程序的登录页面，请单击*管理&gt;应用程序*并选择您创建的应用程序。</block>
   <block id="91771bf0d5be307a250d706e57df1eb1" category="summary">创建监视器来对性能或库存阈值以及指标或日志条件发出警报。</block>
-  <block id="3c86c080f12d925b5a5ec1ad14563f65" category="paragraph">配置监视器以跟踪基础设施资源的性能阈值、日志事件和异常。为节点写入延迟、存储容量或应用程序性能等指标创建自定义警报，并在满足这些条件时接收通知。</block>
   <block id="3f5fb2a45a144339f9591a104342f79b" category="paragraph">监视器允许您设置由“基础设施”对象（例如存储、VM、EC2 和端口）生成的指标的阈值，以及“集成”数据（例如为 Kubernetes、 ONTAP高级指标和 Telegraf 插件收集的数据）的阈值。当超过警告级别或临界级别阈值时，这些_metric_监视器会向您发出警报。</block>
   <block id="e730b9c349889018dc9deaccaa5a438b" category="paragraph">您还可以创建监视器，当检测到指定的日志事件时触发警告、严重或信息级别的警报。</block>
   <block id="b18c8095ec7b7cd0c63a4e28b715f6c1" category="inline-link-macro">系统定义的监视器</block>
@@ -8257,13 +8240,11 @@
   <block id="313acdf9633421e44aea4a9be12b5071" category="list-text">在下拉菜单中，搜索并选择要监控的对象类型和指标。</block>
   <block id="0afd1ac0e8283e24d8739752316dccba" category="paragraph">您可以设置过滤器来缩小要监控的对象属性或指标的范围。</block>
   <block id="02421e310193c48e3a305e97cbba58c2" category="paragraph"><block ref="02421e310193c48e3a305e97cbba58c2" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="8ce06b1a529052723e1fb36a1c2f1a25" category="admonition">要创建多条件监视器（例如，IOPS &gt; X 和延迟 &gt; Y），请将第一个条件定义为阈值，将第二个条件定义为过滤器。</block>
   <block id="9ef1d5830a24b9e150ec53e978038289" category="section-title">定义监视器的条件。</block>
   <block id="2e75e9aa28dbca090ee157cf8d539e66" category="list-text">选择要监控的对象和指标后，设置警告级别和/或临界级别阈值。</block>
   <block id="734f668bd72716899c84bbaedc8d2564" category="list-text">对于“警告”级别，在我们的示例中输入 200。示例图中显示了表示此警告级别的虚线。</block>
   <block id="a86a316c20ed3c30474a8a9bcbca7f2f" category="list-text">对于“_Critical_”级别，输入 400。示例图中显示了表示此临界水平的虚线。</block>
   <block id="d00ff899ed7e3bcc490e418870ed0ce4" category="paragraph">该图表显示历史数据。图表上的警告和严重级别线是监视器的直观表示，因此您可以轻松看到监视器在每种情况下何时可能触发警报。</block>
-  <block id="390f4b7f0b6066d4e61aa66cd61b3e6c" category="list-text">对于发生间隔，选择“连续”且周期为“15 分钟”。</block>
   <block id="750f553c0f9776809a020b980f3dc25a" category="paragraph">您可以选择在超出阈值时立即触发警报，或者等到阈值持续超出一段时间后再触发警报。在我们的示例中，我们不希望每次总 IOPS 峰值超过警告或严重级别时都收到警报，而希望仅当监控对象连续超过其中一个级别至少 15 分钟时才收到警报。</block>
   <block id="812faed524486085f300f8e0bdba77fe" category="inline-image-macro">定义监视器的条件</block>
   <block id="be0ee88944c0674ffaad4c460224553f" category="paragraph"><block ref="be0ee88944c0674ffaad4c460224553f" category="inline-image-macro-rx" type="image"></block></block>
@@ -12791,4 +12772,18 @@
   <block id="399bd1ee587245ecac6f39beaa99886f" category="sidebar">PostgreSQL</block>
   <block id="14590850b4107a6f92feb1af739b82eb" category="sidebar">木偶</block>
   <block id="15ec8934d96530d4c5f4a3b0f701f745" category="sidebar">重新思考数据库</block>
+  <block id="b6c4679bc199e5db8f88b60803f5ca85" category="section-title">关于长期警报的说明</block>
+  <block id="83e49813b50f1fc5e03ffde57c985102" category="paragraph">请注意，保持活动状态超过 24 小时的警报将每 24 小时在“警报和更改”列表中显示一次，因此您可能会注意到同一条警报被列出多次。每个警报都具有相同的警报 ID、相同的开始时间等，并且状态为“警报中”，直到警报得到解决。</block>
+  <block id="079090a1dc96bbd4e45426ceeedd592f" category="summary">创建自定义指标和日志监视器，以通过自动警报和通知主动跟踪基础设施性能、容量阈值和关键事件。</block>
+  <block id="883d09869adb0b8fae6c4387af23b6d4" category="paragraph">配置监视器以跟踪基础设施资源的性能阈值、日志事件和异常。为节点写入延迟、存储容量或应用程序性能等指标创建自定义警报，并在满足这些条件时接收通知。</block>
+  <block id="a7cd6a99f9ca0fccc58590218d395239" category="paragraph">指标监视器适用于存储、交换机、主机、虚拟机等库存对象，以及ONTAP Advanced 或 Kubernetes 数据等集成指标。监控库存对象时，请注意不能选择“分组依据”方法。但是，监控集成数据时允许分组。</block>
+  <block id="70b37ea4cf45e401178bb71faa1e50fe" category="section-title">多条件监视器</block>
+  <block id="6e8d7620a4a0bc7614ae9936242cc79e" category="paragraph">您可以选择通过添加第二个条件来进一步优化您的指标监视器。只需展开“+添加次要指标条件”提示并配置附加条件。</block>
+  <block id="c7c9e436435c4770e86c98098336f9a2" category="inline-image-macro">设置第二个条件</block>
+  <block id="8047e4ba43998007d5db74d70e51011b" category="paragraph"><block ref="8047e4ba43998007d5db74d70e51011b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="53cd31c5f3906e17dd7f8643c332ec08" category="paragraph">如果两个条件都满足，监视器就会发出警报。</block>
+  <block id="440695f7e9d74e3d3294a5cd9405bf75" category="paragraph">请注意，您只能“AND”第二个条件；您不能选择在一个条件“OR”另一个条件上发出警报。</block>
+  <block id="f5efcf93de96054f67b29d58662ad5c6" category="list-text">对于发生间隔，选择“连续”且周期为“15 分钟”。</block>
+  <block id="95e94216ef8b85a76727809c3dfcbcc0" category="inline-link-macro">ONTAP数据管理</block>
+  <block id="2520cfbb37bc8bbd2fc91278c73eb838" category="list-text">请注意， ONTAP REST 收集器不支持 Fpolicy 指标（工作负载安全数据收集器使用 FPolicy 服务器，而 FPolicy 指标允许您监控工作负载安全数据收集活动）。要支持 Fpolicy 指标，请使用 <block ref="5887f651a571af9233df120cb7d32347" category="inline-link-macro-rx"></block> 集电极。</block>
 </blocks>
