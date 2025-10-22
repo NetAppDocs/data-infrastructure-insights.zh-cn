@@ -1,0 +1,259 @@
+---
+sidebar: sidebar 
+permalink: task_dc_na_ontap_afx.html 
+keywords: data collector, ontap, afx 
+summary: ONTAP AFX 收集器 
+---
+= NetApp ONTAP AFX 数据收集器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+该数据收集器使用 REST API 调用从运行ONTAP 9.16.0 及更高版本的存储系统获取库存、EMS 日志和性能数据。
+
+
+
+== 要求
+
+以下是配置和使用此数据收集器的要求：
+
+* 您必须具有具有所需访问级别的用户帐户的访问权限。请注意，如果创建新的 REST 用户/角色，则需要管理员权限。
++
+** 从功能上讲，Data Infrastructure Insights主要发出读取请求，但Data Infrastructure Insights需要一些写入权限才能在ONTAP阵列中注册。请参阅下面的“关于权限的说明”。
+
+
+* ONTAP版本 9.16.0 或更高版本。
+* 端口要求：443
+
+
+
+
+== 关于权限的说明
+
+由于许多Data Infrastructure Insights的ONTAP仪表板依赖于高级ONTAP计数器，因此您应该在数据收集器的高级配置部分中保持 *启用高级计数器数据收集* 处于启用状态。
+
+要在集群级别为Data Infrastructure Insights创建本地帐户，请使用集群管理管理员用户名/密码登录ONTAP ，然后在ONTAP服务器上执行以下命令：
+
+. 在开始之前，您必须使用_管理员_帐户登录ONTAP ，并且必须启用_诊断级命令_。
+. 检索 _admin_ 类型的虚拟服务器的名称。您将在后续命令中使用此名称。
++
+ vserver show -type admin
+. 使用以下命令创建角色：
++
+....
+security login rest-role create -role {role name} -api /api -access readonly
+security login rest-role create -role {role name} -api /api/cluster/agents -access all
+vserver services web access create -name spi -role {role name} -vserver {vserver name as retrieved above}
+security login create -user-or-group-name {username} -application http -authentication-method password -role {role name}
+....
+. 使用以下命令创建只读用户。执行创建命令后，系统将提示您输入该用户的密码。
++
+ security login create -username ci_user -application http -authentication-method password -role ci_readonly
+
+
+如果使用 AD/LDAP 帐户，则命令应该是
+
+ security login create -user-or-group-name DOMAIN\aduser/adgroup -application http -authentication-method domain -role ci_readonly
+最终的角色和用户登录将类似于以下内容。您的实际输出可能会有所不同：
+
+[listing]
+----
+security login rest-role show -vserver <vserver name> -role restRole
+
+               Role                                    Access
+Vserver        Name            API                     Level
+----------     -------------   -------------------     ------
+<vserver name> restRole        /api                    readonly
+                               /api/cluster/agents     all
+2 entries were displayed.
+
+security login show -vserver <vserver name> -user-or-group-name restUser
+
+Vserver: <vserver name>
+                                                                 Second
+User/Group                 Authentication                 Acct   Authentication
+Name           Application Method        Role Name        Locked Method
+-------------- ----------- ------------- ---------------- ------ --------------
+restUser       http        password      restRole         no     none
+----
+
+
+== 迁移
+
+要从以前的ONTAP （ontapi）数据收集器迁移到较新的ONTAP REST 收集器，请执行以下操作：
+
+. 添加 REST 收集器。建议输入与之前收集器配置的用户不同的用户的信息。例如，使用上面权限部分中注明的用户。
+. 暂停前一个收集器，这样它就不会继续收集数据。
+. 让新的 REST 收集器获取数据至少 30 分钟。忽略在此期间任何看起来不“正常”的数据。
+. 休息一段时间后，随着 REST 收集器继续获取数据，您应该会看到数据趋于稳定。
+
+
+如果您愿意，可以使用相同的过程返回到之前的收集器。
+
+
+
+== 配置
+
+[cols="2*"]
+|===
+| 字段 | 描述 
+
+
+| ONTAP管理 IP 地址 | NetApp集群的 IP 地址或完全限定域名。必须是集群管理 IP/FQDN。 
+
+
+| ONTAP REST 用户名 | NetApp集群的用户名 
+
+
+| ONTAP REST 密码 | NetApp集群密码 
+|===
+
+
+== 高级配置
+
+[cols="2*"]
+|===
+| 字段 | 描述 
+
+
+| 库存轮询间隔（分钟） | 默认为 60 分钟。 
+
+
+| 性能轮询间隔（秒） | 默认值为 60 秒。 
+
+
+| 高级计数器数据收集 | 选择此选项可将ONTAP高级计数器数据包含在轮询中。默认启用。 
+
+
+| 启用 EMS 事件收集 | 选择此项以包含ONTAP EMS 日志事件数据。默认启用。 
+
+
+| EMS 轮询间隔（秒） | 默认值为 60 秒。 
+|===
+
+
+== Terminology
+
+Data Infrastructure Insights从ONTAP数据收集器获取库存、日志和性能数据。对于所获取的每种资产类型，都会显示该资产最常用的术语。查看或排除此数据收集器的故障时，请记住以下术语：
+
+[cols="2*"]
+|===
+| 供应商/型号术语 | Data Infrastructure Insights术语 
+
+
+| 集群 | 存储 
+
+
+| 节点 | 存储节点 
+
+
+| 卷/ FlexVol/ FlexGroup | 内部容积 
+
+
+| qtree/flextree | Qtree（类型：Explixit/Default） 
+
+
+| S3 存储桶 | Qtree（类型：Bucket） 
+
+
+| StoragePod/存储可用区域 | 存储池 
+
+
+| 共享 | 共享 
+
+
+| 配额 | 配额 
+
+
+| SVM（存储虚拟机） | 存储虚拟机 
+|===
+
+
+== ONTAP数据管理术语
+
+以下术语适用于您可能在ONTAP数据管理存储资产登录页面上找到的对象或参考。其中许多术语也适用于其他数据收集器。
+
+
+
+=== 存储
+
+* 模型 – 此集群内唯一、离散节点模型名称的逗号分隔列表。如果集群中的所有节点都是相同的模型类型，则只会出现一个模型名称。
+* 供应商 – 如果您正在配置新的数据源，您将看到相同的供应商名称。
+* 序列号 – 阵列 UUID
+* IP – 通常是数据源中配置的 IP 或主机名。
+* 微码版本 – 固件。
+* 原始容量——系统中所有物理磁盘的以 2 为底的总和，无论其作用如何。
+* 延迟——表示主机在读取和写入过程中所面临的工作负载的情况。理想情况下，Data Infrastructure Insights会直接获取该值，但事实往往并非如此。代替提供此功能的阵列，Data Infrastructure Insights通常会执行根据各个内部卷的统计数据得出的 IOP 加权计算。
+* 吞吐量——从内部卷聚合而成。管理——这可能包含设备管理界面的超链接。由Data Infrastructure Insights数据源以编程方式创建，作为库存报告的一部分。
+
+
+
+
+=== 存储池
+
+* 存储——该池位于哪个存储阵列上。强制的。
+* 类型——来自可能性枚举列表的描述性值。最常见的是“聚合”或“RAID 组””。
+* 节点 - 如果此存储阵列的架构使得池属于特定的存储节点，则其名称将在此处显示为其自己的登录页面的超链接。
+* 使用闪存池 – 是/否值 – 这个基于 SATA/SAS 的池是否有用于缓存加速的 SSD？
+* 冗余——RAID 级别或保护方案。  RAID_DP 是双重奇偶校验，RAID_TP 是三重奇偶校验。
+* 容量——这里的值是逻辑已用容量、可用容量和逻辑总容量，以及这些容量中使用的百分比。
+* 过度承诺的容量 - 如果您使用效率技术分配的卷或内部卷容量总和大于存储池的逻辑容量，则此处的百分比值将大于 0%。
+* 快照 - 如果您的存储池架构将其部分容量专用于专门用于快照的分段区域，则快照容量已用和总计。  MetroCluster配置中的ONTAP可能会出现这种情况，而其他ONTAP配置则不太会出现这种情况。
+* 利用率——一个百分比值，显示为该存储池贡献容量的任何磁盘的最高磁盘繁忙百分比。磁盘利用率不一定与阵列性能有很强的相关性——在没有主机驱动的工作负载的情况下，由于磁盘重建、重复数据删除活动等，利用率可能会很高。此外，许多阵列的复制实现可能会提高磁盘利用率，但不会显示为内部卷或卷工作负载。
+* IOPS – 为该存储池贡献容量的所有磁盘的 IOP 总和。吞吐量——为该存储池贡献容量的所有磁盘的总吞吐量。
+
+
+
+
+=== 存储节点
+
+* 存储——此节点属于哪个存储阵列。强制的。
+* HA 合作伙伴 – 在一个节点将故障转移到一个且仅一个其他节点的平台上，通常会在这里看到它。
+* 状态——节点的健康状况。仅当阵列足够健康，可以被数据源清点时才可用。
+* 模型——节点的模型名称。
+* 版本——设备的版本名称。
+* 序列号 – 节点序列号。
+* 内存 – 以 2 为基数的内存（如果可用）。
+* 利用率 – 在ONTAP上，这是来自专有算法的控制器压力指数。每次性能轮询时，都会报告 0 到 100% 之间的数字，该数字是WAFL磁盘争用或平均 CPU 利用率中的较高者。如果您观察到持续值 > 50%，则表明规模不足 - 可能是控制器/节点不够大或旋转磁盘不够大，无法吸收写入工作负载。
+* IOPS – 直接从节点对象上的ONTAP REST 调用派生。
+* 延迟 – 直接源自对节点对象的ONTAP REST 调用。
+* 吞吐量 – 直接源自对节点对象的ONTAP REST 调用。
+* 处理器 – CPU 数量。
+
+
+
+
+== ONTAP功率指标
+
+多种ONTAP模型为Data Infrastructure Insights提供了可用于监控或警报的功率指标​​。下面的支持和不支持型号列表并不全面，但应该提供一些指导；一般来说，如果某个型号与列表中的型号属于同一系列，则支持应该是相同的。
+
+支持的型号：
+
+A200 A220 A250 A300 A320 A400 A700 A700s A800 A900 C190 FAS2240-4 FAS2552 FAS2650 FAS2720 FAS2750 FAS8200 FAS8300 FAS8700 FAS9000
+
+不支持的型号：
+
+FAS2620 FAS3250 FAS3270 FAS500f FAS6280 FAS/ AFF 8020 FAS/ AFF 8040 FAS/ AFF 8060 FAS/ AFF 8080
+
+
+
+== 故障排除
+
+如果您在使用此数据收集器时遇到问题，请尝试以下操作：
+
+[cols="2*"]
+|===
+| 问题： | 尝试一下： 
+
+
+| 尝试创建ONTAP REST 数据收集器时，会出现如下错误：配置：10.193.70.14：10.193.70.14 上的ONTAP rest API 不可用：10.193.70.14 无法获取 /api/cluster：400 错误请求 | 这可能是由于较旧的ONTAP阵列（例如ONTAP 9.6）没有 REST API 功能。 ONTAP 9.14.1 是ONTAP REST 收集器支持的最低ONTAP版本。在 REST ONTAP之前的版本中应该会出现“400 Bad Request”响应。对于支持 REST 但不是 9.14.1 或更高版本的ONTAP版本，您可能会看到以下类似消息：配置：10.193.98.84：10.193.98.84 上的ONTAP rest API 不可用：10.193.98.84：10.193.98.84 上的ONTAP rest API 可用：cheryl5-cluster-2 9.10.1 a3cb3247-3d3c-11ee-8ff3-005056b364a7 但不是最低版本 9.14.1。 
+
+
+| 我在ONTAP ontapi 收集器显示数据的地方看到空的或“0”指标。 | ONTAP REST 不会报告仅在ONTAP系统内部使用的指标。例如， ONTAP REST 不会收集系统聚合，而只会收集“数据”类型的 SVM。 ONTAP REST 指标的其他示例可能报告零或空数据：InternalVolumes：REST 不再报告 vol0。聚合：REST 不再报告 aggr0。存储：大多数指标都是内部卷指标的汇总，并且会受到上述指标的影响。存储虚拟机：REST 不再报告除“数据”类型之外的 SVM（例如“集群”、“管理”、“节点”）。您可能还会注意到，由于默认性能轮询周期从 15 分钟变为 5 分钟，包含数据的图表的外观也发生了变化。更频繁的轮询意味着需要绘制更多的数据点。 
+|===
+更多信息可从link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

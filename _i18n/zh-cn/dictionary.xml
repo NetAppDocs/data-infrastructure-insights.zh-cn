@@ -12776,7 +12776,6 @@
   <block id="83e49813b50f1fc5e03ffde57c985102" category="paragraph">请注意，保持活动状态超过 24 小时的警报将每 24 小时在“警报和更改”列表中显示一次，因此您可能会注意到同一条警报被列出多次。每个警报都具有相同的警报 ID、相同的开始时间等，并且状态为“警报中”，直到警报得到解决。</block>
   <block id="079090a1dc96bbd4e45426ceeedd592f" category="summary">创建自定义指标和日志监视器，以通过自动警报和通知主动跟踪基础设施性能、容量阈值和关键事件。</block>
   <block id="883d09869adb0b8fae6c4387af23b6d4" category="paragraph">配置监视器以跟踪基础设施资源的性能阈值、日志事件和异常。为节点写入延迟、存储容量或应用程序性能等指标创建自定义警报，并在满足这些条件时接收通知。</block>
-  <block id="a7cd6a99f9ca0fccc58590218d395239" category="paragraph">指标监视器适用于存储、交换机、主机、虚拟机等库存对象，以及ONTAP Advanced 或 Kubernetes 数据等集成指标。监控库存对象时，请注意不能选择“分组依据”方法。但是，监控集成数据时允许分组。</block>
   <block id="70b37ea4cf45e401178bb71faa1e50fe" category="section-title">多条件监视器</block>
   <block id="6e8d7620a4a0bc7614ae9936242cc79e" category="paragraph">您可以选择通过添加第二个条件来进一步优化您的指标监视器。只需展开“+添加次要指标条件”提示并配置附加条件。</block>
   <block id="c7c9e436435c4770e86c98098336f9a2" category="inline-image-macro">设置第二个条件</block>
@@ -12786,4 +12785,16 @@
   <block id="f5efcf93de96054f67b29d58662ad5c6" category="list-text">对于发生间隔，选择“连续”且周期为“15 分钟”。</block>
   <block id="95e94216ef8b85a76727809c3dfcbcc0" category="inline-link-macro">ONTAP数据管理</block>
   <block id="2520cfbb37bc8bbd2fc91278c73eb838" category="list-text">请注意， ONTAP REST 收集器不支持 Fpolicy 指标（工作负载安全数据收集器使用 FPolicy 服务器，而 FPolicy 指标允许您监控工作负载安全数据收集活动）。要支持 Fpolicy 指标，请使用 <block ref="5887f651a571af9233df120cb7d32347" category="inline-link-macro-rx"></block> 集电极。</block>
+  <block id="b2422fa602be830d9f1a2469dd70ca20" category="inline-link-macro">NetApp ONTAP AFX</block>
+  <block id="83cd27100a931554f0e05219011edf39" category="cell"><block ref="83cd27100a931554f0e05219011edf39" category="inline-link-macro-rx"></block></block>
+  <block id="14ec544dd26342f2315dc51923b34e66" category="summary">ONTAP AFX 收集器</block>
+  <block id="aaab7580be4232835e9f12e5691f118f" category="doc">NetApp ONTAP AFX 数据收集器</block>
+  <block id="e395c9addcba424f5bda562994dfecbe" category="cell">卷/ FlexVol/ FlexGroup</block>
+  <block id="1574b47ca9477a3fc7635017b8f4ca0b" category="cell">qtree/flextree</block>
+  <block id="16aac8a4d65f63c39da98362e32e250d" category="cell">Qtree（类型：Explixit/Default）</block>
+  <block id="84ace9fb8e132c96d1dfcd31447efedc" category="cell">S3 存储桶</block>
+  <block id="1143dbaa613581e6f7e9245d88a5a30d" category="cell">Qtree（类型：Bucket）</block>
+  <block id="26beb8e28a6498b161cc513e4d05c9f5" category="cell">StoragePod/存储可用区域</block>
+  <block id="474d2ef9225b003245e9f5a40297e1e8" category="cell">SVM（存储虚拟机）</block>
+  <block id="07ab2cfb4a15dea7a3c4679e886966f3" category="sidebar">ONTAP AFX</block>
 </blocks>
