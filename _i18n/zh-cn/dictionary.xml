@@ -3882,8 +3882,6 @@
   <block id="16442b20a2319083af65dedb2d7e942e" category="paragraph">您可以选择将仪表板共享给所有人或选定的用户，并赋予其编辑或只读权限。</block>
   <block id="1dcba5cd7d6049883623c0653a2031f6" category="inline-image-macro">下拉菜单用于共享具有编辑或读取权限的仪表板</block>
   <block id="ac0466f21ebde71eed9f3673b4c7da1b" category="paragraph"><block ref="ac0466f21ebde71eed9f3673b4c7da1b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3305ac26b15ec00c4372c85a08bb7042" category="summary">支持的数据收集器列表。</block>
-  <block id="3a6b9b02361ff37889bb4453f5ce5933" category="doc">Data Infrastructure Insights数据收集器列表</block>
   <block id="4a67aaff87a4b62a93d49b26e8eab486" category="paragraph">Data Infrastructure Insights支持来自许多供应商和服务的各种数据收集器。</block>
   <block id="247727b698ccc6204ad7466cac97b566" category="paragraph">数据收集器按以下类型分类：</block>
   <block id="3688337d7dae83e1ae45c29303993fc2" category="list-text">基础设施：从供应商设备（如存储阵列、交换机、虚拟机管理程序或备份设备）获取。</block>
@@ -4022,8 +4020,6 @@
   <block id="4d9746bceefe2b6bd2586d1c3e4d2733" category="cell"><block ref="4d9746bceefe2b6bd2586d1c3e4d2733" category="inline-link-macro-rx"></block></block>
   <block id="b988e43525055930d8d214d3116d4c04" category="inline-link-macro">NetApp Cloud Volumes ONTAP</block>
   <block id="ecf8390ebf4bfbf85b7308b7ca58aaa1" category="cell"><block ref="ecf8390ebf4bfbf85b7308b7ca58aaa1" category="inline-link-macro-rx"></block></block>
-  <block id="91cd47436c04c106182959241ee93b9d" category="inline-link-macro">适用于 AWS 的NetApp Cloud Volumes 服务</block>
-  <block id="3d569988d784be7b4a432df70e13153d" category="cell"><block ref="3d569988d784be7b4a432df70e13153d" category="inline-link-macro-rx"></block></block>
   <block id="acb242e4a47b7f1537825e1c4eacc87a" category="inline-link-macro">适用于ONTAP 9.9+ 的NetApp云连接</block>
   <block id="32b322f0c18e116c5d878598d8fedae2" category="cell"><block ref="32b322f0c18e116c5d878598d8fedae2" category="inline-link-macro-rx"></block></block>
   <block id="995d9995da501d3734932d95524f1a35" category="inline-link-macro">NetApp Data ONTAP 7-模式</block>
@@ -10162,17 +10158,6 @@
   <block id="34727dd01aaa3e0d53fd68d429bbff53" category="doc">NetApp Cloud Connection for ONTAP 9.9+ 数据收集器</block>
   <block id="0803ffc49bb5d009027ad578d29858b8" category="paragraph">该数据收集器创建云连接以支持从ONTAP 9.9+ CVO、 AFF和FAS系统收集数据。</block>
   <block id="fb915b764f3baecfa629ff22686e14ee" category="admonition">自 2023 年 4 月 4 日起，此数据收集器将无法再安装在Data Infrastructure Insights中，并且将于 2023 年 7 月从所有Data Infrastructure Insights安装中删除。</block>
-  <block id="aa660f33d4c20ae2b92aa73acb4c5828" category="summary">为 AWS 数据收集器配置NetApp Cloud Volumes Services</block>
-  <block id="6d719c7976115879cdcafb7922e7e5fd" category="doc">适用于 AWS 数据收集器的NetApp Cloud Volumes Services</block>
-  <block id="85930060216df642a21fd8c262d1cc6c" category="paragraph">该数据收集器支持从NetApp Cloud Volumes Services 收集 AWS 配置的库存。</block>
-  <block id="4aacf3bc449dad1d249c2fd81ea2e532" category="cell">Cloud Volumes 区域</block>
-  <block id="4378310503f4a4c4ba83139f38afb7b2" category="cell">适用于 AWS 的NetApp Cloud Volumes 服务区域</block>
-  <block id="d876ff8da67c3731ae25d8335a4168b4" category="cell">API 密钥</block>
-  <block id="66859c6a7a598a12f20c8244126d4b34" category="cell">Cloud Volumes API 密钥</block>
-  <block id="5eb6bb157528b365f84c27bb4784031b" category="cell">机密密钥</block>
-  <block id="9447267c06cce84dba179c481872fb16" category="cell">Cloud Volumes 密钥</block>
-  <block id="36d35d8bdb33f254c1406a404bc7c125" category="cell">我收到了类似这样的错误：“无法执行请求：连接到 &lt;AWS 区域端点&gt;:8080 [&lt;AWS 区域端点&gt;/AWS 区域端点 IP&gt;] 失败：连接超时：GET \https://&lt;AWS 区域端点 FQDN&gt;:8080/v1/Storage/IPRanges HTTP/1.1”</block>
-  <block id="f51fb2108c9628f317aa92174475a004" category="cell">这<block ref="588cebdad26ee4a9a3bb08c290310eb7" category="inline-link-macro-rx"></block>Data Infrastructure Insights用于与采集单元进行通信，Data Infrastructure Insights和数据收集器本身之间不会进行通信。您可以尝试以下几种方法：确保采集单元能够解析 fqdn 并到达所需的端口。确认不需要代理即可到达错误消息中指定的端点。 Curl 可用于测试采集单元和端点之间的通信。确保您没有使用代理进行此测试。示例：root@acquisitionunit# curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;数据收集器凭证中使用的 api 密钥 -H secret-key:&lt;数据收集器凭证中使用的密钥&gt; -X GET \https://&lt;AWS 区域终端节点&gt;:8080/v1/Storage/IPRanges</block>
   <block id="47407ceeb441f7c5d1eac8ca6060c4b7" category="summary">配置NetApp Cloud Volumes ONTAP数据收集器</block>
   <block id="a7544b3f9e0cc7c642c8b55af45cc192" category="doc">NetApp Cloud Volumes ONTAP数据收集器</block>
   <block id="2285e08ef18a1a3f2e02b335409147d7" category="paragraph">该数据收集器支持从Cloud Volumes ONTAP配置收集库存。</block>
@@ -10391,8 +10376,6 @@
   <block id="bca66716b9ca2d13a4c28be69b276777" category="cell">3.3</block>
   <block id="caab88a7f89273838ab79f84c1c8a49d" category="summary">配置NetApp E 系列 REST 数据收集器。</block>
   <block id="7d9a2bf43caef4a2c2ccab31b58ad1fb" category="doc">NetApp E系列REST数据收集器</block>
-  <block id="02bbac9de1d6cf62350e13b0ebc66279" category="paragraph">NetApp E 系列 REST 数据收集器收集库存和性能数据。收集器支持使用相同配置并报告相同数据的固件 7.x+。  REST 收集器监控存储池的加密状态以及相关磁盘和卷的加密状态，并提供存储节点 CPU 利用率作为性能计数器 - 这是传统SANtricity E 系列收集器所不提供的功能。</block>
-  <block id="06026757f9dde1467a9d040a8e0ca5e8" category="paragraph">Cloud insight 使用 REST 从NetApp E 系列获取以下库存信息。对于所获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：</block>
   <block id="199cdaad4b2e2da65f3c12904a570c15" category="inline-link-macro">E 系列SANtricity API</block>
   <block id="025b66c3feb7622d3e2d83b097539fc0" category="list-text">该收集器仅支持具有*本机 REST API 功能*的 E 系列型号阵列。 E 系列组织为旧款 E 系列阵列提供了阵列外、可安装的 REST API 分发：此收集器不支持该场景。使用旧阵列的用户应继续使用Data Infrastructure Insights'<block ref="1e9e2e04984e423436b9d1423e41c8ce" category="inline-link-macro-rx"></block>集电极。</block>
   <block id="1dec37be48852b1e80d1d4ddd48a1698" category="list-text">“E 系列控制器 IP 地址”字段支持以逗号分隔的 2 个 IP/主机名的字符串；如果第一个 IP/主机名无法访问，收集器将智能地尝试第二个 IP/主机名。</block>
@@ -12743,7 +12726,6 @@
   <block id="140864078aeca1c7c35b4beb33c53c34" category="sidebar">Microsoft</block>
   <block id="c5865855c43d734069987786177edd98" category="sidebar">Hyper-V</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="sidebar">Cloud Volumes ONTAP</block>
-  <block id="b81efc5684c71c82d1f7592812e5af66" category="sidebar">适用于 AWS 的 Cloud Volumes 服务</block>
   <block id="d97291003c6a6e6615571bf02531ca30" category="sidebar">ONTAP ASA （全 SAN 阵列）r2</block>
   <block id="9c58e11f96200548fd2f5932b391509a" category="sidebar">ONTAP数据管理软件</block>
   <block id="bf9973f393dbc9824e3e96f831e12c25" category="sidebar">ONTAP REST 收集器</block>
@@ -12797,4 +12779,9 @@
   <block id="26beb8e28a6498b161cc513e4d05c9f5" category="cell">StoragePod/存储可用区域</block>
   <block id="474d2ef9225b003245e9f5a40297e1e8" category="cell">SVM（存储虚拟机）</block>
   <block id="07ab2cfb4a15dea7a3c4679e886966f3" category="sidebar">ONTAP AFX</block>
+  <block id="8a3c7a91b37c85b11fcedc99bf01705d" category="summary">Data Infrastructure Insights支持的所有数据收集器的字母顺序参考列表，按基础设施和服务类型组织。</block>
+  <block id="3f98097ad0f17344bf7bd5127344ba03" category="doc">Data Infrastructure Insights数据收集器参考列表</block>
+  <block id="a7cd6a99f9ca0fccc58590218d395239" category="paragraph">指标监视器适用于存储、交换机、主机、虚拟机等库存对象，以及ONTAP Advanced 或 Kubernetes 数据等集成指标。监控库存对象时，请注意不能选择“分组依据”方法。但是，监控集成数据时允许分组。</block>
+  <block id="c712dc09bb9c9243894a5127306517ba" category="paragraph">NetApp E 系列 REST 数据收集器收集库存、日志和性能数据。收集器支持使用相同配置并报告相同数据的固件 7.x+。  REST 收集器监控存储池、磁盘和卷的加密状态、存储节点 CPU 利用率以及旧版SANtricity E 系列收集器未提供的日志功能。</block>
+  <block id="e997ccbcc3dc041951b04d1a57ba2999" category="paragraph">Data Infrastructure Insights使用 REST 从NetApp E 系列获取以下库存信息。对于所获取的每种资产类型，都会显示用于该资产的最常用术语。查看或排除此数据收集器的故障时，请记住以下术语：</block>
 </blocks>
