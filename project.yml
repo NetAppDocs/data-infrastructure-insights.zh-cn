@@ -31,6 +31,8 @@ sidebar:
       entries:
       - title: 概述
         url: "/task_getting_started_with_cloud_insights.html"
+      - title: 功能教程
+        url: "/concept_feature_tutorials.html"
       - title: 采集单元要求
         url: "/concept_acquisition_unit_requirements.html"
       - title: 配置采集单元

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_feature_tutorials.html 
-summary: Data Infrastructure Insights有教程向您展示如何执行许多任务。 
+summary: 循序渐进的视频教程可帮助您掌握Data Infrastructure Insights功能，例如仪表板、查询、监控和故障排除。 
 keywords: onboarding, getting started, video, tutorial, resolution, dashboard, query, troubleshooting 
 ---
-= 功能教程
+= 视频教程入门指南
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ keywords: onboarding, getting started, video, tutorial, resolution, dashboard, q
 
 
 [role="lead"]
-Data Infrastructure Insights具有许多实用功能，可让您快速轻松地解决问题，并深入了解您的企业环境。使用强大的查询功能轻松查找数据，在仪表板中可视化数据，并针对您设置的数据阈值发送电子邮件警报。
+通过我们的功能教程，您可以高效地学习Data Infrastructure Insights洞察，教程包含分步视频指南和进度清单。通过实践教程，掌握创建仪表盘、构建查询、设置监控和解决问题等基本技能，帮助您快速提高工作效率。
 
 
 
@@ -38,3 +38,19 @@ NOTE: 您可以按照自己喜欢的顺序查看教程，并且可以多次查�
 === 取消清单
 
 启动检查表会一直显示，直到您单击检查表底部的“不再显示”链接为止。即使在关闭清单之后，教程仍然可以在每个适当的Data Infrastructure Insights页面上找到，直到您从消息标题栏中关闭每个教程为止。
+
+
+
+== 视频教程
+
+观看以下视频了解更多信息。
+
+link:https://media.netapp.com/video-detail/248621bd-6619-5dc8-9718-5d78d0fd21da/turn-raw-data-into-actionable-insights["将原始数据转化为可执行的洞察"^]
+
+link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8/create-powerful-dashboards-with-netapp["使用NetApp创建强大的仪表板"^]
+
+link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer["使用 VM Analyzer 简化故障排除"^]
+
+link:https://media.netapp.com/video-detail/d0530e0b-a222-52e7-92b1-dbeeee41b712/explore-and-analyze-with-queries-in-data-infrastructure-insights["Data Infrastructure Insights中的查询进行探索和分析"^]
+
+link:https://media.netapp.com/video-detail/43497a8e-f648-56b7-9bc7-8d5d4274510f/proactive-infrastructure-monitoring-with-alerts-and-monitors["主动式基础设施监控，具备警报和监控功能"^]
