@@ -166,7 +166,6 @@
   <block id="033d64e0352a24070b4d6ba6e37207af" category="cell">Windows 要求</block>
   <block id="696c660ff8d9323e55146a6dbd4e4088" category="cell">操作系统</block>
   <block id="cd016f59e3bce345c5a22a0c73b84bc2" category="cell">运行以下任一许可版本的计算机：* AlmaLinux 9.3 至 9.5 * Centos（64 位）：7.2 至 7.9、8.1 至 8.4、Stream 8、Stream 9 * Debian（64 位）：9 至 12 * OpenSUSE Leap 15.1 至 15.6 * Oracle Enterprise Linux（64 位）：7.5 至 7.9、8.1 至 8.10、9.3 至 9.6 * Red Hat（64 位）：7.2 至 7.9、8.1 至 8.10、9.1 至 9.6 * Rocky 9.0 至 9.5 * SUSE Linux Enterprise Server 15、15 SP2 至 15 SP6 * Ubuntu Server：18.04、20.04、22.04、24.04 LTS * 上述平台上的 SELinux这台计算机不应运行其他应用程序级软件。建议使用专用服务器。如果您使用 SELinux 运行，建议在采集单元系统上执行以下命令：sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights</block>
-  <block id="31192200d4ffdcb773965b28dbfbe0fd" category="cell">运行以下任一许可版本的计算机：* Microsoft Windows 10 64 位* Microsoft Windows 11* Microsoft Windows Server 2012* Microsoft Windows Server 2012 R2* Microsoft Windows Server 2016* Microsoft Windows Server 2019* Microsoft Windows Server 2022* Microsoft Windows Server 2025 此计算机不应运行任何其他应用程序级软件。建议使用专用服务器。</block>
   <block id="2b55387dd066c5bac646ac61543d152d" category="cell">CPU</block>
   <block id="36b415ace97b614344903d1d039cc60d" category="cell">2 个 CPU 核心</block>
   <block id="c90a13d8ec8fe53c6bb33fe10af6f2fe" category="cell">相同的</block>
@@ -179,7 +178,6 @@
   <block id="2f704538f6c9d6459a97314be98124e2" category="inline-link-macro">数据收集器</block>
   <block id="fcf3c8b7073234871f47a3a68559837a" category="inline-link-macro">这里（Linux）</block>
   <block id="5543adb6f73fddb3a3944d6d35b0de3e" category="inline-link-macro">这里（Windows）</block>
-  <block id="937199d3845aa27dde279d09f7d4c2fb" category="cell">需要 100 Mbps/1 Gbps 以太网连接、静态 IP 地址以及从采集单元到 *.cloudinsights.netapp.com 或您的Data Infrastructure Insights租户（即 \https://&lt;tenant_id&gt;.c01.cloudinsights.netapp.com）的端口 80 或 443（出站）连接。对于采集单元和每个数据收集器之间的要求，请参阅<block ref="be56515064596049a4b61d9d1a149cf9" category="inline-link-macro-rx"></block>。如果您的组织需要使用代理来访问互联网，您可能需要了解组织的代理行为并寻求某些例外以使Data Infrastructure Insights能够发挥作用。例如，您的组织是否默认阻止访问，并且仅允许例外访问特定网站/域？如果是这样，您需要将以下域添加到例外列表中：*.cloudinsights.netapp.com 有关更多信息，请阅读有关代理的信息<block ref="05c875968683001fc59f206218314b72" category="inline-link-macro-rx"></block>或者<block ref="554efdd06704a764ab0a7e3947e279ff" category="inline-link-macro-rx"></block>。请注意，必须从 AU 到Data Infrastructure Insights“出站”打开端口 443。</block>
   <block id="d08ccf52b4cdd08e41cfb99ec42e0b29" category="cell">权限</block>
   <block id="b121d11a2c041b51e1c63a940169fc95" category="cell">采集单元服务器上的 Sudo 权限。  /tmp 必须以 exec 功能挂载。</block>
   <block id="f2675114c7e961125e58746739ce868e" category="cell">采集单元服务器上的管理员权限</block>
@@ -12774,4 +12772,6 @@
   <block id="751c3e0cbbd3c7bba533140abe0f0dde" category="inline-xref">插针/拔针说明</block>
   <block id="55f4b0c8991710156e1d9a114af60fe1" category="cell">Unpin 会立即获取最新版本（如果可用），并升级代理和收集器。在此升级过程中，fpolicies 将断开连接并重新连接。此功能专为希望控制自动升级时间的客户而设计。请见下文<block ref="2271de46efd5da417e9db9f2ab23550b" category="inline-xref-macro-rx"></block>。</block>
   <block id="2a0a2208c984d848c76e3dc480d25f5a" category="cell">对于大型配置，建议使用引脚和引脚断开操作，而不是暂停集电极。使用固定和取消固定功能时，无需暂停和恢复。客户可以保留其代理和收款员，并在收到有关新版本的电子邮件通知后，有 30 天的时间逐个选择性地升级代理。这种方法最大限度地减少了对 fpolicies 的延迟影响，并提供了对升级过程的更大控制。</block>
+  <block id="4c4482e1695529fa7b313efe35876587" category="cell">运行以下任一正版操作系统的计算机： * Microsoft Windows 11 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025 此计算机不应运行任何其他应用程序级软件。建议使用专用服务器。</block>
+  <block id="96e0bc41f601636412c93ccf60fffb89" category="cell">需要从收购单元到 *.cloudinsights.netapp.com 或您的Data Infrastructure Insights租户（即 \https://&lt;tenant_id&gt;.c01.cloudinsights.netapp.com）的 100 Mbps/1 Gbps 以太网连接、静态 IP 地址和端口 80 或 443（出站）连接。有关采集单元与各数据采集器之间的要求，请参阅相关说明。<block ref="be56515064596049a4b61d9d1a149cf9" category="inline-link-macro-rx"></block> 。如果您的组织需要使用代理来访问互联网，您可能需要了解组织的代理行为并寻求某些例外以使Data Infrastructure Insights能够发挥作用。例如，您的组织是否默认阻止访问，并且仅允许例外访问特定网站/域？如果需要，您需要将以下域名添加到例外列表中：*.cloudinsights.netapp.com。更多信息，请阅读代理相关内容。<block ref="05c875968683001fc59f206218314b72" category="inline-link-macro-rx"></block>或者<block ref="554efdd06704a764ab0a7e3947e279ff" category="inline-link-macro-rx"></block>。</block>
 </blocks>
