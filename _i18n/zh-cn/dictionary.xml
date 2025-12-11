@@ -12769,7 +12769,36 @@
   <block id="12e43e942c5c37f57af4651b24d50099" category="list-text">您还可以使用具有至少 csrole 权限的角色的 AD 用户，如下面的“关于权限的说明”部分所述。另请参阅<block ref="d4aa194db895e3203d834756bc431bad" category="inline-link-macro-rx"></block>。</block>
   <block id="17783c6591a255b301970d912178040b" category="paragraph">*问题：*数据收集器运行一段时间后在随机时间后停止，并出现故障：“错误消息：连接器处于错误状态。服务名称：审计。失败原因：外部 fpolicy 服务器超载。”*尝试一下：* ONTAP的事件率远远高于代理盒可以处理的事件率。因此连接被终止。</block>
   <block id="2e67c3e48e3cc19256e526889902b06c" category="paragraph">{空的}</block>
-  <block id="cd013bdb6b746502669588c8bf28fe47" category="paragraph">*问题：*启用工作负载安全后， ONTAP性能受到影响：延迟偶尔会升高，IOPS 偶尔会降低。 *试试这个：*在使用ONTAP和工作负载安全功能时，有时会在ONTAP中看到延迟问题。造成这种情况可能有以下几个原因：<block ref="5b7caa0ef6cc830703e594488c525913" category="inline-link-macro-rx"></block> ，<block ref="b861ec6ca06b8e18b9d090dd75b00a26" category="inline-link-rx"></block> ，<block ref="a5fade3ab29d18b9b976189fcb9919ed" category="inline-link-rx"></block> ，<block ref="8899da2205eee6e62b28641da3533e12" category="inline-link-rx"></block> ，<block ref="c9d1d03c1b92a8bbffc617ad493e8619" category="inline-link-rx"></block> 。所有这些问题均已在ONTAP 9.13.1 及更高版本中修复；强烈建议使用其中一个更高版本。</block>
+  <block id="cd013bdb6b746502669588c8bf28fe47" category="paragraph">*问题：*启用工作负载安全后， ONTAP性能受到影响：延迟偶尔会升高，IOPS 偶尔会降低。 *试试这个：*在使用ONTAP和工作负载安全时，有时会在ONTAP中看到延迟问题。造成这种情况可能有以下几个原因：<block ref="5b7caa0ef6cc830703e594488c525913" category="inline-link-macro-rx"></block> ，<block ref="b861ec6ca06b8e18b9d090dd75b00a26" category="inline-link-rx"></block> ，<block ref="a5fade3ab29d18b9b976189fcb9919ed" category="inline-link-rx"></block> ，<block ref="8899da2205eee6e62b28641da3533e12" category="inline-link-rx"></block> ，<block ref="c9d1d03c1b92a8bbffc617ad493e8619" category="inline-link-rx"></block> 。所有这些问题均已在ONTAP 9.13.1 及更高版本中修复；强烈建议使用其中一个更高版本。</block>
   <block id="c8a935e32ab223552b7728caf4cbcd40" category="paragraph">*问题：* 收集器处于错误状态，消息为：连接器处于错误状态。 失败原因：无法在 SVM &lt;SVM 名称&gt; 上配置持久存储。 原因：无法在 SVM“&lt;SVM 名称&gt;”中找到卷“&lt;volumeName&gt;”的合适聚合。 原因：聚合“&lt;aggregateName&gt;”的性能信息目前不可用。服务名称：审计。失败原因: 无法在 SVM 上配置持久性存储&lt;SVM Name&gt;。原因: 无法为卷“找到合适的聚合”&lt;volumeName&gt; “ 在 SVM 中”&lt;SVM Name&gt; ”。原因: 聚合的性能信息 &amp;quot;&lt;aggregateName&gt; &amp;quot; 当前不可用。请稍等几分钟，然后重试此命令。</block>
   <block id="807b576f46b09baeb51689a411fd7e90" category="paragraph">*试试这个方法：*等待几分钟，然后重新启动收集器。</block>
+  <block id="1da664a432a920207ac67730bfcf1104" category="summary">了解如何发布和取消发布注释，以便在报告中使用。</block>
+  <block id="d0f8afd8d5b97350096da4410f6ef70a" category="doc">发布和取消发布报告注释</block>
+  <block id="13e4b27f5005e5c64c5a41690660de1d" category="paragraph">了解如何发布注释以在报表和数据仓库中使用，以及如何在不再需要注释时正确地取消发布注释。</block>
+  <block id="f3b7c338e6a3f535c74857d42d70a81c" category="section-title">发布报告注释</block>
+  <block id="327b3bc4d967a2317701d7010944307f" category="paragraph">在Data Infrastructure Insights中创建注释后，您可以将其发布以在报表中使用。</block>
+  <block id="0caee252e5487de862dbefa3eec1a462" category="section-title">发布注释的步骤</block>
+  <block id="29f6016632227f8bf6976c7869bc72c3" category="list-text">导航至“可观测性 &gt; 丰富 &gt; 注释”页面，然后选择“报告注释”选项卡。</block>
+  <block id="9e504f94b5be9a2b018e55cf728ac22a" category="list-text">找到要发布的注释。</block>
+  <block id="35e76d3e8b05c29f4ff6b2da44ea4921" category="list-text">选择注释，然后选择“发布到报表”。您还可以选择将其应用于历史数据，以便在运行历史报告时使用该注释。</block>
+  <block id="30931bf6e020a646ad57086874ca6074" category="list-text">发布后，注释即可在报告中使用。</block>
+  <block id="396e1f080d09a5d2f02eb4001ac6fc8c" category="list-text">注释将在下次 ETL 运行后发布，以便在报告中使用。</block>
+  <block id="5717734bfc2f355942edbd3696406818" category="paragraph">任何引用该注释的报告都将使用已发布的值。如果在发布后修改了注释，则可能需要重新发布才能使这些更改在报告中生效。</block>
+  <block id="ebcb6aeee3884fde3993f0df7ebca547" category="section-title">取消发布报告注释</block>
+  <block id="161b2f38480450dbc7b8b35dc2e547c6" category="paragraph">有时您可能需要删除或取消发布注释，以便它们不再用于报表。例如，某个注释可能不再需要，或者它可能包含不应出现在报告中的过时信息。</block>
+  <block id="52de2e815a8847eed14eefcdb8df04e2" category="section-title">取消发布注释的步骤</block>
+  <block id="56b5e5aeff1cd3d66dfa9e7aae2e1fb8" category="paragraph">取消发布注释之前，请注意此操作将影响使用该注释的任何现有报告。报告可能需要编辑或专业服务协助才能删除注释参考信息。</block>
+  <block id="537ba4575bf20a44a021d6a6c2160c2f" category="list-text">在Data Infrastructure Insights用户界面中，导航至“报告注释”选项卡。</block>
+  <block id="0baff86dba25c761b8e10de5e631d2da" category="list-text">找到要取消发布的注释。</block>
+  <block id="f4f03ad26635dcdf26cd79ebbdf3f095" category="list-text">对于每个已发布注释的对象，取消选择注释并选择“保存”。</block>
+  <block id="1e45f500f939c3c6933da32b0094ed0c" category="list-text">删除所有仍然引用该注释的查询或规则，以确保它不会被标记为“正在使用”。</block>
+  <block id="612361128d3425b6d566099c3a73e114" category="list-text">下次 ETL 运行后，注释将被取消发布。</block>
+  <block id="80186bee24a1384dd0fdcbe103ad297a" category="list-text">ETL 完成后，如果租户端不再需要该注解，则可以将其从注解列表中删除。</block>
+  <block id="69ba397c22afed002692190d13724b2e" category="paragraph">注释将继续显示在数据仓库中，直到被正确取消发布为止。如果未先取消发布，直接从“注释”页面删除注释，则会留下过时的数据，这些数据可能会出现在现有报告中。请按照上述取消发布步骤操作，以确保彻底删除。</block>
+  <block id="fde5f00a6e30ac6f54a7295f2e712c69" category="section-title">对现有报告的影响</block>
+  <block id="046dafc771f597ba528c92397d5f99e6" category="paragraph">删除或取消发布注释可能需要修改引用这些注释的现有报告。请考虑下列情形：</block>
+  <block id="3c26ba7c1113869b4804e6a406f52ba7" category="list-text">使用注释作为筛选条件或维度的报告需要进行更新。</block>
+  <block id="c77b295eb8d3480880ff044a7823cdd9" category="list-text">如果在未更新依赖报告的情况下删除注释，则这些报告可能会返回错误或意外结果。</block>
+  <block id="3da85052d2ffffd1cb6352186fe0393a" category="list-text">在复杂情况下，可能需要专业服务来协助进行报告修改。</block>
+  <block id="4f9b9c5804f57ab98a1eb0bbdc93ee28" category="paragraph">建议在取消发布注释之前，先检查所有依赖于该注释的报告。</block>
 </blocks>

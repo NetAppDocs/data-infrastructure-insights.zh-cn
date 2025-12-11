@@ -212,7 +212,7 @@ fpolicy policy external-engine delete -vserver <svmname> -engine-name <engine_na
 {空的}
 
 '''
-*问题：*启用工作负载安全后， ONTAP性能受到影响：延迟偶尔会升高，IOPS 偶尔会降低。 *试试这个：*在使用ONTAP和工作负载安全功能时，有时会在ONTAP中看到延迟问题。造成这种情况可能有以下几个原因：link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994["1372994"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152["1415152"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207["1438207"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704["1479704"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659["1354659"] 。所有这些问题均已在ONTAP 9.13.1 及更高版本中修复；强烈建议使用其中一个更高版本。
+*问题：*启用工作负载安全后， ONTAP性能受到影响：延迟偶尔会升高，IOPS 偶尔会降低。 *试试这个：*在使用ONTAP和工作负载安全时，有时会在ONTAP中看到延迟问题。造成这种情况可能有以下几个原因：link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994["1372994"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152["1415152"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207["1438207"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704["1479704"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659["1354659"] 。所有这些问题均已在ONTAP 9.13.1 及更高版本中修复；强烈建议使用其中一个更高版本。
 
 {空的}
 
