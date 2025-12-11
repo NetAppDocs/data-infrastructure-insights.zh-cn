@@ -24,10 +24,8 @@ image:CS_Data_Collector_Error.png["工作负载安全收集器错误更多详细
 
 已知问题及其解决方案如下所述。
 
-****
-*问题：*数据收集器运行一段时间后在随机时间后停止，并出现故障：“错误消息：连接器处于错误状态。服务名称：审计。失败原因：外部 fpolicy 服务器超载。”
-
-*尝试一下：* ONTAP的事件率远远高于代理盒可以处理的事件率。因此连接被终止。
+'''
+*问题：*数据收集器运行一段时间后在随机时间后停止，并出现故障：“错误消息：连接器处于错误状态。服务名称：审计。失败原因：外部 fpolicy 服务器超载。”*尝试一下：* ONTAP的事件率远远高于代理盒可以处理的事件率。因此连接被终止。
 
 检查断开连接时 CloudSecure 中的峰值流量。您可以从 *CloudSecure > Activity Forensics > All Activity* 页面进行检查。
 
@@ -42,7 +40,10 @@ sysctl -p
 ....
 调整大小后从 UI 重新启动收集器。
 
+{空的}
+
 ****
+
 ****
 *问题：*收集器报告错误消息：“在连接器上未找到可以到达 SVM 数据接口的本地 IP 地址”。 *尝试一下：*这很可能是由于ONTAP端的网络问题造成的。请按照以下步骤操作：
 
@@ -76,16 +77,18 @@ sysctl -p
 . 如果以上方法都无法解决问题，请提交案例link:concept_requesting_support.html["Netapp 支持"]以获得进一步的帮助。
 
 
-****
-****
+{空的}
+
+'''
 *问题：*消息：“无法确定 [主机名：<IP 地址>] 的ONTAP类型。原因：与存储系统 <IP 地址> 的连接错误：主机无法访问（主机无法访问）”*尝试此操作：*
 
 . 验证是否提供了正确的 SVM IP 管理地址或集群管理 IP。
 . 通过 SSH 连接到您要连接的 SVM 或集群。连接后，请确保 SVM 或集群名称正确。
 
 
-****
-****
+{空的}
+
+'''
 *问题：*错误消息：“连接器处于错误状态。服务名称：审计。失败原因：外部 fpolicy 服务器终止。”  *试试这个：*
 
 . 最有可能的是防火墙阻止了代理机器中的必要端口。验证端口范围 35000-55000/tcp 是否已打开，以便代理计算机从 SVM 进行连接。还要确保ONTAP端没有启用防火墙来阻止与代理机器的通信。
@@ -120,8 +123,9 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 . 如果服务策略配置不正确，也可能会出现此错误。使用ONTAP 9.8 或更高版本时，为了连接到数据源收集器，需要 data-fpolicy-client 服务以及数据服务 data-nfs 和/或 data-cifs 。此外，data-fpolicy-client 服务必须与受监控 SVM 的数据生命周期相关联。
 
 
-****
-****
+{空的}
+
+'''
 *问题：*活动页面中未显示任何事件。  *试试这个：*
 
 . 检查ONTAP收集器是否处于“正在运行”状态。如果是，则通过打开一些文件确保在 cifs 客户端虚拟机上生成一些 cifs 事件。
@@ -139,7 +143,10 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 
 
 
+{空的}
+
 ****
+
 ****
 *问题：* SVM 数据收集器处于错误状态，错误消息为“代理无法连接到收集器” *尝试以下操作：*
 
@@ -149,8 +156,9 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 . 如果每秒的活动数量非常高，请安装另一个代理并将一些数据源收集器移动到新的代理。
 
 
-****
-****
+{空的}
+
+'''
 *问题：* SVM 数据收集器显示错误消息为“fpolicy.server.connectError：节点无法与 FPolicy 服务器“12.195.15.146”建立连接（原因：“选择超时”）” *尝试此操作：* SVM/Cluster 中启用了防火墙。因此 fpolicy 引擎无法连接到 fpolicy 服务器。  ONTAP中可用于获取更多信息的 CLI 包括：
 
 ....
@@ -159,12 +167,16 @@ event log show -source fpolicy -fields event,action,description which shows more
 ....
 link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nmg%2FGUID-969851BB-4302-4645-8DAC-1B059D81C5B2.html["检查防火墙命令"]在ONTAP方面。
 
+{空的}
+
 ****
+
 ****
 *问题：*错误消息：“连接器处于错误状态。服务名称：审计。失败原因：在 SVM 上未找到有效的数据接口（角色：数据、数据协议：NFS 或 CIFS 或两者、状态：启动）。  *尝试一下：*确保有一个操作接口（具有数据角色和 CIFS/NFS 数据协议）。
 
-****
-****
+{空的}
+
+'''
 *问题：*数据收集器进入错误状态，一段时间后进入运行状态，然后再次返回错误状态。如此循环往复。  *尝试一下：*这通常发生在以下场景中：
 
 . 添加了多个数据收集器。
@@ -173,14 +185,16 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 . 删除连接到同一 SVM 的其他数据收集器。
 
 
-****
-****
+{空的}
+
+'''
 *问题：*连接器处于错误状态。服务名称：审计。失败原因：无法配置（SVM svmname 上的策略）。原因：在“fpolicy.policy.scope-modify: "Federal" 中为“shares-to-include”元素指定的值无效 *尝试此操作：* *共享名称需要不带任何引号。编辑ONTAP SVM DSC 配置以更正共享名称。
 
 _包括和排除共享_不适用于较长的共享名称列表。如果您需要包含或排除大量股票，请使用按数量过滤。
 
-****
-****
+{空的}
+
+'''
 *问题：*集群中存在未使用的现有 fpolicies。在安装 Workload Security 之前应该做什么？ *尝试一下：*建议删除所有现有的未使用的 fpolicy 设置，即使它们处于断开连接状态。工作负载安全将创建带有前缀“cloudsecure_”的 fpolicy。所有其他未使用的 fpolicy 配置都可以删除。
 
 显示 fpolicy 列表的 CLI 命令：
@@ -195,36 +209,40 @@ fpolicy policy delete -vserver <svmname> -policy-name <policy_name>
 fpolicy policy event delete -vserver <svmname> -event-name <event_list>
 fpolicy policy external-engine delete -vserver <svmname> -engine-name <engine_name>
 ....
-|启用工作负载安全后， ONTAP性能会受到影响：延迟偶尔会变高，IOP 偶尔会变低。 |将ONTAP与工作负载安全结合使用时，有时会在ONTAP中看到延迟问题。造成这种情况的可能原因有很多，如下所示：link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994["1372994"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152["1415152"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207["1438207"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704["1479704"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659["1354659"] 。所有这些问题均已在ONTAP 9.13.1 及更高版本中修复；强烈建议使用其中一个更高版本。
+{空的}
 
-****
-****
-*问题：*数据收集器出错，显示此错误消息。 “错误：连接器处于错误状态。服务名称：审计。失败原因：无法在 SVM svm_test 上配置策略。原因：zapi 字段缺少值：事件。  “*试试这个：*
+'''
+*问题：*启用工作负载安全后， ONTAP性能受到影响：延迟偶尔会升高，IOPS 偶尔会降低。 *试试这个：*在使用ONTAP和工作负载安全功能时，有时会在ONTAP中看到延迟问题。造成这种情况可能有以下几个原因：link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994["1372994"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152["1415152"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207["1438207"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704["1479704"] ， https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659["1354659"] 。所有这些问题均已在ONTAP 9.13.1 及更高版本中修复；强烈建议使用其中一个更高版本。
 
-. 从仅配置了 NFS 服务的新 SVM 开始。
-. 在工作负载安全中添加ONTAP SVM 数据收集器。在工作负载安全中添加ONTAP SVM 数据收集器时，CIFS 配置为 SVM 允许的协议。
-. 等到工作负载安全中的数据收集器显示错误。
-. 由于 SVM 上未配置 CIFS 服务器，因此左侧所示的错误由 Workload Security 显示。
-. 编辑ONTAP SVM 数据收集器并取消选中 CIF 作为允许的协议。保存数据收集器。它将仅启用 NFS 协议开始运行。
+{空的}
 
-
-****
-****
+'''
 *问题：*数据收集器显示错误消息：“错误：两次重试后无法确定收集器的健康状况，请尝试重新启动收集器（错误代码：AGENT008）”。  *试试这个：*
 
 . 在数据收集器页面上，滚动到出现错误的数据收集器的右侧，然后单击 3 个点菜单。选择“编辑”。再次输入数据采集器的密码。按下“保存”按钮保存数据收集器。数据收集器将重新启动并且错误应该得到解决。
 . 代理机器可能没有足够的 CPU 或 RAM 空间，这就是 DSC 失败的原因。请检查机器中添加到代理的数据收集器的数量。如果超过20，请增加Agent机器的CPU和RAM容量。一旦 CPU 和 RAM 增加，DSC 将自动进入初始化状态，然后进入运行状态。查看尺码指南link:concept_cs_event_rate_checker.html["本页"]。
 
 
-****
-****
+{空的}
+
+'''
 *问题：*选择 SVM 模式时数据收集器出错。 *尝试一下：*在 SVM 模式下连接时，如果使用集群管理 IP 而不是 SVM 管理 IP 进行连接，则连接将出错。确保使用正确的 SVM IP。
 
-****
-****
+{空的}
+
+'''
 *问题：*启用“拒绝访问”功能时，数据收集器显示一条错误消息：“连接器处于错误状态。服务名称：审计。失败原因：无法在 SVM test_svm 上配置 fpolicy。原因：用户未获得授权。” *尝试一下：*用户可能缺少“拒绝访问”功能所需的 REST 权限。请按照link:concept_ws_integration_with_ontap_access_denied.html["本页"]设置权限。
 
 设置权限后重新启动收集器。
 
-****
+{空的}
+
+'''
+*问题：* 收集器处于错误状态，消息为：连接器处于错误状态。 失败原因：无法在 SVM <SVM 名称> 上配置持久存储。 原因：无法在 SVM“<SVM 名称>”中找到卷“<volumeName>”的合适聚合。 原因：聚合“<aggregateName>”的性能信息目前不可用。服务名称：审计。失败原因: 无法在 SVM 上配置持久性存储<SVM Name>。原因: 无法为卷“找到合适的聚合”<volumeName> “ 在 SVM 中”<SVM Name> ”。原因: 聚合的性能信息 &quot;<aggregateName> &quot; 当前不可用。请稍等几分钟，然后重试此命令。
+
+*试试这个方法：*等待几分钟，然后重新启动收集器。
+
+{空的}
+
+'''
 如果您仍然遇到问题，请联系*帮助>支持*页面中提到的支持链接。
