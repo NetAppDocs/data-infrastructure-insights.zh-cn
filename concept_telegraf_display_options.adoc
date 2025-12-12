@@ -7,6 +7,10 @@ summary: Telegraf 数据显示选项
 = 转换指标
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

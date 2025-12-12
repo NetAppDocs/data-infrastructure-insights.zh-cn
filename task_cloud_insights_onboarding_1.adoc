@@ -43,9 +43,9 @@ keywords: onboarding, new user
 
 == 开始您的Data Infrastructure Insights免费试用
 
-如果这是您第一次登录Data Infrastructure Insights，请在Data Infrastructure Insights产品下单击“*开始免费试用*”。Data Infrastructure Insights将指导您创建公司的租户，包括选择您希望租户所在的区域。
+如果您是第一次登录Data Infrastructure Insights，请阅读有关Data Infrastructure Insights所能提供的一切信息，当您_准备好开始使用_时，点击*申请试用*并填写您的信息。
 
-image:trial_region_selector.png["选择托管Data Infrastructure Insights租户的区域"]
+作为试用租户设置的一部分，您将选择托管租户的区域，以及您希望将租户部署在 AWS 还是 Azure 上。
 
 租户创建完成后，使用控制台凭据登录并开始免费试用 30 天Data Infrastructure Insights。在此试用期间，您可以探索Data Infrastructure Insights所提供的功能。
 
