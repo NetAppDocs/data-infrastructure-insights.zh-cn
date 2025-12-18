@@ -193,6 +193,8 @@ sidebar:
         url: "/reporting_creating_custom_reports.html#reporting-data-models"
       - title: 报告数据库 API
         url: "/reporting_querying_database.html"
+      - title: 在报告中发布注释
+        url: "/reporting_publishing_annotations.html"
       - title: 数据保留
         url: "/reporting_data_retention.html"
       - title: 架构图

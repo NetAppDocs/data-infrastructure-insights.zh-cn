@@ -55,7 +55,7 @@ keywords: onboarding, new user
 
 == Sign in并前往
 
-创建租户后，您可以随时登录NetApp Console门户并导航到link:https://services.cloud.netapp.com["云服务"]页面并选择*转到Data Infrastructure Insights*。
+租户创建完成后，您可以随时登录NetApp BlueXP Portal 并导航至以下位置： link:https://services.cloud.netapp.com["云服务"] 页面并选择“转到Data Infrastructure Insights”。
 
 您还可以直接打开浏览器访问Data Infrastructure Insights租户 URL，例如：
 

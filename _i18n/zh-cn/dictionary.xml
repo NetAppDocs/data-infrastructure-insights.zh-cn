@@ -6986,12 +6986,10 @@
   <block id="a46b8a484704b65f978247cb9b3901aa" category="paragraph">输入您的电子邮件地址和密码。然后您将进入 NetApp 的云产品页面。</block>
   <block id="4ec4e4954d48db50650c5ec49007cf27" category="paragraph">导航至*分析和控制&gt;可观察性*以了解Data Infrastructure Insights和/或请求演示。</block>
   <block id="eeecd13aa136e65aaedc64374c7415bc" category="section-title">开始您的Data Infrastructure Insights免费试用</block>
-  <block id="13d2916279db639fea18a00088e8cb21" category="paragraph">租户创建完成后，使用控制台凭据登录并开始免费试用 30 天Data Infrastructure Insights。在此试用期间，您可以探索Data Infrastructure Insights所提供的功能。</block>
   <block id="3b1f676d06286548e11b332567f42bbd" category="inline-link-macro">开始订阅</block>
   <block id="b48d78927dd619cab2e6b7fde5ffb6b1" category="paragraph">在免费试用期间，您可以<block ref="822a67eb96671d13fff372a75b259713" category="inline-link-macro-rx"></block>随时了解Data Infrastructure Insights。当您订阅后，您可以根据当前订阅使用Data Infrastructure Insights功能。</block>
   <block id="2c4bb88652ba26d23266d851053ba465" category="section-title">Sign in并前往</block>
   <block id="27e0956311428740c19b40a7a971c7ef" category="inline-link-macro">云服务</block>
-  <block id="d97af656d080e05ccc035b1948ac30b8" category="paragraph">创建租户后，您可以随时登录NetApp Console门户并导航到<block ref="37a150e92f05332b5bc5a56046c3177c" category="inline-link-macro-rx"></block>页面并选择*转到Data Infrastructure Insights*。</block>
   <block id="206cb1224c200bbbd73cfa4118ad7c1e" category="paragraph">您还可以直接打开浏览器访问Data Infrastructure Insights租户 URL，例如：</block>
   <block id="9834a50024d1c9eb92d1d75e4f1fc3fa" category="paragraph">该 URL 还将包含在每个用户的邀请电子邮件中，以便于访问和添加书签。如果用户尚未登录控制台，系统将提示他们登录。</block>
   <block id="955402d5e1e7fb2ed3dc9cdbbcb35826" category="admonition">新用户仍必须注册访问控制台，然后才能访问其租户 URL。</block>
@@ -12680,4 +12678,19 @@
   <block id="84782b0fddf642f36f6d0ca7585d8709" category="paragraph">如果您是第一次登录Data Infrastructure Insights，请阅读有关Data Infrastructure Insights所能提供的一切信息，当您_准备好开始使用_时，点击*申请试用*并填写您的信息。</block>
   <block id="513dc3996a984c81efa261ee7da82ea7" category="paragraph">作为试用租户设置的一部分，您将选择托管租户的区域，以及您希望将租户部署在 AWS 还是 Azure 上。</block>
   <block id="29ecb4e96ebb9048c6e2055bd8edfec9" category="paragraph">下面是一个示例 _AgentConfiguration_ 文件，其中包含每个选项的说明。</block>
+  <block id="0a511b85d77f15f39fbbd23442b32001" category="section-title">2025年12月</block>
+  <block id="02c6c8e70973eaa6f06450fcaad33a5f" category="section-title">使用共享查询控制查询访问权限</block>
+  <block id="2432d631102e473d4b496edccabf444a" category="paragraph">使用细粒度的权限控制来共享您创建的查询。选择只读查看器模式以防止修改，或选择编辑模式以允许更改。私有查询可供创建者使用，而共享查询可在注释规则中使用，或复制用于特殊用例，让您可以完全控制查询在整个组织中的使用和修改方式。</block>
+  <block id="867eb02418c63590934857d7248297ed" category="inline-image-macro">设置查询权限，宽度=200</block>
+  <block id="1001d997566a254eb622fa8e13c87f5d" category="paragraph"><block ref="1001d997566a254eb622fa8e13c87f5d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ca03196cfb39c0ee19d1e348fea01c6d" category="paragraph">此外，具有_Guest_角色的用户现在可以创建和管理自己的私有查询。</block>
+  <block id="793292eddcb4bfdfa889302640316870" category="section-title">更好地筛选监控器</block>
+  <block id="de71fd4a5b1b28ac72eda2e9287c745a" category="paragraph">对监控列表和组的筛选功能进行了改进，增加了通配符支持、多个筛选器、包含/排除功能等。</block>
+  <block id="b1dd7c1a42d0a77cdb3443ba1c0f97c3" category="inline-image-macro">新显示器筛选，宽度=500</block>
+  <block id="7bf60aa4367d13bdf4be42c9055afecc" category="paragraph"><block ref="7bf60aa4367d13bdf4be42c9055afecc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f3dd02ae7c2c35817a35bc27eb8af50f" category="section-title">更清晰的仪表盘可视化效果</block>
+  <block id="6838668755c364765b40cf38648de55f" category="paragraph">改进后的仪表盘设计可帮助您查看最重要的信息。通过阴影边框分隔小部件，并移除分隔线，增强视觉清晰度，减少杂乱，让您可以专注于数据洞察。这些改进创造了更简洁、更直观的仪表盘体验，使用户能够更快、更容易地发现趋势和异常情况。</block>
+  <block id="d388ca982366ad7a8a7a165d21919f84" category="paragraph">租户创建完成后，使用控制台凭据登录并开始免费试用 30 天Data Infrastructure Insights。在此试用期间，您可以探索Data Infrastructure Insights所提供的功能。</block>
+  <block id="a361d4c5b26cab224e5aad972ef9f92f" category="paragraph">租户创建完成后，您可以随时登录NetApp BlueXP Portal 并导航至以下位置： <block ref="37a150e92f05332b5bc5a56046c3177c" category="inline-link-macro-rx"></block> 页面并选择“转到Data Infrastructure Insights”。</block>
+  <block id="ed35afa558b996b37265533db9af5399" category="sidebar">在报告中发布注释</block>
 </blocks>

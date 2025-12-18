@@ -7,6 +7,10 @@ keywords: reporting, cognos, data warehouse, dwh, API
 = 通过 API 访问报告数据库
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
