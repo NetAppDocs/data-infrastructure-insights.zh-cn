@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: ws_allowed_file_types.html 
-keywords: workload security, cloud secure, include list, allowed, file types, ransomware 
+keywords: workload security, cloud secure, include list, allowed, file types, ransomware, tampering 
 summary: 将文件扩展名添加到允许的文件类型列表以减少警报。 
 ---
 = 允许的文件类型策略
@@ -9,14 +9,14 @@ summary: 将文件扩展名添加到允许的文件类型列表以减少警报�
 
 
 [role="lead"]
-如果检测到已知文件扩展名的勒索软件攻击，并且在警报屏幕上生成警报，则可以将该文件扩展名添加到_允许的文件类型_列表中，以防止不必要的警报。
+如果检测到已知文件扩展名的文件篡改攻击，并且在“警报”屏幕上生成警报，则可以将该文件扩展名添加到_允许的文件类型_列表中，以防止不必要的警报。
 
 导航到*工作负载安全>策略*并转到_允许的文件类型策略_选项卡。
 
 image:WS_Allowed_File_Type_Policies.png["允许的文件类型策略"]
 
-一旦添加到“允许的文件类型”列表，就不会针对该允许的文件类型生成勒索软件攻击警报。请注意，“允许的文件类型”策略仅适用于勒索软件检测。
+一旦添加到_允许的文件类型_列表中，就不会针对该允许的文件类型生成文件篡改攻击警报。请注意，“允许的文件类型”策略仅适用于文件篡改检测。
 
-例如，如果将名为 _test.txt_ 的文件重命名为 _test.txt.abc_，并且 Workload Security 由于 _.abc_ 扩展名而检测到勒索软件攻击，则可以将 _.abc_ 扩展名添加到 _允许的文件类型_ 列表中。加入该列表后，将不再针对以_.abc_为扩展名的文件产生勒索攻击。
+例如，如果将名为 _test.txt_ 的文件重命名为 _test.txt.abc_，并且工作负载安全系统由于 _.abc_ 扩展名而检测到文件篡改攻击，则可以将 _.abc_ 扩展名添加到 _允许的文件类型_ 列表中。添加到列表后，将不再针对扩展名为 _.abc_ 的文件生成文件篡改攻击。
 
 允许的文件类型可以是完全匹配（例如“ .abc”）或表达式（例如“ .*type”、“ .type*”或“ *type*”）。不支持“.a*c”、“.p*f”类型的表达式。

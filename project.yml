@@ -271,13 +271,13 @@ sidebar:
       url: "/cs_automated_response_policies.html"
     - title: 允许的文件类型策略
       url: "/ws_allowed_file_types.html"
-    - title: ONTAP自主勒索软件防护集成
+    - title: ONTAP自主保护集成
       url: "/concept_cs_integration_with_ontap_arp.html"
     - title: ONTAP访问被拒绝集成
       url: "/concept_ws_integration_with_ontap_access_denied.html"
     - title: 阻止用户访问
       url: "/cs_restrict_user_access.html"
-    - title: 模拟勒索软件攻击
+    - title: 模拟攻击
       url: "/concept_cs_attack_simulator.html"
     - title: 电子邮件通知
       url: "/cs_notifications_email.html"

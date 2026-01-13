@@ -573,7 +573,6 @@
   <block id="710c77cfc8d2136c51aad6a8316043b9" category="cell">*试试这个：*</block>
   <block id="3e31734df6f02c9ad9cd0dc7c1f65a98" category="cell">我看到审计消息告诉我监视器已被导出。</block>
   <block id="256a0ce1cb9ac99794371e404aa7446e" category="cell">NetApp工程师通常在开发和测试新功能时使用自定义监视器配置的导出。如果您没有预料到会看到此消息，请考虑探究审核操作中提到的用户的操作或联系支持人员。</block>
-  <block id="03b8f305db2c82bc6a850a57ec12d044" category="summary">用作代理的服务器或虚拟机必须满足最低要求</block>
   <block id="a7ef8f0bed1d94220b7abd3877b10643" category="doc">工作负载安全代理要求</block>
   <block id="bee347f35c7a237c1f2d5d7193252244" category="inline-link-macro">安装工作负载安全代理</block>
   <block id="1de0df19f89310a1407a7686c6dcad7c" category="paragraph">你必须<block ref="588188a9e8b5d243fbdbf4e2ce1c4421" category="inline-link-macro-rx"></block>以便从数据收集者那里获取信息。在安装代理之前，请确保您的环境满足操作系统、CPU、内存和磁盘空间要求。</block>
@@ -626,7 +625,6 @@
   <block id="46a1d0dbde96d466dadd916b9b7a7d65" category="section-title">系统规模</block>
   <block id="b81e4f797b30e131d43ea14e3bc8322c" category="inline-link-macro">事件发生率检查器</block>
   <block id="1a46e02a3754d0daf83001fffc7c7c46" category="paragraph">查看<block ref="fd6f609b977fb641a06defa631019934" category="inline-link-macro-rx"></block>有关尺寸的信息，请参阅文档。</block>
-  <block id="dda85f45002252de774eae20d8d3bb21" category="summary">工作负载安全包括一个强大的 API，可与其他应用程序（如 CMDB）集成。</block>
   <block id="0865b3ed9f5211e6fe35eddac5b1aaa3" category="doc">工作负载安全 API</block>
   <block id="1b1fb3360bd2eea985279f6fcc2ef45f" category="paragraph">工作负载安全 API 使NetApp客户和独立软件供应商 (ISV) 能够将工作负载安全与其他应用程序（例如 CMDB 或其他票务系统）集成。</block>
   <block id="1a152a606ca16a6eef5f2e9ac9b4c824" category="paragraph">API 访问要求：</block>
@@ -647,11 +645,7 @@
   <block id="9691b74510440e767ebe140708556d4a" category="paragraph">该脚本位于 _/opt/netapp/cloudsecure/agent/export-script_。同一目录中的 README 文件提供了使用说明。</block>
   <block id="b33ce51cf90f2cebc1848ee9bdd86a73" category="paragraph">以下是调用脚本的示例命令：</block>
   <block id="4cee2cbc95e55efcd827954ec63679ef" category="paragraph">关键参数：-<block ref="86768c9197497f61803d2cccda886c2b" prefix=" " category="inline-code"></block> ：将请求的时间范围分成 12 小时的间隔。  -<block ref="90bf4ae9a260a1dab39cf85f9b78e62f" prefix=" " category="inline-code"></block> ：使用 3 个线程并行获取这些间隔。</block>
-  <block id="d26ec9bd59920d141e6767082f0524dc" category="summary">使用脚本，您可以模拟勒索软件攻击来测试或演示工作负载安全性</block>
-  <block id="fca4fedbe53af4420a279beead573bdf" category="doc">工作负载安全：模拟攻击</block>
-  <block id="85bec7dd725b26542ae7c0d1c759836a" category="paragraph">您可以按照此页面上的说明，使用随附的勒索软件模拟脚本来模拟攻击，以测试或演示工作负载安全性。</block>
   <block id="c8722d0a5f0f718756806afb0f63faf3" category="section-title">开始之前需要注意的事项</block>
-  <block id="ee817f2b2a73b759041de15700c640ab" category="list-text">勒索软件模拟脚本仅在 Linux 上运行。如果用户将ONTAP ARP 与 Workload Security 集成，模拟脚本还应生成高置信度警报。</block>
   <block id="61622ea1d4086909bd90c0efc1d6a2e5" category="list-text">仅当ONTAP版本为 9.15 或更高版本时，工作负载安全才会检测使用 NFS 4.1 生成的事件和警报。</block>
   <block id="16fa78539f96944e79f64b961036e74d" category="list-text">该脚本随工作负载安全代理安装文件一起提供。它可以在安装了工作负载安全代理的任何机器上使用。</block>
   <block id="749376c343309b5abf1f8bc2f1e6e9f7" category="list-text">您可以在工作负载安全代理机器本身上运行该脚本；无需准备另一台 Linux 机器。但是，如果您希望在另一个系统上运行该脚本，只需复制该脚本并在那里运行即可。</block>
@@ -703,7 +697,6 @@
   <block id="9adc0908c00f75ca29814b238088a0cd" category="list-text">这将在名为“test_dataset”的目录下的挂载文件夹中创建 100 个具有各种扩展名的非空文件</block>
   <block id="155946ddf8d31167ae2abad50439caac" category="section-title">恢复收集器</block>
   <block id="58d83dc1e6706a52cd311f9c66f193d5" category="paragraph">如果您在执行这些步骤之前暂停了收集器，请确保在创建示例文件后恢复收集器。</block>
-  <block id="e6e76755f42136002c51ecb7c7acc410" category="paragraph">要生成勒索软件警报，您可以执行包含的脚本，该脚本将在工作负载安全中模拟勒索软件警报。</block>
   <block id="210e93b8c7253e00f2206b155a242c53" category="list-text">将脚本从代理安装目录（%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/simulate_attack.sh）复制到目标安装位置。</block>
   <block id="66a8eca27475656430ae411ce0277447" category="list-text">使用挂载目录（例如 /root/demo）中的脚本执行以下命令来加密测试数据集：</block>
   <block id="71242fab4b4978991a34104b8fa81ff5" category="list-text">这将加密“test_dataset”目录下创建的示例文件。</block>
@@ -715,7 +708,6 @@
   <block id="bb37a91d3a7d038f7f196d7f342f5d41" category="list-text">监控的 SVM 的ONTAP版本高于 9.11.1</block>
   <block id="9ce553df4934ac43b957143d21b265ff" category="list-text">ONTAP自主勒索软件防护已配置</block>
   <block id="ea7f417542fef98806d54f7dcd8a2d26" category="list-text">在集群模式下添加了工作负载安全数据收集器。</block>
-  <block id="7a59fff38776feaa8a27e18c15f3f839" category="paragraph">Workload Security 根据用户行为检测勒索软件模式，而ONTAP ARP 根据文件中的加密活动检测勒索软件活动。</block>
   <block id="59c0cecf99f5b7877b7f320da1734140" category="paragraph">如果满足条件，Workload Security 会将警报标记为高可信度警报。</block>
   <block id="560a82b95d26c61a25e2894422b4eec0" category="paragraph">警报列表页面上的高可信度警报示例：</block>
   <block id="dfbab6292d93300a244b9e81de9798af" category="inline-image-macro">高置信度警报示例，列表页</block>
@@ -724,9 +716,7 @@
   <block id="4864e30f3543ce6ffefe6866cd4df439" category="inline-image-macro">高置信度警报示例，详细信息页面</block>
   <block id="8901b7a1034f6e31fa7c2f5929bdd211" category="paragraph"><block ref="8901b7a1034f6e31fa7c2f5929bdd211" category="inline-image-macro-rx" type="image"></block></block>
   <block id="36aed75d347e158fecfc525dc1d66a22" category="section-title">多次触发警报</block>
-  <block id="95d269995653ffa8a24d0a028366adbc" category="paragraph">Workload Security 会学习用户行为，并且不会对同一用户在 24 小时内重复遭受勒索软件攻击发出警报。</block>
   <block id="7000a55791f1de1983f9adc601ad2e4e" category="paragraph">要使用不同的用户生成新的警报，请再次执行相同的步骤（创建测试数据，然后加密测试数据）。</block>
-  <block id="b3431d54476e0f70ea6fc00bae48572b" category="summary">在安装ONTAP SVM DSC 之前，可以运行此脚本来检查 SVM 中的事件率</block>
   <block id="2723c4d559ff96bb42870d86c109708e" category="doc">SVM 事件率检查器（代理规模指南）</block>
   <block id="0a2bd44573247d8e7748ce7d2d2a4b8f" category="paragraph">事件速率检查器用于在安装ONTAP SVM 数据收集器之前检查 SVM 中的 NFS/SMB 组合事件速率，以查看一台代理机器能够监控多少个 SVM。使用事件率检查器作为规模指南来帮助规划您的安全环境。</block>
   <block id="40202f910a40e1ff8a02506c288b507e" category="paragraph">一个代理最多可以支持 50 个数据收集器。</block>
@@ -779,9 +769,7 @@
   <block id="ecb5fa18c7cd0623faea3969f936f4c3" category="cell">不会。即使 SVM 的数量增加，该脚本最多也会运行 5 分钟。</block>
   <block id="ce3d712deda180dd445bfed60562d712" category="cell">如果我使用现有代理运行事件率检查器会发生什么情况？</block>
   <block id="697ee668360d1c19e858e5fdd25062e6" category="cell">针对已存在的代理运行事件率检查器可能会导致 SVM 上的延迟增加。当事件率检查器运行时，这种增加将是暂时的。</block>
-  <block id="e885f70b36e77978775e5bda02528ac9" category="summary">工作负载安全与ONTAP自主勒索软件防护集成，以改进勒索软件检测。</block>
   <block id="c296d8324f9fa4f890b4ead0f69bfac3" category="doc">与ONTAP自主勒索软件防护集成</block>
-  <block id="d444ab62db0a690e837242dfd8b87acc" category="paragraph">ONTAP自主勒索软件防护 (ARP) 功能使用 NAS（NFS 和 SMB）环境中的工作负载分析来主动检测并警告可能表明勒索软件攻击的异常文件内活动。</block>
   <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">此处</block>
   <block id="383c3a61ab1ee0baf884d10441d965bd" category="paragraph">关于 ARP 的更多详细信息和许可要求可以找到<block ref="aaf4977c10e4402f9516d11af3df8368" category="inline-link-macro-rx"></block>。</block>
   <block id="ff6fdbfb37dfe403ad9c574855ccdb01" category="paragraph">工作负载安全与ONTAP集成以接收 ARP 事件并提供额外的分析和自动响应层。</block>
@@ -806,7 +794,6 @@
   <block id="e0e1895e03a77da5552db43fbdeaeea6" category="paragraph">由于 ARP 事件生成的警报示例如下所示：</block>
   <block id="b83a60c5de546ea3d085bb1ce6636d9a" category="inline-image-macro">勒索软件警报顶部</block>
   <block id="ed862f710faf8808be6c0eb3e9619e30" category="paragraph"><block ref="4f633f9ad87e78d3d93ed9f152d5549a" category="inline-image-macro-rx" type="image"></block> <block ref="45e1a131f383b4a3d591b6b7f4008d87" category="inline-image-macro-rx" type="image"></block> <block ref="1fc0e7df8bd287d2b4b5569c861bc29d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="333fa709635d0e011dd99c908e02bd40" category="paragraph">高可信度横幅表明攻击已显示出勒索软件行为以及文件加密活动。加密文件图表指示 ARP 解决方案检测到卷加密活动的时间戳。</block>
   <block id="e646e16bee8b32e6ea29e30d01970a6c" category="section-title">限制</block>
   <block id="56684562f1f82eb99e69650845acd6ad" category="paragraph">如果 SVM 未受到 Workload Security 监控，但ONTAP生成了 ARP 事件，则 Workload Security 仍会接收并显示这些事件。但是，与警报相关的取证信息以及用户映射将不会被捕获或显示。</block>
   <block id="1f8b585533464977d763d893abd63588" category="paragraph">下表描述了已知问题及其解决方法。</block>
@@ -3678,7 +3665,6 @@
   <block id="fb4e4dc5cb185934a7a50a8b788d9a18" category="inline-image-macro">访问被拒绝事件示例</block>
   <block id="ad7abfbe23406b97a783bcc153795841" category="paragraph"><block ref="ad7abfbe23406b97a783bcc153795841" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f765e14da4a389313572532a2db01804" category="summary">当出现异常用户活动或潜在攻击时，工作负载安全会发出警报。警报页面列出了这些活动，以便快速轻松地进行调查。</block>
-  <block id="42dbd44948498b2c6399cada3f8bce3c" category="paragraph">工作负载安全警报页面显示最近攻击和/或警告的时间线，并允许您查看每个问题的详细信息。</block>
   <block id="ec463f286fdd66eb02ef994e465aa5ef" category="inline-image-macro">警报列表</block>
   <block id="710f7e812945643ee105a9bd2d01a01f" category="paragraph"><block ref="710f7e812945643ee105a9bd2d01a01f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b92071d61c88498171928745ca53078b" category="section-title">警报</block>
@@ -3723,12 +3709,9 @@
   <block id="98d65924ba5e4c9e08f01233aceb15b8" category="list-text">显示攻击期间文件活动的图表</block>
   <block id="150371e71cf9ac0249f420076a2e5358" category="section-title">相关用户部分：</block>
   <block id="db67b2fbfe663dec3bafb30754f82043" category="paragraph">此部分显示有关参与潜在攻击的用户的详细信息，包括用户的热门活动图表。</block>
-  <block id="7cbf4ba3df1c84539924c37da16db19b" category="paragraph">警报页面（此示例显示潜在的勒索软件攻击）：<block ref="5ff4dcf9689ef64057d8e82508557b5f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="6c9d686a827f50aa2feb7087b665c481" category="paragraph">详细信息页面（此示例显示了潜在的勒索软件攻击）：<block ref="9d19bd7639e249113839e28d2fea9963" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6baf1e00d599761ac0cdbee221c4569c" category="section-title">_拍摄快照_动作</block>
   <block id="37fa3057780441193fd46b687aef4974" category="paragraph">工作负载安全会在检测到恶意活动时自动拍摄快照来保护您的数据，确保您的数据得到安全备份。</block>
   <block id="7683f342a6f18a36645f19f6332de56e" category="inline-link-macro">自动响应策略</block>
-  <block id="d27b2fb629cc2c24086da7257eb32814" category="paragraph">您可以定义<block ref="5def0187ac3a4d928905bc1e2b8dece3" category="inline-link-macro-rx"></block>当检测到勒索软件攻击或其他异常用户活动时拍摄快照。您也可以从警报页面手动拍摄快照。</block>
   <block id="bf69429297f9f42186bf9ad016e6efd6" category="section-title">警报通知</block>
   <block id="8c8959fb2c9aef71d75a9af4ab87c3ee" category="paragraph">对于针对警报采取的每个操作，都会向警报收件人列表发送警报的电子邮件通知。要配置警报收件人，请单击*管理&gt;通知*并输入每个收件人的电子邮件地址。</block>
   <block id="2c4a65782f3fcd193e8e3aab503fa515" category="section-title">保留政策</block>
@@ -3745,7 +3728,6 @@
   <block id="1e325041509ea982dbf0cb285dc1f84d" category="cell">这是一种罕见的情况。如果您遇到这种情况，请登录ONTAP并手动为旧警报拍摄快照。</block>
   <block id="7490716e612a9644196d7f0a4d26b1fe" category="cell">在“警报详情”页面中，“拍摄快照”按钮下方显示“上次尝试失败”错误消息。将鼠标悬停在错误上会显示“对于具有 id 的数据收集器，调用 API 命令已超时”。</block>
   <block id="f538ceb4d07ca88305f431846ed6973f" category="cell">如果 SVM 的 LIF 在ONTAP中处于 _disabled_ 状态，则当通过 SVM 管理 IP 将数据收集器添加到工作负载安全时，可能会发生这种情况。在ONTAP中启用特定的 LIF，并从工作负载安全触发_手动拍摄快照_。快照操作将会成功。</block>
-  <block id="5439b902968ffabf767c31e6ae62e61b" category="summary">您可以针对潜在攻击（例如勒索软件）和/或活动警告设置自动响应策略</block>
   <block id="df6a21f670066b82b5409a049dec0efe" category="doc">自动响应策略</block>
   <block id="e5da02c738b911c42fb0a45a5b76c8d9" category="paragraph">响应策略会在发生攻击或异常用户行为时触发诸如拍摄快照或限制用户访问等操作。</block>
   <block id="8816114441548a7f4d390de764f25ad9" category="paragraph">您可以针对特定设备或所有设备设置策略。要设置响应策略，请选择*管理 &gt; 自动响应策略*，然后单击相应的*+策略*按钮。您可以创建针对攻击或警告的策略。</block>
@@ -3772,9 +3754,7 @@
   <block id="b979e86b9a609c9d9015d0b66fb3475b" category="paragraph">通过先进的机器学习和用户行为异常检测，向您发出任何异常数据访问警报。</block>
   <block id="9c0408c775a2b61052a2e700a89f396f" category="section-title">Compliance</block>
   <block id="8e1e51e30cfb4cb618e7ad56db2cefcd" category="paragraph">通过审核用户对存储在本地或云中的关键公司数据的访问来确保公司合规性。</block>
-  <block id="cf10c2b301ad472a4aba146a0e505098" category="summary">添加用于接收工作负载安全警报通知的电子邮件地址。</block>
   <block id="12c5785c0da06ba105803155a192752d" category="doc">配置警报、警告和代理/数据源收集器健康状况的电子邮件通知</block>
-  <block id="9491cdf060c59bf0f883c94db8cfe73d" category="paragraph">要配置工作负载安全警报收件人，请单击*管理&gt;通知*，然后在每个收件人的相应部分输入电子邮件地址。</block>
   <block id="d788a1b203813004b96af5724b63cb70" category="section-title">潜在攻击警报和警告</block>
   <block id="0913d37e3bac65fbe05c7263d286ef60" category="paragraph">要发送_潜在攻击_警报通知，请在_发送潜在攻击警报_部分输入收件人的电子邮件地址。对于警报上的每个操作，都会向警报收件人列表发送电子邮件通知。</block>
   <block id="971a81b1c11c1b1948e93ef28402c3f4" category="paragraph">要发送_警告_通知，请在_发送警告警报_部分输入收件人的电子邮件地址。</block>
@@ -3784,7 +3764,6 @@
   <block id="cfbd8d8f411f08c4641b2905bdc80139" category="list-text">仅当代理/收集者停止报告至少一小时后才会发送健康警报。</block>
   <block id="c973f23a4328dc0e33a2614912736bb0" category="list-text">即使代理或数据收集器长时间断开连接，在给定的 24 小时内也只会向预期收件人发送一封电子邮件通知。</block>
   <block id="30a17963216c2665ef68b2a0cba05de6" category="list-text">如果代理发生故障，则会发送一条警报（而不是每个收集器发送一条警报）。该电子邮件将包含所有受影响的 SVM 的列表。</block>
-  <block id="6aa9d0b40df0476a0e5d6cba51a44816" category="list-text">活动目录收集失败被报告为警告；它不会影响勒索软件检测。</block>
   <block id="1c694b0b295603bad9f0fa0c7f151567" category="list-text">入门设置列表现在包括一个新的“配置电子邮件通知”阶段。</block>
   <block id="3b1c56e7c6b15724089ac1fbd8291af2" category="section-title">接收代理和数据收集器升级通知</block>
   <block id="1f56a492ab24b15ab7bdf4b716067acd" category="list-text">在“数据收集健康警报”中输入电子邮件 ID。</block>
@@ -3792,10 +3771,7 @@
   <block id="f7e530357a9fe13372b34f49bcbf5513" category="list-text">代理和数据收集器升级电子邮件通知将在计划升级前一天发送到电子邮件 ID。</block>
   <block id="be8e3ac01b05912cba21f26369a5a852" category="cell">电子邮件 ID 出现在“数据收集器健康警报”中，但我没有收到通知。</block>
   <block id="3cd7d46a06774e1cc6f2ece4407891a3" category="cell">通知电子邮件从NetApp Data Infrastructure Insights域发送，即从 _accounts@service.cloudinsights.netapp.com_ 发送。有些公司会阻止来自外部域的来电电子邮件。确保来自NetApp Data Infrastructure Insights域的外部通知已列入白名单。</block>
-  <block id="392b73413f817556c91d974c59c48d26" category="summary">借助工作负载安全，您可以在怀疑发生破坏行为时限制用户访问</block>
   <block id="680aba4527b5f65899e6a3d8b5ef2457" category="doc">阻止用户访问</block>
-  <block id="54fc3d93cd49948e1764882084d106cc" category="paragraph">一旦检测到攻击，Workload Security 可以通过阻止用户访问文件系统来阻止攻击。可以使用自动响应策略自动阻止访问，也可以从警报或用户详细信息页面手动阻止访问。</block>
-  <block id="7aedbe09972610c1d6a6d90587580682" category="paragraph">当阻止用户访问时，应该定义一个阻止时间段。选定的时间段结束后，用户访问权限将自动恢复。  SMB 和 NFS 协议均支持访问阻止。</block>
   <block id="036ce35e40fa3fbcc9c9e500c29c6bf9" category="paragraph">用户的 SMB 访问将被直接阻止，而引发攻击的主机的 IP 地址的 NFS 访问将被阻止。这些机器 IP 地址将被阻止访问由工作负载安全监控的任何存储虚拟机 (SVM)。</block>
   <block id="f19379ce165a902f81548ae9d7b2e07c" category="paragraph">例如，假设工作负载安全管理 10 个 SVM，并且为其中 4 个 SVM 配置了自动响应策略。如果攻击源自四个 SVM 中的一个，则用户的访问将在所有 10 个 SVM 中被阻止。仍在原始 SVM 上拍摄快照。</block>
   <block id="7dd607950e587603a00a1a965723c7c1" category="paragraph">如果有四个 SVM，其中一个 SVM 配置为 SMB，一个 SVM 配置为 NFS，其余两个 SVM 同时配置为 NFS 和 SMB，则如果攻击源自四个 SVM 中的任何一个，则所有 SVM 都将被阻止。</block>
@@ -7000,7 +6976,6 @@
   <block id="c4207c205277b5cad1577163a6bae022" category="admonition">注销Data Infrastructure Insights将使您退出控制台。您还将退出使用控制台登录的其他NetApp云服务。</block>
   <block id="8463a61dd94ff5934036d4c8a8936e32" category="section-title">非活动超时</block>
   <block id="db8ff6a5dfcebcb4f9f3077c3acd8c0a" category="paragraph">默认情况下，如果六小时（360 分钟）内没有任何活动，控制台将注销用户。无论活动如何，用户将在七天后被注销。</block>
-  <block id="5b5f6636f455e00151ff6c4d5e1be19c" category="summary">工作负载安全使用数据收集器从设备收集文件和用户访问数据。</block>
   <block id="fde8afa3fd65a9f38d9b11377453846e" category="doc">配置Cloud Volumes ONTAP和Amazon FSx for NetApp ONTAP收集器</block>
   <block id="c45671a9389f697917f0b33d12822c51" category="section-title">Cloud Volumes ONTAP存储配置</block>
   <block id="2ffc6472f9d6abaf761bbe2e6a0385ce" category="paragraph">请参阅OnCommand Cloud Volumes ONTAP文档，以配置单节点/HA AWS 实例来托管工作负载安全代理：<block ref="caca64b8e9927e0ea8e8b0158b9e47cd" category="inline-link-rx"></block></block>
@@ -12076,11 +12051,8 @@
   <block id="5e0f4fcd8e020652408a2ed8c1c6513d" category="list-text">允许您切换到其他NetApp Cloud Central 产品的菜单已移至屏幕的右上角。</block>
   <block id="f998abe6d6e1433185e617432fa562a7" category="summary">将文件扩展名添加到允许的文件类型列表以减少警报。</block>
   <block id="2b38e4e9371e68c324f4d975aeec0b8b" category="doc">允许的文件类型策略</block>
-  <block id="3a0a3011be8f34f267c24177c748de10" category="paragraph">如果检测到已知文件扩展名的勒索软件攻击，并且在警报屏幕上生成警报，则可以将该文件扩展名添加到_允许的文件类型_列表中，以防止不必要的警报。</block>
   <block id="66c0454949e8e45058f66b8dbe1d1a38" category="paragraph">导航到*工作负载安全&gt;策略*并转到_允许的文件类型策略_选项卡。</block>
   <block id="8c06b62ca830efbad93bfb2ce294e0ef" category="paragraph"><block ref="8c06b62ca830efbad93bfb2ce294e0ef" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="bdf27b4c983630ae6531f89136fe0963" category="paragraph">一旦添加到“允许的文件类型”列表，就不会针对该允许的文件类型生成勒索软件攻击警报。请注意，“允许的文件类型”策略仅适用于勒索软件检测。</block>
-  <block id="492f463a35ea215d77ae021c64cddb64" category="paragraph">例如，如果将名为 _test.txt_ 的文件重命名为 _test.txt.abc_，并且 Workload Security 由于 _.abc_ 扩展名而检测到勒索软件攻击，则可以将 _.abc_ 扩展名添加到 _允许的文件类型_ 列表中。加入该列表后，将不再针对以_.abc_为扩展名的文件产生勒索攻击。</block>
   <block id="b778d3252b5cc52999f0c844a033362f" category="paragraph">允许的文件类型可以是完全匹配（例如“ .abc”）或表达式（例如“ .*type”、“ .type*”或“ *type*”）。不支持“.a*c”、“.p*f”类型的表达式。</block>
   <block id="3ee2ba16702e3b406dd125b347f5f30b" category="summary">可以手动安装或更新工作负载安全代理，从而更好地控制租户上安装的软件。</block>
   <block id="5ecfbb1f5f3536161517dc33155eaa58" category="doc">手动安装工作负载安全代理和收集器</block>
@@ -12468,9 +12440,7 @@
   <block id="abc492c54ab99cf963d50d67acb42565" category="sidebar">事件率检查器（代理规模指南）</block>
   <block id="a8df87f53c1b831dfc886e69dec19144" category="sidebar">活动取证 - 所有活动</block>
   <block id="f9aae5fda8d810a29f12d1e61b4ab25f" category="sidebar">用户</block>
-  <block id="9b5911ec569b49f0ae81ecb2c9067806" category="sidebar">ONTAP自主勒索软件防护集成</block>
   <block id="1c31d515d2e78422350a8dfc6a331a38" category="sidebar">ONTAP访问被拒绝集成</block>
-  <block id="c52c39354f4ad29d5eea2036eb6bf8a9" category="sidebar">模拟勒索软件攻击</block>
   <block id="c836566b25407f9b00af0ee750a250a6" category="sidebar">创建 Webhook</block>
   <block id="8c4223ab469f8b3e9d1aa30d51cf4390" category="sidebar">Discord Webhook 示例</block>
   <block id="9129ee5b293413b88d69268ce77a5a06" category="sidebar">PagerDuty Webhook 示例</block>
@@ -12617,10 +12587,8 @@
   <block id="f6bd61a684c7e1301e78da3db50d1837" category="paragraph">工作负载安全功能可帮助您监控用户活动并检测存储环境中的潜在安全威胁。在开始监控之前，您需要配置代理、数据收集器和目录服务，为全面的安全监控奠定基础。</block>
   <block id="d49a8da0de1eee7dc793284699bb0bab" category="cell"><block ref="d49a8da0de1eee7dc793284699bb0bab" category="inline-link-macro-rx"></block></block>
   <block id="adf5d1319b5bafa4d304b195ab11a3ac" category="cell">单击*工作负载安全&gt;收集器*单击要配置的数据收集器。有关收集器信息，请参阅文档中的“数据收集器供应商参考”部分。</block>
-  <block id="a893b5195474a4c9b110269be2b309ef" category="summary">工作负载安全代理会监控用户活动并检测存储环境中的安全威胁。</block>
   <block id="9997d0de04e698d72bb27c409e5255ee" category="doc">部署工作负载安全代理</block>
   <block id="c3c0e3736c092f9f194505694468ca8b" category="inline-link-macro">系统要求</block>
-  <block id="9d604ddbc2f20e3c4cd0e75c950e6c53" category="paragraph">工作负载安全代理对于监控用户活动和检测存储基础架构中潜在的安全威胁至关重要。本指南提供在您的环境中部署代理的分步说明。开始之前，请确保您的代理服务器满足以下条件： <block ref="e9ae60f62ad52c07bed4d959ac93cbbc" category="inline-link-macro-rx"></block>。</block>
   <block id="cd47dd01745339787e4c7300389401f2" category="section-title">最佳实践</block>
   <block id="5f1d8e43e03545d4e832f35d2653f7ff" category="paragraph">配置工作负载安全代理之前，请记住以下事项。</block>
   <block id="1d0bcc6be95579ec1173901dc82ecc6d" category="cell">暂停和恢复</block>
@@ -12693,4 +12661,40 @@
   <block id="d388ca982366ad7a8a7a165d21919f84" category="paragraph">租户创建完成后，使用控制台凭据登录并开始免费试用 30 天Data Infrastructure Insights。在此试用期间，您可以探索Data Infrastructure Insights所提供的功能。</block>
   <block id="a361d4c5b26cab224e5aad972ef9f92f" category="paragraph">租户创建完成后，您可以随时登录NetApp BlueXP Portal 并导航至以下位置： <block ref="37a150e92f05332b5bc5a56046c3177c" category="inline-link-macro-rx"></block> 页面并选择“转到Data Infrastructure Insights”。</block>
   <block id="ed35afa558b996b37265533db9af5399" category="sidebar">在报告中发布注释</block>
+  <block id="d19e16fd482ca29d2c0ef4fb8523357a" category="summary">确保工作负载安全代理部署环境满足最低操作系统、CPU、内存和磁盘空间要求，以获得最佳性能和数据收集。</block>
+  <block id="c4942feafc272d7da2ce90634dc0120d" category="summary">通过 REST API 访问工作负载安全数据，并采用基于令牌的安全身份验证，以便与 CMDB、工单系统和其他企业应用程序集成。</block>
+  <block id="3dec3952c02d73a04d326f3624f668f6" category="summary">通过使用随附的模拟脚本模拟攻击来测试和验证工作负载安全检测能力，以验证警报生成和响应策略。</block>
+  <block id="c7ea3cec531081ee09f563d84422d157" category="doc">工作负载安全：模拟异常文件篡改</block>
+  <block id="3e350b01c804205b973dbd44adc54728" category="paragraph">您可以按照本页上的说明，使用随附的文件篡改模拟脚本来模拟文件篡改，以测试或演示工作负载安全性。</block>
+  <block id="67f556940660f0bafe2738969d389877" category="list-text">该文件篡改模拟脚本仅适用于 Linux 系统。如果用户已将ONTAP ARP 与工作负载安全集成，则模拟脚本还应生成高置信度警报。</block>
+  <block id="6465f8a9b5dccc316104b56b41de2db0" category="paragraph">要生成文件篡改警报，您可以执行随附的脚本，该脚本将在工作负载安全中模拟文件篡改警报。</block>
+  <block id="2a9bccccecd980381e18178287c921b4" category="paragraph">Workload Security 根据用户行为检测文件篡改模式，而ONTAP ARP 根据文件中的加密活动检测文件篡改活动。</block>
+  <block id="a68622796ba5ea9694219b0cbfbae6b0" category="paragraph">工作负载安全功能会学习用户行为，对于同一用户在 24 小时内重复发生的文件篡改攻击，不会发出警报。</block>
+  <block id="d1de6a785681750f7fd87d382642893e" category="paragraph">r--- 侧边栏：侧边栏永久链接：concept_cs_event_rate_checker.html 摘要：使用 SVM 事件速率检查器测量 NFS/SMB 事件速率，并在部署工作负载安全数据收集器之前确定最佳代理大小。关键词：事件、检查器、速率、大小、云安全 ---</block>
+  <block id="8013d871b4070a5d3848e4faa21e67d9" category="summary">通过将工作负载安全与ONTAP自主保护集成，增强攻击检测能力，实现关联分析、自动响应和取证调查功能。</block>
+  <block id="0ed52d2d20f5fbf80a330283d4aa9a72" category="paragraph">ONTAP自主保护功能利用 NAS（NFS 和 SMB）环境中的工作负载分析，主动检测并警告可能表明恶意攻击或未经授权的数据修改的异常文件内活动。</block>
+  <block id="8ec1d8886c9b4b48a45eb683d80b184e" category="paragraph">高置信度横幅表明攻击已显示出文件篡改行为以及文件加密活动。加密文件图表显示了 ARP 解决方案检测到卷加密活动的时间戳。</block>
+  <block id="56adf418335195f68828ddd83fd50548" category="paragraph">工作负载安全警报页面提供了已检测到的威胁和警告的完整时间线，以及详细的调查工具。查看警报详情、管理状态更新、按条件筛选、跟踪用户活动，以便高效地调查和应对安全事件。</block>
+  <block id="3ba65a7b57bde3d2f95e6dad96e575d5" category="inline-image-macro">文件篡改警报示例</block>
+  <block id="f1f63c95d00cc2549a1787fe41e36715" category="paragraph">警报页面（此示例显示了潜在的文件篡改攻击）： <block ref="6a7e65573e881b5b52bf16119aa9b16d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="41a5a43c24278078d3b80a7578a3a1c3" category="inline-image-macro">文件篡改详情页示例</block>
+  <block id="4a4a4b8fd74bec537d778837186d3eec" category="paragraph">详情页面（此示例展示了一种潜在的文件篡改攻击）： <block ref="0c605ac34e65472f084a8e37ac3dc156" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4b4fbdbe248fc035585aeb5a0e8087c0" category="paragraph">你可以定义 <block ref="5def0187ac3a4d928905bc1e2b8dece3" category="inline-link-macro-rx"></block> 当检测到文件篡改攻击或其他异常用户活动时，会拍摄快照。您也可以从警报页面手动截取快照。</block>
+  <block id="a9996cbd4cac46323215dfb495845c42" category="summary">配置自动响应策略，以便在发生安全事件时立即采取行动，包括快照、用户访问限制以及针对威胁和可疑行为的 webhook 通知。</block>
+  <block id="1d78ee56ccc2ec0a973d6c1b8dc3539f" category="summary">利用存储工作负载安全功能的内部威胁检测、跨混合环境的集中可见性以及用于异常检测和合规性的高级机器学习来保护您的数据。</block>
+  <block id="271be754535c9ed78f2f75d64082cbe9" category="summary">配置电子邮件通知，以便实时接收有关潜在攻击、安全警告和代理/数据收集器运行状况的警报。</block>
+  <block id="b149bcf300f96b3d1dca583412de6c8a" category="paragraph">电子邮件通知使您能够及时了解潜在攻击、安全警告和基础设施健康状况问题。在“管理 &gt; 通知”设置中配置收件人电子邮件地址，以接收根据每个收件人的职责量身定制的实时警报。</block>
+  <block id="94563d75d3a246c950039b0a255e3ddb" category="list-text">Active Directory 数据收集失败会被报告为警告；它不会影响威胁检测。</block>
+  <block id="44b44dae2990432b7bd93090c41c82f9" category="summary">立即阻止检测到的攻击，通过自动或手动限制受感染用户的访问权限，防止对多个存储卷上的文件系统造成进一步损害。</block>
+  <block id="3ae0920baa189ad91236ecb40a2f8386" category="doc">阻止用户访问以阻止攻击</block>
+  <block id="f5e00f5f92f705e11a73ffc71d728163" category="paragraph">立即阻止检测到的攻击，阻止受感染用户的访问，以防止进一步的数据损坏或泄露。工作负载安全功能既可以通过自动响应策略实现自动阻止，也可以通过警报或用户详细信息页面进行手动干预，从而让您灵活控制安全响应。访问限制会自动应用于所有受监控的存储卷，并且有时间限制，以便自动恢复。</block>
+  <block id="686e492758f398a51b847e4945a5c465" category="summary">为Cloud Volumes ONTAP和Amazon FSx for NetApp ONTAP设置工作负载安全数据收集器，以监控文件访问、用户活动并检测整个云存储基础架构中的威胁。</block>
+  <block id="5afd7fa5e62c2403ed8182f2954c6011" category="paragraph">通过为Cloud Volumes ONTAP和Amazon FSx for NetApp ONTAP配置 Workload Security 数据收集器，监控整个云存储基础架构中的文件和用户访问。本指南提供了在 AWS 中部署代理并将其连接到云存储实例的分步说明。</block>
+  <block id="c2ba90ec94460d090816ee7ba6a3ed97" category="summary">部署工作负载安全代理来监控用户活动、检测安全威胁并保护您的存储基础架构。</block>
+  <block id="515af4442237a2919b0f5a1e82922445" category="paragraph">工作负载安全代理对于监控用户活动和检测存储基础架构中潜在的安全威胁至关重要。本指南提供分步安装说明、代理管理最佳实践（包括暂停/恢复和固定/取消固定功能）以及部署后配置要求。开始之前，请确保您的代理服务器满足以下条件： <block ref="e9ae60f62ad52c07bed4d959ac93cbbc" category="inline-link-macro-rx"></block>。</block>
+  <block id="db1a2df035e9cd0bcdfb55db52e3e64b" category="paragraph">如果检测到已知文件扩展名的文件篡改攻击，并且在“警报”屏幕上生成警报，则可以将该文件扩展名添加到_允许的文件类型_列表中，以防止不必要的警报。</block>
+  <block id="8d791b80cd3ffee28fe92eaeb570182d" category="paragraph">一旦添加到_允许的文件类型_列表中，就不会针对该允许的文件类型生成文件篡改攻击警报。请注意，“允许的文件类型”策略仅适用于文件篡改检测。</block>
+  <block id="7af3f2f9c8eaa3a8ff61f839001e8ca0" category="paragraph">例如，如果将名为 _test.txt_ 的文件重命名为 _test.txt.abc_，并且工作负载安全系统由于 _.abc_ 扩展名而检测到文件篡改攻击，则可以将 _.abc_ 扩展名添加到 _允许的文件类型_ 列表中。添加到列表后，将不再针对扩展名为 _.abc_ 的文件生成文件篡改攻击。</block>
+  <block id="374bdbda42629b3859daec6506078b36" category="sidebar">ONTAP自主保护集成</block>
+  <block id="5273cec606b6768f8394e2ae1566c7f6" category="sidebar">模拟攻击</block>
 </blocks>

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: cs_automated_response_policies.html 
-keywords: alert, snapshot, ransomware, attack 
-summary: 您可以针对潜在攻击（例如勒索软件）和/或活动警告设置自动响应策略 
+keywords: alert, snapshot, ransomware, attack, tampering 
+summary: 配置自动响应策略，以便在发生安全事件时立即采取行动，包括快照、用户访问限制以及针对威胁和可疑行为的 webhook 通知。 
 ---
 = 自动响应策略
 :hardbreaks:

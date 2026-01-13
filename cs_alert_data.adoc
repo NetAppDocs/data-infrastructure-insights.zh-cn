@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: cs_alert_data.html 
-keywords: alert, attack, ransomware, activity, security, abnormal 
+keywords: alert, attack, ransomware, activity, security, abnormal, tampering 
 summary: 当出现异常用户活动或潜在攻击时，工作负载安全会发出警报。警报页面列出了这些活动，以便快速轻松地进行调查。 
 ---
 = 警报
@@ -14,7 +14,7 @@ summary: 当出现异常用户活动或潜在攻击时，工作负载安全会�
 
 
 [role="lead"]
-工作负载安全警报页面显示最近攻击和/或警告的时间线，并允许您查看每个问题的详细信息。
+工作负载安全警报页面提供了已检测到的威胁和警告的完整时间线，以及详细的调查工具。查看警报详情、管理状态更新、按条件筛选、跟踪用户活动，以便高效地调查和应对安全事件。
 
 image:CloudSecureAlertsListPage.png["警报列表"]
 
@@ -102,9 +102,9 @@ image:CloudSecureChangeAlertStatus.png["更改警报状态"]
 
 此部分显示有关参与潜在攻击的用户的详细信息，包括用户的热门活动图表。
 
-警报页面（此示例显示潜在的勒索软件攻击）：image:RansomwareAlertExample.png["勒索软件警报示例"]
+警报页面（此示例显示了潜在的文件篡改攻击）： image:RansomwareAlertExample.png["文件篡改警报示例"]
 
-详细信息页面（此示例显示了潜在的勒索软件攻击）：image:RansomwareDetailPageExample.png["勒索软件详情页面示例"]
+详情页面（此示例展示了一种潜在的文件篡改攻击）： image:RansomwareDetailPageExample.png["文件篡改详情页示例"]
 
 
 
@@ -112,7 +112,7 @@ image:CloudSecureChangeAlertStatus.png["更改警报状态"]
 
 工作负载安全会在检测到恶意活动时自动拍摄快照来保护您的数据，确保您的数据得到安全备份。
 
-您可以定义link:cs_automated_response_policies.html["自动响应策略"]当检测到勒索软件攻击或其他异常用户活动时拍摄快照。您也可以从警报页面手动拍摄快照。
+你可以定义 link:cs_automated_response_policies.html["自动响应策略"] 当检测到文件篡改攻击或其他异常用户活动时，会拍摄快照。您也可以从警报页面手动截取快照。
 
 自动拍摄快照：image:AlertActionsAutomaticExample.png["警报行动屏幕，1000"]
 

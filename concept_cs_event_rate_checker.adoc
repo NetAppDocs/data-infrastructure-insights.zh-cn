@@ -1,13 +1,12 @@
----
-sidebar: sidebar 
-permalink: concept_cs_event_rate_checker.html 
-summary: 在安装ONTAP SVM DSC 之前，可以运行此脚本来检查 SVM 中的事件率 
-keywords: event, checker, rate, sizing, cloud secure 
----
 = SVM 事件率检查器（代理规模指南）
-:hardbreaks:
 :allow-uri-read: 
 
+
+r--- 侧边栏：侧边栏永久链接：concept_cs_event_rate_checker.html 摘要：使用 SVM 事件速率检查器测量 NFS/SMB 事件速率，并在部署工作负载安全数据收集器之前确定最佳代理大小。关键词：事件、检查器、速率、大小、云安全 ---
+
+
+
+= SVM 事件率检查器（代理规模指南）
 
 [role="lead"]
 事件速率检查器用于在安装ONTAP SVM 数据收集器之前检查 SVM 中的 NFS/SMB 组合事件速率，以查看一台代理机器能够监控多少个 SVM。使用事件率检查器作为规模指南来帮助规划您的安全环境。

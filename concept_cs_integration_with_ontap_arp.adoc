@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_cs_integration_with_ontap_arp.html 
-summary: 工作负载安全与ONTAP自主勒索软件防护集成，以改进勒索软件检测。 
+summary: 通过将工作负载安全与ONTAP自主保护集成，增强攻击检测能力，实现关联分析、自动响应和取证调查功能。 
 keywords: ransomware, ARP, Protection, Security 
 ---
 = 与ONTAP自主勒索软件防护集成
@@ -10,7 +10,7 @@ keywords: ransomware, ARP, Protection, Security
 
 
 [role="lead"]
-ONTAP自主勒索软件防护 (ARP) 功能使用 NAS（NFS 和 SMB）环境中的工作负载分析来主动检测并警告可能表明勒索软件攻击的异常文件内活动。
+ONTAP自主保护功能利用 NAS（NFS 和 SMB）环境中的工作负载分析，主动检测并警告可能表明恶意攻击或未经授权的数据修改的异常文件内活动。
 
 关于 ARP 的更多详细信息和许可要求可以找到link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["此处"]。
 
@@ -62,7 +62,7 @@ security login role create -role csrole -cmddirname "security anti-ransomware vo
 
 image:CS_Ransomware_Example_1.png["勒索软件警报顶部"] image:CS_Ransomware_Example_2.png["勒索软件警报顶部"] image:CS_Ransomware_Example_3.png["勒索软件警报顶部"]
 
-高可信度横幅表明攻击已显示出勒索软件行为以及文件加密活动。加密文件图表指示 ARP 解决方案检测到卷加密活动的时间戳。
+高置信度横幅表明攻击已显示出文件篡改行为以及文件加密活动。加密文件图表显示了 ARP 解决方案检测到卷加密活动的时间戳。
 
 
 
