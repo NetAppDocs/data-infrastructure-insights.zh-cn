@@ -4,7 +4,7 @@ permalink: concept_cs_attack_simulator.html
 keywords: ransomware, simulation, simulator, restrict, attack 
 summary: 通过使用随附的模拟脚本模拟攻击来测试和验证工作负载安全检测能力，以验证警报生成和响应策略。 
 ---
-= 工作负载安全：模拟异常文件篡改
+= 工作负载安全：模拟文件篡改
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
