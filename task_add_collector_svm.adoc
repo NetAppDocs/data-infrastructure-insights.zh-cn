@@ -112,6 +112,23 @@ image:ws_test_connection_success_example.png["工作负载安全“测试连接�
 
 
 
+== ONTAP Multi Admin Verify (MAV) 注意事项
+
+某些功能，例如创建和删除快照或用户阻止 (SMB)，可能无法根据您的 ONTAP 版本中添加的 MAV 命令正常工作。
+
+请按照以下步骤将排除项添加到 MAV 命令中，以允许 Workload Security 创建或删除快照并阻止用户。
+
+允许创建和删除快照的命令：
+
+....
+multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !*cloudsecure_*"
+multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !*cloudsecure_*"
+....
+允许用户阻止的命令：
+
+ multi-admin-verify rule delete -operation set
+
+
 == 用户访问阻止的先决条件
 
 请记住以下几点link:cs_restrict_user_access.html["用户访问阻止"]：
@@ -318,7 +335,7 @@ NOTE: 如果收集器有限制用户，则无法暂停收集器。在暂停收�
 请记住以下几点：
 
 * 快照清除不会按照暂停收集器上配置的设置进行。
-* 暂停的收集器将不会处理 EMS 事件（如ONTAP ARP）。这意味着如果ONTAP识别出勒索软件攻击，Data Infrastructure Insights工作负载安全将无法获取该事件。
+* EMS 事件（如 ONTAP ARP）不会在暂停的收集器上处理。这意味着，如果 ONTAP 识别出文件篡改攻击，Data Infrastructure Insights Workload Security 将无法获取该事件。
 * 对于已暂停的收集器，将不会发送健康通知电子邮件。
 * 暂停的收集器不支持手动或自动操作（例如快照或用户阻止）。
 * 在代理或收集器升级、代理 VM 重新启动/重启或代理服务重新启动时，暂停的收集器将保持_暂停_状态。

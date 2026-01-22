@@ -4,7 +4,7 @@ permalink: concept_cs_event_rate_checker.html
 summary: 使用 SVM 事件速率检查器测量 NFS/SMB 事件速率，并在部署工作负载安全数据收集器之前确定最佳代理大小。 
 keywords: event, checker, rate, sizing, cloud secure 
 ---
-= SVM 事件率检查器（代理规模指南）
+= Event Rate Checker：Agent 规模调整指南
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,7 @@ keywords: event, checker, rate, sizing, cloud secure
 
 
 [role="lead"]
-事件速率检查器用于在安装ONTAP SVM 数据收集器之前检查 SVM 中的 NFS/SMB 组合事件速率，以查看一台代理机器能够监控多少个 SVM。使用事件率检查器作为规模指南来帮助规划您的安全环境。
-
-一个代理最多可以支持 50 个数据收集器。
+在部署数据收集器之前，通过测量 SVM 生成的 NFS 和 SMB 事件率来确定最佳 Agent 计算机大小。Event Rate Checker 脚本可帮助您了解容量限制（每个 Agent 最多 50 个数据收集器），并确保您的 Agent 基础架构可以处理您的预期事件量以进行可靠的威胁检测。
 
 
 

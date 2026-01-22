@@ -717,9 +717,6 @@
   <block id="8901b7a1034f6e31fa7c2f5929bdd211" category="paragraph"><block ref="8901b7a1034f6e31fa7c2f5929bdd211" category="inline-image-macro-rx" type="image"></block></block>
   <block id="36aed75d347e158fecfc525dc1d66a22" category="section-title">多次触发警报</block>
   <block id="7000a55791f1de1983f9adc601ad2e4e" category="paragraph">要使用不同的用户生成新的警报，请再次执行相同的步骤（创建测试数据，然后加密测试数据）。</block>
-  <block id="2723c4d559ff96bb42870d86c109708e" category="doc">SVM 事件率检查器（代理规模指南）</block>
-  <block id="0a2bd44573247d8e7748ce7d2d2a4b8f" category="paragraph">事件速率检查器用于在安装ONTAP SVM 数据收集器之前检查 SVM 中的 NFS/SMB 组合事件速率，以查看一台代理机器能够监控多少个 SVM。使用事件率检查器作为规模指南来帮助规划您的安全环境。</block>
-  <block id="40202f910a40e1ff8a02506c288b507e" category="paragraph">一个代理最多可以支持 50 个数据收集器。</block>
   <block id="3b31c3fb3c507b79d3f86f2b1e3392f5" category="section-title">要求：</block>
   <block id="70087224b93e8179deda7438fae8e843" category="list-text">集群 IP</block>
   <block id="baf16fe3173b840f1197987b16b3a8fc" category="list-text">集群管理员用户名和密码</block>
@@ -6853,7 +6850,6 @@
   <block id="7a69a2fce9a9acb9c8a84936863c1330" category="paragraph">请注意，如果在收集器暂停时在ONTAP上创建任何新卷等，则工作负载安全性将不会收集数据，并且这些卷等将不会反映在仪表板或表格中。</block>
   <block id="14fe64769d4df689f51e13f60c5ec439" category="admonition">如果收集器有限制用户，则无法暂停收集器。在暂停收集器之前恢复用户访问权限。</block>
   <block id="0d55775dbf06cf5596fe0f5c3363f19a" category="list-text">快照清除不会按照暂停收集器上配置的设置进行。</block>
-  <block id="f8b4c5607366d38cf806b0860c9cc5e4" category="list-text">暂停的收集器将不会处理 EMS 事件（如ONTAP ARP）。这意味着如果ONTAP识别出勒索软件攻击，Data Infrastructure Insights工作负载安全将无法获取该事件。</block>
   <block id="7e41836b686c17a31fd348a24ad244d1" category="list-text">对于已暂停的收集器，将不会发送健康通知电子邮件。</block>
   <block id="3683774ed8a4e1ec359bda17c740e07d" category="list-text">暂停的收集器不支持手动或自动操作（例如快照或用户阻止）。</block>
   <block id="fa80f305470263b5f75374e020afeacd" category="list-text">在代理或收集器升级、代理 VM 重新启动/重启或代理服务重新启动时，暂停的收集器将保持_暂停_状态。</block>
@@ -12697,4 +12693,12 @@
   <block id="ec054c68e1c4c037a34f69b34cbcf8ae" category="list-text">潜在攻击类型（例如，文件篡改或破坏）</block>
   <block id="5d6d5d308daaaae7ed88d035f629ea81" category="paragraph">您可以点击警报列表页面上的警报链接，打开该警报的详细信息页面。根据攻击或警报的类型，警报详情可能会有所不同。例如，文件篡改攻击详情页面可能显示以下信息：</block>
   <block id="a93ee3ea015fa995d5cf6a3a088e6f7b" category="list-text">攻击类型（文件篡改、破坏）和警报 ID（由工作负载安全分配）</block>
+  <block id="f8bdbc77da683d1b2ca16732bb4d002a" category="doc">Event Rate Checker：Agent 规模调整指南</block>
+  <block id="bada0c7fb23bdf61ed978484adc0aca1" category="paragraph">在部署数据收集器之前，通过测量 SVM 生成的 NFS 和 SMB 事件率来确定最佳 Agent 计算机大小。Event Rate Checker 脚本可帮助您了解容量限制（每个 Agent 最多 50 个数据收集器），并确保您的 Agent 基础架构可以处理您的预期事件量以进行可靠的威胁检测。</block>
+  <block id="0c71d53cc58e4ed316ec358109fe1aa2" category="section-title">ONTAP Multi Admin Verify (MAV) 注意事项</block>
+  <block id="808c106d880adde347d6a92e2e5ff7d0" category="paragraph">某些功能，例如创建和删除快照或用户阻止 (SMB)，可能无法根据您的 ONTAP 版本中添加的 MAV 命令正常工作。</block>
+  <block id="65616ef887eaf295f980029948d91e79" category="paragraph">请按照以下步骤将排除项添加到 MAV 命令中，以允许 Workload Security 创建或删除快照并阻止用户。</block>
+  <block id="87f1c49b01ac2f7b86716ee6218bc5f6" category="paragraph">允许创建和删除快照的命令：</block>
+  <block id="7842bb93d1b19afc39c751d0dddcf4ac" category="paragraph">允许用户阻止的命令：</block>
+  <block id="6a1af23a5137b0b5dbe87d4b59b0deeb" category="list-text">EMS 事件（如 ONTAP ARP）不会在暂停的收集器上处理。这意味着，如果 ONTAP 识别出文件篡改攻击，Data Infrastructure Insights Workload Security 将无法获取该事件。</block>
 </blocks>
