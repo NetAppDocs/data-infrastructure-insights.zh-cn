@@ -1,18 +1,22 @@
 ---
 sidebar: sidebar 
 permalink: concept_querying_assets.html 
-summary: 查询概述 
+summary: 查询库存资产和集成指标，以监控、排除故障并分析整个基础架构的性能，包括存储、计算和网络资源。 
 keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, Host, Internal Volume, iSCSI, Network, Portal, Path, Port, Qtree, Quota, Share, Storage, Node, Pool, SVM, Switch, Tape, VMDK, Virtual Machine, VM, Volume, Zone, Member 
 ---
-= 查询中使用的资产
+= 查询资产和指标
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-通过查询，您可以根据用户选择的条件（例如，注释）在粒度级别上搜索租户上的资产和指标，从而监控和排除网络故障。
+查询基础架构的物理和虚拟资产，以监控性能、排除问题并根据注释等自定义条件执行精细搜索。Data Infrastructure Insights 支持跨不同资产类型（从存储阵列和主机到应用程序和虚拟机）的查询，以及来自 Kubernetes、Docker 和 ONTAP Advanced Data 的集成指标，以实现全面的可视性。
 
-请注意，注释规则会自动将注释分配给资产，需要查询。
+请注意，自动为资源分配注释的注释规则需要与所有人共享的查询。有关共享查询的详细信息，请参阅下文。
 
 您可以查询租户上的物理或虚拟库存资产（及其相关指标），或查询 Kubernetes 或ONTAP Advanced Data 等集成提供的指标。
 
@@ -20,34 +24,7 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 
 == 库存资产
 
-以下资产类型可用于查询、仪表板小部件和自定义资产登录页面。可用于过滤器、表达式和显示的字段和计数器将因资产类型而异。并非所有资产都可以在所有小部件类型中使用。
-
-* 应用程序
-* 数据存储库
-* 磁盘
-* 网络结构
-* 通用设备
-* 主机
-* 内部体积
-* iSCSI 会话
-* iSCSI 网络门户
-* 路径
-* 端口
-* qtree
-* 配额
-* 共享
-* 存储
-* 存储节点
-* 存储池
-* Storage Virtual Machine (SVM)
-* 交换机
-* 磁带
-* VMDK
-* 虚拟机
-* 卷
-* 分区
-* 区域会员
-
+所有库存（也称为基础设施）资产类型（存储、交换机、VM、Application 等）都可以在查询、仪表板小部件和自定义资产登录页面中使用。筛选器、表达式和显示可用的字段和计数器因资产类型而异。
 
 
 
@@ -56,3 +33,14 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 除了查询库存资产及其相关性能指标之外，您还可以查询*集成数据*指标，例如由 Kubernetes 或 Docker 生成的指标，或ONTAP高级指标提供的指标。
 
 image:QueryPageFilter.png["集成查询过滤器示例"]
+
+
+
+== 共享查询
+
+通过选择谁可以查看和编辑查询来控制对查询的访问。默认情况下，新查询是私有的，仅对您可见，您可以选择与特定用户或具有灵活权限级别（只读或编辑）的整个组织共享它们。
+
+您可以选择将查询共享给所有人或选定用户，并设置编辑或只读权限。
+
+
+NOTE: 拥有帐户所有者权限的用户可以查看所有查询，无论隐私设置如何。

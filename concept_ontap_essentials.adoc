@@ -7,6 +7,10 @@ keywords: dashboard, widget, ontap, overview, insight
 = ONTAP基础知识
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -72,9 +76,9 @@ image:DataProtectionDashboard_ClusterList.png["数据保护集群列表"]
 
 == 安全性
 
-安全仪表板可让您即时查看当前的安全状况，显示硬件和软件卷加密、反勒索软件状态和集群身份验证方法的图表。安全标准是根据link:https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf["* NetApp ONTAP 9 安全强化指南*"]。
+安全仪表板为您提供当前安全状况的即时视图，显示硬件和软件卷加密、防文件篡改状态和集群身份验证方法的图表。安全条件根据 link:https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf["* NetApp ONTAP 9 安全强化指南*"] 中定义的建议进行评估。
 
-选择任何加密或反勒索软件计数来深入了解您的环境。
+选择任何加密或反文件篡改计数以深入了解您的环境。
 
 image:OE_SecurityDashboard.png["ONTAP Essentials 安全仪表板"]
 

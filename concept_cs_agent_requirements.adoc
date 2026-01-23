@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_cs_agent_requirements.html 
-summary: 确保工作负载安全代理部署环境满足最低操作系统、CPU、内存和磁盘空间要求，以获得最佳性能和数据收集。 
+summary: Workload Security 代理需要特定的操作系统、CPU、内存和磁盘空间规格，以有效监控文件访问并检测整个存储基础架构的安全威胁。 
 keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cloud Secure 
 ---
 = 工作负载安全代理要求
@@ -14,7 +14,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 
 
 [role="lead"]
-你必须link:task_cs_add_agent.html["安装工作负载安全代理"]以便从数据收集者那里获取信息。在安装代理之前，请确保您的环境满足操作系统、CPU、内存和磁盘空间要求。
+在满足最低操作系统、CPU、内存和磁盘空间要求的专用服务器上部署 Workload Security Agents，以确保最佳监控和威胁检测性能。本指南规定了 link:task_cs_add_agent.html["安装 Workload Security Agent"] 之前所需的硬件和网络要求，包括支持的 Linux 发行版、网络连接规则和系统规模调整指南。
 
 [cols="36,60"]
 |===

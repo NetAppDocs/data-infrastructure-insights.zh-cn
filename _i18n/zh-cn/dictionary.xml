@@ -574,8 +574,6 @@
   <block id="3e31734df6f02c9ad9cd0dc7c1f65a98" category="cell">我看到审计消息告诉我监视器已被导出。</block>
   <block id="256a0ce1cb9ac99794371e404aa7446e" category="cell">NetApp工程师通常在开发和测试新功能时使用自定义监视器配置的导出。如果您没有预料到会看到此消息，请考虑探究审核操作中提到的用户的操作或联系支持人员。</block>
   <block id="a7ef8f0bed1d94220b7abd3877b10643" category="doc">工作负载安全代理要求</block>
-  <block id="bee347f35c7a237c1f2d5d7193252244" category="inline-link-macro">安装工作负载安全代理</block>
-  <block id="1de0df19f89310a1407a7686c6dcad7c" category="paragraph">你必须<block ref="588188a9e8b5d243fbdbf4e2ce1c4421" category="inline-link-macro-rx"></block>以便从数据收集者那里获取信息。在安装代理之前，请确保您的环境满足操作系统、CPU、内存和磁盘空间要求。</block>
   <block id="0d9233050a9086b67df84f668963e42d" category="cell">运行以下任一许可版本的计算机：* AlmaLinux 9.4（64 位）至 9.5（64 位）、10（64 位），包括 SELinux* CentOS Stream 9（64 位）* Debian 11（64 位）、12（64 位），包括 SELinux* OpenSUSE Leap 15.3（64 位）至 15.6（64 位）* Oracle Linux 8.10（64 位）、9.1（64 位）至 9.6（64 位），包括 SELinux* Red Hat Enterprise Linux 8.10（64 位）、9.1（64 位）至 9.6（64 位）、10（64 位），包括 SELinux* Rocky 9.4（64 位）至 9.6（64 位），包括 SELinux* SUSE Linux Enterprise Server 15 SP4（64 位）至 15 SP6（64 位），包括 SELinux * Ubuntu 20.04 LTS（64 位）、22.04 LTS（64 位）、24.04 LTS（64 位） 此计算机不应运行其他应用程序级软件。建议使用专用服务器。</block>
   <block id="c441ee50c88f6e5e3a7c69fc69dad8b8" category="cell">命令</block>
   <block id="92094f10227c0d6e4da9a65b1cc23700" category="cell">安装需要“unzip”。此外，安装、运行脚本和卸载都需要“sudo su –”命令。</block>
@@ -626,7 +624,6 @@
   <block id="b81e4f797b30e131d43ea14e3bc8322c" category="inline-link-macro">事件发生率检查器</block>
   <block id="1a46e02a3754d0daf83001fffc7c7c46" category="paragraph">查看<block ref="fd6f609b977fb641a06defa631019934" category="inline-link-macro-rx"></block>有关尺寸的信息，请参阅文档。</block>
   <block id="0865b3ed9f5211e6fe35eddac5b1aaa3" category="doc">工作负载安全 API</block>
-  <block id="1b1fb3360bd2eea985279f6fcc2ef45f" category="paragraph">工作负载安全 API 使NetApp客户和独立软件供应商 (ISV) 能够将工作负载安全与其他应用程序（例如 CMDB 或其他票务系统）集成。</block>
   <block id="1a152a606ca16a6eef5f2e9ac9b4c824" category="paragraph">API 访问要求：</block>
   <block id="c32ef84ff5ca99a73e37c8f28fa25ae5" category="list-text">API 令牌管理由具有管理员角色的工作负载安全用户执行。</block>
   <block id="1a996d988f997b5127990972bac65132" category="paragraph">通过登录 Workload Security 并导航到 *Admin &gt; API Access* 可以找到最新的 API 信息。单击*API 文档*链接。  API 文档基于 Swagger，提供 API 的简要描述和使用信息，并允许您在租户上试用。</block>
@@ -660,7 +657,6 @@
   <block id="6a2eb10d0f7d8e6c5942069b7aa730bf" category="section-title">要在 Linux 中挂载 NFS 导出：</block>
   <block id="dd94533008fec4ee5889a56fd78e2a26" category="paragraph">请勿挂载 NFS 版本 4.1；Fpolicy 不支持它。</block>
   <block id="edf63ae7e3cf0cd744884c156cab7abb" category="section-title">要在 Linux 中挂载 CIFS：</block>
-  <block id="d39b1e189739fcc0a92bdb5bb1b3e4d0" category="section-title">启用ONTAP Autonomous 勒索软件防护（可选）：</block>
   <block id="ad3dd38cdf18de03b5ea7c975f541873" category="paragraph">如果您的ONTAP集群版本是 9.11.1 或更高版本，您可以通过在ONTAP命令控制台上执行以下命令来启用ONTAP勒索软件防护服务。</block>
   <block id="a22c6eb3597528c16b0d46880ae4b1ae" category="paragraph">接下来，设置数据收集器：</block>
   <block id="5e7fe8c41f8a34a29dc01b5eced565e8" category="list-text">如果尚未完成，请配置工作负载安全代理。</block>
@@ -1776,8 +1772,6 @@
   <block id="53a0194fe3f870afed16b77d60056dfb" category="paragraph"><block ref="53a0194fe3f870afed16b77d60056dfb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2fae32629d4ef4fc6341f1751b405e45" category="section-title">安全性</block>
   <block id="45d58050fc83f658d533966b07ead592" category="inline-link-macro">* NetApp ONTAP 9 安全强化指南*</block>
-  <block id="95d10eb69527c16122bd44ec553d0f7c" category="paragraph">安全仪表板可让您即时查看当前的安全状况，显示硬件和软件卷加密、反勒索软件状态和集群身份验证方法的图表。安全标准是根据<block ref="a1c84b5f46cbbd9a263e3a5732ed7485" category="inline-link-macro-rx"></block>。</block>
-  <block id="c3ccbe813e27865c5c1154a78b3b9abd" category="paragraph">选择任何加密或反勒索软件计数来深入了解您的环境。</block>
   <block id="48709e503decae3f55aa524537948025" category="inline-image-macro">ONTAP Essentials 安全仪表板</block>
   <block id="1c29918b357b596e616f50e0877d45de" category="paragraph"><block ref="1c29918b357b596e616f50e0877d45de" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ac05d0fca214dab8244e52fd39ca3562" category="inline-link-macro">集群合规性类别</block>
@@ -1855,16 +1849,9 @@
   <block id="b865b0f0f94674aa0d7878e2253f2c1b" category="doc">预览特性和功能</block>
   <block id="8a0d14c15291ab894b50ee0f241e5564" category="paragraph">Data Infrastructure Insights以预览的方式突出显示新特性和功能。预览功能在有限的环境或有限的容量下可用。</block>
   <block id="43680febd505de2083039d0fe7ca8947" category="paragraph">如果您有兴趣预览其中一个或多个功能，请联系NetApp销售团队获取更多信息。</block>
-  <block id="5f06573aae905166447bf8d646c6bf89" category="summary">查询概述</block>
-  <block id="fadb076bccad39c075c50bfa7f81bc31" category="doc">查询中使用的资产</block>
-  <block id="aa62093500fa6cc2a1aea70e53e331b8" category="paragraph">通过查询，您可以根据用户选择的条件（例如，注释）在粒度级别上搜索租户上的资产和指标，从而监控和排除网络故障。</block>
-  <block id="01baf5f78b2649e6a38c88d12944a3d9" category="paragraph">请注意，注释规则会自动将注释分配给资产，需要查询。</block>
   <block id="9d35c72b549fae1c4f5338d76241f908" category="paragraph">您可以查询租户上的物理或虚拟库存资产（及其相关指标），或查询 Kubernetes 或ONTAP Advanced Data 等集成提供的指标。</block>
   <block id="5d7a3696457a40dffd58bd71e9fde963" category="section-title">库存资产</block>
-  <block id="a53ff308ba1fe0b1b1c8fad46fc5711f" category="paragraph">以下资产类型可用于查询、仪表板小部件和自定义资产登录页面。可用于过滤器、表达式和显示的字段和计数器将因资产类型而异。并非所有资产都可以在所有小部件类型中使用。</block>
-  <block id="1859b7335980eb552916a01fd55cb7e4" category="list-text">通用设备</block>
   <block id="9effcdd7159a9a08dcdb0202ae58c1a8" category="list-text">iSCSI 会话</block>
-  <block id="9dd74c86de55dd54fcf3bc98e9bfa861" category="list-text">iSCSI 网络门户</block>
   <block id="ac70412e939d72a9234cdebb1af5867b" category="list-text">路径</block>
   <block id="d2d5c3e087f684e56b5b81d6212d7ccb" category="list-text">配额</block>
   <block id="5a95a425f74314a96f13a2f136992178" category="list-text">共享</block>
@@ -4339,7 +4326,6 @@
   <block id="9ea8e80fba8d6edb71449d6ac523870d" category="list-text">优化资源利用率</block>
   <block id="f7c53246bda8892727562ecf03b2af88" category="list-text">内置或可定制的仪表板，配有高级过滤器，可最大限度地减少显示噪音，从而回答问题</block>
   <block id="5f0e583e0b23c4014b3313af93160414" category="list-text">了解ONTAP存储操作的健康状况 </block>
-  <block id="30b80265dc62edf963a3ac0e34dc03e5" category="list-text">保护您最宝贵的商业资产——数据——免受勒索软件或数据破坏攻击</block>
   <block id="bf647454e36069fd16f1a7a35cf6a865" category="section-title">入门指南</block>
   <block id="5abbdfc8c583cbf03ce02e46c06a6aa5" category="inline-link-macro">*开始*</block>
   <block id="f4c2bc844e861dbf16d626ef6fe4fa50" category="list-text">我该如何<block ref="bdc33e916e289637bc8ce0319e314c7f" category="inline-link-macro-rx"></block>具有Data Infrastructure Insights？</block>
@@ -12654,7 +12640,6 @@
   <block id="d388ca982366ad7a8a7a165d21919f84" category="paragraph">租户创建完成后，使用控制台凭据登录并开始免费试用 30 天Data Infrastructure Insights。在此试用期间，您可以探索Data Infrastructure Insights所提供的功能。</block>
   <block id="a361d4c5b26cab224e5aad972ef9f92f" category="paragraph">租户创建完成后，您可以随时登录NetApp BlueXP Portal 并导航至以下位置： <block ref="37a150e92f05332b5bc5a56046c3177c" category="inline-link-macro-rx"></block> 页面并选择“转到Data Infrastructure Insights”。</block>
   <block id="ed35afa558b996b37265533db9af5399" category="sidebar">在报告中发布注释</block>
-  <block id="d19e16fd482ca29d2c0ef4fb8523357a" category="summary">确保工作负载安全代理部署环境满足最低操作系统、CPU、内存和磁盘空间要求，以获得最佳性能和数据收集。</block>
   <block id="c4942feafc272d7da2ce90634dc0120d" category="summary">通过 REST API 访问工作负载安全数据，并采用基于令牌的安全身份验证，以便与 CMDB、工单系统和其他企业应用程序集成。</block>
   <block id="3dec3952c02d73a04d326f3624f668f6" category="summary">通过使用随附的模拟脚本模拟攻击来测试和验证工作负载安全检测能力，以验证警报生成和响应策略。</block>
   <block id="3e350b01c804205b973dbd44adc54728" category="paragraph">您可以按照本页上的说明，使用随附的文件篡改模拟脚本来模拟文件篡改，以测试或演示工作负载安全性。</block>
@@ -12701,4 +12686,23 @@
   <block id="87f1c49b01ac2f7b86716ee6218bc5f6" category="paragraph">允许创建和删除快照的命令：</block>
   <block id="7842bb93d1b19afc39c751d0dddcf4ac" category="paragraph">允许用户阻止的命令：</block>
   <block id="6a1af23a5137b0b5dbe87d4b59b0deeb" category="list-text">EMS 事件（如 ONTAP ARP）不会在暂停的收集器上处理。这意味着，如果 ONTAP 识别出文件篡改攻击，Data Infrastructure Insights Workload Security 将无法获取该事件。</block>
+  <block id="afcbb40976cebf8be35fcb3f20455f79" category="summary">Workload Security 代理需要特定的操作系统、CPU、内存和磁盘空间规格，以有效监控文件访问并检测整个存储基础架构的安全威胁。</block>
+  <block id="97c248485e6832f3e4517d8b6d423060" category="inline-link-macro">安装 Workload Security Agent</block>
+  <block id="6acb715af86a62a0077ac01d43f7b01c" category="paragraph">在满足最低操作系统、CPU、内存和磁盘空间要求的专用服务器上部署 Workload Security Agents，以确保最佳监控和威胁检测性能。本指南规定了 <block ref="4ce477e73552de4dc5af67c1b8fdac41" category="inline-link-macro-rx"></block> 之前所需的硬件和网络要求，包括支持的 Linux 发行版、网络连接规则和系统规模调整指南。</block>
+  <block id="37e0d4c7df80d6e4c0423f121f2d93d8" category="paragraph">使用受基于安全令牌的身份验证保护的 REST API 将 Workload Security 与您的企业生态系统集成。检索取证活动数据，管理 API 访问令牌，并开发与 CMDB、票务系统和其他应用程序的自定义集成。交互式 Swagger 文档提供了完整的 API 规范，使您能够直接测试端点。</block>
+  <block id="949cc8d1af819d8e6ec37390121bfa5f" category="section-title">启用 ONTAP 自主勒索软件保护（可选）：</block>
+  <block id="67a5e480424bf6f9914a3b18393465e6" category="paragraph">安全仪表板为您提供当前安全状况的即时视图，显示硬件和软件卷加密、防文件篡改状态和集群身份验证方法的图表。安全条件根据 <block ref="a1c84b5f46cbbd9a263e3a5732ed7485" category="inline-link-macro-rx"></block> 中定义的建议进行评估。</block>
+  <block id="7b46122c94da7a23999d34f71661a1c2" category="paragraph">选择任何加密或反文件篡改计数以深入了解您的环境。</block>
+  <block id="07a15244af601ef7f53e10ad7cf2a65e" category="summary">查询库存资产和集成指标，以监控、排除故障并分析整个基础架构的性能，包括存储、计算和网络资源。</block>
+  <block id="c1dac515d770b50607db68702d91b2dd" category="doc">查询资产和指标</block>
+  <block id="c154de8d96ee3aafd9f63d6d8b3821af" category="paragraph">查询基础架构的物理和虚拟资产，以监控性能、排除问题并根据注释等自定义条件执行精细搜索。Data Infrastructure Insights 支持跨不同资产类型（从存储阵列和主机到应用程序和虚拟机）的查询，以及来自 Kubernetes、Docker 和 ONTAP Advanced Data 的集成指标，以实现全面的可视性。</block>
+  <block id="a4814d069f57e94e2edb62e919af014a" category="paragraph">请注意，自动为资源分配注释的注释规则需要与所有人共享的查询。有关共享查询的详细信息，请参阅下文。</block>
+  <block id="0ee1f19142dfe0c3765dfcf205abe414" category="paragraph">所有库存（也称为基础设施）资产类型（存储、交换机、VM、Application 等）都可以在查询、仪表板小部件和自定义资产登录页面中使用。筛选器、表达式和显示可用的字段和计数器因资产类型而异。</block>
+  <block id="b4ca152efced4e02c83a7d308fb6c8f9" category="section-title">共享查询</block>
+  <block id="272c613cf4f758ba99243b78ee690f84" category="paragraph">通过选择谁可以查看和编辑查询来控制对查询的访问。默认情况下，新查询是私有的，仅对您可见，您可以选择与特定用户或具有灵活权限级别（只读或编辑）的整个组织共享它们。</block>
+  <block id="72d8dd50b70908191773606963bf3036" category="paragraph">您可以选择将查询共享给所有人或选定用户，并设置编辑或只读权限。</block>
+  <block id="b01d373f18f5a51146c5d824cbfb409e" category="admonition">拥有帐户所有者权限的用户可以查看所有查询，无论隐私设置如何。</block>
+  <block id="7143e0c9aefa0103fd7fde4a2b1f1e3c" category="doc">了解和调查警报</block>
+  <block id="a760de6056552c07e9447d9e4aa8ddd8" category="list-text">保护您最宝贵的业务资产 – 数据 - 免受文件篡改或数据破坏攻击</block>
+  <block id="ad616b1714b32991576ec7cd2b8832a8" category="sidebar">管理信息板访问权限</block>
 </blocks>

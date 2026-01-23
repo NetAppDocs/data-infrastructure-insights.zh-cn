@@ -67,7 +67,7 @@ mount -t cifs //10.193.77.91/sharedfolderincluster /root/destinationfolder/ -o u
 ----
 
 
-==== 启用ONTAP Autonomous 勒索软件防护（可选）：
+==== 启用 ONTAP 自主勒索软件保护（可选）：
 
 如果您的ONTAP集群版本是 9.11.1 或更高版本，您可以通过在ONTAP命令控制台上执行以下命令来启用ONTAP勒索软件防护服务。
 
