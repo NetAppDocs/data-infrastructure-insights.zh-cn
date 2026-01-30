@@ -6929,32 +6929,6 @@
   <block id="28bfcc900291ea8fe66d8be36f439a1b" category="summary">注册Data Infrastructure Insights并创建您的租户。</block>
   <block id="9be58f2fc8b11ec837406376ca6b3e2a" category="doc">Data Infrastructure Insights入职</block>
   <block id="549ae8b6dea4926a2af206c5d7300fc5" category="paragraph">在开始使用Data Infrastructure Insights之前，您必须在 * NetApp Console* 门户上注册。如果您已经拥有NetApp Console登录名，则只需几个简单的步骤即可开始免费试用Data Infrastructure Insights。</block>
-  <block id="bb793de9cdfd6b52adc5dea5b6228679" category="section-title">创建您的NetApp Console帐户</block>
-  <block id="b4e0df93660adc2e97f2f5484451c415" category="paragraph">要开始使用 NetApp 的云服务，请访问<block ref="5b0deb840231d6f2646d7cf25956c35a" category="inline-link-macro-rx"></block>然后点击*开始*。</block>
-  <block id="1e26781b207fa848ce81c7268cf016a7" category="list-text">如果您尚未注册，请选择“注册”</block>
-  <block id="05d2a837df7692f0d65e4466b2fb05bd" category="list-text">输入有效的企业电子邮件地址并选择密码。</block>
-  <block id="ad66d403ef43ddd58a7b527874c51878" category="list-text">输入您的公司名称和您的全名。</block>
-  <block id="895a961645c5f6456e2cc43102e1de8a" category="list-text">接受条款和条件并选择*继续*。</block>
-  <block id="d127182d44408d014798631913d1e97f" category="list-text">控制台将引导您完成入门步骤。</block>
-  <block id="f691976da142019af74f673d9e988d66" category="section-title">如果我已经拥有NetApp Console登录信息该怎么办？</block>
-  <block id="2a76d74bf06e79d6a8243138ab8d0572" category="paragraph">拥有NetApp Console帐户后，只需选择<block ref="5b0deb840231d6f2646d7cf25956c35a" category="inline-link-macro-rx"></block>门户页面。</block>
-  <block id="a46b8a484704b65f978247cb9b3901aa" category="paragraph">输入您的电子邮件地址和密码。然后您将进入 NetApp 的云产品页面。</block>
-  <block id="4ec4e4954d48db50650c5ec49007cf27" category="paragraph">导航至*分析和控制&gt;可观察性*以了解Data Infrastructure Insights和/或请求演示。</block>
-  <block id="eeecd13aa136e65aaedc64374c7415bc" category="section-title">开始您的Data Infrastructure Insights免费试用</block>
-  <block id="3b1f676d06286548e11b332567f42bbd" category="inline-link-macro">开始订阅</block>
-  <block id="b48d78927dd619cab2e6b7fde5ffb6b1" category="paragraph">在免费试用期间，您可以<block ref="822a67eb96671d13fff372a75b259713" category="inline-link-macro-rx"></block>随时了解Data Infrastructure Insights。当您订阅后，您可以根据当前订阅使用Data Infrastructure Insights功能。</block>
-  <block id="2c4bb88652ba26d23266d851053ba465" category="section-title">Sign in并前往</block>
-  <block id="27e0956311428740c19b40a7a971c7ef" category="inline-link-macro">云服务</block>
-  <block id="206cb1224c200bbbd73cfa4118ad7c1e" category="paragraph">您还可以直接打开浏览器访问Data Infrastructure Insights租户 URL，例如：</block>
-  <block id="9834a50024d1c9eb92d1d75e4f1fc3fa" category="paragraph">该 URL 还将包含在每个用户的邀请电子邮件中，以便于访问和添加书签。如果用户尚未登录控制台，系统将提示他们登录。</block>
-  <block id="955402d5e1e7fb2ed3dc9cdbbcb35826" category="admonition">新用户仍必须注册访问控制台，然后才能访问其租户 URL。</block>
-  <block id="da115c4fc9cae6fc87764395ef9ff331" category="inline-link-macro">*开始收集数据*</block>
-  <block id="587f396a83dde1056c9bf606ffc535f7" category="paragraph">首次登录新租户时，系统将引导您完成设置<block ref="2949f1254245e371c2d697f481723a7e" category="inline-link-macro-rx"></block>。</block>
-  <block id="cc580c5eecd9c28053db6de1830561ee" category="section-title">注销</block>
-  <block id="21360340baae34a3a426d1ff1dbc116f" category="paragraph">要退出Data Infrastructure Insights，请单击您的*用户名*并选择*注销*。您将返回到控制台登录屏幕。</block>
-  <block id="c4207c205277b5cad1577163a6bae022" category="admonition">注销Data Infrastructure Insights将使您退出控制台。您还将退出使用控制台登录的其他NetApp云服务。</block>
-  <block id="8463a61dd94ff5934036d4c8a8936e32" category="section-title">非活动超时</block>
-  <block id="db8ff6a5dfcebcb4f9f3077c3acd8c0a" category="paragraph">默认情况下，如果六小时（360 分钟）内没有任何活动，控制台将注销用户。无论活动如何，用户将在七天后被注销。</block>
   <block id="fde8afa3fd65a9f38d9b11377453846e" category="doc">配置Cloud Volumes ONTAP和Amazon FSx for NetApp ONTAP收集器</block>
   <block id="c45671a9389f697917f0b33d12822c51" category="section-title">Cloud Volumes ONTAP存储配置</block>
   <block id="2ffc6472f9d6abaf761bbe2e6a0385ce" category="paragraph">请参阅OnCommand Cloud Volumes ONTAP文档，以配置单节点/HA AWS 实例来托管工作负载安全代理：<block ref="caca64b8e9927e0ea8e8b0158b9e47cd" category="inline-link-rx"></block></block>
@@ -12340,7 +12314,6 @@
   <block id="69f2e3246807adb3f4d29d9480ac71fd" category="inline-image-macro">添加显示 webhook 的攻击策略对话框</block>
   <block id="149360851d3e95c4b6af6d5b468af365" category="paragraph"><block ref="149360851d3e95c4b6af6d5b468af365" category="inline-image-macro-rx" type="image"></block></block>
   <block id="91770f038cd944a1d3b9b347edeb2b10" category="sidebar">新增功能</block>
-  <block id="ab5cb6794af58d6cd4132b44aa3d3d04" category="sidebar">注册Data Infrastructure Insights</block>
   <block id="c3f4c9cd8970b25325783f3caeab9867" category="sidebar">安全实践</block>
   <block id="87c6157f200d5f2c85eeda2dc68852f6" category="sidebar">我们存储什么以及在哪里存储</block>
   <block id="55b171ae91c4f30690df081e54631deb" category="sidebar">收集数据</block>
@@ -12622,8 +12595,6 @@
   <block id="c77b295eb8d3480880ff044a7823cdd9" category="list-text">如果在未更新依赖报告的情况下删除注释，则这些报告可能会返回错误或意外结果。</block>
   <block id="3da85052d2ffffd1cb6352186fe0393a" category="list-text">在复杂情况下，可能需要专业服务来协助进行报告修改。</block>
   <block id="4f9b9c5804f57ab98a1eb0bbdc93ee28" category="paragraph">建议在取消发布注释之前，先检查所有依赖于该注释的报告。</block>
-  <block id="84782b0fddf642f36f6d0ca7585d8709" category="paragraph">如果您是第一次登录Data Infrastructure Insights，请阅读有关Data Infrastructure Insights所能提供的一切信息，当您_准备好开始使用_时，点击*申请试用*并填写您的信息。</block>
-  <block id="513dc3996a984c81efa261ee7da82ea7" category="paragraph">作为试用租户设置的一部分，您将选择托管租户的区域，以及您希望将租户部署在 AWS 还是 Azure 上。</block>
   <block id="29ecb4e96ebb9048c6e2055bd8edfec9" category="paragraph">下面是一个示例 _AgentConfiguration_ 文件，其中包含每个选项的说明。</block>
   <block id="0a511b85d77f15f39fbbd23442b32001" category="section-title">2025年12月</block>
   <block id="02c6c8e70973eaa6f06450fcaad33a5f" category="section-title">使用共享查询控制查询访问权限</block>
@@ -12637,8 +12608,6 @@
   <block id="7bf60aa4367d13bdf4be42c9055afecc" category="paragraph"><block ref="7bf60aa4367d13bdf4be42c9055afecc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f3dd02ae7c2c35817a35bc27eb8af50f" category="section-title">更清晰的仪表盘可视化效果</block>
   <block id="6838668755c364765b40cf38648de55f" category="paragraph">改进后的仪表盘设计可帮助您查看最重要的信息。通过阴影边框分隔小部件，并移除分隔线，增强视觉清晰度，减少杂乱，让您可以专注于数据洞察。这些改进创造了更简洁、更直观的仪表盘体验，使用户能够更快、更容易地发现趋势和异常情况。</block>
-  <block id="d388ca982366ad7a8a7a165d21919f84" category="paragraph">租户创建完成后，使用控制台凭据登录并开始免费试用 30 天Data Infrastructure Insights。在此试用期间，您可以探索Data Infrastructure Insights所提供的功能。</block>
-  <block id="a361d4c5b26cab224e5aad972ef9f92f" category="paragraph">租户创建完成后，您可以随时登录NetApp BlueXP Portal 并导航至以下位置： <block ref="37a150e92f05332b5bc5a56046c3177c" category="inline-link-macro-rx"></block> 页面并选择“转到Data Infrastructure Insights”。</block>
   <block id="ed35afa558b996b37265533db9af5399" category="sidebar">在报告中发布注释</block>
   <block id="c4942feafc272d7da2ce90634dc0120d" category="summary">通过 REST API 访问工作负载安全数据，并采用基于令牌的安全身份验证，以便与 CMDB、工单系统和其他企业应用程序集成。</block>
   <block id="3dec3952c02d73a04d326f3624f668f6" category="summary">通过使用随附的模拟脚本模拟攻击来测试和验证工作负载安全检测能力，以验证警报生成和响应策略。</block>
@@ -12705,4 +12674,5 @@
   <block id="7143e0c9aefa0103fd7fde4a2b1f1e3c" category="doc">了解和调查警报</block>
   <block id="a760de6056552c07e9447d9e4aa8ddd8" category="list-text">保护您最宝贵的业务资产 – 数据 - 免受文件篡改或数据破坏攻击</block>
   <block id="ad616b1714b32991576ec7cd2b8832a8" category="sidebar">管理信息板访问权限</block>
+  <block id="1a69a00931f550995a9d19745f714169" category="paragraph">这些说明正在更新。请稍后再回来查看。</block>
 </blocks>
