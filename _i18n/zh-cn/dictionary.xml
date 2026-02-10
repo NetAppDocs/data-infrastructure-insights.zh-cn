@@ -7181,20 +7181,16 @@
   <block id="3e70b4412d3a3b92cd10a9e1453fc282" category="section-title">回滚到之前运行的版本</block>
   <block id="4d8704d77f12b96a935cdf09de6c94be" category="paragraph">如果您使用按钮升级功能进行升级，并且在升级后七天内遇到当前版本的操作员的任何困难，则可以使用升级过程中创建的快照降级到以前运行的版本。单击要回滚的集群旁边的菜单，然后选择“回滚”。</block>
   <block id="95168a3a05a80c7b596b36a7ec8218c4" category="section-title">手动升级</block>
-  <block id="59f9e8b92a6bc55e991031f0b5fea324" category="paragraph">确定现有 Operator 是否存在 AgentConfiguration（如果您的命名空间不是默认的 _netapp-monitoring_，请替换为适当的命名空间）：</block>
-  <block id="bb5c0afa0b80550de02b1ac19c1226b4" category="paragraph">如果存在 AgentConfiguration：</block>
   <block id="349838fb1d851d3e2014b9fe39203275" category="inline-xref">安装</block>
   <block id="47a3c2ef85d7b8f59098e0a3e25e7fed" category="list-text"><block ref="69b3420fb24fd81786681a7bce7bbc4d" category="inline-xref-macro-rx"></block>最新的 Operator 优于现有的 Operator。</block>
   <block id="f60428f53f8ec06db7eeb3c6dc8a3ec1" category="inline-xref">拉取最新的容器镜像</block>
   <block id="727021f9728a61f5f57027c22e99ed17" category="list-text">确保您<block ref="70886476cda3a9669d1d2ba99218e076" category="inline-xref-macro-rx"></block>如果您使用自定义存储库。</block>
-  <block id="a7e8df3295c386ff0d7a33ebd0ce4762" category="paragraph">如果 AgentConfiguration 不存在：</block>
   <block id="7c2ea0e402732ba1c1013065d22d7297" category="list-text">记下Data Infrastructure Insights识别的集群名称（如果您的命名空间不是默认的 netapp-monitoring，请替换为适当的命名空间）：</block>
   <block id="af43624bdc80303ec074448a745b7a3c" category="list-text">创建现有 Operator 的备份（如果您的命名空间不是默认的 netapp-monitoring，请替换为适当的命名空间）：</block>
   <block id="a27dfe771799a09fd55fea73286eb6ab" category="inline-xref">卸载</block>
   <block id="68a0b7243f029dd3130a0fb114a7ca00" category="list-text"><block ref="4cb6ecff5b560ef65768b9939bfe491e" category="inline-xref-macro-rx"></block>现有的运营商。</block>
   <block id="a87371c8f3e6091825251b0817597ab0" category="list-text"><block ref="69b3420fb24fd81786681a7bce7bbc4d" category="inline-xref-macro-rx"></block>最新的操作员。</block>
   <block id="4c42e83b5a46ef16402aa2bea7ab525e" category="list-text">使用相同的集群名称。</block>
-  <block id="9e274d61eab1c1a3b088854ed50639ff" category="list-text">下载最新的 Operator YAML 文件后，在部署之前将 agent_backup.yaml 中找到的任何自定义内容移植到下载的 operator-config.yaml 中。</block>
   <block id="bf4f601d0ebbcc54c415c3eb689c82f3" category="section-title">停止和启动 Kubernetes 监控操作员</block>
   <block id="ac3978dbb1caac278e3d6b9932b85966" category="paragraph">要停止 Kubernetes Monitoring Operator：</block>
   <block id="faf3019197a41959b7aba9bcfa3023da" category="paragraph">要启动 Kubernetes Monitoring Operator：</block>
@@ -7216,14 +7212,12 @@
   <block id="cac54dc379f23a7aed8745bde8386662" category="inline-link-macro">可用设置</block>
   <block id="8baa15e22ac6c7ee4ce4e0a88da9798e" category="paragraph">最常修改的设置可以在_AgentConfiguration_自定义资源中配置。您可以在部署操作员之前通过编辑 _operator-config.yaml_ 文件来编辑此资源。该文件包含已注释掉的设置示例。查看列表<block ref="d0a687c4569dc784e63f3960b33ab7c7" category="inline-link-macro-rx"></block>以获取最新版本的操作员。</block>
   <block id="27aa502b8f8f23143b77f0800d6dd42f" category="paragraph">您还可以在部署操作员后使用以下命令编辑此资源：</block>
-  <block id="3ab04e244a91c8a73c48633c62ac613a" category="paragraph">要确定您部署的操作员版本是否支持 AgentConfiguration，请运行以下命令：</block>
   <block id="51ba9262aad7e83aa5f74ed6dc93a039" category="paragraph">如果您看到“服务器错误（未找到）”消息，则必须先升级您的操作员才能使用 AgentConfiguration。</block>
   <block id="7a7f1dddc2fef7ed16175a3e2e424b3f" category="paragraph">您可以在租户的两个地方使用代理来安装 Kubernetes Monitoring Operator。这些可能是相同或独立的代理系统：</block>
   <block id="92caa6668b03ccf88ed2c1dbef632933" category="paragraph">如果您对其中一个或两个都使用代理，为了安装 Kubernetes 操作监视器，您必须首先确保您的代理配置为允许与您的Data Infrastructure Insights环境进行良好的通信。如果您有代理并且可以从您希望安装 Operator 的服务器/VM 访问Data Infrastructure Insights，那么您的代理可能配置正确。</block>
   <block id="4cf131cb570986a48574d0708d4c8b35" category="paragraph">对于用于安装 Kubernetes Operating Monitor 的代理，在安装 Operator 之前，请设置 _http_proxy/https_proxy_ 环境变量。对于某些代理环境，您可能还需要设置 _no_proxy environment_ 变量。</block>
   <block id="e25c898cccd50c035eb1941a8411ba8b" category="paragraph">要设置变量，请在安装 Kubernetes Monitoring Operator*之前*在系统上执行以下步骤：</block>
   <block id="8abad16925d189288490bd9d8b5e034c" category="paragraph">对于用于 Kubernetes 集群与Data Infrastructure Insights环境通信的代理，请在阅读所有这些说明后安装 Kubernetes 监控操作员。</block>
-  <block id="6b883170f6284320691d7cfefa3f48e3" category="paragraph">在部署 Kubernetes Monitoring Operator 之前，请配置 operator-config.yaml 中 AgentConfiguration 的代理部分。</block>
   <block id="e79dbc8635cd754ff3943b0362cd5a36" category="paragraph">默认情况下，Kubernetes Monitoring Operator 将从Data Infrastructure Insights存储库中提取容器镜像。如果您有一个 Kubernetes 集群作为监控目标，并且该集群配置为仅从自定义或私有 Docker 存储库或容器注册表中提取容器镜像，则必须配置对 Kubernetes 监控操作员所需容器的访问权限。</block>
   <block id="b1dbe9124bd000f8918a20bf61bc24f6" category="list-text">ci-kube-rbac-代理</block>
   <block id="67efe5df179f0f50a5a5e82fd46a07fc" category="list-text">ci-ksm</block>
@@ -7282,7 +7276,6 @@
   <block id="02230bab9788e4843408e124331bb1ca" category="cell">我确实没有看到针对我的集群中存在的 Kubernetes CronJobs 收集任何指标。</block>
   <block id="b3b6bea000b13acbfcb412bad49ee494" category="cell">验证你的 Kubernetes 版本（即<block ref="4fc58818ca77fb3a60cbd34a7f7d5071" prefix=" " category="inline-code"></block>）。如果是 v1.20.x 或更低版本，这是一个预期的限制。使用 Kubernetes Monitoring Operator 部署的 kube-state-metrics 版本仅支持 v1.CronJob。在 Kubernetes 1.20.x 及以下版本中，CronJob 资源位于 v1beta.CronJob。因此，kube-state-metrics 无法找到 CronJob 资源。</block>
   <block id="45698e13b1c2f7241751839133834506" category="cell">安装操作员后，telegraf-ds pod 进入 CrashLoopBackOff，pod 日志显示“su: Authentication failed”。</block>
-  <block id="e77701e8957afb414a45ca434ef7f000" category="cell">编辑_AgentConfiguration_中的telegraf部分，并将_dockerMetricCollectionEnabled_设置为false。欲了解更多详情，请参阅运营商的<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>。  ... 规格：... 电报：...           - 名称：docker 运行模式： - DaemonSet 替换： - 键：DOCKER_UNIX_SOCK_PLACEHOLDER 值：unix:///run/docker.sock ......</block>
   <block id="802997bcb8e9581226b3000b8b611b1c" category="cell">我在 Telegraf 日志中看到类似以下内容的重复错误消息：E！  [agent] 写入输出时出错。http：发布“\https://&lt;tenant_url&gt;/rest/v1/lake/ingest/influxdb”：超出上下文截止时间（等待标头时超出 Client.Timeout）</block>
   <block id="5a581223d2fea6c45a7ac1278334f8c1" category="cell">编辑_AgentConfiguration_中的telegraf部分，并将_outputTimeout_增加到10秒。欲了解更多详情，请参阅运营商的<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>。</block>
   <block id="4f05106cca363b0f3c492314ab777534" category="cell">我缺少某些事件日志的_involvedobject_数据。</block>
@@ -7310,7 +7303,6 @@
   <block id="9953ac1176fec4ceef2b233ecd286c7b" category="cell">尝试增加底层操作系统/节点中 Telegraf 的可锁定内存限制。如果无法增加限制，请修改 NKMO 代理配置并将 _unprotected_ 设置为 _true_。这将指示 Telegraf 不要尝试保留锁定的内存页面。虽然这可能会带来安全风险，因为解密的秘密可能会被交换到磁盘，但它允许在无法保留锁定内存的环境中执行。有关 _unprotected_ 配置选项的更多详细信息，请参阅<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>页。</block>
   <block id="d2402cb2e8bc53d6f0ea3a592a927071" category="cell">我看到来自 Telegraf 的类似以下内容的警告消息：_W！  [inputs.diskio] 无法收集“vdc”的磁盘名称：读取 /dev/vdc 时出错：没有此文件或目录_</block>
   <block id="d167beea70a778e86c7a57bc2bd4338a" category="inline-link-macro">操作员的配置选项</block>
-  <block id="1f3c6b9eb496e3586cb89ac14caca626" category="cell">对于 Kubernetes 监控操作员来说，这些警告消息是良性的，可以安全地忽略。  或者，编辑 AgentConfiguration 中的 telegraf 部分，并将 _runDsPrivileged_ 设置为 true。欲了解更多详情，请参阅<block ref="ebda7113c4f0b0fd6090a6c2a6162dc1" category="inline-link-macro-rx"></block>。</block>
   <block id="828b70096630fbae314b6b8a4022c2d3" category="cell">我的 fluent-bit pod 出现以下错误：[2024/10/16 14:16:23] [错误] [/src/fluent-bit/plugins/in_tail/tail_fs_inotify.c:360 errno=24] 打开的文件太多 [2024/10/16 14:16:23] [错误] 初始化输入 tail.0 失败 [2024/10/16 14:16:23] [错误] [引擎] 输入初始化失败</block>
   <block id="4c7e0efe737f180965ee5c651fc247df" category="paragraph">尝试更改集群中的 _fsnotify_ 设置：</block>
   <block id="354078bb27a2ab00cc965db863bbe682" category="paragraph">重新启动 Fluent-bit。</block>
@@ -12676,4 +12668,29 @@
   <block id="ad616b1714b32991576ec7cd2b8832a8" category="sidebar">管理信息板访问权限</block>
   <block id="1a69a00931f550995a9d19745f714169" category="paragraph">这些说明正在更新。请稍后再回来查看。</block>
   <block id="ab5cb6794af58d6cd4132b44aa3d3d04" category="sidebar">注册 Data Infrastructure Insights</block>
+  <block id="017db8357e64ddb2e41630e07c556c17" category="paragraph">确定是否存在与现有 Operator 一起的 _AgentConfiguration_（如果您的命名空间不是默认的 _netapp-monitoring_，请替换相应的命名空间）：</block>
+  <block id="71e56d8dc562ba6525c8592046f68012" category="paragraph">如果存在 _AgentConfiguration_：</block>
+  <block id="aea7876c0fcf2d6bb3bd4df2f60ff442" category="paragraph">如果 _AgentConfiguration_ 不存在：</block>
+  <block id="6d98d6fa93fab92d887e8cbba88bb3c9" category="list-text">下载最新的 Operator YAML 文件后，将 _agent_backup.yaml_ 中的任何自定义项移植到已下载的 _operator-config.yaml_，然后再进行部署。</block>
+  <block id="a2c5c9ed2cfd796e2fa991e3ec4d2ed6" category="paragraph">要确定已部署版本的操作符是否支持 _AgentConfiguration_，请运行以下命令：</block>
+  <block id="2d216b955180b5366a46ab13cea76c79" category="paragraph">在部署 Kubernetes Monitoring Operator 之前，配置 _operator-config.yaml_ 中 _AgentConfiguration_ 的代理部分。</block>
+  <block id="23dd082c5fae705a8ae3f5e2a44d157d" category="paragraph">编辑 _operator-config.yaml_ 中的 _AgentConfiguration_ 以反映新的 docker repo 位置。为您的专用存储库创建新的 imagePullSecret，有关详细信息，请参见 _https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/_</block>
+  <block id="21d198dbb991af1db5069bb51d22d506" category="section-title">长期密码的 API 访问令牌</block>
+  <block id="0b55a8de0fa7e236b1e898699fd950d6" category="paragraph">某些环境（即代理存储库）需要 Data Infrastructure Insights docker 存储库的长期密码。安装时在 UI 中提供的密码仅在 24 小时内有效。可以使用 API 访问令牌作为 docker 存储库密码，而不是使用它。只要 API 访问令牌有效，此密码就会有效。可以为此特定目的生成新的 API 访问令牌，也可以使用现有的 API 访问令牌。</block>
+  <block id="8acc82c66b1534666593df5e46ba9b51" category="inline-link-macro">阅读此处</block>
+  <block id="2db1dc28cb10f0bacd2dfe2a2502521e" category="paragraph"><block ref="80163dfb712919489c1440e1af1ce80c" category="inline-link-macro-rx"></block> 以获取创建新 API 访问令牌的说明。</block>
+  <block id="3a92af63fb0dbfb3fb4c50844d4e6226" category="paragraph">要从下载的 _operator-secrets.yaml_ 文件中提取现有的 API Access Token，用户可以运行以下命令：</block>
+  <block id="17b15ada08a59825a040f1bfd86330d9" category="paragraph"><block ref="dcbd6d0a6636d4e728bacac25d8ec372" prefix="" category="inline-code"></block></block>
+  <block id="8907a57d03f024ba26a5ed6588ca4877" category="paragraph">要从正在运行的操作符安装中提取现有 API 访问令牌，用户可以运行以下命令：</block>
+  <block id="9ca564a2b84b7e6b27df5be0b6a657cd" category="paragraph"><block ref="7dabc26725e27da4827b9fe642dd2038" prefix="" category="inline-code"></block></block>
+  <block id="c2c2ad2d6b726995fdb32dbf29d2189e" category="paragraph">如果您在 OpenShift 4.6 或更高版本上运行，则必须编辑 _operator-config.yaml_ 中的 _AgentConfiguration_ 以启用 _runPrivileged_ 设置：</block>
+  <block id="566ab1672deaaeddb8f73b03838f0642" category="cell">编辑 _AgentConfiguration_ 中的 telegraf 部分，并将 _dockerMetricCollectionEnabled_ 设置为 false。更多详情请参考 operator 的<block ref="74a91e6274b6ee5f9fd240fb978eb1d9" category="inline-link-macro-rx"></block>。... spec: ... telegraf: ...- name: docker run-mode: - DaemonSet substitutions: - key: DOCKER_UNIX_SOCK_PLACEHOLDER value: unix:///run/docker.sock ......</block>
+  <block id="f706cf0f0319c0d8a1756d4dd2efaa5e" category="cell">对于 Kubernetes Monitoring Operator，这些警告消息是良性的，可以安全地忽略。或者，编辑 AgentConfiguration 中的 telegraf 部分，并将 _runDsPrivileged_ 设置为 true。有关更多详细信息，请参阅<block ref="ebda7113c4f0b0fd6090a6c2a6162dc1" category="inline-link-macro-rx"></block>。</block>
+  <block id="8a398765d9480ef0a8dec93952d8eba6" category="cell">我在 Fluent-bit pods 中收到以下错误，pod 无法启动：026/01/12 20:20:32] [error] [sqldb] error=unable to open database file [2026/01/12 20:20:32] [error] [input:tail:tail.0] db: could not create 'in_tail_files' table [2026/01/12 20:20:32] [error] [input:tail:tail.0] could not open/create database [2026/01/12 20:20:32] [error] failed initialize input tail.0 [2026/01/12 20:20:32] [error] [engine] input initialization failed</block>
+  <block id="19df898e84b2a11ee6e02ec8d86ac84e" category="cell">确保数据库文件所在的主机目录具有正确的读/写权限。更具体地说，主机目录应向非 root 用户授予读/写权限。默认数据库文件位置为 /var/log/，除非被 fluent-bit-dbFile _agentconfiguration_ 选项覆盖。如果启用了 SELinux，请尝试将 fluent-bit-seLinuxOptionsType agentconfiguration 选项设置为 'spc_t'</block>
+  <block id="1e8789eeeafc6f5cded0b8e336c55e66" category="section-title">使用 Adaptive Card 模板创建 Teams 通知的步骤</block>
+  <block id="77cefe808c0d0437a2a44f1685a4dec9" category="list-text">将邮件正文替换为以下模板：</block>
+  <block id="32d27ad98b4b043c62f61de16291608e" category="list-text">如果使用 Power Automate Flows，URL 中的查询参数将采用编码格式。输入前必须解码 URL。</block>
+  <block id="3771b23dadd43c39046622dbcb4c17e4" category="list-text">单击"测试 Webhook"以确保没有错误。</block>
+  <block id="c20e86538672d1ab3ab8e3a5c2961e28" category="list-text">保存 webhook。</block>
 </blocks>
