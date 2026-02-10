@@ -12389,7 +12389,6 @@
   <block id="8c4223ab469f8b3e9d1aa30d51cf4390" category="sidebar">Discord Webhook 示例</block>
   <block id="9129ee5b293413b88d69268ce77a5a06" category="sidebar">PagerDuty Webhook 示例</block>
   <block id="63a04ee1b7791a07aa2f0767ceb2cb77" category="sidebar">Slack Webhook 示例</block>
-  <block id="b58ab179b4f6f21dfbd61177415644b6" category="sidebar">团队 Webhook 示例</block>
   <block id="1cbe7bb88b925457e4ab9451a6815eb8" category="sidebar">常规故障排除</block>
   <block id="e59c20e4502fa7c4c12360e970a6f517" category="sidebar">研究数据收集器错误</block>
   <block id="7ab310c8ba4437b4e355389703868682" category="sidebar">参考与支持</block>
@@ -12693,4 +12692,5 @@
   <block id="32d27ad98b4b043c62f61de16291608e" category="list-text">如果使用 Power Automate Flows，URL 中的查询参数将采用编码格式。输入前必须解码 URL。</block>
   <block id="3771b23dadd43c39046622dbcb4c17e4" category="list-text">单击"测试 Webhook"以确保没有错误。</block>
   <block id="c20e86538672d1ab3ab8e3a5c2961e28" category="list-text">保存 webhook。</block>
+  <block id="beda12a678062ce581606c88344f4e06" category="sidebar">Teams Webhook 示例</block>
 </blocks>
