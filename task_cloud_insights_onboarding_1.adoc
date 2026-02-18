@@ -37,6 +37,9 @@ keywords: onboarding, new user
 
 从屏幕顶端的下拉菜单中选择您的组织。
 
+
+NOTE: DII 站点将与选定的 Console 组织相关联。如果您有多个组织，请务必选择与 DII 租户关联的正确组织。
+
 从左上角的主菜单中，选择 *Governance > Data Infrastructure Insights*。
 
 
