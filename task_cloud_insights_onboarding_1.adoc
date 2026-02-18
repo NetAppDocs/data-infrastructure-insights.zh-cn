@@ -14,6 +14,56 @@ keywords: onboarding, new user
 
 
 [role="lead"]
-在开始使用Data Infrastructure Insights之前，您必须在 * NetApp Console* 门户上注册。如果您已经拥有NetApp Console登录名，则只需几个简单的步骤即可开始免费试用Data Infrastructure Insights。
+在开始使用 Data Infrastructure Insights 之前，您必须在 NetApp Console 门户上注册。如果您已经拥有 NetApp Console 登录，只需几个快速步骤，即可开始免费试用 Data Infrastructure Insights。
 
-这些说明正在更新。请稍后再回来查看。
+
+
+== 创建您的 NetApp Console 帐户
+
+要开始使用 NetApp 的云服务，请转到 link:https://console.netapp.com/["* NetApp Console*"^] 并单击 *Get Started*。
+
+* 如果您尚未注册，请选择 *Sign Up*
+* 请输入有效的公司电子邮件地址并选择密码。
+* 输入您的公司名称和全名。
+* 接受条款与条件并选择 *Continue* 。
+* Console 将引导您完成其入门工作流。
+
+
+
+
+=== 如果我已经拥有 NetApp Console 登录信息，该怎么办？
+
+拥有 NetApp Console 帐户后，只需在 link:https://console.netapp.com/["NetApp Console"] 门户页面上选择 *Log In* 即可。
+
+从屏幕顶端的下拉菜单中选择您的组织。
+
+从左上角的主菜单中，选择 *Governance > Data Infrastructure Insights*。
+
+
+
+== 开始 Data Infrastructure Insights 免费试用
+
+准备就绪后，选择 *开始 30 天免费试用*。选择要托管网站的地区，然后按照其他提示操作。
+
+请注意，您必须具有"Org Admin"角色才能创建 DII 站点。
+
+当您的 Data Infrastructure Insights (DII) 站点准备就绪时，Console 会通知您。选择 *Start onboarding* 按钮以设置您的站点。
+
+如果您在任何时候在入驻流程完成前离开，只需重新登录 Console 即可*完成入驻流程*。
+
+启用程序完成后，Console 会通知您租户已准备就绪。选择启动 Data Infrastructure Insights* 开始。请注意，一些数据将立即可用（库存等），而其他数据可能需要一段时间才能获得有意义的数据（性能监控等）。
+
+
+
+== 注销
+
+要注销 Data Infrastructure Insights，请单击您的*用户名*并选择*注销*。
+
+
+NOTE: 注销 Data Infrastructure Insights 会将您注销 Console。您还将退出使用 Console 登录的其他 NetApp 云服务。
+
+
+
+=== 非活动超时
+
+默认情况下，如果六小时（360 分钟）没有活动，Console 将注销用户。无论活动如何，用户都将在七天后注销。
