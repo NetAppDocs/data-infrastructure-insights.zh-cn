@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: ai_for_dii_overview.html 
+keywords: ai, 
+summary: 您可以使用 DII 的 AI 助手总结数据、探索见解、排除问题并规划资源。 
+---
+= Data Infrastructure Insights AI 助手
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+*Data Infrastructure Insights AI Assistant* 旨在帮助您更高效地处理基础设施数据。它可以帮助您分析信息，发现见解，解决运营挑战，并就您的资源做出明智的决策。
+
+[NOTE]
+====
+DII AI Assistant 作为有限预览版提供。link:/concept_preview_features.html["了解更多"] 关于 Data Infrastructure Insights 预览功能。
+
+AI 助手仅适用于部署在 AWS 上的 Data Infrastructure Insights 租户。
+
+====
+image:ai_assistant_sample_question.png["AI Assistant 示例问题"]
+
+
+
+== 认识您基础设施的新智能合作伙伴
+
+AI Assistant 转换您与数据交互的方式，将复杂的查询转化为简单的对话。即时发现隐藏的模式，加快故障排除，并自信地做出数据驱动的决策。获得以下问题的即时答案：
+
+* 如何配置监视器以警报持续不可接受的延迟？
+* 环境中利用率最高的顶级存储池是什么？
+* 过去一小时内生成了多少次警报？
+* 收集的日志最常见的类型是什么？
+* 哪些主机的 CPU 利用率最高？
+* 环境中有哪些可用于监控的资产类型？
+* 当前是否存在任何活动的关键警报？
+* 存储系统的整体运行状况如何？
+* 哪些虚拟机占用内存最多？
+* 系统中配置了多少台监视器？
+
+
+
+
+== 使用 AI 助手之前
+
+* AI 助手旨在为您提供帮助。虽然它力求准确，但强烈建议在人工监督下验证其输出以获得最佳结果。
+* 为了您和您的同事的安全和隐私，请勿输入个人身份信息 (PII)。
+* 为确保您的数据安全，请勿输入敏感或机密信息。
+* 请阅读 link:https://www.netapp.com/pdf.html?item=/media/71584-netapp-data-processing-addendum.pdf["NetApp Data Processing 附录"] 和 link:https://www.netapp.com/company/legal/privacy-policy/["NetApp 隐私政策"]。
+
+
+
+
+== AI 助手与您合作
+
+Data Infrastructure Insights AI 助手可以帮助您回答有关 IT 基础设施数据的问题。为了有效地执行此操作，它需要了解您的请求以及响应您的请求所需的具体数据。
+
+Data Infrastructure Insights 系统包含各种类型的数据，包括：
+
+* 资产遥测（主机、存储、VM 等）
+* Datalake 指标（Kubernetes、NetApp Storage、VMware）
+* 来自不同系统的日志
+* 可能提示异常的警报
+
+
+为获得最佳体验，请向助理提供有关以下内容的具体信息：
+
+* 要分析的数据类型（例如，特定资产、指标或系统），
+* 您感兴趣的时间范围，以及
+* 您关注的任何具体问题类型（性能问题、容量问题、错误等）
+
+
+
+
+== 访问助手
+
+要调用 DII AI Assistant，只需选择屏幕下角的猫头鹰图标。具有"Owner"角色的用户必须接受条款和条件，然后任何用户才能在您的租户上使用 AI Assistant。
+
+image:ai_assistant_icon.png["dii_ai_assistant_icon"]

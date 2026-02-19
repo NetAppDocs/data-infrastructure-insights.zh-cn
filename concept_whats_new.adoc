@@ -18,6 +18,66 @@ NetApp不断改进和增强其产品和服务。以下是Data Infrastructure Ins
 
 
 
+== 2026 年 2 月
+
+
+
+=== 有关基础架构的即时智能答案
+
+认识基础设施的新智能合作伙伴：*Data Infrastructure Insights AI Assistant* 可转换您与数据的交互方式，将复杂的查询转化为简单的对话。即时发现隐藏的模式，加快故障排除，并自信地做出数据驱动的决策。获得以下问题的即时答案：
+
+* 如何配置监视器以警报持续不可接受的延迟？
+* 环境中利用率最高的顶级存储池是什么？
+* 过去一小时内生成了多少次警报？
+
+
+DII AI Assistant Preview 现在可供大多数客户使用，服务托管在 AWS 区域；Azure 区域即将推出。link:concept_preview_features.html["了解更多"]关于 Data Infrastructure Insights Preview 功能。image:ai_assistant_icon.png["AI Assistant 图标"]
+
+
+
+=== 监控改进
+
+
+
+==== 更快地定制系统监视器，无需重复
+
+直接修改默认系统监视器以满足您的需求——在一个地方更改名称、过滤器和分组。无需为简单调整创建重复监视器。一个有用的横幅提醒您已定制了哪些监视器，从而保持对监控配置的完全可见性。
+
+
+
+==== 通过批量操作简化监视器管理
+
+通过批量操作一次管理多个监视器。快速调整多组监视器的运行状况监控设置，节省您的时间并降低复杂性。在几秒钟内而不是几分钟内全面更新您的监控策略。
+
+
+
+==== 将您的基础架构健康评分重点放在最重要的事情上
+
+从基础架构运行状况分数中排除特定对象，以保持准确性和相关性。查看基础架构运行状况仪表板时，立即删除要取消优先级的对象，而无需修改监视器配置。这会将警报集中在推动业务优先级的基础设施元素上。
+
+image:health_monitoring_exclude_object.png["从运行状况监控中排除对象"]
+
+
+
+=== 操作系统支持
+
+Data Infrastructure Insights link:concept_acquisition_unit_requirements.html["采集单元"] 目前支持以下 Linux 操作系统：
+
+* AlmaLinux 9.5 和 10
+* Centos（64 位）：Stream 9
+* Debian（64 位）：11 到 13
+* OpenSUSE Leap 15.2 至 15.6、16
+* Oracle Enterprise Linux (64 位)：8.10、9.2、9.4、9.6、10
+* Red Hat (64 位)：8.10、9.2、9.4、9.6、10
+* Rocky 9.2 到 9.6
+* SUSE Linux Enterprise Server 15 SP4 至 15 SP7、16
+* Ubuntu Server：20.04、22.04、24.04 LTS
+* 上述平台上的 SELinux
+
+
+'''
+
+
 == 2025年12月
 
 
