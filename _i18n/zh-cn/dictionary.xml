@@ -12480,10 +12480,6 @@
   <block id="2a0a2208c984d848c76e3dc480d25f5a" category="cell">对于大型配置，建议使用引脚和引脚断开操作，而不是暂停集电极。使用固定和取消固定功能时，无需暂停和恢复。客户可以保留其代理和收款员，并在收到有关新版本的电子邮件通知后，有 30 天的时间逐个选择性地升级代理。这种方法最大限度地减少了对 fpolicies 的延迟影响，并提供了对升级过程的更大控制。</block>
   <block id="4c4482e1695529fa7b313efe35876587" category="cell">运行以下任一正版操作系统的计算机： * Microsoft Windows 11 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025 此计算机不应运行任何其他应用程序级软件。建议使用专用服务器。</block>
   <block id="96e0bc41f601636412c93ccf60fffb89" category="cell">需要从收购单元到 *.cloudinsights.netapp.com 或您的Data Infrastructure Insights租户（即 \https://&lt;tenant_id&gt;.c01.cloudinsights.netapp.com）的 100 Mbps/1 Gbps 以太网连接、静态 IP 地址和端口 80 或 443（出站）连接。有关采集单元与各数据采集器之间的要求，请参阅相关说明。<block ref="be56515064596049a4b61d9d1a149cf9" category="inline-link-macro-rx"></block> 。如果您的组织需要使用代理来访问互联网，您可能需要了解组织的代理行为并寻求某些例外以使Data Infrastructure Insights能够发挥作用。例如，您的组织是否默认阻止访问，并且仅允许例外访问特定网站/域？如果需要，您需要将以下域名添加到例外列表中：*.cloudinsights.netapp.com。更多信息，请阅读代理相关内容。<block ref="05c875968683001fc59f206218314b72" category="inline-link-macro-rx"></block>或者<block ref="554efdd06704a764ab0a7e3947e279ff" category="inline-link-macro-rx"></block>。</block>
-  <block id="94499aafaf5e10a6f782117dd504af80" category="inline-link-macro">Data Infrastructure Insights（原Cloud Insights）通知，窗口=_blank</block>
-  <block id="15944853c960b4d108dec6e022392050" category="paragraph"><block ref="15944853c960b4d108dec6e022392050" category="inline-link-macro-rx"></block></block>
-  <block id="7d7c3dfbfa0b1113cc98af5bc93293c2" category="inline-link-macro">工作负载安全通知（原Cloud Secure），window=_blank</block>
-  <block id="c69944d365e084328c890394ddd7fec5" category="paragraph"><block ref="c69944d365e084328c890394ddd7fec5" category="inline-link-macro-rx"></block></block>
   <block id="f17c7e32a4fcdb4c787f412cf3181bea" category="cell">与管理员相同，以及管理 SSO 身份验证和身份联合配置。还可以为托管服务提供商 (MSP) 主租户分配其他所有者以及添加客户。</block>
   <block id="6794662d08bc33fcbd95c93345331eb3" category="list-text">ONTAP持久存储从 9.14.1 版本开始受支持。</block>
   <block id="19d46baa06f3b8d834f231a48a441888" category="inline-link-macro">知识库文章：FPolicy最佳实践</block>
@@ -13947,4 +13943,6 @@
   <block id="254437ac6c40fc16c31d2f215400e44f" category="list-text">Ubuntu Server：20.04、22.04、24.04 LTS</block>
   <block id="ecf8fabbb23da2c68f49fe920a05137b" category="list-text">上述平台上的 SELinux</block>
   <block id="3542743c69e8fceb06c77e5e17299c89" category="sidebar">AI 助手</block>
+  <block id="f7836ca926de84b06b0b4bcbe4b8b756" category="inline-link-macro">Data Infrastructure Insights（包括 Workload Security）通知，window=_blank</block>
+  <block id="135e17e82c7d3d3d83bd8b0737be432e" category="paragraph"><block ref="135e17e82c7d3d3d83bd8b0737be432e" category="inline-link-macro-rx"></block></block>
 </blocks>
