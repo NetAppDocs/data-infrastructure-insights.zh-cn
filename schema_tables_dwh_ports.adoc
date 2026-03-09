@@ -1,0 +1,351 @@
+---
+sidebar: sidebar 
+permalink: schema_tables_dwh_ports.html 
+summary: dwh_ports 数据库的架构表和关系 
+keywords: dwh, data warehouse, schema, reporting 
+---
+= dwh_ports 的数据库架构参考
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+此引用提供 dwh_ports 数据库的详细架构信息，包括表结构、字段定义、数据类型和关系。
+
+
+
+== 表和视图
+
+
+
+=== 枢机主教
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| 数字 | 整型 | 一个介于 0 和 99 之间的数字 
+|===
+'''
+
+
+=== 已连接设备维度
+
+*主键：* tk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| name | 字符串 | 设备名称 
+
+
+| 制造商 | 字符串 | 设备制造商 
+
+
+| 型号 | 字符串 | 设备型号 
+
+
+| type | 字符串 | 设备类型 
+
+
+| 固件 | 字符串 | 设备上运行的固件版本 
+
+
+| ID | 长 | 设备的 ID 
+
+
+| 最新 | 字符串 | 最新标记 
+|===
+*关系：*
+
+* ports_fact（一对多）
+
+
+'''
+
+
+=== 日期维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| fullDate | DateTimeOffset | 完整日期 
+
+
+| dayInMonth | 字节 | 月中的日 
+
+
+| dayInYear | 整型 | 一年中的某天 
+
+
+| dateYear | 整型 | 年 
+
+
+| yearLabel | 字符串 | 年份标签 
+
+
+| monthNum | 字节 | 月份编号 
+
+
+| monthLabel | 字符串 | 月份标签 
+
+
+| dayInWeekNum | 字节 | 星期几编号 
+
+
+| 季度 | 字节 | 季度 
+
+
+| quarterLabel | 字符串 | 季度标签 
+
+
+| dayInQuarter | 整型 | 季度中的天数 
+
+
+| repQuarter | 字节 | 代表季度 
+
+
+| repMonth | 字节 | 代表月份 
+
+
+| repWeek | 字节 | 代表周 
+
+
+| repDay | 字节 | 代表日 
+
+
+| repMonthOrLatest | 字节 | 代表月份或最新 
+
+
+| sspFlag | 字节 | SSP 标志 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| 未来 | 字符串 | 未来标志 
+|===
+*关系：*
+
+* ports_fact（一对多）
+
+
+'''
+
+
+=== 端口尺寸
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| wwn | 字符串 | 全球通用名称 
+
+
+| name | 字符串 | 端口名称 
+
+
+| gbicType | 字符串 | GBIC 类型 
+
+
+| type | 字符串 | 端口类型 
+
+
+| 速度 | 字符串 | 端口速度 
+
+
+| isGenerated | 字符串 | 已生成标记 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* ports_fact（一对多）
+
+
+'''
+
+
+=== 端口信息
+
+*主键：* tk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| switchTk | 整型 | 切换技术密钥 
+
+
+| connectedDeviceTk | 整型 | 已连接设备技术密钥 
+
+
+| portTk | 整型 | 端口技术密钥 
+
+
+| fabric | 字符串 | 结构名称或 WWN 
+
+
+| 速度 | 字符串 | 端口速度 
+
+
+| connectivityType | 字符串 | 连接类型 
+
+
+| type | 字符串 | 端口类型 
+
+
+| 状态 | 字符串 | 端口状态 
+|===
+*关系：*
+
+* connected_device_dimension（多对一）
+* port_dimension（多对一）
+* date_dimension（多对一）
+* switch_dimension（多对一）
+
+
+'''
+
+
+=== ports_fact_current
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| switchTk | 整型 | 切换技术密钥 
+
+
+| connectedDeviceTk | 整型 | 已连接设备技术密钥 
+
+
+| portTk | 整型 | 端口技术密钥 
+
+
+| fabric | 字符串 | 结构名称或 WWN 
+
+
+| 速度 | 字符串 | 端口速度 
+
+
+| connectivityType | 字符串 | 连接类型 
+
+
+| type | 字符串 | 端口类型 
+
+
+| 状态 | 字符串 | 端口状态 
+|===
+'''
+
+
+=== 切换维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| wwn | 字符串 | 全球通用名称 
+
+
+| name | 字符串 | 交换机名称 
+
+
+| 标识符 | 字符串 | 交换机标识符 
+
+
+| IP | 字符串 | IP 地址 
+
+
+| 型号 | 字符串 | 交换机型号 
+
+
+| 制造商 | 字符串 | 制造商 
+
+
+| 固件 | 字符串 | 固件版本 
+
+
+| serialNumber | 字符串 | 序列号 
+
+
+| npv | 字符串 | NPV 模式标志 
+
+
+| isGenerated | 字符串 | 已生成标记 
+
+
+| type | 字符串 | 交换机类型 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| dataCenter | 字符串 | 数据中心位置 
+
+
+| switchLevel | 字符串 | 交换机级别 
+|===
+*关系：*
+
+* ports_fact（一对多）
+
+
+'''

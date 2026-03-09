@@ -24,14 +24,16 @@ NetApp不断改进和增强其产品和服务。以下是Data Infrastructure Ins
 
 === 有关基础架构的即时智能答案
 
-认识基础设施的新智能合作伙伴：*Data Infrastructure Insights AI Assistant* 可转换您与数据的交互方式，将复杂的查询转化为简单的对话。即时发现隐藏的模式，加快故障排除，并自信地做出数据驱动的决策。获得以下问题的即时答案：
+认识基础设施的新智能合作伙伴：link:ai_for_dii_overview.html["*Data Infrastructure Insights AI 助手*"] 转变您与数据交互的方式，将复杂的查询转化为简单的对话。即时发现隐藏的模式，加快故障排除，并自信地做出数据驱动的决策。获得以下问题的即时答案：
 
 * 如何配置监视器以警报持续不可接受的延迟？
 * 环境中利用率最高的顶级存储池是什么？
 * 过去一小时内生成了多少次警报？
 
 
-DII AI Assistant Preview 现在可供大多数客户使用，服务托管在 AWS 区域；Azure 区域即将推出。link:concept_preview_features.html["了解更多"]关于 Data Infrastructure Insights Preview 功能。image:ai_assistant_icon.png["AI Assistant 图标"]
+DII AI Assistant Preview 现在可供大多数客户使用，服务托管在 AWS 区域；Azure 区域即将推出。link:concept_preview_features.html["了解更多"] 关于 Data Infrastructure Insights 预览功能。
+
+image:ai_assistant_icon.png["AI Assistant 图标"]
 
 
 

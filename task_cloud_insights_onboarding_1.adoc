@@ -14,7 +14,7 @@ keywords: onboarding, new user
 
 
 [role="lead"]
-在开始使用 Data Infrastructure Insights 之前，您必须在 NetApp Console 门户上注册。如果您已经拥有 NetApp Console 登录，只需几个快速步骤，即可开始免费试用 Data Infrastructure Insights。
+在开始使用 Data Infrastructure Insights 之前，您必须在 *NetApp Console* 门户网站上注册。如果您已经拥有 NetApp Console 登录，只需几个快速步骤，即可开始免费试用 Data Infrastructure Insights。
 
 
 

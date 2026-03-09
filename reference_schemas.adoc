@@ -7,14 +7,16 @@ keywords: dwh, data warehouse, schema, reporting
 = 用于报告的Data Infrastructure Insights模式
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-这些模式表和图表在此提供，作为Data Infrastructure Insights报告的参考。
-
-link:https://docs.netapp.com/us-en/cloudinsights/ci_reporting_database_schema.pdf["*模式表*"].PDF格式。单击链接打开，或右键单击并选择“另存为...”进行下载。
-
-link:reporting_schema_diagrams.html["*架构图*"]
+这些架构表在此处提供，作为 Data Infrastructure Insights 报告的参考。
 
 
 NOTE: 报告功能可在Data Infrastructure Insights中使用link:concept_subscribing_to_cloud_insights.html["高级版"]。
+
+link:schema/reporting_schema_capacity.html["架构表 - 容量"^] link:schema/reporting_schema_capacity_efficiency.html["架构表 - 容量效率"^] link:schema/reporting_schema_fs_util.html["架构表 - 文件系统利用率"^] link:schema/reporting_schema_inventory.html["架构表 - 清单"^] link:schema/reporting_schema_performance.html["架构表 - 性能"^] link:schema/reporting_schema_ports.html["架构表 - 端口"^]

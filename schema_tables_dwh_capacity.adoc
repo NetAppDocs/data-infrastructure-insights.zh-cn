@@ -1,0 +1,2345 @@
+---
+sidebar: sidebar 
+permalink: schema_tables_dwh_capacity.html 
+summary: dwh_capacity 数据库的架构表和关系 
+keywords: dwh, data warehouse, schema, reporting 
+---
+= dwh_capacity 的数据库架构参考
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+此引用提供 dwh_capacity 数据库的详细架构信息，包括表结构、字段定义、数据类型和关系。
+
+
+
+== 表和视图
+
+
+
+=== 应用维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| name | 字符串 | 应用程序名称 
+
+
+| description | 字符串 | 应用程序说明 
+
+
+| 优先级 | 字符串 | 优先级 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* internal_volume_capacity_fact（一对多）
+* chargeback_fact（一对多）
+* vm_capacity_fact（一对多）
+* qtree_capacity_fact（一对多）
+
+
+'''
+
+
+=== application_group_bridge
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| appGroupTk | 整型 | 应用程序组技术密钥 
+
+
+| appTk | 整型 | 应用程序技术密钥 
+
+
+| isRep | 字符串 | 代表标志 
+|===
+'''
+
+
+=== 应用组维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| repApp | 字符串 | 代表性应用 
+
+
+| repAppTk | 整型 | 代表性应用技术关键 
+
+
+| 基数 | 整型 | 组基数 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* internal_volume_capacity_fact（一对多）
+* chargeback_fact（一对多）
+* vm_capacity_fact（一对多）
+* qtree_capacity_fact（一对多）
+
+
+'''
+
+
+=== 业务实体维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| 全名 | 字符串 | 完整实体名称 
+
+
+| 租户 | 字符串 | 租户名称 
+
+
+| lob | 字符串 | 业务范围 
+
+
+| businessUnit | 字符串 | 业务部门 
+
+
+| 项目 | 字符串 | 项目名称 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* internal_volume_capacity_fact（一对多）
+* chargeback_fact（一对多）
+* vm_capacity_fact（一对多）
+* qtree_capacity_fact（一对多）
+
+
+'''
+
+
+=== capacity_type
+
+*主键：* type
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| type | 字符串 | 容量类型 
+
+
+| 已用 | 字符串 | 已用标记 
+
+
+| vmSpecific | 字符串 | VM 特定标志 
+
+
+| replicationSpecific | 字符串 | 复制特定标志 
+
+
+| description | 字符串 | 描述 
+|===
+*关系：*
+
+* vm_capacity_fact（一对多）
+
+
+'''
+
+
+=== 枢机主教
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| 数字 | 整型 | 基数 
+|===
+'''
+
+
+=== 计费事实
+
+*主键：* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| storageTk | 整型 | Storage 技术密钥 
+
+
+| storagePoolTk | 整型 | 存储池技术密钥 
+
+
+| internalVolumeTk | 整型 | 内部卷技术密钥 
+
+
+| qtreeTk | 整型 | Qtree 技术密钥 
+
+
+| hostTk | 整型 | 主机技术密钥 
+
+
+| hostGroupTk | 整型 | 主机组技术密钥 
+
+
+| applicationTk | 整型 | 应用程序技术密钥 
+
+
+| applicationGroupTk | 整型 | 应用程序组技术密钥 
+
+
+| tierTk | 整型 | 层技术密钥 
+
+
+| serviceLevelTk | 整型 | 服务级别技术密钥 
+
+
+| businessUnit | 字符串 | 业务部门 
+
+
+| businessEntityTk | 整型 | 业务实体技术键 
+
+
+| k8sNamespaceTk | 整型 | Kubernetes 命名空间技术密钥 
+
+
+| k8sNamespaceGroupTk | 整型 | Kubernetes 命名空间组技术密钥 
+
+
+| protectionType | 字符串 | 保护类型 
+
+
+| storageAccessType | 字符串 | 存储访问类型 
+
+
+| resourceName | 字符串 | 资源名称 
+
+
+| resourceType | 字符串 | 资源类型 
+
+
+| mappedByVM | 字符串 | 由 VM 标志映射 
+
+
+| virtualStorage | 字符串 | 虚拟存储标志 
+
+
+| 预配置容量 MB | 长 | 已调配容量 (MB) 
+
+
+| 已用容量 MB | 长 | 已用容量 (MB) 
+|===
+*关系：*
+
+* volume_fact_current（一对一）
+* volume_history_capacity_fact（一对多）
+* internal_volume_dimension （多对一）
+* storage_dimension（多对一）
+* business_entity_dimension（多对一）
+* host_group_dimension（多对一）
+* k8s_namespace_group_dimension（多对一）
+* application_group_dimension（多对一）
+* k8s_namespace_dimension (多对一)
+* service_level_dimension（多对一）
+* tier_dimension（多对一）
+* application_dimension（多对一）
+* qtree_dimension（多对一）
+* storage_pool_dimension（多对一）
+* host_dimension（多对一）
+* date_dimension（多对一）
+
+
+'''
+
+
+=== 数据存储_维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| naturalKey | 字符串 | 自然键 
+
+
+| name | 字符串 | 数据存储库名称 
+
+
+| moid | 字符串 | 托管对象 ID 
+
+
+| virtualCenterIp | 字符串 | vCenter IP 地址 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* vm_capacity_fact（一对多）
+
+
+'''
+
+
+=== 日期维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| fullDate | 日期 | 完整日期 
+
+
+| dayInMonth | 整型 | 月中的日 
+
+
+| dayInYear | 整型 | 一年中的某天 
+
+
+| dateYear | 整型 | 年 
+
+
+| yearLabel | 字符串 | 年份标签 
+
+
+| monthNum | 整型 | 月份编号 
+
+
+| monthLabel | 字符串 | 月份标签 
+
+
+| dayInWeekNum | 整型 | 星期几编号 
+
+
+| 季度 | 整型 | 季度 
+
+
+| quarterLabel | 字符串 | 季度标签 
+
+
+| dayInQuarter | 整型 | 季度中的天数 
+
+
+| repQuarter | 字符串 | 代表季度 
+
+
+| repMonth | 字符串 | 代表月份 
+
+
+| repWeek | 字符串 | 代表周 
+
+
+| repDay | 字符串 | 代表日 
+
+
+| repMonthOrLatest | 字符串 | 代表月份或最新 
+
+
+| sspFlag | 字符串 | SSP 标志 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| 未来 | 字符串 | 未来标志 
+|===
+*关系：*
+
+* internal_volume_capacity_fact（一对多）
+* chargeback_fact（一对多）
+* disk_group_capacity_fact（一对多）
+* vm_capacity_fact（一对多）
+* disk_group_capacity_future_fact（一对多）
+* qtree_capacity_fact（一对多）
+* k8s_pvc_capacity_fact（一对多）
+* storage_and_storage_pool_capacity_fact（一对多）
+* volume_history_capacity_fact（一对多）
+* storage_and_storage_pool_capacity_future_fact（一对多）
+* storage_node_capacity_fact (一对多)
+
+
+'''
+
+
+=== 磁盘组容量信息
+
+*主键：* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| storageTk | 整型 | Storage 技术密钥 
+
+
+| storagePoolTk | 整型 | 存储池技术密钥 
+
+
+| diskGroupTk | 整型 | 磁盘组技术键 
+
+
+| 容量 MB | 长 | 总容量 (MB) 
+
+
+| 已用容量 MB | 长 | 已用容量 (MB) 
+
+
+| 物理磁盘容量 MB | 长 | 物理磁盘容量 (MB) 
+|===
+*关系：*
+
+* disk_group_dimension (多对一)
+* storage_dimension（多对一）
+* storage_pool_dimension（多对一）
+* date_dimension（多对一）
+
+
+'''
+
+
+=== 磁盘组容量未来预测
+
+*主键：* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| storageTk | 整型 | Storage 技术密钥 
+
+
+| storagePoolTk | 整型 | 存储池技术密钥 
+
+
+| diskGroupTk | 整型 | 磁盘组技术键 
+
+
+| 容量 MB | 长 | 预计容量 (MB) 
+
+
+| 已用容量 MB | 长 | 预计已用容量 (MB) 
+|===
+*关系：*
+
+* disk_group_dimension (多对一)
+* storage_dimension（多对一）
+* storage_pool_dimension（多对一）
+* date_dimension（多对一）
+
+
+'''
+
+
+=== 磁盘组维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| name | 字符串 | 磁盘组名称 
+
+
+| 标识符 | 字符串 | 磁盘组标识符 
+
+
+| vendorDiskGroupType | 字符串 | 供应商磁盘组类型 
+
+
+| diskType | 字符串 | 磁盘类型 
+
+
+| 状态 | 字符串 | 状态 
+
+
+| 冗余 | 字符串 | 冗余级别 
+
+
+| isVirtual | 字符串 | 虚拟标记 
+
+
+| vendorTier | 字符串 | 供应商层 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* disk_group_capacity_fact（一对多）
+* disk_group_capacity_future_fact（一对多）
+
+
+'''
+
+
+=== 主机维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| name | 字符串 | 主机名 
+
+
+| 标识符 | 字符串 | 主机标识符 
+
+
+| IP | 字符串 | IP 地址 
+
+
+| 操作系统 | 字符串 | 操作系统 
+
+
+| 型号 | 字符串 | 硬件型号 
+
+
+| 制造商 | 字符串 | 制造商 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| dataCenter | 字符串 | 数据中心位置 
+
+
+| 别名 | 字符串 | 主机别名 
+
+
+| vm 每月许可证成本 | 字符串 | 每月 VM 许可证成本 
+
+
+| 业务实体 | 字符串 | 企业实体 
+
+
+| 服务级别 | 字符串 | 服务级别 
+|===
+*关系：*
+
+* chargeback_fact（一对多）
+* vm_capacity_fact（一对多）
+* volume_history_capacity_fact（一对多）
+
+
+'''
+
+
+=== 主机组桥接
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| hostGroupTk | 整型 | 主机组技术密钥 
+
+
+| hostTk | 整型 | 主机技术密钥 
+
+
+| isRep | 字符串 | 代表标志 
+|===
+'''
+
+
+=== 主机组维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| repHost | 字符串 | 代表主机 
+
+
+| repHostTk | 整型 | 代表主机技术密钥 
+
+
+| 基数 | 整型 | 组基数 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* chargeback_fact（一对多）
+* vm_capacity_fact（一对多）
+* volume_history_capacity_fact（一对多）
+
+
+'''
+
+
+=== 内部卷容量事实
+
+*主键：* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| storageTk | 整型 | Storage 技术密钥 
+
+
+| storagePoolTk | 整型 | 存储池技术密钥 
+
+
+| internalVolumeTk | 整型 | 内部卷技术密钥 
+
+
+| virtualStorageTk | 整型 | 虚拟存储技术密钥 
+
+
+| tierTk | 整型 | 层技术密钥 
+
+
+| applicationTk | 整型 | 应用程序技术密钥 
+
+
+| applicationGroupTk | 整型 | 应用程序组技术密钥 
+
+
+| serviceLevelTk | 整型 | 服务级别技术密钥 
+
+
+| businessUnit | 字符串 | 业务部门 
+
+
+| businessEntityTk | 整型 | 业务实体技术键 
+
+
+| k8sNamespaceTk | 整型 | Kubernetes 命名空间技术密钥 
+
+
+| k8sNamespaceGroupTk | 整型 | Kubernetes 命名空间组技术密钥 
+
+
+| storageAccessType | 字符串 | 存储访问类型 
+
+
+| protectionType | 字符串 | 保护类型 
+
+
+| 已分配容量 MB | 长 | 已分配容量（MB） 
+
+
+| 已用容量 MB | 长 | 已消耗容量 (MB) 
+
+
+| 已用容量 MB | 长 | 已用容量 (MB) 
+
+
+| 已用数据容量 MB | 长 | 已用数据容量 (MB) 
+
+
+| dataUnusedCapacityMB | 长 | 数据未使用容量 (MB) 
+
+
+| snapshotAllocatedCapacityMB | 长 | 快照已分配容量 (MB) 
+
+
+| snapshotUsedCapacityMB | 长 | 快照已用容量 (MB) 
+
+
+| totalCloneSavedCapacityMB | 长 | 克隆保存的总容量 (MB) 
+
+
+| dedupeRatio | 十进制 | 重复数据删除比率 
+
+
+| 重复数据删除节省 GB | 十进制 | 重复数据删除节省量 (GB) 
+
+
+| rawToUsableRatio | 十进制 | 原始与可用比率 
+
+
+| snapshotCount | 整型 | Snapshot 计数 
+
+
+| lastSnapshotTime | DateTimeOffset | 上次 Snapshot 时间戳 
+
+
+| compressionRatio | 十进制 | 压缩比 
+
+
+| 压缩节省 GB | 十进制 | 压缩节省量 (GB) 
+
+
+| compressionSavingsPercent | 十进制 | 压缩节省量 (%) 
+
+
+| objectStoreUsedSpaceGB | 十进制 | 对象存储已用空间 (GB) 
+|===
+*关系：*
+
+* service_level_dimension（多对一）
+* internal_volume_dimension （多对一）
+* storage_dimension（多对一）
+* tier_dimension（多对一）
+* business_entity_dimension（多对一）
+* application_dimension（多对一）
+* storage_pool_dimension（多对一）
+* date_dimension（多对一）
+* k8s_namespace_group_dimension（多对一）
+* application_group_dimension（多对一）
+* k8s_namespace_dimension (多对一)
+
+
+'''
+
+
+=== 内部卷尺寸
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| name | 字符串 | 卷名称 
+
+
+| 标识符 | 字符串 | 卷标识符 
+
+
+| storagePoolIdentifier | 字符串 | 存储池标识符 
+
+
+| storageName | 字符串 | 存储名称 
+
+
+| storageIP | 字符串 | 存储 IP 地址 
+
+
+| type | 字符串 | 卷类型 
+
+
+| virtualStorage | 字符串 | 虚拟存储 
+
+
+| spaceGuarantee | 字符串 | 空间保障 
+
+
+| thinProvisioningSupported | 字符串 | 精简配置支持标志 
+
+
+| thinProvisioned | 字符串 | 精简配置标志 
+
+
+| uuid | 字符串 | UUID 
+
+
+| flexGroupIdentifier | 字符串 | FlexGroup 标识符 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* internal_volume_capacity_fact（一对多）
+* chargeback_fact（一对多）
+* vm_capacity_fact（一对多）
+* qtree_capacity_fact（一对多）
+* volume_history_capacity_fact（一对多）
+
+
+'''
+
+
+=== k8s_cluster_dimension
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| 标识符 | 字符串 | 集群标识符 
+
+
+| name | 字符串 | 集群名称 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* k8s_pvc_capacity_fact（一对多）
+
+
+'''
+
+
+=== k8s_namespace_dimension
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| 标识符 | 字符串 | 命名空间标识符 
+
+
+| name | 字符串 | 命名空间名称 
+
+
+| clusterName | 字符串 | 集群名称 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* internal_volume_capacity_fact（一对多）
+* chargeback_fact（一对多）
+* qtree_capacity_fact（一对多）
+* k8s_pvc_capacity_fact（一对多）
+
+
+'''
+
+
+=== k8s_namespace_group_bridge
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| k8sNamespaceGroupTk | 整型 | 命名空间组技术密钥 
+
+
+| k8sNamespaceTk | 整型 | 命名空间技术密钥 
+
+
+| isRep | 字符串 | 代表标志 
+|===
+'''
+
+
+=== k8s_namespace_group_dimension
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| repK8sNamespace | 字符串 | 代表性命名空间 
+
+
+| repK8sNamespaceTk | 整型 | 代表性命名空间技术密钥 
+
+
+| 基数 | 整型 | 组基数 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* internal_volume_capacity_fact（一对多）
+* chargeback_fact（一对多）
+* qtree_capacity_fact（一对多）
+* volume_history_capacity_fact（一对多）
+
+
+'''
+
+
+=== k8s_node_dimension
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| 标识符 | 字符串 | 节点标识符 
+
+
+| name | 字符串 | 节点名称 
+
+
+| clusterName | 字符串 | 集群名称 
+
+
+| internalIp | 字符串 | 内部 IP 地址 
+
+
+| osImage | 字符串 | OS 映像 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* vm_capacity_fact（一对多）
+
+
+'''
+
+
+=== k8s_pv_dimension
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| 标识符 | 字符串 | PV 标识符 
+
+
+| name | 字符串 | PV 名称 
+
+
+| clusterName | 字符串 | 集群名称 
+
+
+| 阶段 | 字符串 | PV 相 
+
+
+| pvcName | 字符串 | PVC 名称 
+
+
+| storageClass | 字符串 | 存储类 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* k8s_pvc_capacity_fact（一对多）
+
+
+'''
+
+
+=== k8s_pvc_capacity_fact
+
+*主键：* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| pvcTk | 整型 | PVC 技术密钥 
+
+
+| clusterTk | 整型 | 集群技术密钥 
+
+
+| namespaceTk | 整型 | 命名空间技术密钥 
+
+
+| pvTk | 整型 | PV 技术密钥 
+
+
+| pvSizeBytes | 长 | PV 大小（字节） 
+
+
+| pvcSizeBytes | 长 | PVC 大小（字节） 
+|===
+*关系：*
+
+* k8s_pvc_dimension (多对一)
+* k8s_cluster_dimension（多对一）
+* k8s_namespace_dimension (多对一)
+* date_dimension（多对一）
+* k8s_pv_dimension (多对一)
+
+
+'''
+
+
+=== k8s_pvc_dimension
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| 标识符 | 字符串 | PVC 标识符 
+
+
+| name | 字符串 | PVC 名称 
+
+
+| clusterName | 字符串 | 集群名称 
+
+
+| namespaceName | 字符串 | 命名空间名称 
+
+
+| pvName | 字符串 | PV 名称 
+
+
+| 阶段 | 字符串 | PVC 相 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* k8s_pvc_capacity_fact（一对多）
+
+
+'''
+
+
+=== k8s_workload_dimension
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| 标识符 | 字符串 | 工作负载标识符 
+
+
+| name | 字符串 | 工作负载名称 
+
+
+| clusterName | 字符串 | 集群名称 
+
+
+| namespaceName | 字符串 | 命名空间名称 
+
+
+| type | 字符串 | 工作负载类型 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+'''
+
+
+=== qtree_capacity_fact
+
+*主键：* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| storageTk | 整型 | Storage 技术密钥 
+
+
+| storagePoolTk | 整型 | 存储池技术密钥 
+
+
+| internalVolumeTk | 整型 | 内部卷技术密钥 
+
+
+| qtreeTk | 整型 | Qtree 技术密钥 
+
+
+| virtualStorageTk | 整型 | 虚拟存储技术密钥 
+
+
+| tierTk | 整型 | 层技术密钥 
+
+
+| serviceLevelTk | 整型 | 服务级别技术密钥 
+
+
+| applicationTk | 整型 | 应用程序技术密钥 
+
+
+| applicationGroupTk | 整型 | 应用程序组技术密钥 
+
+
+| businessUnit | 字符串 | 业务部门 
+
+
+| businessEntityTk | 整型 | 业务实体技术键 
+
+
+| k8sNamespaceTk | 整型 | Kubernetes 命名空间技术密钥 
+
+
+| k8sNamespaceGroupTk | 整型 | Kubernetes 命名空间组技术密钥 
+
+
+| storageAccessType | 字符串 | 存储访问类型 
+
+
+| protectionType | 字符串 | 保护类型 
+
+
+| 硬限制容量 MB | 长 | 硬限制容量 (MB) 
+
+
+| softLimitCapacityMB | 长 | 软限制容量 (MB) 
+
+
+| 已用容量 MB | 长 | 已用容量 (MB) 
+
+
+| rawToUsableRatio | 十进制 | 原始与可用比率 
+
+
+| missingQuotaLimits | 字符串 | 缺少配额限制标志 
+|===
+*关系：*
+
+* internal_volume_dimension （多对一）
+* storage_dimension（多对一）
+* business_entity_dimension（多对一）
+* k8s_namespace_group_dimension（多对一）
+* application_group_dimension（多对一）
+* k8s_namespace_dimension (多对一)
+* service_level_dimension（多对一）
+* tier_dimension（多对一）
+* application_dimension（多对一）
+* qtree_dimension（多对一）
+* storage_pool_dimension（多对一）
+* date_dimension（多对一）
+
+
+'''
+
+
+=== qtree_dimension
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| name | 字符串 | Qtree 名称 
+
+
+| 标识符 | 字符串 | Qtree 标识符 
+
+
+| storageIdentifier | 字符串 | 存储标识符 
+
+
+| type | 字符串 | Qtree 类型 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| 层级 | 字符串 | 层注释 
+|===
+*关系：*
+
+* chargeback_fact（一对多）
+* vm_capacity_fact（一对多）
+* qtree_capacity_fact（一对多）
+* volume_history_capacity_fact（一对多）
+
+
+'''
+
+
+=== 服务级别维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| name | 字符串 | 服务级别名称 
+
+
+| 序列 | 整型 | 序列 
+
+
+| 成本 | 十进制 | 成本 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* internal_volume_capacity_fact（一对多）
+* chargeback_fact（一对多）
+* vm_capacity_fact（一对多）
+* qtree_capacity_fact（一对多）
+* volume_history_capacity_fact（一对多）
+
+
+'''
+
+
+=== sp_time_to_fill
+
+*主键：* saspFactTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| saspFactTk | 整型 | 存储池 fact 技术密钥 
+
+
+| daysToStoragePoolFull | 整型 | 存储池已满前的天数 
+
+
+| dateAtStoragePoolFull | 日期 | 数据存储池将满 
+|===
+*关系：*
+
+* storage_and_storage_pool_capacity_fact（一对一）
+
+
+'''
+
+
+=== 存储和存储池容量信息
+
+*主键：* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| storagePoolTk | 整型 | 存储池技术密钥 
+
+
+| storageTk | 整型 | Storage 技术密钥 
+
+
+| tierTk | 整型 | 层技术密钥 
+
+
+| 后端 | 字符串 | 后端标志 
+
+
+| isVirtual | 字符串 | 虚拟标记 
+
+
+| 容量 MB | 长 | 总容量 (MB) 
+
+
+| 原始容量 MB | 长 | 原始容量 (MB) 
+
+
+| 已用容量 MB | 长 | 已用容量 (MB) 
+
+
+| 已用原始容量 MB | 长 | 已用原始容量 (MB) 
+
+
+| snapshotUsedCapacityMB | 长 | 快照已用容量 (MB) 
+
+
+| 快照已用原始容量 MB | 长 | 快照已用原始容量 (MB) 
+
+
+| softLimitCapacityMB | 长 | 软限制容量 (MB) 
+
+
+| 未配置原始容量 MB | 长 | 未配置的原始容量 (MB) 
+
+
+| 剩余原始容量 MB | 长 | 备用原始容量 (MB) 
+
+
+| 故障原始容量 MB | 长 | 失败的原始容量 (MB) 
+
+
+| 卷容量 MB | 长 | 卷容量 (MB) 
+
+
+| 未使用卷容量 MB | 长 | 未使用的卷容量 (MB) 
+
+
+| volumeConsumedCapacityMB | 长 | 卷消耗容量 (MB) 
+
+
+| 映射卷容量 MB | 长 | 映射卷容量 (MB) 
+
+
+| maskedVolumeCapacityMB | 长 | 掩蔽卷容量 (MB) 
+
+
+| internalVolumeAllocatedCapacityMB | 长 | 内部卷分配容量 (MB) 
+
+
+| 内部卷已用容量 MB | 长 | 内部卷已用容量 (MB) 
+
+
+| internalVolumeConsumedCapacityMB | 长 | 内部卷消耗容量 (MB) 
+
+
+| dedupeRatio | 十进制 | 重复数据删除比率 
+
+
+| 重复数据删除节省 GB | 十进制 | 重复数据删除节省量 (GB) 
+
+
+| compressionRatio | 十进制 | 压缩比 
+
+
+| 压缩节省 GB | 十进制 | 压缩节省量 (GB) 
+
+
+| compressionSavingsPercent | 十进制 | 压缩节省量 (%) 
+
+
+| objectStoreUsedSpaceGB | 十进制 | 对象存储已用空间 (GB) 
+
+
+| compactionRatio | 十进制 | 压缩比 
+
+
+| 压缩节省 GB | 十进制 | 压缩节省量 (GB) 
+|===
+*关系：*
+
+* sp_time_to_fill（一对一）
+* volume_history_capacity_fact（一对多）
+* storage_dimension（多对一）
+* tier_dimension（多对一）
+* storage_pool_dimension（多对一）
+* date_dimension（多对一）
+
+
+'''
+
+
+=== 存储和存储池容量未来情况
+
+*主键：* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| storagePoolTk | 整型 | 存储池技术密钥 
+
+
+| storageTk | 整型 | Storage 技术密钥 
+
+
+| tierTk | 整型 | 层技术密钥 
+
+
+| 后端 | 字符串 | 后端标志 
+
+
+| isVirtual | 字符串 | 虚拟标记 
+
+
+| 容量 MB | 长 | 预计容量 (MB) 
+
+
+| 原始容量 MB | 长 | 预计原始容量 (MB) 
+
+
+| 已用容量 MB | 长 | 预计已用容量 (MB) 
+
+
+| 已用原始容量 MB | 长 | 预计已用原始容量 (MB) 
+|===
+*关系：*
+
+* storage_dimension（多对一）
+* tier_dimension（多对一）
+* storage_pool_dimension（多对一）
+* date_dimension（多对一）
+
+
+'''
+
+
+=== 存储维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| name | 字符串 | 存储名称 
+
+
+| 标识符 | 字符串 | 存储标识符 
+
+
+| IP | 字符串 | IP 地址 
+
+
+| 型号 | 字符串 | 存储模型 
+
+
+| 制造商 | 字符串 | 制造商 
+
+
+| serialNumber | 字符串 | 序列号 
+
+
+| microcodeVersion | 字符串 | 微码版本 
+
+
+| family（系列） | 字符串 | 存储系列 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* internal_volume_capacity_fact（一对多）
+* chargeback_fact（一对多）
+* disk_group_capacity_fact（一对多）
+* vm_capacity_fact（一对多）
+* disk_group_capacity_future_fact（一对多）
+* qtree_capacity_fact（一对多）
+* storage_and_storage_pool_capacity_fact（一对多）
+* volume_history_capacity_fact（一对多）
+* storage_and_storage_pool_capacity_future_fact（一对多）
+* storage_node_capacity_fact (一对多)
+
+
+'''
+
+
+=== storage_node_capacity_fact
+
+*主键：* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| storageTk | 整型 | Storage 技术密钥 
+
+
+| storageNodeTk | 整型 | 存储节点技术密钥 
+
+
+| tierTk | 整型 | 层技术密钥 
+
+
+| totalNodeCapacityUtilizationMB | 长 | 总节点容量利用率 (MB) 
+
+
+| usableNodeCapacityUtilizationMB | 长 | 可用节点容量利用率 (MB) 
+
+
+| 已用节点容量利用率 MB | 长 | 已用节点容量利用率 (MB) 
+
+
+| 已用元数据节点容量利用率 MB | 长 | 已用元数据容量利用率 (MB) 
+
+
+| 允许的 MetaData 节点容量利用率（MB） | 长 | 允许的元数据容量利用率 (MB) 
+|===
+*关系：*
+
+* storage_node_dimension (多对一)
+* storage_dimension（多对一）
+* tier_dimension（多对一）
+* date_dimension（多对一）
+
+
+'''
+
+
+=== 存储节点尺寸
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| name | 字符串 | 节点名称 
+
+
+| 标识符 | 字符串 | 节点标识符 
+
+
+| version | 字符串 | 节点版本 
+
+
+| 型号 | 字符串 | 节点模型 
+
+
+| serialNumber | 字符串 | 序列号 
+
+
+| siteName | 字符串 | 站点名称 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| ActiveIQ | 字符串 | ActiveIQ 标注 
+|===
+*关系：*
+
+* storage_node_capacity_fact (一对多)
+
+
+'''
+
+
+=== 存储池维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| 标识符 | 字符串 | 池标识符 
+
+
+| name | 字符串 | 池名称 
+
+
+| storageName | 字符串 | 存储名称 
+
+
+| storageIP | 字符串 | Storage IP 
+
+
+| type | 字符串 | 池类型 
+
+
+| 冗余 | 字符串 | 冗余级别 
+
+
+| thinProvisioningSupported | 字符串 | 精简配置支持标志 
+
+
+| isVirtual | 字符串 | 虚拟标记 
+
+
+| usesFlashPools | 字符串 | 使用 flash pools 标记 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| 层级 | 字符串 | 层注释 
+
+
+| 省 | 字符串 | 省标注 
+|===
+*关系：*
+
+* internal_volume_capacity_fact（一对多）
+* chargeback_fact（一对多）
+* disk_group_capacity_fact（一对多）
+* disk_group_capacity_future_fact（一对多）
+* qtree_capacity_fact（一对多）
+* storage_and_storage_pool_capacity_fact（一对多）
+* volume_history_capacity_fact（一对多）
+* storage_and_storage_pool_capacity_future_fact（一对多）
+
+
+'''
+
+
+=== 层级维度
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| name | 字符串 | 层级名称 
+
+
+| 序列 | 整型 | 序列 
+
+
+| 成本 | 十进制 | 成本 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* internal_volume_capacity_fact（一对多）
+* chargeback_fact（一对多）
+* vm_capacity_fact（一对多）
+* qtree_capacity_fact（一对多）
+* storage_and_storage_pool_capacity_fact（一对多）
+* volume_history_capacity_fact（一对多）
+* storage_and_storage_pool_capacity_future_fact（一对多）
+* storage_node_capacity_fact (一对多)
+
+
+'''
+
+
+=== vm_capacity_fact
+
+*主键：* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| hostTk | 整型 | 主机技术密钥 
+
+
+| storageTk | 整型 | Storage 技术密钥 
+
+
+| virtualStorageTk | 整型 | 虚拟存储技术密钥 
+
+
+| internalVolumeTk | 整型 | 内部卷技术密钥 
+
+
+| qtreeTk | 整型 | Qtree 技术密钥 
+
+
+| hostGroupTk | 整型 | 主机组技术密钥 
+
+
+| applicationTk | 整型 | 应用程序技术密钥 
+
+
+| applicationGroupTk | 整型 | 应用程序组技术密钥 
+
+
+| tierTk | 整型 | 层技术密钥 
+
+
+| serviceLevelTk | 整型 | 服务级别技术密钥 
+
+
+| vmTk | 整型 | VM 技术密钥 
+
+
+| dataStoreTk | 整型 | 数据存储库技术密钥 
+
+
+| dataStoreName | 字符串 | 数据存储库名称 
+
+
+| dataStoreId | 长 | 数据存储库 ID 
+
+
+| virtualCenterIp | 字符串 | vCenter IP 
+
+
+| businessUnit | 字符串 | 业务部门 
+
+
+| businessEntityTk | 整型 | 业务实体技术键 
+
+
+| k8sNodeTk | 整型 | Kubernetes 节点技术密钥 
+
+
+| storageAccessType | 字符串 | 存储访问类型 
+
+
+| capacityType | 字符串 | 容量类型 
+
+
+| actualMB | 长 | 实际容量 (MB) 
+
+
+| 已分配 MB | 长 | 已调配容量 (MB) 
+|===
+*关系：*
+
+* internal_volume_dimension （多对一）
+* storage_dimension（多对一）
+* business_entity_dimension（多对一）
+* k8s_node_dimension（多对一）
+* host_group_dimension（多对一）
+* vm_dimension（多对一）
+* application_group_dimension（多对一）
+* service_level_dimension（多对一）
+* capacity_type（多对一）
+* tier_dimension（多对一）
+* application_dimension（多对一）
+* datastore_dimension（多对一）
+* qtree_dimension（多对一）
+* host_dimension（多对一）
+* date_dimension（多对一）
+
+
+'''
+
+
+=== vm_dimension
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| name | 字符串 | VM 名称 
+
+
+| naturalKey | 字符串 | 自然键 
+
+
+| 操作系统 | 字符串 | 操作系统 
+
+
+| virtualCenterIp | 字符串 | vCenter IP 
+
+
+| ips | 字符串 | IP 地址 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+|===
+*关系：*
+
+* vm_capacity_fact（一对多）
+
+
+'''
+
+
+=== 卷容量事实
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| volumeTk | 整型 | 卷技术密钥 
+
+
+| chargebackFactTk | 整型 | 退单事实技术密钥 
+
+
+| storageAndSpFactTk | 整型 | 存储和池 fact 技术密钥 
+
+
+| hostTk | 整型 | 主机技术密钥 
+
+
+| storageTk | 整型 | Storage 技术密钥 
+
+
+| hostGroupTk | 整型 | 主机组技术密钥 
+
+
+| tierTk | 整型 | 层技术密钥 
+
+
+| serviceLevelTk | 整型 | 服务级别技术密钥 
+
+
+| storagePoolTk | 整型 | 存储池技术密钥 
+
+
+| internalVolumeTk | 整型 | 内部卷技术密钥 
+
+
+| qtreeTk | 整型 | Qtree 技术密钥 
+
+
+| k8sNamespaceTk | 整型 | Kubernetes 命名空间技术密钥 
+
+
+| k8sNamespaceGroupTk | 整型 | Kubernetes 命名空间组技术密钥 
+
+
+| isVirtual | 字符串 | 虚拟标记 
+
+
+| isBackend | 字符串 | 后端标志 
+
+
+| protectionType | 字符串 | 保护类型 
+
+
+| isAccessed | 字符串 | 访问标志 
+
+
+| isOrphaned | 字符串 | 孤立标志 
+
+
+| isProtection | 字符串 | 保护标志 
+
+
+| isUnused | 字符串 | 未使用标志 
+
+
+| 预配置容量 MB | 长 | 已调配容量 (MB) 
+
+
+| 已访问容量 MB | 长 | 已访问容量 (MB) 
+
+
+| 孤立容量 MB | 长 | 孤立容量 (MB) 
+
+
+| protectionCapacityMB | 长 | 保护容量 (MB) 
+
+
+| 未使用容量 MB | 长 | 未使用容量 (MB) 
+
+
+| daysSinceLastAccessed | 整型 | 自上次访问以来的天数 
+|===
+'''
+
+
+=== 体积尺寸
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| storageIdentifier | 字符串 | 存储标识符 
+
+
+| name | 字符串 | 卷名称 
+
+
+| 标签 | 字符串 | 卷标 
+
+
+| thinProvisioned | 字符串 | 精简配置标志 
+
+
+| type | 字符串 | 卷类型 
+
+
+| isVirtual | 字符串 | 虚拟标记 
+
+
+| meta | 字符串 | 元数据标志 
+
+
+| Snapshot | 字符串 | Snapshot 标记 
+
+
+| technologyType | 字符串 | 技术类型 
+
+
+| uuid | 字符串 | UUID 
+
+
+| isMainframe | 字符串 | 大型机标志 
+
+
+| url | 字符串 | 参考 URL 
+
+
+| ID | 长 | 唯一标识符 
+
+
+| 最新 | 字符串 | 最新标记 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| 业务实体 | 字符串 | 业务实体标注 
+
+
+| 层级 | 字符串 | 层注释 
+|===
+*关系：*
+
+* volume_history_capacity_fact（一对多）
+
+
+'''
+
+
+=== 当前卷事实
+
+*主键：* volumeId
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| chargebackFactTk | 整型 | 退单事实技术密钥 
+
+
+| volumeId | 长 | Volume ID 
+
+
+| storageId | 长 | Storage ID 
+
+
+| volumeName | 字符串 | 卷名称 
+
+
+| volumeType | 字符串 | 卷类型 
+
+
+| thinProvisioned | 字符串 | 精简配置标志 
+
+
+| isVirtual | 字符串 | 虚拟标记 
+
+
+| Snapshot | 字符串 | Snapshot 标记 
+
+
+| technologyType | 字符串 | 技术类型 
+
+
+| 物理可用 MB | 长 | 物理可用容量 (MB) 
+
+
+| physicalRawMB | 长 | 物理原始容量 (MB) 
+
+
+| 已配置可用 MB | 长 | 已配置可用容量 (MB) 
+
+
+| 已配置原始 MB | 长 | 已配置的原始容量 (MB) 
+|===
+*关系：*
+
+* chargeback_fact（多对一）
+
+
+'''
+
+
+=== 卷历史容量事实
+
+*主键：* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| tk | 整型 | 技术密钥 
+
+
+| dateTk | 整型 | 日期技术键 
+
+
+| volumeTk | 整型 | 卷技术密钥 
+
+
+| chargebackFactTk | 整型 | 退单事实技术密钥 
+
+
+| storageAndSpFactTk | 整型 | 存储和池 fact 技术密钥 
+
+
+| hostTk | 整型 | 主机技术密钥 
+
+
+| storageTk | 整型 | Storage 技术密钥 
+
+
+| hostGroupTk | 整型 | 主机组技术密钥 
+
+
+| tierTk | 整型 | 层技术密钥 
+
+
+| serviceLevelTk | 整型 | 服务级别技术密钥 
+
+
+| storagePoolTk | 整型 | 存储池技术密钥 
+
+
+| internalVolumeTk | 整型 | 内部卷技术密钥 
+
+
+| qtreeTk | 整型 | Qtree 技术密钥 
+
+
+| k8sNamespaceTk | 整型 | Kubernetes 命名空间技术密钥 
+
+
+| k8sNamespaceGroupTk | 整型 | Kubernetes 命名空间组技术密钥 
+
+
+| isVirtual | 字符串 | 虚拟标记 
+
+
+| isBackend | 字符串 | 后端标志 
+
+
+| protectionType | 字符串 | 保护类型 
+
+
+| isAccessed | 字符串 | 访问标志 
+
+
+| isOrphaned | 字符串 | 孤立标志 
+
+
+| isProtection | 字符串 | 保护标志 
+
+
+| isUnused | 字符串 | 未使用标志 
+
+
+| isMasked | 字符串 | 掩码标志 
+
+
+| isMapped | 字符串 | 映射标志 
+
+
+| 预配置容量 MB | 长 | 已调配容量 (MB) 
+
+
+| 已访问容量 MB | 长 | 已访问容量 (MB) 
+
+
+| 孤立容量 MB | 长 | 孤立容量 (MB) 
+
+
+| protectionCapacityMB | 长 | 保护容量 (MB) 
+
+
+| 未使用容量 MB | 长 | 未使用容量 (MB) 
+
+
+| 已用容量 MB | 长 | 已消耗容量 (MB) 
+
+
+| daysSinceLastAccessed | 整型 | 自上次访问以来的天数 
+|===
+*关系：*
+
+* chargeback_fact（多对一）
+* internal_volume_dimension （多对一）
+* storage_dimension（多对一）
+* storage_and_storage_pool_capacity_fact (多对一)
+* host_group_dimension（多对一）
+* k8s_namespace_group_dimension（多对一）
+* service_level_dimension（多对一）
+* tier_dimension（多对一）
+* storage_pool_dimension（多对一）
+* qtree_dimension（多对一）
+* host_dimension（多对一）
+* date_dimension（多对一）
+* volume_dimension（多对一）
+
+
+'''
+
+
+=== volume_last_accessed_time
+
+*主键：* volumeName, storageIdentifier
+
+[cols="1,1,2"]
+|===
+| 字段 | 类型 | 描述 
+
+
+| volumeId | 长 | Volume ID 
+
+
+| volumeName | 字符串 | 卷名称 
+
+
+| storageIdentifier | 字符串 | 存储标识符 
+
+
+| lastAccessed | DateTimeOffset | 上次访问时间戳 
+|===
