@@ -1,19 +1,23 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_emc_vplex.html 
-keywords: data collector, VPLEX, EMC 
+keywords: data collector, VPLEX, EMC, vplex, 
 summary: 配置 VPLEX 数据收集器。 
 ---
 = 配置 EMC VPLEX 数据收集器
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 该数据收集器从 EMC VPLEX 存储系统获取库存和性能数据。对于配置，数据收集器需要 VPLEX 服务器的 IP 地址和管理级别的域帐户。
 
 
-NOTE: Data Infrastructure Insights从 Vplex 群集进行性能收集需要性能存档服务正常运行，以便填充Data Infrastructure Insights通过基于 SCP 的文件副本检索的 .CSV 文件和日志。 NetApp发现许多 Vplex 固件升级/管理站更新将导致此功能无法运行。计划进行此类升级的客户可能希望主动询问 Dell/EMC，他们的计划升级是否会导致此功能无法运行，如果是，他们如何重新启用它以最大限度地减少性能可见性的差距？  Cloud Insight 的 Vplex 性能代码将在每次轮询时评估所有预期文件是否存在，以及它们是否得到正确更新；如果它们丢失或过时， Data Infrastructure Insights将记录性能收集失败。
+NOTE: Data Infrastructure Insights 从 VPLEX 集群收集性能数据需要性能存档服务可操作，以便填充 Data Infrastructure Insights 通过基于 SCP 的文件复制检索的 .CSV 文件和日志。NetApp 观察到许多 VPLEX 固件升级/管理站更新将使此功能不可操作。计划进行此类升级的客户可能希望主动询问 Dell/EMC 他们计划的升级是否会使此功能无法运行，如果是这样，他们如何重新启用它以最大限度地缩小性能可见性方面的差距？Cloud Insight 的 VPLEX 性能代码将在每次轮询时评估所有预期文件是否存在，以及它们是否正确更新；如果它们丢失或过时，Data Infrastructure Insights 将记录性能收集失败。
 
 
 

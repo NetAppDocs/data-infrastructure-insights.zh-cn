@@ -47,9 +47,6 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 | link:task_dc_ms_azure.html["Azure VM 和 VHD"] | 基础架构 
 
 
-| link:task_dc_brocade_bna.html["Brocade网络顾问 (BNA)"] | 基础架构 
-
-
 | link:task_dc_brocade_fc_switch.html["Brocade光纤通道交换机"] | 基础架构 
 
 
@@ -126,9 +123,6 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 
 
 | link:task_config_telegraf_flink.html["Flink"] | 服务 
-
-
-| link:task_dc_fujitsu_eternus.html["富士通 ETERNUS DX"] | 基础架构 
 
 
 | link:task_dc_google_cloud.html["Google 计算和存储"] | 基础架构 
@@ -221,12 +215,6 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 | link:task_dc_na_cloud_volumes_ontap.html["NetApp Cloud Volumes ONTAP"] | 基础架构 
 
 
-| link:task_dc_na_cloud_connection.html["适用于ONTAP 9.9+ 的NetApp云连接"] | 基础架构 
-
-
-| link:task_dc_na_7mode.html["NetApp Data ONTAP 7-模式"] | 基础架构 
-
-
 | link:task_dc_na_eseries.html["NetApp E 系列"] | 基础架构 
 
 
@@ -282,6 +270,9 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 
 
 | link:task_config_telegraf_puppetagent.html["傀儡代理"] | 服务 
+
+
+| link:task_dc_pure_flashblade.html["Pure FlashBlade"] | 基础架构 
 
 
 | link:task_dc_pure_flasharray.html["Pure Storage FlashArray"] | 基础架构 
