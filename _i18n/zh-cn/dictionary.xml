@@ -14542,4 +14542,9 @@
   <block id="e62768229563f11ca5fd49a1482ae7a8" category="list-text">通过 REST API 在端口 443 上访问 Red Hat OpenShift Virtualization 服务器的 IP 地址</block>
   <block id="07bc27033bbe069dd4fcfa7e7287df66" category="cell">用于与 RHOV 进行 HTTPS 通信的端口</block>
   <block id="db2f9342403e0e147464a85b899ec12c" category="sidebar">Red Hat OpenShift Virtualization</block>
+  <block id="cc7e5505fa4bc50f5457fa8f8b55f94f" category="section-title">2026 年 3 月</block>
+  <block id="c62d7b96ff17fd52f5c5b5957d12ce47" category="section-title">Data Infrastructure Insights 的 AI 助手可供所有人使用！</block>
+  <block id="dd0f9294fa313d494966ae16cbe89435" category="paragraph">Data Infrastructure Insights AI Assistant 可供预览，现在包括以下增强功能：</block>
+  <block id="e609c64ff8e8c15f1ce845903ca2db7e" category="list-text">Azure 区域可用性：对于其 DII 站点托管在 Azure 上的客户，DII Assistant 现已准备好为您提供帮助。</block>
+  <block id="056a97d89a4b6d30acf8e9b86d3ed172" category="list-text">长达 7 天的数据：助理现在可以访问长达 7 天的高分辨率指标，从而实现更广泛的数据分析和见解。</block>
 </blocks>
