@@ -93,16 +93,6 @@ sidebar:
         url: "/concept_log_explorer.html"
       - title: 识别非活动设备
         url: "/task_identify_inactive_devices.html"
-    - title: 洞察
-      entries:
-      - title: 概述
-        url: "/insights_overview.html"
-      - title: 共享资源面临压力
-        url: "/insights_shared_resources_under_stress.html"
-      - title: Kubernetes 命名空间空间不足
-        url: "/insights_k8s_namespaces_running_out_of_space.html"
-      - title: 回收ONTAP冷存储
-        url: "/insights_reclaim_ontap_cold_storage.html"
     - title: 监控和警报
       entries:
       - title: 创建监视器

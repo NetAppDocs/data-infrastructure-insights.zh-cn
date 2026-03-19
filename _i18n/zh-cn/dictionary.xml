@@ -4369,82 +4369,7 @@
   <block id="5881a1f9bf083ef4c9a0abd664075f34" category="paragraph">“变更分析”跟踪以下情况的警报：</block>
   <block id="367c81232bd8558294db17c024d0946c" category="list-text">来自日志监视器的有关日志类型 _logs.vmware.events_ 和 _logs.netapp.ems_ 的警报。</block>
   <block id="872f5111182c06c0a1eab9dfbad521ad" category="list-text">来自上述对象类型的指标监视器的警报；必须在“Group By”字段中选择这些警报，以便变更分析能够跟踪它们。</block>
-  <block id="851540d32e033a0c14b63879881da871" category="summary">洞察可以帮助您预测 Kubernetes 空间何时可能变满。</block>
-  <block id="4fef891481b95674ba195bcf5ebf7efb" category="doc">洞察：Kubernetes 命名空间空间不足</block>
-  <block id="b9e3092d2cb5cd78b84419a18b48afcf" category="paragraph">租户空间不足绝对不是什么好事。Data Infrastructure Insights可帮助您预测 Kubernetes 持久卷变满之前的时间。</block>
-  <block id="8dc9b2ee1508011b53e7f0f04a3b46a8" category="paragraph">_Kubernetes 命名空间空间不足_洞察让您可以查看 Kubernetes 命名空间中面临空间不足风险的工作负载，并估计每个持久卷变满之前剩余的天数。</block>
-  <block id="f2c0221f294a823d827a375c35966fc9" category="paragraph">您可以通过导航至“仪表板”&gt;“洞察”来查看此洞察。</block>
-  <block id="6f6740f128ff4e7b81b3e550f00f9705" category="inline-image-macro">K8s 命名空间中面临空间耗尽风险的工作负载列表</block>
-  <block id="9cd0fe5cef5af60f762c34beb874081a" category="paragraph"><block ref="9cd0fe5cef5af60f762c34beb874081a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b5d4ddc25dbf8207f2bee2e686857aa1" category="paragraph">单击工作负载即可打开 Insight 的详细信息页面。在此页面上，您将看到显示工作负载容量趋势的图表以及显示以下内容的表格：</block>
-  <block id="531d617d072da086d2a88b4381d112d7" category="list-text">工作负载名称</block>
-  <block id="5594ad451661776d3680f239ed48baa0" category="list-text">持久卷受到影响</block>
-  <block id="60883d911c538f3168c126825cfa1804" category="list-text">预计完成时间（天）</block>
-  <block id="0e1f0238958c9e1538d02888144645f7" category="list-text">持久卷容量</block>
-  <block id="95458ffe03f081fb38d0e5630d7836c6" category="list-text">后端存储资源受到影响，当前使用的容量超出总容量。点击此链接将打开后端卷的详细登录页面。</block>
-  <block id="9b6de7d57253456e4f416bcef90b76e5" category="inline-image-macro">显示详细信息的工作负载表</block>
-  <block id="e589c155ffae6696761533f45ef69b7c" category="paragraph"><block ref="e589c155ffae6696761533f45ef69b7c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="cc327506f222e6ab4e0ec6a024dcbe7b" category="section-title">如果空间不足，我该怎么办？</block>
-  <block id="35e8ae7798ae468988eef02594bca5d5" category="paragraph">在 Insight 页面上，单击 *+Show Recommendations* 以查看可能的解决方案。空间不足时最简单的选择始终是添加更多容量，而Data Infrastructure Insights会向您展示最佳的添加容量，以将满负荷时间增加到目标 60 天预测。还显示了其他建议。</block>
-  <block id="501f2f9df98b83cc872cd59f0493d08d" category="inline-image-macro">增加产能以恢复至 60 天 TTF</block>
-  <block id="1349caff32af26b4b92540943cbbecc2" category="paragraph"><block ref="1349caff32af26b4b92540943cbbecc2" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="103ede5225263a5f8e396b6adb9b4898" category="paragraph">您还可以在这里复制此 Insight 的便捷链接、为该页面添加书签或轻松地与您的团队共享。</block>
-  <block id="6d35f83ec0df4672769520e5d6df1cd5" category="summary">洞察让您了解资源使用情况和趋势。</block>
-  <block id="f1c9e9af80bb533618f5bdefe333747d" category="doc">洞察</block>
-  <block id="4e97535a9ad440d2d327ab364bb7a0ec" category="paragraph">通过洞察，您可以了解资源使用情况及其对其他资源的影响，或完整分析的时间。</block>
-  <block id="93b6b2ecbe8e38118f0e38a7f128eb90" category="paragraph">有许多见解可供参考。导航至 *仪表板 &gt; 洞察* 开始深入了解。您可以在主选项卡上查看活动洞察（当前正在发生的洞察），或在_非活动洞察_选项卡上查看非活动洞察。非活动洞察是指那些之前处于活动状态但不再发生的洞察。</block>
-  <block id="fe9a216d65384f5afb0047e612bf386e" category="section-title">洞察类型</block>
-  <block id="9e9013279f80acdb151d7cad5bc3f7d8" category="section-title">共享资源面临压力</block>
-  <block id="3c4504abf11b507f4b8e1fa6354331ea" category="paragraph">高影响的工作负载可能会降低共享资源中其他工作负载的性能。这给共享资源带来了压力。Data Infrastructure Insights提供工具来帮助您调查资源饱和度及其对租户的影响。<block ref="de4400096db30b5f709799778e050e2c" category="inline-link-macro-rx"></block></block>
-  <block id="c1c7efc58c7b64cc21f3ae15934e8271" category="section-title">Kubernetes 命名空间空间不足</block>
-  <block id="806f6dbcc954f0a88489885f517d1d1d" category="paragraph">Kubernetes 命名空间空间耗尽洞察让您可以查看 Kubernetes 命名空间中面临空间耗尽风险的工作负载，并估算每个空间耗尽之前剩余的天数。<block ref="604196d3b206e62dba15152db76beddc" category="inline-link-macro-rx"></block></block>
-  <block id="db08e6b1d619064fa3fd2035f5926d18" category="paragraph">_Reclaim ONTAP Cold Storage_ Insight 提供有关冷容量、潜在成本/电力节省以及ONTAP系统上卷的推荐操作项目的数据。<block ref="82cab8f639b07ead699dc071830d992e" category="inline-link-macro-rx"></block></block>
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">了解更多</block>
-  <block id="102e3d38f56cb877356cf974fdeb3270" category="admonition">这是一个_预览_功能，随着改进可能会随时改变。<block ref="ee58f03d7eaea0665aa8a572992ca1b8" category="inline-link-macro-rx"></block>关于Data Infrastructure Insights预览功能。</block>
-  <block id="9d6898c9d6fff2bd62d85b66643bb3d1" category="doc">见解：回收ONTAP冷存储</block>
-  <block id="0d76fbb36f181c92649274af9d5b537e" category="paragraph">_Reclaim ONTAP Cold Storage_ Insight 提供有关冷容量、潜在成本/电力节省以及ONTAP系统上卷的推荐操作项目的数据。</block>
-  <block id="385dd98ce9aff23db04e71230c28efd7" category="paragraph">要查看这些见解，请导航至*仪表板&gt;见解*并查看_Reclaim ONTAP Cold Storage_见解。请注意，如果Data Infrastructure Insights检测到冷存储，此洞察才会列出受影响的存储，否则您将看到“全部清除”消息。</block>
-  <block id="d752ee7de9162d5e0fa475e8a383ea29" category="paragraph">请记住，不会显示少于 30 天的冷数据。</block>
-  <block id="da69b960f5bb93c02fdd4886868836f6" category="inline-image-macro">显示 3 个包含冷数据的存储的洞察列表</block>
-  <block id="7718245a70dcc6279bf8af86a72c2e35" category="paragraph"><block ref="7718245a70dcc6279bf8af86a72c2e35" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="930fd15ae62cafe82d62d6912f307087" category="paragraph">Insight 描述快速指示了被检测为“冷”的数据量以及该数据驻留在哪个存储中。该表还提供了冷数据的工作负载数量。</block>
-  <block id="7cc631429c391f70b58e64999f7fbe48" category="inline-link-macro">NetApp 的 TCO 计算器</block>
-  <block id="cdb12d4961181c6c0d6f14a1a17cfd87" category="paragraph">从列表中选择一个洞察将打开一个页面，显示更多详细信息，包括将数据移动到云端或循环使用统一磁盘的建议，以及实施这些建议可能实现的估计成本和电力节省。该页面甚至提供了一个便捷的链接<block ref="928b307e42240e05f4c78ed4745d6f3a" category="inline-link-macro-rx"></block>这样你就可以用这些数字来做实验。</block>
-  <block id="c2022a18b75555c824458ee568cfdfca" category="inline-image-macro">冷数据电力信息</block>
-  <block id="6a79fd430dc36a8f17aaf2f28988d6e6" category="paragraph"><block ref="6a79fd430dc36a8f17aaf2f28988d6e6" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5259ae4afb5996ff48788b2fa720114c" category="section-title">建议</block>
-  <block id="a5048bf2003cf033b80e3fa2e33502f8" category="paragraph">在“洞察”页面上，展开“建议”以探索以下选项：</block>
-  <block id="f77e48bcc98143a3f6bd8bcc492be286" category="list-text">将未使用的工作负载（僵尸）移动到成本较低的存储层（HDD）</block>
-  <block id="987152d50a80bdf0820a4f1fd1771f81" category="paragraph">利用僵尸标志、冷存储和天数，找到最冷和最大的数据量，并将工作负载移动到成本较低的存储层（例如使用硬盘存储的存储池）。如果工作负载在 30 天或更长时间内未收到任何重要的 IO 请求，则该工作负载被视为“僵尸”。</block>
-  <block id="c8abb3322f2d9026ffca3cbd29c6e9ba" category="list-text">删除未使用的工作负载</block>
-  <block id="42bb4c2dadbccfef009beef19eb60c44" category="paragraph">验证哪些工作负载未被使用，并考虑将其存档或从存储系统中删除。</block>
-  <block id="30dc3fa30dc934a0d0aa98e3789e46c2" category="list-text">考虑 NetApp 的 Fabric Pool 解决方案</block>
-  <block id="27130393c9a69c9ac4259ad677b7e09b" category="inline-link-macro">Fabric 池解决方案</block>
-  <block id="a7c5cd98f24711202e2a8089e206922c" category="paragraph">NetApp 的<block ref="6dfc63a251a9b042b77c667e40f20df9" category="inline-link-macro-rx"></block>自动将冷数据分层到低成本云存储，从而提高性能层的效率并提供远程数据保护。</block>
-  <block id="b0bad3786567c06c6ba5f9c05f89f0fb" category="section-title">可视化和探索</block>
-  <block id="f9a5f3e9d6c824797a0884341490f583" category="paragraph">图表和表格提供了额外的趋势信息，并允许您深入了解各个工作负载。</block>
-  <block id="046d0c83fcc2f8749fd500daded4836a" category="inline-image-macro">冷数据摘要图</block>
-  <block id="907a69f25ca7c9e8619e2c59a67ab607" category="inline-image-macro">冷数据工作负载表</block>
-  <block id="e185f5cf502ca7079fb5eb3b60a77e41" category="paragraph"><block ref="e9ec82200521512971fafc4c0e21c2af" category="inline-image-macro-rx" type="image"></block> <block ref="d2dfbff86c21669b3c15073a169ec8ac" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2d78443087bc495d923e93521efb0c1d" category="doc">洞察：共享资源面临压力</block>
-  <block id="d408de43e7eda32b1b6e501c05dc38ce" category="paragraph">高影响的工作负载可能会降低共享资源中其他工作负载的性能。这给共享资源带来了压力。Data Infrastructure Insights提供工具来帮助您调查资源饱和度及其对租户的影响。</block>
-  <block id="aea124b45b62324984b67a059ea0da7f" category="paragraph">*苛刻的工作负载*是当前被确定为影响共享存储池中其他资源的工作负载。这些工作负载会驱动更高的 IOPS（例如），从而降低受影响工作负载中的 IOPS。要求高的工作负载有时被称为_高消耗工作负载_。</block>
-  <block id="7bddab02c6c096040f0edf52e1623868" category="paragraph">*受影响的工作负载*是受共享存储池中高消耗工作负载影响的工作负载。这些工作负载由于要求苛刻的工作负载而出现 IOPS 降低和/或延迟增加的情况。</block>
-  <block id="f4addcedcbf7b58a235a6de1cfeb96b7" category="paragraph">请注意，如果Data Infrastructure Insights尚未发现领先的计算工作负载，则卷或内部卷本身将被识别为工作负载。这适用于要求高和受影响的工作负载。</block>
-  <block id="bf306d07c3ed41852c5f9cb551a07b59" category="paragraph">当确定 IOPS 会影响共享存储池中的其他资源或工作负载时，就会发生*争用*或*饱和*。</block>
-  <block id="0b34f00d1d4a3885b35a431a55efeb18" category="section-title">苛刻的工作负载</block>
-  <block id="ae8f504ff2e83723f08fc4f873fcdca5" category="paragraph">要开始查看共享资源中要求高且受影响的工作负载，请单击“*仪表板 &gt; 洞察*”，然后选择“*压力下的共享资源*洞察”。</block>
-  <block id="923231dd5cc497f857ab7bc31259567c" category="inline-image-macro">洞察菜单</block>
-  <block id="4ad858c99ade794af9d0e0a1491e01bc" category="paragraph"><block ref="4ad858c99ade794af9d0e0a1491e01bc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="decacd0d9c5727c8132dacde092c0382" category="paragraph">Data Infrastructure Insights显示已检测到饱和的所有工作负载的列表。请注意，Data Infrastructure Insights将显示已检测到至少一个_需求资源_或*_受影响资源_的工作负载。</block>
-  <block id="d7c664bf82d9e14603a845f0ffe47993" category="paragraph">单击工作负载即可查看其详细信息页面。顶部图表显示发生争用/饱和的共享资源（例如存储池）上的活动。</block>
-  <block id="2ca1e64d0a4fdfcf135961f6931ac68b" category="inline-image-macro">共享资源存在争用</block>
-  <block id="6345c18147755da14a72a1bcc448c878" category="paragraph"><block ref="6345c18147755da14a72a1bcc448c878" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7e4a0aeb0ee372dc4742c55ad85d4088" category="paragraph">下面是两个图表，显示了高要求的工作负载和受这些高要求工作负载影响的工作负载。</block>
-  <block id="bea93c5448a53dbeae5f078ae207efa5" category="paragraph"><block ref="416a8d7353098379fdb36ba6e8aa6da8" category="inline-image-macro-rx" type="image"></block> <block ref="abda75af4f4de4a9d5c96cfad5c94c77" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9eb156b99e347ad63f9400c9ff3d5387" category="paragraph">每个表格下方是影响争用或受争用影响的工作负载和/或资源的列表。单击某个资源（例如，虚拟机）将打开该资源的详细信息页面。单击工作负载将打开一个查询页面，显示所涉及的 pod。请注意，如果链接打开一个空查询，则可能是因为受影响的 pod 不再是活动争用的一部分。您可以修改查询的时间范围，以在更大或更集中的时间范围内查看 pod 列表。</block>
-  <block id="53baeaedbb25410f6c630cdbea1ddb6b" category="paragraph">您可以采取多种措施来减少或消除租户饱和的可能性。这些是通过展开页面上的 *+显示建议* 链接来显示的。您可以尝试以下几种方法。</block>
-  <block id="ac62625b23d0635d3eaed0e05c830d36" category="paragraph">最后，您可以点击*复制洞察链接*将页面网址复制到剪贴板，以便更轻松地与同事分享。</block>
   <block id="5142ab8747c5da1b5115ffa35bacd522" category="summary">跟踪 Kubernetes 变化比以往更加容易。</block>
   <block id="d75550072217b58f67a7216961c2bb8c" category="doc">Kubernetes 变更分析</block>
   <block id="9ec645581caafa9fbb6d571ba008b9cc" category="paragraph">Kubernetes Change Analytics 为您提供 K8s 环境最新变化的一体化视图。警报和部署状态触手可及。通过变更分析，您可以跟踪每个部署和配置变更，并将其与 K8s 服务、基础设施和集群的健康和性能相关联。</block>
@@ -14427,7 +14352,6 @@
   <block id="1297bab76f52eaf87c4bead6d91c5747" category="paragraph">*主键：* volumeName, storageIdentifier</block>
   <block id="a19ba3643626c0da85c3de321b7fb564" category="cell">lastAccessed</block>
   <block id="5215d51f00cbd59bd4f5379564dd2607" category="cell">上次访问时间戳</block>
-  <block id="7786ae506eee52b626dcc8402f829f17" category="paragraph"><block ref="7786ae506eee52b626dcc8402f829f17" category="inline-link-macro-rx"></block></block>
   <block id="649d30b7cac0604fb3207f769101f157" category="list-text">internal_volume_capacity_fact（一对多）</block>
   <block id="22c529c0f957ddcd1f77511e82dfbfc4" category="list-text">chargeback_fact（一对多）</block>
   <block id="5dd9e2d63020dda622b0aab04bb64243" category="list-text">vm_capacity_fact（一对多）</block>
@@ -14526,25 +14450,16 @@
   <block id="de9fcff157c3fd05f707a7b227a45275" category="summary">配置 Pure FlashBlade Storage 数据收集器</block>
   <block id="c0c126a33a6cd3661eae0fb5eca89c2d" category="paragraph">Data Infrastructure Insights 使用 Pure Storage FlashBlade 数据收集器从公开其 REST API 版本 2 的 FlashBlade 集群收集清单和性能数据。</block>
   <block id="80e910f35b12e9c61335fa88de36edd0" category="sidebar">Red Hat Virtualization</block>
-  <block id="96d302563986f9d75dc51085e4c183d6" category="cell">link:task_dc_redhat_openshift virtualization.html[Red Hat OpenShift 虚拟化]</block>
-  <block id="8dfbd1afa40d818910ea903f9d52f6ec" category="summary">配置 Red Hat OpenShift Virtualization 数据收集器。</block>
-  <block id="50993793783c5f33ae8f736a95dca1b9" category="doc">Red Hat OpenShift 虚拟化数据收集器</block>
-  <block id="6fd44ae5a42d6b33248d329cbbddaa88" category="paragraph">DII Red Hat OpenShift 虚拟化收集器将尝试发现在 OpenShift 虚拟化环境中运行的 OSV 计算工作负载 - 此收集器不会发现所有 OpenShift pod。这是一个基于 HTTPS REST API 的收集器。建议为每个 OSV 集群创建一个收集器。</block>
-  <block id="0e2f53883090c3b63a953261cdb19325" category="paragraph">此收集器的身份验证方法是绑定到服务帐户的身份验证令牌。要同时创建用户帐户和令牌：</block>
-  <block id="f2c430952fd20f76b24810e2e6f8dace" category="paragraph">运行这 3 个命令并注意是否存在任何错误。</block>
-  <block id="8a8ad6f9b43737bda614d744a8286cc4" category="paragraph">命令完成后：</block>
-  <block id="9fb84dc506591e78ff3f6f8ac2f00e6e" category="paragraph">此操作将创建绑定到您的用户的令牌。</block>
-  <block id="0cf40b0b5f29b2928f214370b73c4fac" category="paragraph">最后，您可能还希望 OSV 管理员运行：</block>
-  <block id="7af44018c8c76e698e986a0c0db08e5f" category="paragraph">这将返回用于管理的主机名/IP 地址。每个 DII OSV 收集器都需要指向用于 OSV 管理的 IP/主机名。</block>
-  <block id="e62768229563f11ca5fd49a1482ae7a8" category="list-text">通过 REST API 在端口 443 上访问 Red Hat OpenShift Virtualization 服务器的 IP 地址</block>
-  <block id="07bc27033bbe069dd4fcfa7e7287df66" category="cell">用于与 RHOV 进行 HTTPS 通信的端口</block>
   <block id="db2f9342403e0e147464a85b899ec12c" category="sidebar">Red Hat OpenShift Virtualization</block>
   <block id="cc7e5505fa4bc50f5457fa8f8b55f94f" category="section-title">2026 年 3 月</block>
-  <block id="c62d7b96ff17fd52f5c5b5957d12ce47" category="section-title">Data Infrastructure Insights 的 AI 助手可供所有人使用！</block>
-  <block id="dd0f9294fa313d494966ae16cbe89435" category="paragraph">Data Infrastructure Insights AI Assistant 可供预览，现在包括以下增强功能：</block>
-  <block id="e609c64ff8e8c15f1ce845903ca2db7e" category="list-text">Azure 区域可用性：对于其 DII 站点托管在 Azure 上的客户，DII Assistant 现已准备好为您提供帮助。</block>
-  <block id="056a97d89a4b6d30acf8e9b86d3ed172" category="list-text">长达 7 天的数据：助理现在可以访问长达 7 天的高分辨率指标，从而实现更广泛的数据分析和见解。</block>
   <block id="e43d8f702818ecf5597859f98ff1e993" category="list-text">ASSETS 类型包含资产、查询和搜索 API。DII 资产属性和指标有时被称为"odata"。这些 API 通常通过 /rest/v1/asset 或 /rest/v1/query 访问。有关详细信息，请参见 <block ref="622b990b99495c7072e19eb08becc13e" category="inline-xref-macro-rx"></block>。</block>
   <block id="627c6b105244e1b95d64a8f71c382473" category="list-text">DATA INGESTION 类型用于检索和管理摄取数据和自定义指标，例如来自 Telegraf 代理的数据和自定义指标。这些指标有时被称为"数据湖"或"湖泊"指标。这些 API 通常通过 /rest/v1/lake 访问。有关详细信息，请参见 <block ref="622b990b99495c7072e19eb08becc13e" category="inline-xref-macro-rx"></block>。</block>
   <block id="d14a20e4ad37ea89f3a29854e5a1934c" category="paragraph">请注意，用户有权访问的 API 类型也取决于他们在每个 Data Infrastructure Insights 功能集（可观察性、工作负载安全性、报告）中拥有的<block ref="ead2141fb682d81a2f0b1deca7bb95c5" category="inline-link-macro-rx"></block>。</block>
+  <block id="57919acc530156af753aec7b4f2f3fd0" category="section-title">AI Assistant 现已全面推出</block>
+  <block id="f58fde87057b6940a6342bbe077ef420" category="paragraph">Data Infrastructure Insights AI Assistant 现在已正式向托管在 AWS 上的 DII 站点的所有客户提供。</block>
+  <block id="0e03cca45a1184995a9ec2d51413668b" category="paragraph">请注意，Azure 网站上的 AI Assistant 仍处于预览状态。敬请关注此空间，了解正式发布的公告。</block>
+  <block id="74909051b7c24faefceb41b1c2f67f3f" category="section-title">已删除 Infrastructure Insights 功能</block>
+  <block id="eeca18d86334ede222257bab8c195d15" category="paragraph">DII 的 "Infrastructure Insights" 功能 _Shared Resources Under Stress_、_Kubernetes Namespaces Running out of Space_ 和 _Reclaiming ONTAP Cold Storage_ 在 DII 中不再可用。</block>
+  <block id="b222969a0e0fca1c5ae1f58770c55fd3" category="summary">2020 年 Data Infrastructure Insights 中提供的新功能和特性</block>
+  <block id="3535e34a6ea939a9c4a64fcb08c9f72d" category="doc">Data Infrastructure Insights 的新增功能 - Archive 2020</block>
 </blocks>

@@ -22,15 +22,18 @@ NetApp不断改进和增强其产品和服务。以下是Data Infrastructure Ins
 
 
 
-=== Data Infrastructure Insights 的 AI 助手可供所有人使用！
+=== AI Assistant 现已全面推出
 
-Data Infrastructure Insights AI Assistant 可供预览，现在包括以下增强功能：
+Data Infrastructure Insights AI Assistant 现在已正式向托管在 AWS 上的 DII 站点的所有客户提供。
 
-* Azure 区域可用性：对于其 DII 站点托管在 Azure 上的客户，DII Assistant 现已准备好为您提供帮助。
-* 长达 7 天的数据：助理现在可以访问长达 7 天的高分辨率指标，从而实现更广泛的数据分析和见解。
+请注意，Azure 网站上的 AI Assistant 仍处于预览状态。敬请关注此空间，了解正式发布的公告。
 
 
-'''
+
+=== 已删除 Infrastructure Insights 功能
+
+DII 的 "Infrastructure Insights" 功能 _Shared Resources Under Stress_、_Kubernetes Namespaces Running out of Space_ 和 _Reclaiming ONTAP Cold Storage_ 在 DII 中不再可用。
+
 
 
 == 2026 年 2 月

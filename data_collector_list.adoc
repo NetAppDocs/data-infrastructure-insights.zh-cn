@@ -284,9 +284,6 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 | link:task_config_telegraf_redis.html["Redis"] | 服务 
 
 
-| link:task_dc_redhat_openshift virtualization.html[Red Hat OpenShift 虚拟化] | 基础架构 
-
-
 | link:task_config_telegraf_rethinkdb.html["重新思考数据库"] | 服务 
 
 
