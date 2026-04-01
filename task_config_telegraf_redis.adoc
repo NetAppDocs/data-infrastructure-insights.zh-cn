@@ -7,10 +7,17 @@ summary: Redis 数据收集器配置
 = Redis 数据收集器
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Data Infrastructure Insights使用此数据收集器从 Redis 收集指标。  Redis 是一个开源的内存数据结构存储，用作数据库、缓存和消息代理，支持以下数据结构：字符串、哈希、列表、集合等。
+
+
+NOTE: 此收集器已弃用。从 2027 年 1 月开始，它将不再可用。
 
 
 

@@ -26,7 +26,40 @@ keywords: AU, acquisition unit, requirements, sizing
 | 组件 | Linux 要求 | Windows 要求 
 
 
-| 操作系统 | 运行以下任一许可版本的计算机：* AlmaLinux 9.5、10 * Centos（64 位）：Stream 9 * Debian（64 位）：11 至 13 * OpenSUSE Leap 15.2 至 15.6、16 * Oracle Enterprise Linux（64 位）：8.10、9.2、9.4、9.6、10 * Red Hat（64 位）：8.10、9.2、9.4、9.6、10 * Rocky 9.2 至 9.6 * SUSE Linux Enterprise Server 15 SP4 至 15 SP7、16 * Ubuntu Server：20.04、22.04、24.04 LTS * SELinux 在上述平台上 此计算机不应运行任何其他应用程序级别的软件。建议使用专用服务器。如果您使用的是 SELinux，建议在采集单元系统上执行以下命令：sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights | 运行以下任一正版操作系统的计算机： * Microsoft Windows 11 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025 此计算机不应运行任何其他应用程序级软件。建议使用专用服务器。 
+| 操作系统  a| 
+运行以下其中一个许可版本的计算机：
+
+* AlmaLinux 9.5，10
+* Centos（64 位）：Stream 9
+* Debian（64 位）：11 到 13
+* OpenSUSE Leap 15.2 至 15.6、16
+* Oracle Enterprise Linux (64 位)：8.10、9.2、9.4、9.6、10
+* Red Hat (64 位)：8.10、9.2、9.4、9.6、10
+* Rocky 9.2 到 9.6
+* SUSE Linux Enterprise Server 15 SP4 至 15 SP7、16
+* Ubuntu Server：20.04、22.04、24.04 LTS
+* 上述平台上的 SELinux
+
+
+此计算机不应运行任何其他应用程序级别的软件。建议使用专用服务器。
+
+如果您正在使用 SELinux 运行，建议在采集单元系统上执行以下命令：
+
+....
+sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?"
+sudo restorecon -R /opt/netapp/cloudinsights
+.... a| 
+运行以下其中一个许可版本的计算机：
+
+* Microsoft Windows 11
+* Microsoft Windows Server 2016
+* Microsoft Windows Server 2019
+* Microsoft Windows Server 2022
+* Microsoft Windows Server 2025
+
+
+此计算机不应运行任何其他应用程序级别的软件。建议使用专用服务器。
+
 
 
 | CPU | 2 个 CPU 核心 | 相同的 
@@ -35,7 +68,18 @@ keywords: AU, acquisition unit, requirements, sizing
 | 内存 | 8 GB 内存 | 相同的 
 
 
-| 可用磁盘空间 | 50 GB（建议 100 GB） 对于 Linux，应按以下方式分配磁盘空间： /opt/netapp 10 GB（大型环境为 20 GB） /var/log/netapp 40 GB（大型环境为 80 GB） /tmp 至少 1 GB 在安装期间可用 | 50 GB 
+| 可用磁盘空间  a| 
+50 GB（建议 100 GB）
+
+对于 Linux，磁盘空间应按以下方式分配：
+
+* /opt/netapp 10 GB（大型环境为 20 GB）
+* /var/log/netapp 40 GB（大型环境为 80 GB）
+* /tmp 在安装过程中至少有 1 GB 可用
+
+
+您的文件系统可能会使用一些空间作为其开销。这些是在安装之前应该 _可用_ 的最小空间。
+| 50 GB 
 
 
 | 网络 | 需要从收购单元到 *.cloudinsights.netapp.com 或您的Data Infrastructure Insights租户（即 \https://<tenant_id>.c01.cloudinsights.netapp.com）的 100 Mbps/1 Gbps 以太网连接、静态 IP 地址和端口 80 或 443（出站）连接。有关采集单元与各数据采集器之间的要求，请参阅相关说明。link:data_collector_list.html["数据收集器"] 。如果您的组织需要使用代理来访问互联网，您可能需要了解组织的代理行为并寻求某些例外以使Data Infrastructure Insights能够发挥作用。例如，您的组织是否默认阻止访问，并且仅允许例外访问特定网站/域？如果需要，您需要将以下域名添加到例外列表中：*.cloudinsights.netapp.com。更多信息，请阅读代理相关内容。link:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["这里（Linux）"]或者link:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["这里（Windows）"]。 | 相同的 

@@ -233,9 +233,6 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 | link:task_dc_na_ontap_rest.html["NetApp ONTAP REST 收集器"] | 基础架构 
 
 
-| link:task_dc_na_ontap_afx.html["NetApp ONTAP AFX"] | 基础架构 
-
-
 | link:task_dc_na_ontap_all_san_array.html["NetApp ONTAP ASA r2（全 SAN 阵列）收集器"] | 基础架构 
 
 
@@ -272,13 +269,16 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 | link:task_config_telegraf_puppetagent.html["傀儡代理"] | 服务 
 
 
-| link:task_dc_pure_flashblade.html["Pure FlashBlade"] | 基础架构 
-
-
 | link:task_dc_pure_flasharray.html["Pure Storage FlashArray"] | 基础架构 
 
 
+| link:task_dc_pure_flashblade.html["Pure Storage FlashBlade"] | 基础架构 
+
+
 | link:task_dc_redhat_virtualization.html["红帽虚拟化"] | 基础架构 
+
+
+| link:task_dc_redhat_openshift_virtualization.html["Red Hat OpenShift Virtualization"] | 基础架构 
 
 
 | link:task_config_telegraf_redis.html["Redis"] | 服务 

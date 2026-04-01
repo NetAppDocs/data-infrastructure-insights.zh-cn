@@ -7,10 +7,17 @@ summary: Elasticsearch 数据收集器配置
 = Elasticsearch 数据收集器
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Data Infrastructure Insights使用此数据收集器从 Elasticsearch 收集指标。
+
+
+NOTE: 此收集器已弃用。从 2027 年 1 月开始，它将不再可用。
 
 . 从*可观察性 > 收集器*中，单击*+数据收集器*。选择 Elasticsearch。
 +

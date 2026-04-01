@@ -7,10 +7,17 @@ summary: Apache 数据收集器配置
 = Apache 数据收集器
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 该数据收集器允许从租户上的 Apache 服务器收集数据。
+
+
+NOTE: 此收集器已弃用。从 2027 年 1 月开始，它将不再可用。
 
 .先决条件
 * 您必须设置并正确运行 Apache HTTP 服务器
