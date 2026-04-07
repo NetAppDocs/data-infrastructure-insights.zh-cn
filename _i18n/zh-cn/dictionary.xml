@@ -12462,7 +12462,6 @@
   <block id="db1a2df035e9cd0bcdfb55db52e3e64b" category="paragraph">如果检测到已知文件扩展名的文件篡改攻击，并且在“警报”屏幕上生成警报，则可以将该文件扩展名添加到_允许的文件类型_列表中，以防止不必要的警报。</block>
   <block id="8d791b80cd3ffee28fe92eaeb570182d" category="paragraph">一旦添加到_允许的文件类型_列表中，就不会针对该允许的文件类型生成文件篡改攻击警报。请注意，“允许的文件类型”策略仅适用于文件篡改检测。</block>
   <block id="7af3f2f9c8eaa3a8ff61f839001e8ca0" category="paragraph">例如，如果将名为 _test.txt_ 的文件重命名为 _test.txt.abc_，并且工作负载安全系统由于 _.abc_ 扩展名而检测到文件篡改攻击，则可以将 _.abc_ 扩展名添加到 _允许的文件类型_ 列表中。添加到列表后，将不再针对扩展名为 _.abc_ 的文件生成文件篡改攻击。</block>
-  <block id="374bdbda42629b3859daec6506078b36" category="sidebar">ONTAP自主保护集成</block>
   <block id="5273cec606b6768f8394e2ae1566c7f6" category="sidebar">模拟攻击</block>
   <block id="5da98f5c78418524ecf144084929f19e" category="doc">工作负载安全：模拟文件篡改</block>
   <block id="e192cb4cca3f754a1b50fdf853ce74a4" category="summary">使用 SVM 事件速率检查器测量 NFS/SMB 事件速率，并在部署工作负载安全数据收集器之前确定最佳代理大小。</block>
@@ -14491,4 +14490,15 @@
   <block id="c304b6eec4c1c5c3c0517f83640ef6e3" category="cell">启用性能收集</block>
   <block id="10558b4f829f071034d968780bb7a36e" category="cell">性能轮询间隔（秒）</block>
   <block id="6f159883a7f482d97fbfbd3597406382" category="cell">默认值为 900</block>
+  <block id="ea178ff6db0ce95c8cbc3246d6650cb9" category="summary">将文件扩展名添加到警报排除列表以减少警报。</block>
+  <block id="d183e2d7c0392d5cf66d1908be8211c1" category="doc">警报排除</block>
+  <block id="ee91b4dd26cc357eaf6f92f8e70239f0" category="paragraph">如果检测到已知文件扩展名的文件篡改攻击，并且正在警报屏幕上生成警报，则可以将该文件扩展名添加到 _警报排除_ 列表以防止不必要的警报。这也可以被认为是一个 _允许的文件类型_ 列表，因为 Workload Security 将允许这些文件绕过篡改警报。</block>
+  <block id="44e5ffe8f45ef48f6d55fd323a14ebd5" category="paragraph">导航到 *Workload Security &gt; Policies*，然后转到 _Alert Exclusions_ 选项卡。</block>
+  <block id="b81cf913eebf1b9b3172d1df8992971e" category="inline-image-macro">允许从警报中排除的文件类型</block>
+  <block id="a7b62f8b775b1075063ceb3d8a408b10" category="paragraph"><block ref="a7b62f8b775b1075063ceb3d8a408b10" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0ca499fad2902c1886076f6a79993648" category="paragraph">一旦添加到允许的文件类型列表中，将不会为该文件类型生成文件篡改攻击警报。请注意，警报排除策略仅适用于文件篡改检测。</block>
+  <block id="c40c4ea70475c0ba0841ba534492332d" category="paragraph">例如，如果名为 _test.txt_ 的文件重命名为 _test.txt.abc_，并且由于 _.abc_ 扩展名，Workload Security 检测到文件篡改攻击，则可以将 _.abc_ 扩展名添加到允许的文件类型列表中。添加到列表后，将不再对扩展名为 _.abc_ 的文件生成文件篡改攻击。</block>
+  <block id="670039cd8e2f07d8b36e77f11294bedb" category="paragraph">允许的文件类型可以是精确匹配（例如，".abc"）或表达式（例如，"*.type"、".type*" 或 ".*type*"）。不支持类型为 ".a*c"、".p*f" 的表达式。</block>
+  <block id="3720ff11b9d0e04f7fd96e22ff7a745f" category="paragraph">已为审核引入了"Set By"和"Set Date"的其他属性。现有文件类型将迁移到新格式，这两个属性的值都设置为"migrated"。</block>
+  <block id="9b5911ec569b49f0ae81ecb2c9067806" category="sidebar">ONTAP 自主勒索软件防护集成</block>
 </blocks>

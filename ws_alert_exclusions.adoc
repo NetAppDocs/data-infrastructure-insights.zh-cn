@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: ws_alert_exclusions.html 
+keywords: workload security, cloud secure, include list, allowed, file types, ransomware, tampering, exclusion, alerts 
+summary: 将文件扩展名添加到警报排除列表以减少警报。 
+---
+= 警报排除
+:allow-uri-read: 
+
+
+[role="lead"]
+如果检测到已知文件扩展名的文件篡改攻击，并且正在警报屏幕上生成警报，则可以将该文件扩展名添加到 _警报排除_ 列表以防止不必要的警报。这也可以被认为是一个 _允许的文件类型_ 列表，因为 Workload Security 将允许这些文件绕过篡改警报。
+
+导航到 *Workload Security > Policies*，然后转到 _Alert Exclusions_ 选项卡。
+
+image:ws_alert_exclusions_list.png["允许从警报中排除的文件类型"]
+
+一旦添加到允许的文件类型列表中，将不会为该文件类型生成文件篡改攻击警报。请注意，警报排除策略仅适用于文件篡改检测。
+
+例如，如果名为 _test.txt_ 的文件重命名为 _test.txt.abc_，并且由于 _.abc_ 扩展名，Workload Security 检测到文件篡改攻击，则可以将 _.abc_ 扩展名添加到允许的文件类型列表中。添加到列表后，将不再对扩展名为 _.abc_ 的文件生成文件篡改攻击。
+
+允许的文件类型可以是精确匹配（例如，".abc"）或表达式（例如，"*.type"、".type*" 或 ".*type*"）。不支持类型为 ".a*c"、".p*f" 的表达式。
+
+已为审核引入了"Set By"和"Set Date"的其他属性。现有文件类型将迁移到新格式，这两个属性的值都设置为"migrated"。
