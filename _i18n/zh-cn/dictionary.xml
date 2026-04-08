@@ -14492,13 +14492,21 @@
   <block id="6f159883a7f482d97fbfbd3597406382" category="cell">默认值为 900</block>
   <block id="ea178ff6db0ce95c8cbc3246d6650cb9" category="summary">将文件扩展名添加到警报排除列表以减少警报。</block>
   <block id="d183e2d7c0392d5cf66d1908be8211c1" category="doc">警报排除</block>
-  <block id="ee91b4dd26cc357eaf6f92f8e70239f0" category="paragraph">如果检测到已知文件扩展名的文件篡改攻击，并且正在警报屏幕上生成警报，则可以将该文件扩展名添加到 _警报排除_ 列表以防止不必要的警报。这也可以被认为是一个 _允许的文件类型_ 列表，因为 Workload Security 将允许这些文件绕过篡改警报。</block>
-  <block id="44e5ffe8f45ef48f6d55fd323a14ebd5" category="paragraph">导航到 *Workload Security &gt; Policies*，然后转到 _Alert Exclusions_ 选项卡。</block>
-  <block id="b81cf913eebf1b9b3172d1df8992971e" category="inline-image-macro">允许从警报中排除的文件类型</block>
-  <block id="a7b62f8b775b1075063ceb3d8a408b10" category="paragraph"><block ref="a7b62f8b775b1075063ceb3d8a408b10" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0ca499fad2902c1886076f6a79993648" category="paragraph">一旦添加到允许的文件类型列表中，将不会为该文件类型生成文件篡改攻击警报。请注意，警报排除策略仅适用于文件篡改检测。</block>
-  <block id="c40c4ea70475c0ba0841ba534492332d" category="paragraph">例如，如果名为 _test.txt_ 的文件重命名为 _test.txt.abc_，并且由于 _.abc_ 扩展名，Workload Security 检测到文件篡改攻击，则可以将 _.abc_ 扩展名添加到允许的文件类型列表中。添加到列表后，将不再对扩展名为 _.abc_ 的文件生成文件篡改攻击。</block>
-  <block id="670039cd8e2f07d8b36e77f11294bedb" category="paragraph">允许的文件类型可以是精确匹配（例如，".abc"）或表达式（例如，"*.type"、".type*" 或 ".*type*"）。不支持类型为 ".a*c"、".p*f" 的表达式。</block>
-  <block id="3720ff11b9d0e04f7fd96e22ff7a745f" category="paragraph">已为审核引入了"Set By"和"Set Date"的其他属性。现有文件类型将迁移到新格式，这两个属性的值都设置为"migrated"。</block>
   <block id="9b5911ec569b49f0ae81ecb2c9067806" category="sidebar">ONTAP 自主勒索软件防护集成</block>
+  <block id="1fe01bac09fca89fb6f196d8c95401dc" category="paragraph">警报排除让您可以抑制特定文件类型、用户和目录路径的警报生成。使用此功能可通过排除可能与警报模式匹配的已知预期活动来减少误报。</block>
+  <block id="3b39eff6bd46ab915c26d8ab9ed7bb91" category="paragraph">警报排除按租户配置，包括以下内容：</block>
+  <block id="1ce4fd7b116c43c936cc8ddbaa51ce99" category="inline-link-macro">文件扩展名</block>
+  <block id="f49e387bd8ac75fdab8d848695d1de88" category="list-text">文件类型：抑制特定 <block ref="10b52059d1feedcec024042c1bbd1e91" category="inline-link-macro-rx"></block> 上的文件篡改警报</block>
+  <block id="aa4f2113791c12393a66ffe706420102" category="list-text">用户：抑制由选定用户触发的警报。</block>
+  <block id="ecfbace61ab4dd6175d43a276330b05d" category="list-text">路径：抑制所选目录路径上活动的警报（从接合路径开始，最多四个目录级别）。</block>
+  <block id="099aaf46fa32549a39916446ecf1fe7e" category="inline-link-macro">允许的文件类型</block>
+  <block id="0dd69cce6b9e3a8a53769caf0047d503" category="paragraph">文件类型排除（也称为"允许的文件类型策略"）已更新并在 <block ref="38cbb5c947813aa64b0054e34231a6d7" category="inline-link-macro-rx"></block> 中进行了说明。</block>
+  <block id="70c2babfc037807dc9d1d94e48e6b818" category="paragraph">用户排除列表支持预输入功能，管理员可以选择要从警报中排除的用户。</block>
+  <block id="ab217818a7f8d6405dd619210434e25f" category="paragraph">目录排除最多支持四个级别的目录路径，从 junction 路径开始。</block>
+  <block id="33b828c8fb435b67f3a4a321adbc89c1" category="paragraph">个别用户和目录路径可以添加到相应的排除列表中或从相应的排除列表中删除。每个列表中的每个条目都将包含何时以及由谁添加到列表中的信息，这些信息将用于审计目的。</block>
+  <block id="b2bc711706213f5680535c284278fd8a" category="section-title">管理排除和审核</block>
+  <block id="4cc0f970741fc7eef05a2f6890f15228" category="list-text">管理员可以随时添加或删除文件扩展名、单个用户或路径。</block>
+  <block id="49a160591030eb82ba36b624f5514398" category="list-text">每个排除条目都记录了设置该条目的管理员的姓名以及设置的日期。此信息将被保留以供审计。</block>
+  <block id="430f66c61c1d6e05ef92945c7107306f" category="paragraph"><block ref="430f66c61c1d6e05ef92945c7107306f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4d06e3dd77aaee13a5d969e19fc7acf6" category="paragraph"><block ref="4d06e3dd77aaee13a5d969e19fc7acf6" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
