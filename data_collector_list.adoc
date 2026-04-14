@@ -38,9 +38,6 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 | link:task_dc_na_amazon_fsx.html["Amazon FSx for NetApp ONTAP"] | 基础架构 
 
 
-| link:task_config_telegraf_apache.html["阿帕奇"] | 服务 
-
-
 | link:task_dc_ms_anf.html["Azure NetApp Files"] | 基础架构 
 
 
@@ -54,15 +51,6 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 
 
 | link:task_dc_cisco_fc_switch.html["CiscoMDS 光纤交换机"] | 基础架构 
-
-
-| link:task_config_telegraf_consul.html["领事"] | 服务 
-
-
-| link:task_config_telegraf_couchbase.html["Couchbase"] | 服务 
-
-
-| link:task_config_telegraf_couchdb.html["CouchDB"] | 服务 
 
 
 | link:task_dc_cohesity_smartfiles.html["Cohesity 智能文件"] | 基础架构 
@@ -116,25 +104,10 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 | link:task_dc_dell_xc_series.html["戴尔XC系列"] | 基础架构 
 
 
-| link:task_config_telegraf_docker.html["Docker"] | 服务 
-
-
-| link:task_config_telegraf_elasticsearch.html["Elasticsearch"] | 服务 
-
-
-| link:task_config_telegraf_flink.html["Flink"] | 服务 
-
-
 | link:task_dc_google_cloud.html["Google 计算和存储"] | 基础架构 
 
 
 | link:task_dc_google_cloud_netapp_volumes.html["Google Cloud NetApp Volumes"] | 基础架构 
-
-
-| link:task_config_telegraf_hadoop.html["Hadoop"] | 服务 
-
-
-| link:task_config_telegraf_haproxy.html["HAProxy"] | 服务 
 
 
 | link:task_dc_hds_hcp.html["日立内容平台（HCP）"] | 基础架构 
@@ -179,37 +152,16 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 | link:task_dc_infinidat_infinibox.html["Infinidat InfiniBox"] | 基础架构 
 
 
-| link:task_config_telegraf_jvm.html["Java"] | 服务 
-
-
-| link:task_config_telegraf_kafka.html["卡夫卡"] | 服务 
-
-
-| link:task_config_telegraf_kapacitor.html["卡帕西托"] | 服务 
-
-
-| link:task_config_telegraf_kibana.html["基巴纳"] | 服务 
-
-
 | link:task_config_telegraf_agent_k8s.html["Kubernetes"] | 服务 
 
 
 | link:task_dc_lenovo.html["联想HX系列"] | 基础架构 
 
 
-| link:task_config_telegraf_memcached.html["Memcached"] | 服务 
-
-
 | link:task_dc_ms_anf.html["Microsoft Azure NetApp Files"] | 基础架构 
 
 
 | link:task_dc_ms_hyperv.html["Microsoft Hyper-V"] | 基础架构 
-
-
-| link:task_config_telegraf_mongodb.html["MongoDB"] | 服务 
-
-
-| link:task_config_telegraf_mysql.html["MySQL"] | 服务 
 
 
 | link:task_dc_na_cloud_volumes_ontap.html["NetApp Cloud Volumes ONTAP"] | 基础架构 
@@ -245,28 +197,10 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 | link:task_dc_na_storagegrid.html["NetAppStorageGRID"] | 基础架构 
 
 
-| link:task_config_telegraf_netstat.html["网络状态"] | 服务 
-
-
-| link:task_config_telegraf_nginx.html["Nginx"] | 服务 
-
-
-| link:task_config_telegraf_node.html["节点"] | 服务 
-
-
 | link:task_dc_nutanix.html["Nutanix NX系列"] | 基础架构 
 
 
-| link:task_config_telegraf_openzfs.html["OpenZFS"] | 服务 
-
-
 | link:task_dc_oracle_zfs.html["Oracle ZFS 存储设备"] | 基础架构 
-
-
-| link:task_config_telegraf_postgresql.html["PostgreSQL"] | 服务 
-
-
-| link:task_config_telegraf_puppetagent.html["傀儡代理"] | 服务 
 
 
 | link:task_dc_pure_flasharray.html["Pure Storage FlashArray"] | 基础架构 
@@ -279,12 +213,6 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 
 
 | link:task_dc_redhat_openshift_virtualization.html["Red Hat OpenShift Virtualization"] | 基础架构 
-
-
-| link:task_config_telegraf_redis.html["Redis"] | 服务 
-
-
-| link:task_config_telegraf_rethinkdb.html["重新思考数据库"] | 服务 
 
 
 | link:task_config_telegraf_agent.html#rhel-and-centos["RHEL 和 CentOS"] | 服务 
@@ -303,7 +231,4 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 
 
 | link:task_config_telegraf_agent.html#windows["Windows"] | 服务 
-
-
-| link:task_config_telegraf_zookeeper.html["ZooKeeper"] | 服务 
 |===
