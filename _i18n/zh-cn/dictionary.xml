@@ -1906,7 +1906,6 @@
   <block id="8e2e894a8f2d0c798eda10b04a6aae2c" category="inline-link-macro">云数据服务支持注册</block>
   <block id="960807b3a38d77ca1916570b1732dda1" category="inline-xref">激活支持</block>
   <block id="801ef9b405d4e49db3e3da2aa073e5f6" category="admonition">您必须注册才能<block ref="5dae4a2b8da6e9eee160d72287b835e3" category="inline-xref-macro-rx"></block>适用于NetApp云产品。要注册，请访问 NetApp 的<block ref="c5b01460a42d58b3ab6bc662dda87194" category="inline-link-macro-rx"></block>。</block>
-  <block id="1674a792a0bf779b22729331c5646696" category="paragraph">强烈建议您选中该框，以允许NetApp支持工程师在支持会话期间访问您的Data Infrastructure Insights租户。这将允许工程师排除故障并帮助您快速解决问题。当您的问题得到解决或您的支持会话结束后，您可以取消选中该框。</block>
   <block id="26bf81182a5b7a20da27b311cdf97f3d" category="paragraph">您可以通过以下任何一种方式请求支持。您必须拥有有效的Data Infrastructure Insights订阅才能使用这些支持选项：</block>
   <block id="e145a699aa519b4431527a84030fe1fd" category="inline-link-macro">*电话*</block>
   <block id="d509e88fe0d420e546f838c2bf3149e4" category="list-text"><block ref="d509e88fe0d420e546f838c2bf3149e4" category="inline-link-macro-rx"></block></block>
@@ -14038,4 +14037,57 @@
   <block id="b3e41e2fae7745b697dbed9b6f854aa1" category="inline-image-macro">文件类型列表</block>
   <block id="28460fbd00b73b7255d03888d8c1d8e5" category="paragraph"><block ref="28460fbd00b73b7255d03888d8c1d8e5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3720ff11b9d0e04f7fd96e22ff7a745f" category="paragraph">已为审核引入了"Set By"和"Set Date"的其他属性。现有文件类型将迁移到新格式，这两个属性的值都设置为"migrated"。</block>
+  <block id="50910271cc7ffda5c5f9d1e0841741da" category="paragraph">强烈建议您在支持会话期间选中此框，以允许 NetApp 支持工程师访问您的 Data Infrastructure Insights 站点。这样可以让工程师对问题进行故障排除，并帮助您快速解决问题。当支持工程师可以访问您的站点时，他们将能够执行所有管理员级别的功能。</block>
+  <block id="4568a4a8282d9407a4d8fa1b8e3256db" category="paragraph">当您的问题得到解决或您的支持会话结束时，您可以取消选中此框。</block>
+  <block id="fc7d05f9009e90b92a15aad926bca249" category="section-title">2026年4月</block>
+  <block id="7a62dee07c327e2cb645ca3b768833e5" category="section-title">Data Infrastructure Insights 比以往任何时候都更了解您的环境</block>
+  <block id="03f3540edfca404eee2edf4a846ae64c" category="paragraph">我们对 Data Infrastructure Insights 中的 AI 如何理解您的设置进行了增强。在响应之前，它会利用有关您当前服务使用情况、配置和性能模式的更丰富上下文。其结果是，初始指导反映了您的环境，而不是通用起点，需要更少的后续跟进即可获得有用的答案。</block>
+  <block id="9bbfda6f09499778d37c749e10e5cd09" category="paragraph">例如，导航到存储设备，AI 助手将为以下问题提供一键式答案：</block>
+  <block id="5048355a939962882b19e9978c6de9b4" category="list-text">此存储的容量利用率趋势如何，哪些 StoragePools 占用空间最多？</block>
+  <block id="bd0fc56b14454f1ee18d759d4af08ed3" category="list-text">您可以告诉我过去 24 小时内此设备的容量利用率趋势吗？</block>
+  <block id="aa7271070bccbdb553337d1d11a546e3" category="list-text">哪些卷在此存储上占用的空间最多？</block>
+  <block id="d166bd4cdca169a67a613a26fe8770ce" category="paragraph">'''nt1.png[Table Widget 单元管理]</block>
+  <block id="3d2f1005746d7db51821bc629f7d4407" category="paragraph">潜在勒索软件攻击的详细信息页面：-Screen" 视图：表格小部件在左侧显示对象/分组，在右侧显示对象数据（属性/指标）。</block>
+  <block id="af730d8a2733a784c669eb49b4d22282" category="paragraph">+ <block ref="d39f912f84d3b7c6330ea5e1e4443c8f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e81234c807cc73fff59051e85698456e" category="paragraph">alue Widget with Formatting] <block ref="ea343c0c42e5fd6968847a90104062ca" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="460cdd4165472896cc30053fb384c428" category="summary">Workload Security 中的审核事件</block>
+  <block id="7fb266e1b99b0df47eb66e941859d665" category="doc">审核 Workload Security 事件</block>
+  <block id="fd353ad75bcbf126fad9d6e35df7010e" category="paragraph">识别预期（用于跟踪）或意外（用于故障排除）的更改。查看 Workload Security 系统事件和用户活动的审计跟踪。</block>
+  <block id="b314a4439b8566362801e323965bf155" category="paragraph">要查看审核页面，请点击菜单中的 Admin &gt; Audit。此时将显示审核页面，为每个审核条目提供以下详细信息：</block>
+  <block id="7067e58a52148d6e3da60108b4cb4632" category="list-text">时间 - 事件或活动的日期和时间</block>
+  <block id="dcf0e3103586dbddc36cc5f26dd6d51b" category="list-text">用户 - 发起活动的用户</block>
+  <block id="592d7521568335e69f92257bfd22601a" category="list-text">角色 - 用户在 Workload Security 中的角色（访客、用户、管理员）</block>
+  <block id="d458ab911d522e4254ae9cdb7ea03d01" category="list-text">IP - 与事件关联的 IP 地址</block>
+  <block id="cee813c8d86d250fd1721645d6a49210" category="list-text">操作 - 活动类型，例如 Login、Create、Update</block>
+  <block id="b778dd43a738838d7aedce9b33722775" category="list-text">类别 - 活动的类别。</block>
+  <block id="bb69c620668e5f23beee0ab1f6d31feb" category="list-text">详细信息 - 活动的详细信息</block>
+  <block id="c55f7a21d0556f5e2a47dfadc3db35eb" category="list-text">应用程序类型 - 已审核应用程序的类型：Observability 或 Workload Security。仅用于筛选 Workload Security 审核。</block>
+  <block id="d3c127671fefcc305b5b0cd625930c99" category="paragraph">受审核的 Workload Security 事件包括但不限于以下内容：</block>
+  <block id="b981e0dae483c1a14d3b270f0e8d681d" category="list-text">工作负载安全策略的更改。</block>
+  <block id="a91253205277455090eab8c5a3e473f7" category="list-text">创建新的数据源收集器 (DSC)。</block>
+  <block id="8de59a86651a9ded38a04188020fc715" category="list-text">DSC 的修改。</block>
+  <block id="19ad19904ebcc391059146b35ba84e48" category="list-text">创建代理。</block>
+  <block id="142aa86c9595fdc63ca5a62c72da36c2" category="list-text">用户管理任务。</block>
+  <block id="57cf5599ed02e41c904c5aec9626eb8e" category="list-text">API 令牌任务。</block>
+  <block id="dc765b359c5775d41944b793d09a3932" category="list-text">您可以通过单击列标题中的箭头将条目的排序顺序更改为升序（向上箭头）或降序（向下箭头）。默认情况下，该表将按时间降序显示条目。</block>
+  <block id="41c36fad069bf8a1082e9771d559d08a" category="cell">返回 BOS-PRD12-S12、BOS-PRD23-S12 等</block>
+  <block id="029951cc57b3f3a2cda102ab83d0abd6" category="cell">与上面的 None 相同，但您也可以使用此表单在纯文本字段中搜索 NULL 值</block>
+  <block id="ccfa30aa0938ab67a7679bbea544264c" category="cell">返回包含精确字符串 NetApp* 的结果</block>
+  <block id="19cd526896c693b10dc83f3dfdd95e21" category="paragraph">Workload Security 审核的事件和操作可分为以下几大类：</block>
+  <block id="db050c29be972955f848d2d9d2dd72e1" category="list-text">用户账户：登录、注销、角色变更等。</block>
+  <block id="1d2e077cee83d150598faec15ea17c00" category="list-text">Agent：创建、删除、升级、pin、unpin 等。</block>
+  <block id="2bc80cebb4c3b4f2d3dd432b71a86e5a" category="paragraph">示例：_Agent Agent-Boston-1 已删除。_ _由批量操作启动的 Agent 升级到版本 1.760.0_</block>
+  <block id="6b85b8fcb108efd5eab030cd4d4c1ae2" category="list-text">数据/用户目录 Collector：添加、删除、修改、升级、推迟/恢复、变更代理、重新启动等。</block>
+  <block id="4174f8c445719b2709668eee5bb25e3f" category="paragraph">示例：_Data collector Collector-Boston1 removed, type ONTAP SVM_ _Agent: Agent-Boston-1, Cluster IP 10.193.88.36, SVM demoGroupShares2_ _Collector ONTAP SVM upgrade to version 1.417.0 initiated by bulk operation_</block>
+  <block id="2fc86cef217040ea0a462d14ed05d456" category="list-text">自动响应策略：添加、更新、删除、启用、禁用等。</block>
+  <block id="05ddd33845ee9d48f9f00fecb4f05c26" category="paragraph">示例：_自动攻击策略 Policy-Boston1 已更新。属性设备已更新，旧值：[Device(name=svm_boston1, dataSourceId=39fb3b9c-9dd4-4961-bc27-23eb0b6f9ab7)]，新值：[Device(name=demoGroupShares2, dataSourceId=5b9f5b74-4533-4852-909d-8886582a4359)]_</block>
+  <block id="fe9b88cc6db0265d6416e971d1310fa9" category="list-text">用户阻止/解除阻止：自动或手动用户阻止和解除阻止。</block>
+  <block id="284fec9bfe780248e6008075cd114b78" category="paragraph">示例：_作为自动响应的一部分，为用户 Safwan Langley 启动阻止，持续时间为 2 小时_</block>
+  <block id="37cfc303a71404ba535148a7f3a71dc8" category="list-text">Apikey：添加、删除等。</block>
+  <block id="79ab318c3ccfe5611271096aff6f6cc1" category="paragraph">示例：_Workload Security API 访问令牌 JPick-SWS 已创建_</block>
+  <block id="4235fac9f067231cbf0cf4321c23e71c" category="list-text">通知：更改电子邮件等</block>
+  <block id="5bdbcf91442b859f44c25dd16160394f" category="paragraph">示例：_Recipient ci-alerts-notifications-dl created_</block>
+  <block id="dde532224b6de8f2bcf14526c241e11e" category="paragraph">您可以将审核显示的结果导出为 .CSV 文件，这将允许您分析数据或将其导入其他应用程序。步骤 1.在审核页面上，设置所需的时间范围和所需的任何过滤器。Workload Security 将仅导出与您设置的筛选和时间范围相匹配的审核条目。2.单击表格右上角的导出按钮。显示的审核事件将导出为 .CSV 文件，最多 10,000 行。</block>
+  <block id="e63e4cacc359b740fa0bc5ab6ea0ba8d" category="paragraph">Workload Security 保留审核数据的时间长度基于您的订阅：</block>
+  <block id="db33137206c4f6b3edeb7dda117f05dd" category="sidebar">查看审核事件</block>
 </blocks>
