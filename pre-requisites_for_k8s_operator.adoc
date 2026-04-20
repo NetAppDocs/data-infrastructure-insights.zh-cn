@@ -8,6 +8,9 @@ summary: Data Infrastructure Insights支持 Telegraf 作为其代理，用于收
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

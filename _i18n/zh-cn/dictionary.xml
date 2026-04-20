@@ -14090,4 +14090,5 @@
   <block id="dde532224b6de8f2bcf14526c241e11e" category="paragraph">您可以将审核显示的结果导出为 .CSV 文件，这将允许您分析数据或将其导入其他应用程序。步骤 1.在审核页面上，设置所需的时间范围和所需的任何过滤器。Workload Security 将仅导出与您设置的筛选和时间范围相匹配的审核条目。2.单击表格右上角的导出按钮。显示的审核事件将导出为 .CSV 文件，最多 10,000 行。</block>
   <block id="e63e4cacc359b740fa0bc5ab6ea0ba8d" category="paragraph">Workload Security 保留审核数据的时间长度基于您的订阅：</block>
   <block id="db33137206c4f6b3edeb7dda117f05dd" category="sidebar">查看审核事件</block>
+  <block id="30e34a68b374f1718d077f39f1e4b558" category="admonition">1.2057.0 之前的操作员版本不提供按钮升级。请按照以下手动升级说明升级到最新版本。完成此操作后，可以使用按钮升级功能执行未来的升级。</block>
 </blocks>
