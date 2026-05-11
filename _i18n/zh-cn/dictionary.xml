@@ -9964,7 +9964,6 @@
   <block id="250a0e817001d5aadc297d9943b4611a" category="list-text">12ep0</block>
   <block id="7fbc2da9d2e5b20105696da7ea4ce3dd" category="list-text">emc3</block>
   <block id="cb0dda161e32cb6fdfcbd71707929167" category="list-text">hba3</block>
-  <block id="ea72e8c9dc8f8b845a6ad19e15b5867a" category="list-text">使用正则表达式的规则需要正则表达式、格式和区分大小写选择。</block>
   <block id="669613ed670b6c6c42c39acf0bfee7b0" category="list-text">单击“*运行 AR*”以运行所有规则，或单击按钮中的向下箭头以运行您创建的规则（以及自上次完整运行 AR 以来创建的任何其他规则）。</block>
   <block id="f5d37dace9a539d56f93b2e2c32704d5" category="paragraph">规则运行的结果显示在*FC 识别*选项卡中。</block>
   <block id="c2c94fa68f8065fa325aff6c260bebfb" category="section-title">启动自动设备分辨率更新</block>
@@ -14091,4 +14090,8 @@
   <block id="e63e4cacc359b740fa0bc5ab6ea0ba8d" category="paragraph">Workload Security 保留审核数据的时间长度基于您的订阅：</block>
   <block id="db33137206c4f6b3edeb7dda117f05dd" category="sidebar">查看审核事件</block>
   <block id="30e34a68b374f1718d077f39f1e4b558" category="admonition">1.2057.0 之前的操作员版本不提供按钮升级。请按照以下手动升级说明升级到最新版本。完成此操作后，可以使用按钮升级功能执行未来的升级。</block>
+  <block id="d0c7c0947ebc2f58067c90be172b88e0" category="list-text">单击 *Observability &gt; Enrich &gt; Device Resolution*</block>
+  <block id="7ecd430509607d1a2c2f3ffad808df91" category="list-text">使用正则表达式的规则要求选择正则表达式、格式和区分大小写。</block>
+  <block id="9372fa792b7b3d019662b44dd2963355" category="section-title">暂停和恢复规则</block>
+  <block id="716da8f41fd22d5cd56ad74991f757ba" category="paragraph">要阻止规则运行，请从规则的右侧菜单中选择"暂停"，或选择多个规则，然后从"批量操作"下拉列表中选择"暂停"。您可以以相同的方式恢复规则运行。</block>
 </blocks>
