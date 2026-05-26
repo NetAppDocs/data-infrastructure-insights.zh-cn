@@ -3706,8 +3706,6 @@
   <block id="df6a21f670066b82b5409a049dec0efe" category="doc">自动响应策略</block>
   <block id="e5da02c738b911c42fb0a45a5b76c8d9" category="paragraph">响应策略会在发生攻击或异常用户行为时触发诸如拍摄快照或限制用户访问等操作。</block>
   <block id="8816114441548a7f4d390de764f25ad9" category="paragraph">您可以针对特定设备或所有设备设置策略。要设置响应策略，请选择*管理 &gt; 自动响应策略*，然后单击相应的*+策略*按钮。您可以创建针对攻击或警告的策略。</block>
-  <block id="29d142bb0759eaeb3b47bf1809087cc7" category="inline-image-macro">添加显示 webhook 下拉菜单的攻击策略对话框</block>
-  <block id="9c3cfe368d37e834800103686eba11c1" category="paragraph"><block ref="9c3cfe368d37e834800103686eba11c1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="10519a96ebde07deba902eb606bf97ff" category="paragraph">您必须使用唯一的名称保存该策略。</block>
   <block id="168e31fead9fc72274b5723b0c86d27f" category="paragraph">要禁用自动响应操作（例如，拍摄快照），只需取消选中该操作并保存策略。</block>
   <block id="3218ac0e5f26253bd8724ab98d8f5e02" category="inline-link-macro">警报详细信息页面</block>
@@ -14094,4 +14092,6 @@
   <block id="9372fa792b7b3d019662b44dd2963355" category="section-title">暂停和恢复规则</block>
   <block id="716da8f41fd22d5cd56ad74991f757ba" category="paragraph">要阻止规则运行，请从规则的右侧菜单中选择"暂停"，或选择多个规则，然后从"批量操作"下拉列表中选择"暂停"。您可以以相同的方式恢复规则运行。</block>
   <block id="baac891fc4329aa8b558fa7560c83369" category="list-text">目录排除列表：最多支持四个级别的目录路径，从接合路径开始。此路径下的所有子目录和文件将被排除在警报生成之外。不支持目录路径中的通配符。</block>
+  <block id="fc6be75876bcdad138173b62e9ab5c17" category="inline-image-macro">添加一个显示 webhook 下拉列表的攻击策略对话框，宽度=300</block>
+  <block id="7cb01fa627551da61643f2eab2af39fb" category="paragraph"><block ref="7cb01fa627551da61643f2eab2af39fb" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
