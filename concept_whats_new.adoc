@@ -18,6 +18,33 @@ NetApp不断改进和增强其产品和服务。以下是Data Infrastructure Ins
 
 
 
+== 2026 年 6 月
+
+
+
+=== 为全球团队打造更智能的 AI 助手
+
+AI Assistant 现在支持十几种语言，使您的团队能够自然地使用他们的首选语言。查看完整列表link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support["此处"^]。
+
+
+
+=== 基础设施属性更改的新监视器
+
+属性监视器现在可用于在资产在数据中心之间移动、存储池未加密或发生任何属性修改时自动提醒您的团队。这有助于维护配置基线，并有助于确保在新部署或更改期间不会出现任何漏洞。
+
+image:attribute_monitor_in_list.png["属性监视器已添加到监视器类型中"]
+
+
+
+=== 使用动态、上下文丰富的消息构建更智能的警报和 webhook
+
+创建监视器或 webhook 时，只需在警报描述或 webhook URL、标题或正文中键入"%"，即可从动态填充的可用对象属性和注释列表中进行选择。为您的警报提供正确的上下文，以提高清晰度、增强 webhook 集成并加快响应时间。
+
+image:attribute_list_example.png["监视器描述中的属性列表，width=400"]
+
+'''
+
+
 == 2026年4月
 
 

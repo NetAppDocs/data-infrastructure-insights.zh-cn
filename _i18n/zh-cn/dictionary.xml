@@ -13291,7 +13291,6 @@
   <block id="d55e67726729808ea6f67b165600c105" category="summary">您可以使用 DII 的 AI 助手总结数据、探索见解、排除问题并规划资源。</block>
   <block id="accab30482cee85eb4e017db64428cad" category="doc">Data Infrastructure Insights AI 助手</block>
   <block id="6804300f32b2dfd7358cbef13acc4c27" category="paragraph">*Data Infrastructure Insights AI Assistant* 旨在帮助您更高效地处理基础设施数据。它可以帮助您分析信息，发现见解，解决运营挑战，并就您的资源做出明智的决策。</block>
-  <block id="b6ed013ce4b16673bae45126733837ff" category="paragraph">AI 助手仅适用于部署在 AWS 上的 Data Infrastructure Insights 租户。</block>
   <block id="01a593a05ec8086d16c6d465263a2f9f" category="inline-image-macro">AI Assistant 示例问题</block>
   <block id="18aabc8cd51ce3494b256e8195526a85" category="paragraph"><block ref="18aabc8cd51ce3494b256e8195526a85" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f58b0ee974430595788a16d0bcde2c33" category="section-title">认识您基础设施的新智能合作伙伴</block>
@@ -13325,7 +13324,6 @@
   <block id="81bba36ecc862e80fc8fba5830993041" category="list-text">您感兴趣的时间范围，以及</block>
   <block id="747f32611560f7ea60cbda274f04ef16" category="list-text">您关注的任何具体问题类型（性能问题、容量问题、错误等）</block>
   <block id="45610fa97924ab075b8ebed42722b019" category="section-title">访问助手</block>
-  <block id="629c55deaa1b75250df975fe5485d218" category="paragraph">要调用 DII AI Assistant，只需选择屏幕下角的猫头鹰图标。具有"Owner"角色的用户必须接受条款和条件，然后任何用户才能在您的租户上使用 AI Assistant。</block>
   <block id="f67a424fefeb5e523fcbb4c9247bc6d9" category="inline-image-macro">dii_ai_assistant_icon</block>
   <block id="a48b93c62e0c2ec4c09405cadd96b7da" category="paragraph"><block ref="a48b93c62e0c2ec4c09405cadd96b7da" category="inline-image-macro-rx" type="image"></block></block>
   <block id="be90349da04be71a620e68314d810f7f" category="section-title">2026 年 2 月</block>
@@ -13355,7 +13353,6 @@
   <block id="3542743c69e8fceb06c77e5e17299c89" category="sidebar">AI 助手</block>
   <block id="f7836ca926de84b06b0b4bcbe4b8b756" category="inline-link-macro">Data Infrastructure Insights（包括 Workload Security）通知，window=_blank</block>
   <block id="135e17e82c7d3d3d83bd8b0737be432e" category="paragraph"><block ref="135e17e82c7d3d3d83bd8b0737be432e" category="inline-link-macro-rx"></block></block>
-  <block id="58e3397ecaf63f320f4993fc5844d736" category="paragraph">DII AI Assistant 作为有限预览版提供。<block ref="b77b95325de7e3e625a811db4f47869c" category="inline-link-macro-rx"></block> 关于 Data Infrastructure Insights 预览功能。</block>
   <block id="b6b93d34f92b439117e54d9343c7efda" category="section-title">当前预览：</block>
   <block id="559de301b9b7af9f5b932d860f605701" category="list-text"><block ref="7a32ab5261b86b8c9a5d88b540c79f2d" category="inline-link-macro-rx"></block> 预览。</block>
   <block id="ca39a60f24fda5dbbda8809fbd3fe717" category="inline-link-macro">*Data Infrastructure Insights AI 助手*</block>
@@ -14094,4 +14091,18 @@
   <block id="baac891fc4329aa8b558fa7560c83369" category="list-text">目录排除列表：最多支持四个级别的目录路径，从接合路径开始。此路径下的所有子目录和文件将被排除在警报生成之外。不支持目录路径中的通配符。</block>
   <block id="fc6be75876bcdad138173b62e9ab5c17" category="inline-image-macro">添加一个显示 webhook 下拉列表的攻击策略对话框，宽度=300</block>
   <block id="7cb01fa627551da61643f2eab2af39fb" category="paragraph"><block ref="7cb01fa627551da61643f2eab2af39fb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="512346de0e4492551e58519f2ff8f02f" category="section-title">自然聊天</block>
+  <block id="606eca1dc0574688efcace9e5442ec65" category="paragraph">AI 助手现在支持十几种语言，使您的团队能够自然地使用他们的首选语言。查看完整列表<block ref="7bcc2d9bce066141171b475332938f67" category="inline-link-macro-rx"></block>。</block>
+  <block id="f66b0e86f32ecd67a023b86cf46bdc84" category="paragraph">要调用 DII AI Assistant，只需选择屏幕下角的猫头鹰图标。具有"Owner"或"Admin"角色的用户必须接受条款和条件，然后任何用户才能在您的租户上使用 AI Assistant。</block>
+  <block id="c21446b3ecfb30ed6c2760d686bd4578" category="section-title">2026 年 6 月</block>
+  <block id="c42129b932facb2cf7437f8dda2d1024" category="section-title">为全球团队打造更智能的 AI 助手</block>
+  <block id="2cf12b65895eb4c6ea2aa563a3a928c2" category="paragraph">AI Assistant 现在支持十几种语言，使您的团队能够自然地使用他们的首选语言。查看完整列表<block ref="76aebc4f8810ba81b56db38cff83be8e" category="inline-link-macro-rx"></block>。</block>
+  <block id="f4651ef2bf0573c7c2ed9812ec1e1a9c" category="section-title">基础设施属性更改的新监视器</block>
+  <block id="a8d07c89b5ad1be0c9666289c7c31f2e" category="paragraph">属性监视器现在可用于在资产在数据中心之间移动、存储池未加密或发生任何属性修改时自动提醒您的团队。这有助于维护配置基线，并有助于确保在新部署或更改期间不会出现任何漏洞。</block>
+  <block id="1077e7a3935b3725c8350a2c88a1253f" category="inline-image-macro">属性监视器已添加到监视器类型中</block>
+  <block id="2a7170fd3e143b93657f08d8a1c590f9" category="paragraph"><block ref="2a7170fd3e143b93657f08d8a1c590f9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3fb1bd69332231cdc75d8db242aaf294" category="section-title">使用动态、上下文丰富的消息构建更智能的警报和 webhook</block>
+  <block id="ca168714d12ff6410e26984f67b83474" category="paragraph">创建监视器或 webhook 时，只需在警报描述或 webhook URL、标题或正文中键入"%"，即可从动态填充的可用对象属性和注释列表中进行选择。为您的警报提供正确的上下文，以提高清晰度、增强 webhook 集成并加快响应时间。</block>
+  <block id="42bb2765b945bf3e0e9843ba7c1b0426" category="inline-image-macro">监视器描述中的属性列表，width=400</block>
+  <block id="5c686c3f80c47e575d3c5b2f79e6da4b" category="paragraph"><block ref="5c686c3f80c47e575d3c5b2f79e6da4b" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
