@@ -22,6 +22,18 @@ NetApp不断改进和增强其产品和服务。以下是Data Infrastructure Ins
 
 
 
+=== 更多工作空间，更少杂乱
+
+DII 导航菜单具有全新的外观，现在与 Console 的颜色和行为相匹配，以获得更统一的体验。先前静态的主菜单默认情况下将折叠，以获得更集中的工作空间和有效使用屏幕空间。只需点击左上角的汉堡图标（☰）即可访问。
+
+
+
+=== 借助智能 AI 辅助功能扩展设备可见性
+
+通过人工智能驱动的设备识别加速新设备的引入。Data Infrastructure Insights 分析您的环境并提出自动设备解析规则，帮助您快速识别和管理更多设备。只需查看和批准 AI 生成的规则，DII 即可处理其余部分，从而提高整个基础设施的设备可见性和管理。
+
+
+
 === 为全球团队打造更智能的 AI 助手
 
 AI Assistant 现在支持十几种语言，使您的团队能够自然地使用他们的首选语言。查看完整列表link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support["此处"^]。

@@ -14105,4 +14105,8 @@
   <block id="ca168714d12ff6410e26984f67b83474" category="paragraph">创建监视器或 webhook 时，只需在警报描述或 webhook URL、标题或正文中键入"%"，即可从动态填充的可用对象属性和注释列表中进行选择。为您的警报提供正确的上下文，以提高清晰度、增强 webhook 集成并加快响应时间。</block>
   <block id="42bb2765b945bf3e0e9843ba7c1b0426" category="inline-image-macro">监视器描述中的属性列表，width=400</block>
   <block id="5c686c3f80c47e575d3c5b2f79e6da4b" category="paragraph"><block ref="5c686c3f80c47e575d3c5b2f79e6da4b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e236cc945d03142b030da5f8ca3552ad" category="section-title">更多工作空间，更少杂乱</block>
+  <block id="0c57b296d9e6f421b799470406b41595" category="paragraph">DII 导航菜单具有全新的外观，现在与 Console 的颜色和行为相匹配，以获得更统一的体验。先前静态的主菜单默认情况下将折叠，以获得更集中的工作空间和有效使用屏幕空间。只需点击左上角的汉堡图标（☰）即可访问。</block>
+  <block id="638f6b8d99e1422bc23e131d2c84c24d" category="section-title">借助智能 AI 辅助功能扩展设备可见性</block>
+  <block id="8cc9ca78507aef920c11566fc08c38ca" category="paragraph">通过人工智能驱动的设备识别加速新设备的引入。Data Infrastructure Insights 分析您的环境并提出自动设备解析规则，帮助您快速识别和管理更多设备。只需查看和批准 AI 生成的规则，DII 即可处理其余部分，从而提高整个基础设施的设备可见性和管理。</block>
 </blocks>
