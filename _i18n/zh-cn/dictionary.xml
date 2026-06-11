@@ -13990,8 +13990,6 @@
   <block id="6fd44ae5a42d6b33248d329cbbddaa88" category="paragraph">DII Red Hat OpenShift 虚拟化收集器将尝试发现在 OpenShift 虚拟化环境中运行的 OSV 计算工作负载 - 此收集器不会发现所有 OpenShift pod。这是一个基于 HTTPS REST API 的收集器。建议为每个 OSV 集群创建一个收集器。</block>
   <block id="0e2f53883090c3b63a953261cdb19325" category="paragraph">此收集器的身份验证方法是绑定到服务帐户的身份验证令牌。要同时创建用户帐户和令牌：</block>
   <block id="f2c430952fd20f76b24810e2e6f8dace" category="paragraph">运行这 3 个命令并注意是否存在任何错误。</block>
-  <block id="8a8ad6f9b43737bda614d744a8286cc4" category="paragraph">命令完成后：</block>
-  <block id="9fb84dc506591e78ff3f6f8ac2f00e6e" category="paragraph">此操作将创建绑定到您的用户的令牌。</block>
   <block id="0cf40b0b5f29b2928f214370b73c4fac" category="paragraph">最后，您可能还希望 OSV 管理员运行：</block>
   <block id="7af44018c8c76e698e986a0c0db08e5f" category="paragraph">这将返回用于管理的主机名/IP 地址。每个 DII OSV 收集器都需要指向用于 OSV 管理的 IP/主机名。</block>
   <block id="e62768229563f11ca5fd49a1482ae7a8" category="list-text">通过 REST API 在端口 443 上访问 Red Hat OpenShift Virtualization 服务器的 IP 地址</block>
@@ -14109,4 +14107,18 @@
   <block id="0c57b296d9e6f421b799470406b41595" category="paragraph">DII 导航菜单具有全新的外观，现在与 Console 的颜色和行为相匹配，以获得更统一的体验。先前静态的主菜单默认情况下将折叠，以获得更集中的工作空间和有效使用屏幕空间。只需点击左上角的汉堡图标（☰）即可访问。</block>
   <block id="638f6b8d99e1422bc23e131d2c84c24d" category="section-title">借助智能 AI 辅助功能扩展设备可见性</block>
   <block id="8cc9ca78507aef920c11566fc08c38ca" category="paragraph">通过人工智能驱动的设备识别加速新设备的引入。Data Infrastructure Insights 分析您的环境并提出自动设备解析规则，帮助您快速识别和管理更多设备。只需查看和批准 AI 生成的规则，DII 即可处理其余部分，从而提高整个基础设施的设备可见性和管理。</block>
+  <block id="b60f27931c3ae71e254e2b744656329e" category="inline-link-macro">Qumulo REST</block>
+  <block id="d5f6f6770076a4cff24cf687c1f3ce72" category="cell"><block ref="d5f6f6770076a4cff24cf687c1f3ce72" category="inline-link-macro-rx"></block></block>
+  <block id="e11d6c7f4644f952faf6dce5c4b295ad" category="summary">配置 Qumulo REST 数据收集器。</block>
+  <block id="d3b9d1ab118852a73d2b9221ede10370" category="doc">Qumulo REST 数据收集器</block>
+  <block id="a7236bb9d36106126af2861383d145e2" category="paragraph">Data Infrastructure Insights 使用此收集器从 Qumulo 存储获取库存和性能数据。</block>
+  <block id="b23a87bcdf03ab57cf9c989bf91c2e39" category="list-text">Qumulo 集群的 IP 地址/完全限定域名</block>
+  <block id="6b163e0e6c238a01d0ce91c0c83e4f0c" category="cell">Qumulo IP 地址</block>
+  <block id="0a4db5a5d79afd66b50465ed8b623a2d" category="cell">Qumulo 存储的 IP 地址或完全限定域名</block>
+  <block id="b011dcc2f56365d26e263f3ed75cdfa7" category="cell">Qumulo 的用户名</block>
+  <block id="f37b44ac7ba2560a5f36f58586dc6502" category="cell">用于 Qumulo 的密码</block>
+  <block id="77c91f11c388cc00f02f729cfee3aa51" category="cell">库存轮询之间的间隔。默认值为 30。</block>
+  <block id="10c51e7fed3d0622297f012b6ed375ff" category="cell">性能轮询之间的间隔。默认值为 5。</block>
+  <block id="d08016e5c5be3fa70d21f77cdf152be2" category="paragraph">命令完成后，运行：</block>
+  <block id="6d0f6de7ebc4523de6bfdcd599b62bf1" category="paragraph">这将创建绑定到您用户的令牌。注意：建议设置令牌持续时间。请注意，Data collection 将在令牌到期后失败，并出现"Failed to connect"错误。</block>
 </blocks>

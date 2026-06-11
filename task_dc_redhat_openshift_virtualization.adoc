@@ -25,10 +25,10 @@ oc adm policy add-cluster-role-to-user cluster-monitoring-view -z acq-readonly-c
 ....
 运行这 3 个命令并注意是否存在任何错误。
 
-命令完成后：
+命令完成后，运行：
 
- oc sa new-token acq-readonly-cluster-user
-此操作将创建绑定到您的用户的令牌。
+ oc create token acq-readonly-cluster-user --duration=8760h
+这将创建绑定到您用户的令牌。注意：建议设置令牌持续时间。请注意，Data collection 将在令牌到期后失败，并出现"Failed to connect"错误。
 
 最后，您可能还希望 OSV 管理员运行：
 
