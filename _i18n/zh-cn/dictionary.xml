@@ -14121,4 +14121,6 @@
   <block id="10c51e7fed3d0622297f012b6ed375ff" category="cell">性能轮询之间的间隔。默认值为 5。</block>
   <block id="d08016e5c5be3fa70d21f77cdf152be2" category="paragraph">命令完成后，运行：</block>
   <block id="6d0f6de7ebc4523de6bfdcd599b62bf1" category="paragraph">这将创建绑定到您用户的令牌。注意：建议设置令牌持续时间。请注意，Data collection 将在令牌到期后失败，并出现"Failed to connect"错误。</block>
+  <block id="90e0071503be9324e2266cfd3368d18a" category="list-text">HTTPS 访问端口 8000</block>
+  <block id="bdda6785fe5c26b462fa0a87d4327560" category="cell">默认值为 8000。</block>
 </blocks>
