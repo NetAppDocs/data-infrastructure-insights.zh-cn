@@ -14124,4 +14124,6 @@
   <block id="90e0071503be9324e2266cfd3368d18a" category="list-text">HTTPS 访问端口 8000</block>
   <block id="bdda6785fe5c26b462fa0a87d4327560" category="cell">默认值为 8000。</block>
   <block id="606930ccd6550cc24fe845f69572c586" category="list-text">至少具有读取权限的用户帐户和密码。</block>
+  <block id="38fbce916138020848ac3b594a6648d0" category="section-title">通过登录消息分享重要更新</block>
+  <block id="7260908f665e8b3c02f0fce13c7ea541" category="paragraph">通过可自定义的登录消息，让您的团队了解最新情况并保持一致。在用户登录时，直接向其传达重要公告、维护计划或策略更新。借助 Markdown 支持，您可以设置消息格式以确保清晰易读，并确保关键信息传达给每位 DII 用户。具有管理员权限的帐户可以在"通知"下的管理菜单中找到相关配置。</block>
 </blocks>
