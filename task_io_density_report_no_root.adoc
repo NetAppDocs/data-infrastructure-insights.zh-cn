@@ -1,12 +1,16 @@
 ---
 sidebar: sidebar 
 permalink: task_io_density_report_no_root.html 
-summary: 当查询高 I/O 密度时，您想要排除根卷。 
-keywords: NetApp, root volume, high I/O, 
+summary: 在查询高 IO 密度时，需要排除根卷。 
+keywords: NetApp, root volume, high IO, 
 ---
 = 确保 IO 密度报告仅描述内部数据量
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

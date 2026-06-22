@@ -2762,8 +2762,6 @@
   <block id="2a81267b1c9c4611addccc58ffea4ce5" category="list-text">绕过 docker 指标收集的选项</block>
   <block id="62643d895d41437dc1854e6321bbca7d" category="list-text">能够添加和自定义对 telegraf Daemonsets 和 Replicasets 的容忍度</block>
   <block id="4157bbc9478996de33c632d1be8b4617" category="section-title">洞察：回收冷存储</block>
-  <block id="82f32ca1972e78989f469529f9e93e21" category="inline-link-macro">重新利用ONTAP冷存储洞察</block>
-  <block id="2703e92da2def9a17ac70dcd90bd8ab5" category="paragraph">这<block ref="a08e2a6a27f9f88fce91a86a2a4aaa0e" category="inline-link-macro-rx"></block>现在支持 FlexGroups，并且可供所有客户使用。</block>
   <block id="ffd94c31fd478610bae8a28f858f4967" category="section-title">操作员图像签名</block>
   <block id="b58a6be98adebdc6de5cd79aa5cf7223" category="paragraph">对于使用私有存储库作为NetApp Kubernetes 监控操作员的客户，您现在可以在操作员安装期间复制图像签名公钥，从而确认下载软件的真实性。在可选步骤中选择“复制图像签名公钥”按钮，将操作员图像“上传到您的私人存储库”。</block>
   <block id="b48c3957268aba1d2cb9774cdfb76b1a" category="inline-image-macro">下载公钥</block>
@@ -2914,9 +2912,6 @@
   <block id="ec0592cbe0adf98f6b8b6f3682b80783" category="paragraph">通过选择新的“帮助”&gt;“实时聊天”链接，可以从任何Cloud Insights屏幕与NetApp支持专家聊天。可以通过屏幕右上角的“？”图标获取帮助。</block>
   <block id="0308ff2faf3259518f15748d7e652260" category="inline-image-macro">突出显示实时聊天的帮助菜单</block>
   <block id="b873771142e1375b8c2448ef06d827c0" category="paragraph"><block ref="b873771142e1375b8c2448ef06d827c0" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4eecf9894a35e5b8b6c8f2cd8456dc16" category="section-title">更明显的见解</block>
-  <block id="9e1c9c294ec3f4b96a8a0cc0df13f98e" category="inline-link-macro">洞察力</block>
-  <block id="5959863675c12bd7e50191f64156c0d0" category="paragraph">如果您的环境正在经历<block ref="fa362768d673aca77d85a6a4c5ca3f07" category="inline-link-macro-rx"></block>例如《共享资源压力过大》或《Kubernetes 命名空间空间不足》，受影响资源的资产登陆页面现在包含指向 Insight 本身的链接，从而提供更快的探索和故障排除。</block>
   <block id="b3a4cb8b1cc794671c98b17aac5ba206" category="section-title">新的数据收集器</block>
   <block id="b8cf9f003c21d314dc33ec400eddec24" category="list-text">Amazon S3（预览版可用）</block>
   <block id="337813588cd1360f633725a1a1d06b02" category="list-text">BrocadeFOS 9.0.x</block>
@@ -2951,9 +2946,7 @@
   <block id="5fa0ef8fc40e60003288942e2da3e300" category="cell">*特征*</block>
   <block id="bbe116aac998e7707bfddff610136f34" category="cell">Kubernetes 命名空间空间不足</block>
   <block id="decbe415d8accca7c2c16d48a79ee934" category="inline-link-macro">阅读更多</block>
-  <block id="639cd114dad5880c94752e290d36353a" category="cell">_Kubernetes 命名空间空间不足_洞察让您可以查看 Kubernetes 命名空间中面临空间不足风险的工作负载，并估计每个空间变满之前剩余的天数。<block ref="91569d71925d0cb55a46b7a5e8a36cb5" category="inline-link-macro-rx"></block></block>
   <block id="f1e906bd3edd784d1978ed7c4566e64c" category="cell">共享资源面临压力</block>
-  <block id="9bfa6f1e81e8e1a4af8a2057b85a0257" category="cell">_压力下的共享资源_洞察使用 AI/ML 自动识别资源争用导致环境中性能下降的位置，突出显示受其影响的任何工作负载，并提供建议的补救措施，让您更快地解决性能问题。<block ref="b97265367ad52c02d31fa7522e26571d" category="inline-link-macro-rx"></block></block>
   <block id="64f0171311f2657dbd0578fca9fb2fa5" category="cell">Cloud Secure– 攻击时阻止用户访问</block>
   <block id="6ad1deaea422210384bf8c46adb4027a" category="cell">当检测到攻击时，能够阻止用户访问，从而更好地保护您的关键业务数据。可以使用自动响应策略自动阻止访问，也可以从警报或用户详细信息页面手动阻止访问。<block ref="e8dc9c29c76388404a63bbf729dac2fd" category="inline-link-macro-rx"></block></block>
   <block id="d1e4cf4e509b74019a6ec3d98c6300da" category="section-title">我的数据收集状况如何？</block>
@@ -3000,8 +2993,6 @@
   <block id="9a3185d3dd699a74f8c315584250a80c" category="inline-link-macro">代理安装</block>
   <block id="c41fe2272c9ff38bed21d6e67f9945cc" category="paragraph">用于提取 Telegraf 集成数据的代理已更新至版本 *1.22.3*，性能和安全性均有所提升。希望更新的用户可以参考<block ref="7eca75c9707898b05c3a8b3fe84d7968" category="inline-link-macro-rx"></block>文档。代理的先前版本将继续运行，无需用户采取任何行动。</block>
   <block id="ecf4e9e3c38358de05561be5ed03f5d0" category="section-title">预览功能</block>
-  <block id="2240ee7d4e56b8ba7ac49b14311cdeed" category="inline-link-macro">NetApp销售团队</block>
-  <block id="0d0549b05d1645d38baa1a6cedaa7190" category="paragraph">Cloud Insights定期重点介绍一些令人兴奋的新预览功能。如果您有兴趣预览其中一个或多个功能，请联系您的<block ref="02af545fedbe237243dabe2f44648f4d" category="inline-link-macro-rx"></block>了解更多信息。</block>
   <block id="2ad48475868a5acf715f48e45c20d2d1" category="cell">Cloud Secure– 攻击时阻止用户访问</block>
   <block id="4e28671aa760c1ba504510846bdf520c" category="cell">当检测到攻击时，能够阻止用户访问，从而更好地保护您的关键业务数据。可以使用自动响应策略自动阻止访问，也可以从警报或用户详细信息页面手动阻止访问。<block ref="e8dc9c29c76388404a63bbf729dac2fd" category="inline-link-macro-rx"></block></block>
   <block id="b56a5394775a9f077c12cb3e770d913c" category="section-title">2022年5月</block>
@@ -3043,7 +3034,6 @@
   <block id="d8afe893977b1761d465e261f7f0645c" category="list-text">阶梯 - 使用前一个数据点作为插值数据点</block>
   <block id="0d55cb88c50b339df6b23026d70f4851" category="section-title">增强对 Kubernetes 基础设施的监控</block>
   <block id="6e8d08f021f143c0380bcfda2a0d8e35" category="paragraph">Cloud Insights会在创建或删除 pod、守护进程集和副本集时以及创建新部署时向您发出警报，让您随时掌握 Kubernetes 环境中的变化。  Kubernetes 监视器默认处于_暂停_状态，因此您应该只启用您需要的特定监视器。</block>
-  <block id="58114ec5d8ca1494b408777c1a724eef" category="cell">共享资源压力洞察使用 AI/ML 自动识别资源争用导致环境中性能下降的位置，突出显示受其影响的任何工作负载，并提供建议的补救措施，让您更快地解决性能问题。<block ref="b97265367ad52c02d31fa7522e26571d" category="inline-link-macro-rx"></block></block>
   <block id="9fc31ce4550c4f68c1ea81f5a37335aa" category="section-title">新的数据收集器</block>
   <block id="99449a8a20c724ea6cd587ff41d0672f" category="list-text">*Cohesity SmartFiles* - 这个基于 REST API 的收集器将获取一个 Cohesity 集群，发现“视图”（作为 CI 内部卷）、各个节点，以及收集性能指标。</block>
   <block id="cd96347d3d125d14ec06afe0adbac82a" category="paragraph">以下数据收集器的性能数据收集和显示已得到改进：</block>
@@ -6474,8 +6464,6 @@
   <block id="1d3a47e64cfbeb6f43f26517be02a023" category="list-text"><block ref="1d3a47e64cfbeb6f43f26517be02a023" category="inline-link-macro-rx"></block></block>
   <block id="286ecb4572a276871772bdbf167316f2" category="inline-link-macro">跨境数据传输</block>
   <block id="e38fea3e33cc0a5f1866f4eb9682e240" category="list-text"><block ref="e38fea3e33cc0a5f1866f4eb9682e240" category="inline-link-macro-rx"></block></block>
-  <block id="20505218646d682cb07a0cf279e9cf29" category="inline-link-macro">具有约束力的公司规则</block>
-  <block id="d352b73ef3c84d8725e56efbf13e84f1" category="list-text"><block ref="d352b73ef3c84d8725e56efbf13e84f1" category="inline-link-macro-rx"></block></block>
   <block id="f27a46645af620bac8278c39a9d657b8" category="inline-link-macro">响应第三方数据请求</block>
   <block id="0e07493de1ccce1a68aff3dbd2cd6cac" category="list-text"><block ref="0e07493de1ccce1a68aff3dbd2cd6cac" category="inline-link-macro-rx"></block></block>
   <block id="e87433704018842ba5eb9ad6c1a93e26" category="inline-link-macro">NetApp隐私原则</block>
@@ -6806,8 +6794,6 @@
   <block id="72213a3f462eab56462e1fd1892f6fc0" category="list-text">为您的主机选择合适的平台（Windows、Linux）</block>
   <block id="0b5b60f6bf77a0318f6283c5d8ce5be7" category="list-text">按照每个平台的剩余步骤进行操作。</block>
   <block id="09e0466fcc22c337dc6af8a799296033" category="admonition">一旦在主机上安装了代理，就不需要在该主机上再次安装代理。</block>
-  <block id="4779eaa1340da59df6b8231755992886" category="inline-link-macro">“节点”指标</block>
-  <block id="9ada5756ebf6ec40086a8c2629d928aa" category="admonition">一旦您在服务器/虚拟机上安装了代理，Data Infrastructure Insights除了从您配置的任何数据收集器收集指标外，还会从该系统收集指标。这些指标被收集为<block ref="721decf63f7a81173878238d526f87a6" category="inline-link-macro-rx"></block>。</block>
   <block id="2611d0720b029b968257661771d287e6" category="admonition">如果您使用代理，请在安装 Telegraf 代理之前阅读适用于您平台的代理说明。</block>
   <block id="b2997605f7b826343b475f71837415f4" category="section-title">日志位置</block>
   <block id="21872dffda230726cb93a6dddff7dd00" category="paragraph">默认情况下，Telegraf 日志消息从 stdout 重定向到以下日志文件：</block>
@@ -7057,7 +7043,6 @@
   <block id="f005ad36a865e60c2f589a58c0daafa5" category="cell">1.使用以下命令编辑代理：kubectl -n &lt;name-space&gt; edit agent 2。将“security-policy-enabled”标记为“false”。这将禁用 Pod 安全策略和 Pod 安全准入并允许操作员部署。使用以下命令确认：kubectl get psp（应该显示 Pod 安全策略已删除）kubectl get all -n &lt;namespace&gt; | grep -i psp（应该显示未找到任何内容）</block>
   <block id="59e3026f71d01a624108642cdb778ebd" category="cell">出现“ImagePullBackoff”错误</block>
   <block id="43340e6cc4e88197d57f8d6d5ea50a46" category="inline-xref">阅读更多</block>
-  <block id="31c512270381a100a1d6ed5460e4382a" category="cell">如果您有自定义或私有的 docker 存储库，并且尚未配置 Kubernetes Monitoring Operator 以正确识别它，则可能会看到这些错误。<block ref="64c2e35c96e92fc99426098fae703fff" category="inline-xref-macro-rx"></block>关于自定义/私人 repo 的配置。</block>
   <block id="6da3e5f4ef4407262c741e8325a8249d" category="cell">我的监控操作员部署出现了问题，当前文档无法帮助我解决该问题。</block>
   <block id="368fbe1d48012e8e4f24249e2b27a8dd" category="paragraph">捕获或以其他方式记录以下命令的输出，并联系技术支持团队。</block>
   <block id="70d79a6ca6098037988336f11346dce8" category="cell">Operator 命名空间中的 net-observer（工作负载图）pod 处于 CrashLoopBackOff 状态</block>
@@ -7106,7 +7091,6 @@
   <block id="006f752e44410388cadd8f8a37ce069f" category="inline-link-macro">代理配置</block>
   <block id="e7367bd1ec175ef5c58d982c52bc4348" category="inline-link-macro">服务器TLSBootstrap</block>
   <block id="eb693e07b3c7e38a77aa691eee254db7" category="cell">如果 kubelet 使用自签名证书，和/或指定的证书未在证书_Subject Alternative Name_ 列表中包含 &lt;kubelet_IP&gt;，就会发生这种情况。为了解决这个问题，用户可以修改<block ref="1ff2a3d734af6ebdb77c417baa3479b1" category="inline-link-macro-rx"></block>，并将 _telegraf:insecureK8sSkipVerify_ 设置为 _true_。这将配置 telegraf 输入插件以跳过验证。或者，用户可以配置 kubelet<block ref="9ed8afe3c99331fa3d23c13414b98aba" category="inline-link-macro-rx"></block> ，这将触发来自“certificates.k8s.io”API 的证书请求。</block>
-  <block id="496e790e66d36d3bfbadd9eca21b9d6b" category="cell">卡帕西托</block>
   <block id="8c362b737d9d3a6fff5acfc29aaa5225" category="summary">Kubernetes 的数据收集器</block>
   <block id="3ce5067a26bb6509b15cfb6487590ed5" category="doc">数据收集器：Kubernetes</block>
   <block id="6ffb121d702031b943827f26c164c756" category="paragraph">Data Infrastructure Insights使用此数据收集器来收集 Kubernetes Pod、节点和容器指标。</block>
@@ -7240,7 +7224,6 @@
   <block id="7570972df9d369d66d38cf0e825776a0" category="cell">部门编号</block>
   <block id="5ae0c1c8a5260bc7b6648f6fbd115c35" category="cell">照片</block>
   <block id="a24d56a7bae022bdb7c209634de95598" category="list-text">使用 LDAP Explorer 浏览 LDAP 数据库、查看对象属性和特性、查看权限、查看对象的模式、执行可以保存和重新执行的复杂搜索。</block>
-  <block id="34baf307c1feaeab47e51f964eb78134" category="list-text">安装 LDAP Explorer<block ref="b0643aa9f9b138fe3304044353a15064" category="inline-link-rx"></block> ）或 Java LDAP 资源管理器<block ref="0e1466743bc4c5a65654aff64a5c8d57" category="inline-link-rx"></block>) 在任何可以连接到 LDAP 服务器的 Windows 机器上。</block>
   <block id="cc7c5e373102d7c40456a0932056d813" category="list-text">使用 LDAP 目录服务器的用户名/密码连接到 LDAP 服务器。</block>
   <block id="b4fe7a0e70b4e56323acfd674257077e" category="inline-image-macro">LDAP 连接</block>
   <block id="23df8ccbde1c236e533548a253cc3eee" category="paragraph"><block ref="23df8ccbde1c236e533548a253cc3eee" category="inline-image-macro-rx" type="image"></block></block>
@@ -9379,7 +9362,6 @@
   <block id="63800fa4905e8f1340ac92bcc42decb9" category="cell">如果您使用此数据收集器来发现 7 模式文件管理器，就会发生这种情况。将 IP 更改为指向 cdot 集群。</block>
   <block id="ba47f8d8510049a6a646bcaab9868c9b" category="cell">“无法从 ZAPI 收集性能”错误</block>
   <block id="60c7f1e49f405a1836fb656a8fffe2aa" category="cell">这通常是由于 perf stat 没有运行造成的。在每个节点上尝试以下命令：&gt; _system node systemshell -node * -command “spmctl -h cmd –stop; spmctl -h cmd –exec”_</block>
-  <block id="a9d11491cdc145dca25e537c123d978b" category="summary">配置NetApp Cloud Connection for ONTAP 9.9+ 数据收集器</block>
   <block id="34727dd01aaa3e0d53fd68d429bbff53" category="doc">NetApp Cloud Connection for ONTAP 9.9+ 数据收集器</block>
   <block id="0803ffc49bb5d009027ad578d29858b8" category="paragraph">该数据收集器创建云连接以支持从ONTAP 9.9+ CVO、 AFF和FAS系统收集数据。</block>
   <block id="fb915b764f3baecfa629ff22686e14ee" category="admonition">自 2023 年 4 月 4 日起，此数据收集器将无法再安装在Data Infrastructure Insights中，并且将于 2023 年 7 月从所有Data Infrastructure Insights安装中删除。</block>
@@ -9981,7 +9963,6 @@
   <block id="3e6a6e204935e5560fba5d2fbe05a425" category="list-text">选择满足您需求的方法。</block>
   <block id="d58aecd7040e7d513c5340e479099d22" category="paragraph">Data Infrastructure Insights按照方法出现的顺序执行主机解析过程，从顶部开始。</block>
   <block id="ef134b9e133b3a5eb7b3017bb03532e8" category="paragraph">当遇到适用的规则时，规则名称会显示在规则列中并标识为手动。</block>
-  <block id="ea4f37cdc61f22bab06bd53f38731b48" category="paragraph">有关的：<block ref="9606d230686b3a54ef0c843c6a8d06ee" category="inline-link-macro-rx"></block> <block ref="f7ab518a04b5eb9592800f6375835782" category="inline-link-macro-rx"></block> <block ref="9afa071c2420f8347dcfd0e1bd5f4e5c" category="inline-link-macro-rx"></block></block>
   <block id="8b720a56569a3c7ab2f160ab1eda080e" category="summary">在仪表板小部件上显示图例。</block>
   <block id="d40435902e9d2aff211851b4be9e2a25" category="paragraph">仪表板上的窗口小部件可以显示图例，也可以不显示。</block>
   <block id="82908db5a2e57cb0c3c9c7daae713304" category="paragraph">显示仪表板时，可以通过单击小部件上的“*选项*”按钮并在菜单中选择“*显示图例*”来打开或关闭小部件中的图例。</block>
@@ -10146,7 +10127,6 @@
   <block id="b20aea1fa1664bcc048770ea0e008918" category="paragraph">单击“下载文件”。如果您在 AU 系统以外的系统上执行这些步骤，请将下载的补丁 zip 包复制到 AU 系统。</block>
   <block id="3e7f4643e7c9ebf9318c59a568b2521c" category="paragraph">确保将补丁 zip 包复制到以下目录：/var/lib/netapp/cloudinsights/acq/download</block>
   <block id="9cb12f64263025528c33b8d045cd0c4a" category="paragraph">导航到补丁的 /var/lib/netapp/cloudinsights/acq/download 目录并验证那里的 .zip 文件：</block>
-  <block id="6d225eb97f4a253f028dffb578250de4" category="summary">当查询高 I/O 密度时，您想要排除根卷。</block>
   <block id="1ab57582b962bd9a8bcc5c1ad73a3370" category="doc">确保 IO 密度报告仅描述内部数据量</block>
   <block id="7fd61f2044d1ea7e162156b49842f9b8" category="paragraph">NetApp根卷包含用于管理存储系统的目录和配置文件。当查询高 I/O 密度时，您需要排除这些根卷。</block>
   <block id="7a1632b55f7e986af31872ad12602af6" category="paragraph">当监控您的环境时，更重要的是确定哪些内部数据卷产生高 I/O 密度数字。为了准确地识别数据卷，您需要将NetApp内部卷与用于监控 I/O 密度的查询隔离。</block>
@@ -11050,20 +11030,15 @@
   <block id="61af0e7885b3d07748159728a44e4ad9" category="list-text">为所需事件（严重、警告、已解决）选择“Discord” webhook</block>
   <block id="ed5c4b12d92f20d8019eeff5f0fd66c6" category="inline-image-macro">Webhook 通知</block>
   <block id="5a9350e3ec5e1d6389a7846d4b45fff3" category="paragraph"><block ref="5a9350e3ec5e1d6389a7846d4b45fff3" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="bf6fa6c5bb37c6b734af290224d14b3b" category="summary">创建 Webhook 来针对 Pagerduty 的性能或库存阈值发出警报</block>
   <block id="ebe61c67e9deed871c60838fd5e9f7be" category="doc">PagerDuty 的 Webhook 示例</block>
   <block id="71298eef97e0ed788542ad241ccd8519" category="paragraph">Webhook 允许用户使用自定义的 webhook 通道向各种应用程序发送警报通知。本页面提供了为 PagerDuty 设置 webhook 的示例。</block>
   <block id="00a64325d6215e869d901337c5733f9f" category="inline-link-macro">PagerDuty 文档</block>
   <block id="b9c4db244f886c8ad1c6fa5fe3a5597f" category="admonition">本页引用第三方说明，可能会有所变更。请参阅<block ref="4cf6cb20b95cded724b319964a5ce815" category="inline-link-macro-rx"></block>以获取最新信息。</block>
   <block id="5fe5cd9eb2f533342eccb34df79fde72" category="section-title">PagerDuty 设置：</block>
   <block id="bd4bbe8a9ea1ffdf00ee8bd94fc1e16d" category="list-text">在 PagerDuty 中，导航至 *服务 &gt; 服务目录*，然后单击 *+新服务* 按钮</block>
-  <block id="b476f138570162c042a088beeeccec15" category="list-text">输入_名称_并选择_直接使用我们的 API_。点击_添加服务_。</block>
   <block id="87f2841c34802570db42ed259a72659f" category="inline-image-macro">Pagerduty 屏幕</block>
   <block id="db788963e43859ced84fd2d54c4a1826" category="paragraph"><block ref="db788963e43859ced84fd2d54c4a1826" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b59bb2be40103d441711440903e77391" category="list-text">单击“Integrations”选项卡即可查看“Integration Key”。当您创建下面的Data Infrastructure Insightswebhook 时，您将需要此密钥。</block>
   <block id="14b1b977a367efc00b3c3c2a27dd9df6" category="list-text">前往*事件*或*服务*查看警报。</block>
-  <block id="38cd2297d6a0d6ebf34eba2cd7a08ed5" category="inline-image-macro">Pagerduty 屏幕</block>
-  <block id="583d30680a45f7d79eafed1816002071" category="paragraph"><block ref="583d30680a45f7d79eafed1816002071" category="inline-image-macro-rx" type="image"></block></block>
   <block id="080e61216b58fb3cb63bae2ed7de1c2c" category="list-text">为 webhook 赋予一个有意义的名称，例如“PagerDuty Trigger”。您将使用此 webhook 来处理严重和警告级别的事件。</block>
   <block id="56d3e1d7cf9cd6ae0eef088d30e682b7" category="list-text">在“模板类型”下拉菜单中，选择“PagerDuty”。</block>
   <block id="6da6fedcac10d8b2fdf051a1ed598349" category="list-text">创建一个名为 _routingKey_ 的自定义参数机密，并将其值设置为上面的 PagerDuty _Integration Key_ 值。</block>
@@ -11292,7 +11267,6 @@
   <block id="ac14acdc92f36791be661880d12b7270" category="paragraph">请注意，HCI 数据收集器仅从 HCI 虚拟中心获取数据。要从存储系统收集数据，还必须配置NetApp<block ref="6712d9c3428b5f40681aae619dc8b571" category="inline-link-macro-rx"></block>数据收集器。</block>
   <block id="40c6992ea910d43026a8f13fd0d7bfd6" category="section-title">2019年5月</block>
   <block id="037eddd16d35fc9eac278648da06c173" category="section-title">新的服务数据收集器：Kapacitor</block>
-  <block id="a6c914a36af9cdcc4bc051dbdcd4eefb" category="list-text"><block ref="ca466468045f7ff3875d7132bbbf9398" category="inline-link-macro-rx"></block>已被添加为服务的数据收集器。</block>
   <block id="4d62d13d165eebe4e80017471b97b8ed" category="section-title">通过 Telegraf 与服务集成</block>
   <block id="7aa7603ad6de1f47f78ba9423a0e4fcd" category="inline-link-macro">Telegraf 作为其代理</block>
   <block id="6d022ec9f2c6bb5d17eeb27eda72fe71" category="paragraph">除了从交换机和存储等基础设施设备获取数据外， Cloud Insights现在还从各种操作系统和服务收集数据，使用<block ref="ba0db348f579f56a750410b7eabc1b9a" category="inline-link-macro-rx"></block>用于收集集成数据。 Telegraf 是一个插件驱动的代理，可用于收集和报告指标。输入插件用于通过直接访问系统/操作系统、调用第三方 API 或监听配置的流将所需信息收集到代理中。</block>
@@ -11702,7 +11676,6 @@
   <block id="885f8cdd65feed9099d3ba4bb0386c7b" category="sidebar">为对象分配多个应用程序/注释</block>
   <block id="3d59dc93db3f03aea5b8d1cc50d995f6" category="sidebar">将表值复制到剪贴板</block>
   <block id="72a442c57900f55848aa4acb856a507d" category="sidebar">识别非活动设备</block>
-  <block id="b181654a18c519e18fe14012429b9ef1" category="sidebar">监控和警报</block>
   <block id="cdd0e837105d3238f7da72918d54613a" category="sidebar">创建监视器</block>
   <block id="ad9a3a2d37a9151fd99385dc40e9ceb2" category="sidebar">配置通知收件人</block>
   <block id="a212bf20191ce3ebcdc71cc32cd6c8f9" category="sidebar">配置 Webhook</block>
@@ -13367,9 +13340,6 @@
   <block id="ecd1b5f31c28de0c631ee58c6b41b0ce" category="inline-link-macro">架构表 - 性能</block>
   <block id="641194ba8e9eb6bea72a6c8555dba312" category="inline-link-macro">架构表 - 端口</block>
   <block id="30447449adfd6d4aba37ceff8ad6d44c" category="paragraph"><block ref="d7f4229ab5b0a23fc5733709f009bb9e" category="inline-link-macro-rx"></block> <block ref="cc065afde5664e2223ba0976d7427c1a" category="inline-link-macro-rx"></block> <block ref="743d4aaaedfa5c8a24d5ae2d7eb2fd6f" category="inline-link-macro-rx"></block> <block ref="c26959329d694ba673ccce22300f912c" category="inline-link-macro-rx"></block> <block ref="bb4b6081cd653f5a71a0887c16d1a9a1" category="inline-link-macro-rx"></block> <block ref="a84fddf1b8ccb11a0434fc30c7af2a6a" category="inline-link-macro-rx"></block></block>
-  <block id="5ea22d2e8fc28ebb23d6c57d502666b3" category="paragraph">本文档提供报告数据库的架构表。</block>
-  <block id="88bf9a2e65ee5333fd86a914ed4d4dac" category="inline-link-macro">容量架构</block>
-  <block id="9f8e620c6fad8108bd9d954d0fa14a52" category="paragraph"><block ref="9f8e620c6fad8108bd9d954d0fa14a52" category="inline-link-macro-rx"></block></block>
   <block id="e0f595cb2362f95f18d132f94d406cc4" category="summary">dwh_capacity 数据库的架构表和关系</block>
   <block id="896f40a8060d15f9a22064d62506f2e6" category="doc">dwh_capacity 的数据库架构参考</block>
   <block id="3ebfabfdba61057b0445ee6ad62e9bbc" category="paragraph">此引用提供 dwh_capacity 数据库的详细架构信息，包括表结构、字段定义、数据类型和关系。</block>
@@ -14013,10 +13983,7 @@
   <block id="33b828c8fb435b67f3a4a321adbc89c1" category="paragraph">个别用户和目录路径可以添加到相应的排除列表中或从相应的排除列表中删除。每个列表中的每个条目都将包含何时以及由谁添加到列表中的信息，这些信息将用于审计目的。</block>
   <block id="b2bc711706213f5680535c284278fd8a" category="section-title">管理排除和审核</block>
   <block id="4cc0f970741fc7eef05a2f6890f15228" category="list-text">管理员可以随时添加或删除文件扩展名、单个用户或路径。</block>
-  <block id="430f66c61c1d6e05ef92945c7107306f" category="paragraph"><block ref="430f66c61c1d6e05ef92945c7107306f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4d06e3dd77aaee13a5d969e19fc7acf6" category="paragraph"><block ref="4d06e3dd77aaee13a5d969e19fc7acf6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="147e7f8d7d8064d51ff49f93c07adfeb" category="paragraph">导航到 *Workload Security &gt; Policies*，然后选择 *Alert Exclusions* 选项卡。</block>
-  <block id="9bf079c262098280af19e475b460e655" category="list-text">文件类型：抑制特定 <block ref="e9fd5a7947ff579f7dabe8508e9cb8cd" category="inline-xref-macro-rx"></block> 上的文件篡改警报</block>
   <block id="492f463a35ea215d77ae021c64cddb64" category="paragraph">例如，如果名为 _test.txt_ 的文件重命名为 _test.txt.abc_，并且由于 _.abc_ 扩展名，Workload Security 检测到勒索软件攻击，则可以将 _.abc_ 扩展名添加到 _allowed file types_ 列表中。添加到列表后，将不再针对扩展名为 _.abc_ 的文件生成勒索软件攻击。</block>
   <block id="318685a1827ca5f4280e59d71f7d1438" category="paragraph">允许的文件类型可以是精确匹配（例如，".abc"）或表达式（例如，++.*type++、++.type*++或++.*type*++）。不支持 .a*c、.p*f 类型的表达式。</block>
   <block id="664ba14b3efcf7d6e7a9409a24223a79" category="paragraph">请注意，只有事件的警报被抑制；事件本身仍然被捕获，可以被查看。</block>
@@ -14038,9 +14005,6 @@
   <block id="bd0fc56b14454f1ee18d759d4af08ed3" category="list-text">您可以告诉我过去 24 小时内此设备的容量利用率趋势吗？</block>
   <block id="aa7271070bccbdb553337d1d11a546e3" category="list-text">哪些卷在此存储上占用的空间最多？</block>
   <block id="d166bd4cdca169a67a613a26fe8770ce" category="paragraph">'''nt1.png[Table Widget 单元管理]</block>
-  <block id="3d2f1005746d7db51821bc629f7d4407" category="paragraph">潜在勒索软件攻击的详细信息页面：-Screen" 视图：表格小部件在左侧显示对象/分组，在右侧显示对象数据（属性/指标）。</block>
-  <block id="af730d8a2733a784c669eb49b4d22282" category="paragraph">+ <block ref="d39f912f84d3b7c6330ea5e1e4443c8f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e81234c807cc73fff59051e85698456e" category="paragraph">alue Widget with Formatting] <block ref="ea343c0c42e5fd6968847a90104062ca" category="inline-image-macro-rx" type="image"></block></block>
   <block id="460cdd4165472896cc30053fb384c428" category="summary">Workload Security 中的审核事件</block>
   <block id="7fb266e1b99b0df47eb66e941859d665" category="doc">审核 Workload Security 事件</block>
   <block id="fd353ad75bcbf126fad9d6e35df7010e" category="paragraph">识别预期（用于跟踪）或意外（用于故障排除）的更改。查看 Workload Security 系统事件和用户活动的审计跟踪。</block>
@@ -14126,4 +14090,71 @@
   <block id="606930ccd6550cc24fe845f69572c586" category="list-text">至少具有读取权限的用户帐户和密码。</block>
   <block id="38fbce916138020848ac3b594a6648d0" category="section-title">通过登录消息分享重要更新</block>
   <block id="7260908f665e8b3c02f0fce13c7ea541" category="paragraph">通过可自定义的登录消息，让您的团队了解最新情况并保持一致。在用户登录时，直接向其传达重要公告、维护计划或策略更新。借助 Markdown 支持，您可以设置消息格式以确保清晰易读，并确保关键信息传达给每位 DII 用户。具有管理员权限的帐户可以在"通知"下的管理菜单中找到相关配置。</block>
+  <block id="bf60f9bc5ee0d8e38d0241a3b6dc57b7" category="paragraph">Reclaim ONTAP Cold Storage Insight 现在支持 FlexGroups，现在可供所有客户使用。</block>
+  <block id="50b8446a2f6570ae66ebb7c9c6f366c9" category="cell">_Kubernetes Namespaces Running Out of Space_ Insight 为您提供 Kubernetes 命名空间上存在空间耗尽风险的工作负载视图，并估算每个空间占满之前的剩余天数。</block>
+  <block id="a33d658e60eacb234b7c8ba889d8fde8" category="cell">_Shared Resource Under Stress_ insight 使用 AI/ML 自动识别资源争用导致环境中性能下降的位置，突出显示受其影响的任何工作负载，并提供建议的补救措施，让您能够更快地解决性能问题。</block>
+  <block id="1a32be6075ec24a9a6ae9d4061fcf46a" category="paragraph">Cloud Insights 定期推出许多令人兴奋的新预览功能。如果您有兴趣预览其中一项或多项功能，请联系您的 NetApp 销售团队以获取更多信息。</block>
+  <block id="f9cc1b0baa3acc4668c046e61bab584b" category="cell">压力下的共享资源洞察使用 AI/ML 自动识别资源竞争导致环境中性能下降的位置，突出显示受其影响的任何工作负载，并提供建议的补救措施，让您能够更快地解决性能问题。</block>
+  <block id="ee6b260a508ca58c8733b23090cd87a7" category="summary">为所有用户设置每日弹出消息。</block>
+  <block id="cb5c0ec2514b9d06359e770769a8d39c" category="doc">配置登录消息</block>
+  <block id="42f1345d41ac1e51a16da7649db8b092" category="paragraph">您可以将消息配置为在所有用户登录时显示为弹出窗口。您可以选择仅在下次登录时显示，或在所有后续登录时显示。</block>
+  <block id="810bac3bcbfe61628b10fe3df2e0ea96" category="paragraph">管理员可以在 Admin &gt; Notifications 的"Login Banner"选项卡上设置消息。</block>
+  <block id="22f60aff39394bad553a00e2940bdf11" category="paragraph">消息支持基本 Markdown，因此可以应用粗体、斜体、表格等格式。</block>
+  <block id="6a46079dd2d659655fc832470519e71a" category="paragraph">选择用户仅在下次登录时看到消息，还是在每次后续登录时看到消息。</block>
+  <block id="6a5f1dd41e7d3fa22fbd71d29b46cea4" category="inline-image-macro">登录横幅设置</block>
+  <block id="bd6c3bd0a46b9e6da4828acea4a9e315" category="paragraph"><block ref="bd6c3bd0a46b9e6da4828acea4a9e315" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1ef61a1b7e25b910ec7beca0741bd208" category="paragraph">请注意，用户_必须_确认登录消息才能关闭它。关闭后，将显示任何其他弹出窗口（新功能更新、服务条款更新等）。</block>
+  <block id="38f64824b0d19083b9c439a8b4af41e4" category="admonition">在服务器/VM 上安装代理后，Data Infrastructure Insights 除了从您配置的任何数据收集器收集数据外，还会从该系统收集指标。这些指标作为"节点"指标收集。</block>
+  <block id="7fa36585f976625a51b4f3be0f46f0b5" category="cell">如果您有自定义或私有 docker 存储库，并且尚未配置 Kubernetes Monitoring Operator 以正确识别它，则可能会看到这些错误。<block ref="2d47cbc88497421e2fe69677ce7d4cef" category="inline-xref-macro-rx"></block>有关自定义/私有存储库的配置。</block>
+  <block id="f02e4a9177c27a051b895699ea0110ce" category="inline-link-macro">LDAP Explorer</block>
+  <block id="d13806041219cf369ed889a6ff834216" category="inline-link-macro">Java LDAP Explorer</block>
+  <block id="32b7ad0935b353d5c424244711c6c8cd" category="list-text">在任何可以连接到 LDAP 服务器的 Windows 计算机上安装 <block ref="bdc822b7c7d5a07392a373c8455d25e9" category="inline-link-macro-rx"></block> 或 <block ref="21af31fb3fc4369ed8be68bf76e0e99a" category="inline-link-macro-rx"></block>。</block>
+  <block id="9d2365ff6e78da3b972051b1d94c82a9" category="summary">为 ONTAP 9.9 及更高版本数据收集器配置 NetApp 云连接</block>
+  <block id="ddee1a7420119fd909427746c177cb37" category="section-title">AI 辅助规则生成</block>
+  <block id="2eb83c9e235304f6ab08d1e3e100b334" category="paragraph">或者，您可以使用 AI 驱动的设备识别来消除猜测，从而快速轻松地创建规则。只需运行 AI 辅助规则生成器即可分析您的环境并提出 Device Resolution 规则建议，帮助您快速识别和管理更多设备。</block>
+  <block id="e0c4332e8c13be976552a059f106354f" category="section-title">开始使用</block>
+  <block id="13ecdfe446ce7572d9674cca5dc69399" category="paragraph">要开始使用 AI 生成解决规则，管理员必须首先启用 AI 生成的规则。</block>
+  <block id="38bf7159a22b7d9149664e77a95f4fb9" category="inline-image-macro">开始生成 AI 规则，width=400</block>
+  <block id="c574b1e2b5b6f8c0fb2a7f3cc9cd74eb" category="paragraph"><block ref="c574b1e2b5b6f8c0fb2a7f3cc9cd74eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7fb6be1251cff450bdbe894f3a6947ca" category="paragraph">AI 助手将告诉您有多少百分比的光纤通道设备未被识别，并提示您允许其生成规则。选择"Let's Go！"。</block>
+  <block id="154f6949b5d604485edfd5554cfc73c2" category="inline-image-macro">选择"Let's Go"生成规则，width=400</block>
+  <block id="4e41c64207dd722b6d6c679c6d6b06b0" category="paragraph"><block ref="4e41c64207dd722b6d6c679c6d6b06b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f639ccbda25c3b7c5e0e54e8f336f6d1" category="paragraph">在启用AI生成的规则之前，系统会提示您确认您的域名。您必须包含所有域名才能有效识别。</block>
+  <block id="272258d081ffa5d88457e9398c962cd8" category="section-title">检查进度</block>
+  <block id="ad54ef35087de51e4251cfe264d981f0" category="paragraph">DII 会定期在有其他设备可供识别时创建通知。如果您在页面右上角的铃铛图标上看到一个绿点，请选择它以查看通知。</block>
+  <block id="619cd5374b326ad19aeb8ca6766b51f5" category="inline-image-macro">通知铃，宽度=400</block>
+  <block id="e9d685345131d05b8301eb4fb633e5d4" category="paragraph"><block ref="e9d685345131d05b8301eb4fb633e5d4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="74bc3d1913a701a4d16df961e9a8487a" category="paragraph">使用铃铛图标还可以检查规则生成的状态，这可能需要几秒钟到几分钟的时间，具体取决于环境的复杂程度。</block>
+  <block id="a5d99e1d64aa482f996a006aa1704c49" category="paragraph">AI 生成的规则将在列表中显示"AI Generated"徽章。</block>
+  <block id="07465efb5bc3b5a8f6f4b8398cf2d346" category="inline-image-macro">AI 生成的规则徽章，宽度=400</block>
+  <block id="94fba23c3c2a0770f556c5e615c0b1a6" category="paragraph"><block ref="94fba23c3c2a0770f556c5e615c0b1a6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="54a3901a6231fc440a261ea73f581658" category="section-title">恢复并继续</block>
+  <block id="e67fe5612ea54e90c6cd6297fad6b3aa" category="paragraph">默认情况下，AI 生成的规则处于 _Paused_ 状态。您必须查看每个规则并 _Resume_ 它，然后它才会识别设备。</block>
+  <block id="8adc06985cc11866dd25119eb70226ab" category="section-title">相关：</block>
+  <block id="aa83dd9621bf2fe08cfaf29fd6ba92bc" category="paragraph"><block ref="9606d230686b3a54ef0c843c6a8d06ee" category="inline-link-macro-rx"></block> <block ref="f7ab518a04b5eb9592800f6375835782" category="inline-link-macro-rx"></block> <block ref="9afa071c2420f8347dcfd0e1bd5f4e5c" category="inline-link-macro-rx"></block></block>
+  <block id="ce9b3546654fac61e740457e736941c0" category="summary">在查询高 IO 密度时，需要排除根卷。</block>
+  <block id="17d39c84f8b8300ad07b5407dbf9730a" category="summary">创建 Webhook 以针对 PagerDuty 的性能或库存阈值发出警报</block>
+  <block id="c72f92d02ad6ff9b7ceac63f3fe89d45" category="list-text">输入_名称_和有意义的_描述_。单击_Next_。</block>
+  <block id="61cf54bbd40ef1dd67f4a54e083ac6e4" category="inline-image-macro">PagerDuty 屏幕，宽度=500</block>
+  <block id="a4e0db6c672f7c2510cfdb81666421f8" category="paragraph"><block ref="a4e0db6c672f7c2510cfdb81666421f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d3b16af9f9378f7c389da4e8c9f918d1" category="list-text">在下一个屏幕上，选择现有升级策略，或生成新策略。单击 _Next_。</block>
+  <block id="d116d62ce89c20be3cb9917a6d759321" category="inline-image-macro">分配升级策略, width=500</block>
+  <block id="58624e4ccd31d6fe4fe6caa0fdde9f63" category="paragraph"><block ref="58624e4ccd31d6fe4fe6caa0fdde9f63" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9c2fe0bd0fa4ba097b30911aeb54ced4" category="list-text">根据需要选择 AIOps 功能。单击 _Next_。</block>
+  <block id="d60b9d1db74c19e79bf879ac4bcd9cf5" category="inline-image-macro">aiops 服务选择屏幕，width=500</block>
+  <block id="3038bf1ea5b5370c3c176f8872f9bfdd" category="paragraph"><block ref="3038bf1ea5b5370c3c176f8872f9bfdd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f6d94044ca6ce1c0b87d3f1883fd14ab" category="list-text">选择要用于将警报发送到 PagerDuty 的集成。对于 DII，请使用 Events API V2 集成。</block>
+  <block id="43871cbdae63fa7472200d755b502861" category="inline-image-macro">PagerDuty 集成选择屏幕，宽度=500</block>
+  <block id="4e3245eaf9d90f3ecc15300985caa196" category="paragraph"><block ref="4e3245eaf9d90f3ecc15300985caa196" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="185d2921ba09f306e8dd90a2e3c3f22b" category="paragraph">在集成配置屏幕上，记下*集成密钥*。在下面创建 Data Infrastructure Insights webhook 时，您将需要此密钥。</block>
+  <block id="af4236f034283c7699428b575513a6d2" category="inline-image-macro">复制集成密钥，width=500</block>
+  <block id="d50fbd4d62a0179f14ebd0c2b93dd357" category="paragraph">+ <block ref="cdd00a2746e22efb0bd3e4f3e89310e3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="23dbecf4c1701d7ea26399234db8b53d" category="list-text">Kapacitor 已作为服务的数据收集器添加。</block>
+  <block id="cc6f0b5db8e54e2bd636fc0ae818e97a" category="list-text">文件类型：抑制特定 <block ref="3f41337fac4ca104c57911a2b4a83477" category="inline-xref-macro-rx"></block> 上的文件篡改警报</block>
+  <block id="36025b18f09d25d0c8b6bef3b9d9fcfc" category="inline-image-macro">警报排除用户</block>
+  <block id="9bc8863049b78d2c731d6e05b7211c2b" category="paragraph"><block ref="9bc8863049b78d2c731d6e05b7211c2b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9ea7b40b3db8212823df746dc5573490" category="inline-image-macro">警报排除路径</block>
+  <block id="180f4f510f0a043b315312d10faa507e" category="paragraph"><block ref="180f4f510f0a043b315312d10faa507e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="eda220a2d8b65414dd2552b1cc37aca5" category="sidebar">监控、警报和通知</block>
+  <block id="b3dd2c9c1ffecc51c5a189f2d6c9d4c6" category="sidebar">登录消息</block>
 </blocks>

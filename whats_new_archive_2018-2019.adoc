@@ -771,7 +771,7 @@ Cloud Insights有不同的版本，以满足您的预算和业务需求。拥有
 
 === 新的服务数据收集器：Kapacitor
 
-* link:task_config_telegraf_kapacitor.html["卡帕西托"]已被添加为服务的数据收集器。
+* Kapacitor 已作为服务的数据收集器添加。
 
 
 

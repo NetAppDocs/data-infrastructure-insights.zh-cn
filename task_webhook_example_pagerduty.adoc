@@ -2,11 +2,15 @@
 sidebar: sidebar 
 permalink: task_webhook_example_pagerduty.html 
 keywords: webhook, notification, PagerDuty, integration 
-summary: 创建 Webhook 来针对 Pagerduty 的性能或库存阈值发出警报 
+summary: 创建 Webhook 以针对 PagerDuty 的性能或库存阈值发出警报 
 ---
 = PagerDuty 的 Webhook 示例
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -20,18 +24,27 @@ NOTE: 本页引用第三方说明，可能会有所变更。请参阅link:https:
 == PagerDuty 设置：
 
 . 在 PagerDuty 中，导航至 *服务 > 服务目录*，然后单击 *+新服务* 按钮
-. 输入_名称_并选择_直接使用我们的 API_。点击_添加服务_。
+. 输入_名称_和有意义的_描述_。单击_Next_。
 +
-image:Webhooks_PagerDutyScreen1.png["Pagerduty 屏幕"]
+image:webhook-pagerduty-1.png["PagerDuty 屏幕，宽度=500"]
 
-. 单击“Integrations”选项卡即可查看“Integration Key”。当您创建下面的Data Infrastructure Insightswebhook 时，您将需要此密钥。
-
-
-. 前往*事件*或*服务*查看警报。
+. 在下一个屏幕上，选择现有升级策略，或生成新策略。单击 _Next_。
 +
-image:Webhooks_PagerDutyScreen2.png["Pagerduty 屏幕"]
+image:webhook-pagerduty-2.png["分配升级策略, width=500"]
+
+. 根据需要选择 AIOps 功能。单击 _Next_。
++
+image:webhook-pagerduty-3.png["aiops 服务选择屏幕，width=500"]
+
+. 选择要用于将警报发送到 PagerDuty 的集成。对于 DII，请使用 Events API V2 集成。
++
+image:webhook-pagerduty-4.png["PagerDuty 集成选择屏幕，宽度=500"]
 
 
+
+在集成配置屏幕上，记下*集成密钥*。在下面创建 Data Infrastructure Insights webhook 时，您将需要此密钥。
+
++ image:webhook-pagerduty-5.png["复制集成密钥，width=500"]
 
 
 
@@ -40,8 +53,6 @@ image:Webhooks_PagerDutyScreen2.png["Pagerduty 屏幕"]
 . 在Data Infrastructure Insights中，导航到 *管理 > 通知* 并选择 *Webhooks* 选项卡。单击 *+Webhook* 创建一个新 webhook。
 . 为 webhook 赋予一个有意义的名称，例如“PagerDuty Trigger”。您将使用此 webhook 来处理严重和警告级别的事件。
 . 在“模板类型”下拉菜单中，选择“PagerDuty”。
-
-
 . 创建一个名为 _routingKey_ 的自定义参数机密，并将其值设置为上面的 PagerDuty _Integration Key_ 值。
 +
 image:Webhooks_Custom_Secret_Routing_Key.png["设置路由键"]

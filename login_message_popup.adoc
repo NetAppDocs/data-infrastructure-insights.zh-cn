@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: login_message_popup.html 
+summary: 为所有用户设置每日弹出消息。 
+keywords: notifications, pop-up, banner, motd, message, login 
+---
+= 配置登录消息
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以将消息配置为在所有用户登录时显示为弹出窗口。您可以选择仅在下次登录时显示，或在所有后续登录时显示。
+
+管理员可以在 Admin > Notifications 的"Login Banner"选项卡上设置消息。
+
+消息支持基本 Markdown，因此可以应用粗体、斜体、表格等格式。
+
+选择用户仅在下次登录时看到消息，还是在每次后续登录时看到消息。
+
+image:login_banner_settings.png["登录横幅设置"]
+
+请注意，用户_必须_确认登录消息才能关闭它。关闭后，将显示任何其他弹出窗口（新功能更新、服务条款更新等）。

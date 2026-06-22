@@ -13,6 +13,7 @@ keywords: workload security, audit, events
 :imagesdir: ./media/
 
 
+[role="lead"]
 识别预期（用于跟踪）或意外（用于故障排除）的更改。查看 Workload Security 系统事件和用户活动的审计跟踪。
 
 
