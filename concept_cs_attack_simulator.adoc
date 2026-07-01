@@ -154,9 +154,7 @@ mount -t cifs //10.193.77.91/sharedfolderincluster /root/destinationfolder/ -o u
 
 
 
-== 以编程方式生成示例文件：
-
-在创建文件之前，您必须先停止或link:task_add_collector_svm.html#play-pause-data-collector["暂停数据收集器"]加工。
+== 生成文件篡改警报
 
 要生成文件篡改警报，您可以执行随附的脚本，该脚本将在工作负载安全中模拟文件篡改警报。
 
