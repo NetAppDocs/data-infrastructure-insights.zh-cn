@@ -14158,4 +14158,8 @@
   <block id="eda220a2d8b65414dd2552b1cc37aca5" category="sidebar">监控、警报和通知</block>
   <block id="b3dd2c9c1ffecc51c5a189f2d6c9d4c6" category="sidebar">登录消息</block>
   <block id="241aeccf602b677945fa5597f1832e5e" category="section-title">生成文件篡改警报</block>
+  <block id="3e021c6004e444ced45e08a6ac9e1e61" category="paragraph">变更分析</block>
+  <block id="25a317566de430ddfd2c6f4b3fdea612" category="list-text">ci-k8s-change-observer</block>
+  <block id="9da5aa79f5375ccea3c84723b5759557" category="cell">我看到来自 Telegraf 的类似于以下的错误消息，但 Telegraf 确实启动并运行：E! [inputs.kubernetes] 插件出错：<block ref="6d1752bb8ee46f6164f07ea885d5c072" category="inline-link-rx"></block> 返回 HTTP 状态 403 Forbidden</block>
+  <block id="51635ff11969666db6bdeaf0c68d58b0" category="cell">如果您在低于 1.33 的 Kubernetes 版本上运行，则可能会出现这些消息。telegraf 使用的"nodes/pods" RBAC 资源在这些版本上不存在。有关旧版本所需的 RBAC 资源，请参阅 operator-additional-permissions.yaml 的"对于 Kubernetes 版本 &lt; 1.33"部分。</block>
 </blocks>
