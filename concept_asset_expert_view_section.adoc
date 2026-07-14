@@ -18,6 +18,7 @@ keywords: asset page, expert view, metrics, greedy, degraded, correlated, contri
 
 
 
+[[using-the-performance-section]]
 == 使用性能部分
 
 以下是存储资产页面中“性能”部分的示例：
@@ -46,6 +47,7 @@ image:asset_page_performance_section.png["表演部分"]
 
 
 
+[[alerts-in-performance-section]]
 == 性能部分中的警报
 
 警报还会显示在资产登陆页面的性能部分，显示警报的时间和持续时间以及触发警报的监控条件。将鼠标悬停在警报指示器上即可查看有关警报的详细信息。
@@ -54,6 +56,7 @@ image:asset_page_alert_section.png["性能部分中的警报"]
 
 
 
+[[performance-metric-definitions]]
 == 绩效指标定义
 
 资产页面的“性能”部分根据为资产选择的时间段显示几个指标。每个指标都显示在其自己的性能图表中。您可以根据想要查看的数据在图表中添加或删除指标和相关资产。您可以选择的指标将根据资产类型而有所不同。
@@ -164,6 +167,7 @@ image:asset_page_alert_section.png["性能部分中的警报"]
 |===
 
 
+[[using-the-performance-section]]
 == 使用性能部分
 
 通过“绩效”部分，您可以根据所选时间段内的任意数量的适用指标查看资产的绩效图表，并添加相关资产以比较和对比不同时间段内的资产和相关资产绩效。

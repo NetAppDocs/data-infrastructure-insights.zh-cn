@@ -16,6 +16,7 @@ Data Infrastructure Insights使用联想数据收集器来发现联想 HX 存储
 
 
 
+[[requirements]]
 == 要求
 
 * Prism 外部 IP 地址
@@ -25,9 +26,10 @@ Data Infrastructure Insights使用联想数据收集器来发现联想 HX 存储
 
 
 
+[[configuration]]
 == 配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -42,9 +44,10 @@ Data Infrastructure Insights使用联想数据收集器来发现联想 HX 存储
 |===
 
 
+[[advanced-configuration]]
 == 高级配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -59,6 +62,7 @@ Data Infrastructure Insights使用联想数据收集器来发现联想 HX 存储
 |===
 
 
+[[troubleshooting]]
 == 故障排除
 
 关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

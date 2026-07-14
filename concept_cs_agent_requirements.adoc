@@ -47,6 +47,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 |===
 
 
+[[additional-recommendations]]
 == 其他建议
 
 * 强烈建议使用*网络时间协议 (NTP)* 或*简单网络时间协议 (SNTP)* 同步ONTAP系统和代理机器上的时间。
@@ -54,6 +55,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 
 
 
+[[cloud-network-access-rules]]
 == 云网络访问规则
 
 对于*美国*的工作负载安全环境：
@@ -94,6 +96,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 |===
 
 
+[[in-network-rules]]
 == 网络内规则
 
 [cols="5*"]
@@ -117,6 +120,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 |===
 
 
+[[system-sizing]]
 == 系统规模
 
 查看link:concept_cs_event_rate_checker.html["事件发生率检查器"]有关尺寸的信息，请参阅文档。

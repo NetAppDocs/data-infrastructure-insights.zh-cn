@@ -21,6 +21,7 @@ NOTE: 本页引用第三方说明，可能会有所变更。请参阅link:https:
 
 
 
+[[pagerduty-setup]]
 == PagerDuty 设置：
 
 . 在 PagerDuty 中，导航至 *服务 > 服务目录*，然后单击 *+新服务* 按钮
@@ -48,6 +49,7 @@ image:webhook-pagerduty-4.png["PagerDuty 集成选择屏幕，宽度=500"]
 
 
 
+[[create-data-infrastructure-insights-webhook]]
 == 创建Data Infrastructure InsightsWebhook：
 
 . 在Data Infrastructure Insights中，导航到 *管理 > 通知* 并选择 *Webhooks* 选项卡。单击 *+Webhook* 创建一个新 webhook。
@@ -63,6 +65,7 @@ image:Webhooks_Custom_Secret_Routing_Key.png["设置路由键"]
 
 
 
+[[pagerduty-to-data-infrastructure-insights-field-mapping]]
 == PagerDutyData Infrastructure Insights字段映射
 
 下表和图片显示了 PagerDuty 和Data Infrastructure Insights之间的字段映射：
@@ -90,6 +93,7 @@ image:Webhooks-PagerDuty_Fields.png["CI 中的 PagerDuty 字段"]
 
 
 
+[[notifications-via-webhook]]
 == 通过 Webhook 发送通知
 
 要通过 webhook 通知事件，请在Data Infrastructure Insights中导航至 *Alerts > Monitors*，然后单击 *+Monitor* 以创建新的link:task_create_monitor.html["监视器"]。

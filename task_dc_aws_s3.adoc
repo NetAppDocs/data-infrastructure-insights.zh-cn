@@ -14,6 +14,7 @@ Data Infrastructure Insights使用 AWS S3 作为存储数据收集器，从 AWS 
 
 
 
+[[requirements]]
 == 要求
 
 为了从 AWS S3 存储设备收集数据，您必须具备以下信息：
@@ -33,11 +34,12 @@ Data Infrastructure Insights使用 AWS S3 作为存储数据收集器，从 AWS 
 
 
 
+[[configuration]]
 == 配置
 
 根据下表将数据输入数据收集器字段：
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -58,9 +60,10 @@ Data Infrastructure Insights使用 AWS S3 作为存储数据收集器，从 AWS 
 |===
 
 
+[[advanced-configuration]]
 == 高级配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -78,6 +81,7 @@ Data Infrastructure Insights使用 AWS S3 作为存储数据收集器，从 AWS 
 |===
 
 
+[[iam-access-key]]
 == IAM 访问密钥
 
 访问密钥是 IAM 用户或 AWS 账户根用户的长期凭证。访问密钥用于签署对 AWS CLI 或 AWS API 的编程请求（直接或使用 AWS SDK）。
@@ -86,6 +90,7 @@ Data Infrastructure Insights使用 AWS S3 作为存储数据收集器，从 AWS 
 
 
 
+[[iam-role]]
 == IAM 角色
 
 当使用_IAM 角色_身份验证（而不是 IAM 访问密钥身份验证）时，您必须确保您创建或指定的角色具有访问资源所需的适当权限。
@@ -102,6 +107,7 @@ Data Infrastructure Insights使用 AWS S3 作为存储数据收集器，从 AWS 
 
 
 
+[[mapping-amazon-tags-to-data-infrastructure-insights-annotations]]
 == 将 Amazon 标签映射到Data Infrastructure Insights注释
 
 AWS S3 作为存储数据收集器包含一个选项，允许您使用在 S3 上配置的标签填充Data Infrastructure Insights注释。注释的名称必须与 AWS 标签的名称完全相同。Data Infrastructure Insights将始终填充同名的文本类型注释，并将“尽最大努力”填充其他类型（数字、布尔值等）的注释。如果您的注释属于不同类型并且数据收集器无法填充它，则可能需要删除该注释并将其重新创建为文本类型。
@@ -110,6 +116,7 @@ AWS S3 作为存储数据收集器包含一个选项，允许您使用在 S3 上
 
 
 
+[[collecting-from-aws-child-accounts]]
 == 从 AWS 子账户收集
 
 Data Infrastructure Insights支持在单个 AWS 数据收集器内收集 AWS 的子账户。此集合的配置在 AWS 环境中执行：
@@ -132,6 +139,7 @@ link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.h
 
 
 
+[[troubleshooting]]
 == 故障排除
 
 关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

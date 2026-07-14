@@ -25,6 +25,7 @@ image:ChangeAnalytitcs_Main_Screen.png["Kubernetes Change Analytics 主屏幕，
 
 
 
+[[filtering]]
 == 筛选
 
 与Data Infrastructure Insights的所有功能一样，过滤更改列表非常直观：在页面顶部，输入或选择 Kubernetes 集群、命名空间或工作负载的值，或者通过选择 {+] 按钮添加您自己的过滤器。
@@ -35,6 +36,7 @@ image:ChangeAnalytitcs_Filtered_Timeline.png["工作负载时间线示例"]
 
 
 
+[[quick-status]]
 == 快速状态
 
 过滤区域下方是一些高级指标。左侧是警报的数量（警告和严重）。此数字包括_活动_警报以及_已解决_警报。要仅查看“活动”警报，请设置“状态”过滤器并选择“活动”。
@@ -51,6 +53,7 @@ image:ChangeAnalytitcs_ExploreWorkloadAlerts.png["更改分析工作负载探索
 
 
 
+[[detail-panel]]
 == 详细信息面板
 
 选择列表中的一项更改将打开一个面板，更详细地描述该更改。例如，选择失败的部署会显示部署的摘要，包括开始和结束时间、持续时间以及触发部署的位置，以及探索这些资源的链接。它还显示失败的原因、任何相关变化以及任何相关事件。

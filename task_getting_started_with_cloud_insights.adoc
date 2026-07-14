@@ -25,6 +25,7 @@ Data Infrastructure Insights提供三种类型的数据收集器：
 
 
 
+[[install-an-acquisition-unit]]
 == 安装采集单元
 
 如果您选择了“基础设施”数据收集器，则需要一个采集单元将数据注入Data Infrastructure Insights。您需要在要进行收集的数据中心的服务器或虚拟机上下载并安装采集单元软件。单个采集单元可用于多个数据收集器。
@@ -40,6 +41,7 @@ image:NewAUDetected.png["检测到新的 AU"]
 
 
 
+[[configure-the-data-collector-infrastructure]]
 == 配置数据收集器 - 基础设施
 
 对于_基础设施_数据收集器，您将被要求填写所呈现的数据收集器字段：
@@ -54,10 +56,12 @@ image:NewAUDetected.png["检测到新的 AU"]
 
 
 
+[[configure-the-data-collector-operating-systems-and-services]]
 == 配置数据收集器 - 操作系统和服务
 
 
 
+[[operating-system]]
 === 操作系统：
 
 对于_操作系统_数据收集器，选择一个平台（Linux、Windows）来安装Data Infrastructure Insights代理。您必须至少有一个代理来从服务收集数据。该代理还从主机本身收集数据，以供Data Infrastructure Insights使用。该数据在小部件等中被归类为“节点”数据。
@@ -68,6 +72,7 @@ image:NewAUDetected.png["检测到新的 AU"]
 
 
 
+[[services]]
 === 服务：
 
 对于_服务_数据收集者，单击图块即可打开该服务的说明页面。
@@ -81,6 +86,7 @@ image:NewAUDetected.png["检测到新的 AU"]
 
 
 
+[[add-dashboards]]
 == 添加仪表板
 
 根据您选择配置的初始数据收集器的类型（存储、交换机等），将导入一个或多个相关仪表板。例如，如果您配置了存储数据收集器，则会导入一组与存储相关的仪表板，并将其中一个设置为您的Data Infrastructure Insights主页。您可以从“*仪表板 > 显示所有仪表板*”列表更改主页。
@@ -89,6 +95,7 @@ image:NewAUDetected.png["检测到新的 AU"]
 
 
 
+[[thats-all-there-is-to-it]]
 == 这就是全部内容
 
 完成初始设置过程后，您的环境将开始收集数据。
@@ -102,6 +109,7 @@ image:NewAUDetected.png["检测到新的 AU"]
 
 
 
+[[useful-definitions]]
 == 有用的定义
 
 在讨论Data Infrastructure Insights数据收集器或功能时，以下定义可能会有用：

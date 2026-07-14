@@ -17,6 +17,7 @@ NOTE: 本页引用第三方说明，可能会有所变更。请参阅link:https:
 
 
 
+[[teams-setup]]
 == 团队设置：
 
 . 在 Teams 中，选择 kebab，然后搜索 Incoming Webhook。
@@ -29,6 +30,7 @@ image:Webhooks_Teams_Create_Webhook.png["Teams 中的传入 Webhook"]
 
 
 
+[[create-data-infrastructure-insights-webhook]]
 == 创建Data Infrastructure InsightsWebhook：
 
 . 在Data Infrastructure Insights中，导航到 *管理 > 通知* 并选择 *Webhooks* 选项卡。单击 *+Webhook* 创建一个新 webhook。
@@ -43,6 +45,7 @@ image:Webhooks-Teams_example.png["Teams Webhook 模板"]
 
 
 
+[[notifications-via-webhook]]
 == 通过 Webhook 发送通知
 
 要通过 webhook 通知事件，请在Data Infrastructure Insights中导航至 *Alerts > Monitors*，然后单击 *+Monitor* 以创建新的link:task_create_monitor.html["监视器"]。

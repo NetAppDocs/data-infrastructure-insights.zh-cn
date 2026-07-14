@@ -14,6 +14,7 @@ keywords: query, queries, modify, edit, delete, remove
 
 
 
+[[modifying-a-query]]
 == 修改查询
 
 .步骤
@@ -35,6 +36,7 @@ keywords: query, queries, modify, edit, delete, remove
 
 
 
+[[deleting-a-query]]
 == 删除查询
 
 要删除查询，请单击“查询”并选择“显示所有查询”，然后执行以下操作之一：

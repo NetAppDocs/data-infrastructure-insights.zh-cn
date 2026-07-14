@@ -18,6 +18,7 @@ summary: 法医实体页面
 
 
 
+[[examining-entity-information]]
 == 检查实体信息
 
 单击“*取证 > 活动取证*”，然后单击“实体”选项卡以访问实体页面。

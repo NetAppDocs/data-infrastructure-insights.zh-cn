@@ -18,6 +18,7 @@ summary: 如何创建注释。
 
 
 
+[[defining-annotations]]
 == 定义注释
 
 使用注释，您可以向资产添加符合您的业务需求的自定义业务特定数据。虽然Data Infrastructure Insights提供了一组默认注释，例如资产生命周期（生日或寿命终止）、建筑物或数据中心位置和层级，但您可能会发现您想以其他方式查看数据。
@@ -50,6 +51,7 @@ summary: 如何创建注释。
 
 
 
+[[manually-assigning-annotations-to-assets]]
 == 手动为资产分配注释
 
 为资产分配注释可以帮助您以与您的业务相关的方式对资产进行排序、分组和报告。虽然您可以使用注释规则自动将注释分配给特定类型的资产，但您可以使用资产页面将注释分配给单个资产。
@@ -81,12 +83,14 @@ summary: 如何创建注释。
 
 
 
+[[assigning-annotations-using-annotation-rules]]
 == 使用注释规则分配注释
 
 要根据您定义的标准自动将注释分配给资产，请配置注释规则。Data Infrastructure Insights根据这些规则将注释分配给资产。  Data Infrastructure Insights还提供了两个默认注释规则，您可以根据需要修改它们，如果不想使用它们，则可以删除它们。
 
 
 
+[[creating-annotation-rules]]
 === 创建注释规则
 
 作为手动将注释应用于单个资产的替代方法，您可以使用注释规则自动将注释应用于多个资产。当 Insight 评估注释规则时，在单个资产页面上手动设置的注释优先于基于规则的注释。

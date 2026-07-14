@@ -27,6 +27,7 @@ image:AIQ_Summary_Example.png["存储页面摘要"]
 
 
 
+[[opening-the-digital-advisor-page]]
 == 打开Digital Advisor页面
 
 单击“Digital Advisor”页面的链接时，如果您当前尚未登录到您的Digital Advisor帐户，则必须执行以下步骤来查看存储节点的Digital Advisor页面。
@@ -37,12 +38,14 @@ image:AIQ_Summary_Example.png["存储页面摘要"]
 
 
 
+[[querying-for-risks]]
 == 查询风险
 
 在Data Infrastructure Insights中，您可以将 *monitoring.count* 列添加到存储或存储节点查询中。如果返回结果包含Digital Advisor-Monitored 存储系统，则 monitoring.count 列将显示该存储系统或节点的风险数量。
 
 
 
+[[dashboards]]
 == 仪表板
 
 您可以构建小部件（例如饼图、表格小部件、条形图、柱形图、散点图和单值小部件），以便可视化由Digital Advisor监控的NetApp Clustered Data ONTAP系统的存储和存储节点的对象风险。在这些小部件中，可以选择“对象风险”作为列或指标，其中存储或存储节点是关注的对象。

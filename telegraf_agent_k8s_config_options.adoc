@@ -18,6 +18,7 @@ summary: 使用 AgentConfiguration 选项配置NetApp Kubernetes Monitoring Oper
 
 
 
+[[sample-agentconfiguration-file]]
 == 示例代理配置文件
 
 下面是一个示例 _AgentConfiguration_ 文件，其中包含每个选项的说明。

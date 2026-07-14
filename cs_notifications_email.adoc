@@ -18,6 +18,7 @@ keywords: email, notifications, alerts, warnings, attacks
 
 
 
+[[potential-attack-alerts-and-warnings]]
 == 潜在攻击警报和警告
 
 要发送_潜在攻击_警报通知，请在_发送潜在攻击警报_部分输入收件人的电子邮件地址。对于警报上的每个操作，都会向警报收件人列表发送电子邮件通知。
@@ -26,6 +27,7 @@ keywords: email, notifications, alerts, warnings, attacks
 
 
 
+[[agent-and-data-collector-health-monitoring]]
 == 代理和数据收集器健康监控
 
 您可以通过通知监控代理和数据源的健康状况。
@@ -43,6 +45,7 @@ keywords: email, notifications, alerts, warnings, attacks
 
 
 
+[[receiving-agent-and-data-collector-upgrade-notifications]]
 == 接收代理和数据收集器升级通知
 
 * 在“数据收集健康警报”中输入电子邮件 ID。
@@ -52,6 +55,7 @@ keywords: email, notifications, alerts, warnings, attacks
 
 
 
+[[troubleshooting]]
 == 故障排除
 
 |===

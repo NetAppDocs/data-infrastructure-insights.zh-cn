@@ -37,16 +37,19 @@ image:QuerySelectColumns.png["选择列"]
 
 
 
+[[see-it-in-action]]
 == 观看实际操作
 
 link:https://media.netapp.com/video-detail/d0530e0b-a222-52e7-92b1-dbeeee41b712/explore-and-analyze-with-queries-in-data-infrastructure-insights["使用Data Infrastructure Insights中的查询进行探索和分析（视频）"]
 
 
 
+[[choosing-aggregation-units-conditional-formatting]]
 == 选择聚合、单位、条件格式
 
 
 
+[[aggregation-and-units]]
 === 聚合和单位
 
 对于“值”列，您可以通过选择显示值的聚合方式以及选择显示这些值的单位来进一步优化查询结果。通过选择列顶角的“三个点”菜单可以找到这些选项。
@@ -87,16 +90,19 @@ image:Query_Page_Conditional_Formatting.png["查询页面上的条件格式"]
 
 
 
+[[save]]
 === 保存
 
 配置查询以显示您想要的结果后，您可以单击“保存”按钮保存查询以供将来使用。给它一个有意义且独特的名字。
 
 
 
+[[more-on-filtering]]
 == 有关过滤的更多信息
 
 
 
+[[wildcards-and-expressions]]
 === 通配符和表达式
 
 当您在查询或仪表板小部件中过滤文本或列表值时，当您开始输入时，系统会向您显示基于当前文本创建*通配符过滤器*的选项。选择此选项将返回与通配符表达式匹配的所有结果。您还可以使用 NOT 或 OR 创建*表达式*，或者您可以选择“无”选项来过滤字段中的空值。
@@ -111,6 +117,7 @@ image:Type-Ahead-Example-Wildcard-DirectSelect.png["通配符过滤结果"]
 
 
 
+[[refining-filters]]
 === 精炼过滤器
 
 您可以使用以下内容来优化过滤器：
@@ -142,6 +149,7 @@ image:Type-Ahead-Example-Wildcard-DirectSelect.png["通配符过滤结果"]
 
 
 
+[[filtering-for-boolean-values]]
 === 过滤布尔值
 
 当过滤布尔值时，您可能会看到以下过滤选项：
@@ -154,6 +162,7 @@ image:Type-Ahead-Example-Wildcard-DirectSelect.png["通配符过滤结果"]
 
 
 
+[[what-do-i-do-now-that-i-have-query-results]]
 == 现在我有了查询结果，我该做什么？
 
 查询提供了一个简单的地方来添加注释或将应用程序分配给资产。请注意，您只能将应用程序或注释分配给您的库存资产（磁盘、存储等）。集成指标不能承担注释或应用程序分配。
@@ -164,6 +173,7 @@ image:QueryVolumeBulkActions.png["查询批量操作示例"]
 
 
 
+[[annotation-rules-require-query]]
 == 注释规则需要查询
 
 如果您正在配置link:task_create_annotation_rules.html["标注规则"]，每个规则都必须有一个可以使用的底层查询。但正如您上面所看到的，查询可以根据需要进行广泛或狭窄的查询。

@@ -16,12 +16,14 @@ image:Kubernetes_Detail_Page_new.png["集群详细信息页面"]
 
 
 
+[[namespace-node-and-pod-counts]]
 == 命名空间、节点和 Pod 数量
 
 页面顶部的计数显示集群中命名空间、节点和 pod 的总数，以及当前处于警报和待处理的 popd 数量。
 
 
 
+[[shared-resources-and-saturation]]
 == 共享资源和饱和度
 
 详细信息页面的右上角是您的集群饱和度（当前百分比）以及显示近期趋势随时间变化的图表。集群饱和度是每个时间点 CPU、内存或存储饱和度的最高值。
@@ -32,6 +34,7 @@ image:Kubernetes_Detail_Page_new.png["集群详细信息页面"]
 
 
 
+[[namespaces]]
 == 命名空间
 
 命名空间选项卡显示 Kubernetes 环境中所有命名空间的列表，显示 CPU 和内存使用情况以及每个命名空间中的工作负载数量。单击名称链接来探索每个命名空间。
@@ -40,6 +43,7 @@ image:Kubernetes_Namespace_tab_new.png["K8s 环境中当前命名空间的列表
 
 
 
+[[workloads]]
 == 工作负载
 
 类似地，“工作负载”选项卡显示每个命名空间中的工作负载列表，再次显示 CPU 和内存使用情况。单击命名空间链接即可深入到每个链接。
@@ -48,6 +52,7 @@ image:Kubernetes_Workloads_tab_new.png["K8s 环境中当前命名空间的列表
 
 
 
+[[the-cluster-wheel]]
 == 集群“轮子”
 
 image:Kubernetes_Wheel_Section.png["集群轮"]
@@ -74,6 +79,7 @@ image:Kubernetes_Capacity_Info.png["节点容量和分配"]
 
 
 
+[[a-note-about-the-gauges]]
 == 关于仪表的说明
 
 内存和 CPU 仪表显示三种颜色，因为它们显示与_可分配容量_和_总容量_相关的_已使用_。

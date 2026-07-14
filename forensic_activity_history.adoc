@@ -18,6 +18,7 @@ summary: 法医活动历史数据
 
 
 
+[[examining-all-activity-data]]
 == 检查所有活动数据
 
 单击“*取证 > 活动取证*”，然后单击“*所有活动*”选项卡以访问“所有活动”页面。此页面概述了租户上的活动，重点介绍了以下信息：
@@ -78,6 +79,7 @@ image:ws_forensics_slideout.png["取证页面显示滑出式显示用户活动"]
 
 
 
+[[filtering-forensic-activity-history-data]]
 == 过滤取证活动历史数据
 
 您可以使用两种方法来过滤数据。
@@ -140,6 +142,7 @@ image:Forensic_Activity_Filter.png["实体文件管理器，宽度=500"]
 
 
 
+[[activity-forensics-filter-examples]]
 == 活动取证过滤器示例：
 
 |===
@@ -183,22 +186,26 @@ image:Forensic_Activity_Filter.png["实体文件管理器，宽度=500"]
 
 
 
+[[sorting-forensic-activity-history-data]]
 == 对取证活动历史数据进行排序
 
 您可以按时间、用户、源 IP、活动、实体类型、第一级文件夹（根）、第二级文件夹、第三级文件夹和第四级文件夹对活动历史数据进行排序。默认情况下，表格按时间降序排列，这意味着最新的数据将首先显示。  _Device_ 和 _Protocol_ 字段的排序被禁用。
 
 
 
+[[user-guide-for-asynchronous-exports]]
 == 异步导出用户指南
 
 
 
+[[overview]]
 === 概述
 
 存储工作负载安全中的异步导出功能旨在处理大量数据导出。
 
 
 
+[[step-by-step-guide-exporting-data-with-asynchronous-exports]]
 === 分步指南：使用异步导出导出数据
 
 . *启动导出*：选择所需的导出时间长度和过滤器，然后单击导出按钮。
@@ -216,6 +223,7 @@ image:Forensic_Activity_Filter.png["实体文件管理器，宽度=500"]
 
 
 
+[[column-selection-for-all-activity]]
 == 所有活动的列选择
 
 _所有活动_表默认显示选定列。要添加、删除或更改列，请单击表格右侧的齿轮图标，然后从可用列列表中进行选择。
@@ -224,12 +232,14 @@ image:CloudSecure_ActivitySelection.png["活动选择器，宽度=30%"]
 
 
 
+[[activity-history-retention]]
 == 活动历史记录保留
 
 对于活跃的工作负载安全环境，活动历史记录将保留 13 个月。
 
 
 
+[[applicability-of-filters-in-forensics-page]]
 == 取证页面中过滤器的适用性
 
 |===
@@ -252,6 +262,7 @@ image:CloudSecure_ActivitySelection.png["活动选择器，宽度=30%"]
 |===
 
 
+[[path-search]]
 == 路径搜索
 
 带有和不带有 / 的搜索结果会有所不同
@@ -284,6 +295,7 @@ image:CloudSecure_ActivitySelection.png["活动选择器，宽度=30%"]
 |===
 
 
+[[local-root-svm-user-activity-changes]]
 == 本地根 SVM 用户活动发生变化
 
 如果本地根 SVM 用户正在执行任何活动，则现在将在用户名中考虑安装 NFS 共享的客户端的 IP，该 IP 将在取证活动和用户活动页面中显示为 root@<ip-address-of-the-client>。
@@ -298,6 +310,7 @@ image:CloudSecure_ActivitySelection.png["活动选择器，宽度=30%"]
 
 
 
+[[troubleshooting]]
 == 故障排除
 
 |===

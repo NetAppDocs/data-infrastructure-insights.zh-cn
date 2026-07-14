@@ -121,6 +121,7 @@ summary: 配置工作负载安全 LDAP 用户目录收集器
 |===
 
 
+[[testing-your-user-directory-collector-configuration]]
 == 测试您的用户目录收集器配置
 
 您可以使用以下步骤验证 LDAP 用户权限和属性定义：
@@ -140,6 +141,7 @@ image:CloudSecure_LDAPDialog.png["LDAP 连接"]
 
 
 
+[[troubleshooting-ldap-directory-collector-configuration-errors]]
 == 排除 LDAP 目录收集器配置错误
 
 下表描述了收集器配置期间可能出现的已知问题和解决方法：

@@ -21,6 +21,7 @@ NOTE: 本文档涉及Data Infrastructure Insights报告功能，该功能在Data
 
 
 
+[[odata]]
 == 奥达塔
 
 Data Infrastructure Insights报告 API 遵循link:https://www.odata.org/["OData v4"]（开放数据协议）标准用于查询报告数据库。如需了解更多信息或了解更多信息，请查看link:https://www.odata.org/getting-started/basic-tutorial/["本教程"]在 OData 上。
@@ -29,6 +30,7 @@ Data Infrastructure Insights报告 API 遵循link:https://www.odata.org/["OData 
 
 
 
+[[generating-an-apikey]]
 == 生成 APIKey
 
 阅读更多link:API_Overview.html["Data Infrastructure InsightsAPI"]。
@@ -48,6 +50,7 @@ APIkey 适用于<<synchronous-or-asynchronous,_Sync_ 或 _Async_>>。
 
 
 
+[[direct-query-of-tables]]
 == 直接查询表
 
 有了 API 密钥，现在就可以直接查询报告数据库。为了显示目的，长 URL 可能会简化为 \https://.../odata/ 而不是完整的 \https://< Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/
@@ -63,6 +66,7 @@ APIkey 适用于<<synchronous-or-asynchronous,_Sync_ 或 _Async_>>。
 
 
 
+[[rest-api-examples]]
 == REST API 示例
 
 所有调用的 URL 为 _\https://< Data Infrastructure Insights URL>/rest/v1/dwh-management/odata_。
@@ -107,6 +111,7 @@ Result:
 ....
 
 
+[[helpful-hints]]
 == 有用的提示
 
 使用报告 API 查询时请记住以下几点。
@@ -133,6 +138,7 @@ Result:
 
 
 
+[[synchronous-or-asynchronous]]
 == 同步还是异步？
 
 默认情况下，API 命令将以同步模式运行，这意味着您发送请求并立即返回响应。但是，有时查询可能需要很长时间才能执行，这可能导致请求超时。为了解决这个问题，您可以异步执行请求。在异步模式下，请求将返回一个URL，可以通过该URL监控执行情况。  URL 准备就绪后将返回结果。

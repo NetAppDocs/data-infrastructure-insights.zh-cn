@@ -1,0 +1,107 @@
+---
+sidebar: sidebar 
+permalink: task_dc_nutanix_ahv.html 
+keywords: data collector, Nutanix, AHV Series 
+summary: 配置 Nutanix AHV 数据收集器。 
+---
+= Nutanix AHV 数据采集器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nutanix AHV 收集器使用 Prism Central v4 REST API（集群管理和虚拟机管理命名空间）从 Nutanix Prism Central 获取 Nutanix Acropolis Hypervisor (AHV) 清单和虚拟化性能。它报告虚拟化 OData 模型中的数据（VirtualizationRoot 及相关实体：主机、虚拟机、数据存储、虚拟磁盘和关系）。
+
+
+
+[[terminology]]
+== Terminology
+
+[cols="50,50"]
+|===
+| 供应商/型号术语 | Data Infrastructure Insights术语 
+
+
+| AHV 节点（主机） | 主机 
+
+
+| Prism Central 集群 | 虚拟机监控程序（虚拟服务器） 
+
+
+| Acropolis VM | 虚拟机 
+
+
+| 存储容器 | 数据存储 
+
+
+| ADSF 卷组 | LUN 
+
+
+| VM 磁盘 | 虚拟磁盘 
+|===
+注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情况。
+
+
+
+[[requirements]]
+== 要求
+
+* Prism Central IP 地址或完全限定域名
+* Prism Central 本地或 LDAP 用户名和密码（只读帐户足以满足清单和性能要求；无需管理员权限）
+* 端口要求：HTTPS 9440
+* Prism Central 版本 pc.2023.x 或更高版本（v3 API）；建议使用 pc.7.x 或更高版本（v4 API）
+* 性能指标需要具有 API v4.0.b1 或更高版本 (pc.7.3+) 的 Prism Central。在旧版本中，仍会收集清单，但不会报告性能数据。
+
+
+
+
+[[configuration]]
+== 配置
+
+[cols="50,50"]
+|===
+| 字段 | 描述 
+
+
+| Prism Central IP 地址 | Prism Central 实例的 IP 地址或 FQDN 
+
+
+| 用户名 | Prism Central 用户名 
+
+
+| 密码 | Prism Central 密码 
+|===
+
+
+[[advanced-configuration]]
+== 高级配置
+
+[cols="50,50"]
+|===
+| 字段 | 描述 
+
+
+| TCP 端口 | 用于连接到 Prism Central 的 TCP 端口。默认值为 9440。 
+
+
+| 库存轮询间隔（分钟） | 库存调查之间的间隔。默认时间间隔为 60 分钟。 
+
+
+| 性能轮询间隔（秒） | 性能轮询之间的间隔。默认值为 300 秒。 
+
+
+| HTTP超时（秒） | HTTP 请求超时。默认值为 60 秒。 
+
+
+| HTTP重试次数 | 瞬时失败时 HTTP 重试的次数。默认值为 3。 
+|===
+
+
+[[troubleshooting]]
+== 故障排除
+
+关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

@@ -18,6 +18,7 @@ keywords: event, checker, rate, sizing, cloud secure
 
 
 
+[[requirements]]
 == 要求：
 
 * 集群 IP
@@ -80,6 +81,7 @@ B+C应该小于A，否则Agent机器会监控失败。
 
 
 
+[[example]]
 == 示例
 
 假设我们有三个 SVMS，分别每秒生成 100、200 和 300 个事件。
@@ -141,6 +143,7 @@ Overall svm audit_svm is generating 300 events/sec
  [root@ci-cs-data agent]#
 
 
+[[troubleshooting]]
 == 故障排除
 
 |===

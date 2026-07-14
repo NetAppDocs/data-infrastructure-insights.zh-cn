@@ -18,6 +18,7 @@ Data Infrastructure Insights使用 VAST DataStore 数据收集器来收集库存
 
 
 
+[[terminology]]
 == Terminology
 
 对于Data Infrastructure Insights获取的每种资产类型，都会显示该资产最常用的术语。查看或排除此数据收集器的故障时，请记住以下术语：
@@ -66,6 +67,7 @@ Data Infrastructure Insights使用 VAST DataStore 数据收集器来收集库存
 
 
 
+[[requirements]]
 == 要求
 
 * VAST DataStore 系统 IP 地址或完全限定域名
@@ -75,9 +77,10 @@ Data Infrastructure Insights使用 VAST DataStore 数据收集器来收集库存
 
 
 
+[[configuration]]
 == 配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -92,9 +95,10 @@ Data Infrastructure Insights使用 VAST DataStore 数据收集器来收集库存
 |===
 
 
+[[advanced-configuration]]
 == 高级配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -112,15 +116,17 @@ Data Infrastructure Insights使用 VAST DataStore 数据收集器来收集库存
 |===
 
 
+[[troubleshooting]]
 == 故障排除
 
 如果您在使用此数据收集器时遇到问题，请尝试以下操作：
 
 
 
+[[inventory]]
 === 清单
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 问题： | 尝试一下： 
 

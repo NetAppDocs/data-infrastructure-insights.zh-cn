@@ -14,9 +14,10 @@ keywords: data collector, NetApp, Cloud, ONTAP
 
 
 
+[[configuration]]
 == 配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -31,9 +32,10 @@ keywords: data collector, NetApp, Cloud, ONTAP
 |===
 
 
+[[advanced-configuration]]
 == 高级配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -75,6 +77,7 @@ keywords: data collector, NetApp, Cloud, ONTAP
 |===
 
 
+[[troubleshooting]]
 == 故障排除
 
 关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

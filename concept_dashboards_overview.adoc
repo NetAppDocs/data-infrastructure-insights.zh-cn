@@ -21,6 +21,7 @@ IMPORTANT: 这些部分中的示例仅用于解释目的，并不涵盖所有可
 
 
 
+[[creating-a-dashboard]]
 == 创建仪表板
 
 您可以在以下两个位置之一创建新的仪表板：
@@ -31,12 +32,14 @@ IMPORTANT: 这些部分中的示例仅用于解释目的，并不涵盖所有可
 
 
 
+[[see-it-in-action]]
 == 观看实际操作
 
 link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8["使用NetApp创建强大的仪表板（视频）"]
 
 
 
+[[dashboard-controls]]
 == 仪表板控件
 
 仪表板屏幕有几个控件：
@@ -55,6 +58,7 @@ link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8[
 
 
 
+[[widget-types]]
 == 小部件类型
 
 您可以从以下小部件类型中进行选择：
@@ -107,6 +111,7 @@ image:time_bar_chart.png["显示日志数据的时间条形图示例，宽度=20
 
 
 
+[[setting-a-dashboard-as-your-home-page]]
 == 将仪表板设置为主页
 
 您可以使用以下任一方法选择将哪个仪表板设置为租户的*主页*：

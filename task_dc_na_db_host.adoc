@@ -14,15 +14,17 @@ summary: 通用数据库主机解析器收集器
 
 
 
+[[terminology]]
 == Terminology
 
 Data Infrastructure Insights从该收集器获取库存。
 
 
 
+[[configuration]]
 == 配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -43,9 +45,10 @@ Data Infrastructure Insights从该收集器获取库存。
 |===
 
 
+[[advanced-configuration]]
 == 高级配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 

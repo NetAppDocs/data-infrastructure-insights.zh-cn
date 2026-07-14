@@ -18,6 +18,7 @@ keywords: data collector, queries, create, google, cloud, volumes,
 
 
 
+[[service-account-requirements]]
 == 服务帐户要求
 
 * 您必须按照link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["创建/管理服务帐户"]。该服务帐户由唯一 ID（称为 _clientId_）标识，该 ID 将用作用户名。
@@ -27,6 +28,7 @@ keywords: data collector, queries, create, google, cloud, volumes,
 
 
 
+[[configuration]]
 == 配置
 
 [cols="50,50"]
@@ -53,6 +55,7 @@ keywords: data collector, queries, create, google, cloud, volumes,
 |===
 
 
+[[advanced-configuration]]
 == 高级配置
 
 [cols="50,50"]
@@ -73,6 +76,7 @@ keywords: data collector, queries, create, google, cloud, volumes,
 |===
 
 
+[[troubleshooting]]
 == 故障排除
 
 关于此数据收集器的更多信息，请参阅link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。

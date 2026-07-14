@@ -21,24 +21,28 @@ NOTE: 报告功能可在Data Infrastructure Insights中使用link:concept_subscr
 
 
 
+[[inventory-datamart]]
 == 库存数据集市
 
 下图描述了库存数据集市。
 
 
 
+[[annotations]]
 === 标注
 
 image:annotations.png["标注"]
 
 
 
+[[applications]]
 === 应用程序
 
 image:apps_annot.jpg["应用程序"]
 
 
 
+[[kubernetes-metrics]]
 === Kubernetes 指标
 
 image:k8s.jpg["Kubernetes"]
@@ -75,42 +79,49 @@ image:k8s_workload_metrics_fact.jpg["Kubernetes 工作负载指标事实"]
 
 
 
+[[nas]]
 === NAS
 
 image:nas.jpg["nas"]
 
 
 
+[[paths-and-violations]]
 === 路径和违规
 
 image:logical.jpg["路径和违规"]
 
 
 
+[[port-connectivity]]
 === 端口连接
 
 image:connectivity.jpg["端口连接"]
 
 
 
+[[san-fabric]]
 === SAN 网络结构
 
 image:fabric.jpg["SAN 结构"]
 
 
 
+[[storage]]
 === 存储
 
 image:storage.jpg["存储"]
 
 
 
+[[storage-node]]
 === 存储节点
 
 image:storage_node.jpg["存储节点"]
 
 
 
+[[vm]]
 === VM
 
 image:vm.jpg["virtual machine"]
@@ -118,78 +129,91 @@ image:vm.jpg["virtual machine"]
 '''
 
 
+[[capacity-datamart]]
 == 容量数据集市
 
 下图描述了容量数据集市。
 
 
 
+[[chargeback]]
 === 退款
 
 image:Chargeback_Fact.jpg["退款"]
 
 
 
+[[disk-group-capacity]]
 === 磁盘组容量
 
 image:Disk_Group_Capacity.jpg["磁盘组容量"]
 
 
 
+[[file-system-utilization]]
 === 文件系统利用率
 
 image:fs_util.jpg["文件系统利用率"]
 
 
 
+[[internal-volume-capacity]]
 === 内部容积
 
 image:Internal_Volume_Capacity_Fact.jpg["内部容积"]
 
 
 
+[[kubernetes-pv-capacity]]
 === Kubernetes PV 容量
 
 image:k8s_pvc_capacity_fact.jpg["Kubernetes PV 容量"]
 
 
 
+[[port-capacity]]
 === 港口容量
 
 image:ports.png["港口容量"]
 
 
 
+[[qtree-capacity]]
 === qtree 容量
 
 image:Qtree_Capacity_Fact.jpg["qtree 容量"]
 
 
 
+[[storage-capacity-efficiency]]
 === 存储容量效率
 
 image:efficiency.jpg["存储容量效率"]
 
 
 
+[[storage-and-storage-pool-capacity]]
 === 存储和存储池容量
 
 image:Storage_and_Storage_Pool_Capacity_Fact.jpg["存储和存储池容量"]
 
 
 
+[[storage-node-capacity]]
 === 存储节点容量
 
 image:Storage_Node_Capacity_Fact.jpg["存储节点容量"]
 
 
 
+[[vm-capacity]]
 === VM 容量
 
 image:VM_Capacity_Fact.jpg["VM 容量"]
 
 
 
+[[volume-capacity]]
 === 容积容量
 
 image:Volume_Capacity.jpg["容积容量"]
@@ -197,162 +221,189 @@ image:Volume_Capacity.jpg["容积容量"]
 '''
 
 
+[[performance-datamart]]
 == 绩效数据集市
 
 下图描述了性能数据集市。
 
 
 
+[[application-volume-hourly-performance]]
 === 应用程序量每小时表现
 
 image:application_performance_fact.jpg["应用程序量每小时表现"]
 
 
 
+[[cluster-switch-performance]]
 === 集群交换机性能
 
 image:cluster_switch_performance_fact.jpg["集群交换机性能"]
 
 
 
+[[disk-daily-performance]]
 === 磁盘每日表现
 
 image:disk_daily_performance_fact.jpg["磁盘每日表现"]
 
 
 
+[[disk-hourly-performance]]
 === 磁盘每小时性能
 
 image:disk_hourly_performance_fact.jpg["磁盘每小时性能"]
 
 
 
+[[host-hourly-performance]]
 === 主持人每小时表现
 
 image:host_performance_fact.jpg["主持人每小时表现"]
 
 
 
+[[host-vm-daily-performance]]
 === 主机虚拟机每日性能
 
 image:host_vm_daily_performance_fact.jpg["主机虚拟机每日性能"]
 
 
 
+[[host-vm-hourly-performance]]
 === 主机虚拟机每小时性能
 
 image:host_vm_hourly_performance_fact.jpg["主机虚拟机每小时性能"]
 
 
 
+[[internal-volume-hourly-performance]]
 === 内部交易量每小时表现
 
 image:internal_volume_performance_fact.jpg["内部交易量每小时表现"]
 
 
 
+[[internal-volume-daily-performance]]
 === 内部交易量每日表现
 
 image:internal_volume_daily_performance_fact.jpg["内部交易量每日表现"]
 
 
 
+[[qtree-daily-performance]]
 === Qtree 每日表现
 
 image:QtreeDailyPerformanceFact.jpg["Qtree 每日表现"]
 
 
 
+[[qtree-hourly-perfromance]]
 === Qtree 每小时性能
 
 image:QtreeHourlyPerformanceFact.jpg["Qtree 每小时性能"]
 
 
 
+[[storage-node-daily-performance]]
 === 存储节点每日性能
 
 image:storage_node_daily_performance_fact.jpg["存储节点每日性能"]
 
 
 
+[[storage-node-hourly-performance]]
 === 存储节点每小时性能
 
 image:storage_node_hourly_performance_fact.jpg["存储节点每小时性能"]
 
 
 
+[[switch-hourly-performance-for-host]]
 === 主机的交换机每小时性能
 
 image:switch_performance_for_host_hourly_fact.jpg["主机的交换机每小时性能"]
 
 
 
+[[switch-hourly-performance-for-port]]
 === 端口每小时切换性能
 
 image:switch_performance_for_port_hourly_fact.jpg["端口每小时切换性能"]
 
 
 
+[[switch-hourly-performance-for-storage]]
 === 存储交换机每小时性能
 
 image:switch_performance_for_storage_hourly_fact.jpg["存储交换机每小时性能"]
 
 
 
+[[switch-hourly-performance-for-tape]]
 === 磁带的每小时切换性能
 
 image:switch_performance_for_tape_hourly_fact.jpg["磁带的每小时切换性能"]
 
 
 
+[[vm-performance]]
 === VM 性能
 
 image:vm_hourly_performance_fact.png["VM 性能"]
 
 
 
+[[vm-daily-performance-for-host]]
 === 主机虚拟机每日性能
 
 image:vm_daily_performance_fact.png["主机虚拟机每日性能"]
 
 
 
+[[vm-hourly-performance-for-host]]
 === 主机虚拟机每小时性能
 
 image:vmware_host_performance_fact.jpg["VM 每小时主机性能"]
 
 
 
+[[vm-daily-performance-for-host]]
 === 主机虚拟机每日性能
 
 image:vm_daily_performance_fact.png["主机虚拟机每日性能"]
 
 
 
+[[vm-hourly-performance-for-host]]
 === 主机虚拟机每小时性能
 
 image:vm_hourly_performance_fact.png["主机虚拟机每小时性能"]
 
 
 
+[[vmdk-daily-performance]]
 === VMDK 每日性能
 
 image:vmdk_daily_performance_fact.jpg["VMDK 每日性能"]
 
 
 
+[[vmdk-hourly-performance]]
 === VMDK 每小时性能
 
 image:vmdk_hourly_performance_fact.jpg["VMDK 每小时性能"]
 
 
 
+[[volume-hourly-performance]]
 === 每小时成交量表现
 
 image:volume_performance_fact.jpg["每小时成交量表现"]
 
 
 
+[[volume-daily-performance]]
 === 成交量每日表现
 
 image:volume_daily_performance_fact.jpg["成交量每日表现"]

@@ -14,6 +14,7 @@ Data Infrastructure Insights使用Brocade Enterprise Fabric Connectivity Manager
 
 
 
+[[requirements]]
 == 要求
 
 * EFCM 服务器的网络地址或完全限定域名
@@ -25,9 +26,10 @@ Data Infrastructure Insights使用Brocade Enterprise Fabric Connectivity Manager
 
 
 
+[[configuration]]
 == 配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -42,9 +44,10 @@ Data Infrastructure Insights使用Brocade Enterprise Fabric Connectivity Manager
 |===
 
 
+[[advanced-configuration]]
 == 高级配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 

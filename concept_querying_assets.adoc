@@ -22,12 +22,14 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 
 
 
+[[inventory-assets]]
 == 库存资产
 
 所有库存（也称为基础设施）资产类型（存储、交换机、VM、Application 等）都可以在查询、仪表板小部件和自定义资产登录页面中使用。筛选器、表达式和显示可用的字段和计数器因资产类型而异。
 
 
 
+[[integration-metrics]]
 == 集成指标
 
 除了查询库存资产及其相关性能指标之外，您还可以查询*集成数据*指标，例如由 Kubernetes 或 Docker 生成的指标，或ONTAP高级指标提供的指标。
@@ -36,6 +38,7 @@ image:QueryPageFilter.png["集成查询过滤器示例"]
 
 
 
+[[sharing-queries]]
 == 共享查询
 
 通过选择谁可以查看和编辑查询来控制对查询的访问。默认情况下，新查询是私有的，仅对您可见，您可以选择与特定用户或具有灵活权限级别（只读或编辑）的整个组织共享它们。

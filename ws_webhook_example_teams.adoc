@@ -21,6 +21,7 @@ NOTE: 本页引用第三方说明，可能会有变更。请参阅link:https://d
 
 
 
+[[teams-setup]]
 == 团队设置：
 
 . 在 Teams 中，选择 kebab，然后搜索 Incoming Webhook。
@@ -33,6 +34,7 @@ image:Webhooks_Teams_Create_Webhook.png["Teams 中的传入 Webhook"]
 
 
 
+[[create-workload-security-teams-webhook]]
 == 创建工作负载安全团队 Webhook：
 
 . 导航到“管理”>“通知”，然后选择“工作负载安全 Webhooks”选项卡。选择 _+ Webhook_ 来创建一个新的 webhook。
@@ -46,6 +48,7 @@ image:ws_webhook_teams_example.png["工作负载安全团队 webhook 示例"]
 
 
 
+[[steps-for-creating-teams-notification-with-adaptive-card-template]]
 === 使用 Adaptive Card 模板创建 Teams 通知的步骤
 
 . 将邮件正文替换为以下模板：
@@ -140,6 +143,7 @@ image:ws_webhook_teams_example.png["工作负载安全团队 webhook 示例"]
 
 
 
+[[notifications-via-webhook]]
 == 通过 Webhook 发送通知
 
 要通过 webhook 通知事件，请导航至_工作负载安全 > 策略_。选择“_+攻击策略_”或“_+警告策略_”。

@@ -14,9 +14,10 @@ summary: 配置 Cohesity SmartFiles 数据收集器。
 
 
 
+[[configuration]]
 == 配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -31,9 +32,10 @@ summary: 配置 Cohesity SmartFiles 数据收集器。
 |===
 
 
+[[advanced-configuration]]
 == 高级配置
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | 字段 | 描述 
 
@@ -48,6 +50,7 @@ summary: 配置 Cohesity SmartFiles 数据收集器。
 |===
 
 
+[[troubleshooting]]
 == 故障排除
 
 更多信息可从link:concept_requesting_support.html["支持"]页面或在link:reference_data_collector_support_matrix.html["数据收集器支持矩阵"]。
