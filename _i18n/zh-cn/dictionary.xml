@@ -14072,8 +14072,6 @@
   <block id="810bac3bcbfe61628b10fe3df2e0ea96" category="paragraph">管理员可以在 Admin &gt; Notifications 的"Login Banner"选项卡上设置消息。</block>
   <block id="22f60aff39394bad553a00e2940bdf11" category="paragraph">消息支持基本 Markdown，因此可以应用粗体、斜体、表格等格式。</block>
   <block id="6a46079dd2d659655fc832470519e71a" category="paragraph">选择用户仅在下次登录时看到消息，还是在每次后续登录时看到消息。</block>
-  <block id="6a5f1dd41e7d3fa22fbd71d29b46cea4" category="inline-image-macro">登录横幅设置</block>
-  <block id="bd6c3bd0a46b9e6da4828acea4a9e315" category="paragraph"><block ref="bd6c3bd0a46b9e6da4828acea4a9e315" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1ef61a1b7e25b910ec7beca0741bd208" category="paragraph">请注意，用户_必须_确认登录消息才能关闭它。关闭后，将显示任何其他弹出窗口（新功能更新、服务条款更新等）。</block>
   <block id="38f64824b0d19083b9c439a8b4af41e4" category="admonition">在服务器/VM 上安装代理后，Data Infrastructure Insights 除了从您配置的任何数据收集器收集数据外，还会从该系统收集指标。这些指标作为"节点"指标收集。</block>
   <block id="7fa36585f976625a51b4f3be0f46f0b5" category="cell">如果您有自定义或私有 docker 存储库，并且尚未配置 Kubernetes Monitoring Operator 以正确识别它，则可能会看到这些错误。<block ref="2d47cbc88497421e2fe69677ce7d4cef" category="inline-xref-macro-rx"></block>有关自定义/私有存储库的配置。</block>
@@ -14176,4 +14174,29 @@
   <block id="4f23d2244ea630f361d554b54b77bf03" category="list-text">通过 REST API 在端口 6443 上访问 Red Hat OpenShift Virtualization 服务器的 IP 地址</block>
   <block id="427f91a8692cb3d3ee52ca20ff3b659c" category="cell">用于与 RHOV 进行 HTTPS 通信的端口。默认值为 6443。</block>
   <block id="635a6e63b01914992d3584137f9e6ba6" category="sidebar">Nutanix AHV</block>
+  <block id="a257f7f4b2f6e07845ce567df142ad00" category="section-title">2026年7月</block>
+  <block id="8014692a31dc15996a299cb6c0683d99" category="section-title">新的 AI Assistant 起始页</block>
+  <block id="217f492cb52cc14d717c54a81afbacfe" category="paragraph">DII AI Assistant 现在具有专用的起始页面，将智能基础设施分析置于核心位置。即时开始新对话，一键恢复上一个会话，或使用建议的提示快速开始。</block>
+  <block id="dac1263103d1a0aa0f29eb002af291af" category="inline-image-macro">AI 仪表板默认，width=800</block>
+  <block id="6c78ab210f62dbc85fe22910374ff62b" category="paragraph"><block ref="6c78ab210f62dbc85fe22910374ff62b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7bd22707614b54a5cb3a8b8f12117bb9" category="paragraph">从导航菜单中的 *AI Assistant* 访问起始页面，或使用左上角的"星星"图标从任何位置打开 AI Assistant。</block>
+  <block id="8946b454436a3b11aac461eaa734adfe" category="inline-image-macro">AI 助手导航菜单，宽度=600</block>
+  <block id="2c8265bfd753072f003bc24b1df77111" category="inline-image-macro">AI Assistant 可随时随地访问，width=300</block>
+  <block id="9f6f73922ecce265167332ab3cf87f92" category="paragraph"><block ref="f633ce7b4fef8820f87a799ad31a7cb5" category="inline-image-macro-rx" type="image"></block> <block ref="fefcd3a065be75939d8d47b234d9d0c0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="94187d26105df3824bea268e9ae25535" category="inline-image-macro">登录横幅设置，宽度= 400</block>
+  <block id="d1e27aaece77e53fc070c0b0ce490e10" category="paragraph"><block ref="d1e27aaece77e53fc070c0b0ce490e10" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="58b6e1ec0b6ec5b4a454251805124640" category="section-title">维护窗口</block>
+  <block id="3f3ec1c35b7249f193c068e0a8c036d3" category="paragraph">使用维护窗口，您可以为您选择的对象和指标安排特定的维护周期，在此期间取消警报通知。例如，当特定存储系统处于计划的升级期间时，您可以抑制这些存储系统触发的警报通知。</block>
+  <block id="df24d8acd06534f618230d46637d6d1b" category="paragraph">您可以选择是否在窗口期间同时抑制警报和通知，或者仅抑制通知但继续检测警报。</block>
+  <block id="1aed277c750cbbf8c2859dca8664dada" category="inline-image-macro">维护窗口示例，宽度= 400</block>
+  <block id="8f42f88b31e1b4f22f40e0ae5ecd38fb" category="paragraph"><block ref="8f42f88b31e1b4f22f40e0ae5ecd38fb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="82bc146aadfdab0e3c7443c79b7f4c8b" category="section-title">创建维护窗口</block>
+  <block id="4def5c59958a122e22c3d06a018c9ef0" category="paragraph">要创建维护窗口：</block>
+  <block id="2b2323dddeb141b098fbcd705e90e359" category="list-text">导航到 *Observability &gt; Alerts &gt; Maintenance Windows*，然后单击 *+ Maintenance Window*。</block>
+  <block id="610844a278d3d0601b4bc4c27665563e" category="list-text">输入维护窗口的*名称*。为了获得最佳效果，请使名称有意义且具体。</block>
+  <block id="c74ae4bc562a9f2edcf63aa39e8fac31" category="list-text">选择*存储设备*或*对象属性*。</block>
+  <block id="5760cc9b0c4d4910c5b80c7479b3f2a3" category="list-text">筛选*监视器或监视器*。支持通配符。</block>
+  <block id="ea10176408e9b54a867b0e298e4b4bc2" category="list-text">选择维护期间的*开始时间*和*结束时间*。</block>
+  <block id="de3fd64c52ab8fa6a72c862f6f638fb0" category="list-text">选择是否抑制*警报和通知*，还是仅抑制*通知*（窗口期间仍会检测到警报）。</block>
+  <block id="35d71e914a221fd7fa5e2e2d8c813a2a" category="list-text">单击*保存*以创建维护窗口。</block>
 </blocks>

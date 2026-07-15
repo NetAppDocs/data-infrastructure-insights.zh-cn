@@ -22,6 +22,6 @@ keywords: notifications, pop-up, banner, motd, message, login
 
 选择用户仅在下次登录时看到消息，还是在每次后续登录时看到消息。
 
-image:login_banner_settings.png["登录横幅设置"]
+image:login_banner_settings.png["登录横幅设置，宽度= 400"]
 
 请注意，用户_必须_确认登录消息才能关闭它。关闭后，将显示任何其他弹出窗口（新功能更新、服务条款更新等）。
