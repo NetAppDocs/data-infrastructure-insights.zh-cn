@@ -14199,4 +14199,11 @@
   <block id="ea10176408e9b54a867b0e298e4b4bc2" category="list-text">选择维护期间的*开始时间*和*结束时间*。</block>
   <block id="de3fd64c52ab8fa6a72c862f6f638fb0" category="list-text">选择是否抑制*警报和通知*，还是仅抑制*通知*（窗口期间仍会检测到警报）。</block>
   <block id="35d71e914a221fd7fa5e2e2d8c813a2a" category="list-text">单击*保存*以创建维护窗口。</block>
+  <block id="0a59582ce4c43ad9d8e979980a15c132" category="paragraph">*问题：* 添加或升级 ONTAP SVM 数据收集器（Workload Security）后，租户显示过度配置或订阅违规警报。即使没有添加新硬件，原始存储容量也增加了。</block>
+  <block id="2e6ad606c623766795c1fa0e576fed30" category="paragraph">*请尝试此操作：* 同一存储可能会被计数两次——一次由 Observability ONTAP 集群收集器计数，另一次由同一集群上的 Workload Security SVM 收集器计数。</block>
+  <block id="13cb22c80c1185588a0cd56b404eb572" category="paragraph">比较 Observability ONTAP 收集器和 Workload Security SVM 收集器报告的原始存储容量。对于每个 SVM 收集器，检查其父集群是否已被 Observability ONTAP 收集器监控。如果是，则只有集群容量应计入订阅使用量。</block>
+  <block id="29945491ade2d90cbd800cb34575fef0" category="paragraph">确认最近是否跨集群进行了 SVM 迁移。迁移 SVM 后，容量指标可能会保持与上一个集群关联，直到 Workload Security 从收集器接收到更新的信息。</block>
+  <block id="ed499d4afa165aaf800d50911ee0d6b7" category="paragraph">确保已迁移 SVM 的 ONTAP SVM 数据收集器处于 RUNNING 状态。如果需要，请重新启动收集器，以便 Workload Security 可以在迁移后收集正确的集群和容量指标。</block>
+  <block id="01ee0a41b7ba80a315acf774bca95831" category="paragraph">如果集群和 SVM 容量都出现在总容量中，则可能会重复计算容量。这通常在添加、升级、重新启动 SVM 收集器或在集群之间迁移 SVM 后不久发生。</block>
+  <block id="d1d2aacb054348275b14473a1f1f31f2" category="paragraph">如果使用量仍然超过您的订阅，请提交一个 NetApp 支持案例，其中包含警报前后的订阅使用量，以及包含其报告的原始存储容量的 Observability 和 SVM 收集器列表。</block>
 </blocks>
