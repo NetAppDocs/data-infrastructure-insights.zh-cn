@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task_dc_promox_ve.html 
-keywords: data collector, Promox VirtVirtual Environmentalization 
-summary: 配置 Promox Virtual Environment 数据收集器。 
+permalink: task_dc_proxmox_ve.html 
+keywords: data collector, Proxmox Virtual Environment, PVE 
+summary: 配置 Proxmox Virtual Environment 数据收集器。 
 ---
-= Red Hat OpenShift 虚拟化数据收集器
+= Proxmox Virtual Environment 数据收集器
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,9 @@ summary: 配置 Promox Virtual Environment 数据收集器。
 
 
 [role="lead"]
-DII Promox 虚拟环境收集器将收集清单数据。这是一个基于 HTTPS REST API 的收集器。
+DII Proxmox Virtual Environment 收集器将收集基于 PVE 的虚拟机（非 LXC 容器）和主机/虚拟机管理程序的清单和性能数据。这是一个基于 HTTPS REST API 的收集器，需要与由 pveproxy 服务/守护进程提供的 Proxmox REST API 进行通信，该服务/守护进程监听 TCP 8006 端口。
+
+此数据收集器使用用户 + 令牌身份验证。您需要在每个 Proxmox 集群上创建一个服务帐户，并为用户分配适当的权限，然后生成具有相同权限的 API 令牌。请注意，给定 Proxmox 用户的令牌不一定具有与该用户相同的权限。DII 通常需要全局审核/监控级别权限——如果您通过 Proxmox UI 创建服务帐户，请将 PathPermision 从"/"开始，将"传播"设置为"是"，并至少解锁 Datastore Audit、Mapping Audit、Pool Audit、SDN Audit、Sys Audit、VM Audit、VM Monitor。创建用户后，您可以为其创建访问令牌。强烈建议将令牌的过期时间设置为 0，以确保令牌永不过期。
 
 
 
@@ -37,10 +39,7 @@ DII Promox 虚拟环境收集器将收集清单数据。这是一个基于 HTTPS
 | 虚拟机 | 虚拟机 
 
 
-| 存储域 | 数据存储 
-
-
-| 逻辑单元 | LUN 
+| 存储 | 数据存储 
 |===
 注意：这些只是常见的术语映射，可能并不代表此数据收集器的所有情况。
 

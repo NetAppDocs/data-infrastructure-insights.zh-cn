@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_nutanix_ahv.html 
-keywords: data collector, Nutanix, AHV Series 
+keywords: data collector, Nutanix, AHV Series , Acropolis, hypervisor 
 summary: 配置 Nutanix AHV 数据收集器。 
 ---
 = Nutanix AHV 数据采集器
@@ -51,10 +51,10 @@ Nutanix AHV 收集器使用 Prism Central v4 REST API（集群管理和虚拟机
 == 要求
 
 * Prism Central IP 地址或完全限定域名
-* Prism Central 本地或 LDAP 用户名和密码（只读帐户足以满足清单和性能要求；无需管理员权限）
+* Prism Central 本地或 LDAP 用户名和密码（只读帐户即可）
 * 端口要求：HTTPS 9440
 * Prism Central 版本 pc.2023.x 或更高版本（v3 API）；建议使用 pc.7.x 或更高版本（v4 API）
-* 性能指标需要具有 API v4.0.b1 或更高版本 (pc.7.3+) 的 Prism Central。在旧版本中，仍会收集清单，但不会报告性能数据。
+* 性能指标需要具有 API v4.0.b1 或更高版本 (pc.7.3+) 的 Prism Central。在旧版本中，会收集清单，但不会报告性能数据。
 
 
 
@@ -67,7 +67,7 @@ Nutanix AHV 收集器使用 Prism Central v4 REST API（集群管理和虚拟机
 | 字段 | 描述 
 
 
-| Prism Central IP 地址 | Prism Central 实例的 IP 地址或 FQDN 
+| Prism Central IP / 主机名 | Prism Central 实例的 IP 地址或 FQDN 
 
 
 | 用户名 | Prism Central 用户名 
@@ -88,13 +88,13 @@ Nutanix AHV 收集器使用 Prism Central v4 REST API（集群管理和虚拟机
 | TCP 端口 | 用于连接到 Prism Central 的 TCP 端口。默认值为 9440。 
 
 
-| 库存轮询间隔（分钟） | 库存调查之间的间隔。默认时间间隔为 60 分钟。 
+| 库存轮询间隔（分钟） | 库存轮询之间的时间间隔。默认时间间隔为 60 分钟。 
 
 
 | 性能轮询间隔（秒） | 性能轮询之间的间隔。默认值为 300 秒。 
 
 
-| HTTP超时（秒） | HTTP 请求超时。默认值为 60 秒。 
+| HTTP超时（秒） | HTTP 请求超时。默认值为 60。 
 
 
 | HTTP重试次数 | 瞬时失败时 HTTP 重试的次数。默认值为 3。 

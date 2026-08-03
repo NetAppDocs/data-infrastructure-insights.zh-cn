@@ -14131,17 +14131,12 @@
   <block id="25a317566de430ddfd2c6f4b3fdea612" category="list-text">ci-k8s-change-observer</block>
   <block id="9da5aa79f5375ccea3c84723b5759557" category="cell">我看到来自 Telegraf 的类似于以下的错误消息，但 Telegraf 确实启动并运行：E! [inputs.kubernetes] 插件出错：<block ref="6d1752bb8ee46f6164f07ea885d5c072" category="inline-link-rx"></block> 返回 HTTP 状态 403 Forbidden</block>
   <block id="51635ff11969666db6bdeaf0c68d58b0" category="cell">如果您在低于 1.33 的 Kubernetes 版本上运行，则可能会出现这些消息。telegraf 使用的"nodes/pods" RBAC 资源在这些版本上不存在。有关旧版本所需的 RBAC 资源，请参阅 operator-additional-permissions.yaml 的"对于 Kubernetes 版本 &lt; 1.33"部分。</block>
-  <block id="55c55b1241c0ea96ea6cef65b10a23e4" category="inline-link-macro">Promox Virtual Environment</block>
-  <block id="9ddb2ce85d3b0c6085884776fe61a596" category="cell"><block ref="9ddb2ce85d3b0c6085884776fe61a596" category="inline-link-macro-rx"></block></block>
-  <block id="66036899193ada3425c77162bf9d742c" category="summary">配置 Promox Virtual Environment 数据收集器。</block>
-  <block id="dc8f767a3f6e8f9b98077b7e9a688c5d" category="paragraph">DII Promox 虚拟环境收集器将收集清单数据。这是一个基于 HTTPS REST API 的收集器。</block>
   <block id="b720c5170acbb344b34398a9ed4fec4b" category="cell">主机名或 IP 地址</block>
   <block id="32d285f157ad1acefe9dbe844cee7acf" category="cell">存储系统的主机名 IP 地址</block>
   <block id="606bae1c220a7cd73cdc71a447b328fd" category="cell">API Token ID</block>
   <block id="9ae9995c158c8b32609b8fd098fa5ff5" category="cell">API令牌密钥</block>
   <block id="923e5171366e1120624f5ea15d195544" category="cell">上述令牌的密钥</block>
   <block id="07d3835e20364558e54bb222fac4e80c" category="cell">用于 HTTPS 通信的端口（默认 8006）</block>
-  <block id="c0dcddaaad9648f13d2e54741430ea94" category="sidebar">Promox VE</block>
   <block id="f45a9049372d3cb48c0a5f07d2274d8a" category="inline-link-macro">Nutanix AHV系列</block>
   <block id="ad9c1c290afb17645c1abe42082fd356" category="cell"><block ref="ad9c1c290afb17645c1abe42082fd356" category="inline-link-macro-rx"></block></block>
   <block id="dfc304efa37c8d1373249ddd368bc0be" category="summary">配置 Nutanix NX 数据收集器。</block>
@@ -14157,17 +14152,12 @@
   <block id="93aad9faf21d772e6638b83df990a5f5" category="cell">ADSF 卷组</block>
   <block id="5ccc8ca7259b2e94529827201b7eb255" category="cell">VM 磁盘</block>
   <block id="59713d7f655f9c892a64a8cfb1bce50f" category="list-text">Prism Central IP 地址或完全限定域名</block>
-  <block id="b4cdc83adeeea6f91bf95fe532871bdd" category="list-text">Prism Central 本地或 LDAP 用户名和密码（只读帐户足以满足清单和性能要求；无需管理员权限）</block>
   <block id="305bb684f75dc043415486c2063d46c4" category="list-text">端口要求：HTTPS 9440</block>
   <block id="539110e77db7f1ce573940c3147dbe68" category="list-text">Prism Central 版本 pc.2023.x 或更高版本（v3 API）；建议使用 pc.7.x 或更高版本（v4 API）</block>
-  <block id="74c15fa6625bc3241b81c66466e0ce42" category="list-text">性能指标需要具有 API v4.0.b1 或更高版本 (pc.7.3+) 的 Prism Central。在旧版本中，仍会收集清单，但不会报告性能数据。</block>
-  <block id="fb7d6f6db43d1bb1043df17e264de78a" category="cell">Prism Central IP 地址</block>
   <block id="b46321a9cb6ebc3023c7b6ae1f3d8b4f" category="cell">Prism Central 实例的 IP 地址或 FQDN</block>
   <block id="893b253db3bdc1ebfb515f1f1cc09f50" category="cell">Prism Central 用户名</block>
   <block id="0fc00a87efdbecf33bb1448c3eaa5a73" category="cell">Prism Central 密码</block>
-  <block id="ac2fad2f282b0e32c75912e363cfb735" category="cell">用于连接到 Prism Central 的 TCP 端口。默认值为 9440。</block>
   <block id="834593f1f41ad9180f7c06531584872b" category="cell">HTTP超时（秒）</block>
-  <block id="b8c5ed136238b59bf386d65bf0787acf" category="cell">HTTP 请求超时。默认值为 60 秒。</block>
   <block id="625b6c43e9f8c94b5aa84173a04fa961" category="cell">HTTP重试次数</block>
   <block id="c8f99bb6092a052b29e43263274e103f" category="cell">瞬时失败时 HTTP 重试的次数。默认值为 3。</block>
   <block id="4a2e4ff5e220e83407c567779aaf9ba1" category="cell">访问所需的 API 令牌</block>
@@ -14206,4 +14196,18 @@
   <block id="ed499d4afa165aaf800d50911ee0d6b7" category="paragraph">确保已迁移 SVM 的 ONTAP SVM 数据收集器处于 RUNNING 状态。如果需要，请重新启动收集器，以便 Workload Security 可以在迁移后收集正确的集群和容量指标。</block>
   <block id="01ee0a41b7ba80a315acf774bca95831" category="paragraph">如果集群和 SVM 容量都出现在总容量中，则可能会重复计算容量。这通常在添加、升级、重新启动 SVM 收集器或在集群之间迁移 SVM 后不久发生。</block>
   <block id="d1d2aacb054348275b14473a1f1f31f2" category="paragraph">如果使用量仍然超过您的订阅，请提交一个 NetApp 支持案例，其中包含警报前后的订阅使用量，以及包含其报告的原始存储容量的 Observability 和 SVM 收集器列表。</block>
+  <block id="e0a90db369f87ae02adeb16a86201742" category="inline-link-macro">Proxmox Virtual Environment</block>
+  <block id="4a90aaa80c9f510a7ceb078daedd5635" category="cell"><block ref="4a90aaa80c9f510a7ceb078daedd5635" category="inline-link-macro-rx"></block></block>
+  <block id="bf88a9906139e4cb81937529ce5737f7" category="list-text">Prism Central 本地或 LDAP 用户名和密码（只读帐户即可）</block>
+  <block id="616363ce8a56d3faec8ac114ed04d83b" category="list-text">性能指标需要具有 API v4.0.b1 或更高版本 (pc.7.3+) 的 Prism Central。在旧版本中，会收集清单，但不会报告性能数据。</block>
+  <block id="0c215c7eb97b422d3fbcb651a59480b7" category="cell">Prism Central IP / 主机名</block>
+  <block id="6cb3b4061cdb7e049999801ce8d1d445" category="cell">用于连接到 Prism Central 的 TCP 端口。默认值为 9440。</block>
+  <block id="19b47095e2b176e478290ba0ddfcbdbc" category="cell">库存轮询之间的时间间隔。默认时间间隔为 60 分钟。</block>
+  <block id="d9ac9c87b6001203eb8b39a253943bd2" category="cell">性能轮询之间的间隔。默认值为 300 秒。</block>
+  <block id="8626d73b80be039d958752c296fa4e7c" category="cell">HTTP 请求超时。默认值为 60。</block>
+  <block id="33c9cb93144548bfcc912b99d1b2555c" category="summary">配置 Proxmox Virtual Environment 数据收集器。</block>
+  <block id="b37138a3b3b3fcd2958e4e6cc5c5c61b" category="doc">Proxmox Virtual Environment 数据收集器</block>
+  <block id="91a0d06a30de7119cf7ba6773ce38416" category="paragraph">DII Proxmox Virtual Environment 收集器将收集基于 PVE 的虚拟机（非 LXC 容器）和主机/虚拟机管理程序的清单和性能数据。这是一个基于 HTTPS REST API 的收集器，需要与由 pveproxy 服务/守护进程提供的 Proxmox REST API 进行通信，该服务/守护进程监听 TCP 8006 端口。</block>
+  <block id="7bd4738e9b2442fc6fa7415e88a3298d" category="paragraph">此数据收集器使用用户 + 令牌身份验证。您需要在每个 Proxmox 集群上创建一个服务帐户，并为用户分配适当的权限，然后生成具有相同权限的 API 令牌。请注意，给定 Proxmox 用户的令牌不一定具有与该用户相同的权限。DII 通常需要全局审核/监控级别权限——如果您通过 Proxmox UI 创建服务帐户，请将 PathPermision 从"/"开始，将"传播"设置为"是"，并至少解锁 Datastore Audit、Mapping Audit、Pool Audit、SDN Audit、Sys Audit、VM Audit、VM Monitor。创建用户后，您可以为其创建访问令牌。强烈建议将令牌的过期时间设置为 0，以确保令牌永不过期。</block>
+  <block id="57e13573114577b3af8a0a24aa24d576" category="sidebar">Proxmox VE</block>
 </blocks>
