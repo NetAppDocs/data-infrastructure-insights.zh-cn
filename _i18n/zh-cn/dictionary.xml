@@ -7126,7 +7126,6 @@
   <block id="592b09bd3291d67037bc036b0c714470" category="cell">森林名称</block>
   <block id="7d29f1962bf2529a2067967e962ee3dd" category="cell">目录结构的森林级别。森林名称允许以下两种格式：_x.y.z_ =&gt; 直接域名，与您在 SVM 上的一样。  [示例：hq.companyname.com] _DC=x,DC=y,DC=z_ =&gt; 相对可分辨名称 [示例：DC=hq,DC= companyname,DC=com] 或者您可以指定如下： _OU=engineering,DC=hq,DC= companyname,DC=com_ [按特定 OU engineering 过滤] _CN=username,OU=engineering,DC=companyname, DC=netapp, DC=com_ [从 OU &lt;engineering&gt; 获取具有 &lt;username&gt; 的特定用户] _CN=Acrobat Users,CN=Users,DC=hq,DC=companyname,DC=com,O= companyname,L=Boston,S=MA,C=US_ [获取该组织内的用户内的所有 Acrobat 用户] 还支持受信任的 Active Directory 域。</block>
   <block id="58384d924f3205aaac5f4a09d3b33801" category="cell">绑定 DN</block>
-  <block id="6dd0ae1f18b7c9b4d5e3b4eec7ff6352" category="cell">允许用户搜索目录。例如：_username@companyname.com_ 或 _username@domainname.com_ 此外，还需要域只读权限。用户必须是安全组“只读域控制器”的成员。</block>
   <block id="7066ea6d497311d6e3c4be6a9523999c" category="cell">绑定密码</block>
   <block id="0d91a6f24e197b2dbd20b358e4f84785" category="cell">目录服务器密码（即绑定 DN 中使用的用户名的密码）</block>
   <block id="aebd636047453941f5450b96d44c3195" category="cell">ldap、ldaps、ldap-start-tls</block>
@@ -14210,4 +14209,5 @@
   <block id="7bd4738e9b2442fc6fa7415e88a3298d" category="paragraph">此数据收集器使用用户 + 令牌身份验证。您需要在每个 Proxmox 集群上创建一个服务帐户，并为用户分配适当的权限，然后生成具有相同权限的 API 令牌。请注意，给定 Proxmox 用户的令牌不一定具有与该用户相同的权限。DII 通常需要全局审核/监控级别权限——如果您通过 Proxmox UI 创建服务帐户，请将 PathPermision 从"/"开始，将"传播"设置为"是"，并至少解锁 Datastore Audit、Mapping Audit、Pool Audit、SDN Audit、Sys Audit、VM Audit、VM Monitor。创建用户后，您可以为其创建访问令牌。强烈建议将令牌的过期时间设置为 0，以确保令牌永不过期。</block>
   <block id="57e13573114577b3af8a0a24aa24d576" category="sidebar">Proxmox VE</block>
   <block id="48c0a89dc87860e6c3b42a70bbd13c53" category="paragraph"><block ref="48c0a89dc87860e6c3b42a70bbd13c53" category="inline-link-macro-rx"></block></block>
+  <block id="c84f7a37a2691cf36f1774d52de72e5c" category="cell">允许用户搜索目录。例如：_username@companyname.com_ 或 _username@domainname.com_</block>
 </blocks>

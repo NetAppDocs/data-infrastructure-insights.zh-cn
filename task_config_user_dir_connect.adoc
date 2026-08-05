@@ -46,7 +46,7 @@ summary: 配置工作负载安全 Active Directory 用户目录收集器
 | 森林名称 | 目录结构的森林级别。森林名称允许以下两种格式：_x.y.z_ => 直接域名，与您在 SVM 上的一样。  [示例：hq.companyname.com] _DC=x,DC=y,DC=z_ => 相对可分辨名称 [示例：DC=hq,DC= companyname,DC=com] 或者您可以指定如下： _OU=engineering,DC=hq,DC= companyname,DC=com_ [按特定 OU engineering 过滤] _CN=username,OU=engineering,DC=companyname, DC=netapp, DC=com_ [从 OU <engineering> 获取具有 <username> 的特定用户] _CN=Acrobat Users,CN=Users,DC=hq,DC=companyname,DC=com,O= companyname,L=Boston,S=MA,C=US_ [获取该组织内的用户内的所有 Acrobat 用户] 还支持受信任的 Active Directory 域。 
 
 
-| 绑定 DN | 允许用户搜索目录。例如：_username@companyname.com_ 或 _username@domainname.com_ 此外，还需要域只读权限。用户必须是安全组“只读域控制器”的成员。 
+| 绑定 DN | 允许用户搜索目录。例如：_username@companyname.com_ 或 _username@domainname.com_ 
 
 
 | 绑定密码 | 目录服务器密码（即绑定 DN 中使用的用户名的密码） 
