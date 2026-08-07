@@ -413,6 +413,7 @@ image:ws_LDAP_collector_list.png["UI 中的 LDAP 收集器列表"]
 . 下载最新的代理安装程序。
 +
 .. 下载最新安装程序的步骤与“安装新代理”中的步骤类似。在 swagger 中，选择“cloudsecure_installers.agent”>“/v1/cloudsecure/agents/installers/{platform}/latest” API，输入平台“linux”并下载安装程序 zip 文件。或者，也可以使用 curl 命令。解压缩安装程序文件。
+.. 注：应将代理安装程序下载到与包含正在运行的代理的文件夹不同的文件夹。
 
 
 . 设置“cloudsecure-agent-upgrade.sh”文件的执行权限。
@@ -437,9 +438,16 @@ total 153344
 -rw------- 1 root root    16574 Apr 26  2024 cloudsecure-agent-install.sh
 -rwx------ 1 root root     8586 Apr 26  2024 cloudsecure-agent-upgrade.sh
 -rw------- 1 root root 77834660 Apr 26 17:35 cloudsecure-linux-agent-installer-1.618.0.zip
-
 ----
 . 运行“cloudsecure-agent-upgrade.sh”脚本。如果脚本成功运行，它将在输出中打印消息“Cloudsecure 代理已成功升级。”。
+. 运行以下命令：
++
+ sudo chown -R cssys:cssys {agent-install-path}/cloudsecure
++
+例如，如果代理在"/test_user/apps"中运行，则命令为：
+
++
+ sudo chown -R cssys:cssys /test_user/apps/cloudsecure
 . 运行以下命令“systemctl daemon-reload”
 +
 [listing]

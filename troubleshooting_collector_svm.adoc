@@ -262,4 +262,24 @@ fpolicy policy external-engine delete -vserver <svmname> -engine-name <engine_na
 {空的}
 
 '''
+*Problem*：即使收集器服务已启动，一个或多个数据收集器仍显示"已降级"而不是"正在运行"。
+
+*Try This*：当节点上的一个或多个 FPolicy 连接断开时，SWS 报告已降级。这不是中断——收集器仍在运行——但在恢复连接之前，这些节点的审核事件可能会丢失。
+
+ONTAP 从具有 SVM 操作数据 LIF 的每个节点建立 FPolicy 控制通道连接。没有本地数据 LIF 的节点无法连接。请参阅：
+
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/node-fpolicy-server-communication-process-concept.html["节点到外部 ONTAP FPolicy 服务器通信过程"^]
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/fpolicy-external-fpolicy-servers-concept.html["ONTAP FPolicy 如何与外部 FPolicy 服务器配合使用"^]
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/requirements-best-practices-fpolicy-concept.html["配置 ONTAP FPolicy 的要求、注意事项和最佳实践"^]
+
+
+在UI中，记下哪些节点已断开连接，然后检查这些节点是否具有用于SVM的数据LIF。
+
+* 列出的节点上没有数据 LIF：忽略已降级状态。当本地数据 LIF 不存在时，ONTAP 可以显示 FPolicy 已断开连接，原因为"没有本地 LIF 存在以连接到 FPolicy 服务器"；这是预期的。请参阅link:https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/Fpolicy_server_not_connected_due_to_no_local_lif_present_on_one_or_more_nodes["KB：由于"no local lif present"，Fpolicy 服务器未连接"^]。未来的 SWS 版本将在这种情况下停止将收集器标记为已降级。
+* 列出的节点上存在数据 LIF：调查 FPolicy 断开连接的原因（LIF 关闭/缺少 data-fpolicy-client、网络/防火墙或临时重新启动/故障转移）。
+
+
+{空的}
+
+'''
 如果您仍然遇到问题，请联系*帮助>支持*页面中提到的支持链接。
