@@ -1,0 +1,7288 @@
+---
+sidebar: sidebar 
+permalink: reporting_schema_inventory.html 
+summary: 库存数据仓库的架构表 
+keywords: dwh, data warehouse, schema, reporting, inventory 
+---
+= 清单架构
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+来源：*dwh_inventory* OData 端点—Data Infrastructure Insights
+
+找到的表格：*106* | 关联：*171*
+
+
+
+[[key-relationships-between-tables]]
+== 表之间的关键关系
+
+
+
+[[acqdatasource]]
+=== acq_data_source
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-acq_acquisition_unit["acq_acquisition_unit"] | acquisitionUnitId | ID 
+|===
+
+
+[[autotieringpolicy]]
+=== auto_tiering_policy
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[autotieringpolicyconstraint]]
+=== auto_tiering_policy_constraint
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-auto_tiering_policy["auto_tiering_policy"] | autoTieringPolicyId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[backendlun]]
+=== backend_lun
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[backendluntovolume]]
+=== backend_lun_to_volume
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-backend_lun["backend_lun"] | backendLunId | ID 
+
+
+| link:#entity-storage["存储"] | frontendStorageId | ID 
+
+
+| link:#entity-volume["volume"] | backendVolumeId | ID 
+|===
+
+
+[[backendpath]]
+=== backend_path
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-backend_lun["backend_lun"] | backendLunId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[clusterswitch]]
+=== cluster_switch
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[clusterswitchport]]
+=== cluster_switch_port
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-cluster_switch["cluster_switch"] | clusterSwitchId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-storage_node["storage_node"] | storageNodeId | ID 
+|===
+
+
+[[computeresource]]
+=== compute_resource
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-hv_virtual_machine["hv_virtual_machine"] | vmId | ID 
+|===
+
+
+[[disk]]
+=== 磁盘
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[diskgroup]]
+=== disk_group
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[drinternalvolumereplica]]
+=== dr_internal_volume_replica
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-internal_volume["internal_volume"] | sourceInternalVolumeId | ID 
+
+
+| link:#entity-storage["存储"] | targetStorageId | ID 
+|===
+
+
+[[drqtreereplica]]
+=== dr_qtree_replica
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-qtree["qtree"] | sourceQtreeId | ID 
+
+
+| link:#entity-storage["存储"] | targetStorageId | ID 
+|===
+
+
+[[drvolumereplica]]
+=== dr_volume_replica
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | targetStorageId | ID 
+
+
+| link:#entity-volume["volume"] | sourceVolumeId | ID 
+|===
+
+
+[[fcnameserverentry]]
+=== fc_name_server_entry
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-switch_port["switch_port"] | connectedSwitchPortId | ID 
+|===
+
+
+[[filesystem]]
+=== 文件系统
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-compute_resource["compute_resource"] | computeResourceId | ID 
+
+
+| link:#entity-host["host"] | hostId | ID 
+|===
+
+
+[[filesystemtovirtualdisk]]
+=== file_system_to_virtual_disk
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-compute_resource["compute_resource"] | computeResourceId | ID 
+
+
+| link:#entity-file_system["文件系统"] | fileSystemId | ID 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | ID 
+
+
+| link:#entity-hv_virtual_disk["hv_virtual_disk"] | virtualDiskId | ID 
+|===
+
+
+[[filesystemtovolume]]
+=== file_system_to_volume
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-compute_resource["compute_resource"] | computeResourceId | ID 
+
+
+| link:#entity-file_system["文件系统"] | fileSystemId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[genericdeviceport]]
+=== generic_device_port
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-generic_device["generic_device"] | genericDeviceId | ID 
+|===
+
+
+[[hostadapter]]
+=== host_adapter
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+|===
+
+
+[[hostport]]
+=== host_port
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-host_adapter["host_adapter"] | adapterId | ID 
+|===
+
+
+[[hosttoapplication]]
+=== host_to_application
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-application["应用程序"] | applicationId | ID 
+
+
+| link:#entity-host["host"] | hostId | ID 
+|===
+
+
+[[hvdatastoretointernalvolume]]
+=== hv_data_store_to_internal_volume
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | ID 
+
+
+| link:#entity-internal_volume["internal_volume"] | internalVolumeId | ID 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[hvdatastoretovolume]]
+=== hv_data_store_to_volume
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | ID 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[hvdatastoretonasshare]]
+=== hv_datastore_to_nas_share
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | ID 
+
+
+| link:#entity-hv_nas_share["hv_nas_share"] | nasShareId | ID 
+|===
+
+
+[[hvhosttonasshare]]
+=== hv_host_to_nas_share
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-hv_nas_share["hv_nas_share"] | nasShareId | ID 
+|===
+
+
+[[hvlun]]
+=== hv_lun
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | ID 
+|===
+
+
+[[hvluntovolume]]
+=== hv_lun_to_volume
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-hv_lun["hv_lun"] | hvLunId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[hvnasshare]]
+=== hv_nas_share
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | ID 
+|===
+
+
+[[hvnassharetoshare]]
+=== hv_nas_share_to_share
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-hv_nas_share["hv_nas_share"] | nasShareId | ID 
+
+
+| link:#entity-nas_share["nas_share"] | shareId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[hvpath]]
+=== hv_path
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-hv_lun["hv_lun"] | lunId | ID 
+|===
+
+
+[[hvserver]]
+=== hv_server
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+|===
+
+
+[[hvvirtualdisk]]
+=== hv_virtual_disk
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | ID 
+
+
+| link:#entity-hv_lun["hv_lun"] | lunId | ID 
+|===
+
+
+[[hvvirtualdisktovolume]]
+=== hv_virtual_disk_to_volume
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-hv_virtual_disk["hv_virtual_disk"] | virtualDiskId | ID 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[hvvirtualmachine]]
+=== hv_virtual_machine
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | ID 
+|===
+
+
+[[hvvirtualmachinetodisk]]
+=== hv_virtual_machine_to_disk
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-hv_virtual_disk["hv_virtual_disk"] | virtualDiskId | ID 
+
+
+| link:#entity-hv_virtual_machine["hv_virtual_machine"] | virtualMachineId | ID 
+|===
+
+
+[[internalvolume]]
+=== internal_volume
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-storage_pool["storage_pool"] | storagePoolId | ID 
+|===
+
+
+[[internalvolumetoapplication]]
+=== internal_volume_to_application
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-application["应用程序"] | applicationId | ID 
+
+
+| link:#entity-internal_volume["internal_volume"] | internalVolumeId | ID 
+|===
+
+
+[[iscsilogical]]
+=== iscsi_logical
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[k8snamespace]]
+=== k8s_namespace
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | ID 
+|===
+
+
+[[k8snode]]
+=== k8s_node
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-hv_virtual_machine["hv_virtual_machine"] | vmId | ID 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | ID 
+|===
+
+
+[[k8spv]]
+=== k8s_pv
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | ID 
+|===
+
+
+[[k8spvc]]
+=== k8s_pvc
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | ID 
+
+
+| link:#entity-k8s_namespace["k8s_namespace"] | namespaceId | ID 
+
+
+| link:#entity-k8s_pv["k8s_pv"] | pvId | ID 
+|===
+
+
+[[k8sworkload]]
+=== k8s_workload
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | ID 
+
+
+| link:#entity-k8s_namespace["k8s_namespace"] | namespaceId | ID 
+|===
+
+
+[[k8sworkloadtopvc]]
+=== k8s_workload_to_pvc
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | ID 
+
+
+| link:#entity-k8s_namespace["k8s_namespace"] | namespaceId | ID 
+
+
+| link:#entity-k8s_pvc["k8s_pvc"] | pvcId | ID 
+
+
+| link:#entity-k8s_workload["k8s_workload"] | workloadId | ID 
+|===
+
+
+[[logical]]
+=== 逻辑
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-generic_device["generic_device"] | genericDeviceId | ID 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-tape["磁带"] | tapeId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[nascrlogical]]
+=== nas_cr_logical
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-compute_resource["compute_resource"] | computeResourceId | ID 
+
+
+| link:#entity-internal_volume["internal_volume"] | internalVolumeId | ID 
+
+
+| link:#entity-nas_share["nas_share"] | shareId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[nasfileshare]]
+=== nas_file_share
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-internal_volume["internal_volume"] | internalVolumeId | ID 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[nasshare]]
+=== nas_share
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-nas_file_share["nas_file_share"] | fileShareId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[nasshareinitiator]]
+=== nas_share_initiator
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-nas_share["nas_share"] | shareId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[objecttoannotation]]
+=== object_to_annotation
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-annotation_value["批注值"] | annotationValueId | ID 
+|===
+
+
+[[physicalpath]]
+=== physical_path
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-generic_device["generic_device"] | genericDeviceId | ID 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-tape["磁带"] | tapeId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[qtree]]
+=== qtree
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-internal_volume["internal_volume"] | internalVolumeId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[qtreetoapplication]]
+=== qtree_to_application
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-application["应用程序"] | applicationId | ID 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | ID 
+|===
+
+
+[[quota]]
+=== 配额
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-internal_volume["internal_volume"] | internalVolumeId | ID 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[sharetoapplication]]
+=== 共享至应用程序
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-application["应用程序"] | applicationId | ID 
+
+
+| link:#entity-nas_share["nas_share"] | shareId | ID 
+|===
+
+
+[[storagecontroller]]
+=== storage_controller
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[storagenode]]
+=== storage_node
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[storagepool]]
+=== storage_pool
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[storageport]]
+=== storage_port
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-storage_controller["storage_controller"] | controllerId | ID 
+|===
+
+
+[[storagetoapplication]]
+=== storage_to_application
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-application["应用程序"] | applicationId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[switch]]
+=== switch
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-fabric["fabric"] | fabricId | ID 
+|===
+
+
+[[switchport]]
+=== switch_port
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-fabric["fabric"] | fabricId | ID 
+
+
+| link:#entity-switch["switch"] | switchId | ID 
+
+
+| link:#entity-virtual_switch["virtual_switch"] | virtualSwitchId | ID 
+|===
+
+
+[[switchporttoapplication]]
+=== switch_port_to_application
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-application["应用程序"] | applicationId | ID 
+
+
+| link:#entity-switch_port["switch_port"] | portId | ID 
+|===
+
+
+[[switchtoapplication]]
+=== switch_to_application
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-application["应用程序"] | applicationId | ID 
+
+
+| link:#entity-switch["switch"] | switchId | ID 
+|===
+
+
+[[tapecontroller]]
+=== tape_controller
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-tape["磁带"] | tapeId | ID 
+|===
+
+
+[[tapeport]]
+=== tape_port
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-tape["磁带"] | tapeId | ID 
+
+
+| link:#entity-tape_controller["tape_controller"] | controllerId | ID 
+|===
+
+
+[[unknownlogical]]
+=== unknown_logical
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[violation]]
+=== 违规行为
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-generic_device["generic_device"] | genericDeviceId | ID 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-tape["磁带"] | tapeId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[virtualswitch]]
+=== virtual_switch
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-fabric["fabric"] | fabricId | ID 
+|===
+
+
+[[vmtoapplication]]
+=== vm_to_application
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-application["应用程序"] | applicationId | ID 
+
+
+| link:#entity-hv_virtual_machine["hv_virtual_machine"] | vmId | ID 
+|===
+
+
+[[vmwarehost]]
+=== vmware_host
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-hv_server["hv_server"] | hvServerId | ID 
+|===
+
+
+[[volume]]
+=== volume
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-auto_tiering_policy["auto_tiering_policy"] | autoTieringPolicyId | ID 
+
+
+| link:#entity-internal_volume["internal_volume"] | internalVolumeId | ID 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+|===
+
+
+[[volumemap]]
+=== volume_map
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[volumemask]]
+=== volume_mask
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-host["host"] | hostId | ID 
+
+
+| link:#entity-storage["存储"] | storageId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[volumetoapplication]]
+=== volume_to_application
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-application["应用程序"] | applicationId | ID 
+
+
+| link:#entity-volume["volume"] | volumeId | ID 
+|===
+
+
+[[zone]]
+=== 区域
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-fabric["fabric"] | fabricId | ID 
+|===
+
+
+[[zonemember]]
+=== zone_member
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-fabric["fabric"] | fabricId | ID 
+
+
+| link:#entity-zone["区域"] | zoneId | ID 
+|===
+
+
+[[tables-fields]]
+== 表格和字段
+
+PKPrimary KeyFKForeign KeyNOT NULL必填字段
+
+
+
+[[acqacquisitionunit]]
+=== acq_acquisition_unit
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：acq_acquisition_unit
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 采集单元的 GUID。 
+
+
+| 标识符 | 字符串 | 是 | 采集单元的标识符。 
+
+
+| name | 字符串 | 是 | 采集单元的名称。 
+
+
+| IP | 字符串 | 是 | 采集单元的 IP 地址。 
+
+
+| siteName | 字符串 | 是 | 此采集单元所属的 SANscreen 站点。 
+
+
+| leasePeriod | Int64 | 是 | 获取单元的租赁期（以毫秒为单位）。 
+
+
+| nextLeaseRenewal | DateTimeOffset | 是 | 采集单元租约到期的时间。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| acq_data_source | link:#entity-acq_data_source["acq_data_source"] | 许多 
+|===
+
+
+[[acqdatasource]]
+=== acq_data_source
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：acq_data_source
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 数据源的 GUID。 
+
+
+| acquisitionUnitId *[FK]* →link:#entity-acq_acquisition_unit["acq_acquisition_unit"].id | Int64 | 是 | 此数据源所属采集单元的 GUID。 
+
+
+| name | 字符串 | 是 | 数据源的名称。 
+
+
+| type | 字符串 | 是 | 数据源的类型。 
+
+
+| 供应商 | 字符串 | 是 | 数据源的供应商。 
+
+
+| 型号 | 字符串 | 是 | 数据源的模型。 
+
+
+| auditLastStatus | 字符串 | 是 | 数据源最近一次报告的状态。 
+
+
+| auditStatusDate | DateTimeOffset | 是 | 状态报告的时间。 
+
+
+| auditStatusSince | DateTimeOffset | 是 | 此状态报告启动的时间。 
+
+
+| auditStatusCount | Int32 | 是 | 此状态的审核条目计数。 
+
+
+| auditLastStatusMessage | 字符串 | 是 | 数据源状态的消息描述。 
+
+
+| additionalDataSourceMessage | 字符串 | 是 | 数据源的其他状态消息。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| acq_acquisition_unit | link:#entity-acq_acquisition_unit["acq_acquisition_unit"] | 一个 JOIN：acquisitionUnitId=link:#entity-acq_acquisition_unit["acq_acquisition_unit"].id 
+|===
+
+
+[[annotationvalue]]
+=== 批注值
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：annotation_value
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 批注的 GUID。 
+
+
+| annotationType | 字符串 | 是 | 系统或用户定义的类型，如层级、数据中心等。 
+
+
+| valueIdentifier | 字符串 | 是 | 批注的值。 
+
+
+| valueType | 字符串 | 是 | 标注值的数据类型。 
+
+
+| valueDate | DateTimeOffset | 是 | 标注的值（日期格式）。 
+
+
+| enumSequence | Int32 | 是 | 确定枚举值顺序的序列号。这主要用于显示目的。 
+
+
+| enumCost | 双线 | 是 | 与批注关联的可选成本。适用于层注释。 
+
+
+| ukHash | 字符串 | 是 |  
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| object_to_annotation | link:#entity-object_to_annotation["object_to_annotation"] | 许多 
+|===
+
+
+[[application]]
+=== 应用程序
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：应用程序
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 应用程序的 GUID。 
+
+
+| name | 字符串 | 是 | 应用程序的名称。 
+
+
+| description | 字符串 | 是 | 应用程序的描述。 
+
+
+| ignoreSharing | 字节 | 是 | 指示 SANscreen 是否为此应用程序的主机发出共享违规。 
+
+
+| 优先级 | 字符串 | 是 | 应用程序的优先级。 
+
+
+| url | 字符串 | 是 | Insight Server 中此应用程序的 URL。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| switch_port_to_application | link:#entity-switch_port_to_application["switch_port_to_application"] | 许多 
+
+
+| internal_volume_to_application | link:#entity-internal_volume_to_application["internal_volume_to_application"] | 许多 
+
+
+| 共享至应用程序 | link:#entity-share_to_application["共享至应用程序"] | 许多 
+
+
+| storage_to_application | link:#entity-storage_to_application["storage_to_application"] | 许多 
+
+
+| vm_to_application | link:#entity-vm_to_application["vm_to_application"] | 许多 
+
+
+| volume_to_application | link:#entity-volume_to_application["volume_to_application"] | 许多 
+
+
+| qtree_to_application | link:#entity-qtree_to_application["qtree_to_application"] | 许多 
+
+
+| switch_to_application | link:#entity-switch_to_application["switch_to_application"] | 许多 
+
+
+| host_to_application | link:#entity-host_to_application["host_to_application"] | 许多 
+|===
+
+
+[[autotieringpolicy]]
+=== auto_tiering_policy
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：auto_tiering_policy
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 自动分层策略的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 定义自动分层策略的存储的 GUID。 
+
+
+| 标识符 | 字符串 | 是 | 自动分层策略的标识符。 
+
+
+| name | 字符串 | 是 | 自动分层策略的名称。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 许多 
+
+
+| auto_tiering_policy_constraint | link:#entity-auto_tiering_policy_constraint["auto_tiering_policy_constraint"] | 许多 
+|===
+
+
+[[autotieringpolicyconstraint]]
+=== auto_tiering_policy_constraint
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：auto_tiering_policy_constraint
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 自动分层策略约束的 GUID。 
+
+
+| autoTieringPolicyId *[FK]* →link:#entity-auto_tiering_policy["auto_tiering_policy"].id | Int64 | 是 | 自动分层策略的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 定义自动分层策略的存储的 GUID。 
+
+
+| vendorTier | 字符串 | 是 | 供应商特定层名称。 
+
+
+| limitPercent | Int32 | 是 | 此层的卷共享限制。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| auto_tiering_policy | link:#entity-auto_tiering_policy["auto_tiering_policy"] | 一个 JOIN:autoTieringPolicyId=link:#entity-auto_tiering_policy["auto_tiering_policy"].id 
+|===
+
+
+[[backendlun]]
+=== backend_lun
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：backend_lun
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 后端 LUN 的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| name | 字符串 | 是 | LUN 的名称。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| backend_path | link:#entity-backend_path["backend_path"] | 许多 
+
+
+| backend_lun_to_volume | link:#entity-backend_lun_to_volume["backend_lun_to_volume"] | 许多 
+|===
+
+
+[[backendluntovolume]]
+=== backend_lun_to_volume
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：backend_lun_to_volume
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 后端路径的 GUID。 
+
+
+| frontendStorageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 前端存储阵列的 GUID。 
+
+
+| backendLunId *[FK]* →link:#entity-backend_lun["backend_lun"].id | Int64 | 是 | 前端阵列中后端 LUN 的 GUID。 
+
+
+| backendStorageId | Int64 | 是 | 后端存储阵列的 GUID。 
+
+
+| backendVolumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | 后端卷的 GUID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| backend_lun | link:#entity-backend_lun["backend_lun"] | 一个 JOIN：backendLunId=link:#entity-backend_lun["backend_lun"].id 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：frontendStorageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：backendVolumeId=link:#entity-volume["volume"].id 
+|===
+
+
+[[backendpath]]
+=== backend_path
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：backend_path
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 后端路径的 GUID。 
+
+
+| backendLunId *[FK]* →link:#entity-backend_lun["backend_lun"].id | Int64 | 是 | 后端 LUN 的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| lun | 字符串 | 是 | 逻辑单元号。 
+
+
+| initiatorPortWwn | 字符串 | 是 | 前端存储端口的 WWN。 
+
+
+| targetPortWwn | 字符串 | 是 | 后端存储端口的 WWN。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| backend_lun | link:#entity-backend_lun["backend_lun"] | 一个 JOIN：backendLunId=link:#entity-backend_lun["backend_lun"].id 
+|===
+
+
+[[businessentity]]
+=== 业务实体
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：business_entity
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| ID | Int64 | 是 | 批注的 GUID。 
+
+
+| 全名 | 字符串 | 是 | 批注的值。 
+
+
+| 租户 | 字符串 | 是 |  
+
+
+| lob | 字符串 | 是 |  
+
+
+| businessUnit | 字符串 | 是 |  
+
+
+| 项目 | 字符串 | 是 |  
+|===
+
+
+[[clusterswitch]]
+=== cluster_switch
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：cluster_switch
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 集群交换机的 ID 
+
+
+| 标识符 | 字符串 | 是 | 集群交换机的标识符 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 集群交换机的存储 ID 
+
+
+| name | 字符串 | 是 | 集群交换机名称 
+
+
+| address | 字符串 | 是 | 集群交换机的地址 
+
+
+| serialNumber | 字符串 | 是 | 集群交换机的序列号 
+
+
+| network | 字符串 | 是 | 集群交换机的网络 
+
+
+| version | 字符串 | 是 | 集群交换机版本 
+
+
+| 型号 | 字符串 | 是 | 集群交换机型号 
+
+
+| 已监控 | 字符串 | 是 | 此集群交换机是否受到监控？ 
+
+
+| monitoringEnabled | 字符串 | 是 | 是否已为集群交换机启用监控？ 
+
+
+| monitoringReason | 字符串 | 是 | 监控集群交换机的原因 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| cluster_switch_port | link:#entity-cluster_switch_port["cluster_switch_port"] | 许多 
+|===
+
+
+[[clusterswitchport]]
+=== cluster_switch_port
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：cluster_switch_port
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 集群交换机端口的 ID 
+
+
+| 标识符 | 字符串 | 是 | 集群交换机端口的标识符 
+
+
+| clusterSwitchId *[FK]* →link:#entity-cluster_switch["cluster_switch"].id | Int64 | 是 | 集群交换机端口的集群交换机ID 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 集群交换机端口的存储 ID 
+
+
+| storageNodeId *[FK]* →link:#entity-storage_node["storage_node"].id | Int64 | 是 | 集群交换机端口的存储节点 ID 
+
+
+| name | 字符串 | 是 | 集群交换机端口名称 
+
+
+| duplexType | 字符串 | 是 | 集群交换机端口的双工类型 
+
+
+| storageNodePortName | 字符串 | 是 | 集群交换机端口的节点端口名称 
+
+
+| storageNodePortMtu | 字符串 | 是 | 集群交换机端口节点端口的最大传输单元 
+
+
+| portIndex | 字符串 | 是 | 集群交换机端口索引 
+
+
+| isl | 字符串 | 是 | 集群交换机端口的交换机间链路 
+
+
+| macAddress | 字符串 | 是 | 集群交换机端口的 MAC 地址 
+
+
+| mtu | 字符串 | 是 | 集群交换机端口的最大传输单元 
+
+
+| 数字 | 字符串 | 是 | 集群交换机端口号 
+
+
+| type | 字符串 | 是 | 集群交换机端口类型 
+
+
+| 速度 | 字符串 | 是 | 集群交换机端口的速度 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| cluster_switch | link:#entity-cluster_switch["cluster_switch"] | 一个 JOIN：clusterSwitchId=link:#entity-cluster_switch["cluster_switch"].id 
+
+
+| storage_node | link:#entity-storage_node["storage_node"] | 一个 JOIN:storageNodeId=link:#entity-storage_node["storage_node"].id 
+|===
+
+
+[[computeresource]]
+=== compute_resource
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：compute_resource
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 操作系统的 GUID 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 主机 ID。 
+
+
+| vmId *[FK]* →link:#entity-hv_virtual_machine["hv_virtual_machine"].id | Int64 | 是 | VM ID。 
+
+
+| 标识符 | 字符串 | 是 | 计算资源的标识符 
+
+
+| name | 字符串 | 是 | 计算资源的名称。 
+
+
+| type | 字符串 | 是 | 资源类型。 
+
+
+| domain | 字符串 | 是 | 计算资源的域。 
+
+
+| IP | 字符串 | 是 | 计算资源的 IP 地址的逗号分隔列表。 
+
+
+| 操作系统 | 字符串 | 是 | 计算资源上运行的操作系统。 
+
+
+| cpuCount | Int32 | 是 | 计算资源的 CPU 计数。 
+
+
+| memory | Int32 | 是 | 计算资源的内存。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | 一个 JOIN：vmId=link:#entity-hv_virtual_machine["hv_virtual_machine"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+
+
+| 文件系统 | link:#entity-file_system["文件系统"] | 许多 
+
+
+| nas_cr_logical | link:#entity-nas_cr_logical["nas_cr_logical"] | 许多 
+
+
+| file_system_to_virtual_disk | link:#entity-file_system_to_virtual_disk["file_system_to_virtual_disk"] | 许多 
+
+
+| file_system_to_volume | link:#entity-file_system_to_volume["file_system_to_volume"] | 许多 
+|===
+
+
+[[disk]]
+=== 磁盘
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：disk
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 磁盘的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储阵列（文件管理器）的 GUID。 
+
+
+| 标识符 | 字符串 | 是 | 磁盘的标识符。唯一标识存储中的磁盘。 
+
+
+| name | 字符串 | 是 | 磁盘的名称。 
+
+
+| 速度 | Int32 | 是 | 磁盘速度。 
+
+
+| capacityGB | Int64 | 是 | 磁盘容量（GB）。 
+
+
+| 位置 | 字符串 | 是 | 磁盘的位置，安装位置。 
+
+
+| 角色 | 字符串 | 是 | 存储组中磁盘的角色（例如 PARITY、DATA、SPARE）。 
+
+
+| 供应商 | 字符串 | 是 | 磁盘供应商（例如 NetApp、SEAGATE）。 
+
+
+| 型号 | 字符串 | 是 | 磁盘型号。 
+
+
+| type | 字符串 | 是 | 磁盘的类型（例如 SATA、FC）。 
+
+
+| diskGroup | 字符串 | 是 | 磁盘所属磁盘组的标识符（例如 rg0、7）。 
+
+
+| 状态 | 字符串 | 是 | 磁盘的状态（例如 NORMAL、FAILED）。 
+
+
+| serialNumber | 字符串 | 是 | 磁盘序列号 
+
+
+| url | 字符串 | 是 | Insight Server 中此磁盘的 URL。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+|===
+
+
+[[diskgroup]]
+=== disk_group
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：disk_group
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 磁盘组的 GUID 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储阵列的 GUID 
+
+
+| name | 字符串 | 是 | 磁盘组的名称 
+
+
+| 标识符 | 字符串 | 是 | 磁盘组的标识符 
+
+
+| vendorDiskGroupType | 字符串 | 是 | 磁盘组的供应商类型 
+
+
+| diskType | 字符串 | 是 | 磁盘组中的磁盘类型 
+
+
+| 状态 | 字符串 | 是 | 磁盘组的状态 
+
+
+| 冗余 | 字符串 | 是 | 磁盘组的冗余 
+
+
+| isVirtual | 字符串 | 是 | 指示磁盘组是否为虚拟 
+
+
+| vendorTier | 字符串 | 是 | 磁盘组的供应商层 
+
+
+| 容量 MB | Int64 | 是 | 磁盘组的可用容量 
+
+
+| 已用容量 MB | Int64 | 是 | 磁盘组的已用容量 
+
+
+| 物理磁盘容量 MB | Int64 | 是 | 磁盘组的物理容量 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+|===
+
+
+[[diskgrouptodisk]]
+=== disk_group_to_disk
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：disk_group_to_disk
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| storageId | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| diskGroupId | Int64 | 是 | 磁盘组的 GUID。 
+
+
+| diskId | Int64 | 是 | 磁盘的 GUID。 
+|===
+
+
+[[diskgrouptostoragepool]]
+=== disk_group_to_storage_pool
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：disk_group_to_storage_pool
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| storageId | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| diskGroupId | Int64 | 是 | 磁盘组的 GUID。 
+
+
+| storagePoolId | Int64 | 是 | 存储池的 GUID。 
+|===
+
+
+[[drinternalvolumereplica]]
+=== dr_internal_volume_replica
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：dr_internal_volume_replica
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| sourceStorageId | Int64 | 是 | 作为副本源的存储的 GUID。 
+
+
+| sourceInternalVolumeId *[FK]* →link:#entity-internal_volume["internal_volume"].id | Int64 | 是 | 作为副本源的内部卷的 GUID。 
+
+
+| targetStorageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 作为副本目标的存储的 GUID。 
+
+
+| targetInternalVolumeId *[PK]* | Int64 | 是 | 作为副本目标的内部卷的 GUID。 
+
+
+| 模式 | 字符串 | 是 | 副本的同步模式。可能的值为 Synchronous、Asynchronous、Semi Synchronous、Copy 和 Unknown。 
+
+
+| 技术 | 字符串 | 是 | 用于此复制的技术。例如，SnapMirror 
+
+
+| dwhCalculated | 字符串 | 是 | 如果这是由 DWH 计算的跨站点副本，则为 True 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| internal_volume | link:#entity-internal_volume["internal_volume"] | 一个 JOIN：sourceInternalVolumeId=link:#entity-internal_volume["internal_volume"].id 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：targetStorageId=link:#entity-storage["存储"].id 
+|===
+
+
+[[drqtreereplica]]
+=== dr_qtree_replica
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：dr_qtree_replica
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| sourceStorageId | Int64 | 是 | 作为副本源的存储的 GUID。 
+
+
+| sourceQtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | 是 | 作为副本源的 qtree 的 GUID。 
+
+
+| targetStorageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 作为副本目标的存储的 GUID。 
+
+
+| targetQtreeId *[PK]* | Int64 | 是 | 作为副本目标的 qtree 的 GUID。 
+
+
+| 模式 | 字符串 | 是 | 副本的同步模式。可能的值为 Synchronous、Asynchronous、Semi Synchronous、Copy 和 Unknown。 
+
+
+| 技术 | 字符串 | 是 | 用于此复制的技术。例如，SnapMirror 
+
+
+| dwhCalculated | 字符串 | 是 | 如果这是由 DWH 计算的跨站点副本，则为 True 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| qtree | link:#entity-qtree["qtree"] | 一个 JOIN：sourceQtreeId=link:#entity-qtree["qtree"].id 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：targetStorageId=link:#entity-storage["存储"].id 
+|===
+
+
+[[drreplica]]
+=== dr_replica
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：dr_replica
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| sourceStorageId | Int64 | 是 | 作为副本源的存储的 GUID。 
+
+
+| sourceVolumeId | Int64 | 是 | 作为副本源的卷的 GUID。 
+
+
+| targetStorageId | Int64 | 是 | 作为副本目标的存储的 GUID。 
+
+
+| targetVolumeId | Int64 | 是 | 作为副本目标的卷的 GUID。 
+
+
+| 网络结构 | Int32 | 是 | [deprecated] 副本使用的网络结构数量。 
+
+
+| spf | 字节 | 是 | [已弃用] 指示副本是否具有单点故障。 
+
+
+| sourcePorts | Int32 | 是 | [deprecated] 副本使用的源端口数。 
+
+
+| targetPorts | Int32 | 是 | [deprecated] 副本使用的目标端口数。 
+
+
+| hopsCount | Int32 | 是 | [deprecated] 此副本的交换机跳数。 
+
+
+| 同步 | 字符串 | 是 | 描述已配置复制模式的枚举文本 
+|===
+
+
+[[drvolumereplica]]
+=== dr_volume_replica
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：dr_volume_replica
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| sourceStorageId | Int64 | 是 | 作为副本源的存储的 GUID。 
+
+
+| sourceVolumeId *[PK]* | Int64 | 是 | 作为副本源的卷的 GUID。 
+
+
+| targetStorageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 作为副本目标的存储的 GUID。 
+
+
+| targetVolumeId *[PK]* | Int64 | 是 | 作为副本目标的卷的 GUID。 
+
+
+| sourceVolumeGroupId | 字符串 | 是 | 源卷组ID 
+
+
+| sourceVolumeGroupName | 字符串 | 是 | 源卷组名称 
+
+
+| targetVolumeGroupId | 字符串 | 是 | 目标卷组ID 
+
+
+| targetVolumeGroupName | 字符串 | 是 | 目标卷组名称 
+
+
+| 网络结构 | Int32 | 是 | [deprecated] 副本使用的网络结构数量。 
+
+
+| spf | 字节 | 是 | [已弃用] 指示副本是否具有单点故障。 
+
+
+| sourcePorts | Int32 | 是 | [deprecated] 副本使用的源端口数。 
+
+
+| targetPorts | Int32 | 是 | [deprecated] 副本使用的目标端口数。 
+
+
+| hopsCount | Int32 | 是 | [deprecated] 此副本的交换机跳数。 
+
+
+| 模式 | 字符串 | 是 | 描述已配置复制模式的枚举文本 
+
+
+| modeRaw | 字符串 | 是 | 描述已配置复制模式的文本 
+
+
+| 技术 | 字符串 | 是 | 描述所用复制技术的文本 
+
+
+| 状态 | 字符串 | 是 | 描述复制动态状态的文本 
+
+
+| stateRaw | 字符串 | 是 | 描述复制动态状态的枚举文本 
+
+
+| stateStartTime | DateTimeOffset | 是 | 报告的状态的已知开始时间 
+
+
+| stateSampleTime | DateTimeOffset | 是 | 状态的上次更新时间 
+
+
+| stateStartTimeCalculated | 字符串 | 是 | 如果开始时间由 Sanscreen Server 计算，则为 True 
+
+
+| dwhCalculated | 字符串 | 是 | 如果这是由 DWH 计算的跨站点副本，则为 True 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：sourceVolumeId=link:#entity-volume["volume"].id 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：targetStorageId=link:#entity-storage["存储"].id 
+|===
+
+
+[[extendeddata]]
+=== extended_data
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：extended_data
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| objectId *[PK]* | Int64 | 是 | 对象的 GUID。 
+
+
+| objectType *[PK]* | 字符串 | 是 | 对象的类型。 
+
+
+| fieldName *[PK]* | 字符串 | 是 | 扩展数据字段的名称。 
+
+
+| fieldValue | 字符串 | 是 | 此对象的扩展数据字段的值。 
+|===
+
+
+[[fabric]]
+=== fabric
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：fabric
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 织物的 GUID。 
+
+
+| 标识符 | 字符串 | 是 | 网络结构的标识符。 
+
+
+| wwn | 字符串 | 是 | 网络结构的 WWN。 
+
+
+| name | 字符串 | 是 | 网络结构的名称。 
+
+
+| vsanEnabled | 字符串 | 是 | 指示此结构是否为 VSAN。 
+
+
+| vsanId | 字符串 | 是 | 此结构是 VSAN 时的 VSAN 标识符。 
+
+
+| zoningEnabled | 字符串 | 是 | 如果为 true，则根据区域和区域成员表中的数据强制执行分区。否则，不会在 Fabric 中实施分区。 
+
+
+| url | 字符串 | 是 | Insight Server 中此结构的 URL。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| switch_port | link:#entity-switch_port["switch_port"] | 许多 
+
+
+| 区域 | link:#entity-zone["区域"] | 许多 
+
+
+| virtual_switch | link:#entity-virtual_switch["virtual_switch"] | 许多 
+
+
+| zone_member | link:#entity-zone_member["zone_member"] | 许多 
+
+
+| switch | link:#entity-switch["switch"] | 许多 
+|===
+
+
+[[fcnameserverentry]]
+=== fc_name_server_entry
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：fc_name_server_entry
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | fc 名称服务器条目的 GUID。 
+
+
+| portId | Int64 | 是 | 节点端口的 GUID。 
+
+
+| type | 字符串 | 是 | 节点端口的类型。（例如，HOST_PORT、STORAGE_PORT、TAPE_PORT、GENERIC_DEVICE_PORT） 
+
+
+| wwn | 字符串 | 是 | 节点端口的 WWN。 
+
+
+| connectedSwitchPortId *[FK]* →link:#entity-switch_port["switch_port"].id | Int64 | 是 | 连接的交换机端口的 GUID。 
+
+
+| connectedSwitchPortWwn | 字符串 | 是 | 连接的交换机端口的 WWN。 
+
+
+| physicalPortWwn | 字符串 | 是 | 物理端口的 WWN（例如，NPV 的 NP-Port）。如果节点端口直接连接到交换机端口，则与节点端口相同。 
+
+
+| fcId | 字符串 | 是 | 握手/登录后分配的 ID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| switch_port | link:#entity-switch_port["switch_port"] | 一个 JOIN：connectedSwitchPortId=link:#entity-switch_port["switch_port"].id 
+|===
+
+
+[[filesystem]]
+=== 文件系统
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：file_system
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 文件系统的 GUID。 
+
+
+| computeResourceId *[FK]* →link:#entity-compute_resource["compute_resource"].id | Int64 | 是 | 计算资源的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 主机的 GUID。 
+
+
+| name | 字符串 | 是 | 挂载点或驱动器盘符。自然键的一部分。 
+
+
+| 位置 | 字符串 | 是 | 指示数据的保存位置及其访问方式。例如：本地、SAN、NAS。如果位置未知，将设置为 null。 
+
+
+| hardwareId | 字符串 | 是 | 主机特定标识符。如果未知，将设置为 null。 
+
+
+| type | 字符串 | 是 | 文件系统类型。例如：NTFS、FAT、UFS、UDF、ZFS、ISO 9660、VXFS 等。如果未知，将设置为 null。 
+
+
+| lastAgentReportTime | DateTimeOffset | 是 | 代理上次收集文件系统信息的时间 
+
+
+| sizeMB | Int64 | 是 | 文件系统的大小（MB）。 
+
+
+| usedMB | Int64 | 是 | 已使用且不可用的文件系统容量。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| compute_resource | link:#entity-compute_resource["compute_resource"] | 一个 JOIN：computeResourceId=link:#entity-compute_resource["compute_resource"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+
+
+| file_system_to_virtual_disk | link:#entity-file_system_to_virtual_disk["file_system_to_virtual_disk"] | 许多 
+
+
+| file_system_to_volume | link:#entity-file_system_to_volume["file_system_to_volume"] | 许多 
+|===
+
+
+[[filesystemtovirtualdisk]]
+=== file_system_to_virtual_disk
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：file_system_to_virtual_disk
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 文件系统到卷关系的 GUID。 
+
+
+| virtualDiskId *[FK]* →link:#entity-hv_virtual_disk["hv_virtual_disk"].id | Int64 | 是 | 虚拟磁盘的 GUID。 
+
+
+| fileSystemId *[FK]* →link:#entity-file_system["文件系统"].id | Int64 | 是 | 文件系统的 GUID。 
+
+
+| computeResourceId *[FK]* →link:#entity-compute_resource["compute_resource"].id | Int64 | 是 | 计算资源的 GUID。 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | 是 | 数据存储的 GUID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | 一个 JOIN：dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| compute_resource | link:#entity-compute_resource["compute_resource"] | 一个 JOIN：computeResourceId=link:#entity-compute_resource["compute_resource"].id 
+
+
+| 文件系统 | link:#entity-file_system["文件系统"] | 一个 JOIN：fileSystemId=link:#entity-file_system["文件系统"].id 
+
+
+| hv_virtual_disk | link:#entity-hv_virtual_disk["hv_virtual_disk"] | 一个 JOIN：virtualDiskId=link:#entity-hv_virtual_disk["hv_virtual_disk"].id 
+|===
+
+
+[[filesystemtovolume]]
+=== file_system_to_volume
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：file_system_to_volume
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 文件系统到卷关系的 GUID。 
+
+
+| computeResourceId *[FK]* →link:#entity-compute_resource["compute_resource"].id | Int64 | 是 | 计算资源的 GUID。 
+
+
+| fileSystemId *[FK]* →link:#entity-file_system["文件系统"].id | Int64 | 是 | 文件系统的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储的 GUID。 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | 卷的 GUID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| compute_resource | link:#entity-compute_resource["compute_resource"] | 一个 JOIN：computeResourceId=link:#entity-compute_resource["compute_resource"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+
+
+| 文件系统 | link:#entity-file_system["文件系统"] | 一个 JOIN：fileSystemId=link:#entity-file_system["文件系统"].id 
+|===
+
+
+[[genericdevice]]
+=== generic_device
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：generic_device
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 通用设备的 GUID。 
+
+
+| wwn | 字符串 | 是 | 通用设备的 WWN 
+
+
+| 标识符 | 字符串 | 是 | 设备的标识符。 
+
+
+| 制造商 | 字符串 | 是 | 通用设备的制造商。 
+
+
+| 型号 | 字符串 | 是 | 通用设备的型号。 
+
+
+| 固件 | 字符串 | 是 | 通用设备的固件版本。 
+
+
+| 驱动程序 | 字符串 | 是 | 通用设备的驱动程序。 
+
+
+| serialNumber | 字符串 | 是 | 通用设备的序列号。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| generic_device_port | link:#entity-generic_device_port["generic_device_port"] | 许多 
+
+
+| 违规行为 | link:#entity-violation["违规行为"] | 许多 
+
+
+| physical_path | link:#entity-physical_path["physical_path"] | 许多 
+
+
+| 逻辑 | link:#entity-logical["逻辑"] | 许多 
+|===
+
+
+[[genericdeviceport]]
+=== generic_device_port
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：generic_device_port
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 端口的 GUID。 
+
+
+| genericDeviceId *[FK]* →link:#entity-generic_device["generic_device"].id | Int64 | 是 | 通用设备的 GUID。 
+
+
+| wwn | 字符串 | 是 | 端口的WWN。 
+
+
+| 数字 | Int64 | 是 | 容器刀片中的端口号 
+
+
+| portId | 字符串 | 是 | 端口的 ID。 
+
+
+| name | 字符串 | 是 | 端口名称。 
+
+
+| 速度 | 字符串 | 是 | 端口速度，以 Gbps 为单位。 
+
+
+| url | 字符串 | 是 | Insight Server 中此端口的 URL。 
+
+
+| 活动 | 字符串 | 是 | 如果端口未失效，则为 True 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| generic_device | link:#entity-generic_device["generic_device"] | 一个 JOIN：genericDeviceId=link:#entity-generic_device["generic_device"].id 
+|===
+
+
+[[host]]
+=== host
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：主机
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 主机的 GUID。 
+
+
+| name | 字符串 | 是 | 主机名称。 
+
+
+| 标识符 | 字符串 | 是 | 设备的标识符。 
+
+
+| IP | 字符串 | 是 | 主机的 IP 地址。 
+
+
+| 操作系统 | 字符串 | 是 | 在主机上运行的操作系统。 
+
+
+| 型号 | 字符串 | 是 | 型号。 
+
+
+| 制造商 | 字符串 | 是 | 主机的制造商。 
+
+
+| installedMemoryMB | 字符串 | 是 | 主机上可用的内存总量，以 MB 为单位。 
+
+
+| hostFsFreeGB | 字符串 | 是 | 主机文件系统中的可用存储量（以 GB 为单位）。 
+
+
+| hostFsTotalGB | 字符串 | 是 | 主机文件系统中的存储总量（以 GB 为单位）。 
+
+
+| hostFsUsedGB | 字符串 | 是 | 用于主机的文件系统中的存储量（以 GB 为单位）。 
+
+
+| cpuCount | 字符串 | 是 | 主机上运行的 CPU 数。 
+
+
+| cpuSpeed | 字符串 | 是 | CPU 速度，以 MHz 为单位。 
+
+
+| nicCount | 字符串 | 是 | NIC 数量。 
+
+
+| nicSpeed | 字符串 | 是 | 网卡速度，Mbs。 
+
+
+| url | 字符串 | 是 | Insight Server 中此主机的 URL。 
+
+
+| 活动 | 字符串 | 是 | 指示主机当前是否处于活动状态。 
+
+
+| dataCenter | 字符串 | 是 | # dataCenter 分配给主机的 annotation 值 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| host_port | link:#entity-host_port["host_port"] | 许多 
+
+
+| hv_path | link:#entity-hv_path["hv_path"] | 许多 
+
+
+| volume_mask | link:#entity-volume_mask["volume_mask"] | 许多 
+
+
+| host_adapter | link:#entity-host_adapter["host_adapter"] | 许多 
+
+
+| unknown_logical | link:#entity-unknown_logical["unknown_logical"] | 许多 
+
+
+| 逻辑 | link:#entity-logical["逻辑"] | 许多 
+
+
+| host_to_application | link:#entity-host_to_application["host_to_application"] | 许多 
+
+
+| hv_host_to_nas_share | link:#entity-hv_host_to_nas_share["hv_host_to_nas_share"] | 许多 
+
+
+| 文件系统 | link:#entity-file_system["文件系统"] | 许多 
+
+
+| hv_lun | link:#entity-hv_lun["hv_lun"] | 许多 
+
+
+| 违规行为 | link:#entity-violation["违规行为"] | 许多 
+
+
+| iscsi_logical | link:#entity-iscsi_logical["iscsi_logical"] | 许多 
+
+
+| hv_lun_to_volume | link:#entity-hv_lun_to_volume["hv_lun_to_volume"] | 许多 
+
+
+| physical_path | link:#entity-physical_path["physical_path"] | 许多 
+
+
+| hv_server | link:#entity-hv_server["hv_server"] | 许多 
+
+
+| compute_resource | link:#entity-compute_resource["compute_resource"] | 许多 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | 许多 
+|===
+
+
+[[hostadapter]]
+=== host_adapter
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：host_adapter
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 主机适配器的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 此适配器所在主机的 GUID。 
+
+
+| wwn | 字符串 | 是 | 主机适配器的 WWN。 
+
+
+| 型号 | 字符串 | 是 | 主机适配器的型号。 
+
+
+| 制造商 | 字符串 | 是 | 主机适配器的制造商。 
+
+
+| 驱动程序 | 字符串 | 是 | 管理对主机适配器的访问的驱动程序的名称。 
+
+
+| 固件 | 字符串 | 是 | 在主机适配器上运行的固件版本。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+
+
+| host_port | link:#entity-host_port["host_port"] | 许多 
+|===
+
+
+[[hostport]]
+=== host_port
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：host_port
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 主机端口的 GUID。 
+
+
+| adapterId *[FK]* →link:#entity-host_adapter["host_adapter"].id | Int64 | 是 | 此主机端口所在节点（适配器）的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 此主机端口所在主机的 GUID。 
+
+
+| wwn | 字符串 | 是 | 主机端口的 WWN。 
+
+
+| nodeWwn | 字符串 | 是 | 此端口所在节点（适配器）的 WWN。 
+
+
+| portId | 字符串 | 是 | 端口的 ID。 
+
+
+| name | 字符串 | 是 | 主机端口的名称。 
+
+
+| 速度 | 字符串 | 是 | 端口速度，以 Gbps 为单位。 
+
+
+| url | 字符串 | 是 | Insight Server 中此端口的 URL。 
+
+
+| 活动 | 字符串 | 是 | 如果端口未失效，则为 True 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| host_adapter | link:#entity-host_adapter["host_adapter"] | 一个 JOIN：adapterId=link:#entity-host_adapter["host_adapter"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+|===
+
+
+[[hosttoapplication]]
+=== host_to_application
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：host_to_application
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 主机和应用程序之间关系的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 主机的 GUID。 
+
+
+| applicationId *[FK]* →link:#entity-application["应用程序"].id | Int64 | 是 | 应用程序的 GUID。 
+
+
+| 继承 | 字符串 | 是 | 此应用程序已继承。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 应用程序 | link:#entity-application["应用程序"] | 一个 JOIN：applicationId=link:#entity-application["应用程序"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+|===
+
+
+[[hvdatastore]]
+=== hv_data_store
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_data_store
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 数据存储库的 GUID。 
+
+
+| naturalKey | 字符串 | 是 | 数据存储的自然标识符。 
+
+
+| moid | 字符串 | 是 | 托管对象 ID，分配给 Virtual Center 中的数据存储。 
+
+
+| name | 字符串 | 是 | 数据存储库的名称。 
+
+
+| 容量 MB | Int64 | 是 | 配置的数据存储区大小，以 MB 为单位。 
+
+
+| 预配置容量 MB | Int64 | 是 | 为数据存储库预留的存储量，以 MB 为单位。 
+
+
+| virtualCenterIp | 字符串 | 是 | 虚拟中心的 IP 地址。 
+
+
+| freeCapacityMB | Int64 | 是 | [OBSOLETE] 数据存储库中的可用容量，以 MB 为单位。 
+
+
+| 已用容量 MB | Int64 | 是 | 数据存储区实际使用的空间量（MB）。 
+
+
+| url | 字符串 | 是 | Insight Server 中此数据存储的 URL。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_nas_share | link:#entity-hv_nas_share["hv_nas_share"] | 许多 
+
+
+| hv_data_store_to_internal_volume | link:#entity-hv_data_store_to_internal_volume["hv_data_store_to_internal_volume"] | 许多 
+
+
+| hv_lun | link:#entity-hv_lun["hv_lun"] | 许多 
+
+
+| hv_datastore_to_nas_share | link:#entity-hv_datastore_to_nas_share["hv_datastore_to_nas_share"] | 许多 
+
+
+| hv_virtual_disk | link:#entity-hv_virtual_disk["hv_virtual_disk"] | 许多 
+
+
+| file_system_to_virtual_disk | link:#entity-file_system_to_virtual_disk["file_system_to_virtual_disk"] | 许多 
+
+
+| hv_data_store_to_volume | link:#entity-hv_data_store_to_volume["hv_data_store_to_volume"] | 许多 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | 许多 
+|===
+
+
+[[hvdatastoretointernalvolume]]
+=== hv_data_store_to_internal_volume
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_data_store_to_internal_volume
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| dataStoreId *[PK]* | Int64 | 是 | 数据存储库的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储的 GUID。 
+
+
+| internalVolumeId *[PK]* | Int64 | 是 | 内部卷的 GUID。 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | 是 | qtree 的 GUID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | 一个 JOIN：dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| internal_volume | link:#entity-internal_volume["internal_volume"] | 一个 JOIN：internalVolumeId=link:#entity-internal_volume["internal_volume"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | 一个 JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+|===
+
+
+[[hvdatastoretovolume]]
+=== hv_data_store_to_volume
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_data_store_to_volume
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| dataStoreId *[PK]* | Int64 | 是 | 数据存储库的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储的 GUID。 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | 是 | qtree 的 GUID。 
+
+
+| volumeId *[PK]* | Int64 | 是 | 卷的 GUID。 
+
+
+| repVolume | 字符串 | 是 | 如果此卷代表数据存储库中的所有卷，则为 True。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | 一个 JOIN：dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | 一个 JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+|===
+
+
+[[hvdatastoretonasshare]]
+=== hv_datastore_to_nas_share
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_datastore_to_nas_share
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 数据存储库和 hv nas 共享之间关系的 GUID。 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | 是 | 数据存储库的 GUID。 
+
+
+| nasShareId *[FK]* →link:#entity-hv_nas_share["hv_nas_share"].id | Int64 | 是 | hv nas 共享的 GUID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | 一个 JOIN：dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| hv_nas_share | link:#entity-hv_nas_share["hv_nas_share"] | 一个 JOIN：nasShareId=link:#entity-hv_nas_share["hv_nas_share"].id 
+|===
+
+
+[[hvhosttonasshare]]
+=== hv_host_to_nas_share
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_host_to_nas_share
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 主机与 NAS 共享之间关系的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 主机的 GUID。 
+
+
+| nasShareId *[FK]* →link:#entity-hv_nas_share["hv_nas_share"].id | Int64 | 是 | NAS 共享的 GUID (hv_nas_share)。 
+
+
+| readOnly | 字节 | 是 | 指示主机是否对 NAS 共享具有只读访问权限。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_nas_share | link:#entity-hv_nas_share["hv_nas_share"] | 一个 JOIN：nasShareId=link:#entity-hv_nas_share["hv_nas_share"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+|===
+
+
+[[hvlun]]
+=== hv_lun
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_lun
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | LUN 的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 主机的 GUID。 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | 是 | 使用此 LUN 的数据存储库的 GUID。对于 RDM VMDK，设置为 NULL。 
+
+
+| naturalKey | 字符串 | 是 | LUN 的自然标识符。 
+
+
+| 数字 | 字符串 | 是 | 逻辑单元号(LUN)。 
+
+
+| tid | Int64 | 是 | 目标 SCSI ID。 
+
+
+| 策略 | 字符串 | 是 | SAN 活动路径选择策略（MRU、FIXED 或 RR）。 
+
+
+| diskName | 字符串 | 是 | LUN 的磁盘名称。 
+
+
+| volumeUuid | 字符串 | 是 | 卷的 UUID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | 一个 JOIN：dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+
+
+| hv_path | link:#entity-hv_path["hv_path"] | 许多 
+
+
+| hv_lun_to_volume | link:#entity-hv_lun_to_volume["hv_lun_to_volume"] | 许多 
+
+
+| hv_virtual_disk | link:#entity-hv_virtual_disk["hv_virtual_disk"] | 许多 
+|===
+
+
+[[hvluntovolume]]
+=== hv_lun_to_volume
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_lun_to_volume
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | hv lun 与卷之间关系的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | hv lun 所在主机的 GUID。 
+
+
+| hvLunId *[FK]* →link:#entity-hv_lun["hv_lun"].id | Int64 | 是 | LUN 的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 卷所在存储阵列的 GUID。 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | 卷的 GUID。 
+
+
+| type | 字符串 | 是 | 卷访问技术的类型。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+
+
+| hv_lun | link:#entity-hv_lun["hv_lun"] | 一个 JOIN：hvLunId=link:#entity-hv_lun["hv_lun"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+|===
+
+
+[[hvnasshare]]
+=== hv_nas_share
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_nas_share
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | NAS 共享的 GUID。 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | 是 | [已弃用] 数据存储库的 GUID。 
+
+
+| naturalKey | 字符串 | 是 | NAS 共享的自然标识符。 
+
+
+| filerName | 字符串 | 是 | NAS 共享的文件服务器的名称。 
+
+
+| filerIp | 字符串 | 是 | NAS 共享的文件管理器的 IP 地址。 
+
+
+| sharePath | 字符串 | 是 | 此共享引用的逻辑磁盘中的路径。 
+
+
+| 容量 MB | Int32 | 是 | 主机可见的共享容量（MB）。 
+
+
+| type | 字符串 | 是 | 用于 NAS 共享的协议（例如，NFS 或 CIFS）。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | 一个 JOIN：dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| hv_datastore_to_nas_share | link:#entity-hv_datastore_to_nas_share["hv_datastore_to_nas_share"] | 许多 
+
+
+| hv_nas_share_to_share | link:#entity-hv_nas_share_to_share["hv_nas_share_to_share"] | 许多 
+
+
+| hv_host_to_nas_share | link:#entity-hv_host_to_nas_share["hv_host_to_nas_share"] | 许多 
+|===
+
+
+[[hvnassharetoshare]]
+=== hv_nas_share_to_share
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_nas_share_to_share
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | NAS 共享与共享之间的关系的 GUID。 
+
+
+| nasShareId *[FK]* →link:#entity-hv_nas_share["hv_nas_share"].id | Int64 | 是 | NAS 共享的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 共享所在的存储阵列（文件管理器）的 GUID。 
+
+
+| shareId *[FK]* →link:#entity-nas_share["nas_share"].id | Int64 | 是 | 共享的 GUID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| hv_nas_share | link:#entity-hv_nas_share["hv_nas_share"] | 一个 JOIN：nasShareId=link:#entity-hv_nas_share["hv_nas_share"].id 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | 一个 JOIN：shareId=link:#entity-nas_share["nas_share"].id 
+|===
+
+
+[[hvpath]]
+=== hv_path
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_path
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 从主机到 LUN 的路径的 GUID。 
+
+
+| lunId *[FK]* →link:#entity-hv_lun["hv_lun"].id | Int64 | 是 | LUN 的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 主机的 GUID。 
+
+
+| hostPortWwpn | 字符串 | 是 | 路径使用的主机端口的 WWN。 
+
+
+| storagePortWwpn | 字符串 | 是 | 路径使用的存储端口的 WWN。 
+
+
+| type | 字符串 | 是 | 路径类型（FC、ISCSI 或未知）。 
+
+
+| 活动 | 字节 | 是 | 指示此路径是否处于活动状态。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_lun | link:#entity-hv_lun["hv_lun"] | 一个 JOIN：lunId=link:#entity-hv_lun["hv_lun"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+|===
+
+
+[[hvserver]]
+=== hv_server
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_server
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | ESX 服务器的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 主机的 GUID。 
+
+
+| naturalKey | 字符串 | 是 | ESX 服务器的自然标识符。 
+
+
+| moid | 字符串 | 是 | 托管对象 ID，分配给 Virtual Center 中的服务器。 
+
+
+| virtualCenterIp | 字符串 | 是 | 虚拟中心的 IP 地址。 
+
+
+| clusterName | 字符串 | 是 | 共享对相同 SAN 卷或 NAS 共享的访问权限的主机集群的名称，对于独立主机则为空。 
+
+
+| dataCenterName | 字符串 | 是 | 数据中心的名称。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+
+
+| vmware_host | link:#entity-vmware_host["vmware_host"] | 许多 
+|===
+
+
+[[hvvirtualdisk]]
+=== hv_virtual_disk
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_virtual_disk
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 虚拟磁盘的 GUID。 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | 是 | 虚拟磁盘的数据存储库的 GUID。 
+
+
+| lunId *[FK]* →link:#entity-hv_lun["hv_lun"].id | Int64 | 是 | 仅 RDM VMDK，与虚拟磁盘关联的 LUN 的 GUID。 
+
+
+| naturalKey | 字符串 | 是 | 虚拟磁盘的自然标识符。 
+
+
+| name | 字符串 | 是 | 虚拟磁盘的名称。 
+
+
+| type | 字符串 | 是 | 虚拟磁盘的类型。 
+
+
+| 容量 MB | Int64 | 是 | 虚拟磁盘的容量（MB）。 
+
+
+| 已用容量 MB | Int64 | 是 | 数据存储区消耗的容量，由设备报告，单位为 MB。 
+
+
+| usedCapacityForReportingMB | Int64 | 是 | 从数据存储区消耗的容量，对于精简配置的 VMDK，可能小于 capacityMB，以 MB 为单位。 
+
+
+| url | 字符串 | 是 | Insight Server 中此虚拟磁盘的 URL。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | 一个 JOIN：dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| hv_lun | link:#entity-hv_lun["hv_lun"] | 一个 JOIN：lunId=link:#entity-hv_lun["hv_lun"].id 
+
+
+| hv_virtual_disk_to_volume | link:#entity-hv_virtual_disk_to_volume["hv_virtual_disk_to_volume"] | 许多 
+
+
+| hv_virtual_machine_to_disk | link:#entity-hv_virtual_machine_to_disk["hv_virtual_machine_to_disk"] | 许多 
+
+
+| file_system_to_virtual_disk | link:#entity-file_system_to_virtual_disk["file_system_to_virtual_disk"] | 许多 
+|===
+
+
+[[hvvirtualdisktovolume]]
+=== hv_virtual_disk_to_volume
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_virtual_disk_to_volume
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| virtualDiskId *[PK]* | Int64 | 是 | 虚拟磁盘的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储的 GUID。 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | 是 | qtree 的 GUID。 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | 卷的 GUID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | 一个 JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+
+
+| hv_virtual_disk | link:#entity-hv_virtual_disk["hv_virtual_disk"] | 一个 JOIN：virtualDiskId=link:#entity-hv_virtual_disk["hv_virtual_disk"].id 
+|===
+
+
+[[hvvirtualmachine]]
+=== hv_virtual_machine
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_virtual_machine
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 虚拟机的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 拥有该虚拟机的主机的 GUID。 
+
+
+| moid | 字符串 | 是 | 托管对象 ID，分配给 Virtual Center 中的虚拟机。 
+
+
+| name | 字符串 | 是 | 虚拟机的名称。 
+
+
+| dnsName | 字符串 | 是 | 虚拟机的完全限定域名。 
+
+
+| ips | 字符串 | 是 | 以逗号分隔的虚拟机 IP 地址列表。 
+
+
+| powerState | 字符串 | 是 | 虚拟机的电源状态与来宾操作系统的状态相结合 
+
+
+| powerStateChangeTime | DateTimeOffset | 是 | 电源状态更改为当前值的时间。 
+
+
+| guestState | 字符串 | 是 | 虚拟机的虚拟硬件和来宾操作系统的组合状态。 
+
+
+| 操作系统 | 字符串 | 是 | 来宾操作系统。 
+
+
+| 处理器 | Int32 | 是 | 虚拟机的处理器数。 
+
+
+| memory | Int64 | 是 | 虚拟机的内存，以 MB 为单位。 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | 是 | 虚拟机用于存储其元数据（日志、快照、内存文件等）的数据存储区的 GUID。 
+
+
+| naturalKey | 字符串 | 是 | 虚拟机的自然标识符。 
+
+
+| virtualCenterIp | 字符串 | 是 | 虚拟中心的 IP 地址。 
+
+
+| 预配置容量 MB | Int64 | 是 | 已配置到虚拟机的存储量（以 MB 为单位）。 
+
+
+| 已用容量 MB | Int64 | 是 | 虚拟机实际使用的空间量（MB）。 
+
+
+| url | 字符串 | 是 | Insight Server 中此虚拟机的 URL。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | 一个 JOIN：dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+
+
+| vm_to_application | link:#entity-vm_to_application["vm_to_application"] | 许多 
+
+
+| hv_virtual_machine_to_disk | link:#entity-hv_virtual_machine_to_disk["hv_virtual_machine_to_disk"] | 许多 
+
+
+| k8s_node | link:#entity-k8s_node["k8s_node"] | 许多 
+
+
+| compute_resource | link:#entity-compute_resource["compute_resource"] | 许多 
+|===
+
+
+[[hvvirtualmachinetodisk]]
+=== hv_virtual_machine_to_disk
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：hv_virtual_machine_to_disk
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 虚拟机和虚拟磁盘之间关系的 GUID。 
+
+
+| virtualMachineId *[FK]* →link:#entity-hv_virtual_machine["hv_virtual_machine"].id | Int64 | 是 | 虚拟机 ID 的 GUID。 
+
+
+| virtualDiskId *[FK]* →link:#entity-hv_virtual_disk["hv_virtual_disk"].id | Int64 | 是 | 虚拟磁盘的 GUID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | 一个 JOIN：virtualMachineId=link:#entity-hv_virtual_machine["hv_virtual_machine"].id 
+
+
+| hv_virtual_disk | link:#entity-hv_virtual_disk["hv_virtual_disk"] | 一个 JOIN：virtualDiskId=link:#entity-hv_virtual_disk["hv_virtual_disk"].id 
+|===
+
+
+[[internalvolume]]
+=== internal_volume
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：internal_volume
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 内部卷的 GUID。 
+
+
+| storagePoolId *[FK]* →link:#entity-storage_pool["storage_pool"].id | Int64 | 是 | 存储池的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储阵列（文件管理器）的 GUID。 
+
+
+| 标识符 | 字符串 | 是 | 存储中内部卷的唯一标识符。 
+
+
+| name | 字符串 | 是 | 内部卷的名称。唯一标识存储中的内部卷。 
+
+
+| type | 字符串 | 是 | 内部卷的类型（例如 flexVol、传统卷等）。 
+
+
+| thinProvisioningSupported | 字符串 | 是 | 此内部卷是否支持对其之上的卷层进行精简配置。 
+
+
+| thinProvisioned | 字符串 | 是 | 此内部卷是否已精简配置。默认值为 false。 
+
+
+| spaceGuarantee | 字符串 | 是 | Space Guatantee 政策 
+
+
+| dedupeEnabled | 字符串 | 是 | 是否在内部卷上启用重复数据删除。默认值为 false。 
+
+
+| cloneSourceId | Int64 | 是 | 如果此内部卷是另一个内部卷的克隆，则为克隆的内部卷的 ID。否则为空。 
+
+
+| snapshotCount | Int32 | 是 | 内部卷上的快照数。 
+
+
+| lastSnapshotTime | DateTimeOffset | 是 | 上次快照的时间 
+
+
+| lastKnownAccessTime | DateTimeOffset | 是 | 上次访问内部卷的时间。 
+
+
+| 状态 | 字符串 | 是 | 内部卷的状态（例如离线、在线……） 
+
+
+| virtualStorage | 字符串 | 是 | 指定VirtualStorage（例如vFiler） 
+
+
+| protectionType | 字符串 | 是 | 指定内部卷的保护类型（例如 SnapMirror、SnapVault……）。 
+
+
+| flashPoolEligibility | 字符串 | 是 | 指示内部卷是否可以使用闪存池。 
+
+
+| dedupeRatio | 双线 | 是 | 重复数据删除压缩的比率。值介于 0 到 1 之间。 
+
+
+| 重复数据删除节省 GB | Int64 | 是 | 此内部卷上的重复数据删除压缩（以 GB 为单位）。 
+
+
+| totalAllocatedCapacityMB | Int64 | 是 | 存储阵列报告的内部卷分配容量（以 MB 为单位）。包括为快照分配的容量。<br>等于：snapshotAllocatedCapacityMB + dataAllocatedCapacityMB + otherAllocatedCapacityMB 
+
+
+| totalUsedCapacityMB | Int64 | 是 | 存储池中的内部卷消耗的容量。 
+
+
+| totalUsedCapacityFromDeviceMB | Int64 | 是 | 存储阵列以 MB 为单位报告的内部卷中使用的容量。包括用于快照的容量。<br>等于：snapshotUsedCapacityMB + dataUsedCapacityMB 
+
+
+| dataAllocatedCapacityMB | Int64 | 是 | 存储阵列报告的为内部卷分配的容量（以 MB 为单位）。不包括为快照分配的容量。 
+
+
+| 已用数据容量 MB | Int64 | 是 | 存储阵列以 MB 为单位报告的内部卷中使用的容量。不包括用于快照的容量。 
+
+
+| snapshotAllocatedCapacityMB | Int64 | 是 | 为内部卷快照分配的容量（MB）。 
+
+
+| snapshotUsedCapacityMB | Int64 | 是 | 用于内部卷快照的容量（MB）。 
+
+
+| rawToUsableRatio | 双线 | 是 | 内部卷的磁盘原始容量和可用容量之间的比率。受 RAID 级别和其他开销影响。 
+
+
+| otherUsedCapacityMB | Int64 | 是 | 未包含在内部卷的数据/快照已用容量中的其他开销。totalUsedCapacityMB = dataUsedCapacityMB + snapShotUsedCapacityMB + otherUsedCapacityMB。 
+
+
+| otherAllocatedCapacityMB | Int64 | 是 | 未包含在内部卷的数据/快照分配容量中的其他开销。totalAllocatedCapacityMB = dataAllocatedCapacityMB + snapShotAllocatedCapacityMB + otherAllocatedCapacityMB。 
+
+
+| totalCloneSavedCapacityMB | Int64 | 是 | 克隆内部卷与其源内部卷共享的容量 
+
+
+| compressionEnabled | 字符串 | 是 | 是否已在 interal 卷上启用压缩。 
+
+
+| compressionRatio | 双线 | 是 | 压缩节省的比率。值介于 0 到 1 之间。 
+
+
+| 压缩节省 GB | Int64 | 是 | 此内部卷上的数据压缩（以 GB 为单位）。 
+
+
+| compressionSavingsPercent | 双线 | 是 | 此内部卷上的数据压缩(%)。 
+
+
+| uuid | 字符串 | 是 | 内部卷的 UUID。 
+
+
+| url | 字符串 | 是 | Insight Server 中此内部卷的 URL。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| storage_pool | link:#entity-storage_pool["storage_pool"] | 一个 JOIN：storagePoolId=link:#entity-storage_pool["storage_pool"].id 
+
+
+| volume | link:#entity-volume["volume"] | 许多 
+
+
+| qtree | link:#entity-qtree["qtree"] | 许多 
+
+
+| dr_internal_volume_replica | link:#entity-dr_internal_volume_replica["dr_internal_volume_replica"] | 许多 
+
+
+| internal_volume_to_application | link:#entity-internal_volume_to_application["internal_volume_to_application"] | 许多 
+
+
+| nas_file_share | link:#entity-nas_file_share["nas_file_share"] | 许多 
+
+
+| hv_data_store_to_internal_volume | link:#entity-hv_data_store_to_internal_volume["hv_data_store_to_internal_volume"] | 许多 
+
+
+| 配额 | link:#entity-quota["配额"] | 许多 
+
+
+| nas_cr_logical | link:#entity-nas_cr_logical["nas_cr_logical"] | 许多 
+|===
+
+
+[[internalvolumetoapplication]]
+=== internal_volume_to_application
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：internal_volume_to_application
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 内部卷和应用程序之间的关系的 GUID。 
+
+
+| applicationId *[FK]* →link:#entity-application["应用程序"].id | Int64 | 是 | 应用程序的 GUID。 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["internal_volume"].id | Int64 | 是 | 内部卷的 GUID。 
+
+
+| 继承 | 字符串 | 是 | 此应用程序已继承。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| internal_volume | link:#entity-internal_volume["internal_volume"] | 一个 JOIN：internalVolumeId=link:#entity-internal_volume["internal_volume"].id 
+
+
+| 应用程序 | link:#entity-application["应用程序"] | 一个 JOIN：applicationId=link:#entity-application["应用程序"].id 
+|===
+
+
+[[iscsilogical]]
+=== iscsi_logical
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：iscsi_logical
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | iscsi 逻辑路径的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | iscsi 逻辑路径的启动器主机的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | iSCSI 逻辑路径的目标存储的 GUID。 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | iscsi 逻辑路径的目标卷的 GUID。 
+
+
+| numberOfSessions | Int32 | 是 | 在 iSCSI 逻辑路径中建立的会话数。 
+
+
+| numberOfConnections | Int32 | 是 | 在 iSCSI 逻辑路径中建立的连接数。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+|===
+
+
+[[k8scluster]]
+=== k8s_cluster
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：k8s_cluster
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | K8S 集群的 ID 
+
+
+| name | 字符串 | 是 |  
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| k8s_namespace | link:#entity-k8s_namespace["k8s_namespace"] | 许多 
+
+
+| k8s_workload | link:#entity-k8s_workload["k8s_workload"] | 许多 
+
+
+| k8s_workload_to_pvc | link:#entity-k8s_workload_to_pvc["k8s_workload_to_pvc"] | 许多 
+
+
+| k8s_node | link:#entity-k8s_node["k8s_node"] | 许多 
+
+
+| k8s_pv | link:#entity-k8s_pv["k8s_pv"] | 许多 
+
+
+| k8s_pvc | link:#entity-k8s_pvc["k8s_pvc"] | 许多 
+|===
+
+
+[[k8slabel]]
+=== k8s_label
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：k8s_label
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| objectId *[PK]* | Int64 | 是 | 对象的 GUID。 
+
+
+| objectType *[PK]* | 字符串 | 是 | 对象的类型。 
+
+
+| labelName *[PK]* | 字符串 | 是 | 标签名称。 
+
+
+| labelValue | 字符串 | 是 | 此对象的标签值。 
+|===
+
+
+[[k8snamespace]]
+=== k8s_namespace
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：k8s_namespace
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | K8S 命名空间的 ID 
+
+
+| 标识符 | 字符串 | 是 | K8S 命名空间的标识符 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | 是 | K8S 集群的 ID 
+
+
+| name | 字符串 | 是 |  
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | 一个 JOIN：clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+
+
+| k8s_workload | link:#entity-k8s_workload["k8s_workload"] | 许多 
+
+
+| k8s_workload_to_pvc | link:#entity-k8s_workload_to_pvc["k8s_workload_to_pvc"] | 许多 
+
+
+| k8s_pvc | link:#entity-k8s_pvc["k8s_pvc"] | 许多 
+|===
+
+
+[[k8snode]]
+=== k8s_node
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：k8s_node
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | K8S 节点的 ID 
+
+
+| 标识符 | 字符串 | 是 | K8S 节点的标识符 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | 是 | K8S 集群的 ID 
+
+
+| name | 字符串 | 是 | K8S 节点的名称 
+
+
+| vmId *[FK]* →link:#entity-hv_virtual_machine["hv_virtual_machine"].id | Int64 | 是 | 此节点所在的虚拟机的 ID 
+
+
+| internalIp | 字符串 | 是 | K8S 节点的内部 IP 
+
+
+| osImage | 字符串 | 是 | K8S 节点的 OS 映像 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | 一个 JOIN：vmId=link:#entity-hv_virtual_machine["hv_virtual_machine"].id 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | 一个 JOIN：clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+|===
+
+
+[[k8spv]]
+=== k8s_pv
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：k8s_pv
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | K8S 持久卷的 ID 
+
+
+| 标识符 | 字符串 | 是 | K8S 持久卷的标识符 
+
+
+| name | 字符串 | 是 | K8S 持久卷的名称 
+
+
+| objectId | Int64 | 是 | 映射到此永久卷的存储对象的 ID 
+
+
+| 对象类型 | 字符串 | 是 | 映射到此永久卷的存储对象的类型 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | 是 | K8S 集群的 ID 
+
+
+| 阶段 | 字符串 | 是 | K8S 持久卷的阶段（绑定等） 
+
+
+| sizeBytes | Int64 | 是 | K8S 持久卷的大小（字节） 
+
+
+| storageClass | 字符串 | 是 | K8S 持久卷的存储类 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | 一个 JOIN：clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+
+
+| k8s_pvc | link:#entity-k8s_pvc["k8s_pvc"] | 许多 
+|===
+
+
+[[k8spvc]]
+=== k8s_pvc
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：k8s_pvc
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | K8S 持久卷声明的 ID 
+
+
+| 标识符 | 字符串 | 是 | K8S 持久卷声明的标识符 
+
+
+| name | 字符串 | 是 | K8S 持久卷声明的名称 
+
+
+| pvId *[FK]* →link:#entity-k8s_pv["k8s_pv"].id | Int64 | 是 | 链接到此声明的 K8S 持久卷的标识符 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | 是 | K8S 集群的 ID 
+
+
+| namespaceId *[FK]* →link:#entity-k8s_namespace["k8s_namespace"].id | Int64 | 是 | K8S 命名空间的 ID 
+
+
+| 阶段 | 字符串 | 是 | K8S 持久卷声明的阶段（绑定等） 
+
+
+| sizeBytes | Int64 | 是 | K8S 持久卷声明的大小（字节） 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| k8s_pv | link:#entity-k8s_pv["k8s_pv"] | 一个 JOIN:pvId=link:#entity-k8s_pv["k8s_pv"].id 
+
+
+| k8s_namespace | link:#entity-k8s_namespace["k8s_namespace"] | 一个 JOIN：namespaceId=link:#entity-k8s_namespace["k8s_namespace"].id 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | 一个 JOIN：clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+
+
+| k8s_workload_to_pvc | link:#entity-k8s_workload_to_pvc["k8s_workload_to_pvc"] | 许多 
+|===
+
+
+[[k8sworkload]]
+=== k8s_workload
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：k8s_workload
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | K8S 工作负载的 ID 
+
+
+| 标识符 | 字符串 | 是 | K8S 工作负载的标识符 
+
+
+| name | 字符串 | 是 | K8S 工作负载的名称 
+
+
+| namespaceId *[FK]* →link:#entity-k8s_namespace["k8s_namespace"].id | Int64 | 是 | K8S 命名空间的 ID 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | 是 | K8S 集群的 ID 
+
+
+| type | 字符串 | 是 | 工作负载类型（Pod、statefulset 等） 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| k8s_namespace | link:#entity-k8s_namespace["k8s_namespace"] | 一个 JOIN：namespaceId=link:#entity-k8s_namespace["k8s_namespace"].id 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | 一个 JOIN：clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+
+
+| k8s_workload_to_pvc | link:#entity-k8s_workload_to_pvc["k8s_workload_to_pvc"] | 许多 
+|===
+
+
+[[k8sworkloadtopvc]]
+=== k8s_workload_to_pvc
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：k8s_workload_to_pvc
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| workloadId *[PK]* | Int64 | 是 | K8S 工作负载的标识符 
+
+
+| pvcId *[PK]* | Int64 | 是 | K8S 持久卷的标识符 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | 是 | K8S 集群的 ID 
+
+
+| namespaceId *[FK]* →link:#entity-k8s_namespace["k8s_namespace"].id | Int64 | 是 | K8S 命名空间的 ID 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| k8s_workload | link:#entity-k8s_workload["k8s_workload"] | 一个 JOIN:workloadId=link:#entity-k8s_workload["k8s_workload"].id 
+
+
+| k8s_pvc | link:#entity-k8s_pvc["k8s_pvc"] | 一个 JOIN:pvcId=link:#entity-k8s_pvc["k8s_pvc"].id 
+
+
+| k8s_namespace | link:#entity-k8s_namespace["k8s_namespace"] | 一个 JOIN：namespaceId=link:#entity-k8s_namespace["k8s_namespace"].id 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | 一个 JOIN：clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+|===
+
+
+[[logical]]
+=== 逻辑
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：logical
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 逻辑路径的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 逻辑路径的启动器主机的 GUID - 对于来自通用设备的路径，设置为 null。 
+
+
+| genericDeviceId *[FK]* →link:#entity-generic_device["generic_device"].id | Int64 | 是 | 作为逻辑路径发起方的通用设备的 GUID，对于来自主机的路径，该值设置为 null。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 逻辑路径的目标存储的 GUID - 对于磁带路径设置为 null。 
+
+
+| tapeId *[FK]* →link:#entity-tape["磁带"].id | Int64 | 是 | 逻辑路径的目标磁带的 GUID - 对于存储阵列的路径设置为 null。 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | 逻辑路径的目标卷的 GUID - 对于磁带路径，设置为 null。 
+
+
+| minHopNumber | Int32 | 是 | 逻辑路径的最小交换机跳数。 
+
+
+| hopsToDisplay | 字符串 | 是 | 与此逻辑路径的不同基础路径对应的交换机跃点计数列表，以逗号分隔。 
+
+
+| numberOfFabrics | Int32 | 是 | 逻辑路径使用的网络结构数。 
+
+
+| numberOfHostPorts | Int32 | 是 | 逻辑路径使用的主机端口数。 
+
+
+| numberOfStoragePorts | Int32 | 是 | 逻辑路径使用的存储端口数。 
+
+
+| spf | 字节 | 是 | 指示逻辑路径是否具有单点故障。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+
+
+| 磁带 | link:#entity-tape["磁带"] | 一个 JOIN：tapeId=link:#entity-tape["磁带"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+
+
+| generic_device | link:#entity-generic_device["generic_device"] | 一个 JOIN：genericDeviceId=link:#entity-generic_device["generic_device"].id 
+|===
+
+
+[[nascrlogical]]
+=== nas_cr_logical
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：nas_cr_logical
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | NAS 逻辑路径的 GUID。 
+
+
+| computeResourceId *[FK]* →link:#entity-compute_resource["compute_resource"].id | Int64 | 是 | 访问文件共享的主机的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 正在访问的存储阵列（filer）的 GUID。 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["internal_volume"].id | Int64 | 是 | 正在访问的内部卷的 GUID。 
+
+
+| shareId *[FK]* →link:#entity-nas_share["nas_share"].id | Int64 | 是 | 正在访问的共享的 GUID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| compute_resource | link:#entity-compute_resource["compute_resource"] | 一个 JOIN：computeResourceId=link:#entity-compute_resource["compute_resource"].id 
+
+
+| internal_volume | link:#entity-internal_volume["internal_volume"] | 一个 JOIN：internalVolumeId=link:#entity-internal_volume["internal_volume"].id 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | 一个 JOIN：shareId=link:#entity-nas_share["nas_share"].id 
+|===
+
+
+[[nasfileshare]]
+=== nas_file_share
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：nas_file_share
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 文件共享的 GUID。 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["internal_volume"].id | Int64 | 是 | 定义此文件共享的内部卷的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 定义此共享的存储阵列（文件管理器）的 GUID。 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | 是 | 定义此文件共享的 qtree 的 GUID。 
+
+
+| name | 字符串 | 是 | 文件共享的名称。 
+
+
+| path | 字符串 | 是 | 内部卷中要共享的文件夹的完整路径以共享名称结尾。 
+
+
+| 状态 | 字符串 | 是 | 文件共享的状态（snapvaulted、snapmirrored、normal 或 readonly）。 
+
+
+| securityType | 字符串 | 是 | 文件共享的安全类型（unix、ntfs 或 mixed）。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| internal_volume | link:#entity-internal_volume["internal_volume"] | 一个 JOIN：internalVolumeId=link:#entity-internal_volume["internal_volume"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | 一个 JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | 许多 
+|===
+
+
+[[naslogical]]
+=== nas_logical
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：nas_logical
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| ID | Int64 | 是 | NAS 逻辑路径的 GUID。 
+
+
+| hostId | Int64 | 是 | 主机 ID。 
+
+
+| storageId | Int64 | 是 | 正在访问的存储阵列（filer）的 GUID。 
+
+
+| shareId | Int64 | 是 | 正在访问的共享的 GUID。 
+|===
+
+
+[[nasshare]]
+=== nas_share
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：nas_share
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 共享的 GUID。 
+
+
+| fileShareId *[FK]* →link:#entity-nas_file_share["nas_file_share"].id | Int64 | 是 | 与此共享关联的文件共享的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 定义此共享的存储阵列（文件管理器）的 GUID。 
+
+
+| 标识符 | 字符串 | 是 | 存储中共享的标识符。 
+
+
+| name | 字符串 | 是 | 共享的名称。 
+
+
+| protocol | 字符串 | 是 | 用于访问共享的协议，其中之一为：CIFS 或 NFS。 
+
+
+| ipInterfaces | 字符串 | 是 | 共享所在存储的所有 IP 地址。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| nas_file_share | link:#entity-nas_file_share["nas_file_share"] | 一个 JOIN：fileShareId=link:#entity-nas_file_share["nas_file_share"].id 
+
+
+| 共享至应用程序 | link:#entity-share_to_application["共享至应用程序"] | 许多 
+
+
+| nas_share_initiator | link:#entity-nas_share_initiator["nas_share_initiator"] | 许多 
+
+
+| hv_nas_share_to_share | link:#entity-hv_nas_share_to_share["hv_nas_share_to_share"] | 许多 
+
+
+| nas_cr_logical | link:#entity-nas_cr_logical["nas_cr_logical"] | 许多 
+|===
+
+
+[[nasshareinitiator]]
+=== nas_share_initiator
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：nas_share_initiator
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | share_initiator 的 GUID。 
+
+
+| shareId *[FK]* →link:#entity-nas_share["nas_share"].id | Int64 | 是 | 与此 share_initiator 关联的共享的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 定义此共享的存储阵列（文件管理器）的 GUID。 
+
+
+| initiator | 字符串 | 是 | 允许访问共享的主机的 IP 地址或名称子网。 
+
+
+| 权限 | 字符串 | 是 | 读/写/执行和名称。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | 一个 JOIN：shareId=link:#entity-nas_share["nas_share"].id 
+|===
+
+
+[[objecttoannotation]]
+=== object_to_annotation
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：object_to_annotation
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| annotationValueId *[PK]* | Int64 | 是 | 标注值的 GUID。 
+
+
+| objectId *[PK]* | Int64 | 是 | 批注对象的 GUID。 
+
+
+| objectType *[PK]* | 字符串 | 是 | 批注对象的类型。 
+
+
+| annotationType | 字符串 | 是 | 批注的类型。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 批注值 | link:#entity-annotation_value["批注值"] | 一个 JOIN：annotationValueId=link:#entity-annotation_value["批注值"].id 
+|===
+
+
+[[physicalpath]]
+=== physical_path
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：physical_path
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 物理路径的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 启动物理路径的主机的 GUID。对于来自通用设备的路径，它为空。 
+
+
+| genericDeviceId *[FK]* →link:#entity-generic_device["generic_device"].id | Int64 | 是 | 启动物理路径的通用设备的 GUID。对于来自主机的路径，它为空。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 物理路径的目标存储的 GUID。对于磁带路径，此值为空。 
+
+
+| tapeId *[FK]* →link:#entity-tape["磁带"].id | Int64 | 是 | 物理路径的目标磁带的 GUID。对于指向存储的路径，此值为空。 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | 物理路径的目标卷的 GUID。 
+
+
+| hostPortWwn | 字符串 | 是 | 主机端口的 WWN。 
+
+
+| storagePortWwn | 字符串 | 是 | 存储端口的 WWN。 
+
+
+| lun | 字符串 | 是 | 主机用于访问卷的逻辑单元号 (LUN)。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+
+
+| 磁带 | link:#entity-tape["磁带"] | 一个 JOIN：tapeId=link:#entity-tape["磁带"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+
+
+| generic_device | link:#entity-generic_device["generic_device"] | 一个 JOIN：genericDeviceId=link:#entity-generic_device["generic_device"].id 
+|===
+
+
+[[portconnectivity]]
+=== 端口连接性
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：port_connectivity
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 端口连接的 GUID。 
+
+
+| portId | Int64 | 是 | 第一个端口的 GUID。 
+
+
+| type | 字符串 | 是 | 第一个端口的类型。 
+
+
+| wwn | 字符串 | 是 | 第一个端口的 WWN。 
+
+
+| connectedId | Int64 | 是 | 第二个端口的 GUID。 
+
+
+| connectedType | 字符串 | 是 | 第二个端口的类型。 
+
+
+| connectedWwn | 字符串 | 是 | 第二个端口的 WWN。 
+|===
+
+
+[[qtree]]
+=== qtree
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：qtree
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | qtree 的 GUID。 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["internal_volume"].id | Int64 | 是 | Qtree 驻留的内部卷的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储阵列（文件管理器）的 GUID。 
+
+
+| 标识符 | 字符串 | 是 | 存储中 qtree 的唯一标识符。 
+
+
+| name | 字符串 | 是 | qtree 的名称。 
+
+
+| quotaHardCapacityLimitMB | Int64 | 是 | 配额对此 qtree 施加的磁盘空间限制。超出时，无法写入数据。 
+
+
+| quotaSoftCapacityLimitMB | Int64 | 是 | 配额对此 qtree 施加的磁盘空间限制。超过此值时，将发出警告，但仍可写入数据。 
+
+
+| quotaUsedCapacityMB | Int64 | 是 | 用于配额上设置的硬容量和软容量限制的容量。 
+
+
+| type | 字符串 | 是 | qtree 的类型。 
+
+
+| securityStyle | 字符串 | 是 | qtree 的安全模式。 
+
+
+| 状态 | 字符串 | 是 | qtree 的状态。 
+
+
+| oplocks | 字符串 | 是 | 此qtree上是否已启用oplock。 
+
+
+| url | 字符串 | 是 | Insight Server 中此 qtree 的 URL。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| internal_volume | link:#entity-internal_volume["internal_volume"] | 一个 JOIN：internalVolumeId=link:#entity-internal_volume["internal_volume"].id 
+
+
+| volume | link:#entity-volume["volume"] | 许多 
+
+
+| nas_file_share | link:#entity-nas_file_share["nas_file_share"] | 许多 
+
+
+| hv_data_store_to_internal_volume | link:#entity-hv_data_store_to_internal_volume["hv_data_store_to_internal_volume"] | 许多 
+
+
+| dr_qtree_replica | link:#entity-dr_qtree_replica["dr_qtree_replica"] | 许多 
+
+
+| 配额 | link:#entity-quota["配额"] | 许多 
+
+
+| hv_virtual_disk_to_volume | link:#entity-hv_virtual_disk_to_volume["hv_virtual_disk_to_volume"] | 许多 
+
+
+| qtree_to_application | link:#entity-qtree_to_application["qtree_to_application"] | 许多 
+
+
+| hv_data_store_to_volume | link:#entity-hv_data_store_to_volume["hv_data_store_to_volume"] | 许多 
+|===
+
+
+[[qtreetoapplication]]
+=== qtree_to_application
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：qtree_to_application
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | qtree 与应用程序之间关系的 GUID。 
+
+
+| applicationId *[FK]* →link:#entity-application["应用程序"].id | Int64 | 是 | 应用程序的 GUID。 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | 是 | qtree 的 GUID。 
+
+
+| 继承 | 字符串 | 是 | 此应用程序已继承。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 应用程序 | link:#entity-application["应用程序"] | 一个 JOIN：applicationId=link:#entity-application["应用程序"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | 一个 JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+|===
+
+
+[[quota]]
+=== 配额
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：quota
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 配额的 GUID。 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["internal_volume"].id | Int64 | 是 | 定义此配额的内部卷的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 定义此配额的存储阵列（文件管理器）的 GUID。 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | 是 | 定义此配额的 qtree 的 GUID。 
+
+
+| 标识符 | 字符串 | 是 | 配额的唯一标识符。 
+
+
+| targetUser | 字符串 | 是 | 指定此配额应用到的组或用户。 
+
+
+| type | 字符串 | 是 | 指定应用此配额的目标类型（树、组或用户）。 
+
+
+| hardFileLimit | Int64 | 是 | 此配额对树、组或用户施加的文件数量的硬性限制。 
+
+
+| softFileLimit | Int64 | 是 | 软配额文件限制，如果超过此限制，将发出警告，而不是拒绝文件创建请求。 
+
+
+| hardCapacityLimitMB | Int64 | 是 | 此配额对树、组、用户或类型施加的硬盘空间限制（以 MB 为单位）。 
+
+
+| softCapacityLimitMB | Int64 | 是 | 软配额空间限制（以 MB 为单位），如果超过此限制，将发出警告而不是拒绝空间请求。 
+
+
+| thresholdMB | Int64 | 是 | 发出接近配额限制警告的磁盘空间使用点（以 MB 为单位）。 
+
+
+| usedFiles | Int64 | 是 | 此配额目标当前使用的文件数。 
+
+
+| 已用容量 MB | Int64 | 是 | 此配额目标当前使用的磁盘空间（以 MB 为单位）。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| internal_volume | link:#entity-internal_volume["internal_volume"] | 一个 JOIN：internalVolumeId=link:#entity-internal_volume["internal_volume"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | 一个 JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+|===
+
+
+[[servicelevel]]
+=== service_level
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：service_level
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| ID | Int64 | 是 | 批注的 GUID。 
+
+
+| name | 字符串 | 是 | 批注的值。 
+
+
+| 序列 | Int32 | 是 | 确定枚举值顺序的序列号。这主要用于显示目的。 
+
+
+| 成本 | 双线 | 是 | 与批注关联的可选成本。适用于层注释。 
+|===
+
+
+[[sharetoapplication]]
+=== 共享至应用程序
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：share_to_application
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 共享和应用程序之间的关系的 GUID。 
+
+
+| applicationId *[FK]* →link:#entity-application["应用程序"].id | Int64 | 是 | 应用程序的 GUID。 
+
+
+| shareId *[FK]* →link:#entity-nas_share["nas_share"].id | Int64 | 是 | 共享的 GUID。 
+
+
+| 继承 | 字符串 | 是 | 此应用程序已继承。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 应用程序 | link:#entity-application["应用程序"] | 一个 JOIN：applicationId=link:#entity-application["应用程序"].id 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | 一个 JOIN：shareId=link:#entity-nas_share["nas_share"].id 
+|===
+
+
+[[storage]]
+=== 存储
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| name | 字符串 | 是 | 存储阵列的名称。 
+
+
+| 标识符 | 字符串 | 是 | 设备的标识符。 
+
+
+| IP | 字符串 | 是 | 存储阵列的 IP 地址。 
+
+
+| 型号 | 字符串 | 是 | 存储阵列的型号。 
+
+
+| 制造商 | 字符串 | 是 | 存储阵列的制造商。 
+
+
+| serialNumber | 字符串 | 是 | 存储阵列的序列号。 
+
+
+| microcodeVersion | 字符串 | 是 | 存储阵列上运行的固件版本。 
+
+
+| 原始容量 MB | Int64 | 是 | 存储阵列的实际原始磁盘容量（MB）。 
+
+
+| 剩余原始容量 MB | Int64 | 是 | 存储阵列中所有备用磁盘原始容量的总和（以 MB 为单位）。 
+
+
+| 故障原始容量 MB | Int64 | 是 | 存储阵列中所有故障原始容量的总和（以 MB 为单位）。 
+
+
+| memoryMB | Int64 | 是 | 安装在阵列（文件管理器）中的内存大小，以 MB 为单位。 
+
+
+| cpuCount | Int32 | 是 | 阵列（文件管理器）中安装的 CPU 数量。 
+
+
+| manageURL | 字符串 | 是 | 设备管理软件的 URL。 
+
+
+| family（系列） | 字符串 | 是 | 存储系列名称，可以是 Clariion、Symmetrix 等。 
+
+
+| isVirtual | 字符串 | 是 | 确定阵列是否为虚拟化程序。 
+
+
+| 集群 | 字符串 | 是 | 确定阵列是否为 NetApp C-Mode 集群。 
+
+
+| url | 字符串 | 是 | Insight Server 中此存储的 URL。 
+
+
+| lastAcquiredTime | DateTimeOffset | 是 | 指定上次获取的时间。 
+
+
+| 活动 | 字符串 | 是 | 指示存储阵列当前是否处于活动状态。 
+
+
+| dataCenter | 字符串 | 是 | # dataCenter annotation 值已分配给存储 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| dr_internal_volume_replica | link:#entity-dr_internal_volume_replica["dr_internal_volume_replica"] | 许多 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | 许多 
+
+
+| storage_controller | link:#entity-storage_controller["storage_controller"] | 许多 
+
+
+| nas_share_initiator | link:#entity-nas_share_initiator["nas_share_initiator"] | 许多 
+
+
+| nas_cr_logical | link:#entity-nas_cr_logical["nas_cr_logical"] | 许多 
+
+
+| unknown_logical | link:#entity-unknown_logical["unknown_logical"] | 许多 
+
+
+| volume_map | link:#entity-volume_map["volume_map"] | 许多 
+
+
+| file_system_to_volume | link:#entity-file_system_to_volume["file_system_to_volume"] | 许多 
+
+
+| cluster_switch_port | link:#entity-cluster_switch_port["cluster_switch_port"] | 许多 
+
+
+| backend_lun_to_volume | link:#entity-backend_lun_to_volume["backend_lun_to_volume"] | 许多 
+
+
+| 配额 | link:#entity-quota["配额"] | 许多 
+
+
+| iscsi_logical | link:#entity-iscsi_logical["iscsi_logical"] | 许多 
+
+
+| hv_lun_to_volume | link:#entity-hv_lun_to_volume["hv_lun_to_volume"] | 许多 
+
+
+| storage_pool | link:#entity-storage_pool["storage_pool"] | 许多 
+
+
+| hv_nas_share_to_share | link:#entity-hv_nas_share_to_share["hv_nas_share_to_share"] | 许多 
+
+
+| hv_data_store_to_volume | link:#entity-hv_data_store_to_volume["hv_data_store_to_volume"] | 许多 
+
+
+| qtree | link:#entity-qtree["qtree"] | 许多 
+
+
+| dr_qtree_replica | link:#entity-dr_qtree_replica["dr_qtree_replica"] | 许多 
+
+
+| cluster_switch | link:#entity-cluster_switch["cluster_switch"] | 许多 
+
+
+| volume_mask | link:#entity-volume_mask["volume_mask"] | 许多 
+
+
+| auto_tiering_policy | link:#entity-auto_tiering_policy["auto_tiering_policy"] | 许多 
+
+
+| auto_tiering_policy_constraint | link:#entity-auto_tiering_policy_constraint["auto_tiering_policy_constraint"] | 许多 
+
+
+| dr_volume_replica | link:#entity-dr_volume_replica["dr_volume_replica"] | 许多 
+
+
+| hv_virtual_disk_to_volume | link:#entity-hv_virtual_disk_to_volume["hv_virtual_disk_to_volume"] | 许多 
+
+
+| 逻辑 | link:#entity-logical["逻辑"] | 许多 
+
+
+| volume | link:#entity-volume["volume"] | 许多 
+
+
+| backend_path | link:#entity-backend_path["backend_path"] | 许多 
+
+
+| 磁盘 | link:#entity-disk["磁盘"] | 许多 
+
+
+| internal_volume | link:#entity-internal_volume["internal_volume"] | 许多 
+
+
+| nas_file_share | link:#entity-nas_file_share["nas_file_share"] | 许多 
+
+
+| hv_data_store_to_internal_volume | link:#entity-hv_data_store_to_internal_volume["hv_data_store_to_internal_volume"] | 许多 
+
+
+| storage_to_application | link:#entity-storage_to_application["storage_to_application"] | 许多 
+
+
+| backend_lun | link:#entity-backend_lun["backend_lun"] | 许多 
+
+
+| 违规行为 | link:#entity-violation["违规行为"] | 许多 
+
+
+| storage_port | link:#entity-storage_port["storage_port"] | 许多 
+
+
+| physical_path | link:#entity-physical_path["physical_path"] | 许多 
+
+
+| disk_group | link:#entity-disk_group["disk_group"] | 许多 
+
+
+| storage_node | link:#entity-storage_node["storage_node"] | 许多 
+|===
+
+
+[[storagecontroller]]
+=== storage_controller
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_controller
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 存储控制器的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 此控制器所在存储的 GUID。 
+
+
+| wwn | 字符串 | 是 | 存储控制器（node wwn）的 WWN。 
+
+
+| 型号 | 字符串 | 是 | 存储控制器的型号。 
+
+
+| 制造商 | 字符串 | 是 | 存储控制器的制造商。 
+
+
+| 驱动程序 | 字符串 | 是 | 管理对存储控制器的访问的驱动程序的名称。 
+
+
+| 固件 | 字符串 | 是 | 存储控制器上运行的固件的版本。 
+
+
+| numberOfPorts | 字符串 | 是 | 存储控制器上的端口数。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| storage_port | link:#entity-storage_port["storage_port"] | 许多 
+|===
+
+
+[[storagenode]]
+=== storage_node
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_node
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 存储节点的 GUID 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储阵列（文件管理器）的 GUID。 
+
+
+| name | 字符串 | 是 | 存储节点的名称。 
+
+
+| 标识符 | 字符串 | 是 | 存储节点的 uuid。 
+
+
+| version | 字符串 | 是 | 版本的存储节点。 
+
+
+| 型号 | 字符串 | 是 | 存储节点的型号。 
+
+
+| serialNumber | 字符串 | 是 | serialNumber 存储节点的序列号。 
+
+
+| 状态 | 字符串 | 是 | 存储节点的状态。 
+
+
+| partnerNodeId | Int64 | 是 | 配对节点的 GUID。 
+
+
+| memorySizeMB | Int64 | 是 | 此存储节点的内存大小。 
+
+
+| cacheSizeMB | Int64 | 是 | 此存储节点的缓存大小。 
+
+
+| numberOfProcessors | Int32 | 是 | 此存储节点的处理器数量 
+
+
+| url | 字符串 | 是 | Insight Server 中此存储节点的 URL。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| cluster_switch_port | link:#entity-cluster_switch_port["cluster_switch_port"] | 许多 
+|===
+
+
+[[storagenodetointernalvolume]]
+=== 存储节点到内部卷
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_node_to_internal_volume
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| storageId | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| storageNodeId | Int64 | 是 | 存储节点的 GUID。 
+
+
+| internalVolumeId | Int64 | 是 | 内部卷的 GUID。 
+|===
+
+
+[[storagenodetoport]]
+=== storage_node_to_port
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_node_to_port
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| storageId | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| storageNodeId | Int64 | 是 | 存储节点的 GUID。 
+
+
+| portId | Int64 | 是 | 端口的 GUID。 
+|===
+
+
+[[storagenodetostoragepool]]
+=== storage_node_to_storage_pool
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_node_to_storage_pool
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| storageId | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| storageNodeId | Int64 | 是 | 存储节点的 GUID。 
+
+
+| storagePoolId | Int64 | 是 | 存储池的 GUID。 
+|===
+
+
+[[storagenodetovolume]]
+=== storage_node_to_volume
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_node_to_volume
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| storageId | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| storageNodeId | Int64 | 是 | 存储节点的 GUID。 
+
+
+| volumeId | Int64 | 是 | 卷的 GUID。 
+|===
+
+
+[[storagepool]]
+=== storage_pool
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_pool
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 存储池的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储阵列（文件管理器）的 GUID。 
+
+
+| 标识符 | 字符串 | 是 | 设备的标识符。 
+
+
+| type | 字符串 | 是 | 存储池描述的真实实体类型。 
+
+
+| name | 字符串 | 是 | 存储池的名称。 
+
+
+| thinProvisioningSupported | 字符串 | 是 | 此存储池是否支持对其之上的卷层进行精简配置。默认值为 false。 
+
+
+| includeInDwhCapacity | 字符串 | 是 | 确定 storage_pool 是否出现在容量数据集市的 storage-pool 维度中。default false。 
+
+
+| isVirtual | 字符串 | 是 | 表示 storage_pool 由后端 LUN 组成。 
+
+
+| raidGroup | 字符串 | 是 | 指示 storage_pool 是否为 raidGroup。 
+
+
+| vendorTier | 字符串 | 是 | 供应商特定层名称。 
+
+
+| autoTiering | 字符串 | 是 | 指示此存储池是否参与与其他池的自动分层。 
+
+
+| usesFlashPools | 字符串 | 是 | 指示此存储池是否使用闪存池。 
+
+
+| 冗余 | 字符串 | 是 | storage_pool 的冗余级别。 
+
+
+| 状态 | 字符串 | 是 | storage_pool 的状态（例如离线、在线……）。 
+
+
+| snapshotAllocatedCapacityMB | Int64 | 是 | 为存储池级快照分配的容量（以 MB 为单位）。 
+
+
+| snapshotUsedCapacityMB | Int64 | 是 | 用于存储池级别快照的容量（以 MB 为单位）。 
+
+
+| dataAllocatedCapacityMB | Int64 | 是 | 存储阵列报告的为存储池分配的容量（以 MB 为单位）。不包括为存储池级快照分配的容量。 
+
+
+| 已用数据容量 MB | Int64 | 是 | 存储阵列报告的存储池中使用的容量（以 MB 为单位）。不包括用于存储池级别快照的容量。 
+
+
+| totalAllocatedCapacityMB | Int64 | 是 | 存储池分配的容量，由存储阵列以 MB 为单位报告。包括为存储池级快照分配的容量。<br>等于：snapshotAllocatedCapacityMB + dataAllocatedCapacityMB + otherAllocatedCapacityMB 
+
+
+| totalUsedCapacityMB | Int64 | 是 | 存储池中使用的容量，由存储阵列以 MB 为单位报告。包括用于存储池级别快照的容量。<br>等于：snapshotUsedCapacityMB + dataUsedCapacityMB + otherUsedCapacityMB 
+
+
+| rawToUsableRatio | 双线 | 是 | 存储池的磁盘原始容量和可用容量之间的比率。受 RAID 级别和其他开销影响。 
+
+
+| reservedCapacityMB | Int64 | 是 | 为卷保留的未使用存储池容量（以 MB 为单位）。此容量包含在 dataAllocatedCapacityMB 容量中。 
+
+
+| otherUsedCapacityMB | Int64 | 是 | 未包含在存储池的数据/快照已用容量中的其他开销。totalUsedCapacityMB = dataUsedCapacityMB + snapShotUsedCapacityMB + otherUsedCapacityMB。 
+
+
+| otherAllocatedCapacityMB | Int64 | 是 | 未包含在存储池的数据/快照分配容量中的其他开销。totalAllocatedCapacityMB = dataAllocatedCapacityMB + snapShotAllocatedCapacityMB + otherAllocatedCapacityMB。 
+
+
+| 物理磁盘容量 MB | Int64 | 是 | 存储池同时具有后端 LUN 和磁盘时的物理磁盘容量（以 MB 为单位）。 
+
+
+| softLimitCapacityMB | Int64 | 是 | 精简配置的容量限制（MB）。 
+
+
+| dedupeEnabled | 字符串 | 是 | 是否在存储池上启用了重复数据删除。 
+
+
+| compressionEnabled | 字符串 | 是 | 是否在存储池上启用压缩。 
+
+
+| compactionEnabled | 字符串 | 是 | 是否在存储池上启用了压缩。 
+
+
+| dedupeRatio | 双线 | 是 | 重复数据删除节省的比率。值介于 0 到 1 之间。 
+
+
+| 重复数据删除节省 GB | Int64 | 是 | 此存储池上的重复数据删除（以 GB 为单位）。 
+
+
+| compressionRatio | 双线 | 是 | 压缩节省的比率。值介于 0 到 1 之间。 
+
+
+| 压缩节省 GB | Int64 | 是 | 此存储池上的压缩（以 GB 为单位）。 
+
+
+| compressionSavingsPercent | 双线 | 是 | 此存储池上的压缩(%)。 
+
+
+| 压缩节省 GB | Int64 | 是 | 此存储池上的压缩（以 GB 为单位）。 
+
+
+| url | 字符串 | 是 | Insight Server 中此存储池的 URL。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| internal_volume | link:#entity-internal_volume["internal_volume"] | 许多 
+|===
+
+
+[[storagepooltobackendlun]]
+=== storage_pool_to_backend_lun
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_pool_to_backend_lun
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| storageId | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| storagePoolId | Int64 | 是 | 存储池的 GUID。 
+
+
+| backendLunId | Int64 | 是 | 后端 LUN 的 GUID。 
+|===
+
+
+[[storagepooltodisk]]
+=== storage_pool_to_disk
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_pool_to_disk
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| storageId | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| storagePoolId | Int64 | 是 | 存储池的 GUID。 
+
+
+| diskId | Int64 | 是 | 磁盘的 GUID。 
+|===
+
+
+[[storageport]]
+=== storage_port
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_port
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 存储端口的 GUID。 
+
+
+| controllerId *[FK]* →link:#entity-storage_controller["storage_controller"].id | Int64 | 是 | 此端口所在的控制器（节点）的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 此端口所在的存储阵列的 GUID。 
+
+
+| wwn | 字符串 | 是 | 端口的WWN。 
+
+
+| nodeWwn | 字符串 | 是 | 此端口所在节点（控制器）的 WWN。 
+
+
+| portId | 字符串 | 是 | 端口的 ID。 
+
+
+| name | 字符串 | 是 | 端口名称。 
+
+
+| 速度 | 字符串 | 是 | 端口速度，以 Gbps 为单位。 
+
+
+| controller | 字符串 | 是 | 此端口所在的控制器的名称。 
+
+
+| url | 字符串 | 是 | Insight Server 中此端口的 URL。 
+
+
+| 活动 | 字符串 | 是 | 如果端口未失效，则为 True 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| storage_controller | link:#entity-storage_controller["storage_controller"] | 一个 JOIN：controllerId=link:#entity-storage_controller["storage_controller"].id 
+|===
+
+
+[[storagetoapplication]]
+=== storage_to_application
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_to_application
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 存储和应用程序之间关系的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 存储的 GUID。 
+
+
+| applicationId *[FK]* →link:#entity-application["应用程序"].id | Int64 | 是 | 应用程序的 GUID。 
+
+
+| 继承 | 字符串 | 是 | 此应用程序已继承。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| 应用程序 | link:#entity-application["应用程序"] | 一个 JOIN：applicationId=link:#entity-application["应用程序"].id 
+|===
+
+
+[[switch]]
+=== switch
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：switch
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 交换机的 GUID。 
+
+
+| fabricId *[FK]* →link:#entity-fabric["fabric"].id | Int64 | 是 | 将此交换机配置为在其上运行的结构的 GUID。 
+
+
+| 标识符 | 字符串 | 是 | 设备的标识符。 
+
+
+| wwn | 字符串 | 是 | 交换机的 WWN。 
+
+
+| IP | 字符串 | 是 | 交换机的 IP 地址。 
+
+
+| name | 字符串 | 是 | 交换机的名称。 
+
+
+| 制造商 | 字符串 | 是 | 交换机制造商 
+
+
+| 型号 | 字符串 | 是 | 交换机型号。 
+
+
+| 固件 | 字符串 | 是 | 交换机上运行的固件版本。 
+
+
+| domainId | 字符串 | 是 | 该交换机的 Fabric 域 ID。 
+
+
+| domainIdType | 字符串 | 是 | 域 ID 的类型。可能的值为 static(0) 或 preferred(1)。 
+
+
+| 优先级 | 字符串 | 是 | 交换机的优先级。 
+
+
+| vsanEnabled | 字符串 | 是 | 指示交换机是否支持 VSAN。 
+
+
+| serialNumber | 字符串 | 是 | 交换机的序列号。 
+
+
+| manageURL | 字符串 | 是 | 设备管理软件的 URL。 
+
+
+| sanRouteEnabled | 字符串 | 是 | 指示交换机是否支持 Inter VSAN Routing (IVR)。 
+
+
+| npv | 字符串 | 是 | 指示此交换机是否为 NPV 交换机。 
+
+
+| isGenerated | 字符串 | 是 | 指示此交换机是否与物理设备不对应。它用于对一对多端口连接进行建模。 
+
+
+| type | 字符串 | 是 | 交换机类型。 
+
+
+| url | 字符串 | 是 | Insight Server 中此交换机的 URL。 
+
+
+| lastAcquiredTime | DateTimeOffset | 是 | 指定上次获取的时间。 
+
+
+| 活动 | 字符串 | 是 | 指示交换机是已关闭还是处于活动状态 
+
+
+| dataCenter | 字符串 | 是 | # 分配给 switch 的 dataCenter annotation 值 
+
+
+| switchLevel | 字符串 | 是 | # 分配给 switch 的 switchLevel annotation 值 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| fabric | link:#entity-fabric["fabric"] | 一个 JOIN：fabricId=link:#entity-fabric["fabric"].id 
+
+
+| switch_port | link:#entity-switch_port["switch_port"] | 许多 
+
+
+| switch_to_application | link:#entity-switch_to_application["switch_to_application"] | 许多 
+|===
+
+
+[[switchport]]
+=== switch_port
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：switch_port
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 端口的 GUID。 
+
+
+| switchId *[FK]* →link:#entity-switch["switch"].id | Int64 | 是 | 端口所在的交换机的 GUID。 
+
+
+| fabricId *[FK]* →link:#entity-fabric["fabric"].id | Int64 | 是 | 配置端口运行所在结构的 GUID。 
+
+
+| virtualSwitchId *[FK]* →link:#entity-virtual_switch["virtual_switch"].id | Int64 | 是 | 端口所在的虚拟交换机的 GUID。如果不存在，则为 NULL。 
+
+
+| wwn | 字符串 | 是 | 端口的WWN。 
+
+
+| 状态 | 字符串 | 是 | 端口状态。可能的值为 OK、NOT_LICENSED、ERROR、INACTIVE 和 UNKNOWN 
+
+
+| rawPortStatus | 字符串 | 是 | 端口状态，从设备本身获取。有关值的说明，请参见设备文档。 
+
+
+| type | 字符串 | 是 | 端口类型，通常用于标识与其他设备通信所使用的协议，取自设备本身：F-port、E-port 等。 
+
+
+| portPhysicalState | 字符串 | 是 | 端口的当前状态，取自设备本身。有关值的说明，请参见设备文档。 
+
+
+| 数字 | Int64 | 是 | 容器刀片中的端口号 
+
+
+| 刀片 | Int64 | 是 | 包含交换机中的刀片编号。 
+
+
+| portId | 字符串 | 是 | 端口的 ID。 
+
+
+| name | 字符串 | 是 | 端口名称。 
+
+
+| 速度 | 字符串 | 是 | 端口速度，以 Gbps 为单位。 
+
+
+| fc4Protocol | 字符串 | 是 | FC4（应用层）协议，显示为以下值的任何子集/组合：BASIC_LINK、EXTEND_LINK、FCIP、SCSI_FCP、FC_SERVICES、FC_SW、SNMP、FABRIC_SERVICES、FABRIC、DIAG 和 VI。 
+
+
+| classOfService | 字符串 | 是 | FC 协议的服务等级。 
+
+
+| gbicType | 字符串 | 是 | 用于端口的 GBIC（千兆接口转换器）类型。 
+
+
+| url | 字符串 | 是 | Insight Server 中此端口的 URL。 
+
+
+| isGenerated | 字符串 | 是 | 指示这是否是生成的 wwn（如果我们不知道真正的 wwn）。 
+
+
+| 活动 | 字符串 | 是 | 如果端口未失效，则为 True 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| virtual_switch | link:#entity-virtual_switch["virtual_switch"] | 一个 JOIN:virtualSwitchId=link:#entity-virtual_switch["virtual_switch"].id 
+
+
+| fabric | link:#entity-fabric["fabric"] | 一个 JOIN：fabricId=link:#entity-fabric["fabric"].id 
+
+
+| switch | link:#entity-switch["switch"] | 一个 JOIN：switchId=link:#entity-switch["switch"].id 
+
+
+| switch_port_to_application | link:#entity-switch_port_to_application["switch_port_to_application"] | 许多 
+
+
+| fc_name_server_entry | link:#entity-fc_name_server_entry["fc_name_server_entry"] | 许多 
+|===
+
+
+[[switchporttoapplication]]
+=== switch_port_to_application
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：switch_port_to_application
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 端口和应用程序之间关系的 GUID。 
+
+
+| applicationId *[FK]* →link:#entity-application["应用程序"].id | Int64 | 是 | 应用程序的 GUID。 
+
+
+| portId *[FK]* →link:#entity-switch_port["switch_port"].id | Int64 | 是 | 交换机端口的 GUID。 
+
+
+| 继承 | 字符串 | 是 | 此应用程序已继承。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| switch_port | link:#entity-switch_port["switch_port"] | 一个 JOIN：portId=link:#entity-switch_port["switch_port"].id 
+
+
+| 应用程序 | link:#entity-application["应用程序"] | 一个 JOIN：applicationId=link:#entity-application["应用程序"].id 
+|===
+
+
+[[switchtoapplication]]
+=== switch_to_application
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：switch_to_application
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 交换机和应用程序之间关系的 GUID。 
+
+
+| switchId *[FK]* →link:#entity-switch["switch"].id | Int64 | 是 | 交换机的 GUID。 
+
+
+| applicationId *[FK]* →link:#entity-application["应用程序"].id | Int64 | 是 | 应用程序的 GUID。 
+
+
+| 继承 | 字符串 | 是 | 此应用程序已继承。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| switch | link:#entity-switch["switch"] | 一个 JOIN：switchId=link:#entity-switch["switch"].id 
+
+
+| 应用程序 | link:#entity-application["应用程序"] | 一个 JOIN：applicationId=link:#entity-application["应用程序"].id 
+|===
+
+
+[[tape]]
+=== 磁带
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：tape
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 磁带的 GUID。 
+
+
+| name | 字符串 | 是 | 磁带的名称。 
+
+
+| 标识符 | 字符串 | 是 | 设备的标识符。 
+
+
+| IP | 字符串 | 是 | 磁带的 IP 地址。 
+
+
+| 制造商 | 字符串 | 是 | 磁带制造商。 
+
+
+| serialNumber | 字符串 | 是 | 磁带的序列号。 
+
+
+| 活动 | 字符串 | 是 | 指示磁带当前是否处于活动状态。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| tape_controller | link:#entity-tape_controller["tape_controller"] | 许多 
+
+
+| 违规行为 | link:#entity-violation["违规行为"] | 许多 
+
+
+| tape_port | link:#entity-tape_port["tape_port"] | 许多 
+
+
+| physical_path | link:#entity-physical_path["physical_path"] | 许多 
+
+
+| 逻辑 | link:#entity-logical["逻辑"] | 许多 
+|===
+
+
+[[tapecontroller]]
+=== tape_controller
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：tape_controller
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 磁带控制器的 GUID。 
+
+
+| tapeId *[FK]* →link:#entity-tape["磁带"].id | Int64 | 是 | 此控制器所在磁带的 GUID。 
+
+
+| wwn | 字符串 | 是 | 控制器的 GUID。 
+
+
+| 型号 | 字符串 | 是 | 控制器的型号。 
+
+
+| 制造商 | 字符串 | 是 | 控制器的制造商。 
+
+
+| 驱动程序 | 字符串 | 是 | 管理对控制器的访问的驱动程序的名称。 
+
+
+| 固件 | 字符串 | 是 | 控制器上运行的固件版本。 
+
+
+| numberOfPorts | 字符串 | 是 | 控制器上的端口数。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 磁带 | link:#entity-tape["磁带"] | 一个 JOIN：tapeId=link:#entity-tape["磁带"].id 
+
+
+| tape_port | link:#entity-tape_port["tape_port"] | 许多 
+|===
+
+
+[[tapeport]]
+=== tape_port
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：tape_port
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 磁带端口的 GUID。 
+
+
+| controllerId *[FK]* →link:#entity-tape_controller["tape_controller"].id | Int64 | 是 | 此端口所在的控制器的 GUID。 
+
+
+| tapeId *[FK]* →link:#entity-tape["磁带"].id | Int64 | 是 | 此端口所在磁带的 GUID。 
+
+
+| wwn | 字符串 | 是 | 端口的WWN。 
+
+
+| nodeWwn | 字符串 | 是 | 此端口所在节点（控制器）的 WWN。 
+
+
+| portId | 字符串 | 是 | 端口的 ID。 
+
+
+| name | 字符串 | 是 | 端口名称。 
+
+
+| 速度 | 字符串 | 是 | 端口速度，以 Gbps 为单位。 
+
+
+| controller | 字符串 | 是 | 此端口所在的控制器的名称。 
+
+
+| url | 字符串 | 是 | Insight Server 中此端口的 URL。 
+
+
+| 活动 | 字符串 | 是 | 如果端口未失效，则为 True 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| tape_controller | link:#entity-tape_controller["tape_controller"] | 一个 JOIN：controllerId=link:#entity-tape_controller["tape_controller"].id 
+
+
+| 磁带 | link:#entity-tape["磁带"] | 一个 JOIN：tapeId=link:#entity-tape["磁带"].id 
+|===
+
+
+[[tier]]
+=== 层
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：tier
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| ID | Int64 | 是 | 批注的 GUID。 
+
+
+| name | 字符串 | 是 | 批注的值。 
+
+
+| 序列 | Int32 | 是 | 确定枚举值顺序的序列号。这主要用于显示目的。 
+
+
+| 成本 | 双线 | 是 | 与批注关联的可选成本。适用于层注释。 
+|===
+
+
+[[unknownlogical]]
+=== unknown_logical
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：unknown_logical
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 类型未知的通用逻辑路径的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 类型未知的通用逻辑路径的启动器主机的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 类型未知的通用逻辑路径的目标存储的 GUID。 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | 类型未知的通用逻辑路径的目标卷的 GUID。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+|===
+
+
+[[violation]]
+=== 违规行为
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：violation
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 违规的 GUID。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 违规的发起方主机的 GUID - 对于来自通用设备的违规，设置为 null。 
+
+
+| genericDeviceId *[FK]* →link:#entity-generic_device["generic_device"].id | Int64 | 是 | 作为违规发起方的通用设备的 GUID——对于来自主机的违规，此项设置为 null。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 违规的目标存储的 GUID - 对于磁带违规，设置为 null。 
+
+
+| tapeId *[FK]* →link:#entity-tape["磁带"].id | Int64 | 是 | 违规目标磁带的 GUID - 对于存储阵列的违规，设置为 null。 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | 违规所适用的卷的 GUID - 对于磁带路径，设置为 null。 
+
+
+| volumeName | 字符串 | 是 | 卷的名称。即使存在缺少卷的路径违规，也可以使用此功能 
+
+
+| type | 字符串 | 是 | 违规类型。 
+
+
+| technologyType | 字符串 | 是 | 违规的技术类型（FC、ISCSI、HV） 
+
+
+| 自 | DateTimeOffset | 是 | 违规开始的时间。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+
+
+| 磁带 | link:#entity-tape["磁带"] | 一个 JOIN：tapeId=link:#entity-tape["磁带"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+
+
+| generic_device | link:#entity-generic_device["generic_device"] | 一个 JOIN：genericDeviceId=link:#entity-generic_device["generic_device"].id 
+|===
+
+
+[[virtualswitch]]
+=== virtual_switch
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：virtual_switch
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 虚拟交换机的 GUID。 
+
+
+| fabricId *[FK]* →link:#entity-fabric["fabric"].id | Int64 | 是 | 虚拟交换机所属架构的 GUID。 
+
+
+| wwn | 字符串 | 是 | 虚拟交换机的 WWN。 
+
+
+| IP | 字符串 | 是 | 虚拟交换机的 IP 地址 
+
+
+| name | 字符串 | 是 | 虚拟交换机的名称。 
+
+
+| domainId | 字符串 | 是 | 该交换机的 Fabric 域 ID。 
+
+
+| domainIdType | 字符串 | 是 | 域 ID 的类型。可能的值为 static(0) 或 preferred(1)。 
+
+
+| 优先级 | 字符串 | 是 | 虚拟交换机的优先级。 
+
+
+| switchRole | 字符串 | 是 | 虚拟交换机在交换矩阵合并事件中的角色。可能的值为 PRINCIPAL 和 SUBORDINATE 
+
+
+| chassisWwn | 字符串 | 是 | 定义虚拟交换机的物理交换机的 WWN。 
+
+
+| npv | 字符串 | 是 | 指示此交换机是否为 NPV 交换机。 
+
+
+| isGenerated | 字符串 | 是 | 指示此交换机是否与物理设备不对应。它用于对一对多端口连接进行建模。 
+
+
+| type | 字符串 | 是 | 交换机类型。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| fabric | link:#entity-fabric["fabric"] | 一个 JOIN：fabricId=link:#entity-fabric["fabric"].id 
+
+
+| switch_port | link:#entity-switch_port["switch_port"] | 许多 
+|===
+
+
+[[virtualtobackendvolume]]
+=== virtual_to_backend_volume
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：virtual_to_backend_volume
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| virtualVolumeId | Int64 | 是 | 卷的 GUID。 
+
+
+| backendVolumeId | Int64 | 是 | 后端卷的 GUID。 
+|===
+
+
+[[vmtoapplication]]
+=== vm_to_application
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：vm_to_application
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 虚拟机和应用程序之间关系的 GUID。 
+
+
+| vmId *[FK]* →link:#entity-hv_virtual_machine["hv_virtual_machine"].id | Int64 | 是 | 虚拟机的 GUID。 
+
+
+| applicationId *[FK]* →link:#entity-application["应用程序"].id | Int64 | 是 | 应用程序的 GUID。 
+
+
+| 继承 | 字符串 | 是 | 此应用程序已继承。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 应用程序 | link:#entity-application["应用程序"] | 一个 JOIN：applicationId=link:#entity-application["应用程序"].id 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | 一个 JOIN：vmId=link:#entity-hv_virtual_machine["hv_virtual_machine"].id 
+|===
+
+
+[[vmwarehost]]
+=== vmware_host
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：vmware_host
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | VMware 主机的 ID 
+
+
+| 标识符 | 字符串 | 是 | VMware 主机的标识符 
+
+
+| hvServerId *[FK]* →link:#entity-hv_server["hv_server"].id | Int64 | 是 | VMware 主机的 HV Server 
+
+
+| name | 字符串 | 是 | VMware 主机名 
+
+
+| numCpuCores | Int64 | 是 | VMware 主机的 CPU 核心数 
+
+
+| numCpuPackages | Int64 | 是 | VMware 主机的 CPU 封装数量 
+
+
+| numCpuThreads | Int64 | 是 | VMware 主机的 CPU 线程数 
+
+
+| numNodes | Int64 | 是 | VMware 主机的节点数 
+
+
+| hyperThreadActive | 字符串 | 是 | 指示是否在 VMware 主机上启用超线程 
+
+
+| hyperThreadAvailable | 字符串 | 是 | 指示在 VMware 主机上是否可以使用超线程 
+
+
+| hyperThreadConfig | 字符串 | 是 | 指示是否将超线程配置为在 VMware 主机上启用 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| hv_server | link:#entity-hv_server["hv_server"] | 一个 JOIN:hvServerId=link:#entity-hv_server["hv_server"].id 
+|===
+
+
+[[volume]]
+=== volume
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：volume
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 卷的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 此卷所在存储的 GUID。 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["internal_volume"].id | Int64 | 是 | 当该卷表示 NetApp LUN 时，LUN 所在的内部卷的 GUID。否则为 Null。 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | 是 | 当卷表示 NetApp LUN 时，LUN 所在的 qtree 的 GUID。否则为空。 
+
+
+| name | 字符串 | 是 | 卷的名称。 
+
+
+| 标签 | 字符串 | 是 | 卷的标签（描述）。 
+
+
+| thinProvisioned | 字符串 | 是 | 此卷是否为精简配置卷。 
+
+
+| 容量 MB | Int64 | 是 | 卷可用容量（如主机或其他 SCSI 启动器所见），以 MB 为单位。 
+
+
+| 已用容量 MB | Int64 | 是 | 以 MB 为单位显示正在消耗的容量。 
+
+
+| writtenCapacityMB | Int64 | 是 | 以 MB 为单位显示正在写入的容量。 
+
+
+| 原始容量 MB | Int64 | 是 | 卷使用的实际原始磁盘容量（MB）。 
+
+
+| type | 字符串 | 是 | 供应商特定的卷类型（例如，SFS、BCV）。 
+
+
+| replicaSource | 字符串 | 是 | 指示此卷是否为副本中的源。 
+
+
+| replicaTarget | 字符串 | 是 | 指示此卷是否为副本中的目标。 
+
+
+| Snapshot | 字符串 | 是 | 指示此卷是否为快照卷。 
+
+
+| 圆柱体 | Int32 | 是 | 卷中的柱面数。 
+
+
+| diskGroup | 字符串 | 是 | 此卷使用的磁盘组的逗号分隔列表。 
+
+
+| isVirtual | 字符串 | 是 | 指示此卷是否为虚拟卷（在虚拟存储池中）。 
+
+
+| meta | 字符串 | 是 | 指示此卷是否为卷组中的元卷。 
+
+
+| virtualStorage | 字符串 | 是 | 包含该卷的 vFiler 的名称 (NetApp)。 
+
+
+| head | 字符串 | 是 | 头部（NetApp），通过该头部公开卷。例如，主动-被动配置中活动磁头的名称。 
+
+
+| protectionType | 字符串 | 是 | 指定卷的保护类型（例如，BCV、R1、R2……） 
+
+
+| technologyType | 字符串 | 是 | 指定技术类型（FC/ISCSI/UNKNOWN）。 
+
+
+| autoTieringPolicyId *[FK]* →link:#entity-auto_tiering_policy["auto_tiering_policy"].id | Int64 | 是 | 自动分层策略的 GUID 
+
+
+| autoTiering | 字符串 | 是 | 指示此卷是否参与自动分层。 
+
+
+| uuid | 字符串 | 是 | 卷的 UUID。 
+
+
+| isMainframe | 字符串 | 是 | 指示此卷是否为大型机卷 
+
+
+| lastKnownAccessTime | DateTimeOffset | 是 | 指定 SANscreen 上次已知访问卷进行读取或写入的时间（如果时间不可用，则为 NULL）。 
+
+
+| url | 字符串 | 是 | Insight Server 中此卷的 URL。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| internal_volume | link:#entity-internal_volume["internal_volume"] | 一个 JOIN：internalVolumeId=link:#entity-internal_volume["internal_volume"].id 
+
+
+| auto_tiering_policy | link:#entity-auto_tiering_policy["auto_tiering_policy"] | 一个 JOIN:autoTieringPolicyId=link:#entity-auto_tiering_policy["auto_tiering_policy"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | 一个 JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+
+
+| volume_mask | link:#entity-volume_mask["volume_mask"] | 许多 
+
+
+| dr_volume_replica | link:#entity-dr_volume_replica["dr_volume_replica"] | 许多 
+
+
+| hv_virtual_disk_to_volume | link:#entity-hv_virtual_disk_to_volume["hv_virtual_disk_to_volume"] | 许多 
+
+
+| unknown_logical | link:#entity-unknown_logical["unknown_logical"] | 许多 
+
+
+| volume_map | link:#entity-volume_map["volume_map"] | 许多 
+
+
+| 逻辑 | link:#entity-logical["逻辑"] | 许多 
+
+
+| file_system_to_volume | link:#entity-file_system_to_volume["file_system_to_volume"] | 许多 
+
+
+| backend_lun_to_volume | link:#entity-backend_lun_to_volume["backend_lun_to_volume"] | 许多 
+
+
+| 违规行为 | link:#entity-violation["违规行为"] | 许多 
+
+
+| volume_to_application | link:#entity-volume_to_application["volume_to_application"] | 许多 
+
+
+| iscsi_logical | link:#entity-iscsi_logical["iscsi_logical"] | 许多 
+
+
+| hv_lun_to_volume | link:#entity-hv_lun_to_volume["hv_lun_to_volume"] | 许多 
+
+
+| physical_path | link:#entity-physical_path["physical_path"] | 许多 
+
+
+| hv_data_store_to_volume | link:#entity-hv_data_store_to_volume["hv_data_store_to_volume"] | 许多 
+|===
+
+
+[[volumeinstoragepool]]
+=== volume_in_storage_pool
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：volume_in_storage_pool
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| storageId | Int64 | 是 | 存储阵列的 GUID。 
+
+
+| volumeId | Int64 | 是 | 卷的 GUID。 
+
+
+| storagePoolId | Int64 | 是 | 存储池的 GUID。 
+
+
+| volumeMembersCapacityMB | Int64 | 是 | 存储池中对某个卷有贡献的所有卷成员的容量（以 MB 为单位）。 
+
+
+| volumeMembersRawCapacityMB | Int64 | 是 | 对某个卷有贡献的存储池上所有卷成员的原始容量（MB）。 
+|===
+
+
+[[volumemap]]
+=== volume_map
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：volume_map
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 卷映射条目的 GUID。 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | 卷映射项引用的卷的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 定义卷映射项的存储的 GUID。 
+
+
+| protocolController | 字符串 | 是 | 定义卷映射条目的协议控制器的名称。 
+
+
+| lun | 字符串 | 是 | 用于访问此卷的逻辑单元号 (LUN)。 
+
+
+| tid | Int32 | 是 | 由卷映射条目定义的目标 SCSI ID。 
+
+
+| storagePortWwn | 字符串 | 是 | 此卷映射项引用的存储端口的 WWN。 
+
+
+| wwnSecurityValidity | 字节 | 是 | 指示对卷的访问是否需要额外的屏蔽配置。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+|===
+
+
+[[volumemask]]
+=== volume_mask
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：volume_mask
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 卷掩码条目的 GUID。 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | 卷掩码条目引用的卷的 GUID。 
+
+
+| storageId *[FK]* →link:#entity-storage["存储"].id | Int64 | 是 | 定义卷掩码项的存储的 GUID。 
+
+
+| protocolController | 字符串 | 是 | 定义卷掩码项的协议控制器的名称。 
+
+
+| storagePortWwn | 字符串 | 是 | 卷掩码条目所引用的存储端口的 WWN。 
+
+
+| initiatorWwn | 字符串 | 是 | 卷掩码条目引用的启动器端口的 WWN。 
+
+
+| hostId *[FK]* →link:#entity-host["host"].id | Int64 | 是 | 此卷掩码条目的发起程序 WWN 引用的主机的 GUID 
+
+
+| type | 字符串 | 是 | 卷访问技术的类型。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 存储 | link:#entity-storage["存储"] | 一个 JOIN：storageId=link:#entity-storage["存储"].id 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+
+
+| host | link:#entity-host["host"] | 一个 JOIN：hostId=link:#entity-host["host"].id 
+|===
+
+
+[[volumetoapplication]]
+=== volume_to_application
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：volume_to_application
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 卷与应用程序之间关系的 GUID。 
+
+
+| applicationId *[FK]* →link:#entity-application["应用程序"].id | Int64 | 是 | 应用程序的 GUID。 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | 是 | 卷的 GUID。 
+
+
+| 继承 | 字符串 | 是 | 此应用程序已继承。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| volume | link:#entity-volume["volume"] | 一个 JOIN：volumeId=link:#entity-volume["volume"].id 
+
+
+| 应用程序 | link:#entity-application["应用程序"] | 一个 JOIN：applicationId=link:#entity-application["应用程序"].id 
+|===
+
+
+[[zone]]
+=== 区域
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：zone
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | 区域的 GUID。 
+
+
+| fabricId *[FK]* →link:#entity-fabric["fabric"].id | Int64 | 是 | 定义分区的网络结构的 GUID。 
+
+
+| name | 字符串 | 是 | 区域的名称。自然键的一部分。 
+
+
+| fabricWwn | 字符串 | 是 | 定义区域的网络结构的 WWN。 
+
+
+| configurationName | 字符串 | 是 | 包含此区域的活动区域配置（集）的名称。自然键的一部分。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| fabric | link:#entity-fabric["fabric"] | 一个 JOIN：fabricId=link:#entity-fabric["fabric"].id 
+
+
+| zone_member | link:#entity-zone_member["zone_member"] | 许多 
+|===
+
+
+[[zonemember]]
+=== zone_member
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：zone_member
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| id *[PK]* | Int64 | 是 | zone_member 的 GUID。 
+
+
+| zoneId *[FK]* →link:#entity-zone["区域"].id | Int64 | 是 | 区域的 GUID。 
+
+
+| fabricId *[FK]* →link:#entity-fabric["fabric"].id | Int64 | 是 | 定义分区的网络结构的 GUID。 
+
+
+| type | 字符串 | 是 | 成员分区类型。可以是 WWN（软）或 SWITCH（硬）。 
+
+
+| wwn | 字符串 | 是 | 成员的 WWN。可以是交换机端口（如果 type=SWITCH）或设备的节点/端口（type=WWN）。 
+
+
+| zoneName | 字符串 | 是 | 区域的名称。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| fabric | link:#entity-fabric["fabric"] | 一个 JOIN：fabricId=link:#entity-fabric["fabric"].id 
+
+
+| 区域 | link:#entity-zone["区域"] | 一个 JOIN:zoneId=link:#entity-zone["区域"].id 
+|===

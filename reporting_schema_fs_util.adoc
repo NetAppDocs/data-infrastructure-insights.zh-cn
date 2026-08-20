@@ -1,0 +1,571 @@
+---
+sidebar: sidebar 
+permalink: reporting_schema_fs_util.html 
+summary: 文件系统利用率数据仓库的架构表 
+keywords: dwh, data warehouse, schema, reporting, file system, fs util 
+---
+= 文件系统利用率架构
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+来源：*dwh_fs_util* OData 端点—Data Infrastructure Insights
+
+找到的表格：*8* | 关联：*7*
+
+
+
+[[key-relationships-between-tables]]
+== 表之间的关键关系
+
+
+
+[[fsutilfact]]
+=== fs_util_fact
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-compute_resource_dimension["compute_resource_dimension"] | computeResourceTk | tk 
+
+
+| link:#entity-date_dimension["日期维度"] | dateTk | tk 
+
+
+| link:#entity-file_system_dimension["file_system_dimension"] | fsTk | tk 
+
+
+| link:#entity-host_dimension["主机维度"] | hostTk | tk 
+
+
+| link:#entity-storage_dimension["存储维度"] | storageTk | tk 
+
+
+| link:#entity-tier_dimension["层级维度"] | tierTk | tk 
+
+
+| link:#entity-vm_dimension["vm_dimension"] | vmTk | tk 
+|===
+
+
+[[tables-fields]]
+== 表格和字段
+
+PKPrimary KeyFKForeign KeyNOT NULL必填字段
+
+
+
+[[computeresourcedimension]]
+=== compute_resource_dimension
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：compute_resource_dimension
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk | Int32 | 是 | 此计算资源行的 TK。 
+
+
+| 标识符 | 字符串 | 是 | 计算资源的自然标识符。 
+
+
+| name | 字符串 | 是 | 计算资源的名称。 
+
+
+| type | 字符串 | 是 | 资源类型。 
+
+
+| domain | 字符串 | 是 | 计算资源的域。 
+
+
+| IP | 字符串 | 是 | 计算资源的 IP 地址的逗号分隔列表。 
+
+
+| 操作系统 | 字符串 | 是 | 计算资源上运行的操作系统。 
+
+
+| ID | Int64 | 是 | dwh_inventory.compute_resource 中计算资源的 GUID 
+
+
+| 最新 | 字符串 | 是 | 指示此行是否为此计算资源的最新行。 
+
+
+| dateTk | Int32 | 是 | 此计算资源行的创建日期的 TK。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| fs_util_fact | link:#entity-fs_util_fact["fs_util_fact"] | 许多 
+|===
+
+
+[[datedimension]]
+=== 日期维度
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：date_dimension
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk | Int32 | 是 | 日期对象的 TK。 
+
+
+| fullDate | DateTimeOffset | 是 | 日期对象的日期。 
+
+
+| dayInMonth | 字节 | 是 | 日期对象的月份日期。每月的第一天值为 1。 
+
+
+| dayInYear | Int32 | 是 | 日期对象在一年中的第几天。一年的第一天值为 1。 
+
+
+| dateYear | Int32 | 是 | 日期对象的年份。 
+
+
+| yearLabel | 字符串 | 是 | 格式为字符串的年份 
+
+
+| monthNum | 字节 | 是 | 日期对象的月份。1月的值为1。 
+
+
+| monthLabel | 字符串 | 是 | 月份格式为字符串 
+
+
+| dayInWeekNum | 字节 | 是 | 日期对象的星期几。星期日的值为 1。 
+
+
+| 季度 | 字节 | 是 | 日期对象的季度。第一季度的值为 1。 
+
+
+| quarterLabel | 字符串 | 是 | 季度格式化为字符串 
+
+
+| dayInQuarter | Int32 | 是 | 日期对象的季度中的天。季度的第一天值为 1。 
+
+
+| repQuarter | 字节 | 是 | 指示此日期是否是其季度的第一个可用日期。 
+
+
+| repMonth | 字节 | 是 | 指示此日期是否是其月份的第一个可用日期。 
+
+
+| repWeek | 字节 | 是 | 指示此日期是否是其一周内可用的第一个日期。 
+
+
+| repDay | 字节 | 是 | 指示此日期是否是其当天可用的第一个日期。 
+
+
+| repMonthOrLatest | 字节 | 是 | 指示此日期是代表月还是最新代表月。此标志由按月处理代表数据的 Datamarts 使用。唯一的区别在于当前月份使用的是最新数据 
+
+
+| sspFlag | 字节 | 是 | 指示此日期是否在存储和存储池数据集市中使用。这适用于月代表和配置中定义的最后天数。 
+
+
+| 最新 | 字符串 | 是 | 指示此日期是否为表中的最后一个可用日期。 
+
+
+| 未来 | 字符串 | 是 | 指示此日期是未来日期（预测）还是常规日期。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| fs_util_fact | link:#entity-fs_util_fact["fs_util_fact"] | 许多 
+|===
+
+
+[[filesystemdimension]]
+=== file_system_dimension
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：file_system_dimension
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk | Int32 | 是 | 维度的 TK。 
+
+
+| computeResourceIdentifier | 字符串 | 是 | 计算资源的标识符。自然键的一部分。 
+
+
+| name | 字符串 | 是 | 挂载点或驱动器盘符。自然键的一部分。 
+
+
+| 位置 | 字符串 | 是 | 指示数据的保存位置及其访问方式。例如：本地、SAN、NAS。如果位置未知，将设置为 null。 
+
+
+| hardwareId | 字符串 | 是 | 主机特定标识符。如果未知，将设置为 null。 
+
+
+| type | 字符串 | 是 | 文件系统类型。例如：NTFS、FAT、UFS、UDF、ZFS、ISO 9660、VXFS 等。如果未知，将设置为 null。 
+
+
+| ID | Int64 | 是 | dwh_inventory.file_system 中的文件系统的 GUID。 
+
+
+| 最新 | 字符串 | 是 | 指示此行是否为此文件系统的最新行。 
+
+
+| dateTk | Int32 | 是 | 此文件系统行的创建日期的 TK。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| fs_util_fact | link:#entity-fs_util_fact["fs_util_fact"] | 许多 
+|===
+
+
+[[fsutilfact]]
+=== fs_util_fact
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：fs_util_fact
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk *[PK]* | Int32 | 是 | 事实的 TK。 
+
+
+| dateTk *[FK]* →link:#entity-date_dimension["日期维度"].tk | Int32 | 是 | 日期的 TK。 
+
+
+| hostTk *[FK]* →link:#entity-host_dimension["主机维度"].tk | Int32 | 是 | 主机的 TK。 
+
+
+| vmTk *[FK]* →link:#entity-vm_dimension["vm_dimension"].tk | Int32 | 是 | VM 的 TK。 
+
+
+| computeResourceTk *[FK]* →link:#entity-compute_resource_dimension["compute_resource_dimension"].tk | Int32 | 是 | computeResource 的 TK。 
+
+
+| fsTk *[FK]* →link:#entity-file_system_dimension["file_system_dimension"].tk | Int32 | 是 | 文件系统的 TK。 
+
+
+| storageTk *[FK]* →link:#entity-storage_dimension["存储维度"].tk | Int32 | 是 | 存储的 TK。 
+
+
+| tierTk *[FK]* →link:#entity-tier_dimension["层级维度"].tk | Int32 | 是 | 层的 TK。 
+
+
+| sizeMB | Int64 | 是 | 文件系统的大小（MB）。 
+
+
+| usedMB | Int64 | 是 | 已使用且不可用的文件系统容量。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| file_system_dimension | link:#entity-file_system_dimension["file_system_dimension"] | 一个 JOIN：fsTk=link:#entity-file_system_dimension["file_system_dimension"].tk 
+
+
+| 存储维度 | link:#entity-storage_dimension["存储维度"] | 一个 JOIN：storageTk=link:#entity-storage_dimension["存储维度"].tk 
+
+
+| 层级维度 | link:#entity-tier_dimension["层级维度"] | 一个 JOIN：tierTk=link:#entity-tier_dimension["层级维度"].tk 
+
+
+| compute_resource_dimension | link:#entity-compute_resource_dimension["compute_resource_dimension"] | 一个 JOIN：computeResourceTk=link:#entity-compute_resource_dimension["compute_resource_dimension"].tk 
+
+
+| 主机维度 | link:#entity-host_dimension["主机维度"] | 一个 JOIN:hostTk=link:#entity-host_dimension["主机维度"].tk 
+
+
+| vm_dimension | link:#entity-vm_dimension["vm_dimension"] | 一个 JOIN:vmTk=link:#entity-vm_dimension["vm_dimension"].tk 
+
+
+| 日期维度 | link:#entity-date_dimension["日期维度"] | 一个 JOIN：dateTk=link:#entity-date_dimension["日期维度"].tk 
+|===
+
+
+[[hostdimension]]
+=== 主机维度
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：host_dimension
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk | Int32 | 是 | 此主机行的 TK。 
+
+
+| name | 字符串 | 是 | 主机名称。 
+
+
+| 标识符 | 字符串 | 是 | 设备的标识符。 
+
+
+| IP | 字符串 | 是 | 以逗号分隔的主机 IP 地址列表。 
+
+
+| 操作系统 | 字符串 | 是 | 在主机上运行的操作系统。 
+
+
+| 型号 | 字符串 | 是 | 型号。 
+
+
+| 制造商 | 字符串 | 是 | 主机的制造商。 
+
+
+| url | 字符串 | 是 | Insight Server 中此主机的 URL。 
+
+
+| ID | Int64 | 是 | dwh_inventory.host 中主机的 GUID。 
+
+
+| 最新 | 字符串 | 是 | 指示此行是否是此主机的最新行。 
+
+
+| dateTk | Int32 | 是 | 此主机行创建日期的 TK。 
+
+
+| dataCenter | 字符串 | 是 | dataCenter 注释值已分配给 dwh_dimensions.host_dimension 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| fs_util_fact | link:#entity-fs_util_fact["fs_util_fact"] | 许多 
+|===
+
+
+[[storagedimension]]
+=== 存储维度
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：storage_dimension
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk | Int32 | 是 | 此存储阵列行的 TK。 
+
+
+| name | 字符串 | 是 | 存储阵列的名称。 
+
+
+| 标识符 | 字符串 | 是 | 设备的标识符。 
+
+
+| IP | 字符串 | 是 | 存储阵列的 IP 地址。 
+
+
+| 型号 | 字符串 | 是 | 存储阵列的型号。 
+
+
+| 制造商 | 字符串 | 是 | 存储阵列的制造商。 
+
+
+| serialNumber | 字符串 | 是 | 存储阵列的序列号。 
+
+
+| microcodeVersion | 字符串 | 是 | 存储阵列上运行的固件版本。 
+
+
+| family（系列） | 字符串 | 是 | 存储阵列的系列名称（例如 Clariion、Symmetrix 等）。 
+
+
+| url | 字符串 | 是 | Insight Server 中此存储的 URL。 
+
+
+| ID | Int64 | 是 | dwh_inventory.storage 中存储阵列的 GUID。 
+
+
+| 最新 | 字符串 | 是 | 指示此行是否是此存储的最新行。 
+
+
+| dateTk | Int32 | 是 | 创建此存储阵列行的日期的 TK。 
+
+
+| dataCenter | 字符串 | 是 | dataCenter 注释值已分配给 dwh_dimensions.storage_dimension 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| fs_util_fact | link:#entity-fs_util_fact["fs_util_fact"] | 许多 
+|===
+
+
+[[tierdimension]]
+=== 层级维度
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：tier_dimension
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk | Int32 | 是 | 此层行的 TK。 
+
+
+| name | 字符串 | 是 | 层级的标识名称。 
+
+
+| 序列 | Int32 | 是 | dwh_inventory.annotation_value 中定义的层序号。 
+
+
+| 成本 | 双线 | 是 | 与此层关联的费用。 
+
+
+| ID | Int64 | 是 | dwh_inventory.annotation_value 中层的 GUID。 
+
+
+| 最新 | 字符串 | 是 | 指示此行是否为此层级的最新行。 
+
+
+| dateTk | Int32 | 是 | 此会员等级行创建日期的 TK。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| fs_util_fact | link:#entity-fs_util_fact["fs_util_fact"] | 许多 
+|===
+
+
+[[vmdimension]]
+=== vm_dimension
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：vm_dimension
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk | Int32 | 是 | 此虚拟机行的 TK。 
+
+
+| name | 字符串 | 是 | 虚拟机的名称。 
+
+
+| naturalKey | 字符串 | 是 | 虚拟机的自然标识符。 
+
+
+| 操作系统 | 字符串 | 是 | 来宾操作系统。 
+
+
+| virtualCenterIp | 字符串 | 是 | 虚拟机的虚拟中心的 IP 地址。 
+
+
+| ips | 字符串 | 是 | 以逗号分隔的虚拟机 IP 地址列表。 
+
+
+| url | 字符串 | 是 | Insight Server 中此虚拟机的 URL。 
+
+
+| ID | Int64 | 是 | dwh_inventory.hv_virtual_machine 中虚拟机的 GUID 
+
+
+| 最新 | 字符串 | 是 | 指示此行是否是此虚拟机的最新行。 
+
+
+| dateTk | Int32 | 是 | 此虚拟机行的创建日期的 TK。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| fs_util_fact | link:#entity-fs_util_fact["fs_util_fact"] | 许多 
+|===

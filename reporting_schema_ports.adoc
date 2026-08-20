@@ -1,0 +1,462 @@
+---
+sidebar: sidebar 
+permalink: reporting_schema_ports.html 
+summary: Ports 数据仓库的架构表 
+keywords: dwh, data warehouse, schema, reporting, ports 
+---
+= 端口架构
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+来源：*dwh_ports* OData 端点—Data Infrastructure Insights
+
+找到的表格：*7* | 关联：*4*
+
+
+
+[[key-relationships-between-tables]]
+== 表之间的关键关系
+
+
+
+[[portsfact]]
+=== 端口信息
+
+[cols="1,1,1"]
+|===
+| 被引用（父）表 | FK列 | 父级 PK 
+
+
+| link:#entity-connected_device_dimension["已连接设备维度"] | connectedDeviceTk | tk 
+
+
+| link:#entity-date_dimension["日期维度"] | dateTk | tk 
+
+
+| link:#entity-port_dimension["端口尺寸"] | portTk | tk 
+
+
+| link:#entity-switch_dimension["切换维度"] | switchTk | tk 
+|===
+
+
+[[tables-fields]]
+== 表格和字段
+
+PKPrimary KeyFKForeign KeyNOT NULL必填字段
+
+
+
+[[cardinals]]
+=== 枢机主教
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：cardinals
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| 数字 | Int32 | 是 | 一个介于0到99之间的数字。 
+|===
+
+
+[[connecteddevicedimension]]
+=== 已连接设备维度
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：connected_device_dimension
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk *[PK]* | Int32 | 是 | 设备的 TK。 
+
+
+| name | 字符串 | 是 | 设备的名称。 
+
+
+| 制造商 | 字符串 | 是 | 设备制造商。 
+
+
+| 型号 | 字符串 | 是 | 设备的型号。 
+
+
+| type | 字符串 | 是 | 设备的类型。 
+
+
+| 固件 | 字符串 | 是 | 设备上运行的固件版本。 
+
+
+| ID | Int64 | 是 | 设备的 ID 
+
+
+| 最新 | 字符串 | 是 | 指示此行是否为此设备的最新行。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 端口信息 | link:#entity-ports_fact["端口信息"] | 许多 
+|===
+
+
+[[datedimension]]
+=== 日期维度
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：date_dimension
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk | Int32 | 是 | 日期对象的 TK。 
+
+
+| fullDate | DateTimeOffset | 是 | 日期对象的日期。 
+
+
+| dayInMonth | 字节 | 是 | 日期对象的月份日期。每月的第一天值为 1。 
+
+
+| dayInYear | Int32 | 是 | 日期对象在一年中的第几天。一年的第一天值为 1。 
+
+
+| dateYear | Int32 | 是 | 日期对象的年份。 
+
+
+| yearLabel | 字符串 | 是 | 格式为字符串的年份 
+
+
+| monthNum | 字节 | 是 | 日期对象的月份。1月的值为1。 
+
+
+| monthLabel | 字符串 | 是 | 月份格式为字符串 
+
+
+| dayInWeekNum | 字节 | 是 | 日期对象的星期几。星期日的值为 1。 
+
+
+| 季度 | 字节 | 是 | 日期对象的季度。第一季度的值为 1。 
+
+
+| quarterLabel | 字符串 | 是 | 季度格式化为字符串 
+
+
+| dayInQuarter | Int32 | 是 | 日期对象的季度中的天。季度的第一天值为 1。 
+
+
+| repQuarter | 字节 | 是 | 指示此日期是否是其季度的第一个可用日期。 
+
+
+| repMonth | 字节 | 是 | 指示此日期是否是其月份的第一个可用日期。 
+
+
+| repWeek | 字节 | 是 | 指示此日期是否是其一周内可用的第一个日期。 
+
+
+| repDay | 字节 | 是 | 指示此日期是否是其当天可用的第一个日期。 
+
+
+| repMonthOrLatest | 字节 | 是 | 指示此日期是代表月还是最新代表月。此标志由按月处理代表数据的 Datamarts 使用。唯一的区别在于当前月份使用的是最新数据 
+
+
+| sspFlag | 字节 | 是 | 指示此日期是否在存储和存储池数据集市中使用。这适用于月代表和配置中定义的最后天数。 
+
+
+| 最新 | 字符串 | 是 | 指示此日期是否为表中的最后一个可用日期。 
+
+
+| 未来 | 字符串 | 是 | 指示此日期是未来日期（预测）还是常规日期。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 端口信息 | link:#entity-ports_fact["端口信息"] | 许多 
+|===
+
+
+[[portdimension]]
+=== 端口尺寸
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：port_dimension
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk | Int32 | 是 | 此端口行的 TK。 
+
+
+| wwn | 字符串 | 是 | 端口的WWN。 
+
+
+| name | 字符串 | 是 | 端口名称。 
+
+
+| gbicType | 字符串 | 是 | 用于端口的 GBIC（千兆接口转换器）类型。 
+
+
+| type | 字符串 | 是 | 端口类型，通常用于标识与其他设备通信所使用的协议，取自设备本身：F-port、E-port 等。 
+
+
+| 速度 | 字符串 | 是 | 端口速度，以 Gbps 为单位。 
+
+
+| isGenerated | 字符串 | 是 | 指示这是否是生成的 wwn（如果我们不知道真正的 wwn）。 
+
+
+| url | 字符串 | 是 | Insight Server 中此端口的 URL。 
+
+
+| ID | Int64 | 是 | dwh_inventory.switch_port 中端口的 GUID。 
+
+
+| 最新 | 字符串 | 是 | 指示此行是否是此端口的最新行。 
+
+
+| dateTk | Int32 | 是 | 创建端口行的日期的 TK。 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 端口信息 | link:#entity-ports_fact["端口信息"] | 许多 
+|===
+
+
+[[portsfact]]
+=== 端口信息
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：ports_fact
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk *[PK]* | Int32 | 是 | 事实的 TK。 
+
+
+| dateTk *[FK]* →link:#entity-date_dimension["日期维度"].tk | Int32 | 是 | 日期的 TK。 
+
+
+| switchTk *[FK]* →link:#entity-switch_dimension["切换维度"].tk | Int32 | 是 | 包含端口的交换机的 TK。 
+
+
+| connectedDeviceTk *[FK]* →link:#entity-connected_device_dimension["已连接设备维度"].tk | Int32 | 是 | 连接到端口的设备的 TK。 
+
+
+| portTk *[FK]* →link:#entity-port_dimension["端口尺寸"].tk | Int32 | 是 | 端口的 TK。 
+
+
+| fabric | 字符串 | 是 | 将端口配置为在其上运行的结构（或 VSAN）的名称或 WWN。 
+
+
+| 速度 | 字符串 | 是 | 端口速度，以 Gbps 为单位。 
+
+
+| connectivityType | 字符串 | 是 | 已连接设备的类型。 
+
+
+| type | 字符串 | 是 | 端口类型，通常用于标识与其他设备通信所使用的协议，取自设备本身：F-port、E-port 等。 
+
+
+| 状态 | 字符串 | 是 | 端口状态。可能的值为 OK、NOT_LICENSED、ERROR、INACTIVE 和 UNKNOWN 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 已连接设备维度 | link:#entity-connected_device_dimension["已连接设备维度"] | 一个 JOIN：connectedDeviceTk=link:#entity-connected_device_dimension["已连接设备维度"].tk 
+
+
+| 端口尺寸 | link:#entity-port_dimension["端口尺寸"] | 一个 JOIN:portTk=link:#entity-port_dimension["端口尺寸"].tk 
+
+
+| 日期维度 | link:#entity-date_dimension["日期维度"] | 一个 JOIN：dateTk=link:#entity-date_dimension["日期维度"].tk 
+
+
+| 切换维度 | link:#entity-switch_dimension["切换维度"] | 一个 JOIN：switchTk=link:#entity-switch_dimension["切换维度"].tk 
+|===
+
+
+[[portsfactcurrent]]
+=== ports_fact_current
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：ports_fact_current
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk | Int32 | 是 | 事实的 TK。 
+
+
+| dateTk | Int32 | 是 | 日期的 TK。 
+
+
+| switchTk | Int32 | 是 | 包含端口的交换机的 TK。 
+
+
+| connectedDeviceTk | Int32 | 是 | 连接到端口的设备的 TK。 
+
+
+| portTk | Int32 | 是 | 端口的 TK。 
+
+
+| fabric | 字符串 | 是 | 将端口配置为在其上运行的结构（或 VSAN）的名称或 WWN。 
+
+
+| 速度 | 字符串 | 是 | 端口速度，以 Gbps 为单位。 
+
+
+| connectivityType | 字符串 | 是 | 已连接设备的类型。 
+
+
+| type | 字符串 | 是 | 端口类型，通常用于标识与其他设备通信所使用的协议，取自设备本身：F-port、E-port 等。 
+
+
+| 状态 | 字符串 | 是 | 端口状态。可能的值为 OK、NOT_LICENSED、ERROR、INACTIVE 和 UNKNOWN 
+|===
+
+
+[[switchdimension]]
+=== 切换维度
+
+
+
+[[top]]
+=== ↑ top
+
+实体集：switch_dimension
+
+[cols="1,1,1,1"]
+|===
+| 字段 | 类型 | 可为Null | 注释 
+
+
+| tk | Int32 | 是 | 此开关行的 TK。 
+
+
+| wwn | 字符串 | 是 | 交换机的 WWN。 
+
+
+| name | 字符串 | 是 | 交换机的名称。 
+
+
+| 标识符 | 字符串 | 是 | 设备的标识符。 
+
+
+| IP | 字符串 | 是 | 交换机的 IP 地址。 
+
+
+| 型号 | 字符串 | 是 | 交换机型号。 
+
+
+| 制造商 | 字符串 | 是 | 交换机制造商。 
+
+
+| 固件 | 字符串 | 是 | 交换机上运行的固件版本。 
+
+
+| serialNumber | 字符串 | 是 | 交换机的序列号。 
+
+
+| npv | 字符串 | 是 | 指示此交换机是否为 NPV 交换机。 
+
+
+| isGenerated | 字符串 | 是 | 指示此交换机是否与物理设备不对应。它用于对一对多端口连接进行建模。 
+
+
+| type | 字符串 | 是 | 交换机类型。 
+
+
+| url | 字符串 | 是 | Insight Server 中此交换机的 URL。 
+
+
+| ID | Int64 | 是 | dwh_inventory.switch 中交换机的 GUID。 
+
+
+| 最新 | 字符串 | 是 | 指示此行是否为此交换机的最新行。 
+
+
+| dateTk | Int32 | 是 | 此开关行创建日期的 TK。 
+
+
+| dataCenter | 字符串 | 是 | dataCenter 注释值已分配给 dwh_dimensions.switch_dimension 
+
+
+| switchLevel | 字符串 | 是 | switchLevel 注释值已分配给 dwh_dimensions.switch_dimension 
+|===
+
+
+==== 导航属性（联接）
+
+[cols="1,1,1"]
+|===
+| 导航属性 | 相关实体 | 基数/联接 
+
+
+| 端口信息 | link:#entity-ports_fact["端口信息"] | 许多 
+|===
