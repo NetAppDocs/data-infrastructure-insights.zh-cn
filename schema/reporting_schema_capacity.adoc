@@ -10,7 +10,7 @@ keywords: dwh, data warehouse, schema, reporting, capacity
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 来源：*dwh_capacity* OData 端点—Data Infrastructure Insights
