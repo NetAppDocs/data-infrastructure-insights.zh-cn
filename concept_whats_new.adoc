@@ -19,6 +19,45 @@ NetApp不断改进和增强其产品和服务。以下是Data Infrastructure Ins
 
 
 
+[[september-2026]]
+== 2026年9月
+
+
+
+[[ai-assistant-visualizations]]
+=== AI 助手可视化
+
+将复杂数据即时转换为图形洞察。请 AI Assistant 创建仪表板，它将通过交互式图形和表格可视化答案，帮助您识别趋势并更快地解决问题，而无需手动创建图表。
+
+image:ai_assistant-column_graph.png["AI Assistant 可视化"]
+
+
+
+[[enhanced-vm-analyzer-filtering]]
+=== 增强的 VM Analyzer 过滤
+
+VM Analyzer 视图中的新开关允许您隐藏没有数据存储的已挂载卷，从而提供更整洁的视图以简化 VM 故障排除。
+
+image:vm_analyzer_datastore_only_view.png["仅数据存储视图滑块"]
+
+
+
+[[ui-update-user-data-edit-mode]]
+=== UI更新：用户数据编辑模式
+
+保持资产信息准确，同时降低意外更改的风险。注释和属性（即"用户数据"）现在默认以只读模式显示，因此您可以先查看详细信息，然后在准备好后选择编辑。
+
+仅在需要时进行编辑。从滑出面板中，展开资源详细信息并选择铅笔图标。资源登录页面将在"编辑"模式下打开，您可以在其中更新信息，完成后选择保存。
+
+您还可以直接打开资产登录页面，然后选择右上角的"编辑"。
+
+image:UserDataEdit-Slideout.png["在侧拉面板中编辑用户数据-铅笔图标，宽度=400"]
+
+image:UserDataEdit-LP.png["登录页编辑模式，width=200"]
+
+'''
+
+
 [[july-2026]]
 == 2026年7月
 
