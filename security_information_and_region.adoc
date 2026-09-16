@@ -7,6 +7,10 @@ keywords: security, risk, protection
 = 信息和区域
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -99,10 +103,4 @@ Data Infrastructure Insights根据您创建环境的区域存储信息。
 [[more-information]]
 == 更多信息
 
-您可以通过以下链接了解有关 NetApp 隐私和安全的更多信息：
-
-* link:https://www.netapp.com/us/company/trust-center/index.aspx["信任中心"]
-* link:https://www.netapp.com/us/company/trust-center/privacy/data-location-cross-border-transfers.aspx["跨境数据传输"]
-* link:https://www.netapp.com/us/company/trust-center/transparency/third-party-data-requests.aspx["响应第三方数据请求"]
-* link:https://www.netapp.com/us/company/trust-center/privacy/privacy-principles-security-safeguards.aspx["NetApp隐私原则"]
-
+如需了解有关 NetApp 隐私和安全的更多信息，请访问 * NetApp link:https://www.netapp.com/responsibility/trust-center/["信任中心"]。

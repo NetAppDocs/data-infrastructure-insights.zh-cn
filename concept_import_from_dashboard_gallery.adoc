@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_import_from_dashboard_gallery.html 
-summary: 您可以导入推荐的仪表板来帮助回答业务洞察问题。您还可以导入之前导出的自定义仪表板。 
+summary: 从库中导入预建的仪表板以快速获取业务见解，或导入已导出的自定义仪表板以在租户之间共享配置。 
 keywords: dashboard, gallery, import, export 
 ---
 = 导入仪表板
@@ -14,7 +14,7 @@ keywords: dashboard, gallery, import, export
 
 
 [role="lead"]
-Data Infrastructure Insights提供了许多推荐的仪表板，为您的数据提供业务洞察。每个仪表板都包含旨在帮助回答特定问题或解决与当前在租户上收集的数据相关的特定问题的小部件。DII 还允许您导出有用的仪表板并将其导入到另一个租户。
+从库中访问预建的仪表板，以快速了解您的基础设施，或导入您从其他租户导出的自定义仪表板。图库仪表板专为您环境的数据收集器量身定制，旨在回答特定的业务问题，而导出的仪表板可让您在多个租户之间共享有用的配置。
 
 
 

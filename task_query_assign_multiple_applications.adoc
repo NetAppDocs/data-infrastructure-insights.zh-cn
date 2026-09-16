@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_query_assign_multiple_applications.html 
-summary: 使用查询为对象分配多个应用程序或注释，或者从对象中删除多个应用程序或注释。 
+summary: 使用基于查询的批量操作，无需手动配置单个资产，即可高效管理多个资产中的应用程序和注释，轻松完成分配或删除操作。 
 keywords: query, queries, application, annotation, multiple 
 ---
 = 将多个应用程序分配给资产或从资产中删除多个应用程序
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-您可以分配多个link:task_create_application.html["应用程序"]使用查询从资产中添加或删除多个应用程序，而不必手动分配或删除它们。
+通过使用查询对应用程序和注释执行批量操作，简化资产管理。您无需单独手动配置每个资产，而是可以在单个操作中跨资产组高效地分配或删除多个应用程序和注释。
 
 
 NOTE: 您可以按照以下步骤添加或删除link:task_defining_annotations.html["标注"]以同样的方式。

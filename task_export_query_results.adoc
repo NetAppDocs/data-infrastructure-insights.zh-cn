@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_export_query_results.html 
-summary: 如何将查询结果导出到 .csv 文件 
+summary: 将查询结果、仪表板表格、登录页面和其他数据导出到 .CSV 文件，以便使用异步处理进行外部分析、报告和与其他应用程序集成。 
 keywords: query, queries, export, csv 
 ---
 = 将查询结果导出到 .CSV 文件
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-您可以将任何查询的结果导出到 .CSV 文件，这将允许您分析数据或将其导入到另一个应用程序中。
+将数据从查询、仪表板表格小部件和登录页表格导出至 .CSV 文件，以便进行外部分析、报告和与其他应用程序集成。异步导出过程允许您在后台处理大型数据集时继续工作。
 
 .步骤
 . 登录Data Infrastructure Insights。

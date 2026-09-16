@@ -7,10 +7,14 @@ summary: 利用存储工作负载安全功能的内部威胁检测、跨混合�
 = 关于存储工作负载安全
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Data Infrastructure Insights存储工作负载安全（以前称为Cloud Secure）可帮助您通过有关内部威胁的可操作情报来保护您的数据。它提供跨混合云环境的所有公司数据访问的集中可视性和控制，以确保满足安全性和合规性目标。
+Data Infrastructure Insights Storage Workload Security（以前称为 Cloud Secure）通过高级内部威胁检测和可操作的智能保护组织的数据。获得跨混合云环境的所有企业数据访问的集中可见性和控制，同时通过实时监控和自动响应功能确保实现安全性和合规性目标。
 
 
 

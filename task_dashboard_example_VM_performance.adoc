@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_dashboard_example_VM_performance.html 
-summary: 突出显示虚拟机性能的仪表板示例。 
+summary: 使用表格、图表和小部件比较虚拟机和存储指标，创建虚拟机性能仪表板的分步教程。 
 keywords: dashboard, widget, custom, example, virtual machine, vm, performance 
 ---
 = 仪表板示例：虚拟机性能
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-当今的 IT 运营面临着许多挑战。管理员需要用更少的资源做更多的事情，并且必须全面了解您的动态数据中心。在此示例中，我们将向您展示如何创建一个带有小部件的仪表板，该仪表板可让您深入了解租户上的虚拟机 (VM) 性能的操作。通过遵循此示例并创建小部件来满足您自己的特定需求，您可以执行诸如可视化后端存储性能与前端虚拟机性能的比较，或查看 VM 延迟与 I/O 需求等操作。
+通过此分步教程，了解如何创建全面的虚拟机性能仪表板。您将构建可视化虚拟机性能数据的小部件，将后端存储指标与前端虚拟机性能进行比较，并分析虚拟机延迟和 I/O 需求之间的关系，以获得更好的运营洞察力。
 
 .关于此任务
 在这里，我们将创建一个虚拟机性能仪表板，其中包含以下内容：

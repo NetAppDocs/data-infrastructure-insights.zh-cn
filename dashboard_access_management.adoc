@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: dashboard_access_management.html 
-summary: 您可以确定所创建的仪表板是公共的还是私有的。 
+summary: 通过灵活的共享选项控制仪表板的可见性和访问权限，使您可以保持仪表板的私密性、与特定用户共享或在整个组织范围内使用仪表板。 
 keywords: dashboard, public, shared, private 
 ---
 = 仪表板访问管理
@@ -14,7 +14,7 @@ keywords: dashboard, public, shared, private
 
 
 [role="lead"]
-Data Infrastructure Insights现在可以让您更好地控制对您创建的仪表板的访问。您可以选择谁可以修改您的图表。您可以控制潜在敏感信息的暴露。将仪表板保持为私有状态可让您完成可视化工作，直到组织中的其他人可以使用它们为止。
+通过灵活的访问管理选项，控制谁可以查看和修改您的仪表板。在开发仪表板时保持其私密性，然后使用可自定义的编辑或只读权限与特定用户或整个组织共享，以便在启用协作的同时保护敏感信息。
 
 image:Dashboard_Sharing_Options.png["仪表板共享选项，宽度=300"]
 

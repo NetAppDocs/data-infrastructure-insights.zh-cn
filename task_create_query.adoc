@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_create_query.html 
-summary: 查询允许您快速轻松地识别感兴趣的资产和指标。 
+summary: 通过精细控制、灵活分组和可自定义结果显示，创建自定义查询以搜索、筛选和分析您的基础架构资产和指标。 
 keywords: query, queries 
 ---
 = 创建查询
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-通过查询，您可以在粒度级别搜索租户上的资产，从而可以筛选所需的数据并根据您的喜好对结果进行排序。
+通过灵活的筛选、分组和排序功能，创建强大的查询，在细粒度级别搜索您的基础设施资产。构建有针对性的搜索，帮助您识别特定资产、分析性能指标，并按需整理结果。
 
 例如，您可以为_volumes_创建一个查询，添加一个过滤器来查找与所选卷关联的特定_storages_，添加另一个过滤器来查找所选存储上的特定_annotation_（例如“Tier 1”），最后添加另一个过滤器来查找所有_IOPS - 读取（IO/s）_大于 25 的存储。当显示结果时，您可以按升序或降序对与查询相关的信息列进行排序。
 

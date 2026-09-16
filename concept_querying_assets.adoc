@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_querying_assets.html 
-summary: 查询库存资产和集成指标，以监控、排除故障并分析整个基础架构的性能，包括存储、计算和网络资源。 
+summary: 查询物理和虚拟基础架构资产以及集成指标，以监控性能、解决问题并使用精细搜索条件创建有针对性的环境视图。 
 keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, Host, Internal Volume, iSCSI, Network, Portal, Path, Port, Qtree, Quota, Share, Storage, Node, Pool, SVM, Switch, Tape, VMDK, Virtual Machine, VM, Volume, Zone, Member 
 ---
 = 查询资产和指标
@@ -14,7 +14,7 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 
 
 [role="lead"]
-查询基础架构的物理和虚拟资产，以监控性能、排除问题并根据注释等自定义条件执行精细搜索。Data Infrastructure Insights 支持跨不同资产类型（从存储阵列和主机到应用程序和虚拟机）的查询，以及来自 Kubernetes、Docker 和 ONTAP Advanced Data 的集成指标，以实现全面的可视性。
+使用查询在细粒度级别搜索和分析您的基础架构资产和指标。查询物理和虚拟库存资产、来自 Kubernetes 和 ONTAP 的集成数据以及性能指标，以监控您的环境、排查问题并根据特定标准创建有针对性的视图。
 
 请注意，自动为资源分配注释的注释规则需要与所有人共享的查询。有关共享查询的详细信息，请参阅下文。
 

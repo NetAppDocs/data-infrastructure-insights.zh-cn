@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboards_overview.html 
-summary: Data Infrastructure Insights中的仪表板概述。 
+summary: 使用灵活的小部件创建自定义仪表板，以可视化基础架构数据、监控性能趋势并构建适合您特定监控需求的运营视图。 
 keywords: dashboard, widget, custom, view, data 
 ---
 = 仪表板概述
@@ -14,7 +14,7 @@ keywords: dashboard, widget, custom, view, data
 
 
 [role="lead"]
-Data Infrastructure Insights为用户提供了创建基础设施数据操作视图的灵活性，允许您使用各种小部件创建自定义仪表板，每个小部件都为显示和绘制数据图表提供了广泛的灵活性。
+创建自定义仪表板，提供您最需要的运营洞见。从多种小部件类型（包括表格、图表、仪表和绘图）中进行选择，以完全按照您的需求可视化基础设施数据，从而实现更好的决策制定和更有效的监控。
 
 
 IMPORTANT: 这些部分中的示例仅用于解释目的，并不涵盖所有可能的情况。这里的概念和步骤可用于创建您自己的仪表板，以突出显示特定于您的特定需求的数据。

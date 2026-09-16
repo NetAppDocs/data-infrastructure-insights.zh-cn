@@ -7,10 +7,14 @@ summary: 介绍 Kubernetes 工作负载依赖关系和流程，并重点介绍�
 = Kubernetes 网络性能监控和映射
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Kubernetes 网络性能监控和映射功能通过映射服务（也称为工作负载）之间的依赖关系来简化故障排除，并提供对网络性能延迟和异常的实时可见性，以便在性能问题影响用户之前识别它们。此功能通过分析和审核 Kubernetes 流量流帮助组织降低总体成本。
+Data Infrastructure Insights 为 Kubernetes 环境提供全面的网络性能监控和可视化映射。实时了解工作负载依赖关系、网络延迟和流量流，通过详细的流量分析主动识别性能问题并优化成本。
 
 主要特点：• 工作负载图显示 Kubernetes 工作负载依赖关系和流程，并突出显示网络和性能问题。  • 监控 Kubernetes pod、工作负载和节点之间的网络流量；识别流量和延迟问题的来源。  • 通过分析入口、出口、跨区域和跨区域网络流量来降低总体成本。
 

@@ -49,6 +49,8 @@ image:Monitor_log_or_metric.png["选择系统或日志监视器"]
 +
 ** _Metric_ 监控与基础设施或性能相关的触发事件的警报
 ** _Log_ 监控与日志相关的活动警报
+** _Anomaly Detection_ 监控数据模式变化的警报
+** _Attribute_ 监控器针对对象属性的更改发出警报，例如将对象移动到新数据中心
 
 
 +
@@ -171,6 +173,17 @@ image:AnomalyDetectionMonitorMetricChoosing.png["用于异常检测的指标过�
 
 
 image:AnomalyDetectionMonitorDefineConditions.png["定义触发异常检测的条件"]
+
+
+
+[[attribute-monitor]]
+=== 属性监视器
+
+当资产在数据中心之间移动、存储池未加密或发生任何属性修改时，属性监视器会自动提醒您的团队。这有助于维护配置基线，并有助于确保在新部署或更改期间不会出现任何漏洞。
+
+image:attribute_monitor_in_list.png["属性监视器已添加到监视器类型中"]
+
+只需选择对象类型并选择要监控更改的属性。
 
 
 

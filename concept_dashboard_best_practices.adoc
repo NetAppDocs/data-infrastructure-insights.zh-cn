@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboard_best_practices.html 
-summary: 充分利用仪表板的最佳实践 
+summary: 了解查找正确指标、有效过滤资产以及配置小组件以创建功能强大且具有洞察力的仪表板的最佳实践。 
 keywords: dashboard, hints, tips, best practice, widgets, metrics, 
 ---
 = 仪表板和小部件的最佳实践
@@ -14,7 +14,7 @@ keywords: dashboard, hints, tips, best practice, widgets, metrics,
 
 
 [role="lead"]
-帮助您充分利用仪表板和小部件的强大功能的提示和技巧。
+使用经过验证的策略掌握仪表板创建技巧，以找到正确的指标、有效过滤资产，并配置小部件以获得最大洞察力。这些最佳实践可帮助您构建更有效的仪表板，提供可操作的基础架构智能。
 
 
 

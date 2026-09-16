@@ -7,6 +7,10 @@ keywords: troubleshooting, problems, browser, login, log in, accessing, access t
 = 解决一般Data Infrastructure Insights问题
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -73,6 +77,6 @@ keywords: troubleshooting, problems, browser, login, log in, accessing, access t
 
 如果您拥有有效的Data Infrastructure Insights订阅，则可以使用以下支持选项：
 
-link:https://www.netapp.com/us/contact-us/support.aspx["电话"] link:https://mysupport.netapp.com/site/cases/mine/create?serialNumber=95001014387268156333["支持票"]
+link:https://www.netapp.com/company/contact-us/support/["电话"] link:https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase["支持票"]
 
 有关详细信息，请参阅 https://docs.netapp.com/us-en/cloudinsights/concept_requesting_support.html["Data Infrastructure Insights支持文档"]。

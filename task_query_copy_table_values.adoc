@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_query_copy_table_values.html 
-summary: 您可以将表中的值复制到剪贴板以供其他应用程序使用。 
+summary: 使用文本选择或一键复制将表格值复制到剪贴板，以便高效地将数据传输到搜索字段和外部应用程序。 
 keywords: query, queries, copy, values, clipboard 
 ---
 = 复制表值
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-您可以将表中的值复制到剪贴板以便在搜索框或其他应用程序中使用。
+通过将表格值直接复制到剪贴板以用于搜索或外部应用程序，从而简化您的工作流程。对于带有资产链接的单值字段，可选择手动文本选择或方便的一键复制。
 
 .关于此任务
 您可以使用两种方法将表或查询结果中的值复制到剪贴板。

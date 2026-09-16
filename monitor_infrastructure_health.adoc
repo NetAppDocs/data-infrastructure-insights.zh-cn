@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: monitor_infrastructure_health.html 
 keywords: infra, infrastructure, health, monitor 
-summary: 根据性能、容量、配置和组件警报通过统一评分来监控基础设施健康状况，以便主动解决问题。 
+summary: 通过将性能、容量、配置和组件警报整合到可操作的运行状况评分中的全面监控，获得存储环境运行状况的统一视图。 
 ---
 = 监控基础设施健康状况
 :hardbreaks:
@@ -14,15 +14,12 @@ summary: 根据性能、容量、配置和组件警报通过统一评分来监�
 
 
 [role="lead"]
-Data Infrastructure Insights提供全面的基础设施健康监控，可跟踪存储环境的性能、容量、配置和组件状态。健康分数是根据这些类别的监控警报计算得出的，为您提供系统健康状况的统一视图并实现主动解决问题。
+Data Infrastructure Insights 通过跟踪性能、容量、配置和组件状态来监控存储环境的运行状况。系统根据这些类别的监控警报计算统一的运行状况分数，从而清晰呈现系统运行状况，并支持主动解决问题。
 
 
 
 [[the-infrastructure-health-dashboard]]
 == 基础设施健康仪表板
-
-
-NOTE: 监控基础设施健康状况link:concept_preview_features.html["预览"]功能，并且可能会发生变化。
 
 导航到*可观察性>分析*并选择*基础设施健康*。仪表板根据如下所述的监控警报类别和分数提供系统健康状况的概述。在顶部设置过滤器以缩小调查范围。
 

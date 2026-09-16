@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_modify_delete_query.html 
-summary: 修改或删除查询 
+summary: 通过更改条件和列来修改现有查询，使用灵活的保存选项来更新、重命名或创建新版本，以及在不再需要时删除查询的选项。 
 keywords: query, queries, modify, edit, delete, remove 
 ---
 = 修改或删除查询
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-当您想要更改所查询资产的搜索条件时，您可以更改与查询关联的条件。
+通过修改搜索条件、添加或删除列以及从灵活的保存选项中进行选择，有效管理查询。更新现有查询、创建新版本或删除不再需要的查询，以保持查询库的有序性和时效性。
 
 
 

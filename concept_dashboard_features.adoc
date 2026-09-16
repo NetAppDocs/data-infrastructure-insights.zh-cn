@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboard_features.html 
-summary: 仪表板功能和概念。 
+summary: 掌握高级仪表板功能，包括小部件自定义、查询过滤、变量配置、数据转换和格式设置选项，以创建功能强大、灵活的可视化效果。 
 keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand 
 ---
 = 仪表板功能
@@ -14,7 +14,7 @@ keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll 
 
 
 [role="lead"]
-仪表板和小部件为数据的显示方式提供了极大的灵活性。以下概念可帮助您充分利用自定义仪表板。
+借助高级功能和自定义选项，释放控制面板的全部潜力。了解如何配置小组件查询、应用数据转换、使用变量进行动态筛选以及实施复杂的格式化，以创建针对基础架构监控需求的高效定制可视化效果。
 
 目录：[]
 
