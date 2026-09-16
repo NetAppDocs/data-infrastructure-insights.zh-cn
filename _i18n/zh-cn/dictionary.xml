@@ -15170,4 +15170,7 @@
   <block id="d05c002809e2eff8dbbef3f837ebccae" category="paragraph"><block ref="d05c002809e2eff8dbbef3f837ebccae" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0b67caee179a4206a762e287d0cc0b59" category="inline-image-macro">登录页编辑模式，width=200</block>
   <block id="2676c87e0e32e08b02693582de233efc" category="paragraph"><block ref="2676c87e0e32e08b02693582de233efc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d23e4282924871b1db7a3f3eb6eda8b8" category="paragraph">如果您注意到您的AU在尝试连接到DII时被阻止，请尝试将这些端点添加到您的代理中：</block>
+  <block id="5d8be06cd693cc8e589d6313aebab4bf" category="inline-link-macro">控制台设置管理员</block>
+  <block id="43770a02cdae19a089a9b34e2c93ce43" category="paragraph">您可能需要的特定 NetApp Console 代理端点列于 <block ref="bbcee94e258ef7cfd197d85f372a9f11" category="inline-link-macro-rx"></block> 文档中。</block>
 </blocks>
