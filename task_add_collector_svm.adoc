@@ -14,7 +14,7 @@ summary: 为 Workload Security 配置 ONTAP SVM 数据收集器并排除故障�
 
 
 [role="lead"]
-ONTAP SVM Data Collector 允许 Workload Security 监控 NetApp ONTAP 存储虚拟机（SVM）上的文件和用户访问活动。收集器通过 HTTPS 连接到 ONTAP 以配置 FPolicy；然后 ONTAP 连接回 Workload Security Agent 以流式传输文件和用户访问事件。本指南涵盖了支持的版本、先决条件、连接方法、权限、Test Connection 预检查、配置字段、特定于功能的设置以及常见问题及其修复方法。
+ONTAP SVM Data Collector 允许 Workload Security 监控 NetApp ONTAP 存储虚拟机（SVM）上的文件和用户访问活动。收集器通过 HTTPS 连接到 ONTAP 以配置 FPolicy；然后 ONTAP 连接回 Workload Security Agent 以流式传输文件和用户访问事件。本指南涵盖支持的版本、先决条件、连接方法、权限、Test Connection 预检查、配置字段、特定于功能的设置以及常见问题及其修复方法。
 
 [quote]
 ____
@@ -32,13 +32,13 @@ ____
 | *项目* | *支持* 
 
 
-| ONTAP （最低版本） | ONTAP 9.2 及更高版本。为了获得最佳性能，请使用 9.13.1 之后的 ONTAP。 
+| ONTAP （最低要求） | ONTAP 9.2 及更高版本。为了获得最佳性能，请使用 9.13.1 之后的 ONTAP。 
 
 
 | SMB | SMB 3.1 及更早版本。 
 
 
-| NFS | 最高包含 NFS 4.1（NFS 4.1 需要 ONTAP 9.15 或更高版本）。 
+| NFS | 最高支持到并包括 NFS 4.1（NFS 4.1 需要 ONTAP 9.15 或更高版本）。 
 
 
 | FlexGroup | ONTAP 9.4 及更高版本。 
@@ -47,23 +47,23 @@ ____
 | FlexCache（NFS） | ONTAP 9.7 及更高版本。 
 
 
-| FlexCache（SMB） | ONTAP 9.14.1 及更高版本。 
+| FlexCache （SMB） | ONTAP 9.14.1 及更高版本。 
 
 
 | ONTAP Select | 支持。 
 
 
-| SVM 类型 / 子类型 | 仅限数据 SVM（无无限卷）。支持的子类型：default、sync_source、sync_destination。按设计，跳过对 DP 目标 SVM 的审核。 
+| SVM 类型/子类型 | 仅限数据 SVM（无无限卷）。支持的子类型：default、sync++_++source、sync++_++destination。按设计，DP-destination SVM 会被跳过审核。 
 
 
-| data-fpolicy-client 服务策略 | ONTAP 9.8 及更高版本要求（请参阅服务策略）。在早期版本上，无需设置。 
+| data-fpolicy-client 服务策略 | ONTAP 9.8 及更高版本要求（请参阅服务策略）。在早期版本中，无需设置。 
 
 
 | 功能版本下限 | 拒绝访问：9.13.0{plus} • 自主勒索软件保护（ARP）事件：9.11.1{plus} • 持久存储：9.14.1{plus} • Protobuf 事件格式：9.15{plus} 
 |===
 [quote]
 ____
-*Important:* ONTAP 9.8 及更高版本需要 data-fpolicy-client 服务策略。在早期版本上，无需设置。
+*Important:* ONTAP 9.8 及更高版本需要 data-fpolicy-client 服务策略。在早期版本中，无需设置。
 
 ____
 
@@ -72,10 +72,10 @@ ____
 [[before-you-begin]]
 == 开始之前
 
-* 要运行测试连接或添加数据收集器，必须先安装并连接代理。请参阅部署工作负载安全代理和代理要求。
+* 要运行测试连接或添加数据收集器，必须先安装并连接代理。请参阅部署 Workload Security 代理和代理要求。
 * 为用户访问受监控 SVM 的每个域配置用户目录收集器。测试连接不适用于用户目录收集器；如果没有用户目录收集器，Activity Forensics 将显示 SID 而不是用户名。
-* 为 Agent 保留所需的 FPolicy 回调端口。Test Connection 仅测试其分配的活动端口，而不是整个保留范围。同时确保每个 SVM 数据 LIF 都能路由到 Agent；Agent IP 结果会选择一个本地地址，但不测试路由。
-* 仅在一个 Workload Security 环境中为一个 SVM 配置一个收集器。测试连接未检测到其他环境中的重复收集器。
+* 为 Agent 保留所需的 FPolicy 回调端口。Test Connection 仅测试其分配的活动端口，而不是整个保留范围。此外，请确保每个 SVM 数据 LIF 都可以路由到 Agent；Agent IP 结果会选择一个本地地址，但不会测试路由。
+* 在一个 Workload Security 环境中，仅为一个 SVM 配置一个收集器。测试连接未检测到其他环境中的重复收集器。
 
 
 
@@ -88,10 +88,10 @@ ____
 | *路径* | *端口* | *目的* 
 
 
-| 代理 → ONTAP（集群或 SVM 管理 IP） | TCP 443 | 通过 HTTPS 的 REST/ONTAPI 配置 FPolicy。 
+| 代理 → ONTAP（集群或 SVM 管理 IP） | TCP 443 | REST/ONTAPI over HTTPS 以配置 FPolicy。 
 
 
-| ONTAP SVM 数据 LIFs → 代理 | TCP 35000–55000 | FPolicy 文件/用户访问事件（ONTAP 回调到代理）。 
+| ONTAP SVM data LIFs → 代理 | TCP 35000–55000 | FPolicy 文件/用户访问事件（ONTAP 回调到代理）。 
 
 
 | ONTAP 集群管理 IP → 代理 | TCP 35000–55000 | 使用这些功能时的 EMS 事件（例如 ARP）。 
@@ -103,7 +103,7 @@ ____
 
 [quote]
 ____
-*注意：*启用防火墙时，为收集器使用的端口定义例外。当 Agent 在 AWS 中运行以监控 Cloud ONTAP SVM 时，Agent 和存储必须位于同一个 VPC 中，或者在 VPC 之间具有有效的路由。
+*注意：*启用防火墙时，为收集器使用的端口定义一个例外。当 Agent 在 AWS 中运行以监控 Cloud ONTAP SVM 时，Agent 和存储必须位于同一个 VPC 中，或者在 VPC 之间具有有效的路由。
 
 ____
 
@@ -112,7 +112,7 @@ ____
 [[choose-a-connection-method]]
 == 选择一种连接方式
 
-使用两种方法之一添加 SVM。强烈建议使用集群 IP {plus} SVM 名称。
+使用两种方法之一添加 SVM。强烈建议使用群集 IP {plus} SVM 名称。
 
 [cols="25%,25%,25%,25%"]
 |===
@@ -122,11 +122,11 @@ ____
 | 集群管理 IP {plus} SVM 名称（推荐） | Cluster-admin 或 csuser，或具有 csrole 同等角色的 AD 用户 | 完整功能，包括测试连接功能/RBAC 检查和基于 EMS 的功能（ARP）。 | SVM 名称必须与 ONTAP 完全匹配（区分大小写）。 
 
 
-| SVM 管理 IP | vsadmin、csuser 或具有 csrole 同等角色的 AD 用户 | 核心审核。测试连接无法在 SVM 模式下运行功能/RBAC 检查（SVM 帐户缺乏运行它们的权限）。 | 使用专用的 SVM 管理 LIF，或将数据 LIF 防火墙策略设置为 mgmt（如下所示）。 
+| SVM 管理 IP | vsadmin、csuser 或具有 csrole 同等角色的 AD 用户 | 核心审核。测试连接无法在 SVM 模式下运行功能/RBAC 检查（SVM 帐户缺乏运行这些检查的权限）。 | 请使用专用的 SVM 管理 LIF，或将数据 LIF 防火墙策略设置为 mgmt（如下所示）。 
 |===
 [quote]
 ____
-*常见缺陷：*当您使用 vsadmin 通过 SVM IP 连接，并且 LIF 具有组合的数据 {plus} 管理角色时，ping 有效，但 SSH 无效。创建仅限 SVM 管理的 LIF，或将数据 LIF 防火墙策略设置为 mgmt。
+*常见误区：*当您通过 SVM IP 使用 vsadmin 进行连接，并且 LIF 具有组合的数据{plus}管理角色时，ping 有效，但 SSH 无效。创建仅限 SVM 管理的 LIF，或将数据 LIF 防火墙策略设置为 mgmt。
 
 ____
 
@@ -141,15 +141,15 @@ _建议使用集群管理 IP {plus} SVM 名称。如果您必须使用 SVM 模�
 
 [listing]
 ----
-security login password -username vsadmin -vserver <svmname>
+security login password -username vsadmin -vserver ++<++svmname++>++
 
-security login unlock -username vsadmin -vserver <svmname>
+security login unlock -username vsadmin -vserver ++<++svmname++>++
 ----
 *使用专用 SVM 管理 LIF。如果不可用，请将数据 LIF 防火墙策略设置为 mgmt:*
 
 [listing]
 ----
-network interface modify -lif <SVM_data_LIF_name> -firewall-policy mgmt
+network interface modify -lif ++<++SVM++_++data++_++LIF++_++name++>++ -firewall-policy mgmt
 ----
 .SVM 登录输出示例。
 image:ontap-svm-login-output.png["示例 SVM 登录输出,title=\"示例 SVM 登录输出\",width=646,height=164"]
@@ -165,13 +165,13 @@ ____
 [[permissions-rbac]]
 == 权限（RBAC）
 
-Test Connection 使用收集器表单中输入的 ONTAP 帐户运行。在运行之前，请使用 cluster-admin 凭据或使用以下所需权限创建 csuser/csrole。如果没有这些权限，Test Connection 将无法验证或配置 FPolicy 和所选功能。
+Test Connection 使用在收集器表单中输入的 ONTAP 帐户运行。在运行之前，请使用 cluster-admin 凭据或使用以下所需权限创建 csuser/csrole。如果没有这些权限，Test Connection 将无法验证或配置 FPolicy 和所选功能。
 
 *按功能划分的最低权限*
 
 [cols="34%,33%,33%"]
 |===
-| *功能* | *必需的权限* | *ONTAP 下限* 
+| *功能* | *必需的权限* | *ONTAP 最低版本* 
 
 
 | FPolicy（所有部署都必需） | vserver fpolicy: all | 任何受支持的 
@@ -180,7 +180,7 @@ Test Connection 使用收集器表单中输入的 ONTAP 帐户运行。在运行
 | 管理员快捷方式 | role DEFAULT: readonly (cluster) — 满足读取检查；fpolicy 仍然需要全部 | — 
 
 
-| Snapshot | 卷快照：全部（如果可能，将范围限制为 cloudsecure_*） | 任意 
+| Snapshot | 卷快照：全部（尽可能将范围限定为 cloudsecure++_*++） | 任意 
 
 
 | 基于 EMS 的监控 | 事件目录、事件筛选器、事件通知、事件通知目标、安全证书：全部 | 任意 
@@ -189,7 +189,7 @@ Test Connection 使用收集器表单中输入的 ONTAP 帐户运行。在运行
 | ONTAP 访问被拒绝 | REST 访问 {plus} vserver fpolicy 事件 | 9.13.0{plus} 
 
 
-| 自主勒索软件防护（ARP）事件 | security anti-ransomware volume {plus} volume：readonly/all | 9.11.1{plus} 
+| 自主勒索软件防护（ARP）事件 | security anti-ransomware volume {plus} volume: readonly/all | 9.11.1{plus} 
 
 
 | 持久存储 | vserver fpolicy: all {plus} job show: readonly（或 all） | 9.14.1{plus} 
@@ -198,11 +198,11 @@ Test Connection 使用收集器表单中输入的 ONTAP 帐户运行。在运行
 | Protobuf 事件格式 | vserver fpolicy: all | 9.15{plus} 
 
 
-| 用户访问拦截（SMB 和 NFS） | SSH（application ssh {plus} port 22）{plus} set: all, and vserver export-policy rule, vserver cifs session, vserver services access-check authentication translate, vserver name-mapping: all。仅限集群凭据。 | 任意 
+| 用户访问拦截（SMB 和 NFS） | SSH （应用程序 ssh {plus} 端口 22） {plus} set: all，以及 vserver export-policy rule、vserver cifs session、vserver services access-check authentication translate、vserver name-mapping: all。仅限集群凭据。 | 任意 
 |===
 [quote]
 ____
-*常见误区：* 对于由 AD 支持的 ONTAP 帐户，请直接将角色授予用户。如果仅在组级别分配角色，则权限探测器无法读取该角色，并且测试连接会报告“在组级别而不是此 Active Directory 用户的用户级别分配的角色”。
+*常见陷阱：*对于基于 AD 的 ONTAP 帐户，请直接将角色授予用户。如果仅在组级别分配角色，则权限探测器无法读取它，并且测试连接报告“在组级别而不是此 Active Directory 用户的用户级别分配的角色”。
 
 ____
 
@@ -215,10 +215,10 @@ ____
 
 [listing]
 ----
-security login delete -user-or-group-name csuser -application *
-security login role delete -role csrole -cmddirname *
-security login rest-role delete -role csrestrole -api *
-security login rest-role delete -role arwrole -api *
+security login delete -user-or-group-name csuser -application ++*++
+security login role delete -role csrole -cmddirname ++*++
+security login rest-role delete -role csrestrole -api ++*++
+security login rest-role delete -role arwrole -api ++*++
 ----
 创建角色和用户（以群集管理员身份运行）：
 
@@ -226,7 +226,7 @@ security login rest-role delete -role arwrole -api *
 ----
 security login role create -role csrole -cmddirname DEFAULT -access readonly
 security login role create -role csrole -cmddirname "vserver fpolicy" -access all
-security login role create -role csrole -cmddirname "volume snapshot" -access all -query "-snapshot cloudsecure_*"
+security login role create -role csrole -cmddirname "volume snapshot" -access all -query "-snapshot cloudsecure++_*++"
 security login role create -role csrole -cmddirname "event catalog" -access all
 security login role create -role csrole -cmddirname "event filter" -access all
 security login role create -role csrole -cmddirname "event notification destination" -access all
@@ -246,37 +246,37 @@ security login create -user-or-group-name csuser -application http -authmethod p
 
 [listing]
 ----
-security login delete -user-or-group-name csuser -application * -vserver <vservername>
-security login role delete -role csrole -cmddirname * -vserver <vservername>
-security login rest-role delete -role csrestrole -api * -vserver <vservername>
+security login delete -user-or-group-name csuser -application ++*++ -vserver ++<++vservername++>++
+security login role delete -role csrole -cmddirname ++*++ -vserver ++<++vservername++>++
+security login rest-role delete -role csrestrole -api ++*++ -vserver ++<++vservername++>++
 ----
-创建角色和用户（在运行前替换 <vservername>）：
+创建角色和用户（运行前替换 ++<++vservername++>++）：
 
 [listing]
 ----
-security login role create -vserver <vservername> -role csrole -cmddirname DEFAULT -access none
-security login role create -vserver <vservername> -role csrole -cmddirname "network interface" -access readonly
-security login role create -vserver <vservername> -role csrole -cmddirname version -access readonly
-security login role create -vserver <vservername> -role csrole -cmddirname volume -access readonly
-security login role create -vserver <vservername> -role csrole -cmddirname vserver -access readonly
-security login role create -vserver <vservername> -role csrole -cmddirname "vserver fpolicy" -access all
-security login role create -vserver <vservername> -role csrole -cmddirname "volume snapshot" -access all
-security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole -vserver <vservername>
-security login create -user-or-group-name csuser -application http -authmethod password -role csrole -vserver <vservername>
+security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname DEFAULT -access none
+security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname "network interface" -access readonly
+security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname version -access readonly
+security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname volume -access readonly
+security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname vserver -access readonly
+security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname "vserver fpolicy" -access all
+security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname "volume snapshot" -access all
+security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole -vserver ++<++vservername++>++
+security login create -user-or-group-name csuser -application http -authmethod password -role csrole -vserver ++<++vservername++>++
 ----
 
 
 [[feature-specific-permissions]]
 === 特定功能的权限
 
-*持久存储（显示集群模式；为 SVM 模式添加 -vserver <vservername>）：*
+*持久存储（显示集群模式；为 SVM 模式添加 -vserver ++<++vservername++>++）：*
 
 [listing]
 ----
 security login role create -role csrole -cmddirname "vserver fpolicy" -access all
 security login role create -role csrole -cmddirname "job show" -access readonly
 ----
-*Protobuf（显示集群模式；为 SVM 模式添加 -vserver <vservername>）：*
+*Protobuf（显示集群模式；为 SVM 模式添加 -vserver ++<++vservername++>++）：*
 
 [listing]
 ----
@@ -290,7 +290,7 @@ security login role create -role csrole -cmddirname "vserver fpolicy" -access al
 == 配置和测试数据收集器
 
 . 以管理员或账号所有者身份登录 Data Infrastructure Insights。
-. 选择 Workload Security > Collectors > &#43;Data Collectors。
+. 选择 Workload Security ++>++ Collectors ++>++ &#43;Data Collectors。
 . 将鼠标悬停在 NetApp SVM 图块上并单击 &#43;监控。
 . 输入以下字段。暂时不要保存收集器。
 
@@ -315,7 +315,7 @@ security login role create -role csrole -cmddirname "vserver fpolicy" -access al
 | SVM 名称 | SVM 名称（通过集群 IP 连接时需要）。必须完全匹配 ONTAP（区分大小写）。 
 
 
-| 用户名 | 群集 IP：cluster-admin、csuser 或具有 csrole-equivalent 的 AD 用户。SVM IP：vsadmin、csuser 或具有 csrole-equivalent 的 AD 用户。 
+| 用户名 | 群集 IP：cluster-admin、csuser 或具有 csrole 等效角色的 AD 用户。SVM IP：vsadmin、csuser 或具有 csrole 等效角色的 AD 用户。 
 
 
 | 密码 | 以上帐户的密码。 
@@ -333,11 +333,11 @@ security login role create -role csrole -cmddirname "vserver fpolicy" -access al
 | 监控文件夹访问 | 启用常规文件夹访问事件。即使没有此选项，也会捕获文件夹创建/重命名/删除。启用会增加事件量。 
 
 
-| 设置ONTAP发送缓冲区大小 | 调整 FPolicy 发送缓冲区。在存在性能问题的 9.8p7 之前的 ONTAP 上，进行调整以提高 ONTAP 性能。如果未显示此选项，请联系 NetApp 支持部门。 
+| 设置ONTAP发送缓冲区大小 | 调整 FPolicy 发送缓冲区。在存在性能问题的 9.8p7 之前的 ONTAP 上，进行调整以提高 ONTAP 性能。如果未显示此选项，请联系 NetApp 支持人员。 
 |===
 [quote]
 ____
-*Important:* 默认排除的文件扩展名：根据设计，Workload Security 将 FPolicy 作用域配置为排除 ini 和 DS_Store 扩展名。这些文件的事件在 ONTAP 上被过滤，并且永远不会到达 Workload Security，因此它们不会出现在 Activity Forensics 中。这与客户可配置的警报排除是分开的。这是预期行为；在 UI 中无法配置对这些扩展的审核。
+*Important:* 默认排除的文件扩展名：根据设计，Workload Security 将 FPolicy 作用域配置为排除 ini 和 DS++_++Store 扩展名。这些文件的事件在 ONTAP 上被过滤，并且永远不会到达 Workload Security，因此它们不会出现在 Activity Forensics 中。这独立于客户可配置的警报排除项。这是预期行为；在 UI 中无法配置对这些扩展名的审核。
 
 ____
 
@@ -353,7 +353,7 @@ image:ws-test-connection-button.png["测试连接按钮,title=\"测试连接按�
 .输入收集器详细信息后使用测试连接。
 image:ws-test-connection-success.png["成功测试连接结果,title=\"成功测试连接结果\",width=937,height=298"]
 
-成功的测试连接结果示例。
+成功测试连接结果的示例。
 
 *通过具有集群凭据的集群管理 IP {plus} SVM 名称运行，以实现完全覆盖。*
 
@@ -368,20 +368,20 @@ image:ws-test-connection-success.png["成功测试连接结果,title=\"成功测
 | Ontap 版本 | 凭据有效；版本和功能资格。 | 检查凭据/RBAC 和 ONTAP 版本。 
 
 
-| 数据 LIF | 存在具有 data-fpolicy-client（9.8{plus}）的可用数据 LIF，且状态为已启动。 | 将 data-fpolicy-client 添加到服务策略（请参阅服务策略）。 
+| 数据 Lifs | 存在一个具有 data-fpolicy-client（9.8{plus}）的可用数据 LIF，且状态为 up。 | 将 data-fpolicy-client 添加到服务策略（请参阅服务策略）。 
 
 
-| 代理 IP | 代理在与 SVM 数据 LIF 相同的 IPv4 或 IPv6 系列中具有活动的本地地址。它不能证明路由。 | 确保 Agent 具有符合条件的本地地址。如果 Fpolicy 服务器稍后出现故障，请验证从每个 SVM 数据 LIF 到 Agent 的路由。 
+| 代理 IP | 代理在与 SVM 数据 LIF 相同的 IPv4 或 IPv6 系列中具有活动的本地地址。它不能证明路由。 | 确保代理具有符合条件的本地地址。如果 Fpolicy 服务器稍后出现故障，请验证从每个 SVM 数据 LIF 到代理的路由。 
 
 
-| Fpolicy 服务器 | ONTAP 可以回叫代理，并在实时端口上完成 FPolicy 握手。 | 向 Agent 打开 35000–55000；验证 one-SVM-one-collector。 
+| Fpolicy 服务器 | ONTAP 可以回叫代理，并在活动端口上完成 FPolicy 握手。 | 向 Agent 开放 35000–55000；验证 one-SVM-one-collector。 
 
 
 | 功能 | 按功能的 RBAC 和 ONTAP 版本资格（仅限集群模式）。 | 授予缺少的权限（请参见权限）。 
 |===
 [quote]
 ____
-Important*: 限制：Test Connection 仅测试 35000–55000 端口的子集（保持完整保留范围打开）。Agent IP 结果选择与数据 LIF 相同的 IPv4 或 IPv6 系列中的活动本地地址；它不测试从每个数据 LIF 到 Agent 的路由。Test Connection 也不会生成或验证真实文件事件流。功能/RBAC 检查未在 SVM 模式下运行，因为 SVM 帐户缺少所需的权限，并且 Test Connection 不适用于 User Directory 收集器。
+Important*: 限制：Test Connection 仅测试 35000–55000 端口的子集（保持完整保留范围打开）。Agent IP 结果选择与数据 LIF 相同的 IPv4 或 IPv6 系列中的活动本地地址；它不测试从每个数据 LIF 到 Agent 的路由。Test Connection 也不会生成或验证真实文件事件流。功能/RBAC 检查未在 SVM 模式下运行，因为 SVM 帐户缺少所需的权限，并且 Test Connection 不适用于用户目录收集器。
 
 ____
 
@@ -402,16 +402,16 @@ ____
 
 [listing]
 ----
-net int service-policy create -policy only_data_fpolicy -vserver <svm> \
+net int service-policy create -policy only++_++data++_++fpolicy -vserver ++<++svm++>++ ++\++ \
 -allowed-addresses 0.0.0.0/0 -services data-cifs,data-nfs,data,-core,data-fpolicy-client
 ----
 验证 LIF：
 
 [listing]
 ----
-network interface show -vserver <svm> -fields service-policy,status-admin,status-oper
+network interface show -vserver ++<++svm++>++ -fields service-policy,status-admin,status-oper
 ----
-在 9.8 之前的 ONTAP 上，无需设置 data-fpolicy-client；具有 data 角色（up）并承载 NFS 和/或 CIFS 的 LIF 即可。
+在 9.8 之前的 ONTAP 上，无需设置 data-fpolicy-client；具有角色 data （up） 且承载 NFS 和/或 CIFS 的 LIF 就足够了。
 
 
 
@@ -427,17 +427,17 @@ network interface show -vserver <svm> -fields service-policy,status-admin,status
 
 [listing]
 ----
-multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !*cloudsecure_*"
-multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !*cloudsecure_*"
+multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !++*++cloudsecure++_*++"
+multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !++*++cloudsecure++_*++"
 multi-admin-verify rule delete -operation set # allow user blocking
 ----
 
 
 [[user-access-blocking-smb-nfs]]
-=== *用户访问拦截（SMB 和 NFS）*
+=== *用户访问拦截（SMB和NFS）*
 
-* 需要集群级凭据（SMB 阻止用户；NFS 阻止主机 IP）。使用 cluster-admin，无需额外的权限——只需确保到集群管理的 SSH（端口 22）连接即可。
-* 使用自定义用户（csuser），授予以下集群级别权限，确保用户可以 SSH，然后重新启动 ONTAP 和用户目录收集器。
+* 需要集群级凭据（SMB 阻止用户；NFS 阻止主机 IP）。使用 cluster-admin，无需额外的权限——只需确保到集群管理的 SSH（端口 22）连接。
+* 使用自定义用户（csuser），授予以下集群级别权限，确保用户可以使用 SSH，然后重新启动 ONTAP 和用户目录收集器。
 
 
 [listing]
@@ -453,13 +453,13 @@ security login role create -role csrole -cmddirname "vserver name-mapping" -acce
 [[persistent-store]]
 === 持久存储
 
-从 ONTAP 9.14.1 开始支持。使用添加/编辑页面上的复选框启用它，并提供卷名（必填）。行为因版本而异：
+从 ONTAP 9.14.1 开始支持。在添加/编辑页面上使用复选框启用它，并提供卷名（必填）。行为因版本而异：
 
 * *ONTAP 9.14.1:* 自行创建卷（建议 16 GB）并输入其名称。
 * *ONTAP 9.15.1：*收集器使用您提供的名称自动创建 16 GB 的卷。
 
 
-需要 vserver fpolicy: all 以及 job show: readonly （请参阅特定于功能的权限）。
+需要 vserver fpolicy: all 加上 job show: readonly（请参阅特定于功能的权限）。
 
 
 
@@ -481,7 +481,7 @@ security login role create -role csrole -cmddirname "vserver name-mapping" -acce
 
 [quote]
 ____
-*注意：*备用端出现已停止的 MetroCluster 采集器是正常现象，而不是错误。仅在活动端未运行时才进行调查。
+*注意：* 备用端出现已停止的 MetroCluster 采集器是正常现象，并非错误。仅当活动端未处于运行状态时才进行调查。
 
 ____
 
@@ -490,30 +490,30 @@ ____
 [[pause-and-resume-a-collector]]
 == 暂停和恢复收集器
 
-暂停和恢复适用于数据收集器，而不是代理。您可以从 UI（收集器 > 收集器 > 选项菜单）或 API 运行它们。
+暂停和恢复适用于数据收集器，而不是代理。您可以从 UI（收集器 ++>++ 收集器 ++>++ 选项菜单）或 API 运行它们。
 
-暂停正在运行的收集器会从 ONTAP 中删除 FPolicy 配置。暂停时，没有事件流，也不会向任何一个方向发送任何数据。
+暂停正在运行的收集器会从 ONTAP 中删除 FPolicy 配置。暂停时，没有事件流动，也不会向任何一个方向发送任何数据。
 
 * 在您恢复之前，暂停期间创建的新卷不会被发现。
 * 快照清除不会在暂停的收集器上运行。
 * 暂停时不会处理 EMS 事件（例如 ONTAP ARP）——可能会错过文件篡改事件。
-* 不会为暂停的收集器发送运行状况通知电子邮件。
+* 不会为暂停的收集器发送健康通知电子邮件。
 * 暂停时不支持手动或自动操作（快照、用户阻止）。
 * 在代理/收集器升级和代理重新启动/重启期间，暂停的收集器会保持暂停状态。
-* 无法暂停处于错误状态的收集器；仅在“正在运行”状态下才能启用“暂停”。
-* 如果代理断开连接，收集器将转为已停止，并且暂停被禁用。
+* 无法暂停处于错误状态的收集器；仅在“正在运行”状态下启用“暂停”。
+* 如果代理断开连接，收集器将变为已停止，并且暂停被禁用。
 
 
 *何时使用暂停*
 
-* 使用暂停进行延长的 ONTAP 端维护，例如计划的 ONTAP 升级或 SVM 中断，以便在存储不可用时干净地删除 FPolicy 配置。
+* 请使用“暂停”进行长时间的 ONTAP 端维护，例如计划的 ONTAP 升级或 SVM 中断，以便在存储不可用时干净地删除 FPolicy 配置。
 * 维护完成后立即恢复。不会收集收集器暂停时发生的活动。
-* 请勿使用暂停来控制代理或收集器何时升级。请改为固定和取消固定代理（请参阅部署 Workload Security 代理）。
+* 不要使用暂停来控制代理或收集器何时升级。请改为固定和取消固定代理（请参阅部署 Workload Security 代理）。
 
 
 [quote]
 ____
-*注意：*当收集器有受限（被阻止）的用户时，无法暂停。请先恢复用户访问权限。
+*注意：*收集器在有受限（阻止）用户时无法暂停。请首先恢复用户访问权限。
 
 ____
 
@@ -538,15 +538,15 @@ image:ws-agent-selector.png["用于迁移收集器的代理选择器,title=\"用
 [[best-practices-for-data-collectors]]
 == 数据收集器的最佳实践
 
-* 在保存收集器之前运行 Test Connection，并解决每个失败的检查。大多数收集器错误都是 Test Connection 检测到的未满足的先决条件。
+* 在保存收集器之前运行测试连接，并解决每个失败的检查。大多数收集器错误都是测试连接检测到的未满足的先决条件。
 * 使用 SVM 名称和集群凭据通过集群管理 IP 进行连接。SVM 模式无法运行功能和 RBAC 检查。
 * 仅在一个 Workload Security 环境中为每个 SVM 配置一个收集器。第二个收集器会替换第一个收集器的 FPolicy 目标。
-* 在配置第一个 ONTAP SVM 收集器之前或同时，为用户访问受监控 SVM 的每个域配置用户目录收集器，以便活动显示用户名而不是 SID。
+* 在第一个 ONTAP SVM 收集器之前或与其一起，为用户访问受监控 SVM 的每个域配置用户目录收集器，以便活动显示用户名而不是 SID。
 * 输入不带引号的完整共享和卷名。对于长列表，请按卷而不是按共享进行筛选。
 * 仅在需要常规文件夹访问事件时启用监视文件夹访问，因为这会增加事件量。
-* 将托管代理保持在容量范围内——最多 50 个收集器，每秒 20,000 个事件的上限——并使用 Event Rate Checker 调整峰值事件速率的规模。
+* 将托管代理保持在容量范围内 —— 最多 50 个收集器，每秒 20,000 个事件的上限 —— 并使用事件速率检查器调整峰值事件速率。
 * 对于 MetroCluster，为源 SVM 配置一个收集器，为目标 SVM 配置一个收集器，这两个收集器都通过群集 IP 连接。
-* 仅对扩展的 ONTAP 端维护使用暂停。要控制何时进行升级，请固定和取消固定 Agent（请参阅部署 Workload Security Agent）。
+* 仅对延长的 ONTAP 端维护使用暂停。要控制何时进行升级，请固定和取消固定代理（请参阅部署 Workload Security 代理）。
 * 为了获得最佳 FPolicy 性能，请将代理放在靠近存储网络的位置，并最大限度地减少网络延迟。
 
 
@@ -555,9 +555,9 @@ image:ws-agent-selector.png["用于迁移收集器的代理选择器,title=\"用
 [[if-the-collector-reports-an-error-after-saving]]
 == 如果收集器在保存后报告错误
 
-测试连接包括设置时连接、凭据、数据 LIF、分配端口上的回调连接、选择 SMB 时的 CIFS 服务器检查以及集群模式下的功能访问。测试成功后，请勿手动重复这些检查。
+测试连接包括设置时连接、凭据、数据 LIF、分配端口上的回调连接、选择 SMB 时的 CIFS 服务器检查以及群集模式下的功能访问。测试成功后，请勿手动重复这些检查。
 
-如果收集器后来进入“错误”或“降级”状态，请打开“状态” > “更多详细信息”，然后按照“ONTAP SVM 数据收集器故障排除”进行操作。运行时条件（如重复收集器、事件速率过载、暂停收集器、永久存储放置、MetroCluster 转换、缺少活动和身份解析）在预保存的测试连接工作流之外。
+如果收集器后来进入“错误”或“降级”状态，请打开“状态 ++>++ 更多详细信息”，然后按照“ONTAP SVM 数据收集器故障排除”进行操作。运行时条件（如重复收集器、事件速率过载、暂停收集器、持久存储放置、MetroCluster 转换、缺少活动和身份解析）不属于预保存的测试连接工作流程。
 
 
 
@@ -565,6 +565,6 @@ image:ws-agent-selector.png["用于迁移收集器的代理选择器,title=\"用
 == 完成后
 
 * 在“已安装的数据收集器”页面上，使用选项菜单编辑或重新启动收集器。
-* 确认收集器达到 Running，并且事件在实际客户端 I/O 后出现在 Workload Security > Activity Forensics 中。
-* 验证用户名解析（而不是 SID）；如果未解析，请检查用户目录收集器。
+* 确认收集器达到 Running 状态，并且事件在实际客户端 I/O 后出现在 Workload Security ++>++ Activity Forensics 中。
+* 验证用户名是否已解析（而不是 SID）；如果未解析，请检查用户目录收集器。
 

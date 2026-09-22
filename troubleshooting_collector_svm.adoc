@@ -14,13 +14,13 @@ summary: 对 Workload Security 中的 ONTAP SVM 收集器故障、回调连接�
 
 
 [role="lead"]
-使用本指南可确定收集器问题是由管理连接、FPolicy 回调连接、ONTAP 配置、代理容量、标识解析还是功能先决条件引起的。
+使用本指南可确定收集器问题是由管理连接、FPolicy 回调连接、ONTAP 配置、代理容量、身份解析还是功能先决条件引起的。
 
-本文件分为两部分。首先进行基于症状的检查。只有在这些检查无法解决问题，或者 NetApp 支持人员要求提供更多证据时，才使用最后的高级诊断。
+本文件分为两部分。首先进行基于症状的检查。只有在这些检查无法解决问题，或者 NetApp 支持部门要求提供更多证据时，才在最后使用高级诊断。
 
 [quote]
 ____
-*注意：* 有关配置步骤、权限和功能先决条件，请参见 link:task_add_collector_svm.html["配置ONTAP SVM 数据收集器"]。
+*注意：*有关配置步骤、权限和功能先决条件，请参见 link:task_add_collector_svm.html["配置ONTAP SVM 数据收集器"]。
 
 ____
 
@@ -40,7 +40,7 @@ image:ws-collector-error-status.png["错误状态下收集器的更多详细信�
 
 [quote]
 ____
-*注意：*要进行全面验证，请使用集群管理 IP 和 SVM 名称进行连接。SVM 模式无法运行功能和 RBAC 检查。测试连接会验证具有代表性的 FPolicy 端口，而不是每个保留端口。
+*注意：* 要进行全面验证，请使用集群管理 IP 和 SVM 名称进行连接。SVM 模式无法运行功能和 RBAC 检查。测试连接会测试具有代表性的 FPolicy 端口，而不是每个保留端口。
 
 ____
 
@@ -51,7 +51,7 @@ ____
 
 [cols="34%,33%,33%"]
 |===
-| *结果* | *它验证的内容* | *如果失败，从何处继续* 
+| *结果* | *它验证的内容* | *如果失败，如何继续* 
 
 
 | HTTPS | 代理可以通过 TCP 443 访问 ONTAP 管理。 | 无法添加收集器或测试连接失败 
@@ -60,7 +60,7 @@ ____
 | ONTAP 版本 | 凭据有效；可以读取 ONTAP 版本和功能资格。 | 无法添加收集器或测试连接失败 
 
 
-| 数据 LIF | 存在符合条件的正常运行的数据 LIF；ONTAP 9.8{plus} 包含 data-fpolicy-client。 | 验证数据 LIF 和服务策略 
+| 数据 LIF | 存在符合条件且正常运行的数据 LIF；ONTAP 9.8{plus} 包含 data-fpolicy-client。 | 验证数据 LIF 和服务策略 
 
 
 | 代理 IP | Agent 有一个可以路由到 SVM 数据 LIF 的本地地址。 | FPolicy 回调连接 
@@ -73,7 +73,7 @@ ____
 |===
 [quote]
 ____
-*注意：* 测试连接不会验证整个回调端口保留、实际文件事件流、MetroCluster 或 SVM-DR 行为、持久存储聚合可用性、MAV 规则、共享和卷筛选器语法或用户目录收集器。
+*注意：*测试连接不会验证整个回调端口保留、实际文件事件流、MetroCluster 或 SVM-DR 行为、持久存储聚合可用性、MAV 规则、共享和卷筛选器语法或用户目录收集器。
 
 ____
 
@@ -87,7 +87,7 @@ ____
 * 收集器状态已降级
 * 收集器正在运行，但未显示任何活动
 * 活动显示 SID 而不是用户名
-* 启用工作负载安全后 ONTAP 性能发生变化
+* 启用 Workload Security 后 ONTAP 性能发生变化
 * 容量或订阅使用率似乎有问题
 * 快照或用户阻止操作失败
 * 收集器状态或缺失事件可能是预期的行为
@@ -101,7 +101,7 @@ ____
 *请按顺序查看*
 
 . 确认连接模式。集群模式需要集群管理 IP 和准确的、区分大小写的 SVM 名称。SVM 模式需要 SVM 管理 IP。
-. 从代理，确认对 TCP 443 上配置的管理 IP 的 HTTPS 可达性。超时表示存在路由或防火墙问题。
+. 从代理确认到 TCP 443 上配置的管理 IP 的 HTTPS 可达性。超时表示存在路由或防火墙问题。
 . 确认分配给 ONTAP 登录的凭据和应用程序。将自定义用户角色直接授予 AD 用户；权限检查可能看不到组级角色。
 . 确认符合条件的 SVM 数据 LIF 正常运行。从 ONTAP 9.8 开始，其服务策略必须包括 data-fpolicy-client 以及 data-nfs 和/或 data-cifs。
 . 如果使用 SVM IP 和 vsadmin，请使用仅限管理的 LIF。具有数据和管理组合角色的 LIF 可以在管理访问仍然失败时响应 ping。
@@ -112,14 +112,14 @@ ____
 
 * 无法确定 ++[++host++]++ 的 ONTAP 类型。原因：与存储系统的连接错误：无法访问主机
 * ++[++IP++]++ 被标识为集群/节点，无法在此模式下添加
-* 在 SVM 上未找到有效的数据接口……
+* 在 SVM 上找不到有效的数据接口……
 * 缺少权限：vserver fpolicy
 * 为此 Active Directory 用户在组级别而不是用户级别分配的角色
 
 
 *解决时间*
 
-* 每个所需的测试连接检查均通过，并且可以保存收集器。功能检查只能对您不使用的功能保持不可用状态。
+* 所有必需的测试连接检查均已通过，并且可以保存收集器。只有对于您不使用的功能，功能检查才可以保持不可用状态。
 
 
 
@@ -152,7 +152,7 @@ ____
 
 *解决时间*
 
-* 测试连接报告 FPolicy 服务器成功，并且在生成客户端活动后收集器仍保持正在运行状态。
+* 测试连接报告 FPolicy 服务器成功，并且在生成客户端活动后收集器仍保持运行状态。
 
 
 
@@ -169,7 +169,7 @@ ____
 
 *所涵盖的确切错误*
 
-* 无法在 SVM 上配置 fpolicy……为 shares-to-include 指定的值无效
+* 无法在 SVM 上配置 fpolicy ……为 shares-to-include 指定的值无效
 * 无法在 SVM 上配置 fpolicy……用户未经授权
 * 没有可用于启用 fpolicy 策略的有效序列号
 * 无法配置永久存储……聚合的性能信息当前不可用
@@ -187,7 +187,7 @@ ____
 
 . 重新输入收集器密码：打开“编辑”，输入密码，然后保存。
 . 请检查 Agent CPU 和内存空间以及托管收集器的数量。
-. 使用事件速率检查器将峰值事件速率与 Agent 规模进行比较。根据需要扩展 Agent 或迁移收集器。
+. 使用事件速率检查器将峰值事件速率与代理规模进行比较。根据需要扩展代理或迁移收集器。
 . 如果操作仍然失败，请重新启动代理服务，并在代理重新连接后重试。
 
 
@@ -213,7 +213,7 @@ ____
 已降级的收集器仍在运行，但一个或多个 FPolicy 节点连接已断开。可能会错过受影响节点提供的活动。
 
 . 打开更多详细信息并标识已断开连接的节点。
-. 检查该节点是否具有受监控 SVM 的正常运行的数据 LIF。
+. 检查该节点是否具有用于受监控 SVM 的正常运行的数据 LIF。
 . 如果节点没有 SVM 的本地数据 LIF，则不需要修正。
 . 如果存在数据 LIF，请验证它已启动，在 ONTAP 9.8&#43; 上承载 data-fpolicy-client，并且可以到达 Agent 回调端口。
 . 允许收集器在节点重新连接后返回 Running。
@@ -222,7 +222,7 @@ ____
 *所涵盖的确切错误*
 
 * 节点上的 FPolicy 服务器已断开连接：……
-* 没有本地 lif 存在，无法连接到 FPolicy 服务器
+* 没有本地 LIF 存在，无法连接到 FPolicy 服务器
 
 
 *解决时间*
@@ -239,14 +239,14 @@ ____
 . 确认收集器未暂停。在测试前将其恢复。
 . 确认已启用客户端协议，并且对于 SMB，确认 SVM 具有 CIFS 服务器。
 . 查看包含和排除的共享和卷。使用不带引号的完整名称。
-. 当需要常规文件夹访问事件时，启用监视文件夹访问。在没有此选项的情况下，也会收集文件夹创建、重命名和删除操作。
+. 当需要常规文件夹访问事件时，启用监视文件夹访问。即使没有此选项，也会收集文件夹创建、重命名和删除事件。
 . 如果仅缺少 .ini 和 .DS++_++Store 活动，则无需执行任何操作；这些扩展名将从 FPolicy 事件收集中排除。
 . 如果活动仍然不存在，请使用高级诊断来验证 cloudsecure++_++ 策略和 ONTAP FPolicy 事件日志。
 
 
 *解决时间*
 
-* Activity Forensics 中出现新的客户端操作，其中包含预期的协议、共享、路径和用户信息。
+* 新的客户端操作出现在 Activity Forensics 中，其中包含预期的协议、共享、路径和用户信息。
 
 
 
@@ -254,9 +254,9 @@ ____
 [[activity-shows-a-sid-instead-of-a-username]]
 == *活动显示 SID 而不是用户名*
 
-ONTAP 审计正在发挥作用；身份解析是另一个问题。
+ONTAP 审计正常工作；身份解析是另一个问题。
 
-. 确认其用户访问受监控 SVM 的每个域都存在正在运行的用户目录收集器，包括受信任的域。
+. 确认其用户访问受监控 SVM 的每个域（包括受信任的域）都存在正在运行的用户目录收集器。
 . 确认目录收集器覆盖正确的林或搜索库，并使用有效的绑定凭据。
 . 确认映射属性：Active Directory 使用 name、objectsid 和 sAMAccountName；LDAP 使用 name、uidnumber 和 uid。
 . 重新启动用户目录收集器，以在添加用户或更正配置后立即请求同步。
@@ -292,13 +292,13 @@ ONTAP 审计正在发挥作用；身份解析是另一个问题。
 
 . 比较 Observability ONTAP 集群收集器和 Workload Security SVM 收集器报告的原始容量。
 . 对于每个 SVM 收集器，确定其父集群是否已被 Observability 收集器监控。同一存储不应计算两次。
-. 检查最近的 SVM 迁移。确认收集器正在运行并重新启动它，以便收集当前集群和容量信息。
-. 如果总数仍然包括集群和 SVM 容量，则收集每个收集器的使用前后情况以及报告的容量。
+. 检查最近的 SVM 迁移。确认收集器正在运行并重新启动它，以便收集当前的集群和容量信息。
+. 如果总数仍然包括集群和 SVM 容量，请收集使用前后的使用情况以及每个收集器的报告容量。
 
 
 *解决时间*
 
-* 订阅使用情况包括一次存储容量，并反映出 SVM 的当前父集群。
+* 订阅使用情况仅包含一次存储容量，并反映 SVM 的当前父集群。
 
 
 
@@ -309,7 +309,7 @@ ONTAP 审计正在发挥作用；身份解析是另一个问题。
 . 确认收集器正在运行且未暂停。
 . 对于用户阻止，请使用集群级别的凭据。自定义用户还需要 TCP 22 上的 SSH 访问权限和记录的阻止权限。
 . 确认自定义用户具有所需的快照权限。
-. 如果启用了 ONTAP Multi-Admin Verify，请添加已记录的 cloudsecure++_++ 快照排除项以及用户阻止所使用的 set 操作。
+. 如果启用了 ONTAP Multi-Admin Verify，请添加已记录的 cloudsecure++_++ 快照排除项以及用户阻止所使用的设置操作。
 . 在群集模式下运行测试连接，并查看快照和用户阻止功能结果。
 
 
@@ -321,7 +321,7 @@ ONTAP 审计正在发挥作用；身份解析是另一个问题。
 
 
 [[expected-behavior-no-action-required]]
-== *预期行为 — 无需执行任何操作*
+== *预期行为——无需执行任何操作*
 
 [cols="34%,33%,33%"]
 |===
@@ -337,14 +337,14 @@ ONTAP 审计正在发挥作用；身份解析是另一个问题。
 | 没有 .ini 或 .DS++_++Store 的事件 | 这些扩展被排除在 FPolicy 范围之外。 | 还缺少其他预期的文件活动。 
 
 
-| 短暂的初始化、停止或降级状态 | 重新启动、升级、迁移、故障转移和恢复需要重新连接。 | 状态在操作之后持续存在或重复。 
+| 短暂的初始化、停止或降级状态 | 重新启动、升级、迁移、故障转移和恢复需要重新连接。 | 状态在操作之后依然存在或重复。 
 |===
 
 
 [[advanced-diagnostics-and-support-data-collection]]
 == *高级诊断和支持数据收集*
 
-_仅在上述检查无法解决问题，或 NetApp 支持人员要求提供更多证据时使用此部分。这些过程需要对代理主机和 ONTAP 具有管理访问权限。_
+_仅在上述检查无法解决问题或 NetApp 支持人员要求更多证据时使用此部分。这些过程需要对代理主机和 ONTAP 具有管理访问权限。_
 
 
 
@@ -354,14 +354,14 @@ _仅在上述检查无法解决问题，或 NetApp 支持人员要求提供更�
 . 记录完整的收集器状态原因和故障时间。
 . 保存测试连接结果。
 . 记录代理和收集器版本、ONTAP 版本、SVM 名称、连接模式和最近的更改。
-. 生成一次 Agent 症状捆绑包，以便保留更改之前的日志。
+. 生成一次 Agent 症状包，以便保留更改之前的日志。
 
 
 [listing]
 ----
 sudo /opt/netapp/cloudsecure/agent/bin/cloudsecure-agent-symptom-collector.sh -o /tmp
 ----
-该命令将创建 cloudsecure-agent-symptoms.zip。如果脚本报告未找到 zip 命令，请安装 zip。
+该命令创建 cloudsecure-agent-symptoms.zip。如果脚本报告未找到 zip 命令，请安装 zip。
 
 
 
@@ -444,7 +444,7 @@ fpolicy show-engine
 |===
 [quote]
 ____
-*注意：* 测试连接验证实时代表回调端口。这并不能证明保留防火墙范围内的每个端口都是开放的。
+*注意：*测试连接会验证活动的代表性回调端口。这并不能证明保留防火墙范围内的每个端口均已开放。
 
 ____
 
@@ -457,7 +457,7 @@ ____
 ----
 curl -kv https://++<++management-ip++>++:443
 ----
-TLS 响应证明了 TCP 路径。超时表示路由或防火墙阻塞。身份验证响应证明了可访问性，但不能证明凭据或角色是正确的。
+TLS 响应证明了 TCP 路径。超时表示路由或防火墙阻塞。身份验证响应证明了可达性，但不能证明凭据或角色是正确的。
 
 
 
@@ -477,7 +477,7 @@ network ping -vserver ++<++svm++>++ -lif ++<++data-lif++>++ -destination ++<++ag
 sudo firewall-cmd --zone=public --list-ports
 sudo iptables-save
 ----
-确认保留的回调端口允许从所有 SVM 数据 LIF 入站，对于基于 EMS 的功能，允许从集群管理 IP 入站。
+确认保留的回调端口允许从所有 SVM 数据 LIF 入站，对于基于 EMS 的功能，允许从集群管理 IP 入站
 
 
 
@@ -497,20 +497,20 @@ network interface show -vserver ++<++svm++>++ -fields service-policy,status-admi
 net int service-policy create -policy only++_++data++_++fpolicy -vserver ++<++svm++>++ ++\++ \
 -allowed-addresses 0.0.0.0/0 -services data-cifs,data-nfs,data,-core,data-fpolicy-client
 ----
-*注意：*在早于 9.8 的 ONTAP 上，不需要 data-fpolicy-client。LIF 必须具有数据角色，处于可操作状态，并支持 NFS 和/或 CIFS。
+*注意：* 在早于 9.8 的 ONTAP 上，不需要 data-fpolicy-client。LIF 必须具有数据角色，处于可操作状态，并支持 NFS 和/或 CIFS。
 
 
 
 [[use-an-ontap-packet-trace]]
 == *使用 ONTAP 数据包跟踪*
 
-仅当 Test Connection 以及路由和防火墙检查无法解释回调失败时，才使用数据包跟踪。
+仅在测试连接以及路由和防火墙检查无法解释回调失败之后，才使用数据包跟踪。
 
-. 在 ONTAP 上针对相关数据 LIF 和 Agent IP 启动数据包跟踪。
+. 在 ONTAP 上针对相关的数据 LIF 和 Agent IP 启动数据包跟踪。
 . 请尝试测试连接或重新启动收集器。
 . 等待故障，然后停止跟踪。
 . 从 https://++<++cluster-management-ip++>++/spi/++<++cluster-name++>++/etc/log/packet++_++traces/[]检索跟踪。
-. 查找从 ONTAP 到 Agent 回调端口的 SYN。没有 SYN 表示 ONTAP 端路径或策略问题。未完成握手的 SYN 表示 ONTAP 和 Agent 之间存在防火墙或路由问题。
+. 查找从 ONTAP 到 Agent 回调端口的 SYN。没有 SYN 表示 ONTAP 端路径或策略存在问题。未完成握手的 SYN 表示 ONTAP 和 Agent 之间存在防火墙或路由问题。
 
 
 [quote]
@@ -527,7 +527,7 @@ ____
 两个收集器无法监控同一 SVM，即使它们属于不同的 Workload Security 环境。最新收集器重写 FPolicy 目标并断开前一个收集器的连接。
 
 . 搜索可到达集群的每个 Workload Security 环境。
-. 识别使用相同 SVM 名称或管理端点的收集器。
+. 标识使用相同 SVM 名称或管理端点的收集器。
 . 保留一个收集器并删除重复项。
 . 重新启动保留的收集器，并确认其 FPolicy 通道保持连接。
 
@@ -539,7 +539,7 @@ ____
 
 [quote]
 ____
-*注意：*请勿删除活动收集器的 cloudsecure++_++ 对象。收集器拥有并更新这些对象。
+*注意：* 请勿删除活动收集器的 cloudsecure++_++ 对象。收集器拥有并更新这些对象。
 
 ____
 
@@ -580,7 +580,7 @@ fpolicy policy external-engine delete -vserver ++<++svm++>++ -engine-name ++<++e
 | AGENT005 / 006 / 007 / 010 | 请在几分钟后重试。如果操作仍然失败，请重新启动 cloudsecure-agent.service 并记录确切的操作和原因。 
 
 
-| AGENT009 | 请确认收集器仍然存在于选定的 Agent 和环境中，并且并发删除或迁移未将其删除。 
+| AGENT009 | 请确认收集器仍存在于选定 Agent 和环境中，并且并发删除或迁移未将其删除。 
 
 
 | 代理 NOT++_++CONNECTED | 检查 systemctl 和 journalctl、TCP 443 上的 SaaS 出口、代理配置、SSL 检查和 cssys 帐户。 
@@ -590,11 +590,11 @@ fpolicy policy external-engine delete -vserver ++<++svm++>++ -engine-name ++<++e
 
 
 [[investigate-no-activity-after-the-basic-checks]]
-== *基本检查后调查无活动情况*
+== *在基本检查后调查无活动情况*
 
 . 运行 event log show -source fpolicy 并保留任何错误。
 . 运行 fpolicy show 并确认已启用 cloudsecure++_++ 策略。
-. 确认生成客户端操作的协议在收集器中已启用，并在 SVM 上被允许。
+. 确认生成客户端操作的协议已在收集器中启用，并在 SVM 上允许。
 . 确认共享或卷未被排除。
 . 确认此操作发生时收集器未暂停。
 . 将客户端操作时间戳与 dsc.log 和 ONTAP FPolicy 事件相关联。
@@ -605,7 +605,7 @@ fpolicy policy external-engine delete -vserver ++<++svm++>++ -engine-name ++<++e
 [[investigate-identity-resolution]]
 == *调查身份解析*
 
-测试连接不适用于用户目录收集器。请使用目录原生工具和收集器日志。
+测试连接不适用于用户目录收集器。使用目录原生工具和收集器日志。
 
 [cols="34%,33%,33%"]
 |===
@@ -629,20 +629,20 @@ ID: uidnumber
 用户名：uid
 
 |===
-验证服务器名称、端口、绑定 DN、密码、林或搜索基准以及读取权限。更正后重新启动目录收集器以请求新的同步。
+验证服务器名称、端口、绑定 DN、密码、林或搜索库以及读取权限。更正后重新启动目录收集器以请求新的同步。
 
 
 
 [[multi-admin-verify-checks]]
 == *多管理员验证检查*
 
-Multi-Admin Verify 可以阻止用于快照和用户阻止的 ONTAP 命令。在更改现有规则之前，请先查看这些规则。记录的工作负载安全排除项包括：
+Multi-Admin Verify 可以阻止用于快照和用户阻止的 ONTAP 命令。在更改现有规则之前，请先查看这些规则。记录的 Workload Security 排除项包括：
 
 [quote]
 ____
 multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !++*++cloudsecure++_*++" + multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !++*++cloudsecure++_*++" + multi-admin-verify rule delete -operation set
 
-*注意：*删除 set 规则会更改该操作的多管理员验证保护。请与您的 ONTAP 安全管理员一起审查此更改。
+*注意：*删除 set 规则会更改该操作的多管理员验证保护。请与您的 ONTAP 安全管理员一起查看更改。
 
 ____
 
@@ -651,7 +651,7 @@ ____
 [[contact-netapp-support]]
 == *联系 NetApp 支持人员*
 
-当有序检查后错误仍然存在，ONTAP 报告节点死机，或收集器数据刷新后容量仍然不正确时，请联系支持部门。
+当有序检查后错误仍然存在，ONTAP 报告节点崩溃，或收集器数据刷新后容量仍然不正确时，请联系支持部门。
 
 *包括*
 
@@ -666,4 +666,4 @@ ____
 * 对于容量：订阅之前和之后的使用情况以及每个收集器报告的原始容量。
 
 
-在 Data Infrastructure Insights 中使用 帮助 ++>++ 支持 来开启案例。
+在 Data Infrastructure Insights 中使用“帮助” ++>++ “支持”来打开案例。
