@@ -14,7 +14,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 
 
 [role="lead"]
-在满足最低操作系统、CPU、内存和磁盘空间要求的专用服务器上部署 Workload Security Agent，以确保最佳的监控和威胁检测性能。本指南指定了 link:task_cs_add_agent.html["安装 Workload Security Agent"] 之前所需的硬件和网络要求，包括支持的 Linux 发行版、网络连接规则和系统规模调整指南。
+在满足最低操作系统、CPU、内存和磁盘空间要求的专用服务器上部署 Workload Security Agent，以确保最佳的监控和威胁检测性能。本指南指定了在 link:task_cs_add_agent.html["安装 Workload Security Agent"] 之前所需的硬件和网络要求，包括支持的 Linux 发行版、网络连接规则和系统规模调整指南。
 
 
 
@@ -27,7 +27,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 
 
 | 操作系统  a| 
-产品中列出的任何 64 位 Linux 发行版，包括支持 SELinux 的系统。
+产品中列出的任何 64 位 Linux 发行版，包括启用了 SELinux 的系统。
 
 有关支持的发行版和版本的当前列表，请在 Workload Security 中转到 Collectors ++>++ Agents ++>++ {plus}Agent，然后单击 Linux Versions Supported （i）。该列表由产品生成，并且始终是最新的。
 
@@ -38,7 +38,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 
 
 | 命令/包  a| 
-Agent 主机上需要满足以下要求：
+在 Agent 主机上需要满足以下要求：
 
 * unzip — 代理安装
 * zip — 诊断捆绑包（cloudsecure-agent-symptom-collector.sh）
@@ -59,14 +59,14 @@ Agent 主机上需要满足以下要求：
 
 /opt/netapp — 36 GB（文件系统创建后最少有 35 GB 可用空间）
 
-注意：分配少量额外的磁盘空间以便创建文件系统；确保文件系统中至少有 35 GB 的可用空间。如果 /opt 是从 NAS 存储挂载的，请确保本地用户有权访问该文件夹 —— 否则 Agent 或 Data Collector 可能无法安装。
+注意：分配一点额外的磁盘空间以允许创建文件系统；确保文件系统中至少有 35 GB 的可用空间。如果 /opt 是从 NAS 存储装载的，请确保本地用户有权访问该文件夹——否则 Agent 或 Data Collector 可能无法安装。
 
 
 
 | 时间同步 | 使用 NTP 或 SNTP 在 ONTAP 系统和 Agent 主机上同步时间。ONTAP 和 Agent 之间的时钟偏差会破坏事件相关性、运行状况检查和故障排除。 
 
 
-| 网络 | 100 Mbps 到 1 Gbps 以太网连接、静态 IP 地址、到所有受监控设备的 IP 连接，以及到 Workload Security 实例的所需端口（80 或 443）。 
+| 网络 | 100 Mbps 到 1 Gbps 以太网连接、静态 IP 地址、到所有受监控设备的 IP 连接，以及到 Workload Security 实例（80 或 443）的所需端口。 
 |===
 Workload Security Agent 可以与 Data Infrastructure Insights 采集单元和/或代理安装在同一台计算机上；但是，将它们安装在单独的计算机上是最佳做法。如果安装在同一台机器上，请按如下所示分配磁盘空间：
 
@@ -126,7 +126,7 @@ Workload Security Agent 可以与 Data Infrastructure Insights 采集单元和/�
 
 
 | TCP | 443 | 工作负载安全代理  a| 
-++<++site++_++name++>++.cs01-ap-1.cloudinsights.netapp.com/cn
+++<++site++_++name++>++.cs01-ap-1.cloudinsights.netapp.com
 
 ++<++site++_++name++>++.c01-ap-1.cloudinsights.netapp.com/cn
 
@@ -136,7 +136,7 @@ Workload Security Agent 可以与 Data Infrastructure Insights 采集单元和/�
 
 | TCP | 443 | 工作负载安全代理 | agentlogin.cs01-ap-1.cloudinsights.netapp.com | 访问身份验证服务 
 |===
-_如果代理位于 SSL 检查（例如 Zscaler）之后，请对 ++*++.cloudinsights.netapp.com/cn 和区域代理登录主机禁用 SSL 检查。当中介证书对 SaaS 端点重新签名时，Workload Security 无法正常工作。_
+_如果代理位于 SSL 检查（例如 Zscaler）之后，请禁用 ++*++.cloudinsights.netapp.com/cn 和区域 agentlogin 主机的 SSL 检查。当中介证书重新签署 SaaS 端点时，Workload Security 无法正常工作。_
 
 
 
@@ -151,14 +151,14 @@ _如果代理位于 SSL 检查（例如 Zscaler）之后，请对 ++*++.cloudins
 | TCP  a| 
 389（LDAP）
 
-636 （LDAPS / start-tls）
+636（LDAPS / start-tls）
 | 工作负载安全代理 | LDAP 服务器 URL | 连接到 LDAP。支持 SSL (LDAPS/start-tls)；接受服务器提供的证书。 
 
 
 | TCP | 443 | 工作负载安全代理 | 集群或 SVM 管理 IP 地址（取决于 SVM 收集器配置） | 与 ONTAP 的 API 通信。 
 
 
-| TCP | 35000-55000 | SVM 数据 LIF IP 地址 | 工作负载安全代理 | 从 ONTAP 到代理的 FPolicy 事件通信。打开这些朝向代理的端口（包括代理本身的任何防火墙），以便 ONTAP 可以发送文件/用户访问事件。 
+| TCP | 35000-55000 | SVM 数据 LIF IP 地址 | 工作负载安全代理 | ONTAP 到代理的 FPolicy 事件通信。向代理打开这些端口（包括代理本身的任何防火墙），以便 ONTAP 可以发送文件/用户访问事件。 
 
 
 | TCP | 35000-55000 | 集群管理 IP | 工作负载安全代理 | 从 ONTAP 集群管理 IP 到 Agent 的通信，用于 EMS 事件（例如，反勒索软件 / ARP）。向 Agent 开放这些端口（包括 Agent 本身的任何防火墙）。 
@@ -168,9 +168,9 @@ _如果代理位于 SSL 检查（例如 Zscaler）之后，请对 ++*++.cloudins
 |===
 *关于 FPolicy/EMS 端口范围*
 
-您无需打开整个 35000–55000/tcp 范围。根据 Agent 上的收集器数量调整保留大小：每个 SVM 最多使用 4 个端口（每个启用的协议 2 个 — NFS 和 CIFS/SMB）。对于完全加载的 Agent（50 个收集器），在此范围内保留约 200 个端口，并在必要时增加。上述两行对不同流量使用相同的范围：SVM data LIF → Agent 承载 FPolicy 文件/用户活动事件，而 Cluster management IP → Agent 承载 EMS 事件（如 ARP）。如果您使用相应的功能，请同时打开这两条路径。
+您无需打开整个 35000–55000/tcp 范围。根据 Agent 上的收集器数量调整保留大小：每个 SVM 最多使用 4 个端口（每个启用的协议 2 个 — NFS 和 CIFS/SMB）。对于完全加载的 Agent（50 个收集器），在此范围内保留约 200 个端口，并在必要时增加。上述两行对不同流量使用相同的范围：SVM data LIF → Agent 承载 FPolicy 文件/用户活动事件，而 Cluster management IP → Agent 承载 EMS 事件（如 ARP）。如果使用相应的功能，请同时打开这两条路径。
 
-在添加收集器之前运行测试连接时，它仅验证此范围内的一小部分活动端口。在代理防火墙以及 ONTAP 和代理之间的任何网络路径上保持完整的保留范围处于打开状态。
+在添加收集器之前运行测试连接时，它仅验证此范围内的一小部分活动端口。在代理防火墙以及 ONTAP 和代理之间的任何网络路径上保持完整的保留范围处于开放状态。
 
 
 
@@ -179,11 +179,11 @@ _如果代理位于 SSL 检查（例如 Zscaler）之后，请对 ++*++.cloudins
 
 代理最多支持 50 个数据收集器（所有类型的总和），上限约为每秒 20,000 个事件。
 
-专用代理主机的典型指南：
+专用 Agent 主机的典型指南：
 
 * *4 CPU / 16 GB RAM —* 约 10 个采集器
 * *4 CPU / 32 GB RAM —* 约 20 个采集器
 * *使用其他代理横向扩展* 当接近 50 个收集器或 20,000 个事件/秒的限制时
 
 
-在添加收集器之前，使用事件速率检查器（svm++_++event++_++rate++_++checker.sh）测量峰值事件速率。有关完整的大小调整方法，请参见事件速率检查器文档。
+在添加收集器之前，请使用事件速率检查器（svm++_++event++_++rate++_++checker.sh）测量峰值事件速率。有关完整的大小调整方法，请参见事件速率检查器文档。

@@ -1,0 +1,162 @@
+---
+sidebar: sidebar 
+permalink: mcp_troubleshooting.html 
+summary: MCP 服务器连接问题、身份验证错误、查询拒绝和 API 速率限制的常见解决方案。 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= DII MCP 故障排除
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+
+NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，因此可能会发生变化。
+
+
+
+[[the-server-does-not-connect]]
+== 服务器未连接
+
+检查：
+
+. 配置的 URL 与为您的 DII 环境提供的端点匹配。
+. 客户端支持远程 HTTP MCP 服务器和所需的身份验证流。
+. 身份验证已成功完成。
+. 网络策略允许访问端点。
+. 连接的身份可以访问 DII 租户。
+
+
+更改客户端配置后，重新启动或重新加载 MCP 服务器。
+
+
+
+[[authentication-is-required]]
+== 需要身份验证
+
+完成客户端的登录流程，然后重试原始请求。如果使用了服务标识，请验证其凭据是否有效，并通过已批准的密钥机制进行存储。
+
+请勿对已确认的授权拒绝进行重复重试。请要求 DII 管理员查看用户的租户和资源权限。
+
+
+
+[[an-object-query-rejects-a-field]]
+== 对象查询拒绝字段
+
+对象属性和指标因类型而异。
+
+. 调用 +ObjectService_getObjectTypes+。
+. 确认确切的对象类型。
+. 调用 +ObjectService_getMetadataForObjectType+。
+. 从元数据中准确复制字段名称。
+. 验证值类型和聚合函数是否兼容。
+
+
+只有标记为可分组的属性才能用于分组对象。
+
+
+
+[[a-log-query-rejects-an-attribute]]
+== 日志查询拒绝属性
+
+. 调用 +LogService_getLogTypes+。
+. 请确认确切的日志类型。
+. 调用 +LogService_getLogTypeMetadata+。
+. 仅使用为该日志类型返回的属性。
+
+
+日志事件查询使用基于光标的分页。传递上一页返回的光标，而不是偏移量。
+
+
+
+[[an-alert-query-rejects-a-field]]
+== 警报查询拒绝字段
+
+在构造查询之前立即调用 +AlertsService_getMetadata+。警报元数据可能很广泛且与租户相关；请使用准确的字段名称。
+
+
+
+[[the-time-range-is-invalid]]
+== 时间范围无效
+
+* 确保 `fromTime`早于或等于 `toTime`。
+* 使用带有偏移量或 `Z`的 ISO-8601 时间戳。
+* 请将要求的窗口期保持在 30 天以内。
+* 将较长的调查拆分为连续的、不重叠的窗口，并总结结果。
+* 当工具需要时，请提供有效的 IANA 时区。
+
+
+如果运行时强制比客户端缓存的工具描述更严格，则运行时强制具有权威性。
+
+
+
+[[a-query-returns-too-many-results]]
+== 查询返回的结果太多
+
+* 添加有效筛选器。
+* 缩小时间范围。
+* 按最相关的指标排序。
+* 降低结果限制。
+* 当不需要单个记录时，请使用分组或直方图。
+* 仅当需要更多详细信息时，才继续使用 `offset`或日志光标。
+
+
+
+
+[[a-successful-call-returns-no-rows]]
+== 成功的调用不会返回任何行
+
+空结果通常是有效的答案。这可能意味着：
+
+* 没有与筛选器匹配的资源。
+* 选定时间范围内未发生任何事件。
+* 未配置任何维护窗口或通知规则。
+* 租户的收集器未填充所选数据类型。
+
+
+除非有其他证据表明存在收集问题，否则请勿将成功的空结果描述为缺失数据。
+
+
+
+[[an-acquisition-unit-is-connected-but-has-never-reported]]
+== 采集单元已连接，但从未报告
+
+连接状态和成功报告是分开的。检查：
+
+* `lastReported`
+* 分配的数据源数量
+* 数据源采集状态
+* AU 主机连接和版本
+* 已分配数据源的轮询活动
+
+
+
+
+[[a-collector-is-failed]]
+== 收集器出现故障
+
+对受影响的收集器使用 +CollectorService_getDataSourceById+。查看最近的轮询活动、活动补丁信息、包状态、配置和最后一次成功获取时间。避免显示凭据或专用配置值。
+
+
+
+[[webhook-results-include-complete-addresses]]
+== Webhook 结果包括完整地址
+
+请勿重复这些值。仅汇总目标名称、集成类型、计数和状态。如果显示或共享了机密材料，请遵循 link:mcp_security.html["安全与隐私"]。
+
+
+
+[[the-ai-assistant-selected-the-wrong-tool]]
+== AI 助手选择了错误的工具
+
+请使用更明确的提示：
+
+[]
+====
+首先列出可用的对象类型。检索选定类型的元数据。然后仅查询有效字段，并解释您使用了哪些 DII 工具。
+
+====
+对于常见调查，请从 link:mcp_recipe_overview.html["操作配方"] 开始。

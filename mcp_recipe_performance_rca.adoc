@@ -1,0 +1,163 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_performance_rca.html 
+summary: 使用此配方可以通过关联性能指标、警报和平台日志来调查较慢的卷、数据存储、虚拟机、Kubernetes 工作负载或其他 DII 对象。 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= 性能故障排除
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用此配方可以通过关联性能指标、警报和平台日志来调查较慢的卷、数据存储、虚拟机、Kubernetes 工作负载或其他 DII 对象。
+
+
+NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，因此可能会发生变化。
+
+
+
+[[prerequisites]]
+== 前提条件
+
+* 受影响的资源名称和大致事件时间。
+* 时间范围为 30 天或更短。
+* 在可能的情况下，比较期或已知的健康基线。
+
+
+
+
+[[tools-used]]
+== 使用的工具
+
+* +ObjectService_getObjectTypes+
+* +ObjectService_getMetadataForObjectType+
+* +ObjectService_query+
+* +ObjectService_queryPerformanceMetricsForObjects+
+* +ObjectService_groupObjects+
+* +AlertsService_getMetadata+
+* +AlertsService_queryForAlerts+
+* +LogService_getLogTypes+
+* +LogService_getLogTypeMetadata+
+* +LogService_queryLogEvents+
+
+
+
+
+[[starter-prompt]]
+== 入门提示
+
+[]
+====
+调查为什么卷 `example-volume`在 09:00 至 11:00 UTC 之间变慢。发现正确的对象类型和有效指标，比较事件窗口的延迟、IOPS 和吞吐量，检查相关的活动警报和平台日志，并与健康期进行比较。将证据与假设分开，并确定所需的下一个测量。
+
+====
+
+
+[[agent-workflow]]
+== 代理工作流
+
+. 将资源解析为精确的对象类型和标识。
+. 检索该对象类型的元数据。
+. 确定有效的延迟、操作、吞吐量、利用率和容量指标。
+. 查询当前对象属性以建立位置和关系。
+. 检索以下时间序列：
++
+** 事件窗口
+** 类似的健康窗口
+
+
+. 跨指标对齐时间戳和聚合函数。
+. 检索与资源、所属系统、主机、节点或存储池相关的警报。
+. 选择相关日志流，检索元数据，并围绕指标变化搜索较窄的时间间隔。
+. 测试合理的假设：
++
+** 需求激增
+** 资源饱和度
+** 存储或网络错误
+** 容量压力
+** 主机或虚拟机争用
+** 收集间隙
+
+
+. 报告最受支持的解释和未解决的替代方案。
+
+
+
+
+[[evidence-standards]]
+== 证据标准
+
+标签发现：
+
+* *观察：*由工具直接返回。
+* *相关：* 独立信号在同一时间间隔内发生变化。
+* *推断：* 尚未证实但看似合理的解释。
+* *未知：*所需证据不可用。
+
+
+相关性不是因果关系。除非机制已确立，否则同步警报应被视为支持性证据，而不是确凿证据。
+
+
+
+[[metric-guidance]]
+== 指标指南
+
+* 将  `AVG` 用于宽泛的行为，但在短峰值很重要时检查  `MAX`。
+* 仅将 `SUM`用于附加指标。
+* 在元数据支持的情况下，对计数器或增长使用 `CHANGE` 或 +CHANGE_RATIO+。
+* 避免比较具有不同桶边界或单位的序列。
+* 过滤器在时间段聚合之前应用。
+
+
+
+
+[[suggested-output]]
+== 建议输出
+
+. 事件范围和时间表
+. 指标证据
+. 警报和日志证据
+. 健康期对比
+. 最有可能的解释
+. 备选假设
+. 置信度和缺失证据
+. 建议下次检查
+
+
+
+
+[[limits-and-privacy]]
+== 限制和隐私
+
+* 时间序列窗口不能超过 30 天。
+* 性能工具返回的序列数量有限；在增加限制之前缩小筛选范围。
+* 省略无助于诊断的敏感原始日志字段。
+* 未经通过正常操作控制进行验证，请勿提出破坏性补救措施。
+
+
+
+
+[[follow-up-prompts]]
+== 跟进提示
+
+[]
+====
+将事件期间的最大和平均延迟与上一个健康日的同一小时进行比较。
+
+====
+[]
+====
+按主机或存储池对相关工作负载进行分组，并确定性能下降是孤立的还是共享的。
+
+====
+[]
+====
+在第一次延迟增加的 15 分钟内显示平台事件。
+
+====
+link:mcp_recipe_overview.html["返回配方"]

@@ -1,0 +1,150 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_notification_posture.html 
+summary: 使用此配方可了解如何在不暴露 Webhook 端点地址的情况下路由和抑制 DII 警报。 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= 查看通知态势
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用此配方可了解如何在不暴露 Webhook 端点地址的情况下路由和抑制 DII 警报。
+
+
+NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，因此可能会发生变化。
+
+
+
+[[prerequisites]]
+== 前提条件
+
+* 访问通知和维护窗口工具。
+* 用于缩小审阅范围的可选监视器、资源或集成类型。
+
+
+
+
+[[tools-used]]
+== 使用的工具
+
+* +NotificationService_getNotificationRules+
+* +NotificationService_getNotificationRuleById+
+* +NotificationService_getWebhooks+
+* +MaintenanceWindowService_getMaintenanceWindows+
+* +MaintenanceWindowService_getMaintenanceWindowById+
+* 可选：+MonitorsService_queryMonitors+
+
+
+
+
+[[starter-prompt]]
+== 入门提示
+
+[]
+====
+审查 DII 通知态势。汇总活动和非活动通知规则、每个规则的监视器或资源范围、按集成类型划分的 Webhook 目标计数以及当前维护窗口。仅返回目标名称、引擎类型和状态——绝不返回端点地址。
+
+====
+
+
+[[agent-workflow]]
+== 代理工作流
+
+. 列出通知规则。
+. 将规则分类为活动、非活动、即将过期或无到期时间。
+. 总结每个规则的表达式范围：
++
+** 监视器名称或组
+** 相关对象
+** 广泛的通配符范围
+
+
+. 仅在需要其他详细信息时检索特定规则。
+. 列出 webhook 目标，并立即从工作结果中丢弃地址字段。
+. 按引擎类型和状态对目标进行分组。
+. 列出活动的维护时间段。
+. 识别与重要资源重叠或周期异常长的抑制窗口。
+. 可选择将规则表达式与可用监视器进行比较。
+. 报告路由覆盖范围、广泛规则、非活动规则和抑制风险。
+
+
+
+
+[[security-requirement]]
+== 安全要求
+
+完整的 webhook 地址可以包含：
+
+* Slack 或 Teams 签名路径
+* PagerDuty 路由键
+* API 令牌
+* 唯一工作流签名
+* 自定义集成凭据
+
+
+切勿显示、引用、总结、保留或转发地址字段。此工作流程也不需要带掩码的后缀。
+
+如果完整的端点出现在记录或共享工件中，请按照 link:mcp_security.html["安全与隐私"] 中的事件步骤进行操作。
+
+
+
+[[interpretation]]
+== 解释
+
+* 非活动规则可能是有意为之；在建议删除之前，请确认所有权。
+* 宽泛的通配符表达式可能会产生通知噪音或意外路由。
+* 目标状态可能为 null 或未知；不要将其报告为已启用。
+* 成功的空维护窗口结果意味着不存在匹配的窗口。
+* 长寿命窗口可能会隐藏真正的问题，即使它在技术上是活动且有效的。
+
+
+
+
+[[suggested-output]]
+== 建议输出
+
+. 按状态统计的规则计数
+. 规则范围和目标类型
+. 目标计数（按引擎）
+. 活动维护窗口
+. 广泛、不活跃或模棱两可的配置
+. 安全与数据质量注意事项
+
+
+
+
+[[limits-and-privacy]]
+== 限制和隐私
+
+* 不要返回地址、令牌、UUID 或私有资源标识符。
+* 此工作流程检查配置，但不测试消息传递。
+* 当前工具不创建、更新、禁用或删除规则和目标。
+
+
+
+
+[[follow-up-prompts]]
+== 跟进提示
+
+[]
+====
+哪些活动通知规则具有广泛的通配符表达式，以及它们可以匹配哪些监视器组？
+
+====
+[]
+====
+列出当前和即将到来的维护窗口，并解释它们抑制哪些警报范围。
+
+====
+[]
+====
+按集成类型对通知目标进行计数，并识别状态未知的目标。不显示地址。
+
+====
+link:mcp_recipe_overview.html["返回配方"]
