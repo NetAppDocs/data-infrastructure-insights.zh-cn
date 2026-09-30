@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: mcp_recipe_overview.html 
-summary: 配方将多个只读 DII 工具结合到可重复的基础设施工作流程中。将它们用作起点，并将虚构的资源名称替换为您租户的值。 
+summary: 配方将多个只读 DII 工具结合到可重复的基础设施工作流程中。将它们用作起点，并将虚构的资源名称替换为租户的值。 
 keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
 ---
 = DII MCP 操作配方
@@ -14,10 +14,10 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 
 
 [role="lead"]
-配方将多个只读 DII 工具结合到可重复的基础设施工作流程中。将它们用作起点，并将虚构的资源名称替换为您租户的值。
+配方将多个只读 DII 工具结合到可重复的基础设施工作流程中。将它们用作起点，并将虚构的资源名称替换为租户的值。
 
 
-NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因此可能会发生变化。
+NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，因此可能会发生变化。
 
 
 
@@ -28,16 +28,16 @@ NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因�
 | 目标 | 方案 | 主要 DII 表面 
 
 
-| 验证采集覆盖范围和新鲜度 | link:mcp_recipe_environment_inventory.html["清单环境和采集运行状况"] | 采集单元、数据源 
+| 验证收集覆盖范围和新鲜度 | link:mcp_recipe_environment_inventory.html["清单环境和收集健康状况"] | 采集单元、数据源 
 
 
-| 优先处理活动的基础设施问题 | link:mcp_recipe_storage_health.html["评估存储运行状况"] | 警报、监视器、日志、对象 
+| 优先考虑活动的基础设施问题 | link:mcp_recipe_storage_health.html["评估存储运行状况"] | 警报、监视器、日志、对象 
 
 
-| 查找接近容量压力的存储池 | link:mcp_recipe_capacity_risk.html["识别容量风险"] | 对象元数据、分组、时间序列 
+| 查找接近容量压力的池 | link:mcp_recipe_capacity_risk.html["识别容量风险"] | 对象元数据、分组、时间序列 
 
 
-| 检查 Kubernetes 采集组件版本 | link:mcp_recipe_kubernetes_collector_currency.html["检查 Kubernetes 收集器时效性"] | Kubernetes 收集器 
+| 检查 Kubernetes 收集组件版本 | link:mcp_recipe_kubernetes_collector_currency.html["检查 Kubernetes 收集器时效性"] | Kubernetes 收集器 
 
 
 | 调查缓慢的卷或工作负载 | link:mcp_recipe_performance_rca.html["性能故障排除"] | 对象指标、警报、日志 
@@ -56,7 +56,7 @@ NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因�
 . 查询有界的时间窗口。
 . 关联独立信号。
 . 将观察到的事实与推论区分开来。
-. 报告限制和建议的后续操作。
+. 报告限制与建议的后续操作。
 
 
 
@@ -65,7 +65,7 @@ NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因�
 == 安全
 
 * 这些配方使用只读工具。
-* 将时间窗保持在 30 天或更短。
+* 将时间窗口保持在 30 天或更短。
 * 省略凭据、私有地址、UUID、原始 Webhook 端点和不必要的日志负载。
 * 确认 MCP 工作流程之外的高影响操作。
 

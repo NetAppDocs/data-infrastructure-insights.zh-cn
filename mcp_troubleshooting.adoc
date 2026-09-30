@@ -14,7 +14,7 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 
 
 
-NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因此可能会发生变化。
+NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，因此可能会发生变化。
 
 
 
@@ -51,7 +51,7 @@ NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因�
 . 调用 +ObjectService_getObjectTypes+。
 . 确认确切的对象类型。
 . 调用 +ObjectService_getMetadataForObjectType+。
-. 从元数据中准确复制字段名称。
+. 从元数据中完全复制字段名。
 . 验证值类型和聚合函数是否兼容。
 
 
@@ -68,7 +68,7 @@ NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因�
 . 仅使用为该日志类型返回的属性。
 
 
-日志事件查询使用基于游标的分页。传递上一页返回的游标，而不是偏移量。
+日志事件查询使用基于光标的分页。传递上一页返回的光标，而不是偏移量。
 
 
 
@@ -101,7 +101,7 @@ NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因�
 * 按最相关的指标排序。
 * 降低结果限制。
 * 当不需要单个记录时，请使用分组或直方图。
-* 仅当需要更多详细信息时，才使用 `offset`或日志光标继续。
+* 仅当需要更多详细信息时，才继续使用 `offset`或日志光标。
 
 
 
@@ -138,7 +138,7 @@ NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因�
 [[a-collector-is-failed]]
 == 收集器出现故障
 
-对受影响的收集器使用 +CollectorService_getDataSourceById+。查看最近的轮询活动、活动补丁信息、包状态、配置和最后一次成功获取时间。避免显示凭据或私有配置值。
+对受影响的收集器使用 +CollectorService_getDataSourceById+。查看最近的轮询活动、活动补丁信息、包状态、配置和最后一次成功获取时间。避免显示凭据或专用配置值。
 
 
 

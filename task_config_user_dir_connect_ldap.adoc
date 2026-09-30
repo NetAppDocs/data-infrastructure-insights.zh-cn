@@ -18,14 +18,14 @@ Workload Security 使用目录数据来解析文件访问活动中的标识。�
 
 *在 ONTAP SVM 数据收集器之前配置用户目录收集器*
 
-image:config_ldap_directory_image1.png["包含 Active Directory 和 LDAP 目录服务器选项的添加用户目录对话框。,title=\"选择用户目录类型\",width=652,height=211"]
+image:config_ldap_directory_image1.png["包含 Active Directory 和 LDAP 目录服务器选项的“添加用户目录”对话框。,title=\"选择用户目录类型\",width=652,height=211"]
 
 [cols="50%,50%"]
 |===
 | *选择* | *在以下情况下使用* 
 
 
-| Active Directory | 用户存储在 Active Directory 中，监视的活动是 SMB；或者 Unix 用户存储在 Active Directory 中，具有 uidNumber 值并执行 NFS 活动。 
+| Active Directory | 用户存储在 Active Directory 中，受监控的活动是 SMB；或者 Unix 用户存储在 Active Directory 中，具有 uidNumber 值并执行 NFS 活动。 
 
 
 | LDAP 目录服务器 | Unix 用户主要存储在 LDAP 目录中，受监控的活动是 NFS。 
@@ -126,7 +126,7 @@ LDAP 目录服务器收集器字段和默认属性映射。
 [[optional-attribute-mappings]]
 === 可选属性映射
 
-仅为要导入的配置文件数据选择“包含可选属性”。每个映射必须与实际的 LDAP 架构匹配，包括服务器认为有意义的大小写。
+仅对要导入的配置文件数据选择包含可选属性。每个映射必须与实际的 LDAP 架构匹配，包括服务器将其视为重要时的大小写。
 
 [cols="50%,50%"]
 |===
@@ -170,7 +170,7 @@ LDAP 目录服务器收集器字段和默认属性映射。
 |===
 | ({vbar}(objectClass=posixAccount)(objectClass=person)(objectClass=nsperson)) 
 |===
-使用其他 objectClass 的计算机帐户、设备帐户、应用程序标识或服务帐户仍未解析。在 LDAP 浏览器中或使用 ldapsearch 检查对象，然后仅针对所需的对象类型扩展查询。例如：
+使用另一个 objectClass 的计算机帐户、设备帐户、应用程序标识或服务帐户仍未解析。在 LDAP 浏览器中或使用 ldapsearch 检查对象，然后仅针对所需的对象类型扩展查询。例如：
 
 [cols="100%"]
 |===
@@ -194,7 +194,7 @@ LDAP 目录服务器收集器字段和默认属性映射。
 [[use-ldapsearch]]
 === 使用 ldapsearch
 
-使用预期的绑定 DN 运行范围搜索。将示例替换为您的目录值，并将收集器的搜索查询添加为 LDAP 筛选器。
+使用预期的 Bind DN 运行范围搜索。将示例替换为您的目录值，并将收集器的搜索查询添加为 LDAP 筛选器。
 
 [cols="100%"]
 |===
@@ -203,7 +203,7 @@ LDAP 目录服务器收集器字段和默认属性映射。
 * 使用收集器将使用的确切帐户和密码，绑定成功。
 * 搜索返回预期的人员、计算机或服务帐户。
 * 每个必需的映射属性都存在，并且在返回的对象上有一个值。
-* Agent 具有到目录服务器的相同 DNS 解析和网络路径。
+* Agent 到目录服务器具有相同的 DNS 解析和网络路径。
 
 
 
@@ -231,25 +231,25 @@ LDAP 目录服务器收集器字段和默认属性映射。
 | 为 LDAP 服务器提供的凭据无效。 | 请验证绑定 DN 和密码。还请确认帐户可以搜索配置的 Search Base。 
 
 
-| 无法获取对应于作为搜索基准提供的 DN=…… 的对象。 | 更正搜索基准。使用确切的域、DN、OU 或其他支持的范围。 
+| 无法获取对应于作为搜索基础提供的 DN=…… 的对象。 | 更正搜索基准。请使用确切的域、DN、OU 或其他支持的范围。 
 
 
-| 无法建立 LDAP 连接。 | 从代理验证 LDAP 服务器 IP/FQDN、DNS 解析、协议、端口和防火墙路径。 
+| 无法建立 LDAP 连接。 | 从 Agent 验证 LDAP 服务器 IP/FQDN、DNS 解析、协议、端口和防火墙路径。 
 
 
-| 无法检索 LDAP 用户……连接为空。 | 重新启动收集器。如果再次出现，请从等效的网络位置使用 ldapsearch 验证连接和搜索。 
+| 无法检索 LDAP 用户……连接为空。 | 重新启动收集器。如果重复出现，请从等效的网络位置使用 ldapsearch 验证连接和搜索。 
 
 
 | 收集器正在重试或报告 AGENT008。 | 验证服务器地址和 Search Base；然后确认 Agent 可以访问目录服务。 
 
 
-| 未显示用户或可选属性。 | 验证搜索查询是否包含该对象，并且映射的属性名称是否与目录架构匹配（包括适用时的大小写）。保存以重新启动并重新同步。 
+| 未显示用户或可选属性。 | 验证搜索查询是否包含该对象，以及映射的属性名称是否与目录架构匹配（如果适用，包括大小写）。保存以重新启动并重新同步。 
 
 
-| AcceptSecurityContext 错误，数据 52e。 | 验证凭据和 Search Base。在 Active Directory 中，数据 52e 指示无效凭据。 
+| AcceptSecurityContext 错误，数据 52e。 | 验证凭据和 Search Base。在 Active Directory 中，数据 52e 表示凭据无效。 
 
 
-| ldap-port 的类型为 STRING 而不是 NUMBER。 | 输入数字端口值，例如 389 或 636。 
+| ldap-port 的类型是 STRING 而不是 NUMBER。 | 输入数字端口值，例如 389 或 636。 
 |===
 
 

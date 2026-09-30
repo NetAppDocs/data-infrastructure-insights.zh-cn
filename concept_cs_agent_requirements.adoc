@@ -27,7 +27,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 
 
 | 操作系统  a| 
-产品中列出的任何 64 位 Linux 发行版，包括启用了 SELinux 的系统。
+产品中列出的任何 64 位 Linux 发行版，包括支持 SELinux 的系统。
 
 有关支持的发行版和版本的当前列表，请在 Workload Security 中转到收集器 ++>++ 代理 ++>++ {plus}代理，然后单击支持的 Linux 版本（i）。该列表由产品生成，并且始终是最新的。
 
@@ -38,7 +38,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 
 
 | 命令/包  a| 
-在 Agent 主机上需要满足以下要求：
+Agent 主机上需要满足以下要求：
 
 * unzip — 代理安装
 * zip — 诊断包（cloudsecure-agent-symptom-collector.sh）
@@ -63,12 +63,12 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 
 
 
-| 时间同步 | 使用 NTP 或 SNTP 在 ONTAP 系统和 Agent 主机上同步时间。ONTAP 和 Agent 之间的时钟偏差会破坏事件相关性、运行状况检查和故障排除。 
+| 时间同步 | 使用 NTP 或 SNTP 在 ONTAP 系统和 Agent 主机上同步时间。ONTAP 和 Agent 之间的时钟偏差会破坏事件关联、运行状况检查和故障排除。 
 
 
 | 网络 | 100 Mbps 到 1 Gbps 以太网连接、静态 IP 地址、到所有受监控设备的 IP 连接，以及到 Workload Security 实例（80 或 443）的所需端口。 
 |===
-Workload Security Agent 可以与 Data Infrastructure Insights 采集单元和/或代理安装在同一台计算机上；但是，将它们安装在单独的计算机上是最佳做法。如果安装在同一台机器上，请按如下所示分配磁盘空间：
+Workload Security Agent 可以与 Data Infrastructure Insights 采集单元和/或代理安装在同一台计算机上；但是，将它们安装在单独的计算机上是最佳实践。如果安装在同一台计算机上，请按如下所示分配磁盘空间：
 
 [cols="50%,50%"]
 |===
@@ -86,7 +86,7 @@ Workload Security Agent 可以与 Data Infrastructure Insights 采集单元和/�
 
 [cols="20%,20%,20%,20%,20%"]
 |===
-| *协议* | *端口* | *源* | *目标* | *描述* 
+| *协议* | *端口* | *源* | *目的地* | *描述* 
 
 
 | TCP | 443 | 工作负载安全代理  a| 
@@ -104,7 +104,7 @@ Workload Security Agent 可以与 Data Infrastructure Insights 采集单元和/�
 
 [cols="20%,20%,20%,20%,20%"]
 |===
-| *协议* | *端口* | *源* | *目标* | *描述* 
+| *协议* | *端口* | *源* | *目的地* | *描述* 
 
 
 | TCP | 443 | 工作负载安全代理  a| 
@@ -122,11 +122,11 @@ Workload Security Agent 可以与 Data Infrastructure Insights 采集单元和/�
 
 [cols="20%,20%,20%,20%,20%"]
 |===
-| *协议* | *端口* | *源* | *目标* | *描述* 
+| *协议* | *端口* | *源* | *目的地* | *描述* 
 
 
 | TCP | 443 | 工作负载安全代理  a| 
-++<++site++_++name++>++.cs01-ap-1.cloudinsights.netapp.com/cn
+++<++site++_++name++>++.cs01-ap-1.cloudinsights.netapp.com
 
 ++<++site++_++name++>++.c01-ap-1.cloudinsights.netapp.com/cn
 
@@ -145,7 +145,7 @@ _如果代理位于 SSL 检查（例如 Zscaler）之后，请禁用 ++*++.cloud
 
 [cols="20%,20%,20%,20%,20%"]
 |===
-| *协议* | *端口* | *源* | *目标* | *描述* 
+| *协议* | *端口* | *源* | *目的地* | *描述* 
 
 
 | TCP  a| 
@@ -170,7 +170,7 @@ _如果代理位于 SSL 检查（例如 Zscaler）之后，请禁用 ++*++.cloud
 
 您无需打开整个 35000–55000/tcp 范围。根据 Agent 上的收集器数量调整保留大小：每个 SVM 最多使用 4 个端口（每个启用的协议 2 个 — NFS 和 CIFS/SMB）。对于完全加载的 Agent（50 个收集器），在此范围内保留约 200 个端口，并在必要时增加。上述两行对不同流量使用相同的范围：SVM data LIF → Agent 承载 FPolicy 文件/用户活动事件，而 Cluster management IP → Agent 承载 EMS 事件（如 ARP）。如果使用相应的功能，请同时打开这两条路径。
 
-在添加收集器之前运行测试连接时，它仅验证此范围内的一小部分活动端口。在 Agent 防火墙以及 ONTAP 和 Agent 之间的任何网络路径上保持完整的保留范围处于打开状态。
+在添加收集器之前运行测试连接时，它仅验证此范围内的一部分活动端口。在代理防火墙以及 ONTAP 和代理之间的任何网络路径上保持完整的保留范围处于打开状态。
 
 
 
@@ -186,4 +186,4 @@ _如果代理位于 SSL 检查（例如 Zscaler）之后，请禁用 ++*++.cloud
 * *使用其他代理横向扩展* 当接近 50 个收集器或 20,000 个事件/秒的限制时
 
 
-在添加收集器之前，请使用事件速率检查器（svm++_++event++_++rate++_++checker.sh）测量峰值事件速率。有关完整的大小调整方法，请参见事件速率检查器文档。
+在添加收集器之前，使用事件速率检查器（svm++_++event++_++rate++_++checker.sh）测量峰值事件速率。有关完整的大小调整方法，请参见事件速率检查器文档。

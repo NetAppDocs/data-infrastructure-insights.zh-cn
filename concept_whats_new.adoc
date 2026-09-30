@@ -36,9 +36,9 @@ image:ai_assistant-column_graph.png["AI Assistant 可视化"]
 [[enhanced-vm-analyzer-filtering]]
 === 增强的 VM Analyzer 过滤
 
-VM Analyzer 视图中的一个新切换按钮允许您隐藏没有数据存储的已挂载卷，从而提供更清晰的视图，以简化 VM 的故障排除。
+7e3b063a499521d531e921d85b5ffe47
 
-image:vm_analyzer_datastore_only_view.png["VM Analyzer 显示隐藏没有数据存储的已挂载卷的切换按钮"]
+509d1d4de8b6cd47ea7d3ca1489eb431
 
 
 
@@ -51,9 +51,9 @@ image:vm_analyzer_datastore_only_view.png["VM Analyzer 显示隐藏没有数据�
 
 您还可以直接打开资产登录页面，然后选择右上角的"编辑"。
 
-image:user_data_edit_slideout.png["资产详细信息滑出面板显示处于只读模式的用户数据，以及用于进入编辑模式的铅笔图标，宽度=400"]
+d05c002809e2eff8dbbef3f837ebccae
 
-image:user_data_edit_lp.png["资产着陆页，用户数据在编辑模式下打开并准备保存更改，width=200"]
+2676c87e0e32e08b02693582de233efc
 
 '''
 
