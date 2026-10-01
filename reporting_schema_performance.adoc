@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, performance
 :imagesdir: ./media/
 
 
+[role="lead"]
+性能架构提供了有关存储、主机、卷和应用程序的 I/O、延迟、吞吐量和其他性能指标的时间序列指标。使用此架构可以分析性能趋势、识别瓶颈并优化工作负载放置。
+
 来源：*dwh_performance* OData 端点—Data Infrastructure Insights
 
 找到的表格：*74* | 关联：*167*

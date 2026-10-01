@@ -37,9 +37,9 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 [[authentication-is-required]]
 == 需要身份验证
 
-完成客户端的登录流程，然后重试原始请求。如果使用了服务标识，请验证其凭据是否有效，并通过已批准的密钥机制进行存储。
+完成客户端的登录流程，然后重试原始请求。如果使用服务标识，请验证其凭据是否有效，并通过已批准的密钥机制进行存储。
 
-请勿重复重试已确认的授权拒绝。请 DII 管理员查看用户的租户和资源权限。
+请勿对已确认的授权拒绝进行重复重试。请 DII 管理员查看用户的租户和资源权限。
 
 
 
@@ -51,7 +51,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 . 调用 +ObjectService_getObjectTypes+。
 . 确认确切的对象类型。
 . 调用 +ObjectService_getMetadataForObjectType+。
-. 从元数据中完全复制字段名。
+. 从元数据中准确复制字段名称。
 . 验证值类型和聚合函数是否兼容。
 
 
@@ -68,7 +68,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 . 仅使用为该日志类型返回的属性。
 
 
-日志事件查询使用基于光标的分页。传递上一页返回的光标，而不是偏移量。
+日志事件查询使用基于游标的分页。传递上一页返回的游标，而不是偏移量。
 
 
 
@@ -89,7 +89,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 * 当工具需要时，请提供有效的 IANA 时区。
 
 
-如果运行时强制比客户端缓存的工具描述更严格，则运行时强制具有权威性。
+如果运行时强制比客户端缓存工具描述更严格，则运行时强制具有权威性。
 
 
 
@@ -122,7 +122,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 
 [[an-acquisition-unit-is-connected-but-has-never-reported]]
-== 采集单元已连接，但从未报告
+== 采集单元已连接但从未报告
 
 连接状态和成功报告是分开的。检查：
 
@@ -138,7 +138,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 [[a-collector-is-failed]]
 == 收集器出现故障
 
-对受影响的收集器使用 +CollectorService_getDataSourceById+。查看最近的轮询活动、活动补丁信息、包状态、配置和最后一次成功获取时间。避免显示凭据或专用配置值。
+对受影响的收集器使用 +CollectorService_getDataSourceById+。查看最近的轮询活动、活动补丁信息、包状态、配置和最后一次成功获取时间。避免显示凭据或私有配置值。
 
 
 

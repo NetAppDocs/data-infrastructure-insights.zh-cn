@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, capacity efficiency
 :imagesdir: ./media/
 
 
+[role="lead"]
+容量效率架构提供了有关存储效率的指标，包括数据缩减率和优化机会。使用此架构可监控和分析重复数据删除和压缩等存储技术的有效性。
+
 来源：*dwh_capacity_efficiency* OData 端点—Data Infrastructure Insights
 
 找到的表格：*3* | 关联：*2*

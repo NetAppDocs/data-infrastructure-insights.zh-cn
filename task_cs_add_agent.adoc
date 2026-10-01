@@ -24,8 +24,8 @@ Workload Security Agent 监控用户活动，并检测整个存储基础架构�
 * 确认代理主机满足 Workload Security Agent 要求中的系统、软件包和网络要求（4 个 CPU 内核、16 GB RAM、/opt/netapp 且至少有 35 GB 可用空间、受支持的 Linux 发行版、unzip / zip / sshpass、静态 IP、NTP）。
 * 安装、运行脚本和卸载需要 sudo 权限。
 * 在安装过程中，会在机器上创建本地用户 cssys 和本地组 cssys。如果策略不允许创建本地用户，而是需要 Active Directory，请在安装之前在 Active Directory 中创建用户名为 cssys 的用户。
-* Agent 最多支持 50 个数据收集器（所有类型的组合——例如 Active Directory、LDAP 和 ONTAP SVM 收集器），上限约为每秒 20,000 个事件。在一个 Agent 上部署多个收集器之前，请使用事件速率检查器规划容量。
-* 如果 Agent 将使用代理访问 SaaS，请准备好代理主机、端口和凭据。您在安装过程中的第 4 步设置代理。
+* Agent 最多支持 50 个数据收集器（所有类型的组合 — 例如 Active Directory、LDAP 和 ONTAP SVM 收集器），上限约为每秒 20,000 个事件。在一个 Agent 上部署多个收集器之前，请使用事件速率检查器规划容量。
+* 如果 Agent 将使用代理访问 SaaS，请准备好代理主机、端口和凭据。您可以在安装过程中的第 4 步设置代理。
 
 
 
@@ -40,13 +40,13 @@ Workload Security Agent 监控用户活动，并检测整个存储基础架构�
 .“添加代理”页面，其中已展开代理服务器设置和安装程序代码段。
 image:ws_deploy_agents_image6.png["显示代理服务器要求、代理服务器设置步骤和安装程序代码段的添加代理页面,title=\"显示代理服务器要求、代理服务器设置步骤和安装程序代码段的添加代理页面\",width=609,height=532"]
 
-. 在“代理服务器要求”面板中，单击“支持的 Linux 版本” (i) 和“最低服务器要求” (i)，以确认主机 OS 受支持且大小正确。
+. 在“代理服务器要求”面板中，单击“支持的 Linux 版本”（i）和“最低服务器要求”（i），以确认主机操作系统受支持且大小正确。
 
 
 .服务器最低要求：4 个 CPU 内核、16 GB RAM、35 GB 可用磁盘空间。
 image:ws_deploy_agents_image8.png["显示 4 个 CPU 内核、16 GB RAM 和 35 GB 可用磁盘空间的最低服务器要求工具提示,title=\"显示 4 个 CPU 内核、16 GB RAM 和 35 GB 可用磁盘空间的最低服务器要求工具提示\",width=336,height=172"]
 
-. 如果您的网络使用代理服务器，请展开可选：代理服务器设置 ++>++ 显示说明，然后单击复制代理服务器设置。在 Agent 主机上，在终端中运行复制的命令，用您自己的值替换 USER、PASSWORD、PROXY++_++SERVER 和 PORT：
+. 如果您的网络使用代理服务器，请展开可选：代理服务器设置 ++>++ 显示说明，然后单击复制代理服务器设置。在 Agent 主机上，在终端中运行复制的命令，用自己的值替换 USER、PASSWORD、PROXY++_++SERVER 和 PORT：
 
 
 [quote]
@@ -57,8 +57,8 @@ _在用于安装程序代码段的同一终端中运行此命令，以便安装�
 
 ____
 
-. 单击复制安装程序代码段。该代码段包含一个唯一密钥，有效期为 2 小时，仅适用于一个 Agent，因此请立即运行它，不要将其重复用于第二个 Agent。要首先检查它，请单击显示安装程序代码段。
-. 在 Agent 主机上，打开终端，粘贴安装命令并运行。建议使用您拥有的空工作目录（例如 mkdir cloudsecure && cd cloudsecure），以免安装过程中的 chmod 对其他用户拥有的文件执行失败。
+. 单击复制安装程序代码段。该代码段包含一个唯一密钥，有效期为 2 小时，且仅适用于一个 Agent，因此请立即运行它，不要将其重复用于第二个 Agent。要首先检查它，请单击显示安装程序代码段。
+. 在 Agent 主机上，打开终端，粘贴安装命令并运行。建议使用您拥有的空工作目录（例如 mkdir cloudsecure && cd cloudsecure），以免安装期间的 chmod 命令因文件属于其他用户而失败。
 . 安装成功完成后，安装程序会打印一条成功消息，并启动 Agent 服务。返回浏览器，然后单击完成设置以完成添加 Agent。成功安装后将显示“检测到新 Agent”。
 
 
@@ -69,9 +69,9 @@ ____
 
 * 确认 Agent 在 Workload Security ++>++ Collectors ++>++ Agents 上显示为 Connected。
 * 打开 Agent 主机上的 FPolicy/EMS 回调端口（请参阅下面的网络配置）。
-* 为用户接触受监控 SVM 的每个域配置用户目录收集器（Active Directory 或 LDAP）——最好在第一个 ONTAP SVM 收集器之前或与其同时配置。如果没有它，Activity Forensics 可能会显示 SID 而不是用户名。测试连接不适用于用户目录收集器。
+* 为用户接触受监控 SVM 的每个域配置用户目录收集器（Active Directory 或 LDAP）——最好在配置第一个 ONTAP SVM 收集器之前或与之同时进行。如果没有它，Activity Forensics 可能会显示 SID 而不是用户名。测试连接不适用于用户目录收集器。
 * 配置一个或多个 ONTAP SVM 数据收集器。首选具有集群凭据的集群管理 IP &#43; SVM 名称，并在保存之前运行测试连接，以便网络和 RBAC 检查通过。
-* 保持在 Agent 容量范围内：每个 Agent 最多 50 个收集器；使用 Event Rate Checker 针对峰值事件速率进行规模调整。
+* 保持在 Agent 容量范围内：每个 Agent 最多 50 个收集器；使用 Event Rate Checker 针对峰值事件速率进行规模估算。
 
 
 
@@ -82,20 +82,20 @@ ____
 如果在安装 Agent 后代理发生更改，请更新 Agent 配置并重新启动服务。
 
 . 切换到配置目录：cd /opt/netapp/cloudsecure/conf
-. 编辑 agent.properties 并设置 AGENT++_++PROXY++_++HOST、AGENT++_++PROXY++_++PORT，如果需要，还应设置 AGENT++_++PROXY++_++USER 和 AGENT++_++PROXY++_++PASSWORD。
+. 编辑 agent.properties 并设置 AGENT++_++PROXY++_++HOST、AGENT++_++PROXY++_++PORT，以及（如果需要）AGENT++_++PROXY++_++USER 和 AGENT++_++PROXY++_++PASSWORD。
 . 重新启动代理：sudo systemctl restart cloudsecure-agent.service
 
 
-如果代理位于 SSL 检查（例如 Zscaler）之后，请禁用对 ++*++.cloudinsights.netapp.com 和区域 agentlogin 主机的 SSL 检查。当中间证书对 SaaS 端点重新签名时，Workload Security 无法正常工作。
+如果代理位于 SSL 检查（例如 Zscaler）之后，请禁用对 ++*++.cloudinsights.netapp.com 和区域 agentlogin 主机的 SSL 检查。当中间证书重新签名 SaaS 端点时，Workload Security 无法正常工作。
 
 
 
 [[network-configuration]]
 == 网络配置
 
-打开 ONTAP 用于向 Agent 发送 FPolicy（和 EMS）事件的 TCP 端口。您无需打开整个 35000–55000 范围。根据此 Agent 上的收集器调整保留大小：每个 SVM 最多使用 4 个端口（每个启用的协议 2 个 — NFS 和 CIFS/SMB）。对于满载的 Agent（50 个收集器），在 35000–55000 范围内保留约 200 个端口。如果需要，请增加保留。
+打开 ONTAP 用于向 Agent 发送 FPolicy（和 EMS）事件的 TCP 端口。您无需打开整个 35000–55000 范围。根据此 Agent 上的收集器调整保留大小：每个 SVM 最多使用 4 个端口（每个启用的协议 2 个 — NFS 和 CIFS/SMB）。对于满载的 Agent（50 个收集器），请在 35000–55000 范围内保留约 200 个端口。如果需要，请增加保留数量。
 
-向 Agent 主机开放该范围，包括任何本地防火墙。此外，请确保 SVM 数据 LIF 能够访问 Agent 以获取 FPolicy 事件，并且（如果您使用基于 EMS 的功能，例如 ARP）集群管理 IP 可以在相同的保留端口上访问 Agent。有关完整的网络内和云出口表，请参阅 Workload Security Agent 要求。
+开放通往 Agent 主机的端口范围，包括任何本地防火墙。还要确保 SVM 数据 LIF 可以访问 Agent 以处理 FPolicy 事件，并且（如果您使用基于 EMS 的功能，例如 ARP）集群管理 IP 可以通过相同的保留端口访问 Agent。有关完整的网络内和云出口表，请参阅 Workload Security Agent 要求。
 
 *示例 — firewalld（永久）：*
 
@@ -135,34 +135,34 @@ ____
 
 ____
 
-_Test Connection（在 ONTAP SVM 收集器页面上）仅验证此范围内的端口子集。在 Agent 上保持完整保留集打开。_
+_Test Connection （在 ONTAP SVM 收集器页面上）仅验证此范围内的端口子集。在 Agent 上保持完整的保留集处于打开状态。_
 
 
 
 [[post-install-verification]]
 == 安装后验证
 
-成功安装后，请在 Agent 主机和 UI 中确认以下内容：
+成功安装后，在 Agent 主机和 UI 中确认以下内容：
 
-* *UI 状态：* 收集器 ++>++ Agent 将 Agent 显示为已连接（而不是 NOT++_++CONNECTED）。
+* *UI 状态：* 收集器 ++>++ 代理将代理显示为已连接（而不是 NOT++_++CONNECTED）。
 * *服务：* sudo systemctl status cloudsecure-agent.service 报告处于活动状态（正在运行）。
 * *用户：* id cssys 和 groups cssys 成功（本地 cssys 用户/组存在，或 AD cssys 帐户可用）。
 * *磁盘路径：* /opt/netapp 位于 cssys 可以访问的本地磁盘上（不是本地用户无法使用的 NFS 挂载）。
-* *端口：*保留的 35000–55000 子集对 Agent 的入站处于开放状态（请参见上文的 firewall-cmd 或 iptables 检查）。
-* *SaaS 路径：* 出站 TCP 443 到您所在地区的 ++*++.cloudinsights.netapp.com/cn 和 agentlogin 端点成功（无 SSL 检查重写）。
+* *端口：*保留的 35000–55000 子集对 Agent 开放入站（上述 firewall-cmd 或 iptables 检查）。
+* *SaaS 路径：* 到您所在地区的 ++*++.cloudinsights.netapp.com 和 agentlogin 端点的出站 TCP 443 成功（无 SSL 检查重写）。
 
 
-如果代理在应用程序日志生成之前无法启动，请检查 journalctl -u cloudsecure-agent.service —— 早期引导错误会记录到服务日志中，而不是 agent.log 中。
+如果代理在应用程序日志存在之前无法启动，请检查 journalctl -u cloudsecure-agent.service —— 早期引导错误会记录到服务日志中，而不是 agent.log 中。
 
 
 
 [[control-agent-upgrades-pin-and-unpin]]
 == 控制 Agent 升级：固定和取消固定
 
-默认情况下，Workload Security 会自动更新 Agent。固定 Agent 将暂停这些自动更新，因此 Agent 及其托管的收集器将保持其当前版本。
+默认情况下，Workload Security 会自动更新代理。固定代理将暂停这些自动更新，因此代理及其托管的收集器将保持其当前版本。
 
 '''
-*注：*_固定和取消固定适用于代理，只能通过 API 完成。暂停和恢复是收集器控件 — 它们不适用于代理 — 您可以从 UI 或 API 运行它们。请参阅配置 ONTAP SVM 数据采集器。_ ___
+*注意：* _固定和取消固定适用于代理，并且只能通过 API 使用。暂停和恢复是收集器控件——它们不适用于代理——您可以从 UI 或 API 运行它们。请参阅配置 ONTAP SVM 数据采集器。_ ___
 
 [cols="34%,33%,33%"]
 |===
@@ -172,41 +172,41 @@ _Test Connection（在 ONTAP SVM 收集器页面上）仅验证此范围内的�
 | 固定  a| 
 仅限 cloudsecure++_++config.agents API。
 
-在 UI 中不可用。
+在用户界面中不可用。
 | 暂停自动更新。代理及其托管的收集器保持其当前版本。 
 
 
 | 取消固定  a| 
 仅限 cloudsecure++_++config.agents API。
 
-在 UI 中不可用。
+在用户界面中不可用。
 | 恢复自动更新。代理检索最新可用版本并升级自身及其收集器。 
 |===
-发生以下任一情况时，固定的代理将恢复自动更新：
+出现以下任一情况时，已固定的代理将恢复自动更新：
 
 * 您取消固定代理。
-* 30 天已过去。30 天窗口期从最近的 Agent 更新当天开始，而不是从您固定 Agent 的当天开始。
+* 已过去 30 天。30 天的窗口期从最近一次代理更新之日开始计算，而不是从您固定代理之日开始计算。
 
 
-无论是哪种情况，Agent 都会在满足条件后的下一次 Workload Security 刷新时进行更新。固定或取消固定请求最多需要五分钟才能生效。
+无论是哪种情况，代理都会在满足条件后的下一次 Workload Security 刷新时进行更新。固定或取消固定请求最多需要五分钟才能生效。
 
 要固定或取消固定代理，请使用 cloudsecure++_++config.agents API。您可以在 Workload Security ++>++ Collectors ++>++ Agents 上查看当前 Agent 版本。
 
-image:ws_deploy_agents_image3.png["代理固定和取消固定API,title=\"代理固定和取消固定API\",width=609,height=225"]
+image:ws_deploy_agents_image3.png["代理固定和取消固定 API,title=\"代理固定和取消固定 API\",width=609,height=225"]
 
-.固定和取消固定 cloudsecure++_++config.agents 类别中的 API。
+.cloudsecure++_++config.agents 类别中的固定和取消固定 API。
 image:ws_deploy_agents_image4.png["代理版本,title=\"代理版本\",width=609,height=97"]
 
-Agents 选项卡上显示的 Agent 版本。
+Agent 选项卡上显示的 Agent 版本。
 
 
 
 [[pin-and-unpin-one-agent-at-a-time]]
 === 一次固定和取消固定一个代理
 
-租户级别也支持固定和取消固定。如果在租户级别取消固定，则会自动立即升级租户中的每个 Agent。
+租户级别也支持固定和取消固定。如果在租户级别取消固定，则会自动立即升级租户中的每个代理。
 
-请改为使用 Agent 级别的固定和取消固定。Agent 级别的控制更加精细：只有您取消固定的 Agent 才会接收升级，因此新版本的影响仅限于该 Agent 及其托管的收集器。
+请改为使用代理级别的固定和取消固定。代理级别的控制更为精细：只有您取消固定的代理才会接收升级，因此新版本的影响仅限于该代理及其托管的收集器。
 
 [cols="34%,33%,33%"]
 |===
@@ -219,16 +219,16 @@ Agents 选项卡上显示的 Agent 版本。
 | 单个代理（推荐）  a| 
 POST /v1/cloudsecure/agents/
 
-++{++agentId}/configuration
+++{++agentId}/配置
  a| 
 DELETE /v1/cloudsecure/agents/
 
-++{++agentId}/configuration
+++{++agentId}/配置
 
 |===
 *建议的方法*
 
-. 固定您希望保持在当前版本的代理。
+. 固定您要保留在其当前版本的代理。
 . 取消固定一个代理并让其升级。
 . 确认 Agent 返回 Connected，其收集器返回 Running。
 . 分批取消固定剩余的 Agent，以便意外问题仅影响您的部分环境。
@@ -237,18 +237,18 @@ DELETE /v1/cloudsecure/agents/
 
 
 [[best-practices-for-agents]]
-== 代理最佳实践
+== 代理的最佳实践
 
 这些做法适用于代理。有关收集器实践，包括何时暂停收集器，请参见配置 ONTAP SVM 数据收集器。
 
-* 使用 pin 和 unpin 来控制 Agent 何时升级。您无需暂停收集器即可进行升级控制。
-* 在代理级别（而非租户级别）进行固定和取消固定，以便升级一次只影响一个代理及其收集器。
+* 使用固定和取消固定来控制 Agent 何时升级。您无需暂停收集器即可进行升级控制。
+* 在代理级别而不是租户级别进行固定和取消固定，以便升级一次只影响一个代理及其收集器。
 * 请勿计划无限期保持固定。固定的代理在最近一次更新后 30 天自动更新。
-* 保持在代理容量范围内：每个代理最多 50 个收集器（所有类型合计），上限为每秒 20,000 个事件。大约 10 个收集器适用于 4 个 CPU 内核和 16 GB RAM；大约 20 个收集器适用于 4 个 CPU 内核和 32 GB RAM。
-* 在添加收集器之前，请使用 Event Rate Checker 根据峰值事件率调整 Agent 的大小，并将收集器迁移到另一个 Agent，而不是使一个 Agent 超载。
+* 保持在代理容量范围内：每个代理最多 50 个收集器（所有类型的总和），上限为每秒 20,000 个事件。大约 10 个收集器适用于 4 个 CPU 内核和 16 GB RAM；大约 20 个收集器适用于 4 个 CPU 内核和 32 GB RAM。
+* 在添加收集器之前，请使用事件率检查器根据峰值事件率调整 Agent 的规模，并将收集器迁移到另一个 Agent，而不是使一个 Agent 超载。
 * 跨 Agent 分布收集器，以便对一个 Agent 的维护不会停止对每个 SVM 的监控。
 * 为 Agent 主机分配一个静态 IP 地址，并使用 NTP 保持其时钟与 ONTAP 同步。
-* 保持保留的 FPolicy 回调端口对 Agent 开放，包括在主机防火墙中（请参阅网络配置）。
+* 保持保留的 FPolicy 回调端口向 Agent 开放，包括在主机防火墙中（请参阅网络配置）。
 
 
 

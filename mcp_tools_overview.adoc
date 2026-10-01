@@ -47,13 +47,13 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 +AcquisitionUnitsService_getAcquisitionUnits+
 
-返回所有采集单元及其连接状态、报告新鲜度、操作系统、版本、IP 地址和分配的数据源计数。
+返回所有具有连接状态、报告新鲜度、操作系统、版本、IP 地址和分配的数据源计数的采集单元。
 
 示例：
 
 []
 ====
-列出采集单元。汇总已连接、失败和从未报告的单元，而不显示 IP 地址或 UUID。
+列出采集单元。在不显示 IP 地址或 UUID 的情况下汇总已连接、失败和从未报告的单元。
 
 ====
 
@@ -63,7 +63,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 +AcquisitionUnitsService_getAcquisitionUnitByUuid+
 
-检索一个采集单元的完整详细信息。如果用户提供了名称，则首先列出采集单元以解析其 UUID。
+检索一个采集单元的完整详细信息。如果用户提供了名称，请先列出采集单元以解析其 UUID。
 
 需要输入： `uuid`
 
@@ -99,7 +99,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 * `timezone`
 
 
-可选输入包括 `filter`、 `sortField`、 `sortAscending`、 `limit`和 `offset`。 `limit`为 1-500； `offset`为 0-1000。请将时间窗保持在 30 天以内。
+可选输入包括 `filter`、 `sortField`、 `sortAscending`、 `limit`和 `offset`。 `limit`为1-500； `offset`为0-1000。请将时间窗口保持在30天以内。
 
 示例：
 
@@ -115,7 +115,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 +AlertsService_getAlertByName+
 
-使用 `AL-123456` 格式的警报 ID 检索一个警报。
+使用采用 `AL-123456`格式的警报 ID 检索一个警报。
 
 需要输入： `name`
 
@@ -142,13 +142,13 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 +CollectorService_getDataSources+
 
-列出配置的收集器，包括名称、状态、供应商、型号、采集单元、版本和最后一次成功采集。可以选择按 AU UUID 过滤。
+列出已配置的收集器，包括名称、状态、供应商、型号、采集单元、版本和最后一次成功采集。可以选择按 AU UUID 过滤。
 
 示例：
 
 []
 ====
-按状态和供应商对配置的数据源进行分组。突出显示失败和过时的成功采集。
+按状态和供应商对已配置的数据源进行分组。突出显示失败和过时的成功采集。
 
 ====
 
@@ -158,7 +158,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 +CollectorService_getDataSourceById+
 
-检索一个包含配置、收集包状态、轮询活动、发现的设备、修补程序信息和采集单元上下文的收集器。
+检索一个具有配置、收集包状态、轮询活动、发现的设备、修补程序信息和采集单元上下文的收集器。
 
 需要输入： `id`
 
@@ -215,7 +215,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 * `timezone`
 
 
-可选输入包括 `attributes`、 `filter`、 `limit`和 `cursor`。 `limit` 为 1-200。活动时段不能超过 30 天。传递上一个响应的游标以检索下一页。
+可选输入包括 `attributes`、 `filter`、 `limit`和 `cursor`。 `limit`为 1-200。活动时段不能超过 30 天。传递上一个响应的游标以检索下一页。
 
 
 
@@ -248,7 +248,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 +MaintenanceWindowService_getMaintenanceWindows+
 
-列出活动的、未过期的警报抑制窗口。将 `includeExpired`设置为 `true`以包含已过期的窗口。
+列出活动的、未过期的警报抑制窗口。将 `includeExpired`设置为 `true`以包含过期的窗口。
 
 成功的空响应意味着不存在匹配的维护窗口。
 
@@ -259,7 +259,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 +MaintenanceWindowService_getMaintenanceWindowById+
 
-检索一个维护时段。
+检索一个维护窗口。
 
 需要输入： `id`
 
@@ -280,7 +280,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 
 [[get-a-monitor]]
-=== 获取监视器
+=== 获取监控器
 
 +MonitorsService_getMonitorById+
 
@@ -322,13 +322,13 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 列出 Slack、Microsoft Teams、Discord、PagerDuty 和自定义 HTTP 集成的 Webhook 目标元数据。可选择按逗号分隔的引擎类型进行筛选。
 
-安全要求：完整的端点地址可能包含凭据。应用程序和代理必须在显示或转发的结果中省略或脱敏地址字段。
+安全要求：完整的端点地址可能包含凭据。应用程序和代理必须从显示或转发的结果中省略或隐去地址字段。
 
 安全示例：
 
 []
 ====
-按引擎类型统计 webhook 目标，并仅列出目标名称和状态。不返回端点地址。
+按引擎类型统计 Webhook 目标数量，并仅列出目标名称和状态。不返回端点地址。
 
 ====
 
@@ -363,7 +363,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 +ObjectService_query+
 
-检索对象、选定属性和可选指标。引用指标的筛选器在时间窗口聚合之前应用于原始值。
+检索对象、所选属性和可选指标。引用指标的筛选器在时间窗口聚合之前应用于原始值。
 
 必需输入：
 
