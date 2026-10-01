@@ -51,9 +51,9 @@ image:vm_analyzer_datastore_only_view.png["VM Analyzer 显示隐藏没有数据�
 
 您还可以直接打开资产登录页面，然后选择右上角的"编辑"。
 
-image:user_data_edit_slideout.png["资产详细信息滑出面板显示处于只读模式的用户数据，铅笔图标用于进入编辑模式，宽度=400"]
+image:user_data_edit_slideout.png["资产详细信息滑出面板显示处于只读模式的用户数据，以及用于进入编辑模式的铅笔图标，宽度=400"]
 
-image:user_data_edit_lp.png["资产着陆页，用户数据在编辑模式下打开并准备保存更改，宽度=200"]
+image:user_data_edit_lp.png["资产着陆页，用户数据在编辑模式下打开并准备保存更改，width=200"]
 
 '''
 

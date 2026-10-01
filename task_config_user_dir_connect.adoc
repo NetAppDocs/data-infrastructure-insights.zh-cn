@@ -18,14 +18,14 @@ summary: 配置工作负载安全 Active Directory 用户目录收集器
 
 Workload Security 使用目录数据来解析文件访问活动中的标识。用户目录收集器不提供测试连接功能。
 
-image:config_ad_user_directory_image1.png["包含 Active Directory 和 LDAP 目录服务器选项的“添加用户目录”对话框。,title=\"选择用户目录类型\",width=652,height=211"]
+image:config_ad_user_directory_image1.png["包含 Active Directory 和 LDAP 目录服务器选项的添加用户目录对话框。,title=\"选择用户目录类型\",width=652,height=211"]
 
 [cols="50%,50%"]
 |===
 | *选择* | *在以下情况下使用* 
 
 
-| Active Directory | 用户存储在 Active Directory 中，受监控的活动是 SMB；或者 Unix 用户存储在 Active Directory 中，具有 uidNumber 值并执行 NFS 活动。 
+| Active Directory | 用户存储在 Active Directory 中，监视的活动是 SMB；或者 Unix 用户存储在 Active Directory 中，具有 uidNumber 值并执行 NFS 活动。 
 
 
 | LDAP 目录服务器 | Unix 用户主要存储在 LDAP 目录中，受监控的活动是 NFS。 
@@ -35,7 +35,7 @@ image:config_ad_user_directory_image1.png["包含 Active Directory 和 LDAP 目�
 |===
 [cols="100%"]
 |===
-| *此页面涵盖 Active Directory* 将此收集器用于 SMB 身份以及其 Unix ID 维护在 Active Directory 中的 NFS 身份。 
+| *此页面涵盖 Active Directory* 将此收集器用于 SMB 标识和在 Active Directory 中维护 Unix ID 的 NFS 标识。 
 |===
 
 
@@ -87,7 +87,7 @@ Active Directory 收集器字段和默认属性映射。
 | 服务器 IP/域名++*++ | 必填 | AD 服务器 IP 地址或 FQDN。 
 
 
-| 森林名称++*++ | 必填 | DNS 域（例如 hq.example.com）；DN（例如 DC=hq,DC=example,DC=com）；或者在仅需搜索该范围时使用更窄的 OU/CN DN。支持受信任的 AD 域。 
+| 森林名称++*++ | 必填 | DNS 域（如 hq.example.com）；DN（如 DC=hq,DC=example,DC=com）；或更窄的 OU/CN DN（当仅应搜索该范围时）。支持受信任的 AD 域。 
 
 
 | 绑定 DN++*++ | 必填 | 允许搜索范围的帐户，例如 ws-reader@example.com。仅授予映射属性所需的目录读取权限。 
@@ -122,14 +122,14 @@ Active Directory 收集器字段和默认属性映射。
 | 用户名++*++ | sAM账户名称 | 始终 
 
 
-| UNIXID | uid 号 | 当必须为存储在 AD 中的 Unix 用户解析 NFS 活动时为必需 
+| UNIXID | uid 号 | 必须为存储在 AD 中的 Unix 用户解析 NFS 活动时为必需 
 |===
 
 
 [[optional-attribute-mappings]]
 === 可选属性映射
 
-仅为要导入的配置文件数据选择“包含可选属性”。每个映射必须与实际的 AD 架构匹配。空或不正确的映射不会阻止身份解析，但不会填充配置文件值。
+仅对要导入的配置文件数据选择“包含可选属性”。每个映射必须与实际的 AD 架构匹配。空或不正确的映射不会阻止标识解析，但不会填充配置文件值。
 
 [cols="50%,50%"]
 |===
@@ -171,7 +171,7 @@ Active Directory 收集器字段和默认属性映射。
 
 [cols="100%"]
 |===
-| （{vbar}（objectClass=posixAccount）（&（objectCategory=person）（objectClass=user）））  
+| （{vbar}（objectClass=posixAccount）（&（objectCategory=person）（objectClass=user））） 
 |===
 不匹配此筛选器的计算机帐户、托管服务帐户或自定义服务帐户对象仍未解析。在 AD Explorer 中检查对象的 objectClass，然后仅针对所需的对象类型扩展查询。例如：
 
@@ -197,7 +197,7 @@ Active Directory 收集器字段和默认属性映射。
 [[use-ad-explorer]]
 === 使用 AD Explorer
 
-使用预期的绑定 DN 帐户连接到 Active Directory 服务器。验证该帐户是否可以浏览已配置的林名称或 OU，并读取 name、objectSid、sAMAccountName、uidNumber（使用时）以及任何可选属性。
+使用预期的 Bind DN 帐户连接到 Active Directory 服务器。验证该帐户是否可以浏览配置的林名称或 OU，并读取 name、objectSid、sAMAccountName、使用时的 uidNumber 以及任何可选属性。
 
 https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer["[.underline"]#下载 Microsoft Sysinternals AD Explorer#]
 
@@ -206,7 +206,7 @@ https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer["[.underline
 [[use-ldapsearch]]
 === 使用 ldapsearch
 
-使用预期的 Bind DN 运行范围搜索。将示例替换为您的目录值，并将收集器的搜索查询添加为 LDAP 筛选器。
+使用预期的绑定 DN 运行范围搜索。将示例替换为您的目录值，并将收集器的搜索查询添加为 LDAP 筛选器。
 
 [cols="100%"]
 |===
@@ -215,7 +215,7 @@ https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer["[.underline
 * 使用收集器将使用的确切帐户和密码，绑定成功。
 * 搜索返回预期的人员、计算机或服务帐户。
 * 每个必需的映射属性都存在，并且在返回的对象上有一个值。
-* Agent 到目录服务器具有相同的 DNS 解析和网络路径。
+* Agent 具有到目录服务器的相同 DNS 解析和网络路径。
 
 
 
@@ -224,10 +224,10 @@ https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer["[.underline
 == 保存后
 
 * Active Directory 同步在收集器启动或重新启动时启动。
-* 拥有约 30 万用户的目录可能需要大约 15 分钟才能同步。
+* 拥有约 300,000 个用户的目录可能需要大约 15 分钟才能同步。
 * 用户数据每 12 小时自动刷新一次。
 * 如果目录不可用，以前提取的用户详细信息将保留，但在恢复连接之前，无法提取新用户或更改的用户。
-* 用户数据保留 13 个月，无需刷新。用户目录数据无法独立于租户删除。
+* 用户数据保留 13 个月，无需刷新。无法独立于租户删除用户目录数据。
 
 
 
@@ -249,13 +249,13 @@ https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer["[.underline
 | 无法建立 LDAP 连接。 | 从代理验证 AD 服务器 IP/FQDN、DNS 解析、协议、端口和防火墙路径。 
 
 
-| 无法检索 LDAP 用户……连接为空。 | 重新启动收集器。如果重复出现，请从等效的网络位置使用 ldapsearch 验证连接和搜索。 
+| 无法检索 LDAP 用户……连接为空。 | 重新启动收集器。如果再次出现，请从等效的网络位置使用 ldapsearch 验证连接和搜索。 
 
 
 | 收集器正在重试或报告 AGENT008。 | 确认服务器地址和林名称；然后确认 Agent 可以访问目录服务。 
 
 
-| 未显示用户或可选属性。 | 验证搜索查询是否包含该对象，以及映射的属性名称是否与目录架构匹配（如果适用，包括大小写）。保存以重新启动并重新同步。 
+| 未显示用户或可选属性。 | 验证搜索查询是否包含该对象，并且映射的属性名称是否与目录架构匹配（包括适用时的大小写）。保存以重新启动并重新同步。 
 
 
 | AcceptSecurityContext 错误，数据 52e。 | 验证凭据和林名称。在 Active Directory 中，数据 52e 指示无效凭据。 

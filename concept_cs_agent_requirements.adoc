@@ -14,7 +14,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 
 
 [role="lead"]
-在满足最低操作系统、CPU、内存和磁盘空间要求的专用服务器上部署 Workload Security Agent，以确保最佳的监控和威胁检测性能。本指南指定了在 link:task_cs_add_agent.html["安装 Workload Security Agent"] 之前所需的硬件和网络要求，包括支持的 Linux 发行版、网络连接规则和系统规模调整指南。
+在满足最低操作系统、CPU、内存和磁盘空间要求的专用服务器上部署 Workload Security Agent，以确保最佳的监控和威胁检测性能。本指南规定了在 link:task_cs_add_agent.html["安装 Workload Security Agent"] 之前所需的硬件和网络要求，包括支持的 Linux 发行版、网络连接规则和系统规模调整指南。
 
 
 
@@ -29,7 +29,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 | 操作系统  a| 
 产品中列出的任何 64 位 Linux 发行版，包括启用了 SELinux 的系统。
 
-有关支持的发行版和版本的当前列表，请在 Workload Security 中转到 Collectors ++>++ Agents ++>++ {plus}Agent，然后单击 Linux Versions Supported （i）。该列表由产品生成，并且始终是最新的。
+有关支持的发行版和版本的当前列表，请在 Workload Security 中转到收集器 ++>++ 代理 ++>++ {plus}代理，然后单击支持的 Linux 版本（i）。该列表由产品生成，并且始终是最新的。
 
 安装程序还会验证主机：在不受支持的发行版上，它会停止并显示“不支持此 Linux 发行版。退出安装”。
 
@@ -41,7 +41,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 在 Agent 主机上需要满足以下要求：
 
 * unzip — 代理安装
-* zip — 诊断捆绑包（cloudsecure-agent-symptom-collector.sh）
+* zip — 诊断包（cloudsecure-agent-symptom-collector.sh）
 * sshpass — 事件速率检查器（svm++_++event++_++rate++_++checker.sh）
 * sudo su – — 安装、运行脚本和卸载
 
@@ -57,7 +57,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 | 可用磁盘空间  a| 
 按如下方式分配磁盘空间：
 
-/opt/netapp — 36 GB（文件系统创建后最少有 35 GB 可用空间）
+/opt/netapp — 36 GB （文件系统创建后最少有 35 GB 可用空间）
 
 注意：分配一点额外的磁盘空间以允许创建文件系统；确保文件系统中至少有 35 GB 的可用空间。如果 /opt 是从 NAS 存储装载的，请确保本地用户有权访问该文件夹——否则 Agent 或 Data Collector 可能无法安装。
 
@@ -126,7 +126,7 @@ Workload Security Agent 可以与 Data Infrastructure Insights 采集单元和/�
 
 
 | TCP | 443 | 工作负载安全代理  a| 
-++<++site++_++name++>++.cs01-ap-1.cloudinsights.netapp.com
+++<++site++_++name++>++.cs01-ap-1.cloudinsights.netapp.com/cn
 
 ++<++site++_++name++>++.c01-ap-1.cloudinsights.netapp.com/cn
 
@@ -136,7 +136,7 @@ Workload Security Agent 可以与 Data Infrastructure Insights 采集单元和/�
 
 | TCP | 443 | 工作负载安全代理 | agentlogin.cs01-ap-1.cloudinsights.netapp.com | 访问身份验证服务 
 |===
-_如果代理位于 SSL 检查（例如 Zscaler）之后，请禁用 ++*++.cloudinsights.netapp.com/cn 和区域 agentlogin 主机的 SSL 检查。当中介证书重新签署 SaaS 端点时，Workload Security 无法正常工作。_
+_如果代理位于 SSL 检查（例如 Zscaler）之后，请禁用 ++*++.cloudinsights.netapp.com 和区域 agentlogin 主机的 SSL 检查。当中介证书重新签名 SaaS 端点时，Workload Security 无法正常工作。_
 
 
 
@@ -149,9 +149,9 @@ _如果代理位于 SSL 检查（例如 Zscaler）之后，请禁用 ++*++.cloud
 
 
 | TCP  a| 
-389（LDAP）
+389 (LDAP)
 
-636（LDAPS / start-tls）
+636 （LDAPS / start-tls）
 | 工作负载安全代理 | LDAP 服务器 URL | 连接到 LDAP。支持 SSL (LDAPS/start-tls)；接受服务器提供的证书。 
 
 
@@ -170,7 +170,7 @@ _如果代理位于 SSL 检查（例如 Zscaler）之后，请禁用 ++*++.cloud
 
 您无需打开整个 35000–55000/tcp 范围。根据 Agent 上的收集器数量调整保留大小：每个 SVM 最多使用 4 个端口（每个启用的协议 2 个 — NFS 和 CIFS/SMB）。对于完全加载的 Agent（50 个收集器），在此范围内保留约 200 个端口，并在必要时增加。上述两行对不同流量使用相同的范围：SVM data LIF → Agent 承载 FPolicy 文件/用户活动事件，而 Cluster management IP → Agent 承载 EMS 事件（如 ARP）。如果使用相应的功能，请同时打开这两条路径。
 
-在添加收集器之前运行测试连接时，它仅验证此范围内的一小部分活动端口。在代理防火墙以及 ONTAP 和代理之间的任何网络路径上保持完整的保留范围处于开放状态。
+在添加收集器之前运行测试连接时，它仅验证此范围内的一小部分活动端口。在 Agent 防火墙以及 ONTAP 和 Agent 之间的任何网络路径上保持完整的保留范围处于打开状态。
 
 
 

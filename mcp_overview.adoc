@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: mcp_overview.html 
-summary: 将人工智能助手连接到 Data Infrastructure Insights（DII），以便它们可以使用自然语言调查基础架构清单、遥测、警报和采集健康状况。 
+summary: 将 AI 助手连接到 Data Infrastructure Insights（DII），以便它们可以使用自然语言调查基础架构清单、遥测、警报和采集运行状况。 
 keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
 ---
 = DII MCP 服务器
@@ -14,24 +14,24 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 
 
 [role="lead"]
-将 AI 助手/代理连接到 Data Infrastructure Insights （DII），以便它们可以使用自然语言调查基础架构清单、遥测、警报和采集健康状况。
+将 AI 助手/代理连接到 Data Infrastructure Insights （DII），以便它们可以使用自然语言调查基础架构清单、遥测、警报和采集运行状况。
 
 
-NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，因此可能会发生变化。
+NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因此可能会发生变化。
 
-DII MCP 服务器实现模型上下文协议 (MCP)，并向受支持的 AI 客户端公开租户范围的工具。当前的产品工具集为*只读*：它检索和分析 DII 数据，但不修改基础架构或 DII 资源。
+DII MCP 服务器实施模型上下文协议（MCP），并向受支持的 AI 客户端公开租户范围的工具。当前的产品工具集为*只读*：它检索和分析 DII 数据，但不修改基础架构或 DII 资源。
 
 
 
 [[what-you-can-investigate]]
 == 您可以调查的内容
 
-* *基础架构清单：*存储、虚拟化、Kubernetes、ONTAP、Azure NetApp Files、StorageGRID 及相关资源。
-* *性能和容量：*对象指标、分组聚合和时间序列行为。
-* *日志和事件：* 发现日志类型、搜索事件和构建事件计数直方图。
+* *基础架构清单：*存储、虚拟化、Kubernetes、ONTAP、Azure NetApp Files、StorageGRID 以及相关资源。
+* *性能和容量：* 对象指标、分组聚合和时间序列行为。
+* *日志和事件：*发现日志类型、搜索事件并构建事件计数直方图。
 * *警报：* 检查活动警报、监控定义、严重程度和纠正指导。
-* *收集运行状况：* 查看采集单元、数据源、支持的收集器类型和 Kubernetes 收集器版本。
-* *通知态势：*检查维护窗口、通知规则和 webhook 目标类型。
+* *收集运行状况：*查看采集单元、数据源、支持的收集器类型和 Kubernetes 收集器版本。
+* *通知态势：* 检查维护窗口、通知规则和 webhook 目标类型。
 
 
 
@@ -44,7 +44,7 @@ DII MCP 服务器实现模型上下文协议 (MCP)，并向受支持的 AI 客�
 [[connect-an-ai-client]]
 === 连接 AI 客户端
 
-请参阅 link:mcp_setup.html["设置 DII MCP 服务器"] 了解 Cursor、Claude Code、VS Code、Codex 或其他兼容 MCP 的客户端。
+请按照 link:mcp_setup.html["设置 DII MCP 服务器"] 针对 Cursor、Claude Code、VS Code、Codex 或其他 MCP 兼容客户端进行操作。
 
 
 
@@ -58,7 +58,7 @@ DII MCP 服务器实现模型上下文协议 (MCP)，并向受支持的 AI 客�
 [[start-with-an-operational-workflow]]
 === 从运营工作流程开始
 
-当您已经知道所需的结果时，请使用link:mcp_recipe_overview.html["配方"]：
+当您已经知道所需的结果时，请使用 link:mcp_recipe_overview.html["配方"]：
 
 * 清单收集运行状况
 * 评估存储运行状况
@@ -90,11 +90,11 @@ DII MCP 服务器实现模型上下文协议 (MCP)，并向受支持的 AI 客�
 == 重要限制
 
 * 当前所有产品工具均为只读。
-* 对象、性能和日志查询强制执行有界时间窗口。使用 30 天或更短的窗口，除非工具页面明确记录了较小的限制。
+* 对象、性能和日志查询强制执行有界时间窗口。使用 30 天或更短的窗口，除非工具页面明确记录较小的限制。
 * 查询字段必须与为选定资源类型返回的元数据匹配。
-* 大型结果会进行分页或限制上限。
+* 大量结果会被分页或限制数量。
 * 工具可用性和返回的数据取决于租户的收集器、启用的功能和用户权限。
-* 请勿请求或复制完整的 webhook 端点地址。请参阅 link:mcp_security.html["安全与隐私"]。
+* 请勿请求或复制完整的 Webhook 端点地址。请参阅 link:mcp_security.html["安全与隐私"]。
 
 
 
@@ -104,5 +104,5 @@ DII MCP 服务器实现模型上下文协议 (MCP)，并向受支持的 AI 客�
 
 . link:mcp_setup.html["连接您的客户端"]。
 . 请尝试 link:mcp_recipe_environment_inventory.html["环境清单配方"]。
-. 如果查询被拒绝或返回意外结果，请查看 link:mcp_troubleshooting.html["故障排除"]。
+. 如果查询被拒绝或返回意外结果，请查看link:mcp_troubleshooting.html["故障排除"]。
 

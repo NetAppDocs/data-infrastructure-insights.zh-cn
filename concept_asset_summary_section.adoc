@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: concept_asset_summary_section.html 
+summary: 9dc6acc34988c6b63dea4000b689a580 
+keywords: asset, summary, landing page, topology, auto, refresh 
+---
+= 29128cb5215fb2e80e1ee7a20fe86126
+:hardbreaks:
+:allow-uri-read: 
+
+
+[role="lead"]
+1928ab7a05e24c9e7bde67fb9a528d0d
+
+a529577c999092a8f244f1064ee16c6e
+
+65ef2d3ac9b8dfdd7b17c10af9a602da
+
+ce7951793151a0f69487b414bdd8b498
+
+您可以单击任意资产链接来查看其资产页面。例如，如果您正在查看存储节点，则可以单击链接来查看与其关联的存储的资产页面。
+
+74202c0b51dce91cb2d7ff8a3db7b041
+
+
+NOTE: 您可能会注意到，某些存储资产的卷容量可能显示大于 100%。这是因为与卷容量相关的元数据是资产报告的已消耗容量数据的一部分。
+
+bd7396064bde19099b129313d4e4960b
+
+
+
+[[topology]]
+== 99571eecaa5c5d622bb0d1f855752d5f
+
+aa2a179e15d11223c669195106a7e555
+
+575c9466566e751977f9292115eb4416
+
+* 应用程序
+* 磁盘
+* 网络结构
+* 主机
+* 内部体积
+* 端口
+* 交换机
+* 虚拟机
+* VMDK
+* 卷
+
+
+3cb6e63269aa6edf3cc66859826feb7d

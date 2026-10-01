@@ -17,7 +17,7 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 使用此配方可了解如何在不暴露 Webhook 端点地址的情况下路由和抑制 DII 警报。
 
 
-NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，因此可能会发生变化。
+NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因此可能会发生变化。
 
 
 
@@ -48,7 +48,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 []
 ====
-审查 DII 通知态势。汇总活动和非活动通知规则、每个规则的监视器或资源范围、按集成类型划分的 Webhook 目标计数以及当前维护窗口。仅返回目标名称、引擎类型和状态——绝不返回端点地址。
+审查 DII 通知态势。汇总活动和非活动的通知规则、每个规则的监视器或资源范围、按集成类型划分的 Webhook 目标计数以及当前的维护窗口。仅返回目标名称、引擎类型和状态——绝不返回端点地址。
 
 ====
 
@@ -57,7 +57,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 == 代理工作流
 
 . 列出通知规则。
-. 将规则分类为活动、非活动、即将过期或无到期时间。
+. 将规则分类为活动、非活动、即将过期或无到期日。
 . 总结每个规则的表达式范围：
 +
 ** 监视器名称或组
@@ -79,10 +79,10 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 [[security-requirement]]
 == 安全要求
 
-完整的 webhook 地址可以包含：
+完整的 Webhook 地址可以包含：
 
 * Slack 或 Teams 签名路径
-* PagerDuty 路由键
+* PagerDuty 路由密钥
 * API 令牌
 * 唯一工作流签名
 * 自定义集成凭据
@@ -90,18 +90,18 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 切勿显示、引用、总结、保留或转发地址字段。此工作流程也不需要带掩码的后缀。
 
-如果完整的端点出现在记录或共享工件中，请按照 link:mcp_security.html["安全与隐私"] 中的事件步骤进行操作。
+如果完整的端点出现在文字记录或共享工件中，请按照 link:mcp_security.html["安全与隐私"] 中的事件步骤操作。
 
 
 
 [[interpretation]]
 == 解释
 
-* 非活动规则可能是有意为之；在建议删除之前，请确认所有权。
+* 非活动规则可能是故意的；在建议删除之前，请确认所有权。
 * 宽泛的通配符表达式可能会产生通知噪音或意外路由。
 * 目标状态可能为 null 或未知；不要将其报告为已启用。
 * 成功的空维护窗口结果意味着不存在匹配的窗口。
-* 长寿命窗口可能会隐藏真正的问题，即使它在技术上是活动且有效的。
+* 长期存在的窗口可以隐藏真正的问题，即使它在技术上是活动且有效的。
 
 
 
@@ -109,7 +109,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 [[suggested-output]]
 == 建议输出
 
-. 按状态统计的规则计数
+. 规则计数（按状态）
 . 规则范围和目标类型
 . 目标计数（按引擎）
 . 活动维护窗口
@@ -124,7 +124,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 * 不要返回地址、令牌、UUID 或私有资源标识符。
 * 此工作流程检查配置，但不测试消息传递。
-* 当前工具不创建、更新、禁用或删除规则和目标。
+* 当前工具不会创建、更新、禁用或删除规则和目标。
 
 
 
@@ -134,7 +134,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 []
 ====
-哪些活动通知规则具有广泛的通配符表达式，以及它们可以匹配哪些监视器组？
+哪些活动通知规则具有广泛的通配符表达式，它们可以匹配哪些监控器组？
 
 ====
 []

@@ -4,7 +4,7 @@ permalink: mcp_recipe_environment_inventory.html
 summary: 使用此方案可了解 DII 的采集单元和配置的数据源是否已成功连接、报告和收集。 
 keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
 ---
-= 清单环境和收集运行状况
+= 清单环境和采集运行状况
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -17,7 +17,7 @@ keywords: MCP, DII, Data Infrastructure Insights, AI assistant
 使用此方案可了解 DII 的采集单元和配置的数据源是否已成功连接、报告和收集。
 
 
-NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，因此可能会发生变化。
+NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因此可能会发生变化。
 
 
 
@@ -47,7 +47,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 
 []
 ====
-查看我的 DII 收集环境。按连接状态和报告新鲜度汇总采集单元，然后按采集状态和供应商汇总配置的数据源。突出显示从未报告的采集单元、未分配采集器的单元、失败的采集器和陈旧的成功采集。不要显示 IP 地址、UUID 或凭据。
+查看我的 DII 收集环境。按连接状态和报告新鲜度汇总采集单元，然后按采集状态和供应商汇总配置的数据源。突出显示从未报告的采集单元、未分配采集器的单元、失败的采集器以及陈旧的成功采集。不要显示 IP 地址、UUID 或凭据。
 
 ====
 
@@ -67,7 +67,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 ** 数据源为零的 AU
 ** 失败的收集器
 ** 未成功采集的采集器
-** 最后一次采集异常陈旧的成功收集器
+** 成功的收集器，其最后一次采集时间异常久远
 
 
 . 仅检索例外情况的完整 AU 或收集器详细信息。
@@ -82,10 +82,10 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 请使用以下区分：
 
 * *已连接并报告：* AU 已连接并具有最近的 `lastReported`值。
-* *已连接但从未报告：* 存在连接，但未建立成功的遥测报告。
+* *已连接但从未报告：*存在连接，但未建立成功的遥测报告。
 * *心跳失败：*调查 AU 主机、网络路径和服务。
 * *收集器失败：*检查收集器最近的轮询活动、包状态、配置和最后一次成功获取。
-* *未分配收集器：* 这可能是有意为之；在将其视为故障之前请先进行验证。
+* *无指定收集器：* 这可能是有意的；在将其视为故障之前进行验证。
 
 
 支持的数据源类型目录描述了 DII 可以收集的产品。它不能证明这些产品是在租户中配置的。
@@ -109,7 +109,7 @@ NOTE: DII MCP 是一项 link:concept_preview_features.html["预览"] 功能，�
 == 限制和隐私
 
 * 避免返回 AU UUID、IP 地址、专用主机名或收集器凭据。
-* 仅凭状态值无法确定数据的新鲜度。
+* 仅有状态值并不能确定数据的新鲜度。
 * 仅检索已命名异常的详细配置。
 
 
