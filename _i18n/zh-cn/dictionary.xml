@@ -441,24 +441,10 @@
   <block id="993bb582982b324ee6465cc1d0c1a2bd" category="paragraph">自定义时间范围允许您选择最多连续 31 天。您还可以设置此范围的开始时间和结束时间。默认开始时间为所选第一天的凌晨 12:00，默认结束时间为所选最后一天的晚上 11:59。单击“应用”将把自定义时间范围应用到资产页面。</block>
   <block id="75190982e0922ca96ba831f7c3eb9037" category="paragraph">页面上的信息会根据所选的时间范围自动刷新。当前刷新率显示在摘要部分的右上角以及页面上任何相关的表格或小部件上。</block>
   <block id="773a459dc0ea8ba03d599d96cb1af7ca" category="paragraph">性能部分可以根据为资产选择的时间段显示多个指标。每个指标都显示在其自己的性能图表中。您可以根据想要查看的数据在图表中添加或删除指标和相关资产；您可以选择的指标因资产类型而异。</block>
-  <block id="9dc6acc34988c6b63dea4000b689a580" category="summary">Data Infrastructure Insights中的资产页面摘要部分概述。</block>
-  <block id="29128cb5215fb2e80e1ee7a20fe86126" category="doc">资产页面摘要部分</block>
-  <block id="1928ab7a05e24c9e7bde67fb9a528d0d" category="paragraph">资产页面的摘要部分显示有关资产的一般信息，包括是否有任何指标或绩效政策值得关注。潜在问题区域以红色圆圈表示。</block>
-  <block id="a529577c999092a8f244f1064ee16c6e" category="paragraph">摘要部分以及资产页面上的任何表格或自定义小部件中的信息都会根据所选的时间范围自动刷新。您可以在摘要部分、表格和任何自定义小部件的右上角看到当前刷新率。</block>
-  <block id="05245c9c713dbc0e818edff595a4246c" category="inline-image-macro">着陆页摘要部分示例</block>
-  <block id="65ef2d3ac9b8dfdd7b17c10af9a602da" category="paragraph"><block ref="65ef2d3ac9b8dfdd7b17c10af9a602da" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ce7951793151a0f69487b414bdd8b498" category="paragraph">注意：摘要部分显示的信息会有所不同，具体取决于您正在查看的资产类型。</block>
   <block id="77e5be94869a677b15024b30a6f71dbd" category="paragraph">您可以单击任意资产链接来查看其资产页面。例如，如果您正在查看存储节点，则可以单击链接来查看与其关联的存储的资产页面。</block>
-  <block id="74202c0b51dce91cb2d7ff8a3db7b041" category="paragraph">您可以查看与资产相关的指标。指标旁边的红色圆圈表示您可能需要诊断并解决潜在问题。</block>
   <block id="0072ea3bfe0375786c34c557c30c3890" category="admonition">您可能会注意到，某些存储资产的卷容量可能显示大于 100%。这是因为与卷容量相关的元数据是资产报告的已消耗容量数据的一部分。</block>
-  <block id="bd7396064bde19099b129313d4e4960b" category="paragraph">如果适用，您可以单击警报链接来查看与资产相关的警报和监视器。</block>
-  <block id="99571eecaa5c5d622bb0d1f855752d5f" category="section-title">拓扑</block>
-  <block id="aa2a179e15d11223c669195106a7e555" category="paragraph">在某些资产页面上，摘要部分包含查看资产拓扑及其连接的链接。</block>
-  <block id="575c9466566e751977f9292115eb4416" category="paragraph">拓扑适用于以下资产类型：</block>
   <block id="27432d6ac14dca995c573c963e1fecd8" category="list-text">内部体积</block>
   <block id="b19292cad601553e06435e12582db069" category="list-text">虚拟机</block>
-  <block id="b3e588c8b8cdde417ea31ee3bbefd9a9" category="inline-image-macro">着陆页拓扑部分的示例</block>
-  <block id="3cb6e63269aa6edf3cc66859826feb7d" category="paragraph"><block ref="3cb6e63269aa6edf3cc66859826feb7d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a9bf92fda03d47c7754371c461a7b15c" category="summary">资产页面的用户数据部分允许您为当前资产分配注释或应用程序。</block>
   <block id="c2bb4a41eb70c8ef98d0a34bf2c6b8a0" category="doc">用户数据部分</block>
   <block id="5b85956dec7b32235b467a7425211daf" category="paragraph">资产页面的用户数据部分显示并允许您更改任何用户定义的数据，例如应用程序和注释。</block>
@@ -15560,16 +15546,6 @@
   <block id="a6fa4aea2a61c78e74a437025bfc4121" category="list-text">对于性能：延迟和 IOPS 时间线以及事件速率时间线。</block>
   <block id="2f5a98a7fe17728f8b6f19bb7dde8ff4" category="list-text">对于容量：订阅之前和之后的使用情况以及每个收集器报告的原始容量。</block>
   <block id="7db2da5d72ca4cfd4dc3591cdb8b5f7a" category="paragraph">在 Data Infrastructure Insights 中使用 Help ++&gt;++ Support 打开案例。</block>
-  <block id="add9fe580da121a40e7d835cf08a489d" category="cell">仅限数据 SVM（无无限卷）。支持的子类型：default、sync++_++source、sync++_++destination。按设计，将跳过对 DP 目标 SVM 的审核。</block>
-  <block id="689b820747aa6a4d860f2786eb806378" category="cell">卷快照：全部（尽可能限定在 cloudsecure++_*++ 范围内）</block>
-  <block id="a0f6fb0a8302b109f912737c2869ae71" category="paragraph">创建角色和用户（运行前替换 ++&lt;++vservername++&gt;++）：</block>
-  <block id="28c033259ae71cab82483e5eb721e1c5" category="paragraph">*持久存储（显示集群模式；为 SVM 模式添加 -vserver ++&lt;++vservername++&gt;++）：*</block>
-  <block id="8de1a3a6bc3dbbbe06d26a1bcaf978d0" category="paragraph">*Protobuf（显示集群模式；为 SVM 模式添加 -vserver ++&lt;++vservername++&gt;++）：*</block>
-  <block id="58322ab2ae3213de6b39a5124b6c922f" category="list-text">选择 Workload Security ++&gt;++ Collectors ++&gt;++ &amp;#43;Data Collectors。</block>
-  <block id="c421bfa9e5f3f2069af785152ca7a7ab" category="paragraph">*Important:* 默认排除的文件扩展名：根据设计，Workload Security 将 FPolicy 范围配置为排除 ini 和 DS++_++Store 扩展名。这些文件的事件在 ONTAP 上被过滤，并且永远不会到达 Workload Security，因此它们不会出现在 Activity Forensics 中。这与客户可配置的警报排除是分开的。这是预期行为；在 UI 中无法配置对这些扩展名的审核。</block>
-  <block id="2900a29dbf701a91de01303efc97eac8" category="paragraph">暂停和恢复适用于数据收集器，而不是代理。您可以从 UI（收集器 ++&gt;++ 收集器 ++&gt;++ 选项菜单）或 API 运行它们。</block>
-  <block id="8939329780680219f89b75f98718d19d" category="paragraph">如果收集器后来进入“错误”或“降级”状态，请打开“状态 ++&gt;++ 更多详细信息”，然后按照“ONTAP SVM 数据收集器故障排除”进行操作。运行时条件（如重复收集器、事件速率过载、暂停收集器、持久存储放置、MetroCluster 转换、缺少活动和身份解析）不属于预保存的测试连接工作流程。</block>
-  <block id="ecfa6237a8a218fc5c797ee0578679c7" category="list-text">确认收集器达到 Running 状态，并且在实际客户端 I/O 后，事件出现在 Workload Security ++&gt;++ Activity Forensics 中。</block>
   <block id="a0d5cf132ea60556950b6db3b75e1331" category="summary">理解这些概念有助于 AI 助手选择正确的工具并构建有效的查询。</block>
   <block id="3e22aa14b911d8584c3de2cb2d09c8e3" category="doc">DII MCP 概念和数据模型</block>
   <block id="845c2e1f81c7167073b0b3f255d00af4" category="admonition">DII MCP 是一项 <block ref="312c0c6b46ba32b4b11ba8c9da5788ed" category="inline-link-macro-rx"></block> 功能，因此可能会发生变化。</block>
@@ -16286,4 +16262,32 @@
   <block id="6ce78279e85ae6fe9f97051d8bc3c13e" category="sidebar">通知态势</block>
   <block id="b349cdb464a16150566e060380a1b77f" category="sidebar">性能根本原因分析</block>
   <block id="aa70f40c4ba41bbc875ee1b79a091d75" category="sidebar">存储运行状况</block>
+  <block id="5eb14926e2b0223f53564d7659171c1c" category="admonition">您可能还会注意到，FlexGroups 的容量数值可能显示为“0”，而成员卷则显示具体数值。在 DII 中，FlexGroups 本身会将大多数容量指标清零，而成员卷则包含这些指标。问题在于重复计算——如果两个实体都报告完整的容量指标，DII 将会把相同的容量报告两次（一次在 FlexGroup 上，一次在成员卷上）。优先考虑成员卷级别的报告可以支持关键用例，同时避免这种重复。</block>
+  <block id="4613ec50b199e8fe1a45e8365d1126ed" category="paragraph">+ 在这种情况下，要在查询、仪表板或监视器中报告 FlexGroup 的容量，请使用组成部分对其父 FlexGroup 的引用。然后，您可以按该引用对组成部分进行分组，并聚合其容量值。</block>
+  <block id="77064528bd054f741f0468e85617bf35" category="paragraph">+ DII 故意将 FlexGroup 父级的容量设置为零；ONTAP 本身仍然报告容量。这适用于容量/效率指标，而不是性能指标。建议按组 ID 对成员进行分组，因为组名可能不是全局唯一的。</block>
+  <block id="296cadc668db601a7fa80621086c9468" category="paragraph">VM Analyzer 视图中的一个新切换按钮允许您隐藏没有数据存储的已挂载卷，从而提供更清晰的视图，以简化 VM 的故障排除。</block>
+  <block id="b6bf3aac3b33a207b8b6bbe0fc935a91" category="inline-image-macro">VM Analyzer 显示隐藏没有数据存储的已挂载卷的切换按钮</block>
+  <block id="6915ad7aa1643475defe5f685b410352" category="paragraph"><block ref="6915ad7aa1643475defe5f685b410352" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d0e9b5f06f461adaa0050f06dafe9575" category="inline-image-macro">资产详细信息滑出面板显示处于只读模式的用户数据，铅笔图标用于进入编辑模式，宽度=400</block>
+  <block id="c2634a77f707f71f03af6181a842b88a" category="paragraph"><block ref="c2634a77f707f71f03af6181a842b88a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="58cc13c80c3e227fbe00047a9b822edc" category="inline-image-macro">资产着陆页，用户数据在编辑模式下打开并准备保存更改，宽度=200</block>
+  <block id="194f62cbfe18d1624a3706d766ab06ed" category="paragraph"><block ref="194f62cbfe18d1624a3706d766ab06ed" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e5e5f8878927980995e10a5cedd8b308" category="paragraph">容量架构包含与整个基础架构的存储容量、利用率和调配相关的表格和指标。使用此架构可分析容量趋势、预测未来需求并优化资源分配。</block>
+  <block id="62c9105acfc20634e0945ecfaf29d0bb" category="paragraph">容量效率架构提供了有关存储效率的指标，包括数据缩减率和优化机会。使用此架构可监控和分析重复数据删除和压缩等存储技术的有效性。</block>
+  <block id="d0a80c4370fe5dfc7960c7b868126b76" category="paragraph">文件系统利用率架构跟踪跨文件系统、主机和计算资源的存储消耗和使用模式。使用此架构可识别容量热点并优化文件系统级别的存储分配。</block>
+  <block id="b2200689dae4036b4813579eff31d56c" category="paragraph">清单架构包含全面的资产和对象数据，包括存储系统、主机、应用程序和注释。这是数据仓库中最大的架构，为资产管理和基础架构可见性奠定了基础。</block>
+  <block id="d9a7965bf43985ef0fc40616a6785117" category="paragraph">性能架构提供了有关存储、主机、卷和应用程序的 I/O、延迟、吞吐量和其他性能指标的时间序列指标。使用此架构可以分析性能趋势、识别瓶颈并优化工作负载放置。</block>
+  <block id="18b7f15f593dc47ea50fd485e859a539" category="paragraph">端口架构包含网络端口和交换机数据，包括端口连接、状态以及与连接设备的关系。使用此架构可以分析存储基础架构中的网络拓扑和结构健康状况。</block>
+  <block id="1bccf90180c31adab404747497809cea" category="cell">仅限数据 SVM（无无限卷）。支持的子类型：default、sync_source、sync_destination。按设计，将跳过对 DP 目标 SVM 的审核。</block>
+  <block id="aadaea56453502b49c3bb1d83460b925" category="cell">卷快照：全部（如果可能，将范围限制为 cloudsecure_*）</block>
+  <block id="7f1025af379bb72826214683cac22df7" category="paragraph">创建角色和用户（在运行前替换 &lt;vservername&gt;）：</block>
+  <block id="adf604179202ac8d7549519f9ce15c55" category="paragraph">*持久存储（显示集群模式；为 SVM 模式添加 -vserver &lt;vservername&gt;）：*</block>
+  <block id="2ad63734d5ea88b691fcec8abfa334e6" category="paragraph">*Protobuf（显示集群模式；为 SVM 模式添加 -vserver &lt;vservername&gt;）：*</block>
+  <block id="03a48f775ff6c08509430c660d47baaa" category="list-text">选择 Workload Security &gt; Collectors &gt; &amp;#43;Data Collectors。</block>
+  <block id="d78aa3ef141641a0a1fc5a86295f9836" category="paragraph">*Important:* 默认排除的文件扩展名：根据设计，Workload Security 将 FPolicy 作用域配置为排除 ini 和 DS_Store 扩展名。这些文件的事件在 ONTAP 上被过滤，并且永远不会到达 Workload Security，因此它们不会出现在 Activity Forensics 中。这与客户可配置的警报排除是分开的。这是预期行为；在 UI 中无法配置对这些扩展名的审核。</block>
+  <block id="24dda3b59a8373ca61cb08f3e04c9cce" category="paragraph">暂停和恢复适用于数据收集器，而不是代理。您可以从 UI（收集器 &gt; 收集器 &gt; 选项菜单）或 API 运行它们。</block>
+  <block id="77b5c5ee27c770993c6041b7b3f0105c" category="paragraph">如果收集器后来进入“错误”或“降级”状态，请打开“状态” &gt; “更多详细信息”，然后按照“ONTAP SVM 数据收集器故障排除”进行操作。运行时条件（如重复收集器、事件速率过载、暂停收集器、持久存储放置、MetroCluster 转换、缺少活动和身份解析）不属于预保存的测试连接工作流程。</block>
+  <block id="954c32784463d0103797201c7694bdf9" category="list-text">确认收集器达到 Running，并且事件在实际客户端 I/O 后出现在 Workload Security &gt; Activity Forensics 中。</block>
+  <block id="a82c02e71992fe00dd9609cb03521444" category="cell">在 DII 中，FlexGroups 的容量数值为“0”。成分卷正常，但 FlexGroup 未显示所有成分卷的汇总容量。</block>
+  <block id="53faddfe1edffe14cfa22b21a8e4e255" category="cell">这是有意为之的。大多数容量指标是在 FlexGroup 的成分卷上报告的，而不是在父 FlexGroup 上。在两者上报告相同的容量会导致重复计算。倾向于成分卷级别的报告支持关键用例，同时避免了这种重复。要在查询、仪表板或监视器中报告 FlexGroup 的容量，请使用成分卷对其父 FlexGroup 的引用。根据该引用对成分卷进行分组，并聚合其容量值。DII 故意将 FlexGroup 父级的容量设置为零；ONTAP 本身仍然报告容量。这适用于容量/效率指标，而不是性能指标。建议按 Group ID 对成分卷进行分组，因为 Group Name 可能不是全局唯一的。</block>
 </blocks>

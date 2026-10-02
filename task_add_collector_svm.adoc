@@ -53,7 +53,7 @@ ____
 | ONTAP Select | 支持。 
 
 
-| SVM 类型/子类型 | 仅限数据 SVM（无无限卷）。支持的子类型：default、sync++_++source、sync++_++destination。按设计，将跳过对 DP 目标 SVM 的审核。 
+| SVM 类型/子类型 | 仅限数据 SVM（无无限卷）。支持的子类型：default、sync_source、sync_destination。按设计，将跳过对 DP 目标 SVM 的审核。 
 
 
 | data-fpolicy-client 服务策略 | ONTAP 9.8 及更高版本要求（请参阅服务策略）。在早期版本中，无需设置。 
@@ -141,15 +141,15 @@ _建议使用集群管理 IP {plus} SVM 名称。如果您必须使用 SVM 模�
 
 [listing]
 ----
-security login password -username vsadmin -vserver ++<++svmname++>++
+security login password -username vsadmin -vserver <svmname>
 
-security login unlock -username vsadmin -vserver ++<++svmname++>++
+security login unlock -username vsadmin -vserver <svmname>
 ----
 *使用专用 SVM 管理 LIF。如果不可用，请将数据 LIF 防火墙策略设置为 mgmt:*
 
 [listing]
 ----
-network interface modify -lif ++<++SVM++_++data++_++LIF++_++name++>++ -firewall-policy mgmt
+network interface modify -lif <SVM_data_LIF_name> -firewall-policy mgmt
 ----
 .SVM 登录输出示例。
 image:ontap-svm-login-output.png["示例 SVM 登录输出,title=\"示例 SVM 登录输出\",width=646,height=164"]
@@ -180,7 +180,7 @@ Test Connection 使用收集器表单中输入的 ONTAP 帐户运行。在运行
 | 管理员快捷方式 | role DEFAULT: readonly (cluster) — 满足读取检查；fpolicy 仍然需要全部 | — 
 
 
-| Snapshot | 卷快照：全部（尽可能限定在 cloudsecure++_*++ 范围内） | 任意 
+| Snapshot | 卷快照：全部（如果可能，将范围限制为 cloudsecure_*） | 任意 
 
 
 | 基于 EMS 的监控 | 事件目录、事件筛选器、事件通知、事件通知目标、安全证书：全部 | 任意 
@@ -215,10 +215,10 @@ ____
 
 [listing]
 ----
-security login delete -user-or-group-name csuser -application ++*++
-security login role delete -role csrole -cmddirname ++*++
-security login rest-role delete -role csrestrole -api ++*++
-security login rest-role delete -role arwrole -api ++*++
+security login delete -user-or-group-name csuser -application *
+security login role delete -role csrole -cmddirname *
+security login rest-role delete -role csrestrole -api *
+security login rest-role delete -role arwrole -api *
 ----
 创建角色和用户（以群集管理员身份运行）：
 
@@ -226,7 +226,7 @@ security login rest-role delete -role arwrole -api ++*++
 ----
 security login role create -role csrole -cmddirname DEFAULT -access readonly
 security login role create -role csrole -cmddirname "vserver fpolicy" -access all
-security login role create -role csrole -cmddirname "volume snapshot" -access all -query "-snapshot cloudsecure++_*++"
+security login role create -role csrole -cmddirname "volume snapshot" -access all -query "-snapshot cloudsecure_*"
 security login role create -role csrole -cmddirname "event catalog" -access all
 security login role create -role csrole -cmddirname "event filter" -access all
 security login role create -role csrole -cmddirname "event notification destination" -access all
@@ -246,37 +246,37 @@ security login create -user-or-group-name csuser -application http -authmethod p
 
 [listing]
 ----
-security login delete -user-or-group-name csuser -application ++*++ -vserver ++<++vservername++>++
-security login role delete -role csrole -cmddirname ++*++ -vserver ++<++vservername++>++
-security login rest-role delete -role csrestrole -api ++*++ -vserver ++<++vservername++>++
+security login delete -user-or-group-name csuser -application * -vserver <vservername>
+security login role delete -role csrole -cmddirname * -vserver <vservername>
+security login rest-role delete -role csrestrole -api * -vserver <vservername>
 ----
-创建角色和用户（运行前替换 ++<++vservername++>++）：
+创建角色和用户（在运行前替换 <vservername>）：
 
 [listing]
 ----
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname DEFAULT -access none
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname "network interface" -access readonly
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname version -access readonly
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname volume -access readonly
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname vserver -access readonly
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname "vserver fpolicy" -access all
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname "volume snapshot" -access all
-security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole -vserver ++<++vservername++>++
-security login create -user-or-group-name csuser -application http -authmethod password -role csrole -vserver ++<++vservername++>++
+security login role create -vserver <vservername> -role csrole -cmddirname DEFAULT -access none
+security login role create -vserver <vservername> -role csrole -cmddirname "network interface" -access readonly
+security login role create -vserver <vservername> -role csrole -cmddirname version -access readonly
+security login role create -vserver <vservername> -role csrole -cmddirname volume -access readonly
+security login role create -vserver <vservername> -role csrole -cmddirname vserver -access readonly
+security login role create -vserver <vservername> -role csrole -cmddirname "vserver fpolicy" -access all
+security login role create -vserver <vservername> -role csrole -cmddirname "volume snapshot" -access all
+security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole -vserver <vservername>
+security login create -user-or-group-name csuser -application http -authmethod password -role csrole -vserver <vservername>
 ----
 
 
 [[feature-specific-permissions]]
 === 特定功能的权限
 
-*持久存储（显示集群模式；为 SVM 模式添加 -vserver ++<++vservername++>++）：*
+*持久存储（显示集群模式；为 SVM 模式添加 -vserver <vservername>）：*
 
 [listing]
 ----
 security login role create -role csrole -cmddirname "vserver fpolicy" -access all
 security login role create -role csrole -cmddirname "job show" -access readonly
 ----
-*Protobuf（显示集群模式；为 SVM 模式添加 -vserver ++<++vservername++>++）：*
+*Protobuf（显示集群模式；为 SVM 模式添加 -vserver <vservername>）：*
 
 [listing]
 ----
@@ -290,7 +290,7 @@ security login role create -role csrole -cmddirname "vserver fpolicy" -access al
 == 配置和测试数据收集器
 
 . 以管理员或账号所有者身份登录 Data Infrastructure Insights。
-. 选择 Workload Security ++>++ Collectors ++>++ &#43;Data Collectors。
+. 选择 Workload Security > Collectors > &#43;Data Collectors。
 . 将鼠标悬停在 NetApp SVM 图块上并单击 &#43;监控。
 . 输入以下字段。暂时不要保存收集器。
 
@@ -337,7 +337,7 @@ security login role create -role csrole -cmddirname "vserver fpolicy" -access al
 |===
 [quote]
 ____
-*Important:* 默认排除的文件扩展名：根据设计，Workload Security 将 FPolicy 范围配置为排除 ini 和 DS++_++Store 扩展名。这些文件的事件在 ONTAP 上被过滤，并且永远不会到达 Workload Security，因此它们不会出现在 Activity Forensics 中。这与客户可配置的警报排除是分开的。这是预期行为；在 UI 中无法配置对这些扩展名的审核。
+*Important:* 默认排除的文件扩展名：根据设计，Workload Security 将 FPolicy 作用域配置为排除 ini 和 DS_Store 扩展名。这些文件的事件在 ONTAP 上被过滤，并且永远不会到达 Workload Security，因此它们不会出现在 Activity Forensics 中。这与客户可配置的警报排除是分开的。这是预期行为；在 UI 中无法配置对这些扩展名的审核。
 
 ____
 
@@ -402,14 +402,14 @@ ____
 
 [listing]
 ----
-net int service-policy create -policy only++_++data++_++fpolicy -vserver ++<++svm++>++ ++\++ \
+net int service-policy create -policy only_data_fpolicy -vserver <svm> \
 -allowed-addresses 0.0.0.0/0 -services data-cifs,data-nfs,data,-core,data-fpolicy-client
 ----
 验证 LIF：
 
 [listing]
 ----
-network interface show -vserver ++<++svm++>++ -fields service-policy,status-admin,status-oper
+network interface show -vserver <svm> -fields service-policy,status-admin,status-oper
 ----
 在 9.8 之前的 ONTAP 上，无需设置 data-fpolicy-client；具有 data（up）角色且承载 NFS 和/或 CIFS 的 LIF 即可。
 
@@ -427,8 +427,8 @@ network interface show -vserver ++<++svm++>++ -fields service-policy,status-admi
 
 [listing]
 ----
-multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !++*++cloudsecure++_*++"
-multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !++*++cloudsecure++_*++"
+multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !*cloudsecure_*"
+multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !*cloudsecure_*"
 multi-admin-verify rule delete -operation set # allow user blocking
 ----
 
@@ -490,7 +490,7 @@ ____
 [[pause-and-resume-a-collector]]
 == 暂停和恢复收集器
 
-暂停和恢复适用于数据收集器，而不是代理。您可以从 UI（收集器 ++>++ 收集器 ++>++ 选项菜单）或 API 运行它们。
+暂停和恢复适用于数据收集器，而不是代理。您可以从 UI（收集器 > 收集器 > 选项菜单）或 API 运行它们。
 
 暂停正在运行的收集器会从 ONTAP 中删除 FPolicy 配置。暂停时，没有事件流，也不会向任何方向发送数据。
 
@@ -557,7 +557,7 @@ image:ws-agent-selector.png["用于迁移收集器的代理选择器,title=\"用
 
 测试连接包括设置时的连接、凭据、数据 LIF、分配端口上的回调连接、选择 SMB 时的 CIFS 服务器检查以及集群模式下的功能访问。测试成功后，请勿手动重复这些检查。
 
-如果收集器后来进入“错误”或“降级”状态，请打开“状态 ++>++ 更多详细信息”，然后按照“ONTAP SVM 数据收集器故障排除”进行操作。运行时条件（如重复收集器、事件速率过载、暂停收集器、持久存储放置、MetroCluster 转换、缺少活动和身份解析）不属于预保存的测试连接工作流程。
+如果收集器后来进入“错误”或“降级”状态，请打开“状态” > “更多详细信息”，然后按照“ONTAP SVM 数据收集器故障排除”进行操作。运行时条件（如重复收集器、事件速率过载、暂停收集器、持久存储放置、MetroCluster 转换、缺少活动和身份解析）不属于预保存的测试连接工作流程。
 
 
 
@@ -565,6 +565,6 @@ image:ws-agent-selector.png["用于迁移收集器的代理选择器,title=\"用
 == 完成后
 
 * 在“已安装的数据收集器”页面上，使用选项菜单编辑或重新启动收集器。
-* 确认收集器达到 Running 状态，并且在实际客户端 I/O 后，事件出现在 Workload Security ++>++ Activity Forensics 中。
+* 确认收集器达到 Running，并且事件在实际客户端 I/O 后出现在 Workload Security > Activity Forensics 中。
 * 验证用户名解析（而不是 SID）；如果未解析，请检查用户目录收集器。
 

@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, capacity
 :imagesdir: ./media/
 
 
+[role="lead"]
+容量架构包含与整个基础架构的存储容量、利用率和调配相关的表格和指标。使用此架构可分析容量趋势、预测未来需求并优化资源分配。
+
 来源：*dwh_capacity* OData 端点—Data Infrastructure Insights
 
 找到的表格：*44* | 关联：*92*

@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, ports
 :imagesdir: ./media/
 
 
+[role="lead"]
+端口架构包含网络端口和交换机数据，包括端口连接、状态以及与连接设备的关系。使用此架构可以分析存储基础架构中的网络拓扑和结构健康状况。
+
 来源：*dwh_ports* OData 端点—Data Infrastructure Insights
 
 找到的表格：*7* | 关联：*4*
