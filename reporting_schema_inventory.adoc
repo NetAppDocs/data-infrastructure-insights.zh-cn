@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, inventory
 :imagesdir: ./media/
 
 
+[role="lead"]
+清单架构包含全面的资产和对象数据，包括存储系统、主机、应用程序和注释。这是数据仓库中最大的架构，为资产管理和基础架构可见性奠定了基础。
+
 来源：*dwh_inventory* OData 端点—Data Infrastructure Insights
 
 找到的表格：*106* | 关联：*171*

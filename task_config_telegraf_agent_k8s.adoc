@@ -288,7 +288,6 @@ agent:
 事件日志
 
 * ci-fluent-bit
-* ci-kubernetes-事件导出器
 
 
 网络性能和地图
@@ -462,26 +461,6 @@ The following checks were performed on each of these signatures:
 | 为什么我看到两个监控操作员 pod 正在运行，一个名为 netapp-ci-monitoring-operator-<pod>，另一个名为 monitoring-operator-<pod>？ | 自 2023 年 10 月 12 日起， Data Infrastructure Insights已重构了 Operator，以便更好地服务我们的用户；为了完全采用这些更改，您必须<<uninstalling,删除旧的操作员>>和<<installing-the-kubernetes-monitoring-operator,安装新的>>。 
 
 
-| 我的 kubernetes 事件意外停止向Data Infrastructure Insights报告。  a| 
-检索事件导出器 pod 的名称：
-
- `kubectl -n netapp-monitoring get pods |grep event-exporter |awk '{print $1}' |sed 's/event-exporter./event-exporter/'`
-它应该是“netapp-ci-event-exporter”或“event-exporter”。接下来编辑监控代理 `kubectl -n netapp-monitoring edit agent`，并设置 LOG_FILE 的值以反映上一步中找到的适当的事件导出器 pod 名称。更具体地说，LOG_FILE 应该设置为“/var/log/containers/netapp-ci-event-exporter.log”或“/var/log/containers/event-exporter*.log”
-
-....
-fluent-bit:
-...
-- name: event-exporter-ci
-  substitutions:
-  - key: LOG_FILE
-    values:
-    - /var/log/containers/netapp-ci-event-exporter*.log
-...
-....
-或者，也可以<<uninstalling,卸载>>和<<installing-the-kubernetes-monitoring-operator,重新安装>>代理人。
-
-
-
 | 我看到 Kubernetes Monitoring Operator 部署的 pod 由于资源不足而崩溃。 | 参考 Kubernetes Monitoring Operatorlink:telegraf_agent_k8s_config_options.html["配置选项"]根据需要增加 CPU 和/或内存限制。 
 
 
@@ -489,9 +468,6 @@ fluent-bit:
 
 
 | 运行 Kubernetes Operator 升级后，netapp-ci-kube-state-metrics pod 无法启动，抛出 ErrImagePull（无法拉取图像）。 | 尝试手动重置 pod。 
-
-
-| 在日志分析下，我的 Kubernetes 集群中观察到“事件因超过 maxEventAgeSeconds 而被丢弃”消息。 | 修改 Operator _agentconfiguration_，将 _event-exporter-maxEventAgeSeconds_（即增加到 60s）、_event-exporter-kubeQPS_（即增加到 100）和 _event-exporter-kubeBurst_（即增加到 500）增加。有关这些配置选项的更多详细信息，请参阅link:telegraf_agent_k8s_config_options.html["配置选项"]页。 
 
 
 | Telegraf 因可锁定内存不足而发出警告或崩溃。 | 尝试增加底层操作系统/节点中 Telegraf 的可锁定内存限制。如果无法增加限制，请修改 NKMO 代理配置并将 _unprotected_ 设置为 _true_。这将指示 Telegraf 不要尝试保留锁定的内存页面。虽然这可能会带来安全风险，因为解密的秘密可能会被交换到磁盘，但它允许在无法保留锁定内存的环境中执行。有关 _unprotected_ 配置选项的更多详细信息，请参阅link:telegraf_agent_k8s_config_options.html["配置选项"]页。 

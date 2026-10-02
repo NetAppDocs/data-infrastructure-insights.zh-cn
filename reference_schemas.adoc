@@ -17,6 +17,4 @@ keywords: dwh, data warehouse, schema, reporting
 这些架构表在此处提供，作为 Data Infrastructure Insights 报告的参考。
 
 
-NOTE: 报告功能可在Data Infrastructure Insights中使用link:concept_subscribing_to_cloud_insights.html["高级版"]。
-
-link:reporting_schema_capacity.html["架构表 - 容量"] link:reporting_schema_capacity_efficiency.html["架构表 - 容量效率"] link:reporting_schema_fs_util.html["架构表 - 文件系统利用率"] link:reporting_schema_inventory.html["架构表 - 清单"] link:reporting_schema_performance.html["架构表 - 性能"] link:reporting_schema_ports.html["架构表 - 端口"]
+NOTE: 报告功能在 Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["高级版"] 中可用。link:reporting_schema_capacity.html["架构表 - 容量"] link:reporting_schema_capacity_efficiency.html["架构表 - 容量效率"] link:reporting_schema_fs_util.html["架构表 - 文件系统利用率"] link:reporting_schema_inventory.html["架构表 - 清单"] link:reporting_schema_performance.html["架构表 - 性能"] link:reporting_schema_ports.html["架构表 - 端口"]

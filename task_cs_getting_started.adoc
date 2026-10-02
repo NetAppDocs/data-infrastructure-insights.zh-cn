@@ -14,32 +14,111 @@ summary: 部署工作负载安全代理和数据收集器，以监控用户活�
 
 
 [role="lead"]
-工作负载安全功能可帮助您监控用户活动并检测存储环境中的潜在安全威胁。在开始监控之前，您需要配置代理、数据收集器和目录服务，为全面的安全监控奠定基础。
+Workload Security 监控存储上的用户活动并检测潜在的安全威胁。您在环境中安装的代理托管收集器，这些收集器从存储系统收集文件和用户访问数据，并从目录服务器收集用户信息。
 
-工作负载安全系统使用代理从存储系统收集访问数据并从目录服务服务器收集用户信息。
+按顺序完成以下任务。每个任务都依赖于前一个任务，因此在连接其 Agent 之前无法添加收集器，并且在目录收集器存在之前，活动不会解析为用户名。
 
-在开始收集数据之前，您需要配置以下内容：
 
-[cols="2*"]
+
+[[setup-at-a-glance]]
+== 设置一览
+
+[cols="1,2,2"]
+|===
+| 任务 | 它为您提供了什么 | 如何查找详细信息 
+
+
+| *1.调整 Agent 主机的大小并做好准备* | 容量足以满足您的事件速率的受支持主机。 | Workload Security Agent 要求；事件速率检查器 
+
+
+| *2.部署代理* | 可托管收集器的已连接代理。 | 部署工作负载安全代理 
+
+
+| *3.配置用户目录收集器* | 显示用户名而不是 SID 的活动和警报。 | Active Directory 收集器；LDAP 目录服务器收集器 
+
+
+| *4.配置 ONTAP SVM 数据收集器* | 来自受监控 SVM 的文件和用户访问事件。 | 配置ONTAP SVM 数据收集器 
+
+
+| *5.验证数据是否正在流动* | 确认端到端监控正常工作。 | 本页；ONTAP SVM 数据收集器故障排除 
 |===
 
 
-| 任务 | 相关信息 
+[[step-1-size-and-prepare-the-agent-host]]
+== 步骤 1 - 调整 Agent 主机的大小并做好准备
+
+在未运行其他应用程序级软件的专用 Linux 主机上安装代理。
+
+* 确认主机满足操作系统、CPU、内存和磁盘要求，并为其分配静态 IP 地址。有关支持的 Linux 版本的当前列表，请使用“添加代理”页面上支持的 Linux 版本。
+* 使用 NTP 在 Agent 主机和 ONTAP 上同步时间。
+* 在确定 Agent 将托管的收集器数量之前，请使用事件速率检查器评估峰值事件速率的规模。一个 Agent 最多支持总共 50 个所有类型的收集器，上限为每秒 20,000 个事件。
+* 规划网络路径：Agent 通过 TCP 443 访问 ONTAP 管理，通过 TCP 443 访问 Workload Security 服务，并且 ONTAP 在 TCP 35000-55000 范围内保留的端口上连接回 Agent。
 
 
-| 配置代理  a| 
-link:concept_cs_agent_requirements.html["代理要求"]
-
-link:task_cs_add_agent.html["添加代理"]
 
 
+[[step-2-deploy-the-agent]]
+== 步骤 2 - 部署代理
 
-| 配置用户目录连接器 | link:task_config_user_dir_connect.html["添加用户目录连接器"] 
+* 以管理员或帐户所有者身份登录，然后选择 *收集器 > 代理 > +代理*。
+* 如果您的网络使用代理服务器，请在运行安装程序代码段之前设置代理详细信息。
+* 单击 *复制安装程序代码段*。代码段包含一个唯一密钥，该密钥有效期为两小时，且仅适用于一个 Agent。
+* 在 Agent 主机上运行代码段，然后返回浏览器并单击 *完成设置*。
+* 确认 Agent 在 *Collectors > Agents* 上显示 *Connected*。
 
 
-| 配置数据收集器 | 单击*工作负载安全>收集器*单击要配置的数据收集器。有关收集器信息，请参阅文档中的“数据收集器供应商参考”部分。 
+
+NOTE: 打开指向 Agent 的保留 FPolicy 回调端口，包括在 Agent 主机上的防火墙中。在此路径打开之前，ONTAP 无法传递事件。
 
 
-| 创建用户帐户 | link:concept_user_roles.html["管理用户帐户"] 
-|===
-工作负载安全也可以与其他工具集成。例如，link:http://docs.netapp.com/us-en/cloudinsights/CloudInsights_CloudSecure_Splunk_integration_guide.pdf["请参阅本指南"]与 Splunk 集成。
+
+[[step-3-configure-a-user-directory-collector]]
+== 步骤 3 - 配置用户目录收集器
+
+在您的第一个 ONTAP SVM 收集器之前或与第一个 ONTAP SVM 收集器一起配置此收集器。如果没有它，Activity Forensics 将显示编码标识符（SID），而不是用户名。
+
+* 为用户访问受监控 SVM 的每个域（包括受信任域）添加一个收集器。
+* 对于 Active Directory，将显示名称映射到 `name`，将 ID 映射到 `objectsid`，将用户名映射到 `sAMAccountName`。
+* 对于 LDAP 目录服务器，将显示名称映射到 `name`，将 ID 映射到 `uidnumber`，将用户名映射到 `uid`。
+* 在目录服务器上启用 SSL 不会阻止收集器。Workload Security 接受服务器提供的证书。
+
+
+
+NOTE: 测试连接不适用于用户目录收集器。使用常用目录工具验证服务器、端口、绑定帐户和搜索基准，然后确认收集器达到*运行中*。
+
+
+
+[[step-4-configure-the-ontap-svm-data-collector]]
+== 步骤 4 - 配置 ONTAP SVM 数据收集器
+
+* 选择连接方法。建议使用带有 SVM 名称的群集管理 IP，因为 SVM 模式无法运行功能和 RBAC 检查。
+* 首先准备 ONTAP 帐户。使用 `cluster-admin`凭据，或创建具有所需权限的 `csuser`和 `csrole`。Test Connection 使用此帐户运行，因此在具备权限之前，它无法验证 FPolicy 或可选功能。
+* 选择 *Collectors > +Data Collectors*，将鼠标悬停在 NetApp SVM 图块上，然后单击 *+Monitor*。
+* 输入收集器详细信息，然后在保存前单击*测试连接*。
+* 解决每个失败的检查，然后保存收集器。
+
+
+
+NOTE: Test Connection 根据其网络检查报告成功。功能结果仅供参考，因此请查看您打算使用的每个可选功能，例如快照、拒绝访问、自主勒索软件保护、永久存储或用户阻止。
+
+
+
+[[step-5-verify-that-data-is-flowing]]
+== 第 5 步 - 验证数据是否正在流动
+
+* 确认收集器达到 *Running*。
+* 在受监控的 SVM 上生成真实的 SMB 或 NFS 客户端活动。如果没有客户端 I/O，则不会发生任何事件。
+* 确认活动显示在 *Workload Security > Activity Forensics* 中。
+* 确认活动显示用户名而不是 SID。如果没有，请检查用户目录收集器。
+* 如果收集器报告*错误*或*降级*，请打开*状态 > 更多详细信息*，然后按照“对 ONTAP SVM 数据收集器进行故障排除”进行操作。
+
+
+
+
+[[optional-next-steps]]
+== 可选的后续步骤
+
+* 创建用户帐户以授予其他人对 Workload Security 的访问权限。这不是数据收集所必需的。请参阅 Workload Security 用户管理。
+* 启用可选收集器功能。每个都有自己的 ONTAP 版本和权限要求。
+* 将 Workload Security 与其他工具（例如 Splunk）集成。
+

@@ -7,80 +7,133 @@ summary: 配置工作负载安全 Active Directory 用户目录收集器
 = 配置 Active Directory (AD) 用户目录收集器
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-可以配置工作负载安全以从 Active Directory 服务器收集用户属性。
+在 ONTAP SVM 数据收集器之前配置用户目录收集器。
 
-.开始之前
-* 您必须是Data Infrastructure Insights管理员或帐户所有者才能执行此任务。
-* 您必须拥有托管 Active Directory 服务器的服务器的 IP 地址。
-* 在配置用户目录连接器之前，必须先配置代理。
+Workload Security 使用目录数据来解析文件访问活动中的标识。用户目录收集器不提供测试连接功能。
 
+image:config_ad_user_directory_image1.png["包含 Active Directory 和 LDAP 目录服务器选项的添加用户目录对话框。,title=\"选择用户目录类型\",width=652,height=211"]
 
-.配置用户目录收集器的步骤
-. 在“工作负载安全”菜单中，单击：*收集器 > 用户目录收集器 > + 用户目录收集器*，然后选择*Active Directory*
-+
-系统显示添加用户目录屏幕。
+[cols="50%,50%"]
+|===
+| *选择* | *在以下情况下使用* 
 
 
+| Active Directory | 用户存储在 Active Directory 中，监视的活动是 SMB；或者 Unix 用户存储在 Active Directory 中，具有 uidNumber 值并执行 NFS 活动。 
 
-通过在下表中输入所需数据来配置用户目录收集器：
 
-[cols="2*"]
+| LDAP 目录服务器 | Unix 用户主要存储在 LDAP 目录中，受监控的活动是 NFS。 
+
+
+| 两者 | 身份在 Active Directory 和 LDAP 之间拆分。为每个权威目录添加一个收集器，以便可以解析所有受监控的身份。 
+|===
+[cols="100%"]
+|===
+| *此页面涵盖 Active Directory* 将此收集器用于 SMB 身份以及在 Active Directory 中维护其 Unix ID 的 NFS 身份。 
 |===
 
 
-| 名称 | 描述 
+[[before-you-begin]]
+== 开始之前
+
+* 以 Data Infrastructure Insights 管理员或帐户所有者身份登录。
+* 部署并连接可以访问目录服务器的 Workload Security Agent。
+* 收集 Active Directory 服务器 IP 地址或 FQDN、林名称、绑定 DN 和绑定密码。
+* 允许 Agent 访问目录服务。LDAP 或 StartTLS 的典型端口为 389，LDAPS 的典型端口为 636；请使用服务器上配置的端口。
+* 使用可以搜索所需目录范围并读取收集器中映射的每个属性的绑定 DN 帐户。
 
 
-| 名称 | 用户目录的唯一名称。例如_GlobalADColector_ 
 
 
-| 代理人 | 从列表中选择一个已配置的代理 
+[[add-the-active-directory-collector]]
+== 添加 Active Directory 收集器
+
+*1.*转到 Workload Security ++>++ Collectors ++>++ User Directory Collectors，然后选择 {plus} User Directory Collector。
+
+*2.*选择 Active Directory 并选择继续。
+
+*3.*完成下面所述的连接字段和属性映射。
+
+*4.*如果必须解析计算机或服务帐户，请查看高级配置。
+
+*5.*使用 AD Explorer 或 ldapsearch 验证配置，然后选择保存收集器。
+
+image:config_ad_user_directory_image2.png["显示连接字段、必需和可选属性映射以及高级配置搜索查询的 Active Directory 收集器表单。,title=\"添加 Active Directory 收集器\",width=504,height=754"]
+
+Active Directory 收集器字段和默认属性映射。
 
 
-| 服务器IP/域名 | 托管活动目录的服务器的 IP 地址或完全限定域名 (FQDN) 
 
+[[connection-fields]]
+=== 连接字段
 
-| 森林名称 | 目录结构的森林级别。森林名称允许以下两种格式：_x.y.z_ => 直接域名，与您在 SVM 上的一样。  [示例：hq.companyname.com] _DC=x,DC=y,DC=z_ => 相对可分辨名称 [示例：DC=hq,DC= companyname,DC=com] 或者您可以指定如下： _OU=engineering,DC=hq,DC= companyname,DC=com_ [按特定 OU engineering 过滤] _CN=username,OU=engineering,DC=companyname, DC=netapp, DC=com_ [从 OU <engineering> 获取具有 <username> 的特定用户] _CN=Acrobat Users,CN=Users,DC=hq,DC=companyname,DC=com,O= companyname,L=Boston,S=MA,C=US_ [获取该组织内的用户内的所有 Acrobat 用户] 还支持受信任的 Active Directory 域。 
-
-
-| 绑定 DN | 允许用户搜索目录。例如：_username@companyname.com_ 或 _username@domainname.com_ 
-
-
-| 绑定密码 | 目录服务器密码（即绑定 DN 中使用的用户名的密码） 
-
-
-| 协议 | ldap、ldaps、ldap-start-tls 
-
-
-| 端口 | 选择端口 
+[cols="34%,33%,33%"]
 |===
-如果在 Active Directory 中修改了默认属性名称，请输入以下 Directory Server 所需的属性。大多数情况下，这些属性名称在 Active Directory 中不会被修改，在这种情况下，您可以简单地使用默认属性名称。
+| *字段* | *要求* | *输入内容* 
 
-[cols="2*"]
+
+| 名称++*++ | 必填 | 唯一的收集器名称。 
+
+
+| 代理人 | 必填 | 可以到达此 AD 服务器的已连接代理。 
+
+
+| 服务器 IP/域名++*++ | 必填 | AD 服务器 IP 地址或 FQDN。 
+
+
+| 森林名称++*++ | 必填 | DNS 域（如 hq.example.com）；DN（如 DC=hq,DC=example,DC=com）；或更窄的 OU/CN DN（当仅应搜索该范围时）。支持受信任的 AD 域。 
+
+
+| 绑定 DN++*++ | 必填 | 允许搜索范围的帐户，例如 ws-reader@example.com。仅授予映射属性所需的目录读取权限。 
+
+
+| 绑定密码++*++ | 必填 | 绑定 DN 帐户的密码。 
+
+
+| 协议 | 默认 | LDAP、LDAPS 或带有 StartTLS 的 LDAP。选择服务器使用的协议。 
+
+
+| 端口++*++ | 必填 | 数字目录端口；通常为 389 或 636。 
 |===
 
 
-| 属性 | 目录服务器中的属性名称 
+[[mandatory-attribute-mappings]]
+=== 必选属性映射
 
+标有星号的字段必须具有有效的映射。保留默认值，除非您的 AD 架构使用不同的属性名称。
 
-| 显示名称 | name 
-
-
-| SID | 对象标识符 
-
-
-| 用户名 | sAM账户名称 
+[cols="34%,33%,33%"]
 |===
-单击“包括可选属性”以添加以下任意属性：
+| *Workload Security 字段* | *默认 AD 属性* | *必要时* 
 
-[cols="2*"]
+
+| 显示名称++*++ | name | 始终 
+
+
+| SID++*++ | 对象标识符 | 始终；解析 SMB 安全标识符 
+
+
+| 用户名++*++ | sAM账户名称 | 始终 
+
+
+| UNIXID | uid 号 | 必须为存储在 AD 中的 Unix 用户解析 NFS 活动时为必需 
 |===
 
 
-| 属性 | 目录服务器中的属性名称 
+[[optional-attribute-mappings]]
+=== 可选属性映射
+
+仅对要导入的配置文件数据选择“包含可选属性”。每个映射必须与实际的 AD 架构匹配。空或不正确的映射不会阻止标识解析，但不会填充配置文件值。
+
+[cols="50%,50%"]
+|===
+| *配置文件值* | *默认 AD 属性* 
 
 
 | 电子邮件地址 | 邮件 
@@ -92,10 +145,10 @@ summary: 配置工作负载安全 Active Directory 用户目录收集器
 | 角色 | 标题 
 
 
+| 状态 | 第 
+
+
 | 国家/地区 | 公司 
-
-
-| 状态 | 状态 
 
 
 | 部门 | 部门 
@@ -104,85 +157,115 @@ summary: 配置工作负载安全 Active Directory 用户目录收集器
 | 照片 | 缩略图 
 
 
-| 经理DN | 经理 
+| 管理员 DN | 经理 
 
 
-| 组 | 成员 
+| 组 | memberof 
 |===
 
 
-[[testing-your-user-directory-collector-configuration]]
-== 测试您的用户目录收集器配置
+[[advanced-configuration-include-the-accounts-you-need]]
+== 高级配置：包括所需的帐户
 
-您可以使用以下步骤验证 LDAP 用户权限和属性定义：
+搜索查询控制导入哪些目录对象。默认查询包括 POSIX 帐户和标准 AD 用户对象：
 
-* 使用以下命令验证 Workload Security LDAP 用户权限：
-+
-`ldapsearch -o ldif-wrap=no -LLL -x -b "dc=netapp,dc=com" -h 10.235.40.29 -p 389 -D \Administrator@netapp.com -W`
-
-* 使用 AD Explorer 浏览 AD 数据库、查看对象属性和特性、查看权限、查看对象的模式、执行可以保存和重新执行的复杂搜索。
-+
-** 安装link:https://docs.microsoft.com/en-us/sysinternals/downloads/adexplorer["AD 浏览器"]在任何可以连接到 AD 服务器的 Windows 机器上。
-** 使用 AD 目录服务器的用户名/密码连接到 AD 服务器。
-
-
-
-
-image:cs_ADExample.png["AD 连接"]
-
-
-
-[[troubleshooting-user-directory-collector-configuration-errors]]
-== 排除用户目录收集器配置错误
-
-下表描述了收集器配置期间可能出现的已知问题和解决方法：
-
-[cols="2*"]
+[cols="100%"]
 |===
-| 问题： | 解决： 
-
-
-| 添加用户目录连接器会导致“错误”状态。错误提示“为 LDAP 服务器提供的凭据无效”。 | 提供的用户名或密码不正确。编辑并提供正确的用户名和密码。 
-
-
-| 添加用户目录连接器会导致“错误”状态。错误提示：“无法获取与作为林名称提供的 DN=DC=hq,DC=domainname,DC=com 对应的对象。” | 提供的森林名称不正确。编辑并提供正确的森林名称。 
-
-
-| 域用户的可选属性未出现在工作负载安全用户配置文件页面中。 | 这可能是由于 CloudSecure 中添加的可选属性名称与 Active Directory 中的实际属性名称不匹配造成的。编辑并提供正确的可选属性名称。 
-
-
-| 数据收集器处于错误状态，显示“无法检索 LDAP 用户。失败原因：无法连接到服务器，连接为空” | 单击“重新启动”按钮重新启动收集器。 
-
-
-| 添加用户目录连接器会导致“错误”状态。 | 确保您已为必填字段（服务器、林名称、绑定 DN、绑定密码）提供了有效值。确保 bind-DN 输入始终以“Administrator@<domain_forest_name>”或具有域管理员权限的用户帐户的形式提供。 
-
-
-| 添加用户目录连接器会导致“重试”状态。显示错误“无法定义收集器的状态，原因 Tcp 命令 [Connect(localhost:35012,None,List(),Some(,seconds),true)] 因 java.net.ConnectionException:Connection 被拒绝而失败。” | 为 AD 服务器提供的 IP 或 FQDN 不正确。编辑并提供正确的 IP 地址或 FQDN。 
-
-
-| 添加用户目录连接器会导致“错误”状态。错误提示“无法建立 LDAP 连接”。 | 为 AD 服务器提供的 IP 或 FQDN 不正确。编辑并提供正确的 IP 地址或 FQDN。 
-
-
-| 添加用户目录连接器会导致“错误”状态。错误提示：“无法加载设置。原因：数据源配置错误。具体原因：/connector/conf/application.conf: 70: ldap.ldap-port 的类型为 STRING 而不是 NUMBER” | 提供的端口值不正确。尝试使用 AD 服务器的默认端口值或正确的端口号。 
-
-
-| 我从强制属性开始，并且它起作用了。添加可选项后，可选属性数据不会从 AD 中获取。 | 这可能是由于 CloudSecure 中添加的可选属性与 Active Directory 中的实际属性名称不匹配造成的。编辑并提供正确的强制或可选属性名称。 
-
-
-| 重新启动收集器后，AD 同步何时发生？ | 收集器重启后，AD 同步将立即发生。获取约30万用户的用户数据大约需要15分钟，并且每12小时自动刷新一次。 
-
-
-| 用户数据从 AD 同步到 CloudSecure。数据何时会被删除？ | 如果没有刷新，用户数据将保留13个月。如果租户被删除，那么数据也将被删除。 
-
-
-| 用户目录连接器导致“错误”状态。 “连接器处于错误状态。服务名称：usersLdap。失败原因：无法检索 LDAP 用户。失败原因：80090308：LdapErr：DSID-0C090453，注释：AcceptSecurityContext 错误，数据 52e，v3839” | 提供的森林名称不正确。请参阅上文，了解如何提供正确的森林名称。 
-
-
-| 用户资料页面中未填写电话号码。 | 这很可能是由于 Active Directory 的属性映射问题造成的。1.编辑从 Active Directory 获取用户信息的特定 Active Directory 收集器。2.请注意，在可选属性下，有一个字段名称“电话号码”映射到 Active Directory 属性“telephonenumber”。4.现在，请使用上面描述的 Active Directory Explorer 工具浏览 Active Directory 并查看正确的属性名称。3.确保 Active Directory 中有一个名为“telephonenumber”的属性，其中确实包含用户的电话号码。5.假设在 Active Directory 中它已被修改为“电话号码”。6.然后编辑 CloudSecure 用户目录收集器。在可选属性部分，将“telephonenumber”替换为“phonenumber”。7.保存 Active Directory 收集器，收集器将重新启动并获取用户的电话号码，并将其显示在用户个人资料页面中。 
-
-
-| 如果在 Active Directory (AD) 服务器上启用了加密证书 (SSL)，则 Workload Security User Directory Collector 无法连接到 AD 服务器。 | 在配置用户目录收集器之前禁用 AD 服务器加密。一旦获取用户详细信息，它将保留 13 个月。如果 AD 服务器在获取用户详细信息后断开连接，则不会获取 AD 中新添加的用户。要再次获取，用户目录收集器需要连接到 AD。 
-
-
-| CloudInsights Security 中存在来自 Active Directory 的数据。想要从 CloudInsights 中删除所有用户信息。 | 无法仅从 CloudInsights Security 中删除 Active Directory 用户信息。为了删除用户，需要删除整个租户。 
+| （{vbar}（objectClass=posixAccount）（&（objectCategory=person）（objectClass=user）） 
 |===
+不匹配此筛选器的计算机帐户、托管服务帐户或自定义服务帐户对象仍未解析。在 AD Explorer 中检查对象的 objectClass，然后仅针对所需的对象类型扩展查询。例如：
+
+[cols="100%"]
+|===
+| （{vbar}（objectClass=posixAccount） + （&（objectCategory=person）（objectClass=user）） + （objectClass=computer） + （objectClass=msDS-ManagedServiceAccount） + （objectClass=msDS-GroupManagedServiceAccount）） 
+|===
+[cols="100%"]
+|===
+| *未经检查结果，请勿扩大查询范围* 确认每个添加的分支仅返回 Workload Security 应导入的帐户。更广泛的查询可能会增加同步时间并导入不需要的目录对象。 
+|===
+
+
+[[validate-the-configuration]]
+== 验证配置
+
+[cols="100%"]
+|===
+| *测试连接不适用于用户目录收集器* 在保存收集器之前，从具有等效访问权限的主机验证网络访问、绑定凭据、搜索范围、查询结果和映射属性。 
+|===
+
+
+[[use-ad-explorer]]
+=== 使用 AD Explorer
+
+使用预期的 Bind DN 帐户连接到 Active Directory 服务器。验证该帐户是否可以浏览配置的林名称或 OU，并读取 name、objectSid、sAMAccountName、使用时的 uidNumber 以及任何可选属性。
+
+https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer["[.underline"]#下载 Microsoft Sysinternals AD Explorer#]
+
+
+
+[[use-ldapsearch]]
+=== 使用 ldapsearch
+
+使用预期的绑定 DN 运行范围搜索。将示例替换为您的目录值，并将收集器的搜索查询添加为 LDAP 筛选器。
+
+[cols="100%"]
+|===
+| ldapsearch -o ldif-wrap=no -LLL -x -H ldap://ad.example.com:389 -D "ws-reader@example.com" -W -b "DC=hq,DC=example,DC=com" '({vbar}(objectClass=posixAccount)(&(objectCategory=person)(objectClass=user)))' name objectSid sAMAccountName uidNumber 
+|===
+* 使用收集器将使用的确切帐户和密码，绑定成功。
+* 搜索返回预期的人员、计算机或服务帐户。
+* 每个必需的映射属性都存在，并且在返回的对象上有一个值。
+* Agent 具有到目录服务器的相同 DNS 解析和网络路径。
+
+
+
+
+[[after-you-save]]
+== 保存后
+
+* Active Directory 同步在收集器启动或重新启动时启动。
+* 拥有约 300,000 个用户的目录可能需要大约 15 分钟才能同步。
+* 用户数据每 12 小时自动刷新一次。
+* 如果目录不可用，以前提取的用户详细信息将保留，但在恢复连接之前，无法提取新用户或更改的用户。
+* 用户数据保留 13 个月，无需刷新。用户目录数据无法独立于租户删除。
+
+
+
+
+[[troubleshooting]]
+== 故障排除
+
+[cols="50%,50%"]
+|===
+| *信息或症状* | *需要检查的内容* 
+
+
+| 为 LDAP 服务器提供的凭据无效。 | 请验证绑定 DN 和密码。还请确认帐户可以搜索配置的林名称。 
+
+
+| 无法获取作为林名称提供的 DN=…… 对应的对象。 | 更正林名称。请使用确切的域、DN、OU 或其他支持的范围。 
+
+
+| 无法建立 LDAP 连接。 | 从代理验证 AD 服务器 IP/FQDN、DNS 解析、协议、端口和防火墙路径。 
+
+
+| 无法检索 LDAP 用户……连接为空。 | 重新启动收集器。如果问题再次出现，请从等效的网络位置使用 ldapsearch 验证连接和搜索。 
+
+
+| 收集器正在重试或报告 AGENT008。 | 确认服务器地址和林名称；然后确认 Agent 可以访问目录服务。 
+
+
+| 未显示用户或可选属性。 | 验证搜索查询是否包含该对象，并且映射的属性名称是否与目录架构匹配（包括适用时的大小写）。保存以重新启动并重新同步。 
+
+
+| AcceptSecurityContext 错误，数据 52e。 | 验证凭据和林名称。在 Active Directory 中，数据 52e 指示无效凭据。 
+
+
+| ldap-port 的类型为 STRING 而不是 NUMBER。 | 输入数字端口值，例如 389 或 636。 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+https://docs.netapp.com/us-en/data-infrastructure-insights/task_config_user_dir_connect.html["[.underline"]#当前 NetApp 文档页面#]

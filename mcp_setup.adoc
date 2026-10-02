@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: mcp_setup.html 
+summary: 使用本指南将 MCP 兼容的 AI 客户端连接到 DII。 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= 设置 DII MCP 服务器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用本指南将 MCP 兼容的 AI 客户端连接到 DII。
+
+
+NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因此可能会发生变化。
+
+
+
+[[before-you-begin]]
+== 开始之前
+
+您需要：
+
+* 访问 DII 租户。
+* 授权读取您要查询的资源的 DII 用户或服务身份。
+* 为您的 DII 环境提供的远程 MCP 端点。
+* 支持远程 HTTP 服务器和您的组织身份验证方法的 MCP 客户端。
+
+
+示例使用+<DII_HOST_URL>+作为占位符。请勿将访问令牌粘贴到源代码控制文件中。例如，Cursor 使用的 URL 是：
+
+ https://<DII_HOST_URL>/api/v1/mcp
+请参见适用于您的连接的特定代码段。
+
+
+
+[[configure-the-mcp-client]]
+== 配置 MCP 客户端
+
+. 导航到 Admin > API Access，然后选择“MCP Configuration”选项卡。
+. 选择要配置的客户端。
+. 提供有意义的名称和过期时间，然后选择 _Generate Token_。
+. *复制代码段* 您只能在此步骤中复制此代码段。令牌隐藏在代码段中，但会正确粘贴到您的客户端应用中。
+. 在客户端设置中，在“url”字段中输入正确的 DII 主机 URL。
+. 保存配置。
+
+
+
+IMPORTANT: 请勿将持有者令牌放置在 shell 历史记录、提示、屏幕截图、项目文件或源代码管理中。
+
+
+
+[[verify-access]]
+== 验证访问
+
+客户端报告服务器已连接后，您可以开始发送如下请求：
+
+[]
+====
+列出我可用的 DII 对象类型。列出我可用的 DII 日志类型。列出我的采集单元，而不显示 IP 地址或 UUID。
+
+====
+成功的发现证实了连接性，但并不能保证对每个底层资源的访问权限。租户功能、收集器和权限决定返回哪些数据。
+
+
+
+[[credential-safety]]
+== 凭据安全
+
+* 首选交互式 OAuth 或其他可用的短期凭据流。
+* 为无人值守的客户端使用专用服务身份。
+* 请勿将令牌放在提示、屏幕截图、示例、问题描述或源代码管理中。
+* 请勿要求代理显示完整的 webhook 地址。
+
+
+有关其他指导，请参见 link:mcp_security.html["安全与隐私"]。
+
+
+
+[[next-steps]]
+== 后续步骤
+
+* link:mcp_concepts.html["了解 DII 数据模型"]
+* link:mcp_tools_overview.html["浏览工具参考"]
+* link:mcp_recipe_environment_inventory.html["运行环境清单配方"]
+* link:mcp_troubleshooting.html["连接和查询错误故障排除"]
+

@@ -1,0 +1,466 @@
+---
+sidebar: sidebar 
+permalink: mcp_tools_overview.html 
+summary: 'DII MCP 服务器目前在九个域中公开了 26 个只读产品工具。当连接的客户端需要进行身份验证时，可能会出现单独的 `mcp_auth`帮助程序。' 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= DII MCP 工具参考
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+DII MCP 服务器目前在九个域中公开了 26 个只读产品工具。当连接的客户端需要进行身份验证时，可能会出现单独的 +mcp_auth+ 帮助程序。
+
+
+NOTE: DII MCP 是一link:concept_preview_features.html["预览"]项功能，因此可能会发生变化。
+
+工具可用性和结果取决于经过身份验证的租户、启用的 DII 功能、配置的收集器和用户权限。
+
+
+
+[[query-conventions]]
+== 查询约定
+
+* 在查询动态字段之前发现类型和元数据。
+* 使用元数据返回的精确、区分大小写的属性和指标名称。
+* 必要时使用 ISO-8601 时间戳和 IANA 时区名称。
+* 将查询窗口保持在 30 天或更短。
+* 将 `limit`和 `offset`用于对象和警报分页。
+* 使用返回的游标进行日志事件分页。
+* 不显示完整的 Webhook 端点地址。
+
+
+
+
+[[acquisition-units]]
+== 采集单元
+
+
+
+[[list-acquisition-units]]
+=== 列出采集单元
+
++AcquisitionUnitsService_getAcquisitionUnits+
+
+返回所有具有连接状态、报告新鲜度、操作系统、版本、IP 地址和分配的数据源计数的采集单元。
+
+示例：
+
+[]
+====
+列出采集单元。在不显示 IP 地址或 UUID 的情况下，汇总已连接、失败和从未报告的单元。
+
+====
+
+
+[[get-an-acquisition-unit]]
+=== 获取采集单元
+
++AcquisitionUnitsService_getAcquisitionUnitByUuid+
+
+检索一个采集单元的完整详细信息。如果用户提供了名称，请先列出采集单元以解析其 UUID。
+
+需要输入： `uuid`
+
+
+
+[[alerts]]
+== 警报
+
+
+
+[[get-alert-metadata]]
+=== 获取警报元数据
+
++AlertsService_getMetadata+
+
+返回有效的警报字段名称和数据类型。在查询警报之前调用此项。
+
+
+
+[[query-alerts]]
+=== 查询警报
+
++AlertsService_queryForAlerts+
+
+使用所选属性、过滤器、排序、时间限制和偏移分页查询活动或非活动警报。
+
+必需输入：
+
+* `active`
+* `attributeNames`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+
+可选输入包括 `filter`、 `sortField`、 `sortAscending`、 `limit`和 `offset`。 `limit`为 1-500； `offset`为 0-1000。请将时间窗保持在 30 天以内。
+
+示例：
+
+[]
+====
+检索过去七天的关键活动存储警报。返回警报 ID、监视器名称、严重性、状态和相关存储名称。
+
+====
+
+
+[[get-an-alert-by-name]]
+=== 按名称获取警报
+
++AlertsService_getAlertByName+
+
+使用采用 `AL-123456`格式的警报 ID 检索一个警报。
+
+需要输入： `name`
+
+
+
+[[get-an-alert-by-uuid]]
+=== 按 UUID 获取提醒
+
++AlertsService_getAlertByUUID+
+
+使用其 UUID 检索一个警报。
+
+需要输入： `uuid`
+
+
+
+[[data-collectors]]
+== 数据收集器
+
+
+
+[[list-data-sources]]
+=== 列出数据源
+
++CollectorService_getDataSources+
+
+列出已配置的收集器，包括名称、状态、供应商、型号、采集单元、版本和最后一次成功采集。可以选择按 AU UUID 过滤。
+
+示例：
+
+[]
+====
+按状态和供应商对已配置的数据源进行分组。突出显示失败和过时的成功采集。
+
+====
+
+
+[[get-a-data-source]]
+=== 获取数据源
+
++CollectorService_getDataSourceById+
+
+检索一个具有配置、收集包状态、轮询活动、发现的设备、补丁信息和采集单元上下文的收集器。
+
+需要输入： `id`
+
+将此工具用于轮询间隔、配置的指标、收集设置或故障调查。
+
+
+
+[[list-supported-data-source-types]]
+=== 列出支持的数据源类型
+
++CollectorService_getDataSourceTypes+
+
+列出 DII 收集器目录支持的产品类型。这不是在租户中配置的收集器列表。
+
+
+
+[[logs]]
+== 日志
+
+
+
+[[list-log-types]]
+=== 列出日志类型
+
++LogService_getLogTypes+
+
+列出租户中当前可用的日志类型。
+
+
+
+[[get-log-type-metadata]]
+=== 获取日志类型元数据
+
++LogService_getLogTypeMetadata+
+
+返回日志类型的有效属性。在搜索或分组事件之前调用它。
+
+需要输入： `type`
+
+
+
+[[query-log-events]]
+=== 查询日志事件
+
++LogService_queryLogEvents+
+
+返回按时间戳降序排列的日志事件。
+
+必需输入：
+
+* `type`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+
+可选输入包括 `attributes`、 `filter`、 `limit`和 `cursor`。 `limit`为 1-200。事件窗口不能超过 30 天。传递上一个响应的游标以检索下一页。
+
+
+
+[[count-log-events-over-time]]
+=== 统计一段时间内的日志事件
+
++LogService_queryLogEventsCountHistogram+
+
+返回固定大小的事件计数时间段。可选择按有效的可分组属性对每个时间段进行分组；分组结果返回顶部段和一个 +__other__+ 段。
+
+必需输入：
+
+* `type`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+
+可选输入： `filter`、 `groupBy`
+
+
+
+[[maintenance-windows]]
+== 维护窗口
+
+
+
+[[list-maintenance-windows]]
+=== 列出维护窗口
+
++MaintenanceWindowService_getMaintenanceWindows+
+
+列出活动的、未过期的警报抑制窗口。将 `includeExpired`设置为 `true`以包含过期的窗口。
+
+成功的空响应意味着不存在匹配的维护窗口。
+
+
+
+[[get-a-maintenance-window]]
+=== 获取维护窗口
+
++MaintenanceWindowService_getMaintenanceWindowById+
+
+检索一个维护窗口。
+
+需要输入： `id`
+
+
+
+[[monitors]]
+== 监视器
+
+
+
+[[list-monitors]]
+=== 列出监视器
+
++MonitorsService_queryMonitors+
+
+列出 DII 监视器。使用 `isSystem`仅返回系统监视器、排除系统监视器或返回所有监视器。
+
+
+
+[[get-a-monitor]]
+=== 获取监控器
+
++MonitorsService_getMonitorById+
+
+检索一个监视器，包括其说明和纠正指导（如果可用）。
+
+需要输入： `id`
+
+
+
+[[notifications]]
+== 通知
+
+
+
+[[list-notification-rules]]
+=== 列出通知规则
+
++NotificationService_getNotificationRules+
+
+列出将匹配警报路由到通知目标的规则。成功的空响应意味着不存在匹配的规则。
+
+
+
+[[get-a-notification-rule]]
+=== 获取通知规则
+
++NotificationService_getNotificationRuleById+
+
+检索一个路由规则。
+
+需要输入： `id`
+
+
+
+[[list-webhook-targets]]
+=== 列出 Webhook 目标
+
++NotificationService_getWebhooks+
+
+列出 Slack、Microsoft Teams、Discord、PagerDuty 和自定义 HTTP 集成的 Webhook 目标元数据。可选择按逗号分隔的引擎类型进行筛选。
+
+安全要求：完整的端点地址可能包含凭据。应用程序和代理必须从显示或转发的结果中省略或隐去地址字段。
+
+安全示例：
+
+[]
+====
+按引擎类型计数 Webhook 目标，并仅列出目标名称和状态。不返回端点地址。
+
+====
+
+
+[[objects-and-metrics]]
+== 对象和指标
+
+
+
+[[list-object-types]]
+=== 列出对象类型
+
++ObjectService_getObjectTypes+
+
+列出租户中当前可用的对象类型。
+
+
+
+[[get-object-metadata]]
+=== 获取对象元数据
+
++ObjectService_getMetadataForObjectType+
+
+返回一个对象类型的有效属性、指标、类型和分组功能。
+
+需要输入： `objectType`
+
+
+
+[[query-objects]]
+=== 查询对象
+
++ObjectService_query+
+
+检索对象、选定属性和可选指标。引用指标的筛选器在时间窗口聚合之前应用于原始值。
+
+必需输入：
+
+* `objectType`
+* `attributeNames`
+
+
+可选输入包括 `metricNames`、 `filter`、 `sortFieldName`、 `isSortAscending`、 `fromTime`、 `toTime`、 `aggregateFunctions`、 `limit`和 `offset`。
+
+支持的查询聚合： `MAX`、 `MIN`、 `AVG`、 `SUM`、 `LAST`。 `limit` 为 1-500。如果省略时间限制，工具将默认为最近的三小时窗口。
+
+
+
+[[group-objects]]
+=== 组对象
+
++ObjectService_groupObjects+
+
+按一个有效的可分组属性对对象进行分组，并聚合所选指标。过滤器适用于聚合前的原始值。
+
+必需输入：
+
+* `objectType`
+* `groupByAttribute`
+* `metricNames`
+
+
+可选输入包括 `aggregateFunctions`、 `filter`、排序、时间限制、 `limit`和 `offset`。
+
+支持的组聚合： `MAX`、 `MIN`、 `AVG`、 `SUM`、 `FIRST`、 `CHANGE`、+CHANGE_RATIO+。
+
+
+
+[[query-performance-time-series]]
+=== 查询性能时间序列
+
++ObjectService_queryPerformanceMetricsForObjects+
+
+返回一个指标和匹配对象的分桶时间序列数据。
+
+必需输入：
+
+* `objectType`
+* `metricName`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+
+可选输入包括 `filter`、 `aggregationFunction`、 `limit`和 `isSortAscending`。 `limit`控制返回序列的数量，必须为 1-50。
+
+支持的存储桶聚合： `MAX`、 `MIN`、 `AVG`、 `SUM`、 `FIRST`、 `CHANGE`、+CHANGE_RATIO+。
+
+
+
+[[kubernetes-collectors]]
+== Kubernetes 收集器
+
+
+
+[[list-kubernetes-collectors]]
+=== 列出 Kubernetes 收集器
+
++OperatorsManagement_getKubernetesCollectors+
+
+返回集群名称、总体时效性状态、Operator 版本、网络性能和映射组件版本、变更分析组件版本以及上次报告的时间戳。
+
+示例：
+
+[]
+====
+识别过时的 Kubernetes 收集器，并总结需要注意的组件。
+
+====
+
+
+[[filter-operators]]
+== 筛选运算符
+
+警报、日志和对象查询支持嵌套条件：
+
+* `EQ`, `NE`
+* `GT`, `LT`, `GE`, `LE`
+* `WILDCARD` 使用 `++*++`和 `?`
+* `EXISTS`
+* 嵌套 `and`、 `or`和 `not`
+
+
+连接的服务器根据元数据验证字段。如果查询被拒绝，请刷新相关元数据并重构筛选器。
+
+
+
+[[related-documentation]]
+== 相关文档
+
+* link:mcp_overview.html["DII MCP 概述"]
+* link:mcp_concepts.html["概念和数据模型"]
+* link:mcp_recipe_overview.html["操作配方"]
+* link:mcp_troubleshooting.html["故障排除"]
+

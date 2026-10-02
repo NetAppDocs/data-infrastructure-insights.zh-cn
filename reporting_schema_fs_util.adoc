@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, file system, fs util
 :imagesdir: ./media/
 
 
+[role="lead"]
+文件系统利用率架构跟踪跨文件系统、主机和计算资源的存储消耗和使用模式。使用此架构可识别容量热点并优化文件系统级别的存储分配。
+
 来源：*dwh_fs_util* OData 端点—Data Infrastructure Insights
 
 找到的表格：*8* | 关联：*7*
