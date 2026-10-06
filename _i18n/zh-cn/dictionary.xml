@@ -15320,8 +15320,6 @@
   <block id="afd0c3c4cdf600c241e6062de7efc38d" category="list-text">如果使用 SVM IP 和 vsadmin，请使用仅限管理的 LIF。具有数据和管理组合角色的 LIF 可以在管理访问仍然失败时响应 ping。</block>
   <block id="9410d3dd17bd3b4647e1b70d1d1e6745" category="list-text">对于可选功能，请授予功能测试报告的权限，然后再次运行测试连接。</block>
   <block id="052cdb9ec1abf182e678dbe78454c893" category="paragraph">*所涵盖的确切错误*</block>
-  <block id="e9a0103a0775b98e2814bd92d2a62dda" category="list-text">无法确定 ++[++host++]++ 的 ONTAP 类型。原因：与存储系统的连接错误：无法访问主机</block>
-  <block id="035aadd245a74b453daf0d268eee41c9" category="list-text">++[++IP++]++ 被标识为集群/节点，无法在此模式下添加</block>
   <block id="9266ab3354c0bb9a2d4706509e093c35" category="list-text">在 SVM 上找不到有效的数据接口……</block>
   <block id="8bc4b2d3427ec80982ffc645e4e2e663" category="list-text">缺少权限：vserver fpolicy</block>
   <block id="633ff01f97949aad10c07c3050299b8f" category="list-text">为此 Active Directory 用户在组级别而不是用户级别分配的角色</block>
@@ -15350,7 +15348,6 @@
   <block id="5d3f323b7708802c99d3b55d34c784e6" category="list-text">无法在 SVM 上配置 fpolicy……用户未经授权</block>
   <block id="085ae3f401d2a02104ded446925f5fa7" category="list-text">没有可用于启用 fpolicy 策略的有效序列号</block>
   <block id="60acbda9b6d8687d4f8ee9a8df323d0a" category="list-text">无法配置永久存储……聚合的性能信息当前不可用</block>
-  <block id="37f4c8d9b3bc335487b57648a25e1c45" category="list-text">已启用 cloudsecure++_++ FPolicy 策略，并且收集器保持“正在运行”状态。</block>
   <block id="42250c9902d77a942ca166de080c8e73" category="section-title">*代理容量或收集器健康状况*</block>
   <block id="aa8e789605cb94bb5e2b9cad3e988d48" category="list-text">重新输入收集器密码：打开“编辑”，输入密码，然后保存。</block>
   <block id="e5b427e63010950b710856ccba203384" category="list-text">请检查 Agent CPU 和内存空间以及托管收集器的数量。</block>
@@ -15378,8 +15375,6 @@
   <block id="9d5558de49864a5aaf09bbc466325f62" category="list-text">确认已启用客户端协议，并且对于 SMB，确认 SVM 具有 CIFS 服务器。</block>
   <block id="78e4147d2fcb665330522205434cc942" category="list-text">查看包含和排除的共享和卷。使用不带引号的完整名称。</block>
   <block id="de8dab0414b0315e30cded2b46a453aa" category="list-text">当需要常规文件夹访问事件时，启用监视文件夹访问。在没有此选项的情况下，也会收集文件夹创建、重命名和删除操作。</block>
-  <block id="4759d60f794302252cb46abffa2003de" category="list-text">如果仅缺少 .ini 和 .DS++_++Store 活动，则无需执行任何操作；这些扩展名将从 FPolicy 事件收集中排除。</block>
-  <block id="8c22f9462036f0dd20c80fc189249549" category="list-text">如果活动仍然不存在，请使用高级诊断来验证 cloudsecure++_++ 策略和 ONTAP FPolicy 事件日志。</block>
   <block id="d347513df0e13aad5feb241cbab4bdfc" category="list-text">新的客户端操作出现在活动取证中，其中包含预期的协议、共享、路径和用户信息。</block>
   <block id="f8acf423c23d41fcdb70a66757da8e59" category="section-title">*活动显示 SID 而不是用户名*</block>
   <block id="3787b0669929b027268b3b24a4fe3c62" category="paragraph">ONTAP 审计正在发挥作用；身份解析是另一个问题。</block>
@@ -15406,7 +15401,6 @@
   <block id="6b922742b49720893c54e6b1e398b6cc" category="list-text">确认收集器正在运行且未暂停。</block>
   <block id="1e784234b40a4ed8a4c8884e71201bba" category="list-text">对于用户阻止，请使用群集级别的凭据。自定义用户还需要 TCP 22 上的 SSH 访问权限和记录的阻止权限。</block>
   <block id="78c3532ecef5ab1659ad612cc4c53bd2" category="list-text">确认自定义用户具有所需的快照权限。</block>
-  <block id="d57fd269eade28c34db56bbb026b8383" category="list-text">如果启用了 ONTAP Multi-Admin Verify，请为 cloudsecure++_++ 快照和用户阻止所使用的 set 操作添加已记录的排除项。</block>
   <block id="ed39e8caebd174407031fe2936738028" category="list-text">在集群模式下运行测试连接，并查看快照和用户阻止功能结果。</block>
   <block id="3eeafc54af73f87800ed2ce617a3f8b7" category="list-text">Workload Security 可以创建和删除其快照，并可以阻止和恢复用户访问。</block>
   <block id="0aa7337be8ed8a5fc38708f43902ba4b" category="section-title">*预期行为 — 无需执行任何操作*</block>
@@ -15419,7 +15413,6 @@
   <block id="f06cf56d9192258142217bc7534ffa29" category="cell">Degraded 列出没有本地数据 LIF 的节点</block>
   <block id="523eaf1144fe5e0cc0ce6ccf0aa0fdbc" category="cell">ONTAP 无法从不在本地为 SVM 提供服务的节点建立 FPolicy 通道。</block>
   <block id="86f505c2b43c4bab68db6b2721e92825" category="cell">列出的节点具有可操作的 SVM 数据 LIF。</block>
-  <block id="0c024c9786b0a130ef9f2209b5b4eef7" category="cell">没有 .ini 或 .DS++_++Store 的事件</block>
   <block id="d2b54416d881f7bd67a08215cba775e7" category="cell">这些扩展被排除在 FPolicy 范围之外。</block>
   <block id="5eac15c2b8b9fc80cd9b41574c1acf1a" category="cell">还缺少其他预期的文件活动。</block>
   <block id="4f46848b0dbf0fd386dde599cb8868ce" category="cell">短暂的初始化、停止或降级状态</block>
@@ -15437,13 +15430,10 @@
   <block id="0be76c87d632cbbfa4e3922e4adcc907" category="cell">*证据*</block>
   <block id="eef4b2f23f3a025cf83eab51354896eb" category="cell">*位置或命令*</block>
   <block id="609b6fe2bd0fb9e30ab6cb0642ad9815" category="cell">收集器日志</block>
-  <block id="4b5f755dff50d04d0ef018545e6f1842" category="paragraph">/opt/netapp/cloudsecure/data-collectors/++&lt;++collector-uuid++&gt;++/logs/dsc.log</block>
   <block id="4e236688e06bc3fc103e6f1c01f16cf0" category="paragraph">包含所有收集器活动，包括错误。使用此日志调查收集器问题。</block>
   <block id="ceb60f8be137b22ec9c994e3859fc9d3" category="cell">代理日志</block>
   <block id="8ea61ce76dc83026cf34e9ad16a24974" category="cell">/opt/netapp/cloudsecure/agent/logs/agent.log</block>
   <block id="b775cc33ad81bc8796a92737fbe1fef0" category="cell">代理安装和升级</block>
-  <block id="4fb306285a138205d2951fdac023a9ab" category="paragraph">/opt/netapp/cloudsecure/agent/logs/cloudsecure++_++agent++_++install.log</block>
-  <block id="92e3160f317eea05bbcd97704c2e390e" category="paragraph">/opt/netapp/cloudsecure/agent/logs/cloudsecure++_++agent++_++upgrade.log</block>
   <block id="49ab5aaeb16e40d2787f6cc6532c99a3" category="cell">测试连接</block>
   <block id="837a3cd2b56827ebcf5b9a67fba50b92" category="cell">/opt/netapp/cloudsecure/test-connection/logs/</block>
   <block id="655ba6865da50cb3947405fa07a09371" category="cell">代理服务</block>
@@ -15452,7 +15442,6 @@
   <block id="566c4a298f7b5a7e738daecdc8429aa7" category="paragraph">*注意：*收集器日志目录也可以包含 error.log，但它不是一般的错误日志。仅当收集器由于配置无效而无法启动时才会写入此文件，并且 Agent 在收集器状态中报告该原因后会将其删除。它通常不存在或为空，因此请使用 dsc.log。</block>
   <block id="1f19c695deb1ea2cfc7730a695c1da0d" category="section-title">*验证 ONTAP FPolicy 状态*</block>
   <block id="ed6326945366f78c6138656fa831567e" category="paragraph">从相应的 ONTAP 管理上下文运行这些命令：</block>
-  <block id="7f5bdaa89a1d8cc7785d87c89e903aef" category="paragraph">查找带有 cloudsecure++_++ 前缀的 Workload Security 策略。该策略应处于启用状态，并且每个数据服务节点都应显示已连接的外部引擎。当通道断开连接时，保留事件原因和节点名称。</block>
   <block id="10e79af04432e7c04ea6e975d6340b34" category="section-title">*验证每条网络路径*</block>
   <block id="e71a4b7488a97c0e5d8b3ab3efe619e4" category="cell">*方向*</block>
   <block id="139a0086c51a356d51b9adbdd2abcd41" category="cell">代理 → 集群或 SVM 管理 IP</block>
@@ -15481,7 +15470,6 @@
   <block id="9319f07e493af8a26e0543b0ed658b50" category="list-text">在 ONTAP 上针对相关数据 LIF 和 Agent IP 启动数据包跟踪。</block>
   <block id="456fd97b69d8c1f180393a803e319725" category="list-text">请尝试测试连接或重新启动收集器。</block>
   <block id="e9b6af72f3ca122d88bd922fd574735b" category="list-text">等待故障，然后停止跟踪。</block>
-  <block id="5bff9b997a211d5666ffda85aad32c5f" category="list-text">从<block ref="8257c599cb4030b99e5758145816d417" category="inline-link-rx"></block>检索跟踪。</block>
   <block id="4c48ff6a88114f32654d41d561b9f2e7" category="list-text">查找从 ONTAP 到 Agent 回调端口的 SYN。没有 SYN 表示 ONTAP 端路径或策略存在问题。未完成握手的 SYN 表示 ONTAP 和 Agent 之间存在防火墙或路由问题。</block>
   <block id="13bae038f53424549e687573baa305f9" category="paragraph">*注意：*数据包跟踪可能包含网络信息。请根据您的数据处理要求对其进行处理。</block>
   <block id="e5a6d800b320650499428b863e2fea63" category="section-title">*诊断重复的 SVM 收集器*</block>
@@ -15491,7 +15479,6 @@
   <block id="fb40f0a3377da0677df294df514ce170" category="list-text">保留一个收集器并删除重复项。</block>
   <block id="83ec7b975b509497443f363336b2878a" category="list-text">重新启动保留的收集器，并确认其 FPolicy 通道保持连接。</block>
   <block id="952e188cbe99d625d6ae54372872a42c" category="section-title">*清理已确认未使用的 FPolicy 对象*</block>
-  <block id="e4920097354c598ef6752b5bc14cee04" category="paragraph">*注意：*请勿删除活动收集器的 cloudsecure++_++ 对象。收集器拥有并更新这些对象。</block>
   <block id="4a1659c2394e857673030dacc385655d" category="paragraph">列出 FPolicy 配置并识别已确认未使用的对象：</block>
   <block id="e95c6549d2974824b4453d611bbdfe4e" category="paragraph">对于未使用的策略，请按依赖关系顺序删除其对象：</block>
   <block id="a656df570b8da2747fb3faad17385d76" category="paragraph">清除序列插槽或冲突对象后，重新启动 Workload Security 收集器。</block>
@@ -15506,12 +15493,10 @@
   <block id="4850e98bb8a39839a6bb92e01777cbcf" category="cell">请在几分钟后重试。如果操作仍然失败，请重新启动 cloudsecure-agent.service 并记录确切的操作和原因。</block>
   <block id="16be73a2b9210092fc8fe6820b245503" category="cell">AGENT009</block>
   <block id="a9d00c660fbf0bc3f42c37f8cf43f676" category="cell">请确认收集器仍然存在于选定的 Agent 和环境中，并且并发删除或迁移未将其删除。</block>
-  <block id="91c26bc5047d4ec1362dbf32c0f86a5e" category="cell">代理 NOT++_++CONNECTED</block>
   <block id="4a0da87311c8e8744d432fb03ee3b1d8" category="cell">检查 systemctl 和 journalctl、TCP 443 上的 SaaS 出口、代理配置、SSL 检查和 cssys 帐户。</block>
   <block id="0345935c483ab0eaa99d31263cc2f72e" category="paragraph">使用事件速率检查器来调整 Agent 的大小。请勿仅依赖收集器计数；事件数量和启用的功能会影响负载。</block>
   <block id="6ea9628ebc17179ccc4454528a3ab14d" category="section-title">*调查基本检查后无活动的情况*</block>
   <block id="688373a52a32242a1525ed2568c00aad" category="list-text">运行 event log show -source fpolicy 并保留任何错误。</block>
-  <block id="779bdc55b359ee63c911efcfcc0e8688" category="list-text">运行 fpolicy show 并确认已启用 cloudsecure++_++ 策略。</block>
   <block id="39124cfeb8730bd8fe9d1be3bb163565" category="list-text">确认生成客户端操作的协议已在收集器中启用，并在 SVM 上允许。</block>
   <block id="57ca85a860df4ace6caa7e08fa8f33e5" category="list-text">确认共享或卷未被排除。</block>
   <block id="802fcf9cbb96d250f3575d08755fa373" category="list-text">确认此操作发生时收集器未暂停。</block>
@@ -15531,12 +15516,10 @@
   <block id="079a9de08ebe445d6180d268b0db4f7b" category="paragraph">验证服务器名称、端口、绑定 DN、密码、林或搜索基准以及读取权限。更正后重新启动目录收集器以请求新的同步。</block>
   <block id="2f0f47626d0bec33bd993cee56586690" category="section-title">*多管理员验证检查*</block>
   <block id="0f478b151a9500cf69f64fb647b097cb" category="paragraph">Multi-Admin Verify 可以阻止用于快照和用户阻止的 ONTAP 命令。在更改现有规则之前，请先查看这些规则。记录的 Workload Security 排除项包括：</block>
-  <block id="bf3cb288a9b88a2fc95a1063d9e6d11e" category="paragraph">multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !++*++cloudsecure++_*++" + multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !++*++cloudsecure++_*++" + multi-admin-verify rule delete -operation set</block>
   <block id="444f280bbd2d0cce542fd9d8aba0671d" category="paragraph">*注意：*删除 set 规则会更改该操作的多管理员验证保护。请与您的 ONTAP 安全管理员一起查看更改。</block>
   <block id="76ee106a6ea5ef6d8e735d293787d3db" category="section-title">*联系 NetApp 支持*</block>
   <block id="0e97d92ce4baab6ec2b2a655cf4a3812" category="paragraph">当有序检查后错误仍然存在，ONTAP 报告节点死机，或收集器数据刷新后容量仍然不正确时，请联系支持部门。</block>
   <block id="3b250ab7948f1e0ddee4a50c56e89018" category="paragraph">*包括*</block>
-  <block id="23d31771696a63dc720a7a7a2f14889a" category="list-text">来自 Status ++&gt;++ More detail 的完整消息，以及失败时间。</block>
   <block id="653175e9b87d13e599ea4371e94298a3" category="list-text">测试连接结果，包括跳过的检查。</block>
   <block id="61423e0605b0cbdcf8f0bebd958e94f1" category="list-text">代理和收集器版本及其当前状态。</block>
   <block id="4850584f0032dfb26d5d8c2ffb395fb4" category="list-text">ONTAP 版本、集群和 SVM 名称、连接模式和最近的拓扑更改。</block>
@@ -15545,7 +15528,6 @@
   <block id="0c9d71e2f36e202f52a80a1e18d84631" category="list-text">当回调路径仍然无法解释时进行的数据包跟踪。</block>
   <block id="a6fa4aea2a61c78e74a437025bfc4121" category="list-text">对于性能：延迟和 IOPS 时间线以及事件速率时间线。</block>
   <block id="2f5a98a7fe17728f8b6f19bb7dde8ff4" category="list-text">对于容量：订阅前后的使用情况以及每个收集器报告的原始容量。</block>
-  <block id="7db2da5d72ca4cfd4dc3591cdb8b5f7a" category="paragraph">使用 Data Infrastructure Insights 中的 Help ++&gt;++ Support 打开案例。</block>
   <block id="a0d5cf132ea60556950b6db3b75e1331" category="summary">理解这些概念有助于 AI 助手选择正确的工具并构建有效的查询。</block>
   <block id="3e22aa14b911d8584c3de2cb2d09c8e3" category="doc">DII MCP 概念和数据模型</block>
   <block id="845c2e1f81c7167073b0b3f255d00af4" category="admonition">DII MCP 是一项 <block ref="312c0c6b46ba32b4b11ba8c9da5788ed" category="inline-link-macro-rx"></block> 功能，因此可能会发生变化。</block>
@@ -16263,17 +16245,6 @@
   <block id="b349cdb464a16150566e060380a1b77f" category="sidebar">性能根本原因分析</block>
   <block id="aa70f40c4ba41bbc875ee1b79a091d75" category="sidebar">存储运行状况</block>
   <block id="a82c02e71992fe00dd9609cb03521444" category="cell">在 DII 中，FlexGroups 的容量数值为“0”。成分卷正常，但 FlexGroup 未显示所有成分卷的汇总容量。</block>
-  <block id="add9fe580da121a40e7d835cf08a489d" category="cell">仅限数据 SVM（无无限卷）。支持的子类型：default、sync++_++source、sync++_++destination。按设计，跳过 DP 目标 SVM 的审核。</block>
-  <block id="689b820747aa6a4d860f2786eb806378" category="cell">卷快照：全部（尽可能将范围限制为 cloudsecure++_*++）</block>
-  <block id="a0f6fb0a8302b109f912737c2869ae71" category="paragraph">创建角色和用户（运行前替换 ++&lt;++vservername++&gt;++）：</block>
-  <block id="28c033259ae71cab82483e5eb721e1c5" category="paragraph">*持久存储（显示集群模式；为 SVM 模式添加 -vserver ++&lt;++vservername++&gt;++）：*</block>
-  <block id="8de1a3a6bc3dbbbe06d26a1bcaf978d0" category="paragraph">*Protobuf（显示集群模式；为 SVM 模式添加 -vserver ++&lt;++vservername++&gt;++）：*</block>
-  <block id="58322ab2ae3213de6b39a5124b6c922f" category="list-text">选择 Workload Security ++&gt;++ Collectors ++&gt;++ &amp;#43;Data Collectors。</block>
-  <block id="c421bfa9e5f3f2069af785152ca7a7ab" category="paragraph">*Important:* 默认排除的文件扩展名：根据设计，Workload Security 将 FPolicy 作用域配置为排除 ini 和 DS++_++Store 扩展名。这些文件的事件在 ONTAP 上被过滤，并且永远不会到达 Workload Security，因此它们不会出现在 Activity Forensics 中。这与客户可配置的警报排除是分开的。这是预期行为；在 UI 中无法配置对这些扩展名的审核。</block>
-  <block id="2900a29dbf701a91de01303efc97eac8" category="paragraph">暂停和恢复适用于数据收集器，而不是代理。您可以从 UI（收集器 ++&gt;++ 收集器 ++&gt;++ 选项菜单）或 API 运行它们。</block>
-  <block id="8939329780680219f89b75f98718d19d" category="paragraph">如果收集器后来进入“错误”或“降级”状态，请打开“状态 ++&gt;++ 更多详细信息”，然后按照“ONTAP SVM 数据收集器故障排除”进行操作。运行时条件（如重复收集器、事件速率过载、暂停收集器、持久存储放置、MetroCluster 转换、缺少活动和身份解析）不属于预保存的测试连接工作流程。</block>
-  <block id="ecfa6237a8a218fc5c797ee0578679c7" category="list-text">确认收集器达到 Running 状态，并且在实际客户端 I/O 后，事件会出现在 Workload Security ++&gt;++ Activity Forensics 中。</block>
-  <block id="237b4a7247d444dc79495ddb037a4600" category="cell">这是有意为之的。大多数容量指标是在 FlexGroup 的成分上报告的，而不是在父 FlexGroup 上报告的。在两者上报告相同的容量会导致重复计算。倾向于成分级报告可支持关键用例，同时避免这种重复。若要在查询、仪表板或监控器中报告 FlexGroup 的容量，请使用成分对其父 FlexGroup 的引用。按该引用对成分进行分组，并汇总它们的容量值。</block>
   <block id="296cadc668db601a7fa80621086c9468" category="paragraph">VM Analyzer 视图中的一个新切换按钮允许您隐藏没有数据存储的已挂载卷，从而提供更清晰的视图，以简化 VM 的故障排除。</block>
   <block id="b6bf3aac3b33a207b8b6bbe0fc935a91" category="inline-image-macro">VM 分析器显示用于隐藏没有数据存储的已挂载卷的切换按钮</block>
   <block id="6915ad7aa1643475defe5f685b410352" category="paragraph"><block ref="6915ad7aa1643475defe5f685b410352" category="inline-image-macro-rx" type="image"></block></block>
@@ -16287,4 +16258,36 @@
   <block id="b2200689dae4036b4813579eff31d56c" category="paragraph">清单架构包含全面的资产和对象数据，包括存储系统、主机、应用程序和注释。这是数据仓库中最大的架构，为资产管理和基础架构可见性奠定了基础。</block>
   <block id="d9a7965bf43985ef0fc40616a6785117" category="paragraph">性能架构提供了有关存储、主机、卷和应用程序的 I/O、延迟、吞吐量和其他性能指标的时间序列指标。使用此架构可以分析性能趋势、识别瓶颈并优化工作负载放置。</block>
   <block id="18b7f15f593dc47ea50fd485e859a539" category="paragraph">端口架构包含网络端口和交换机数据，包括端口连接、状态以及与连接设备的关系。使用此架构可以分析存储基础架构中的网络拓扑和结构健康状况。</block>
+  <block id="5eb14926e2b0223f53564d7659171c1c" category="paragraph">您可能还会注意到，FlexGroups 的容量数值可能显示为“0”，而成员卷则显示具体数值。在 DII 中，FlexGroups 本身会将大多数容量指标清零，而成员卷则包含这些指标。问题在于重复计算——如果两个实体都报告完整的容量指标，DII 将会把相同的容量报告两次（一次在 FlexGroup 上，一次在成员卷上）。倾向于成分级报告可支持关键用例，同时避免这种重复。</block>
+  <block id="b0b97f3348cdc669199b59397d5cfda9" category="paragraph">在这种情况下，要在查询、仪表板或监控器中报告 FlexGroup 的容量，请使用成分卷对其父 FlexGroup 的引用。然后，您可以按该引用对成分卷进行分组，并聚合它们的容量值。</block>
+  <block id="df0226880b0292bb3e39fbb512638c4a" category="paragraph">DII 故意将 FlexGroup 父级的容量设置为零；ONTAP 本身仍然报告容量。这适用于容量/效率指标，而不是性能指标。建议按 Group ID 对成分卷进行分组，因为 Group Name 可能不是全局唯一的。</block>
+  <block id="1bccf90180c31adab404747497809cea" category="cell">仅限数据 SVM（无无限卷）。支持的子类型：default、sync_source、sync_destination。按设计，跳过 DP 目标 SVM 的审核。</block>
+  <block id="aadaea56453502b49c3bb1d83460b925" category="cell">卷快照：全部（如果可能，将范围限制为 cloudsecure_*）</block>
+  <block id="7f1025af379bb72826214683cac22df7" category="paragraph">创建角色和用户（在运行前替换 &lt;vservername&gt;）：</block>
+  <block id="adf604179202ac8d7549519f9ce15c55" category="paragraph">*持久存储（显示集群模式；为 SVM 模式添加 -vserver &lt;vservername&gt;）：*</block>
+  <block id="2ad63734d5ea88b691fcec8abfa334e6" category="paragraph">*Protobuf（显示集群模式；为 SVM 模式添加 -vserver &lt;vservername&gt;）：*</block>
+  <block id="03a48f775ff6c08509430c660d47baaa" category="list-text">选择 Workload Security &gt; Collectors &gt; &amp;#43;Data Collectors。</block>
+  <block id="d78aa3ef141641a0a1fc5a86295f9836" category="paragraph">*Important:* 默认排除的文件扩展名：根据设计，Workload Security 将 FPolicy 作用域配置为排除 ini 和 DS_Store 扩展名。这些文件的事件在 ONTAP 上被过滤，并且永远不会到达 Workload Security，因此它们不会出现在 Activity Forensics 中。这与客户可配置的警报排除是分开的。这是预期行为；在 UI 中无法配置对这些扩展名的审核。</block>
+  <block id="24dda3b59a8373ca61cb08f3e04c9cce" category="paragraph">暂停和恢复适用于数据收集器，而不是代理。您可以从 UI（收集器 &gt; 收集器 &gt; 选项菜单）或 API 运行它们。</block>
+  <block id="77b5c5ee27c770993c6041b7b3f0105c" category="paragraph">如果收集器后来进入“错误”或“降级”状态，请打开“状态” &gt; “更多详细信息”，然后按照“ONTAP SVM 数据收集器故障排除”进行操作。运行时条件（如重复收集器、事件速率过载、暂停收集器、持久存储放置、MetroCluster 转换、缺少活动和身份解析）不属于预保存的测试连接工作流程。</block>
+  <block id="954c32784463d0103797201c7694bdf9" category="list-text">确认收集器达到 Running，并且事件在实际客户端 I/O 后出现在 Workload Security &gt; Activity Forensics 中。</block>
+  <block id="53faddfe1edffe14cfa22b21a8e4e255" category="cell">这是有意为之的。大多数容量指标是在 FlexGroup 的成分上报告的，而不是在父 FlexGroup 上报告的。在两者上报告相同的容量会导致重复计算。倾向于成分级报告可支持关键用例，同时避免这种重复。若要在查询、仪表板或监控器中报告 FlexGroup 的容量，请使用成分对其父 FlexGroup 的引用。按该引用对成分进行分组，并汇总它们的容量值。DII 故意将 FlexGroup 父级的容量设置为零；ONTAP 本身仍然报告容量。这适用于容量/效率指标，而不是性能指标。建议按 Group ID 对成分卷进行分组，因为 Group Name 可能不是全局唯一的。</block>
+  <block id="11c755b8329995c080a4059e4bf242e6" category="list-text">无法确定 [host] 的 ONTAP 类型。原因：与存储系统的连接错误：无法访问主机</block>
+  <block id="f02b1b5ed10b4dbe05da2a063a182088" category="list-text">[IP] 被标识为集群/节点，无法在此模式下添加</block>
+  <block id="3d00f3f42cac2e414eee4dcb9d0d9483" category="list-text">已启用 cloudsecure_ FPolicy 策略，并且收集器保持 Running 状态。</block>
+  <block id="293c08cd401f87c15336eaf417d06e57" category="list-text">如果仅缺少 .ini 和 .DS_Store 活动，则无需执行操作；这些扩展名将从 FPolicy 事件收集中排除。</block>
+  <block id="8fa18ab7a18929f7f0879be2fb8b3054" category="list-text">如果仍然没有活动，请使用高级诊断来验证 cloudsecure_ policy 和 ONTAP FPolicy 事件日志。</block>
+  <block id="1c65b961301c2b223a8bf45311f05dd4" category="list-text">如果启用了 ONTAP Multi-Admin Verify，请为 cloudsecure_ 快照和用于用户阻止的 set 操作添加记录的排除项。</block>
+  <block id="76778495a87770e10d3bc7b730dc736b" category="cell">没有 .ini 或 .DS_Store 的事件</block>
+  <block id="60869d1abd3ecf7441cbb614b23131a0" category="paragraph">/opt/netapp/cloudsecure/data-collectors/{lt}collector-uuid{gt}/logs/dsc.log</block>
+  <block id="48e5b137f1782a0dff6b1d690fd29c78" category="paragraph">/opt/netapp/cloudsecure/agent/logs/cloudsecure_agent_install.log</block>
+  <block id="2bf9ae67b6a7c5df6ba0e09cf1dc81fe" category="paragraph">/opt/netapp/cloudsecure/agent/logs/cloudsecure_agent_upgrade.log</block>
+  <block id="0d3dee47dc809f7fc5a86fb82b4caf0e" category="paragraph">查找带有 cloudsecure_ 前缀的 Workload Security 策略。该策略应已启用，并且每个数据服务节点都应显示已连接的外部引擎。当通道断开连接时，保留事件原因和节点名称。</block>
+  <block id="b9a0a25a4fe58508d1c1bb635a53d91d" category="list-text">从<block ref="8024a7e052cfeb7e469f12b11909df83" category="inline-link-rx"></block>检索跟踪。</block>
+  <block id="2dfc455baa46eb666025dbc7b414efa9" category="paragraph">*注意：* 请勿删除活动收集器的 cloudsecure_ 对象。收集器拥有并更新这些对象。</block>
+  <block id="42afc33a95a008fa50b39816238d5ae4" category="cell">代理未连接</block>
+  <block id="ebad25052221f4ee537e35e4f5dbaad7" category="list-text">运行 fpolicy show 并确认已启用 cloudsecure_ 策略。</block>
+  <block id="d822a0d21d568ecd22e518ef5dc10ebb" category="paragraph">multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !\*cloudsecure\_*" + multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !\*cloudsecure\_*" + multi-admin-verify rule delete -operation set</block>
+  <block id="4ff2cea234868624331b11228fa5ab0d" category="list-text">“状态” &gt; “更多详细信息”中的完整消息以及故障时间。</block>
+  <block id="9277538c12d62b57cf00dc1681c9a5af" category="paragraph">在 Data Infrastructure Insights 中使用“帮助” &gt; “支持”打开案例。</block>
 </blocks>
