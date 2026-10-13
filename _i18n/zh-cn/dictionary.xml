@@ -16290,4 +16290,14 @@
   <block id="d822a0d21d568ecd22e518ef5dc10ebb" category="paragraph">multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !\*cloudsecure\_*" + multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !\*cloudsecure\_*" + multi-admin-verify rule delete -operation set</block>
   <block id="4ff2cea234868624331b11228fa5ab0d" category="list-text">“状态” &gt; “更多详细信息”中的完整消息以及故障时间。</block>
   <block id="9277538c12d62b57cf00dc1681c9a5af" category="paragraph">在 Data Infrastructure Insights 中使用“帮助” &gt; “支持”打开案例。</block>
+  <block id="8a7cd4d03da68ae214bddbe265b1ad26" category="section-title">报告管理</block>
+  <block id="7fa5390f038fb69139796793bf763a3a" category="paragraph">以前的报告管理控制台不再可用。使用“管理”进行报告管理。</block>
+  <block id="8ea7ade9ab3cfad9bd6b2431dd43a772" category="list-text">在 Data Infrastructure Insights 中，打开 *报告*。</block>
+  <block id="4239c0dba928cec50e8c21b945c051eb" category="list-text">选择 *菜单 &gt; 管理*。</block>
+  <block id="76dabad1c4a80c549d100374a19b0969" category="paragraph">在“管理”中，报告管理员可以配置报告并处理当前、过去和将来的报告活动。</block>
+  <block id="ff48e2ee0f646866bbc62bcb29402a4e" category="paragraph">要打开已完成活动的运行详细信息，请执行以下操作：</block>
+  <block id="2330f73a0085aaa309ecf31b2c395bb6" category="list-text">选择 *菜单 &gt; 管理 &gt; 活动 &gt; 过去*。</block>
+  <block id="151bb4dbf64e2b3fe12dc4b50a276810" category="list-text">在活动中，打开三点菜单。</block>
+  <block id="2bdb567b68e888c0bd681c966627b9d5" category="list-text">选择*运行详细信息*。</block>
+  <block id="04b3e949af7d6de572fc2375a3dd80b8" category="paragraph">有关详细信息，请参见此处 <block ref="e796b480a0964a566b0ed92c3ef65e64" category="inline-link-macro-rx"></block>。</block>
 </blocks>

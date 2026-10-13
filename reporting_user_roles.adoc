@@ -76,6 +76,28 @@ keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles
 |===
 
 
+[[reporting-administration]]
+== 报告管理
+
+以前的报告管理控制台不再可用。使用“管理”进行报告管理。
+
+. 在 Data Infrastructure Insights 中，打开 *报告*。
+. 选择 *菜单 > 管理*。
+
+
+在“管理”中，报告管理员可以配置报告并处理当前、过去和将来的报告活动。
+
+要打开已完成活动的运行详细信息，请执行以下操作：
+
+. 选择 *菜单 > 管理 > 活动 > 过去*。
+. 在活动中，打开三点菜单。
+. 选择*运行详细信息*。
+
+
+有关详细信息，请参见此处 link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/IBM_Cognos_Administration_Console_Does_Not_Load_for_DII_Reporting_Scheduled_Reports["知识库文章"^]。
+
+
+
 [[setting-reporting-cognos-email-preferences]]
 == 设置报告（Cognos）电子邮件首选项
 
