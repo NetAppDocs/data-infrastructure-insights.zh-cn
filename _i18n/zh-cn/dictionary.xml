@@ -16377,4 +16377,87 @@
   <block id="29d6760c8109878b93ec1d5bf8ab3a30" category="list-text">VMware vCenter Server 7.0.3 build-25606036</block>
   <block id="fad3f6e3f80f98a31883341fd5774aba" category="list-text">VMware vCenter Server 8.0.2 build-25624321</block>
   <block id="97e11a43e514869a622798371764811e" category="list-text">VMware vCenter Server 9.1.1.0.25712839</block>
+  <block id="fbd12a2bc6f022534723b7f93f8cbfed" category="section-title">2026年11月</block>
+  <block id="fe6c8c9b0bfeba3c68d646e97cfb8bfc" category="paragraph">以下数据收集器现已可用：</block>
+  <block id="cfd3a082ce4ef69c5db26bac5c08bcde" category="paragraph">*NVIDIA Base Command Manager (BCM) 收集器（预览版）* Data Infrastructure Insights 现在为 NVIDIA Base Command Manager 提供预览收集器，让您了解 HPC 和 AI 群集。将群集节点和工作负载与其底层存储组件相关联，这样您就可以发现 I/O 瓶颈，找到哪些作业或节点正在驱动负载，并防止昂贵的 GPU 资源因等待数据而闲置。</block>
+  <block id="f6951344e5afb496194e87504c8a7b41" category="paragraph">*Proxmox VE 数据收集器（预览）* Data Infrastructure Insights 现在为 Proxmox VE 提供预览收集器。它使您可以查看 Proxmox 主机和虚拟机以及它们背后的存储，因此您可以查明整个数据路径中的问题并更快地进行故障排除。</block>
+  <block id="dcadbefdecc16d23f8e5a2fe6f74672f" category="inline-link-macro">NVIDIA Base Command Manager REST</block>
+  <block id="570d2a2801516f6d6a6c24266745bad1" category="cell"><block ref="570d2a2801516f6d6a6c24266745bad1" category="inline-link-macro-rx"></block></block>
+  <block id="5bd286ca212070479377dcbd7bcd17d3" category="summary">配置 NVIDIA Base Command Manager REST 数据收集器以收集清单、主机性能和 GPU 工作负载指标。</block>
+  <block id="70c050dbb618a5cdf88d89f92cdec0f2" category="doc">NVIDIA Base Command Manager REST 数据收集器</block>
+  <block id="425261904eb34c66a0011ec6f3270b9a" category="paragraph">NVIDIA Base Command Manager (BCM) 数据收集器通过其 HTTPS REST 和 JSON API（CMDaemon，默认端口 *8081*）从 BCM 头节点收集清单、主机性能和 GPU 工作负载指标。*HYBRID* 模式还可以通过<block ref="0cee8faddddf3593d4fc2b372035c9dc" prefix=" " category="inline-code"></block>收集 DCGM 导出器 GPU 指标。为每个集群配置一个数据源。此收集器处于 *预览* 状态；请使用专用的 BCM 服务帐户，而不是<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block>或 BCM<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block>配置文件。</block>
+  <block id="999fce8ec9cc840f5eaf634897cf40d6" category="cell">BCM 集群</block>
+  <block id="85169b074fd17d105dd910259990fd4f" category="cell">供应商特定指标 —<block ref="174c2c1bfae5edf9dc9d9709a058499f" prefix=" " category="inline-code"></block></block>
+  <block id="f704302ec7ae329e53134ef8868e480b" category="cell">计算/头节点</block>
+  <block id="960b28c1dc678c56fb3b7e7538403421" category="cell">主机（清单）</block>
+  <block id="27320184b9124bad8b2ec6b53c6ae833" category="cell">Slurm 作业或计费行</block>
+  <block id="95e619ea13b3930bed9fb8dbc729dcd6" category="cell">供应商特定指标 —<block ref="0c4dc918304fed4bdd65cdf2e066da18" prefix=" " category="inline-code"></block></block>
+  <block id="907adf17b64267ccd8fbf5b414bcdd81" category="cell">GPU 指标（BCM GPU 采样器和性能分析、nvidia-smi 回退、可选 DCGM 导出器）</block>
+  <block id="2fb688088942fb2788f81dc62f11c32e" category="cell">供应商特定指标 — <block ref="b51909366286f546a60c04bb6f385a3b" prefix=" " category="inline-code"></block></block>
+  <block id="f4da7471f199d17748c25800aa1b8756" category="cell">节点状态</block>
+  <block id="3d8b6cfa31269b2e409f16b5f93c06bc" category="cell">供应商特定指标 — <block ref="2832e5a9b983a4d2d4700465c594c8ba" prefix=" " category="inline-code"></block></block>
+  <block id="921f3de3b65b28fbdcacbd80e50942ee" category="cell">BCM 头节点 IP/主机名</block>
+  <block id="6af538cf23f843932aed5a5914e0b538" category="cell">BCM 头节点的 IP 地址或 FQDN</block>
+  <block id="3471964b89c8fbf71e010d993e613258" category="cell">CMDaemon 端口。默认值为 *8081*</block>
+  <block id="6ade4da88c89dccc9868b437b60e6afa" category="cell">用于基本身份验证的 BCM 服务帐户</block>
+  <block id="8b221d14702ee8a4fd712b8d0ef406fb" category="cell">服务帐户的密码</block>
+  <block id="ae1667e52825f637bcd8a0789497a1dc" category="paragraph">在保存数据源之前，请确认采集单元可以访问<block ref="f05898160735846bed01cc44bf4adb05" prefix=" " category="inline-code"></block>，并且这些端点返回带有数据的 HTTP *200*：</block>
+  <block id="61b65352e02a149b84f81148b565bdc6" category="paragraph">供应商特定指标使用最新清单轮询中的主机清单，因此新添加的节点将在下一次清单轮询后显示在那里（默认情况下最多 60 分钟）。</block>
+  <block id="003737123dd972e06f87af0a66f4cabd" category="paragraph">UI *高级*屏幕列出了所有收集器包的设置。轮询间隔是每个包单独的*必填*字段（未隐藏）；您通常会看到下面的所有三个字段以及可选的专家属性。</block>
+  <block id="34dff5f86bade93d5973ca177f8b25cc" category="cell">基础/清单包。默认值为 *60* 分钟</block>
+  <block id="adc04402734119fd5d5aec8ba6ec433e" category="cell">主机性能包。默认为 *300* 秒</block>
+  <block id="82095e3d5144e0c8aae6c7216481c83a" category="cell">集成轮询间隔（秒）</block>
+  <block id="ed9c9f81e51dd15ff1333e5c22fe9253" category="cell">*供应商特定指标*包。默认值为 *300* 秒</block>
+  <block id="c9b415ea1576b19d10d42b332798cd16" category="cell">收集模式</block>
+  <block id="168e157ba09c22420ed545f318d0655a" category="cell">*REST_ONLY*（默认）仅使用 REST 和 JSON API。*HYBRID* 还读取<block ref="0cee8faddddf3593d4fc2b372035c9dc" prefix=" " category="inline-code"></block>以获取 DCGM 导出器 GPU 指标；请参阅*为 HYBRID 模式启用 /exporter*。如果<block ref="0cee8faddddf3593d4fc2b372035c9dc" prefix=" " category="inline-code"></block>失败，轮询将继续，并显示包含修复方法的警告</block>
+  <block id="63bc74ef098bf508e23abb609add3c52" category="cell">导出器指标允许列表</block>
+  <block id="fb090f6461c67a462b9a813a5f058412" category="cell">仅限混合。可选的逗号分隔<block ref="0cee8faddddf3593d4fc2b372035c9dc" prefix=" " category="inline-code"></block>指标名称。空（默认）收集所有 DCGM 系列</block>
+  <block id="251a2d5ab01f55aa8a3d616e4b471a1b" category="cell">客户端证书路径</block>
+  <block id="54bd35869d7e521ecbcc1793dfd3a14a" category="cell">仅限混合。采集单元上 BCM 客户端证书的路径 <block ref="bdf46f9562b038d0163af0feba0b1dfa" prefix="(" category="inline-code"></block>）</block>
+  <block id="cd9693d1463d825139717e9642a93b65" category="cell">客户端密钥路径</block>
+  <block id="6bc0e0359c91619795c7d751e5e882ea" category="cell">仅限混合。采集单元上指向证书密钥的路径 <block ref="ed920f773cac3db0499e1ae2cf4df449" prefix="(" category="inline-code"></block>）</block>
+  <block id="3b36324fea72b81be857b887194ef38d" category="cell">NVIDIA SMI REST 集成</block>
+  <block id="1bbe2a60480ce324fa04e0c78ea823ae" category="cell">后备 GPU 源。仅当<block ref="6676d4e149878bf7afbf98c4180d9772" prefix=" " category="inline-code"></block>未返回 GPU 采样器行时，才为<block ref="43cd9e8ad0bb738b1d7821451dfe4fb3" prefix=" " category="inline-code"></block>字段调用<block ref="3ac46e38ec7452ef3a466c44244eddbe" prefix=" " category="inline-code"></block>。默认值为 *true*。需要<block ref="c3340266a36862035b09303ef924df46" prefix=" " category="inline-code"></block>（请参阅 *nvidia-smi token (optional)*）；如果没有该令牌，系统将显示警告并继续轮询。调用间隔由时间间隔决定（默认为 15 分钟）。设置为 *false* 可禁止调用</block>
+  <block id="85caa838fc24b06427e5576b8ed29563" category="section-title">服务帐户（BCM 头节点）</block>
+  <block id="34e9d0cd5036a1be05878b835dd483bc" category="paragraph">在头节点上以<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block>身份，使用内置<block ref="336ebbb2179beaa7340a4f1620f3af40" prefix=" " category="inline-code"></block>配置文件创建用于收集的只读用户：</block>
+  <block id="453b920c0c8ce1a4712c5062c9a93261" category="paragraph">在数据源中使用<block ref="e04547a6f3fc18a441290e7e48e162f9" prefix=" " category="inline-code"></block>及其密码。内置<block ref="336ebbb2179beaa7340a4f1620f3af40" prefix=" " category="inline-code"></block>配置文件涵盖清单、JSON API<block ref="a71073159dc844ebfb2fc48407b48282" prefix=" " category="inline-code"></block>（包括 GPU 采样器指标）和 GPU 分析数据。此默认设置不需要令牌。Slurm 计费和 nvidia-smi 回退需要额外的令牌；请参阅 *计费令牌（可选）* 和 *nvidia-smi 令牌（可选）*。</block>
+  <block id="0d3c41c9fbf5b6163337b7bb88d2ac1b" category="paragraph">默认 *REST_ONLY* 模式不需要更改其他头节点。</block>
+  <block id="ce26935c60b3232a265b95ce22000812" category="section-title">退款令牌（可选）</block>
+  <block id="1124bd43807fdc0d739a3cb72d548a61" category="paragraph">如果您不需要 Slurm 退款数据，请跳过此部分。如果没有令牌，<block ref="28c104e15f21ba096ab044bf17eea4d1" prefix=" " category="inline-code"></block> 将返回 *401*。收集器会记录一条警告，其余的轮询将继续。</block>
+  <block id="839f2c1566020a2989c21124e55b7d4e" category="paragraph">Chargeback <block ref="28c104e15f21ba096ab044bf17eea4d1" prefix="(" category="inline-code"></block>, requires<block ref="866d4e136372de4f4e0a83eb14fae02d" prefix=" " category="inline-code"></block>) 将 Slurm 作业和 chargeback 行添加到<block ref="0c4dc918304fed4bdd65cdf2e066da18" prefix=" " category="inline-code"></block>。在头节点上作为<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block>，将<block ref="336ebbb2179beaa7340a4f1620f3af40" prefix=" " category="inline-code"></block>克隆到保存令牌的配置文件中，并将服务帐户移动到该配置文件：</block>
+  <block id="5c64792c669623de4cf9e77eb97f77ef" category="paragraph">保持数据源用户名和密码不变。默认<block ref="336ebbb2179beaa7340a4f1620f3af40" prefix=" " category="inline-code"></block>配置文件未更改。nvidia-smi 令牌和下面的 HYBRID 步骤会将其令牌添加到此相同的<block ref="f0e468097b11952cc88e8da99d2898fa" prefix=" " category="inline-code"></block>配置文件中。</block>
+  <block id="37396268ea844ee941fe12869c4e53ed" category="section-title">nvidia-smi 令牌（可选）</block>
+  <block id="7b30a4f5af4269ecaaec3a689f919879" category="paragraph">除非您想要 nvidia-smi 回退，否则请跳过此部分。<block ref="020c68d9029741d91b77f6670be8d374" prefix=" " category="inline-code"></block>（需要<block ref="c3340266a36862035b09303ef924df46" prefix=" " category="inline-code"></block>）是回退 GPU 源。仅当<block ref="6676d4e149878bf7afbf98c4180d9772" prefix=" " category="inline-code"></block>未返回 GPU 采样器行时，收集器才会调用它。如果没有令牌，它将返回 *401*，收集器会记录一条警告，其余的轮询将继续进行。</block>
+  <block id="71eddd9a274db6da7796c782b5b93c4b" category="paragraph">在 head 节点上作为<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block>，将令牌添加到上一节中的<block ref="f0e468097b11952cc88e8da99d2898fa" prefix=" " category="inline-code"></block>配置文件中。如果跳过了该部分，请先运行其 clone 命令：</block>
+  <block id="142615ab5da2bdb6c9cc9ab6cd4b81a8" category="section-title">启用 GPU 分析指标（可选）</block>
+  <block id="c1b70c101644788e02a5aff53b36027e" category="paragraph">BCM 仅在您将其开启后才会收集 GPU 分析指标（例如 SM 和张量活动）。开启后，收集器会在<block ref="b51909366286f546a60c04bb6f385a3b" prefix=" " category="inline-code"></block>上将其报告为<block ref="6f74cbea21af7cd690dcafaaf826550f" prefix=" " category="inline-code"></block>。在头节点上作为<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block>：</block>
+  <block id="16155b03cd63a0a5299a375ca4a233fb" category="paragraph">无需重新启动， BCM 在几分钟内开始收集。如果该命令报告<block ref="9fdf0f1334232814f17c1e027ae520f0" prefix=" " category="inline-code"></block>，请在一分钟后再次运行。此设置在 GPU 节点重新启动后不会保留；请在节点重新启动后再次运行此命令。要关闭分析，请运行不带数字的相同命令。</block>
+  <block id="74dff2e6d524163437e9a9f2a8d742c3" category="section-title">为混合模式启用 /exporter</block>
+  <block id="a855f9aaee0d59d60752f4a0bbf56f0a" category="paragraph">仅当 *采集模式* 为 *混合* 时才需要。保留<block ref="123aaa1b3b5f86efee65e491dd3136ad" prefix=" " category="inline-code"></block>的默认值；收集器使用 BCM 客户端证书登录到<block ref="0cee8faddddf3593d4fc2b372035c9dc" prefix=" " category="inline-code"></block>。在头节点上作为<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block>：</block>
+  <block id="20355560cb21a49781bf247bc54aeb22" category="list-text">确保 dcgm-exporter 在每个 GPU 节点（端口 9400）上运行，并进行注册，使其数据到达<block ref="0cee8faddddf3593d4fc2b372035c9dc" prefix=" " category="inline-code"></block>：</block>
+  <block id="2ed5b020c79ba946ed0016531b9a0db8" category="list-text">在<block ref="315215a582e3e7bbc70222ee0a9b518f" prefix=" " category="inline-code"></block>中，设置<block ref="e638b2558514de7df0af7caf3091cc88" prefix=" " category="inline-code"></block>，然后运行<block ref="987c2593f1b5f04d4130f552943b2742" prefix=" " category="inline-code"></block>。</block>
+  <block id="5d4d53c765a27d4806d9aa805d19a79a" category="list-text">向服务配置文件提供导出器令牌，并为其创建证书。服务配置文件是<block ref="f0e468097b11952cc88e8da99d2898fa" prefix=" " category="inline-code"></block>来自 *Chargeback token (optional)*；如果您跳过了该部分，请先在那里创建它：</block>
+  <block id="423aba3d2bcfd3a56738101bea6ad7bf" category="list-text">将<block ref="9e8da607432ccc02faf928c66ac54181" prefix=" " category="inline-code"></block>和<block ref="ebb822ec3f03fe25da1b214bc8d5bf12" prefix=" " category="inline-code"></block>复制到采集单元，并在*客户端证书路径*和*客户端密钥路径*中输入其路径。</block>
+  <block id="d0397cba49ed98efeba4bebaab0db300" category="paragraph">要从采集单元进行检查（数字大于 0 表示有效）：</block>
+  <block id="f7f5c9add395ee9a7983c5abb77bbe7e" category="paragraph">此证书的有效期为 365 天；请在到期前创建一个新证书。</block>
+  <block id="340ca6bf32163731665fa4a965678e45" category="cell">请尝试此操作</block>
+  <block id="553250274795dbdf7f62f8532570bac2" category="cell">HTTP *401*</block>
+  <block id="0b1fb00bcb05c300f2525465ea0e310c" category="cell">检查用户名和密码。如果仅<block ref="28c104e15f21ba096ab044bf17eea4d1" prefix=" " category="inline-code"></block>返回*401*，则添加<block ref="866d4e136372de4f4e0a83eb14fae02d" prefix=" " category="inline-code"></block>，如*Chargeback token（可选）*所示。</block>
+  <block id="60e436f7896e99c238d56167611bcdd5" category="cell">警告<block ref="f482209e46b67be69a8b1ee552b0d182" prefix=" " category="inline-code"></block>或<block ref="bbf94b34eb32268ada57a3be5062fe7d" prefix=" " category="inline-code"></block></block>
+  <block id="ce24fb61f54caec16c1ff8b1b52d87f7" category="cell">设置*客户端证书路径*和*客户端密钥路径*，并检查证书的配置文件是否具有<block ref="8d832159311cf3c28f47bc72a28b7047" prefix=" " category="inline-code"></block>（请参阅*为 HYBRID 模式启用 /exporter*）。或将*采集模式*设置为 *REST_ONLY*。</block>
+  <block id="7f9ed8277fadf5e5812bfc541ed31d4f" category="cell">警告<block ref="8339cb43de87c1a3d98737597f4e5022" prefix=" " category="inline-code"></block></block>
+  <block id="cf343129c2cd7821fd83464a9726528f" category="cell">修复警告中指定的文件。两个文件都必须在采集单元上可读，密钥必须属于证书，并且证书不得过期。</block>
+  <block id="ceb371f53958c858cde962e2d1e0b7a7" category="cell">警告<block ref="3b3cafef303c99a5d6f8a20dd4a61d40" prefix=" " category="inline-code"></block> 或<block ref="bbf94b34eb32268ada57a3be5062fe7d" prefix=" " category="inline-code"></block>，或<block ref="d0db324fa7476af5f7ab5804aff46a74" prefix=" " category="inline-code"></block></block>
+  <block id="fa793e573db8e7c6c202a6a62a716495" category="cell">GPU 采样器未返回任何行，因此收集器使用了 nvidia-smi 回退，但失败了。对于 401 或 403，服务配置文件没有<block ref="c3340266a36862035b09303ef924df46" prefix=" " category="inline-code"></block>：修复 GPU 采样器（请参阅 *无 GPU 指标*），或添加令牌，如 *nvidia-smi 令牌（可选）* 中所示。轮询在没有<block ref="43cd9e8ad0bb738b1d7821451dfe4fb3" prefix=" " category="inline-code"></block>字段的情况下继续进行。</block>
+  <block id="f94707af464edfb4a73625bf49144852" category="cell">警告<block ref="4bcfefead5ac949b6a715d5c59833074" prefix=" " category="inline-code"></block></block>
+  <block id="bb2fe0f92c4bde850ac9a8ac98d59732" category="cell">在<block ref="4b14d036dfc8518e6e575b8fd3254e69" prefix=" " category="inline-code"></block>中设置<block ref="e638b2558514de7df0af7caf3091cc88" prefix=" " category="inline-code"></block>并重启 CMDaemon，或将 *Collection Mode* 设置为 *REST_ONLY*。</block>
+  <block id="eaf06ce83c4867ec1fd1ff89f87f5801" category="cell">无性能数据</block>
+  <block id="596a7a0f2ad3f5f93ab1629146bdd5db" category="cell">检查<block ref="5a5a290e4da578b0b6dbf45ce18a1778" prefix=" " category="inline-code"></block>是否返回行。如果某个节点的该项为空，请在头节点上检查<block ref="a65f427fc3532d193cfb62699e71649b" prefix=" " category="inline-code"></block>。如果节点报告完全没有可测量项，则 BCM 未在其上运行采样器；重新安装节点（对于云节点：断电、终止、开机）即可恢复它们。</block>
+  <block id="6028367f77117e21d4a7b5f6d10889b5" category="cell">无 GPU 指标</block>
+  <block id="c65dcbff6e09bf62a90ff3fc233ead34" category="cell">检查 <block ref="ab77fdc43c55cc1c6c3a0acff7a6c9bb" prefix=" " category="inline-code"></block> 是否返回行。BCM 的 <block ref="8596f90f32574d5cad001a223e777d49" prefix=" " category="inline-code"></block> 需要节点映像中的 <block ref="29b39e6a2249a38dfac4c3ea06067e12" prefix=" " category="inline-code"></block> 软件包和 GPU 驱动程序，并且必须启用它：<block ref="f193772a66c0893e0a15679bf3b3f277" prefix=" " category="inline-code"></block> 打印 <block ref="7fa3b767c460b54a2be4d49030b349c7" prefix=" " category="inline-code"></block>。仅为 <block ref="e8e24c803fff574bb3e5a10320716329" prefix=" " category="inline-code"></block> 的行并不意味着采样器正在运行。</block>
+  <block id="ed9197f036af16782203077e056f5f7e" category="cell">无<block ref="6f74cbea21af7cd690dcafaaf826550f" prefix=" " category="inline-code"></block>字段</block>
+  <block id="ccc7bb66ae6854d7779ef09add7cfdcd" category="cell">在*启用 GPU 分析指标*中运行 <block ref="25baba6c4c1aae9e2179502cc093e4c5" prefix=" " category="inline-code"></block> 命令，并在 GPU 节点重新启动后再次运行。这些 <block ref="7917f48d8c4a630805cea79c02cedb90" prefix=" " category="inline-code"></block> 字段仅来自 *HYBRID* 模式下的 dcgm-exporter。</block>
+  <block id="4dcdcb2e56c49bf89538b93565979fe4" category="cell">UI 中无工作负载/计费</block>
+  <block id="44aa343060dfa443edf605972782079e" category="cell">确认 Slurm 作业已运行并启用了成本分摊；空闲集群通常具有空 API。请确保<block ref="866d4e136372de4f4e0a83eb14fae02d" prefix=" " category="inline-code"></block>已到位（请参阅 *成本分摊令牌（可选）*），并且服务器<block ref="21669d594353bfb093b487f21cae5621" prefix=" " category="inline-code"></block>元数据已到位。</block>
+  <block id="bbb144aa78b3cd782d5706367bcc3f8e" category="paragraph">有关此数据收集器的其他信息，请参阅支持页面或数据收集器支持列表。</block>
 </blocks>

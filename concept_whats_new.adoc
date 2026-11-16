@@ -19,6 +19,23 @@ NetApp不断改进和增强其产品和服务。以下是Data Infrastructure Ins
 
 
 
+[[november-2026]]
+== 2026年11月
+
+
+
+[[data-collector-updates]]
+=== 数据收集器更新：
+
+以下数据收集器现已可用：
+
+*NVIDIA Base Command Manager (BCM) 收集器（预览版）* Data Infrastructure Insights 现在为 NVIDIA Base Command Manager 提供预览收集器，让您了解 HPC 和 AI 群集。将群集节点和工作负载与其底层存储组件相关联，这样您就可以发现 I/O 瓶颈，找到哪些作业或节点正在驱动负载，并防止昂贵的 GPU 资源因等待数据而闲置。
+
+*Proxmox VE 数据收集器（预览）* Data Infrastructure Insights 现在为 Proxmox VE 提供预览收集器。它使您可以查看 Proxmox 主机和虚拟机以及它们背后的存储，因此您可以查明整个数据路径中的问题并更快地进行故障排除。
+
+'''
+
+
 [[september-2026]]
 == 2026年9月
 

@@ -1,0 +1,238 @@
+---
+sidebar: sidebar 
+permalink: task_dc_nvidia_bcm_rest.html 
+keywords: data collector, NVIDIA, Base Command Manager, BCM, GPU, REST 
+summary: 配置 NVIDIA Base Command Manager REST 数据收集器以收集清单、主机性能和 GPU 工作负载指标。 
+---
+= NVIDIA Base Command Manager REST 数据收集器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NVIDIA Base Command Manager (BCM) 数据收集器通过其 HTTPS REST 和 JSON API（CMDaemon，默认端口 *8081*）从 BCM 头节点收集清单、主机性能和 GPU 工作负载指标。*HYBRID* 模式还可以通过 `/exporter`收集 DCGM 导出器 GPU 指标。为每个集群配置一个数据源。此收集器处于 *预览* 状态；请使用专用的 BCM 服务帐户，而不是 `root`或 BCM `admin`配置文件。
+
+
+
+[[terminology]]
+== Terminology
+
+对于Data Infrastructure Insights获取的每种资产类型，都会显示该资产最常用的术语。查看或排除此数据收集器的故障时，请记住以下术语：
+
+[cols="1,1"]
+|===
+| 供应商/型号术语 | Data Infrastructure Insights术语 
+
+
+| BCM 集群 | 供应商特定指标 — `nvidia_bcm.cluster` 
+
+
+| 计算/头节点 | 主机（清单） 
+
+
+| Slurm 作业或计费行 | 供应商特定指标 — `nvidia_bcm.workload` 
+
+
+| GPU 指标（BCM GPU 采样器和性能分析、nvidia-smi 回退、可选 DCGM 导出器） | 供应商特定指标 —  `nvidia_bcm.gpu` 
+
+
+| 节点状态 | 供应商特定指标 —  `nvidia_bcm.host` 
+|===
+
+NOTE: 这些只是常见的术语映射，可能并不代表该数据收集器的所有情况。
+
+
+
+[[configuration]]
+== 配置
+
+[cols="1,2"]
+|===
+| 字段 | 描述 
+
+
+| BCM 头节点 IP/主机名 | BCM 头节点的 IP 地址或 FQDN 
+
+
+| HTTPS 端口 | CMDaemon 端口。默认值为 *8081* 
+
+
+| 用户名 | 用于基本身份验证的 BCM 服务帐户 
+
+
+| 密码 | 服务帐户的密码 
+|===
+在保存数据源之前，请确认采集单元可以访问 `https://<head>:8081`，并且这些端点返回带有数据的 HTTP *200*：
+
+[source, bash]
+----
+curl -sk -u user:pass https://<head>:8081/rest/v1/device
+curl -sk -u user:pass "https://<head>:8081/rest/v1/monitoring/latest?measurable=CPUUsage"
+----
+供应商特定指标使用最新清单轮询中的主机清单，因此新添加的节点将在下一次清单轮询后显示在那里（默认情况下最多 60 分钟）。
+
+
+
+[[advanced-configuration]]
+== 高级配置
+
+UI *高级*屏幕列出了所有收集器包的设置。轮询间隔是每个包单独的*必填*字段（未隐藏）；您通常会看到下面的所有三个字段以及可选的专家属性。
+
+[cols="1,2"]
+|===
+| 字段 | 描述 
+
+
+| 库存轮询间隔（分钟） | 基础/清单包。默认值为 *60* 分钟 
+
+
+| 性能轮询间隔（秒） | 主机性能包。默认为 *300* 秒 
+
+
+| 集成轮询间隔（秒） | *供应商特定指标*包。默认值为 *300* 秒 
+
+
+| 收集模式 | *REST_ONLY*（默认）仅使用 REST 和 JSON API。*HYBRID* 还读取 `/exporter`以获取 DCGM 导出器 GPU 指标；请参阅*为 HYBRID 模式启用 /exporter*。如果 `/exporter`失败，轮询将继续，并显示包含修复方法的警告 
+
+
+| 导出器指标允许列表 | 仅限混合。可选的逗号分隔 `/exporter`指标名称。空（默认）收集所有 DCGM 系列 
+
+
+| 客户端证书路径 | 仅限混合。采集单元上 BCM 客户端证书的路径 (`.pem`） 
+
+
+| 客户端密钥路径 | 仅限混合。采集单元上指向证书密钥的路径 (`.key`） 
+
+
+| NVIDIA SMI REST 集成 | 后备 GPU 源。仅当 `/monitoring/latest`未返回 GPU 采样器行时，才为 `smi_*`字段调用 `/rest/v1/nvidia-smi`。默认值为 *true*。需要 `RUN_NVIDIA_SMI_TOKEN`（请参阅 *nvidia-smi token (optional)*）；如果没有该令牌，系统将显示警告并继续轮询。调用间隔由时间间隔决定（默认为 15 分钟）。设置为 *false* 可禁止调用 
+|===
+
+
+[[service-account-bcm-head-node]]
+== 服务帐户（BCM 头节点）
+
+在头节点上以 `root`身份，使用内置 `readonly`配置文件创建用于收集的只读用户：
+
+[source, bash]
+----
+cmsh -c "user; add dii-monitor; set password '<password>'; set profile readonly; commit"
+----
+在数据源中使用 `dii-monitor`及其密码。内置 `readonly`配置文件涵盖清单、JSON API `/rest/v1/monitoring/latest`（包括 GPU 采样器指标）和 GPU 分析数据。此默认设置不需要令牌。Slurm 计费和 nvidia-smi 回退需要额外的令牌；请参阅 *计费令牌（可选）* 和 *nvidia-smi 令牌（可选）*。
+
+默认 *REST_ONLY* 模式不需要更改其他头节点。
+
+
+
+[[chargeback-token-optional]]
+== 退款令牌（可选）
+
+如果您不需要 Slurm 退款数据，请跳过此部分。如果没有令牌， `/chargeback` 将返回 *401*。收集器会记录一条警告，其余的轮询将继续。
+
+Chargeback (`/chargeback`, requires `CHARGE_BACK_TOKEN`) 将 Slurm 作业和 chargeback 行添加到 `nvidia_bcm.workload`。在头节点上作为 `root`，将 `readonly`克隆到保存令牌的配置文件中，并将服务帐户移动到该配置文件：
+
+[source, bash]
+----
+cmsh -c "profile; clone readonly dii-readonly; append tokens CHARGE_BACK_TOKEN; commit"
+cmsh -c "user; use dii-monitor; set profile dii-readonly; commit"
+----
+保持数据源用户名和密码不变。默认 `readonly`配置文件未更改。nvidia-smi 令牌和下面的 HYBRID 步骤会将其令牌添加到此相同的 `dii-readonly`配置文件中。
+
+
+
+[[nvidia-smi-token-optional]]
+== nvidia-smi 令牌（可选）
+
+除非您想要 nvidia-smi 回退，否则请跳过此部分。 `/nvidia-smi`（需要 `RUN_NVIDIA_SMI_TOKEN`）是回退 GPU 源。仅当 `/monitoring/latest`未返回 GPU 采样器行时，收集器才会调用它。如果没有令牌，它将返回 *401*，收集器会记录一条警告，其余的轮询将继续进行。
+
+在 head 节点上作为 `root`，将令牌添加到上一节中的 `dii-readonly`配置文件中。如果跳过了该部分，请先运行其 clone 命令：
+
+[source, bash]
+----
+cmsh -c "profile; use dii-readonly; append tokens RUN_NVIDIA_SMI_TOKEN; commit"
+----
+
+
+[[enabling-gpu-profiling-metrics-optional]]
+== 启用 GPU 分析指标（可选）
+
+BCM 仅在您将其开启后才会收集 GPU 分析指标（例如 SM 和张量活动）。开启后，收集器会在 `nvidia_bcm.gpu`上将其报告为 `gpu_profiling_*`。在头节点上作为 `root`：
+
+[source, bash]
+----
+cmsh -c "device; gpuprofiling watch -c <gpu-category> 1001 1002 1003 1004 1005 1006 1007 1008 1009 1010"
+----
+无需重新启动， BCM 在几分钟内开始收集。如果该命令报告 `not initialized yet`，请在一分钟后再次运行。此设置在 GPU 节点重新启动后不会保留；请在节点重新启动后再次运行此命令。要关闭分析，请运行不带数字的相同命令。
+
+
+
+[[enabling-exporter-for-hybrid-mode]]
+== 为混合模式启用 /exporter
+
+仅当 *采集模式* 为 *混合* 时才需要。保留 `PrometheusExporterRequireCertificate`的默认值；收集器使用 BCM 客户端证书登录到 `/exporter`。在头节点上作为 `root`：
+
+. 确保 dcgm-exporter 在每个 GPU 节点（端口 9400）上运行，并进行注册，使其数据到达 `/exporter`：
++
+[source, bash]
+----
+cmsh -c "device; use <node>; prometheusmetricforwarders; add dcgm-<node>; set urls http://127.0.0.1:9400/metrics; commit"
+----
+. 在 `/cm/local/apps/cmd/etc/cmd.conf`中，设置 `EnablePrometheusExporterService = true`，然后运行 `systemctl restart cmd`。
+. 向服务配置文件提供导出器令牌，并为其创建证书。服务配置文件是 `dii-readonly`来自 *Chargeback token (optional)*；如果您跳过了该部分，请先在那里创建它：
++
+[source, bash]
+----
+cmsh -c "profile; use dii-readonly; append tokens PROMETHEUS_EXPORTER_TOKEN; commit"
+cmsh -c "cert; createcertificate 2048 dii-monitor <org> <unit> <city> <state> <country> dii-readonly dii-monitor 365 /root/dii-monitor.key /root/dii-monitor.pem"
+----
+. 将 `dii-monitor.pem`和 `dii-monitor.key`复制到采集单元，并在*客户端证书路径*和*客户端密钥路径*中输入其路径。
+
+
+要从采集单元进行检查（数字大于 0 表示有效）：
+
+[source, bash]
+----
+curl -sk --cert dii-monitor.pem --key dii-monitor.key https://<head>:8081/exporter | grep -ci '^dcgm_'
+----
+此证书的有效期为 365 天；请在到期前创建一个新证书。
+
+
+
+[[troubleshooting]]
+== 故障排除
+
+[cols="1,2"]
+|===
+| 问题 | 请尝试此操作 
+
+
+| HTTP *401* | 检查用户名和密码。如果仅 `/chargeback`返回*401*，则添加 `CHARGE_BACK_TOKEN`，如*Chargeback token（可选）*所示。 
+
+
+| 警告 `BCM /exporter refused with HTTP 401`或 `403` | 设置*客户端证书路径*和*客户端密钥路径*，并检查证书的配置文件是否具有 `PROMETHEUS_EXPORTER_TOKEN`（请参阅*为 HYBRID 模式启用 /exporter*）。或将*采集模式*设置为 *REST_ONLY*。 
+
+
+| 警告 `BCM /exporter not called: the client certificate cannot be used` | 修复警告中指定的文件。两个文件都必须在采集单元上可读，密钥必须属于证书，并且证书不得过期。 
+
+
+| 警告 `BCM /nvidia-smi refused with HTTP 401` 或 `403`，或 `BCM /nvidia-smi failed` | GPU 采样器未返回任何行，因此收集器使用了 nvidia-smi 回退，但失败了。对于 401 或 403，服务配置文件没有 `RUN_NVIDIA_SMI_TOKEN`：修复 GPU 采样器（请参阅 *无 GPU 指标*），或添加令牌，如 *nvidia-smi 令牌（可选）* 中所示。轮询在没有 `smi_*`字段的情况下继续进行。 
+
+
+| 警告 `BCM /exporter not found (HTTP 404)` | 在 `cmd.conf`中设置 `EnablePrometheusExporterService = true`并重启 CMDaemon，或将 *Collection Mode* 设置为 *REST_ONLY*。 
+
+
+| 无性能数据 | 检查 `/rest/v1/monitoring/latest?measurable=CPUUsage`是否返回行。如果某个节点的该项为空，请在头节点上检查 `cmsh -c "device; use <node>; latestmonitoringdata"`。如果节点报告完全没有可测量项，则 BCM 未在其上运行采样器；重新安装节点（对于云节点：断电、终止、开机）即可恢复它们。 
+
+
+| 无 GPU 指标 | 检查  `/rest/v1/monitoring/latest?measurable=gpu_utilization:gpu0` 是否返回行。BCM 的  `GPUSampler` 需要节点映像中的  `cuda-dcgm` 软件包和 GPU 驱动程序，并且必须启用它： `cmsh -c "monitoring setup; use GPUSampler; get disabled"` 打印  `no`。仅为  `gpu_recovery_*` 的行并不意味着采样器正在运行。 
+
+
+| 无 `gpu_profiling_*`字段 | 在*启用 GPU 分析指标*中运行  `gpuprofiling watch` 命令，并在 GPU 节点重新启动后再次运行。这些  `dcgm_fi_prof_*` 字段仅来自 *HYBRID* 模式下的 dcgm-exporter。 
+
+
+| UI 中无工作负载/计费 | 确认 Slurm 作业已运行并启用了成本分摊；空闲集群通常具有空 API。请确保 `CHARGE_BACK_TOKEN`已到位（请参阅 *成本分摊令牌（可选）*），并且服务器 `nvidia_bcm`元数据已到位。 
+|===
+有关此数据收集器的其他信息，请参阅支持页面或数据收集器支持列表。

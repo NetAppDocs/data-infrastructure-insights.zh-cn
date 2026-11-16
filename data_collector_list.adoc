@@ -197,6 +197,9 @@ Data Infrastructure Insights支持的数据收集器的字母列表：
 | link:task_dc_na_storagegrid.html["NetAppStorageGRID"] | 基础架构 
 
 
+| link:task_dc_nvidia_bcm_rest.html["NVIDIA Base Command Manager REST"] | 基础架构 
+
+
 | link:task_dc_nutanix.html["Nutanix NX系列"] | 基础架构 
 
 
