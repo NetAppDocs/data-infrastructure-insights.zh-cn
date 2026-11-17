@@ -11650,7 +11650,6 @@
   <block id="91a0d06a30de7119cf7ba6773ce38416" category="paragraph">DII Proxmox Virtual Environment 收集器将收集基于 PVE 的虚拟机（非 LXC 容器）和主机/虚拟机管理程序的清单和性能数据。这是一个基于 HTTPS REST API 的收集器，需要与由 pveproxy 服务/守护进程提供的 Proxmox REST API 进行通信，该服务/守护进程监听 TCP 8006 端口。</block>
   <block id="7bd4738e9b2442fc6fa7415e88a3298d" category="paragraph">此数据收集器使用用户 + 令牌身份验证。您需要在每个 Proxmox 集群上创建一个服务帐户，并为用户分配适当的权限，然后生成具有相同权限的 API 令牌。请注意，给定 Proxmox 用户的令牌不一定具有与该用户相同的权限。DII 通常需要全局审核/监控级别权限——如果您通过 Proxmox UI 创建服务帐户，请将 PathPermision 从"/"开始，将"传播"设置为"是"，并至少解锁 Datastore Audit、Mapping Audit、Pool Audit、SDN Audit、Sys Audit、VM Audit、VM Monitor。创建用户后，您可以为其创建访问令牌。强烈建议将令牌的过期时间设置为 0，以确保令牌永不过期。</block>
   <block id="57e13573114577b3af8a0a24aa24d576" category="sidebar">Proxmox VE</block>
-  <block id="48c0a89dc87860e6c3b42a70bbd13c53" category="paragraph"><block ref="48c0a89dc87860e6c3b42a70bbd13c53" category="inline-link-macro-rx"></block></block>
   <block id="10fcc85a32e000abd9a522eb086aa8b9" category="list-text">注：应将代理安装程序下载到与包含正在运行的代理的文件夹不同的文件夹。</block>
   <block id="323d0a1ff366ae52ecb4199bd4c94bcc" category="paragraph">例如，如果代理在"/test_user/apps"中运行，则命令为：</block>
   <block id="22e2d1e386d2ea8093c75a43b1b0223e" category="summary">容量数据仓库的架构表</block>
@@ -16460,4 +16459,5 @@
   <block id="4dcdcb2e56c49bf89538b93565979fe4" category="cell">UI 中无工作负载/计费</block>
   <block id="44aa343060dfa443edf605972782079e" category="cell">确认 Slurm 作业已运行并启用了成本分摊；空闲集群通常具有空 API。请确保<block ref="866d4e136372de4f4e0a83eb14fae02d" prefix=" " category="inline-code"></block>已到位（请参阅 *成本分摊令牌（可选）*），并且服务器<block ref="21669d594353bfb093b487f21cae5621" prefix=" " category="inline-code"></block>元数据已到位。</block>
   <block id="bbb144aa78b3cd782d5706367bcc3f8e" category="paragraph">有关此数据收集器的其他信息，请参阅支持页面或数据收集器支持列表。</block>
+  <block id="9147d8a87f0c15b0e1cb8f0114b69cc2" category="paragraph"><block ref="9147d8a87f0c15b0e1cb8f0114b69cc2" category="inline-link-macro-rx"></block></block>
 </blocks>
